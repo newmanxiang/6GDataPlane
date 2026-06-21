@@ -14,6 +14,9 @@ related:
   - user-plane-evolution
   - ai-native-air-interface
   - imt-2030
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
+  - imt-2030-framework-data-needs
 tags:
   - 6G
   - IMT-2030
@@ -44,6 +47,7 @@ owner: agent
 - 与 [[6g-data-plane]]：6G 总体架构中数据面是核心功能平面之一，承载用户数据传输与数据服务
 - 与 [[user-plane-evolution]]：6G 是用户面从 GTP-U/UPF 向新型数据面演进的目标系统
 - 与 [[imt-2030]]：IMT-2030 是 ITU-R 对 6G 的正式技术命名与框架规范
+- 与 [[imt-2030-usage-scenarios-data-needs]]：六大使用场景的数据面需求详细分析
 
 ## 常见误解
 
@@ -52,7 +56,7 @@ owner: agent
 
 ## 待深挖子题
 
-- [ ] IMT-2030 六大使用场景及其对数据面的具体需求 → 加入 ops/deep-dive-queue.md
+- [x] IMT-2030 六大使用场景及其对数据面的具体需求 → 已完成：[[imt-2030-usage-scenarios-data-needs]]
 - [ ] 6G KPI 量化指标全表（20 项性能需求解读）
 - [ ] 3GPP 6G 标准时间线与里程碑（Rel-22/23 规划）
 

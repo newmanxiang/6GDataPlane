@@ -14,6 +14,8 @@ related:
   - network-data-analytics
   - ai-native-air-interface
   - data-fabric-for-ai-native-6g
+  - isac
+  - non-terrestrial-network
 tags:
   - 6G
   - digital-twin

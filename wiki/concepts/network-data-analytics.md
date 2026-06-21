@@ -13,6 +13,13 @@ related:
   - 6g-data-plane
   - ai-native-air-interface
   - ran-architecture-evolution
+  - data-orchestration
+  - data-fabric-for-ai-native-6g
+  - data-fabric-in-telecom
+  - digital-twin-network
+  - knowledge-graph-for-data
+  - privacy-preserving-data-fabric
+  - daas-interface-design
 tags:
   - NWDAF
   - 3GPP

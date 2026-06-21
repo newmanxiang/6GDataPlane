@@ -13,6 +13,11 @@ related:
   - 6g-overview
   - 6g-data-plane
   - ran-architecture-evolution
+  - non-terrestrial-network
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
+  - daas-interface-design
+  - gtp-u-limitations-6g-alternatives
 tags:
   - 用户面
   - GTP-U

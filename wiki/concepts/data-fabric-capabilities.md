@@ -13,6 +13,10 @@ related:
   - data-fabric-definition
   - active-metadata
   - data-fabric-vs-data-mesh
+  - data-fabric-for-ai-native-6g
+  - data-fabric-in-telecom
+  - privacy-preserving-data-fabric
+  - edge-data-fabric
 tags:
   - data-fabric
   - capabilities

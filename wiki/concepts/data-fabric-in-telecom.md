@@ -15,6 +15,8 @@ related:
   - 6g-data-plane
   - network-data-analytics
   - data-fabric-for-ai-native-6g
+  - privacy-preserving-data-fabric
+  - edge-data-fabric
 tags:
   - 数据编织
   - 电信

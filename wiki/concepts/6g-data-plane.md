@@ -15,6 +15,21 @@ related:
   - ai-native-air-interface
   - network-data-analytics
   - data-fabric-definition
+  - isac
+  - data-fabric-for-ai-native-6g
+  - ran-architecture-evolution
+  - data-fabric-in-telecom
+  - digital-twin-network
+  - data-virtualization
+  - privacy-preserving-data-fabric
+  - edge-data-fabric
+  - non-terrestrial-network
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
+  - imt-2030-framework-data-needs
+  - 6g-data-plane-architecture-2025
+  - gtp-u-limitations-6g-alternatives
+  - daas-interface-design
 tags:
   - 6G
   - 数据面
@@ -46,6 +61,7 @@ owner: agent
 - 与 **智能面（Intelligence Plane）**：智能面提供 AI 模型训练/推理/决策服务，数据面为其供给训练数据和推理输入
 - 与 **计算面（Computing Plane）**：计算面提供分布式算力，数据面提供计算所需的数据流
 - 与 [[data-fabric-definition]]：数据编织是实现 6G 数据面中数据集成与编排能力的潜在技术路径
+- 与 [[imt-2030-usage-scenarios-data-needs]]：六大使用场景各自的数据面需求（数据量/时延/吞吐/数据类型）
 
 ## 常见误解
 

@@ -18,6 +18,7 @@ related:
   - network-data-analytics
   - data-fabric-in-telecom
   - active-metadata
+  - digital-twin-network
 tags:
   - 数据编织
   - AI原生

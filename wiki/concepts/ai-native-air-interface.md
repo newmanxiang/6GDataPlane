@@ -13,6 +13,12 @@ related:
   - 6g-data-plane
   - ran-architecture-evolution
   - network-data-analytics
+  - 6g-overview
+  - isac
+  - data-fabric-for-ai-native-6g
+  - digital-twin-network
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
 tags:
   - 6G
   - AI

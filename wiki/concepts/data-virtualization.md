@@ -13,6 +13,7 @@ related:
   - knowledge-graph-for-data
   - data-orchestration
   - 6g-data-plane
+  - edge-data-fabric
 tags:
   - 数据虚拟化
   - 数据集成

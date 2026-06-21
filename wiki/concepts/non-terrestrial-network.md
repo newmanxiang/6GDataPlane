@@ -14,6 +14,9 @@ related:
   - user-plane-evolution
   - ran-architecture-evolution
   - digital-twin-network
+  - edge-data-fabric
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
 tags:
   - 6G
   - NTN

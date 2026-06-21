@@ -14,6 +14,8 @@ related:
   - ai-native-air-interface
   - digital-twin-network
   - ran-architecture-evolution
+  - imt-2030-usage-scenarios-data-needs
+  - 6g-kpi-20-requirements
 tags:
   - 6G
   - ISAC

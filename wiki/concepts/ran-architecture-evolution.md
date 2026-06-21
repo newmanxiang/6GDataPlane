@@ -14,6 +14,9 @@ related:
   - ai-native-air-interface
   - 6g-data-plane
   - network-data-analytics
+  - isac
+  - user-plane-evolution
+  - non-terrestrial-network
 tags:
   - O-RAN
   - Cloud RAN
