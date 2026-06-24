@@ -17,6 +17,8 @@ related:
   - data-fabric-for-ai-native-6g
   - privacy-preserving-data-fabric
   - edge-data-fabric
+  - data-fabric-definition-and-capabilities
+  - data-fabric-in-telecom-early-cases
 tags:
   - 数据编织
   - 电信

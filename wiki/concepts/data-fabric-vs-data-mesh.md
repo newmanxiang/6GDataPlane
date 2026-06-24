@@ -13,6 +13,7 @@ related:
   - data-fabric-definition
   - data-fabric-capabilities
   - active-metadata
+  - data-fabric-definition-and-capabilities
 tags:
   - data-fabric
   - data-mesh

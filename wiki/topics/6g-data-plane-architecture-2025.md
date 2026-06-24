@@ -28,6 +28,7 @@ related:
   - 6g-kpi-20-requirements
   - daas-interface-design
   - gtp-u-limitations-6g-alternatives
+  - 3gpp-sa2-6g-data-framework-wt5
 tags:
   - 6G
   - 数据面

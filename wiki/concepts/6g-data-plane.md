@@ -30,6 +30,7 @@ related:
   - 6g-data-plane-architecture-2025
   - gtp-u-limitations-6g-alternatives
   - daas-interface-design
+  - ai-native-data-plane-status
 tags:
   - 6G
   - 数据面

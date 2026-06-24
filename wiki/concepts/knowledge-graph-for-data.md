@@ -13,6 +13,7 @@ related:
   - data-virtualization
   - data-orchestration
   - network-data-analytics
+  - data-fabric-definition-and-capabilities
 tags:
   - 知识图谱
   - 数据编织

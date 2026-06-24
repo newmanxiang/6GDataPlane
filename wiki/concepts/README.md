@@ -50,14 +50,27 @@ graph TD
     NWDA -.-> DF_TEL
     DTN -.-> KG
 
+    %% Topic 深调关系（D9 新增）
+    DF -->|定义全景| T_DFDC[topic: 数据编织定义与能力]
+    DMESH -->|对比分析| T_DFVM[topic: 编织vs网格]
+    T_DFDC -.-> AM
+    T_DFDC -.-> KG
+    T_DFDC -.-> DV
+    T_DFVM -.-> DF_TEL
+    UPE -->|演进路径| T_UPE[topic: UPF到6G演进]
+    AIA -->|现状分析| T_AINP[topic: AI原生数据面]
+    T_AINP -.-> NWDA
+
     classDef dp fill:#e1f5ff,stroke:#0288d1;
     classDef df fill:#fff3e0,stroke:#f57c00;
     classDef cross fill:#f3e5f5,stroke:#7b1fa2;
     classDef gap fill:#ffebee,stroke:#c62828;
+    classDef topic fill:#e8f5e9,stroke:#388e3c;
     class DP,UPE,AIA,DTN,ISAC,NTN,RAN,NWDA dp;
     class DF,AM,KG,DV,DO,PP,DMESH df;
     class DF_TEL,EDGE cross;
     class DF_AIN gap;
+    class T_DFDC,T_DFVM,T_UPE,T_AINP topic;
 ```
 
 ## 概念清单

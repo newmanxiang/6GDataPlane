@@ -19,6 +19,7 @@ related:
   - digital-twin-network
   - imt-2030-usage-scenarios-data-needs
   - 6g-kpi-20-requirements
+  - ai-native-data-plane-status
 tags:
   - 6G
   - AI

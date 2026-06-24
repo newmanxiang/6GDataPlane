@@ -35,15 +35,15 @@
 
 ## 统计快照（由 6g-wiki-curator 维护）
 
-> 占位：首次治理后自动生成
+> 最后更新：2026-06-23 D9 全量治理
 
 | 类别 | 数量 | draft / reviewed / contested |
 |---|---|---|
-| concept | 0 | - |
-| topic | 0 | - |
+| concept | 20 | 20 / 0 / 0 |
+| topic | 10 | 0 / 10 / 0 |
 | player | 0 | - |
-| source | 0 | - |
-| term | 0 | - |
+| source | 31 | - |
+| term | 21 | - |
 
 ## 双向链约定
 

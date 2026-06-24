@@ -33,8 +33,8 @@
 | P0 | `imt-2030-framework-data-needs` | 6G数据面 | done | D6 | IMT-2030 框架下的数据面需求分析 |
 | P0 | `daas-interface-design` | 6G数据面 | done | D7 | DaaS 接口设计：数据面如何向智能面暴露数据服务 |
 | P0 | `gtp-u-limitations-6g-alternatives` | 6G数据面 | done | D7 | GTP-U 局限性与 6G 替代方案（SRv6、网络编程） |
-| P0 | `user-plane-evolution-upf-to-6g` | 6G数据面 | pending | D8 | 用户面从 UPF 到 6G 的演进路径 |
-| P0 | `ai-native-data-plane-status` | 6G数据面 | pending | D8 | AI 原生数据面现状与研究进展 |
+| P0 | `user-plane-evolution-upf-to-6g` | 6G数据面 | done | D8 | 用户面从 UPF 到 6G 的演进路径 |
+| P0 | `ai-native-data-plane-status` | 6G数据面 | done | D8 | AI 原生数据面现状与研究进展 |
 | P1 | `upf-distributed-6g` | 6G数据面 | pending | - | UPF 分布式部署模式在 6G 中的延续与变革 |
 | P1 | `e2e-learnable-transceiver-data-needs` | 6G数据面 | pending | - | 端到端学习收发机的数据需求与数据面承载方案 |
 | P1 | `ai-model-training-data-flow` | 6G数据面 | pending | - | AI 模型在空口的在线/离线训练数据流架构 |
@@ -57,9 +57,9 @@
 
 | 优先级 | 子题 slug | 类目 | 状态 | 拟分配日 | 备注 |
 |---|---|---|---|---|---|
-| P0 | `data-fabric-for-ai-native-6g` | 交集 | pending | D10 | 数据编织在 AI 原生 6G 网络中的应用 ⭐ |
-| P0 | `cross-domain-data-governance-6g` | 交集 | pending | D10 | 6G 跨域数据治理与数据编织融合 |
-| P0 | `data-fabric-in-telecom-early-cases` | 交集 | pending | D9 | 电信领域数据编织早期实践案例 |
+| P0 | `data-fabric-for-ai-native-6g` | 交集 | done | D10 | 数据编织在 AI 原生 6G 网络中的应用 ⭐ |
+| P0 | `cross-domain-data-governance-6g` | 交集 | done | D10 | 6G 跨域数据治理与数据编织融合 |
+| P0 | `data-fabric-in-telecom-early-cases` | 交集 | done | D9 | 电信领域数据编织早期实践案例 |
 | P1 | `data-plane-data-fabric-mapping` | 交集 | pending | - | 数据面与数据编织技术的映射关系 |
 | P1 | `nwdaf-data-fabric-integration` | 交集 | pending | - | NWDAF 与数据编织的集成路径 |
 | P1 | `dtn-data-fabric-integration` | 交集 | pending | - | DTN 与数据编织集成：主动元数据驱动孪生模型更新 |
@@ -75,8 +75,8 @@
 
 | 优先级 | 子题 slug | 类目 | 状态 | 拟分配日 | 备注 |
 |---|---|---|---|---|---|
-| P0 | `data-fabric-definition-and-capabilities` | 数据编织 | pending | D9 | 数据编织定义与核心能力全景 |
-| P0 | `data-fabric-vs-data-mesh` | 数据编织 | pending | D9 | 数据编织 vs 数据网格对比分析 |
+| P0 | `data-fabric-definition-and-capabilities` | 数据编织 | done | D9 | 数据编织定义与核心能力全景 |
+| P0 | `data-fabric-vs-data-mesh` | 数据编织 | done | D9 | 数据编织 vs 数据网格对比分析 |
 | P1 | `active-metadata-kg-integration` | 数据编织 | pending | - | 主动元数据引擎与知识图谱的集成模式 |
 | P1 | `data-virt-data-mesh-patterns` | 数据编织 | pending | - | 数据虚拟化与数据网格的结合模式 |
 | P1 | `data-orch-engine-comparison` | 数据编织 | pending | - | 主流数据编排引擎对比（Airflow/Dagster/Prefect/Databricks） |
@@ -92,9 +92,9 @@
 
 | 优先级 | 子题 slug | 类目 | 状态 | 拟分配日 | 备注 |
 |---|---|---|---|---|---|
-| P0 | `3gpp-6g-timeline-rel22-23` | 标准 | pending | D8 | 3GPP 6G 标准时间线与里程碑（Rel-22/23 规划） |
-| P0 | `3gpp-sa2-6g-data-framework-wt5` | 标准 | pending | D8 | 3GPP SA2 6G 数据框架工作项（WT#5）进展 |
-| P0 | `3gpp-rel-19-20-data-architecture-status` | 标准 | pending | D9 | 3GPP Rel-19/20 数据架构标准化现状 |
+| P0 | `3gpp-6g-timeline-rel22-23` | 标准 | done | D8 | 3GPP 6G 标准时间线与里程碑（Rel-22/23 规划） |
+| P0 | `3gpp-sa2-6g-data-framework-wt5` | 标准 | done | D8 | 3GPP SA2 6G 数据框架工作项（WT#5）进展 |
+| P0 | `3gpp-rel-19-20-data-architecture-status` | 标准 | done | D9 | 3GPP Rel-19/20 数据架构标准化现状 |
 | P1 | `ietf-mup-draft-6g` | 标准 | pending | - | IETF MUP 草案解读与 6G 适用性（draft-ietf-dmm-mup-architecture-01 已采纳为 WG doc） |
 | P1 | `3gpp-rel19-20-ai-ml-air-interface` | 标准 | pending | - | 3GPP Rel-19/20 AI/ML for NR Air Interface 标准化进展 |
 | P1 | `o-ran-ngrg-6g-ran-whitepaper` | 标准 | pending | - | O-RAN nGRG 6G RAN 架构白皮书详细分析 |

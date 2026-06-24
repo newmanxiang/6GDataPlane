@@ -18,6 +18,7 @@ related:
   - data-fabric-in-telecom
   - privacy-preserving-data-fabric
   - edge-data-fabric
+  - data-fabric-definition-and-capabilities
 tags:
   - data-fabric
   - architecture

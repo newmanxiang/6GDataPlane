@@ -33,6 +33,220 @@
 
 ---
 
+## D11 · 2026-06-25（标准 P0 补完 + 趋势综合日 ⭐）
+
+### 计划
+- 补完最后 2 个标准 P0：`3gpp-6g-timeline-rel22-23` + `3gpp-sa2-6g-data-framework-wt5`
+- 6g-trend-synth 全流程趋势综合（主题聚类 → 矩阵 M1-M4 → 趋势卡 → 矛盾归并 → 预判）
+
+### 完成
+- 2 张标准 P0 topic 卡全部创建（reviewed 状态）
+- **P0 全部清零：16/16 done**
+- 7 张趋势卡创建（2 high / 4 medium / 1 low 信心）
+- 4 张对比矩阵创建（M1-M4，共 197 格）
+- 主题聚类图创建（Mermaid）
+- 12-24 月预判报告创建（4 高信心 / 4 中信心 / 4 不确定 / 9 黑天鹅候选）
+- 矛盾归并：新增 3 条（标准时间线）+ 1 条（WT#5）+ 5 条跨主题矛盾 → 累计 38 条
+- 缺口归并：新增 6 条 + 5 条 + 8 条 → 累计 110+ 行
+
+### 关键产出
+- wiki/topics/3gpp-6g-timeline-rel22-23.md
+- wiki/topics/3gpp-sa2-6g-data-framework-wt5.md
+- analysis/topic-clusters.md（主题聚类图）
+- analysis/matrices/vendor-capability.md（M1 厂商×能力，12×6）
+- analysis/matrices/standards-topics.md（M2 标准组织×议题，11×7）
+- analysis/matrices/core-intersection.md（M3 数据编织能力×6G场景 ⭐，6×4）
+- analysis/matrices/timeline-topics.md（M4 时间×主题，4×6）
+- analysis/trends/ × 7 张趋势卡
+- analysis/forecast.md（12-24 月预判）
+- analysis/contradictions.md 更新（+9 矛盾 → 38 条）
+- analysis/gaps.md 更新（+19 缺口）
+- research/notes/ × 2 份精读笔记
+- research/search-log.md 更新
+
+### 数据/关键发现
+
+**标准 · 3GPP 6G 时间线**
+- Rel-21 时间线于 2026.06.10（TSGs#112 新加坡）正式批准，ASN.1 冻结 2029.03
+- Rel-22/23 无正式规划，行业推测 2030-2032 为"6G 增强阶段"
+- 迁移架构决策从 TSG#111 → #112 → RAN#113（2026.09 马德里）连续推迟，Vodafone 警告"窗口正在关闭"
+
+**标准 · SA2 WT#5 数据框架**
+- TR 23.801-01 已迭代至 V0.7.0（16.8 MB），WT#5 对应 KI#21
+- Penholder 于 SA2#174（2026.04 马耳他）完成分配，进入方案评估阶段
+- "独立数据面 vs 增强用户面"核心分歧仍未收敛，进度 30%，时间压力大
+
+**趋势综合**
+- 7 大趋势中 2 个高信心：AI 原生数据管理范式变革（accelerating）、标准化窗口关键收敛（accelerating）
+- 核心交集矩阵 M3 揭示多个"研究空白"象限（终端侧数据编织能力几乎未探索）
+- 5 条跨主题矛盾（企业 IT vs 电信实时性鸿沟、ETSI vs 3GPP 术语分裂、产业先行 vs 标准滞后、四套并行框架互操作缺失、终端侧空白）
+
+### 阻塞 / 风险
+- company-context.md §4-6 仍有待填写项，D12 我司适配日需用户补充
+- 趋势卡中 2 个 low/medium 信心趋势（Mesh-on-Fabric、独立数据面）证据链偏弱，后续可补强
+
+### 明日要点
+- D12：我司适配日 — 调用 6g-insight-report（仅 §8 准备阶段）
+- 在 analysis/company-fit/ 输出 capability-map / opportunities / threats / actions
+- 前提：用户需补充 company-context.md §4-6（短/中/长期战略、团队规模、报告受众）
+- 若 §4-6 未填，可基于已有 §1-3 先产出初版，后续迭代
+
+---
+
+## D10 · 2026-06-24（交集议题专题日 ⭐：C 类 P0 ×2）
+
+### 计划
+- 深调 P0: `data-fabric-for-ai-native-6g` ⭐（本调研最关键交集议题）
+- 深调 P0: `cross-domain-data-governance-6g`
+
+### 完成
+- 2 张交集 topic 卡全部创建（reviewed 状态）
+- 精读来源 29 篇（data-fabric-for-ai-native-6g 15 篇 + cross-domain-data-governance-6g 14 篇），权威源 10+ 篇
+- 矛盾记录新增 5 条（#28-#32）
+- 数据缺口新增 14 条（7 + 7）
+- Queue P0 累计 done: 14/16（剩余 2 个标准 P0 被 D8 遗留）
+
+### 关键产出
+- wiki/topics/data-fabric-for-ai-native-6g.md（⭐ 核心交集，19 个来源）
+- wiki/topics/cross-domain-data-governance-6g.md（14 个来源）
+- research/notes/data-fabric-for-ai-native-6g.md
+- research/notes/cross-domain-data-governance-6g.md
+- analysis/contradictions.md 更新（+5 矛盾 → 累计 32 条）
+- analysis/gaps.md 更新（+14 缺口）
+- research/search-log.md 更新（+20 条搜索记录）
+
+### 数据/关键发现
+
+**C 类 · 数据编织×AI 原生 6G ⭐**
+- ETSI ZSM GS 029（2026-04 采纳）是首个 6G 数据管理标准规范，由中国电信/ZTE 主导，功能需求与数据编织高度重合
+- 至少 4 个 EU SNS JU 6G 项目（6G-TWIN/6G-DALI/ROBUST-6G/CANDIL）在架构中显式使用"data fabric"
+- Ericsson 2026 白皮书明确将 data fabric 列为 AI-ready 数据管理核心使能技术
+- Nokia 将 Data Framework 列为 6G 六大技术框架之一
+- AWS 提出"Fabric of Fabrics"概念——层级化智能编织支撑 6G 多 Agent 协作
+- 核心适配挑战：企业 IT 级数据编织（GB/s）如何适配电信（TB/s + 亚毫秒）场景
+- 术语混淆是最大标准化风险：Ericsson "data mesh" vs Nokia "data framework" vs AWS "intelligence fabric" vs ETSI "integration fabric"
+
+**C 类 · 6G 跨域数据治理**
+- 3GPP SA5 已启动 DMFW 研究，SA2 WT#5 也涵盖治理维度，两者存在职责交叉
+- 三大治理范式并存：联邦治理（Nokia/Ericsson）、数据空间治理（IDSA/GAIA-X/6G-DALI）、策略即代码治理（DT MARA）
+- ETSI ISG PDL 正制定 GS PDL 034 跨域数据治理规范（区块链驱动审计）
+- 数据主权法规碎片化（GDPR vs 中国数据安全法）是核心挑战
+- Deutsche Telekom MARA 蓝图（2026-04）是运营商 AI 时代数据治理的最先进实践
+
+### 阻塞 / 风险
+- 标准 P0 剩余 2 个（`3gpp-6g-timeline-rel22-23` + `3gpp-sa2-6g-data-framework-wt5`），被 D8 遗留，需 D11 前补完
+- company-context.md §4-6 仍有待填项，D12 前需用户补充
+
+### 明日要点
+- D11：趋势综合日（6g-trend-synth 全流程）
+- 前提：先补完 2 个遗留标准 P0，否则 §5 标准章节素材不足
+- 建议：D11 开头先快速补标准 P0，再进入趋势综合
+
+---
+
+## D9 · 2026-06-23（深调 ×4 + 全量治理：B 类 + C 类 + 标准 P0）
+
+### 计划
+- 深调 P0: `data-fabric-definition-and-capabilities`
+- 深调 P0: `data-fabric-vs-data-mesh`
+- 深调 P0: `data-fabric-in-telecom-early-cases`
+- 深调 P0: `3gpp-rel-19-20-data-architecture-status`
+- wiki-curator 全量治理 T1-T7
+
+### 完成
+- 4 张 topic 卡全部创建（reviewed 状态）
+- 精读来源 50+ 篇（定义与能力 12 + Fabric vs Mesh 11 + 电信实践 12 + 3GPP 标准 15），权威源 20+ 篇
+- 矛盾记录新增 13 条（B 类 7 + 电信 4 + 标准 2）
+- 数据缺口新增 20 条
+- Queue P0 累计 done: 12/16
+- **wiki-curator 全量治理 T1-T7 完成**：扫描 30 张卡片，变更 12 张；修复 11 条缺失回链、清理 1 条死链 + 1 条自引用；发现 4 个孤儿概念、7 个未登记高频域名
+
+### 关键产出
+- wiki/topics/data-fabric-definition-and-capabilities.md
+- wiki/topics/data-fabric-vs-data-mesh.md
+- wiki/topics/data-fabric-in-telecom-early-cases.md
+- wiki/topics/3gpp-rel-19-20-data-architecture-status.md
+- research/notes/ × 4 份精读笔记
+- analysis/contradictions.md 更新（+13 矛盾）
+- analysis/gaps.md 更新（+20 缺口）
+- research/search-log.md 更新
+- ops/curator-reports/2026-06-23-d9.md（全量治理报告）
+- wiki/concepts/README.md 概念地图刷新
+- wiki/README.md 统计表刷新
+
+### 数据/关键发现
+
+**B 类 · 数据编织定义与能力全景**
+- Gartner Hype Cycle 2024：Data Fabric 处于"幻灭低谷"，维持"变革性"评级，2-5 年到达成熟期
+- Gartner 2025 提出"Multimodal Data Fabric"，扩展至向量/非结构化数据
+- 市场高度分散：Top 10 供应商仅占 ~22%，IBM/Informatica/Denodo 为 MQ 连续 Leader
+- GenAI 成为采纳催化剂："成功的 GenAI 产品需要 Data Fabric 交付 Active Metadata"
+
+**B 类 · Fabric vs Mesh 对比**
+- Mesh-on-Fabric 混合模式已成共识；Gartner 预测 2028 年 80% AI-Ready 数据产品产自互补架构
+- Nokia/Ericsson/Google Cloud/TM Forum 四方验证电信混合架构适用性
+- 建议路径：Fabric-first → Mesh-layered
+
+**C 类 · 电信早期实践**
+- 至少 12 家 CSP 启动数据编织或等效项目，但端到端 Data Fabric 显式部署仅少数
+- Deutsche Telekom ODE：22× 性能提升、计划淘汰 40% 旧基础设施
+- LG U+ Nudge-B：唯一显式以 Data Fabric 命名的运营商部署
+- TM Forum 2025 调查：87 位高管中仅 2 人认为实现数据完全民主化——行业仍在早期
+- 量化 ROI 数据多来自供应商宣传，缺乏独立审计（幸存者偏差）
+
+**标准 · 3GPP Rel-19/20**
+- Rel-19 已冻结（2025.09），NWDAF/DCCF/MFAF/UPEAS Ph2 全部完成
+- Rel-20 双轨制：126 个 5G-A WI + 13 个 6G SI 并行
+- FS_6G_ARC 进度 30%（2026.06），WT#5 数据框架是 6G 数据面最直接标准化入口
+- 首个 Rel-21 WI（6G-REQ TS 22.270）已于 2026.03 获批——6G 从研究进入规范化
+- 新术语：AI-Enabled NFs、Agentic Core、Intent-based Request
+
+### 阻塞 / 风险
+- 无
+
+### 明日要点
+- D10：交集专题日——`data-fabric-for-ai-native-6g`⭐ + `cross-domain-data-governance-6g`
+- D10 允许超时间盒（最多 4 小时），这两个是最关键的交集子题
+- P0 剩余 4 个（C 类 2 + 标准 2），D10 完成 C 类后标准 P0 可安排至 D11 前
+
+---
+
+## D8 · 2026-06-22（深调：UPF→6G 演进 + AI 原生数据面）
+
+### 计划
+- 深调 P0: `user-plane-evolution-upf-to-6g`
+- 深调 P0: `ai-native-data-plane-status`
+
+### 完成
+- 2 张 topic 卡全部创建（reviewed 状态）
+- 精读来源 24 篇（UPF 演进 12 + AI 原生 12），权威源 10 篇
+- 矛盾记录新增 4 条（演进 vs 重构路线分歧、PFCP vs SBI 化、DCP vs dApp 时延不可比、AI 原生定义边界三派）
+- 数据缺口新增 12 条
+- Queue P0 累计 done: 8/16
+
+### 关键产出
+- wiki/topics/user-plane-evolution-upf-to-6g.md
+- wiki/topics/ai-native-data-plane-status.md
+- research/notes/ × 2 份精读笔记
+- analysis/contradictions.md 更新（+4 矛盾）
+- analysis/gaps.md 更新（+12 缺口）
+
+### 数据/关键发现
+- **UPF 演进五阶段**：CUPS 确立 → 分布式 dUPF → 可编程加速 → RAN-CN 融合 → 数据服务化；当前处第 3→4 阶段过渡期
+- **dUPF 里程碑**：NVIDIA dUPF 实现 100 Gbps/25μs（2025.10），SoftBank SRv6 MUP 首个商用（2025.12）
+- **核心分歧**：融合路线（M-UP/IUP/ANUP）vs 服务化路线（DaaS/UP-first），3GPP Rel-20 尚未收敛
+- **AI 原生数据面三重路径**：华为独立 DP（DaaS DO/DA/DCP，延迟 ~2ms）、O-RAN dApp 实时 AI（<1ms）、学术可编程 ML（P4 Pegasus SIGCOMM 2025 线速推理）
+- **关键术语发现**：AI-WIN、M-UP、IDFC、Modular UPF、dApp/E3 接口、QoAIS
+
+### 阻塞 / 风险
+- 无
+
+### 明日要点
+- D9：深调 B 类 P0 `data-fabric-definition-and-capabilities` + `data-fabric-vs-data-mesh` + 标准 P0 `3gpp-rel-19-20-data-architecture-status`
+- 累计 8 topic 完成（上次治理后 +2），D9 再完成 2-3 题后触发 curator 治理（规则 #11 阈值 ≥ 3）
+
+---
+
 ## D7 · 2026-06-21（深调：DaaS 接口设计 + GTP-U 替代方案）
 
 ### 计划

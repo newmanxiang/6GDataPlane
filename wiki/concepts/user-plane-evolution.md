@@ -18,6 +18,7 @@ related:
   - 6g-kpi-20-requirements
   - daas-interface-design
   - gtp-u-limitations-6g-alternatives
+  - user-plane-evolution-upf-to-6g
 tags:
   - 用户面
   - GTP-U
@@ -56,9 +57,9 @@ owner: agent
 
 ## 待深挖子题
 
-- [ ] GTP-U 具体局限性分析与 6G 替代方案（SRv6、网络编程）→ 加入 ops/deep-dive-queue.md
+- [x] GTP-U 具体局限性分析与 6G 替代方案（SRv6、网络编程）→ wiki/topics/gtp-u-limitations-6g-alternatives.md
 - [ ] IETF MUP（Mobile User Plane）草案解读与 6G 适用性
-- [ ] UPF 分布式部署模式在 6G 中的延续与变革
+- [x] UPF 分布式部署模式在 6G 中的延续与变革 → wiki/topics/user-plane-evolution-upf-to-6g.md
 
 ## 来源
 

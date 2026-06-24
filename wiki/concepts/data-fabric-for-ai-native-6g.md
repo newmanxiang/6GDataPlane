@@ -3,8 +3,8 @@ title: 服务 AI 原生 6G 的数据编织
 title_en: Data Fabric for AI-Native 6G
 slug: data-fabric-for-ai-native-6g
 category: concept
-status: draft
-confidence: low
+status: stub
+confidence: medium
 sources:
   - https://www.ericsson.com/en/reports-and-papers/white-papers/6g-connectivity-and-beyond-for-the-2030s
   - https://www.nokia.com/blog/ai-native-6g-is-now-the-industry-direction/
@@ -19,6 +19,7 @@ related:
   - data-fabric-in-telecom
   - active-metadata
   - digital-twin-network
+  - data-fabric-definition-and-capabilities
 tags:
   - 数据编织
   - AI原生
@@ -54,11 +55,15 @@ AI 原生 6G 要求网络在设计之初就将 AI/ML 嵌入各层（空口、RAN
 - **误解1**：6G AI 原生只需要更大的算力，数据管理不是瓶颈。实际上数据质量、时效性和可达性是 AI 模型性能的决定因素
 - **误解2**：现有 5G NWDAF 足以支撑 6G AI 需求。NWDAF 仅覆盖核心网分析，6G 需要端到端跨域数据编织
 
+## 详细 Topic 卡片
+
+> 本概念的完整深调已完成，详见 [[data-fabric-for-ai-native-6g]]（wiki/topics/data-fabric-for-ai-native-6g.md）。
+
 ## 待深挖子题
 - [ ] 6G AI 原生架构中数据面与智能面（AI Plane）的接口定义 → 加入 ops/deep-dive-queue.md
 - [ ] 空口 AI 模型训练的数据采集时延与吞吐量要求
 - [ ] 网络数字孪生所需的数据编织能力（实时同步、多保真度）
-- [ ] 6G 数据编织的标准化路径（3GPP SA5 / ETSI ENI / O-RAN WG2）
+- [ ] ETSI ZSM GS 029 Data Management Agent 规范正文跟踪
 - [ ] 意图驱动的网络数据编排（Intent-Based Data Orchestration）设计模式
 
 ## 来源

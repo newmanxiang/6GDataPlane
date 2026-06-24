@@ -20,6 +20,7 @@ related:
   - knowledge-graph-for-data
   - privacy-preserving-data-fabric
   - daas-interface-design
+  - ai-native-data-plane-status
 tags:
   - NWDAF
   - 3GPP

@@ -14,6 +14,7 @@ related:
   - data-orchestration
   - 6g-data-plane
   - edge-data-fabric
+  - data-fabric-definition-and-capabilities
 tags:
   - 数据虚拟化
   - 数据集成

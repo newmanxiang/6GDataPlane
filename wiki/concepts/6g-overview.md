@@ -13,7 +13,6 @@ related:
   - 6g-data-plane
   - user-plane-evolution
   - ai-native-air-interface
-  - imt-2030
   - imt-2030-usage-scenarios-data-needs
   - 6g-kpi-20-requirements
   - imt-2030-framework-data-needs
