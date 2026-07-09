@@ -82,3 +82,8 @@ Day 14:   迭代与定稿
 > "在 6g-deep-dive 下，深调子题 <slug>。"
 > "在 6g-trend-synth 下，全流程综合。"
 > "在 6g-insight-report 下，写大纲 v1。"
+
+
+## 仓库
+
+https://github.com/newmanxiang/6GDataPlane
