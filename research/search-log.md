@@ -126,3 +126,8 @@
 | 2026-06-25 | fc-search | China Mobile ZTE 6G data plane architecture three-layer 3GPP proposal 2025 2026 | limit:8 | 8 | 3gpp-sa2-6g-data-framework-wt5 | 3GPP 6G Architecture 文章（Tao Sun）、LightReading CM 6G thinking |
 | 2026-06-25 | exa-fetch | iTecSpec TR 23.801-01 full ToC | maxChars:10000 | 1 | 3gpp-sa2-6g-data-framework-wt5 | 完整目录结构确认 24 KI + 方案 + Annex |
 | 2026-06-25 | exa-fetch | Ofinno Standards Readout Feb 2026 | maxChars:10000 | 1 | 3gpp-sa2-6g-data-framework-wt5 | SA2#173 方案探索详细分析 |
+| 2026-07-21 | web-search | Gartner 2026 data and analytics trends agentic AI data management augmented metadata | — | 5 | ai-augmentation-of-data-fabric | Gartner Top D&A Predictions 2026（语义层/治理 Agent）、D&A Summit 悉尼（元数据爆炸/Agentic 不可避免） |
+| 2026-07-21 | web-search | LLM automated knowledge graph construction ontology generation telecom network data 2025 2026 | — | 5 | ai-augmentation-of-data-fabric | GSMA O-RAN KG（GPT-4.1 抽取 25k 节点）、KU-DFI 3GPP Rel-19 KG、KG-RAG telecom 论文 |
+| 2026-07-21 | web-search | Informatica CLAIRE GPT IBM watsonx data intelligence AI agents data management 2025 2026 | — | 5 | ai-augmentation-of-data-fabric | CLAIRE GPT agentic（2025-11）、Headless CLAIRE GA（2026-05）、IBM Agentic Data Intelligence + MCP Server（2026-04） |
+| 2026-07-21 | web-search | telecom operator LLM agent NWDAF autonomous network data management 2026 | — | 5 | ai-augmentation-of-data-fabric | Agentic-NWDAF（ICC 2026, MCP）、IntAgent（arXiv 2601.13114）、LLM Agentic AI 5G/6G survey（arXiv 2607.16066） |
+| 2026-07-21 | web-search | GenAI RAG data fabric active metadata Gartner AI-ready data 2025 survey | — | 5 | ai-augmentation-of-data-fabric | Gartner 63%/60% AI-ready 调查（2025-02）、80% GenAI apps on DM platforms（2025-06）、RAG 元数据富化 +9.2pp（Atlan 转述） |
