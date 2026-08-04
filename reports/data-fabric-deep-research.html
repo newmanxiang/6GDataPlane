@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="从第一性原理解释数据编织（Data Fabric）的定义、成因、组成、未来趋势及其与电信6G的结合。">
   <title>数据编织：从第一性原理到 6G 智能网络</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23082f3e'/%3E%3Cpath d='M12 18h40M12 32h40M12 46h40M18 12v40M32 12v40M46 12v40' stroke='%2363d7ca' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23cae85e'/%3E%3C/svg%3E">
   <style>
     :root{
       --ink:#13222d;--muted:#60717b;--paper:#f5f3ed;--card:#fff;
@@ -254,6 +255,17 @@
             </tbody>
           </table>
         </div>
+        <h3>反事实检验：什么时候不需要建设 Data Fabric？</h3>
+        <p>架构的价值来自它消除的约束；若约束不存在，增加一层控制面只会增加成本。Data Fabric 不是所有数据团队的“成熟终点”，更不是规模尚小时必须预付的复杂度。以下场景通常应先采用更简单的方案。</p>
+        <div class="grid-2">
+          <div class="card"><h4>数据和消费者都很少</h4><p>一个团队、一个权威数据库、少量稳定报表，且访问策略单一时，规范建模、测试、备份和一个轻量目录可能已经足够。为了“未来可能扩张”部署联邦目录、知识图和策略引擎，往往比维护几条清晰管道更昂贵。</p></div>
+          <div class="card"><h4>物理集中没有实质障碍</h4><p>如果数据量可控、迁移合法、时延宽松、源系统负载允许，而且消费者都在同一分析平台，优先建设治理良好的仓库或湖仓。逻辑联邦不是目的；只有在集中化的边际成本超过其一致性收益时，分布式编织才开始占优。</p></div>
+          <div class="card"><h4>问题本质是责任缺位</h4><p>“收入”没有统一定义、数据质量无人负责、权限审批没有负责人时，引入主动元数据不会自动补齐组织决策。应先建立 owner、口径、升级路径和最低治理规则；否则 Fabric 只会更快地传播未解决的冲突。</p></div>
+          <div class="card"><h4>路径是硬实时且完全本地</h4><p>设备控制、基带处理等确定性环路应使用本地状态、静态契约和预验证制品。跨域 Fabric 可以在环外供应模型和策略、回收证据，但不应成为每次动作的在线依赖。把统一访问置于确定性之前，是类别错误。</p></div>
+          <div class="card"><h4>只是一次性迁移或合并</h4><p>有明确终点的系统下线、一次性历史归档或单次并购迁移，更适合使用可审计迁移管道和核对清单。只有当多源、多消费者和持续变化会长期存在时，建设可复用元数据反馈网络才可能获得复利。</p></div>
+          <div class="card"><h4>基础工程尚不可靠</h4><p>源系统没有稳定标识、时间戳混乱、部署不可重复、权限无法自动执行时，先修复可观测性、身份和软件交付基础。主动自动化建立在可靠信号与执行器之上；输入不可信时，自动化只会扩大故障半径。</p></div>
+        </div>
+        <div class="callout"><strong>最小充分性判断：</strong>如果组织同时满足“异构来源长期共存、跨域复用频繁、语义冲突显著、治理约束复杂、变更影响难追踪”中的至少三项，并且已有明确场景、owner 与可量化结果，Data Fabric 才是值得验证的候选架构。否则先解决最窄的瓶颈。</div>
       </div>
     </section>
 
@@ -626,6 +638,10 @@
       dots.forEach(dot=>dot.classList.toggle('active',dot.getAttribute('href')==='#'+current));
     }
     addEventListener('scroll',onScroll,{passive:true});onScroll();
+    dots.forEach(dot=>dot.addEventListener('click',event=>{
+      event.preventDefault();
+      document.querySelector(dot.getAttribute('href'))?.scrollIntoView({behavior:'smooth',block:'start'});
+    }));
     topButton.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
   </script>
 </body>
