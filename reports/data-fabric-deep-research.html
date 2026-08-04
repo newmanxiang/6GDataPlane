@@ -175,13 +175,13 @@
           <div class="mini-stat"><b>WT#5</b><span>3GPP SA2“6G data framework”正式工作任务。</span></div>
           <div class="mini-stat"><b>KI#21</b><span>TR 23.801-01 中的对应关键问题；不是 KI#5。</span></div>
           <div class="mini-stat"><b>2 个域</b><span>SA2 系统架构与 SA5 管理数据必须协同，避免重复方案。</span></div>
-          <div class="mini-stat"><b>1 个窗口</b><span>Rel-20 研究、Rel-21 规范化，是架构话语权形成期。</span></div>
+          <div class="mini-stat"><b>1 个窗口</b><span>Rel-20 研究结论可能进入 Rel-21 规范工作或进一步研究。</span></div>
         </div>
         <h3>给战略专家组的六项结论</h3>
         <div>
-          <div class="decision"><div class="decision-index">01</div><div><h4>应把 WT#5 视为 6G 平台控制权议题，而非单一数据网元议题</h4><p>最终是否新增专用 NF、数据接口或独立数据面尚未收敛；更稳定的竞争对象是元数据模型、DataNeed 表达、QoD、授权同意、跨域编排和开放接口。名称可能变化，控制点不会消失。</p></div></div>
-          <div class="decision"><div class="decision-index">02</div><div><h4>Data Fabric 是解释和工程化 WT#5 的强方法，但不能与标准画等号</h4><p>WT#5回答“3GPP需要规范哪些功能、流程和接口”；Data Fabric回答“如何将这些能力组织为逻辑统一、物理分布、元数据驱动的系统”。前者是标准研究边界，后者是架构方法和产品实现空间。</p></div></div>
-          <div class="decision"><div class="decision-index">03</div><div><h4>爱立信与华为已经从两条路径抢占事实标准</h4><p>爱立信从 AI-ready data mesh、联邦数据湖、EIAP、NWDAF 和网络 API 向“采集一次、多方复用”收敛；华为从 DO/DA/DCP 独立数据面、NET4AI、NDT 和 Agentic Core 构建端到端闭环。前者偏演进与平台联邦，后者偏新平面与全栈编排。</p></div></div>
+          <div class="decision"><div class="decision-index">01</div><div><h4>应把 WT#5 视为 6G 平台控制权议题，而非单一数据网元议题</h4><p>最终是否新增专用 NF、数据接口或独立数据面尚未收敛；更稳定的竞争对象是元数据模型、数据需求表达（本文建议模型，非 3GPP 正式术语）、QoD、授权同意、跨域编排和开放接口。名称可能变化，控制点不会消失。</p></div></div>
+          <div class="decision"><div class="decision-index">02</div><div><h4>Data Fabric 是解释和工程化 WT#5 的强方法，但不能与标准画等号</h4><p>WT#5研究“3GPP可能需要规范哪些功能、流程和接口”；Data Fabric回答“如何将这些能力组织为逻辑统一、物理分布、元数据驱动的系统”。前者是标准研究边界，后者是架构方法和产品实现空间。</p></div></div>
+          <div class="decision"><div class="decision-index">03</div><div><h4>爱立信与华为正从两条路径影响标准方向和平台生态</h4><p>公开资料显示，爱立信重点主张 AI-ready data mesh、联邦数据湖和“采集一次、多方复用”；华为重点提出 DO/DA/DCP 数据面与 NET4AI。本文将其产品和研究材料归纳为两种竞争路径，不代表两家公司已正式发布统一的一体化产品路线。</p></div></div>
           <div class="decision"><div class="decision-index">04</div><div><h4>中兴的差异化不应是复制竞品网元命名</h4><p>应围绕开放元数据、跨厂商运行时、可验证治理、NDT 安全闸门和运营商持有策略/密钥形成“运营商自主 Data Fabric”，用互操作与主权降低全栈锁定。</p></div></div>
           <div class="decision"><div class="decision-index">05</div><div><h4>标准牵引与现网证据必须同频</h4><p>仅有标准提案不足以建立平台地位。需要以 5G-A 的 NWDAF、MDA、NDT、边缘、消息总线和 API 能力组成最小闭环，公开可复验的时延、复用、质量、节能和收入指标，反向支撑 Rel-21 取舍。</p></div></div>
           <div class="decision"><div class="decision-index">06</div><div><h4>当前宜下注“控制面能力”，谨慎下注“单一物理拓扑”</h4><p>应优先投资元数据、语义、策略、编排和可观察性等跨拓扑资产；对专用 DFI、独立数据转发平面或通用语义空口保持可插拔验证，避免在 3GPP 尚未收敛前形成高成本路径依赖。</p></div></div>
@@ -458,26 +458,26 @@
             </tbody>
           </table>
         </div>
-        <div class="callout warn"><strong>另一个易混点：</strong>SA5 的 6G 管理与编排研究也有自己的 Data Management 子任务，其中“WT-5”讨论复用和增强用户同意机制；它不是 SA2 的“WT#5 6G data framework”。本报告后文所称 WT#5 均指 SA2 FS_6G_ARC，涉及管理数据时再单独标注 SA5。<a href="#s37">[S37]</a></div>
+        <div class="callout warn"><strong>另一个易混点：</strong>2025 年 SA5 Network and Service Management 工作范围讨论稿 v0.0.7 在“2.2.9 Data Management”下曾提出一个拟议 WT-5，用于研究复用和增强用户同意机制；该讨论稿明确仍待研究项取舍，不能当作当前正式子任务编号。它也不是 SA2 的“WT#5 6G data framework”。本报告后文所称 WT#5 均指 SA2 FS_6G_ARC。<a href="#s37">[S37]</a></div>
 
-        <h3 style="color:#fff">WT#5 已批准的需求范围</h3>
-        <p>SP-251634 没有预设一个单体平台，而是先识别 AI/ML、UE 数据采集、感知等高层用例，再研究支撑这些用例的通用能力。其明确范围可以归纳为六类功能与四类约束：</p>
+        <h3 style="color:#fff">WT#5 已批准的研究范围</h3>
+        <p>SP-251634 没有预设一个单体平台，而是先识别 AI/ML、UE 数据采集、感知等高层用例，再研究支撑这些用例的通用能力。其范围可以归纳为六类研究功能和三组横切考虑：质量/时延/数据量，运营商可见与可控，以及同意/隐私/安全/治理。</p>
         <div class="grid-3">
-          <div class="card" style="color:#17202b"><span class="tag fact">01</span><h4>发现与注册</h4><p>数据生产者、数据资产、能力和可用条件如何登记；消费者如何表达 DataNeed、发现候选数据并获得变化通知。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">02</span><h4>采集与传输</h4><p>配置数据源、采样方式与周期，完成采集、转移和分发；UE、RAN、核心网、OAM 与 AF 都可能成为生产者或消费者。</p></div>
+          <div class="card" style="color:#17202b"><span class="tag fact">01</span><h4>发现与注册</h4><p>研究数据发现和数据注册所需功能。具体需求表达、匹配通知与能力协商属于草案候选或本文建议，不是批准文本已确定的统一模型。</p></div>
+          <div class="card" style="color:#17202b"><span class="tag fact">02</span><h4>采集与传输</h4><p>研究数据源配置、数据采集、转移与分发。不同实体角色和具体传输路径仍是 TR 中待比较的候选方案。</p></div>
           <div class="card" style="color:#17202b"><span class="tag fact">03</span><h4>标签与元数据</h4><p>对数据进行标签和元数据处理，使数据不仅“可到达”，还可被识别、筛选和与需求匹配。</p></div>
           <div class="card" style="color:#17202b"><span class="tag fact">04</span><h4>处理与生成</h4><p>包括匿名化、分析、转换、聚合和数据生成等；处理可能靠近数据源，也可能部署在核心或边缘。</p></div>
           <div class="card" style="color:#17202b"><span class="tag fact">05</span><h4>存储与检索</h4><p>保存原始或处理后数据，并支持按需求检索；架构仍需权衡驻留、生命周期、成本和数据新鲜度。</p></div>
           <div class="card" style="color:#17202b"><span class="tag fact">06</span><h4>数据开放</h4><p>向 6GC NF、AF、管理域或第三方提供受控数据服务；开放机制可能复用/增强既有暴露功能，也可能形成专用功能。</p></div>
         </div>
-        <div class="strategic-box"><strong>四类显式约束：</strong>功能设计必须考虑数据质量、时延和数据量；架构层面还要处理用户同意、隐私、安全与数据治理，并保障运营商对数据处理过程的可见性和可控性。后两项决定了 6G 数据框架不能退化为高吞吐消息总线。</div>
+        <div class="strategic-box"><strong>三组横切考虑：</strong>功能设计必须考虑数据质量、时延和数据量；架构层面还要处理用户同意、隐私、安全与数据治理，并保障运营商对数据处理过程的可见性和可控性。后两组决定了 6G 数据框架不能退化为高吞吐消息总线。</div>
 
         <h3 style="color:#fff">WT#5 与 Data Fabric 的需求结合矩阵</h3>
         <div class="table-scroll">
           <table>
             <thead><tr><th>WT#5问题</th><th>Data Fabric可提供的架构机制</th><th>需要争取的标准控制点</th><th>中兴产品化机会</th></tr></thead>
             <tbody style="color:#17202b">
-              <tr><td><strong>DataNeed、发现与注册</strong></td><td>联邦目录、统一资源标识、主动元数据、能力与语义知识图；按需求而非按物理表发现数据。</td><td>DataNeed/offer 信息模型、注册与发现服务、变化通知、能力协商和版本兼容。</td><td>跨 RAN/Core/OAM/边缘的统一 Catalog 与 SDK，支持第三方数据源插件。</td></tr>
+              <tr><td><strong>发现与注册</strong></td><td>联邦目录、统一资源标识、主动元数据、能力与语义知识图；按数据需求而非按物理表发现数据。</td><td>本文建议研究“数据需求/数据供给”信息模型、注册发现服务、变化通知、能力协商和版本兼容；该模型尚非 3GPP 正式术语。</td><td>跨 RAN/Core/OAM/边缘的统一 Catalog 与 SDK，支持第三方数据源插件。</td></tr>
               <tr><td><strong>标签与元数据</strong></td><td>技术、业务、运营、使用元数据联合；把来源、时间、位置、标签、同意状态与处理历史绑定。</td><td>最小公共元数据、扩展机制、跨域标识、语义映射和 metadata provenance。</td><td>Telco ontology、指标/实体语义层、自动映射与影响分析工具链。</td></tr>
               <tr><td><strong>采集、转移与分发</strong></td><td>批、流、Pub/Sub、CDC、API、缓存与就地查询组合；主动元数据避免重复采集并选择路由。</td><td>源配置、订阅、事件模式、拥塞与优先级、UE/RAN/CN 传输路径和跨组接口。</td><td>可插拔 Data Agent runtime、边缘流处理、统一消息与协议适配，不绑定单一总线。</td></tr>
               <tr><td><strong>处理、生成与编排</strong></td><td>依据时延、位置、成本、质量和策略动态构建数据流水线；将匿名化、聚合和特征工程作为可组合算子。</td><td>处理能力描述、placement、链路编排、状态管理、错误恢复及与 AI/计算框架边界。</td><td>策略驱动的数据编排器、算子市场、NDT/合成数据流水线和边云放置优化。</td></tr>
@@ -501,7 +501,7 @@
         <h3 style="color:#fff">建议中兴在 Rel-20 / Rel-21 坚持的七项立场</h3>
         <div class="principles" style="color:#dbe8f1">
           <div class="principle"><div><h4 style="color:#fff">公共语义内核，可扩展而非单一大模型</h4><p style="color:#bfcfdb">统一身份、来源、时间、位置、质量、用途和处理历史等最小元数据；用 profile 支撑 AI、ISAC、NDT、UE 训练等差异，避免强制统一所有 payload。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">DataNeed 与数据产品双向协商</h4><p style="color:#bfcfdb">消费者表达所需语义、QoD、时延、位置和隐私条件，生产者描述能力与约束；由框架匹配，而不是消费者硬编码数据源和网元。</p></div></div>
+          <div class="principle"><div><h4 style="color:#fff">研究数据需求与数据产品双向协商</h4><p style="color:#bfcfdb">本文建议消费者表达所需语义、QoD、时延、位置和隐私条件，生产者描述能力与约束；由框架匹配，而不是消费者硬编码数据源和网元。具体信息模型需通过标准讨论验证。</p></div></div>
           <div class="principle"><div><h4 style="color:#fff">采集一次、授权复用，但允许局部冗余</h4><p style="color:#bfcfdb">以元数据识别重复采集，以契约授权多方复用；对可靠性、隔离和快环需求允许策略化复制，避免把口号绝对化。</p></div></div>
           <div class="principle"><div><h4 style="color:#fff">QoD必须端到端可测、可定位责任</h4><p style="color:#bfcfdb">除格式正确外，应覆盖新鲜度、完整性、真实性、代表性、标签质量和分布漂移；明确生产、处理、传输和消费各段的责任与证据。</p></div></div>
           <div class="principle"><div><h4 style="color:#fff">运营商策略权优先于平台便利</h4><p style="color:#bfcfdb">同意、用途、驻留、保留与跨境策略由运营商控制，策略随数据和派生物传播；提供标准审计和紧急阻断，不把治理封装成黑盒。</p></div></div>
@@ -605,11 +605,11 @@
           <table>
             <thead><tr><th>维度</th><th>Ericsson</th><th>Huawei</th><th>对中兴的核心启示</th></tr></thead>
             <tbody>
-              <tr><td><strong>数据架构主张</strong></td><td>AI-ready data mesh / federated data lake / data fabric；强调“采集一次、授权多用”、数据岛联邦和 no-data-copy。</td><td>专用 6G Data Plane；DO 编排、DA 执行、DCP 以 Pub/Sub 分发，强调非连接数据的任意拓扑协作。</td><td>不要在 mesh 与独立平面之间二选一；控制面应统一，执行面应允许两种形态共存。</td></tr>
-              <tr><td><strong>演进路径</strong></td><td>从 5G SA、NWDAF、EIAP/rApps、EFDL、网络 API 平滑演进到 6G intelligent fabric。</td><td>从 NET4AI、ADN/NDT、AI Core、Open Gateway 向 Agentic Core 与新数据/计算平面演进。</td><td>需要同时给运营商“保护 5G-A 投资”和“验证 6G 新架构”两条产品路径。</td></tr>
-              <tr><td><strong>智能控制</strong></td><td>分层 AI、intent、rApp/cApp、agent fabric、digital twin safety gate。</td><td>AI4NET/NET4AI、Agentic Core、Agent Fabric、NDT sandbox、语义数字孪生。</td><td>Agent 不应直接获得生产网无限权限；NDT、策略与可回滚执行应组成安全闸门。</td></tr>
-              <tr><td><strong>商业外延</strong></td><td>CCES/NEF、Aduna、Vonage、边缘和未来 AIaaS，把连接、API、算力和数据一起出售。</td><td>inTouch Aggregator、Open Gateway、AI Core、云边算力与行业全栈，探索体验/API/token 变现。</td><td>数据框架最终要连接计量、计费和行业产品，不能停留在内部数据治理。</td></tr>
-              <tr><td><strong>主要优势</strong></td><td>全球运营商关系、O-RAN/ETSI/Hexa-X 影响力、已有 NWDAF/EIAP/API 产品锚点。</td><td>RAN—Core—IP—Cloud—AI 算力—终端全栈，研究、专利、标准与现网试点连续性强。</td><td>差异化宜落在开放互操作、运营商自主、区域成本和可量化闭环，而非比拼全栈叙事宽度。</td></tr>
+              <tr><td><strong>数据架构主张</strong></td><td>AI-ready data mesh / federated data lake / data fabric；强调“采集一次、授权多用”、数据岛联邦和 no-data-copy（厂商架构主张，仍允许必要镜像）。</td><td>专用 6G Data Plane；DO 编排、DA 执行、DCP 以 Pub/Sub 分发，强调非连接数据的任意拓扑协作。</td><td>不要在 mesh 与独立平面之间二选一；控制面应统一，执行面应允许两种形态共存。</td></tr>
+              <tr><td><strong>公开路线拼图</strong></td><td>本文归纳：5G SA、NWDAF、EIAP/rApps、EFDL、网络 API 与 6G intelligent fabric 愿景；不是 Ericsson 宣布的单一产品路线。<a href="#s55">[S55]</a><a href="#s56">[S56]</a></td><td>本文归纳：NET4AI、NDT、AI Core/Open Gateway、AgenticCore 与新数据/计算平面研究；不是 Huawei 宣布的完整 6G Data Plane 产品链。</td><td>需要同时给运营商“保护 5G-A 投资”和“验证 6G 新架构”两条可选择路径。</td></tr>
+              <tr><td><strong>智能控制</strong></td><td>分层 AI、intent、rApp/cApp、agent fabric、digital twin safety gate。</td><td>AI4NET/NET4AI、Agentic Core、Agent Fabric、NDT sandbox、语义数字孪生。<a href="#s57">[S57]</a></td><td>Agent 不应直接获得生产网无限权限；NDT、策略与可回滚执行应组成安全闸门。</td></tr>
+              <tr><td><strong>商业外延</strong></td><td>CCES/NEF 提供能力开放；Aduna 由 Ericsson 持股 50%，12 家运营商合计持股 50%，Vonage 等属于生态渠道。</td><td>华为以 GSMA Open Gateway Channel Partner 身份参与生态，并分别发布 AI Core 与云边产品；尚无证据证明这些能力已形成统一 6G 商业平台。</td><td>数据框架最终要连接计量、计费和行业产品，但必须分别验证产品覆盖、渠道与真实收入。</td></tr>
+              <tr><td><strong>主要优势</strong></td><td>全球运营商关系、O-RAN/ETSI/Hexa-X 参与度，以及 NWDAF/EIAP/API 等公开产品锚点。</td><td>RAN—Core—IP—Cloud—AI 算力—终端覆盖较广，研究主张、标准输入和局部产品之间具备衔接条件。</td><td>对中兴自身的相对优劣仍需内部资产、标准席位、客户部署和成本数据盘点后确认。</td></tr>
               <tr><td><strong>公开缺口</strong></td><td>尚无证据证明统一跨 RAN/Core/OSS/BSS 的商用 data fabric 已广泛部署；agent/NDT 多为演进中能力。</td><td>DO/DA/DCP 未成为 3GPP 既定网元；跨厂商互操作、完整治理与语义通信商用证据不足。</td><td>用标准接口、第三方互操作测试和现网 KPI 把竞品愿景与已验证能力区分开。</td></tr>
             </tbody>
           </table>
@@ -625,37 +625,37 @@
           <div class="card">
             <span class="tag fact">产品锚点</span>
             <h4>NWDAF、EIAP 与网络开放形成落地支点</h4>
-            <p>NWDAF 已进入 5G Core 产品，EIAP 从 RAN 自动化扩展到数据摄取、安全执行、意图与跨域闭环，CCES/Edge Exposure 提供 3GPP 与 CAMARA API。Aduna 与 Vonage 则尝试控制全球 API 聚合和开发者分发。它们尚不是一个统一 Data Fabric 产品，却构成可逐步拼装的平台资产。<a href="#s40">[S40]</a><a href="#s41">[S41]</a></p>
+            <p>NWDAF 已进入 5G Core 产品，EIAP 的公开能力覆盖数据摄取、安全执行、意图与闭环；CCES/Edge Exposure 提供 3GPP 与 CAMARA API。Aduna 由 Ericsson 持股 50%，12 家运营商合计持股 50%，目标是聚合销售网络 API，Vonage 等作为其开发者生态渠道。它们彼此相关，但尚不是一个统一 Data Fabric 产品。<a href="#s40">[S40]</a><a href="#s41">[S41]</a><a href="#s51">[S51]</a><a href="#s52">[S52]</a></p>
           </div>
           <div class="card">
             <span class="tag infer">6G主张</span>
             <h4>Common Data Plane + Intelligent Fabric</h4>
-            <p>Ericsson 6G 白皮书提出公共数据平面，以较低成本完成网络数据采集、传输、潜在存储与治理，并由模型编排器决定“把数据送到智能”或“把智能送到数据”。其最新 6G 叙事进一步把网络定义为统一云、算力、连接的 AI-native intelligent fabric。这里的 “fabric” 范围大于 Data Fabric，不应混为同一术语。<a href="#s42">[S42]</a></p>
+            <p>Ericsson 6G 白皮书提出公共数据平面，以较低成本完成网络数据采集、传输、潜在存储与治理，并由模型编排器决定“把数据送到智能”或“把智能送到数据”。其 6G 愿景进一步把网络定义为统一云、算力、连接的 AI-native intelligent fabric。这里的 “fabric” 范围大于 Data Fabric，不应混为同一术语。<a href="#s42">[S42]</a><a href="#s56">[S56]</a></p>
           </div>
           <div class="card">
             <span class="tag infer">战略判断</span>
             <h4>以开放标准扩大平台，以平台控制实现复利</h4>
-            <p>爱立信支持 O-RAN、CAMARA、CNCF 与开放遥测，但希望 EIAP、EFDL、Core、Aduna/Vonage 成为数据—智能—API 价值链的关键控制点。其强项不在某个新数据网元，而在把演进式架构、标准影响力、全球数据和软件商业模式连成体系。</p>
+            <p>本文判断，爱立信可能希望 EIAP、EFDL、Core 与其 API 生态成为数据—智能—API 价值链的重要控制点；这不是厂商公开承诺，也不意味着其能单方面控制 Aduna。其潜在优势不在某个新数据网元，而在演进式架构、标准参与、运营商覆盖与软件平台的组合。<a href="#s55">[S55]</a></p>
           </div>
         </div>
-        <div class="strategic-box"><strong>需要警惕的竞争动作：</strong>爱立信正在把“采集一次、授权复用”“按需求自动编排数据”塑造成 6G 数据架构的默认原则。这些原则与 WT#5 高度兼容，容易在不引入全新网元的情况下进入标准和运营商招标。中兴需要在 DataNeed、QoD、跨域目录和策略执行上给出同样完整、但更开放可替换的方案。</div>
+        <div class="strategic-box"><strong>竞争研判：</strong>爱立信正在公开倡导“采集一次、授权复用”和“按需求自动编排数据”；这些原则与 WT#5 具有较高契合度，可能影响后续标准讨论和运营商架构偏好，但目前不足以称为事实标准。中兴可围绕本文建议的数据需求表达、QoD、跨域目录和策略执行提出更开放、可替换的方案。</div>
 
         <h3>Huawei：以“专用数据面”连接 AI、感知、算力与 Agent</h3>
         <div class="grid-2">
           <div class="card">
             <span class="tag pre">研究架构</span>
             <h4>DO / DA / DCP 的数据流水线</h4>
-            <p>华为公开提出 6G 专用 Data Plane：Data Orchestration（DO）把服务需求拆为采集、预处理和分析等操作并选择执行节点；Data Agent（DA）可部署在 UE、RAN、边缘或核心网，执行过滤、聚合、压缩、转换与安全策略；Data Communication Proxy（DCP）以消息代理、队列和 Pub/Sub 解耦生产者与消费者。该方案已形成论文和专利连续布局，但仍是候选架构而非 3GPP 既定方案。<a href="#s43">[S43]</a></p>
+            <p>华为公开提出 6G 专用 Data Plane：Data Orchestration（DO）把服务需求拆为采集、预处理和分析等操作并选择执行节点；Data Agent（DA）可部署在 UE、RAN、边缘或核心网，执行过滤、聚合、压缩、转换与安全策略；Data Communication Proxy（DCP）以消息代理、队列和 Pub/Sub 解耦生产者与消费者。公开论文展示了持续研究投入，但该方案仍是候选架构而非 3GPP 既定方案。<a href="#s43">[S43]</a></p>
           </div>
           <div class="card">
             <span class="tag pre">研究架构</span>
             <h4>NET4AI 的控制面与计算面</h4>
-            <p>NET4AI 以服务管理、编排、资源/作业/任务管理构成控制面，以计算面执行分布式训练和推理，并探索 split learning、federated learning、k-anonymity 与代理重加密。这使数据框架不只服务 AI4NET，也成为运营商向外提供 AIaaS 的执行基础。原文同时承认其实现仍处早期。<a href="#s44">[S44]</a></p>
+            <p>NET4AI 以服务管理、编排、资源/作业/任务管理构成控制面，以计算面执行分布式训练和推理，并探索 split learning、federated learning、k-anonymity 与代理重加密。它展示了运营商提供 AIaaS 的一种研究路径；原文同时列出了移动性、任务执行和隐私等仍需进一步研究的技术挑战。<a href="#s44">[S44]</a></p>
           </div>
           <div class="card">
             <span class="tag fact">产品桥梁</span>
-            <h4>AI Core、NDT 与 Open Gateway</h4>
-            <p>华为已经用 AI Core/Agentic Core、iMaster NCE Network Digital Map、ModelArts/IEF 和 inTouch Aggregator 建立面向 6G 的商业桥梁：网络运维 Agent、云边模型执行、数字地图和网络 API 均有公开产品或部署证据。但这些局部能力不能等同于完整 6G Data Plane 已落地。<a href="#s45">[S45]</a><a href="#s46">[S46]</a></p>
+            <h4>AI Core、Network Digital Map 与 Open Gateway</h4>
+            <p>华为分别发布了 AI Core 路线、2026 AgenticCore solution 和 iMaster NCE Network Digital Map；GSMA 另确认华为是 Open Gateway Channel Partner。它们是不同产品线和生态动作；本文把它们视作通向 6G 的可用桥梁，不代表华为已宣布将其组成统一 6G Data Plane。<a href="#s45">[S45]</a><a href="#s46">[S46]</a><a href="#s50">[S50]</a><a href="#s53">[S53]</a><a href="#s54">[S54]</a></p>
           </div>
           <div class="card">
             <span class="tag pre">标准主张</span>
@@ -663,7 +663,7 @@
             <p>华为在 3GPP SA5 研讨材料中明确主张跨厂商、跨网元、跨应用的数据传输框架，覆盖采集、处理、注册/发现/访问控制、分发与开放，并提出 Data QoS、Agent Fabric 和 NDT sandbox。这是可确认的厂商标准输入，不代表 3GPP 共识。<a href="#s47">[S47]</a></p>
           </div>
         </div>
-        <div class="strategic-box"><strong>需要警惕的竞争动作：</strong>华为的真正壁垒不是 DO/DA/DCP 三个名词，而是把网络数据生成、边缘处理、AI 算力、数字孪生、核心网控制和 API 变现编排成同一全栈闭环。若中兴只在单一消息总线、NWDAF 或 NEF 层逐项对标，将被对方的平台边界牵引。</div>
+        <div class="strategic-box"><strong>竞争研判：</strong>华为公开材料覆盖网络数据生成、边缘处理、AI 算力、数字地图/孪生、核心网智能和 API 变现，具备形成全栈闭环的条件；但尚无一手证据证明这些能力已按统一 6G Data Plane 完整集成。中兴仍应避免只在单一消息总线、NWDAF 或 NEF 层逐项对标，而应以可验证的跨域闭环检验真实差距。</div>
 
         <h3>竞合判断：哪些应跟进，哪些应差异化</h3>
         <div class="table-scroll">
@@ -691,9 +691,10 @@
         <h2>行动建议：标准、架构、产品与生态四线并进</h2>
         <p class="lead">Fabric 最容易失败的方式，是先建设“大而全平台”，再寻找问题。对中兴更有效的路径，是以标准控制点为牵引、以 5G-A 资产为底座、以可测闭环为证据，形成可向 Rel-21 平滑演进的产品组合。</p>
         <h3>建议目标架构：运营商自主的 Telco Data Fabric</h3>
-        <p>此处是战略工作命名，不代表中兴现有正式产品。目标不是再造一个中央数据湖，而是在现有 RAN、Core、Transport、OSS/BSS、MEC 与云平台之上建立可独立演进的公共能力。</p>
+        <p>此处是战略工作命名，不代表中兴现有正式产品，也不代表已完成竞争差距分析。目标不是再造一个中央数据湖，而是在 RAN、Core、Transport、OSS/BSS、MEC 与云平台之上建立可独立演进的公共能力。</p>
+        <div class="callout warn"><strong>决策前置条件：</strong>以下优先级是基于外部竞争与标准窗口提出的战略假设。立项前必须完成中兴现有 NWDAF/MDA/NDT/API、元数据平台、标准席位、客户部署、第三方互操作、研发复用度和单位成本的内部资产盘点；若基线不成立，应调整自研、整合或生态合作比例。</div>
         <div class="grid-2">
-          <div class="card"><h4>一套控制内核</h4><p>联邦 Catalog、Telco ontology、DataNeed、数据契约、QoD、lineage、同意与用途策略形成统一控制内核。元数据模型优先对齐 3GPP，同时为 O-RAN、TM Forum、CAMARA、工业数据空间保留扩展映射。</p></div>
+          <div class="card"><h4>一套控制内核</h4><p>联邦 Catalog、Telco ontology、本文建议的数据需求表达、数据契约、QoD、lineage、同意与用途策略形成统一控制内核。元数据模型优先对齐 3GPP，同时为 O-RAN、TM Forum、CAMARA、工业数据空间保留扩展映射。</p></div>
           <div class="card"><h4>多个可替换执行后端</h4><p>批、流、Pub/Sub、湖仓、查询联邦、边缘缓存、用户面和未来专用 DFI 都实现为可选择的执行器。策略根据时延、数据量、驻留、成本、能耗和可靠性决定数据移动、计算移动或模型移动。</p></div>
           <div class="card"><h4>一个通信级信任闸门</h4><p>把 Agent 身份、最小权限、工具白名单、轨迹日志、策略决策、NDT 预演、灰度执行、熔断和回滚串成高风险动作的强制路径；通用 MCP/A2A 只作为适配层，不能绕过 3GPP/TMF/O-RAN 的功能授权。</p></div>
           <div class="card"><h4>一组可经营的数据产品</h4><p>面向 AI 训练、ISAC、NDT、体验保障、能耗优化和行业 API 发布带 owner、QoD、许可、计量和成本的数据产品。内部复用与外部变现使用同一契约内核，但采用不同安全域与责任边界。</p></div>
@@ -703,7 +704,7 @@
           <table>
             <thead><tr><th>优先级</th><th>工作包</th><th>必须形成的成果</th><th>停止或调整条件</th></tr></thead>
             <tbody>
-              <tr><td><strong>P0</strong></td><td>WT#5 / SA5 标准牵引</td><td>DataNeed、元数据、QoD、同意、跨域标识、开放与可观察性的一致提案；争取 editor/rapporteur 或关键文本牵引。</td><td>若架构不收敛，转向公共信息模型与可扩展 profile，避免押注单一 NF。</td></tr>
+              <tr><td><strong>P0</strong></td><td>WT#5 / SA5 标准牵引</td><td>研究数据需求表达，并围绕元数据、QoD、同意、跨域标识、开放与可观察性形成一致提案；争取 editor/rapporteur 或关键文本牵引。</td><td>若架构不收敛，转向公共信息模型与可扩展 profile，避免押注单一 NF。</td></tr>
               <tr><td><strong>P0</strong></td><td>5G-A 最小产品闭环</td><td>打通 NWDAF/MDA/NDT/消息/API 的目录、血缘、质量和策略，完成“需求—数据—模型—动作—结果”证据链。</td><td>若无法量化减少重复采集、缩短定位时间或改善业务 KPI，不扩展平台范围。</td></tr>
               <tr><td><strong>P1</strong></td><td>开放 Data Agent Runtime</td><td>跨 UE/RAN/Edge/Core 的可移植算子、能力描述、沙箱、远程证明与多后端传输，完成至少两家第三方互操作。</td><td>若标准倾向增强现有 NF，则将 runtime 下沉为内部实现，不强推新网元。</td></tr>
               <tr><td><strong>P1</strong></td><td>NDT + Agent 安全执行</td><td>形成反事实测试、风险评分、冲突检测、灰度、回滚和审计的统一闸门，以故障自愈或节能闭环验证。</td><td>孪生同步滞后或保真度未达场景门槛时，只允许建议模式。</td></tr>
@@ -753,13 +754,13 @@
       <div class="wrap">
         <div class="section-kicker" style="color:#5eb6e4"><span class="section-no">10</span>Final synthesis</div>
         <h2>最终研判：争夺数据框架，就是争夺 6G 智能的控制面</h2>
-        <p class="lead">数据编织的战略价值，不是增加一张平台架构图，而是把“数据需求—语义—质量—政策—模型—行动—结果”连成可观察、可验证、可回滚的链。WT#5 使这条链首次进入 3GPP 6G 系统架构的正式研究范围。</p>
+        <p class="lead">数据编织的战略价值，不是增加一张平台架构图，而是把“数据需求—语义—质量—政策—模型—行动—结果”连成可观察、可验证、可回滚的链。WT#5 使其中的数据发现、采集、元数据、处理、存储、开放、QoD 与治理首次系统进入 3GPP 6G 架构研究；模型、行动和结果证据仍需与其他 KI、SA5 及自治管理工作协同。</p>
         <div class="grid-3" style="margin-top:42px">
           <div class="card" style="color:#17202b"><h3>必须守住</h3><p>元数据、QoD、同意、策略和审计的运营商控制权；SA2/SA5/RAN/SA3 之间的一致语义；控制面开放与执行面可替换。</p></div>
           <div class="card" style="color:#17202b"><h3>必须形成</h3><p>以 5G-A 现网能力验证的统一数据证据链、NDT 安全闸门、开放 Data Agent runtime，以及可经营的数据/API 产品。</p></div>
           <div class="card" style="color:#17202b"><h3>必须避免</h3><p>照搬竞品网元命名、在标准未收敛前绑定单一数据拓扑、用实验室峰值代替端到端收益、把通用 Agent 直接接入生产控制。</p></div>
         </div>
-        <div class="big-quote" style="color:#fff;border-color:#5eb6e4">战略北极星：<br><em style="color:#f3c553">让任何获授权的人、应用或 Agent 能以标准方式表达 DataNeed；网络在运营商策略边界内，自动发现、组合并交付满足 QoD 的数据，同时完整证明数据来自哪里、如何处理、为何允许使用以及产生了什么动作。</em></div>
+        <div class="big-quote" style="color:#fff;border-color:#5eb6e4">战略北极星（本文建议，非 3GPP 既定范围）：<br><em style="color:#f3c553">让获授权的人、应用或 Agent 能以可互操作方式表达数据需求；网络在运营商策略边界内，发现、组合并交付满足 QoD 的数据，同时完整证明数据来自哪里、如何处理、为何允许使用。模型、动作和结果证据链还需与 AI、管理和自治标准协同。</em></div>
       </div>
     </section>
 
@@ -820,6 +821,13 @@
           <li id="s48"><a href="https://www.3gpp.org/technologies/6g-architecture">3GPP, 6G System Architecture Studies</a>：Rel-20 架构研究总体介绍及 data framework 定位。</li>
           <li id="s49"><a href="https://www.6g-ana.com/upload/file/20240514/6385128753254512928308330.pdf">6GANA, 面向6G的多维融合的数据编织技术演进</a>, 2024：数据编织与边缘数据智能产业研究；非正式标准。</li>
           <li id="s50"><a href="https://www.gsma.com/newsroom/press-release/chinas-leading-mobile-operators-first-to-commercially-launch-new-fraud-reducing-password-service-after-receiving-gsma-open-gateway-certification/">GSMA Open Gateway in China</a>, 2024：华为与中兴作为 Channel Partner 的公开生态事实。</li>
+          <li id="s51"><a href="https://www.ericsson.com/en/portfolio/cloud-software-and-services/cloud-core/communication-services-udm-and-exposure/cloud-network-exposure/cloud-core-exposure-server">Ericsson Cloud Core Exposure Server</a>：3GPP/CAMARA 网络能力开放及同意、安全能力产品页。</li>
+          <li id="s52"><a href="https://www.ericsson.com/en/press-releases/2025/7/ericsson-announces-completion-of-aduna-transaction">Ericsson announces completion of Aduna transaction</a>, 2025：Ericsson 持股 50%，12 家运营商合计持股 50% 的 API 聚合合资结构。</li>
+          <li id="s53"><a href="https://www.huawei.com/en/news/2026/3/mwc-agenticcore-synergy-agent">Huawei Launches AgenticCore Solution</a>, 2026：终端—网络—业务协同与 Agent Communication Network 产品主张。</li>
+          <li id="s54"><a href="https://www.huawei.com/en/news/2024/6/mwcs-opengateway-service-api">Huawei, Open Gateway Leads a New Business Paradigm</a>, 2024：网络 API 商业场景与变现主张。</li>
+          <li id="s55"><a href="https://www.ericsson.com/en/future-technologies/architecture/network-architecture-domains">Ericsson, Network architecture functional and physical domains</a>：EFDL、data mesh/data fabric 与跨域数据访问架构。</li>
+          <li id="s56"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/6g-connectivity-and-beyond-for-the-2030s">Ericsson, 6G — connectivity and beyond for the 2030s</a>：AI-native intelligent fabric 愿景。</li>
+          <li id="s57"><a href="https://www.huawei.com/en/huaweitech/future-technologies/semantic-digital-twins-wireless-communication-llm-inference">Huawei, Semantic Digital Twins for Wireless Communication</a>, 2024：语义 token、ISAC 数据与 LLM 推理研究。</li>
         </ol>
         <h3>图片资产与复用说明</h3>
         <p>报告优先下载官方或开放论文的原始图片并保存在 <code>data-fabric-assets/</code>，避免依赖外链失效。每幅图的图题、原始页面和许可已在图注中列明。原图保留英文和原始配色；Gaia-X 图遵循 CC BY-NC-ND 4.0，未裁切、翻译或改色。Google、欧委会网页内容的具体复用范围仍应以原页最新条款为准。本文自行绘制的中文示意图用于综合分析，不声称来自任何标准组织。</p>
