@@ -103,7 +103,7 @@
             </tbody>
           </table>
         </div>
-        <p>“Unified Data Management Framework”曾出现在2025年3GPP 6G Workshop主席总结中，但该总结明确说明只是会员输入汇编，不代表共识、优先级或必然立项。正式获批名称没有“Unified”。<a href="#r1">[R1]</a><a href="#r4">[R4]</a></p>
+        <p>“Unified Data Management Framework”曾出现在2025年3GPP 6G Workshop的早期主席总结草案6GWS-250238中；最终主席总结6GWS-250243没有保留该术语，但保留了“会员输入汇编、不代表共识、优先级或必然立项”的免责声明。正式获批名称也没有“Unified”。<a href="#r1">[R1]</a><a href="#r31">[R31]</a></p>
         <div class="callout"><strong>严格表述：</strong>“SA2正在研究6G数据框架”是事实；“3GPP已经确定统一数据框架”不准确；“3GPP已经决定新增独立数据面”更不准确。</div>
       </div>
     </section>
@@ -161,7 +161,7 @@
           </table>
         </div>
         <h3>为什么不能简单扩展NWDAF</h3>
-        <p>NWDAF的价值链是“采集网络相关数据—生成Analytics—提供给消费者”。WT#5的范围则覆盖原始数据、处理数据、模型训练集、感知结果、外部数据资产和任意CN NF间事件。消费者未必需要分析结果，也可能需要文件、流、特征或可验证的原始记录。若强行把所有能力装入NWDAF，会使分析功能同时承担通用数据控制、传输、存储、暴露和治理，造成职责膨胀。</p>
+        <p>NWDAF的价值链是“采集网络相关数据—生成Analytics—提供给消费者”。WT#5批准的是识别潜在用例并研究六类通用能力；在此基础上，V0.8.0潜在用例和候选方案进一步涉及原始/处理数据、模型训练集、感知结果、外部数据资产和CN NF间事件。消费者未必需要分析结果，也可能需要文件、流、特征或可验证的原始记录。若强行把所有能力装入NWDAF，会使分析功能同时承担通用数据控制、传输、存储、暴露和治理，造成职责膨胀。</p>
         <h3>为什么不能简单使用用户面</h3>
         <p>用户面非常适合传输IP应用数据，且已经解决移动性、QoS和计费。但WT#5还需要知道数据“是什么、为何采集、是否允许、质量如何、谁可复用”。如果载荷全部封装在应用加密通道中，网络通常只能管理流量，无法完成数据级发现、QoD验证和用途控制。反之，如果为了可见性要求网络理解所有载荷，又会破坏端到端加密和应用机密。</p>
         <h3>真正的Gap不是缺少组件，而是缺少共同控制语义</h3>
@@ -172,10 +172,10 @@
 
     <section id="history" class="alt">
       <div class="wrap">
-        <div class="kicker"><span class="num">03</span>Evolution</div>
+        <div class="kicker"><span class="num">04</span>Evolution</div>
         <h2>从研讨会命题到正式研究任务</h2>
         <div class="timeline">
-          <div class="time"><b>2025年3月</b><h4>3GPP 6G Workshop</h4><p>主席总结汇总“Unified Data Management Framework”方向，指出5G数据收集路径分散；同时明确不代表3GPP共识。<a href="#r1">[R1]</a></p></div>
+          <div class="time"><b>2025年3月</b><h4>3GPP 6G Workshop</h4><p>早期主席总结草案250238汇总“Unified Data Management Framework”方向；最终250243未保留该术语，并明确总结不代表3GPP共识、优先级或必然立项。<a href="#r1">[R1]</a><a href="#r31">[R31]</a></p></div>
           <div class="time"><b>2025年6月 · SA#108</b><h4>FS_6G_ARC获批</h4><p>SP-250806启动6G系统架构研究，WT#5成为八项任务之一；四项“Beyond Connectivity”包括AI、ISAC、Data Framework和Computing。<a href="#r2">[R2]</a></p></div>
           <div class="time"><b>2025年8—9月</b><h4>SA2细化范围，TSG SA协调分工</h4><p>SA2#170形成多版WT#5范围草稿；SA#109通过SP-251261指导SA2与SA5避免重复或不兼容方案。<a href="#r5">[R5]</a></p></div>
           <div class="time"><b>2025年12月 · SA#110</b><h4>详细范围获批</h4><p>SP-251633更新SID，SP-251634批准详细Work Task范围。前者不是TR，后者也不是最终架构。<a href="#r6">[R6]</a><a href="#r7">[R7]</a></p></div>
@@ -187,7 +187,7 @@
 
     <section id="scope" class="dark">
       <div class="wrap">
-        <div class="kicker" style="color:#5eb6e4"><span class="num">04</span>Approved study scope</div>
+        <div class="kicker" style="color:#5eb6e4"><span class="num">05</span>Approved study scope</div>
         <h2>批准研究范围：六类能力，三组横切考虑</h2>
         <p class="lead">SP-251634和TR第5.21节定义的是“研究什么”，不是“最终怎么实现”。原文还明确：Data Framework不意味着所有用例共用相同功能、流程、NF、服务或数据结构。</p>
         <div class="grid3">
@@ -210,7 +210,7 @@
 
     <section id="usecases">
       <div class="wrap">
-        <div class="kicker"><span class="num">05</span>Potential use cases</div>
+        <div class="kicker"><span class="num">06</span>Potential use cases</div>
         <h2>草案用例揭示了真正的需求跨度</h2>
         <p class="lead">TR 6.21.1.1列出的用例全部是potential use cases，不代表最终范围背书。它们的价值在于展示数据可能跨越哪些生产者、消费者和业务目标。</p>
         <div class="table-wrap">
@@ -247,7 +247,7 @@
 
     <section id="architecture" class="alt">
       <div class="wrap">
-        <div class="kicker"><span class="num">06</span>Candidate architecture</div>
+        <div class="kicker"><span class="num">07</span>Candidate architecture</div>
         <h2>候选架构不是“五选一”</h2>
         <p class="lead">TR中的A/B/C/D/E代表不同架构维度。A1、B1、B2主要是核心网基础实现选项，彼此替代；C是智能编排叠加层；D是UE路径；E是RAN—Core路径。它们可组合成例如B2+C1+D2+E2。</p>
         <div class="diagram">
@@ -263,7 +263,7 @@
               <rect x="55" y="400" width="300" height="95" rx="12" fill="#183c5d"/><rect x="400" y="400" width="300" height="95" rx="12" fill="#184a70"/><rect x="745" y="400" width="300" height="95" rx="12" fill="#075f9e"/>
               <g fill="#fff" font-size="14" text-anchor="middle"><text x="205" y="432">D1 · 经UPF / PDU Session</text><text x="205" y="458">复用成熟移动承载</text><text x="550" y="432">D2 · 不经UPF / 候选DFI</text><text x="550" y="458">隔离业务流量但需新机制</text><text x="895" y="432">D3 · UE→RAN→OAM</text><text x="895" y="458">依赖SA5管理数据框架</text></g>
               <path d="M205 495V550H895V495" fill="none" stroke="#5eb6e4" stroke-width="3"/>
-              <text x="550" y="584" fill="#d9ebf5" font-size="14" text-anchor="middle">E1/E2/E3/E4决定RAN—Core控制信令与数据是否走控制接口、DFI或OAM路径</text>
+              <text x="550" y="584" fill="#d9ebf5" font-size="14" text-anchor="middle">E1/E2/E3比较控制接口与DFI组合；E4是不由SA2定义Data Framework的RAN—Core接口</text>
             </g>
           </svg>
         </div>
@@ -278,12 +278,12 @@
           <table>
             <thead><tr><th>简称</th><th>候选职责</th><th>主要开放问题</th></tr></thead>
             <tbody>
-              <tr><td>DCF</td><td>控制生产者、路径、处理、存储和开放，匹配消费者请求。</td><td>与Data Agent、DCCF及服务特定功能的边界。</td></tr>
-              <tr><td>DTF</td><td>转发、复制、Fan-out、缓存、协议转换和消息适配。</td><td>是否成为数据必经代理，如何避免瓶颈。</td></tr>
-              <tr><td>DPF</td><td>清洗、转换、聚合、特征提取、匿名化和数据生成。</td><td>通用处理与AI、感知、定位特定处理的边界。</td></tr>
+              <tr><td>DCF</td><td>协调或控制生产者、路径、处理、存储与开放过程，匹配消费者请求；实际外部开放由DEF或6G NEF承担。</td><td>与Data Agent、DCCF及服务特定功能的边界。</td></tr>
+              <tr><td>DTF</td><td>候选职责包括转发、复制、分发及Broker行为；部分Data Session方案提出“可支持”协议转换。</td><td>是否成为数据必经代理，如何避免瓶颈；消息格式适配另有DTP候选。</td></tr>
+              <tr><td>DPF</td><td>候选处理包括清洗、规范化、转换、聚合、特征提取、匿名化、掩码和加密。</td><td>数据分析和生成是否属于通用DPF仍为FFS；与AI、感知特定处理的边界未定。</td></tr>
               <tr><td>DSF</td><td>持久保存原始及处理数据，支持检索和复用。</td><td>保留、驻留、多副本、删除和现有UDSF关系。</td></tr>
-              <tr><td>DEF</td><td>外部请求鉴权、验证、格式/QoD检查及开放边界。</td><td>是否复用6G NEF，是否承载Payload。</td></tr>
-              <tr><td>DAR / DRDF</td><td>登记数据生产能力、资产元数据及数据功能能力。</td><td>与NRF、DCF、DSF的存储分工尚未确定。</td></tr>
+              <tr><td>DEF</td><td>候选职责包括外部请求鉴权、验证并作为开放边界。</td><td>最终格式/QoD复核为FFS；是否复用6G NEF、是否承载Payload也未定。</td></tr>
+              <tr><td>DRDF / DAR / DRF</td><td>DRDF是通用注册发现功能称谓；DAR是6.21.11.1 Option 3a的专用NF；DRF偏Repository角色。</td><td>三者不是已经确定的同一实体；与NRF、DCF、DSF的分工尚未收敛。</td></tr>
               <tr><td>DF GW</td><td>候选RAN—Core网关，隐藏RAN拓扑并转换协议。</td><td>接口终点和协议由RAN3等进一步决定。</td></tr>
               <tr><td>Data Agent</td><td>候选意图分解与工作流编排功能。</td><td>权限、确定性、实例选择及与DCF职责重叠。</td></tr>
             </tbody>
@@ -304,12 +304,12 @@
 
     <section id="interfaces" class="dark">
       <div class="wrap">
-        <div class="kicker" style="color:#5eb6e4"><span class="num">07</span>UE / RAN / Core paths</div>
+        <div class="kicker" style="color:#5eb6e4"><span class="num">08</span>UE / RAN / Core paths</div>
         <h2>路径选择决定数据框架是否值得新建</h2>
         <p class="lead">核心网内部的功能分解只是问题的一半。更困难的是UE和RAN数据如何进入框架，以及数据路径如何在移动性、性能、治理和标准复杂度之间平衡。</p>
         <h3>UE侧三类候选路径</h3>
         <div class="grid3">
-          <div class="card"><span class="tag candidate">D1</span><h4>经UPF与PDU Session</h4><p>UE使用专用DNN/S-NSSAI和IP PDU Session传输数据，可复用URSP、QoS、移动性、安全及计费。应用层可采用HTTP、QUIC或WebSocket等，但这些不是WT#5已选协议。优点是成熟；缺点是框架对加密载荷、用途和数据标签的可见性有限，数据采集流还可能与普通业务竞争资源。</p></div>
+          <div class="card"><span class="tag candidate">D1</span><h4>经UP功能与PDU Session</h4><p>D1只规定经UP功能并使用PDU Session；6.21.4.1.1进一步提出“可以”使用专用DNN/S-NSSAI和IP PDU Session，并可复用URSP、QoS、移动性、安全及计费。应用层协议也只是候选。优点是成熟；缺点是框架对加密载荷、用途和数据标签的可见性有限，数据采集流还可能与普通业务竞争资源。</p></div>
           <div class="card"><span class="tag candidate">D2</span><h4>不经UPF的新数据路径</h4><p>候选DP Session由UE经RAN连接到数据功能，控制可使用NAS或DSP-C，载荷使用DFI/DSP-D。它可以隔离普通用户业务并提升运营商控制，但需要重新定义连接、地址、无线承载、切换连续性、会话模式以及与KI#1、RAN2/3的分工。</p></div>
           <div class="card"><span class="tag candidate">D3</span><h4>经RAN与OAM</h4><p>RAN采集UE无线数据，先交给SA5的OAM数据管理框架，再由OAM开放给CN或AF。它可复用管理采集能力，但时延、跨域接口、授权责任以及哪些步骤属于SA2仍待协调。</p></div>
         </div>
@@ -323,16 +323,16 @@
               <tr><td><strong>E1</strong></td><td>RAN—Core控制接口</td><td>同一控制接口</td><td>接口数量少，复用已有信令关联。</td><td>大数据可能挤压控制面，协议扩展压力高。</td></tr>
               <tr><td><strong>E2</strong></td><td>控制接口</td><td>专用DFI</td><td>控制与载荷分离，适合流和大文件。</td><td>需要新接口、关联标识、安全和拥塞机制。</td></tr>
               <tr><td><strong>E3</strong></td><td>DFI</td><td>DFI</td><td>形成更独立的数据服务路径。</td><td>与既有控制和用户面重叠最大。</td></tr>
-              <tr><td><strong>E4</strong></td><td>不由SA2定义新接口</td><td>经OAM获得</td><td>减少SA2/RAN新标准工作。</td><td>依赖SA5，难满足部分低时延系统用例。</td></tr>
+              <tr><td><strong>E4</strong></td><td>SA2不定义Data Framework的RAN—Core接口</td><td>不预设；从OAM取得RAN数据只是示例情形</td><td>减少SA2对RAN—Core接口的新增规定。</td><td>实际路径依赖RAN/SA5选择，部分低时延系统用例可能受限。</td></tr>
             </tbody>
           </table>
         </div>
-        <p>RAN能否作为数据消费者、RAN—Core使用P2P还是SBA、接口终止在哪个节点、采用什么协议，应由RAN2/RAN3共同决定。SA2可以描述需求和端到端关系，但不能单方面冻结RAN内部机制。</p>
+        <p>职责需要精确区分：RAN能否作为数据消费者由RAN工作组决定；RAN—Core使用P2P还是SBA由RAN3决定；UE—RAN/RRC及无线影响主要与RAN2协调。SA2可以描述需求和端到端关系，但不能单方面冻结RAN内部机制。</p>
 
         <h3>核心网内部的三种数据路线</h3>
         <div class="grid3">
           <div class="card"><h4>生产者直达消费者</h4><p>路径最短、复制最少、时延最低，但运营商难以统一执行处理、审计、撤回和Fan-out。</p></div>
-          <div class="card"><h4>经DTF代理</h4><p>便于复制、缓存、协议转换和多消费者分发，但DTF可能成为性能瓶颈和扩大故障域。</p></div>
+          <div class="card"><h4>经DTF代理</h4><p>便于复制、分发和多消费者交付，部分候选方案还允许协议转换；但DTF可能成为性能瓶颈并扩大故障域。</p></div>
           <div class="card"><h4>处理/存储后交付</h4><p>可先经DPF清洗匿名，再由DSF保存和复用；链路更可治理，但增加状态、时延和版本一致性问题。</p></div>
         </div>
 
@@ -358,7 +358,7 @@
 
     <section id="flow">
       <div class="wrap">
-        <div class="kicker"><span class="num">07</span>End-to-end mechanics</div>
+        <div class="kicker"><span class="num">09</span>End-to-end mechanics</div>
         <h2>一次数据请求如何完成？</h2>
         <p class="lead">尽管实体尚未冻结，候选方案已经显示出共同的逻辑链：注册—发现—授权—采集—处理—传输—验证—开放—反馈。具体步骤可能由一个NF完成，也可能分布在多个功能中。</p>
         <div class="diagram">
@@ -384,13 +384,13 @@
         <h3>会话和协议尚未统一</h3>
         <p>草案中并存Data Session、DF Session和DP Session等不同候选概念，不能当作同义词。候选协议抽象包括DSP-C控制和DSP-D载荷；Kafka、RabbitMQ、QUIC、WebSocket等只是方案示例或内部适配对象，不是3GPP已选技术栈。</p>
         <h3>开放边界</h3>
-        <p>可信AF可能通过SBA接入，非可信AF原则上应经过NEF或候选DEF。DEF可负责鉴权、请求验证和QoD检查，但它是否为纯控制面NF、是否承载载荷、能否直连DSF以及是否需要独立于NEF，均未决定。</p>
+        <p>可信AF可能通过SBA接入，非可信AF原则上应经过NEF或候选DEF。DEF可负责鉴权和请求验证；最终格式与QoD复核仍为FFS。它是否为纯控制面NF、是否承载载荷、能否直连DSF以及是否需要独立于NEF，均未决定。</p>
       </div>
     </section>
 
     <section id="boundary" class="alt">
       <div class="wrap">
-        <div class="kicker"><span class="num">08</span>Cross-WG boundaries</div>
+        <div class="kicker"><span class="num">10</span>Cross-WG boundaries</div>
         <h2>SA2不能独自完成数据框架</h2>
         <div class="table-wrap">
           <table>
@@ -399,7 +399,7 @@
               <tr><td><strong>SA2</strong></td><td>6G Stage 2系统架构、6GC NF/服务和系统流程。</td><td>定义通用数据能力、核心网组合及UE/RAN/OAM/AF交互需求。</td><td>系统功能无法形成端到端数据链。</td></tr>
               <tr><td><strong>SA5</strong></td><td>OAM、管理编排、PM/CM/告警/Trace、MDA和管理数据生命周期。</td><td>D3路径、OAM生产者/消费者、管理数据发现和开放。</td><td>出现两套目录、两套QoD和重复采集。</td></tr>
               <tr><td><strong>RAN2/3</strong></td><td>UE—RAN行为、RAN—Core接口、协议和无线影响。</td><td>D/E方案、RAN作为生产者/消费者、DFI终点与移动性。</td><td>SA2方案无法落到无线接口和协议。</td></tr>
-              <tr><td><strong>SA3</strong></td><td>认证授权、隐私、安全和治理。</td><td>用户同意、目的限制、订户许可、数据框架安全。</td><td>SA2只能画数据路径，无法合法安全地运行。</td></tr>
+              <tr><td><strong>SA3</strong></td><td>负责安全架构，当前6G安全TR已把数据框架认证授权列为Security Area #9；其他隐私与治理机制仍在研究。</td><td>认证授权、订户许可及后续安全/隐私输出；SA2仍保留系统架构和流程责任。</td><td>SA2只能画数据路径，无法形成完整安全机制。</td></tr>
               <tr><td><strong>SA6</strong></td><td>应用层使能与应用数据。</td><td>AF、应用层同意、第三方训练和数据服务。</td><td>网络侧授权与应用目的脱节。</td></tr>
               <tr><td><strong>CT</strong></td><td>Stage 3协议及OpenAPI等。</td><td>把已选架构转换为可互操作协议。</td><td>Stage 2概念无法形成实现规范。</td></tr>
             </tbody>
@@ -411,7 +411,7 @@
 
     <section id="governance">
       <div class="wrap">
-        <div class="kicker"><span class="num">09</span>Metadata, QoD & governance</div>
+        <div class="kicker"><span class="num">11</span>Metadata, QoD & governance</div>
         <h2>数据框架能否成立，取决于“数据之外的数据”</h2>
         <p class="lead">传输接口只能解决可达性。要让数据被正确、合法、可复用地使用，还必须同时描述来源、语义、质量、权限和处理历史。WT#5将Metadata Handling纳入批准范围，但V0.8.0中的字段和机制仍属于候选方案。</p>
         <h3>候选元数据可以分成五层</h3>
@@ -424,6 +424,7 @@
           <div class="card"><h4>能力描述</h4><p>传输、处理、存储功能的性能、支持模式、区域和可用状态。解决“谁能完成哪一步”。</p></div>
         </div>
         <p>这些信息的难点不是字段数量，而是权威性和更新责任。生产者可声明精度，却未必能证明；处理功能会改变质量和隐私状态；存储复制会改变位置；消费者实际用途可能偏离申请目的。因此元数据必须与运行事件和策略证据结合，不能只靠静态自报。</p>
+        <div class="callout warn"><strong>DataContract状态：</strong>Solution #21.11.1明确把DataContract作为候选数据资产元数据，用于表达用途范围、保留期限、下游使用和禁止再共享，并参与候选绑定授权判断；但它没有形成独立定义、状态机或标准程序，不能写成已冻结的数据合同机制。</div>
 
         <h3>QoD应分成三段责任</h3>
         <div class="table-wrap">
@@ -458,13 +459,13 @@
 
     <section id="challenges" class="dark">
       <div class="wrap">
-        <div class="kicker" style="color:#5eb6e4"><span class="num">09</span>Technical challenges</div>
+        <div class="kicker" style="color:#5eb6e4"><span class="num">12</span>Technical challenges</div>
         <h2>真正困难的不是“传数据”，而是同时保证可用、可控与可演进</h2>
         <div class="grid2">
           <div class="card"><span class="tag analysis">挑战 01</span><h4>演进既有NF还是新建Data Plane</h4><p>增强DCCF/ADRF可复用发现、协调和存储能力，部署成本较低；但它们是否能承载感知流、大训练集和通用数据类型仍不确定。新DFI可针对数据负载优化，却需要重新解决会话、地址、移动性、QoS、安全、计费和故障恢复。</p></div>
           <div class="card"><span class="tag analysis">挑战 02</span><h4>控制与载荷如何分离</h4><p>SBI适合服务控制，但不一定适合高吞吐数据；专用DFI适合载荷，却会增加协议和安全面。生产者直传性能最好，经DTF/DEF更可治理。标准必须在效率、可观察性与复杂度之间取舍。</p></div>
           <div class="card"><span class="tag analysis">挑战 03</span><h4>集中控制与分布执行</h4><p>集中DCF易于执行全局策略，却可能成为瓶颈和单点故障；分布式数据功能靠近UE/RAN/边缘，延迟和隐私更优，但状态一致性、策略同步和故障恢复更难。合理方向可能是层级控制和本地有界自治。</p></div>
-          <div class="card"><span class="tag analysis">挑战 04</span><h4>QoD不等于QoS</h4><p>网络QoS衡量时延、速率、丢包和抖动；QoD还包含准确性、完整性、新鲜度、置信度、代表性和标签质量。传得及时的数据仍可能错误或有偏。谁测量、谁背书、如何随处理衰减，均未确定。</p></div>
+          <div class="card"><span class="tag analysis">挑战 04</span><h4>QoD不等于QoS</h4><p>TR候选QoD包括准确性、完整性、新鲜度、置信度以及时延、速率、丢包、抖动等；代表性和标签质量是本文面向AI训练提出的工程扩展。传得及时的数据仍可能错误或有偏，QoD与6G QoS的关系也仍为FFS。</p></div>
           <div class="card"><span class="tag analysis">挑战 05</span><h4>元数据规模和陈旧问题</h4><p>UE移动、Producer能力变化和实时数据资产会导致注册表高频更新。若元数据过期，消费者可能选择错误生产者、错误区域或不满足QoD的数据。需要TTL、版本、状态事件、缓存一致性和失效策略。</p></div>
           <div class="card"><span class="tag analysis">挑战 06</span><h4>语义统一的边界</h4><p>AI训练、ISAC、定位和NDT具有不同本体。统一所有字段会冻结创新，只规定Payload格式又无法解决同名异义。应标准化身份、来源、时间、质量、权限等最小公共语义，并允许领域Profile扩展。</p></div>
           <div class="card"><span class="tag analysis">挑战 07</span><h4>同意撤回和派生数据</h4><p>删除原始数据并不等于删除缓存、特征、聚合结果、第三方副本或模型影响。系统需要把用途、期限和同意引用传播到派生数据，并定义撤回、删除、模型遗忘和证明责任。当前6.21.12尚无完整方案。</p></div>
@@ -481,7 +482,7 @@
 
     <section id="fabric">
       <div class="wrap">
-        <div class="kicker"><span class="num">10</span>Data Framework × Data Fabric</div>
+        <div class="kicker"><span class="num">13</span>Data Framework × Data Fabric</div>
         <h2>两者互补，但不在同一抽象层</h2>
         <p class="lead">WT#5研究电信系统应提供哪些数据角色、服务、接口和流程；Data Fabric研究如何用主动元数据、语义、血缘、策略与编排，将分布式数据组织为可发现、可信、可复用和可自动优化的体系。</p>
         <div class="table-wrap">
@@ -524,7 +525,7 @@
               <tr><td>标签与元数据</td><td>连接技术、业务、运营和使用元数据，形成知识图和可执行策略。</td><td>3GPP已经规定企业本体或知识图谱。</td></tr>
               <tr><td>处理</td><td>以可组合算子编排清洗、匿名、特征与聚合，并记录处理证据。</td><td>DPF天然理解所有领域语义。</td></tr>
               <tr><td>存储与检索</td><td>逻辑统一访问、多存储生命周期、热冷分层和就地处理。</td><td>逻辑统一等于物理集中。</td></tr>
-              <tr><td>开放</td><td>将输出包装为有Owner、QoD、用途、版本、计量和责任的数据产品。</td><td>开放一个API就自动具备产品治理。</td></tr>
+              <tr><td>开放</td><td>将输出包装为有Owner、QoD、用途、版本、计量和责任的数据产品；可吸收TR候选DataContract字段。</td><td>候选DataContract已等于冻结的数据产品标准。</td></tr>
               <tr><td>QoD</td><td>Profiling、质量规则、漂移检测、血缘根因和SLO闭环。</td><td>网络QoS足以证明内容正确。</td></tr>
               <tr><td>同意与治理</td><td>策略即代码、用途绑定、撤回传播、驻留、保留、审计和隐私增强技术。</td><td>一次鉴权可以授权无限二次使用。</td></tr>
             </tbody>
@@ -544,7 +545,7 @@
 
     <section id="scenarios" class="dark">
       <div class="wrap">
-        <div class="kicker" style="color:#5eb6e4"><span class="num">11</span>Scenario walkthroughs</div>
+        <div class="kicker" style="color:#5eb6e4"><span class="num">14</span>Scenario walkthroughs</div>
         <h2>用三个场景检验架构，而不是从网元名称出发</h2>
         <p class="lead">判断某种数据框架是否合理，应从端到端任务、约束和失败后果出发。以下流程是基于WT#5候选能力的工程推演，不代表3GPP已经批准的过程。</p>
 
@@ -597,7 +598,7 @@
 
     <section id="economics">
       <div class="wrap">
-        <div class="kicker"><span class="num">12</span>Stakeholder requirements</div>
+        <div class="kicker"><span class="num">15</span>Stakeholder requirements</div>
         <h2>“统一”的真正诉求来自多方利益约束</h2>
         <p class="lead">数据框架不是纯技术优化。生产者、消费者、运营商、设备厂商、应用方和用户对“统一”的理解不同。若标准只解决接口而忽略激励和责任，数据依然不会被高质量地共享。</p>
         <div class="grid3">
@@ -644,7 +645,7 @@
 
     <section id="implementation" class="alt">
       <div class="wrap">
-        <div class="kicker"><span class="num">11</span>Implementation requirements</div>
+        <div class="kicker"><span class="num">16</span>Implementation requirements</div>
         <h2>如何让WT#5真正支撑数据编织</h2>
         <p class="lead">合理分工是：3GPP标准化跨厂商边界上的角色、信息和可观察行为；运营商与厂商实现内部数据平台、语义、策略和自动化。过少会失去互操作，过多会冻结技术并形成锁定。</p>
         <h3>建议由3GPP标准化</h3>
@@ -687,7 +688,7 @@
 
     <section id="evaluation">
       <div class="wrap">
-        <div class="kicker"><span class="num">13</span>Decision framework</div>
+        <div class="kicker"><span class="num">17</span>Decision framework</div>
         <h2>如何评价未来收敛方案</h2>
         <p class="lead">不能只比较新增网元数量或接口数量。一个方案可能标准文本很简洁，却把复杂度推给部署；也可能提供完整控制，却引入不可接受的时延和锁定。应从系统效用和可逆性共同评价。</p>
         <div class="table-wrap">
@@ -726,7 +727,7 @@
 
     <section id="conclusion" class="dark">
       <div class="wrap">
-        <div class="kicker" style="color:#5eb6e4"><span class="num">12</span>Final judgement</div>
+        <div class="kicker" style="color:#5eb6e4"><span class="num">18</span>Final judgement</div>
         <h2>最终判断</h2>
         <p class="lead">WT#5的出现不是因为3GPP突然需要“数据中台”，而是因为6G网络的角色发生了根本变化：网络本身开始生产、消费、加工和开放AI、感知、孪生与管理数据，而5G的分域机制难以低成本支持跨域复用和治理。</p>
         <div class="grid3">
@@ -740,15 +741,15 @@
 
     <section id="references">
       <div class="wrap">
-        <div class="kicker"><span class="num">13</span>Primary evidence</div>
+        <div class="kicker"><span class="num">19</span>Primary evidence</div>
         <h2>核心来源与证据说明</h2>
         <p>本报告独立检索公开资料，优先使用3GPP批准记录、官方归档和标准组织页面。TR 0.x草案中的候选机制均按草案状态描述；6GANA、Gartner和厂商材料只用于架构对照，不作为3GPP共识。</p>
         <ol class="refs">
-          <li id="r1"><a href="https://www.3gpp.org/ftp/workshop/2025-03-10_3GPP_6G_WS/Docs/6GWS-250243.zip">6GWS-250243, 3GPP 6G Workshop Chair Summary</a>：早期Unified Data Management Framework动机及非共识免责声明。</li>
+          <li id="r1"><a href="https://www.3gpp.org/ftp/workshop/2025-03-10_3GPP_6G_WS/Docs/6GWS-250238.zip">6GWS-250238, Draft 3GPP 6G Workshop Chair Summary</a>：出现“Unified Data Management Framework”的早期草案，后被250243替代。</li>
           <li id="r2"><a href="https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_108_Prague_2025-06/Docs/SP-250806.zip">SP-250806, New SID: Study on Architecture for 6G System</a>：FS_6G_ARC初始立项。</li>
           <li id="r3"><a href="https://www.3gpp.org/ftp/specs/Archive/23_series/23.801-01/23801-01-080.zip">3GPP TR 23.801-01 V0.8.0官方归档</a>；另见<a href="https://www.3gpp.org/dynareport/23801-01.htm">版本状态页</a>。</li>
           <li id="r4"><a href="https://www.3gpp.org/technologies/6g-architecture">3GPP, 6G Architecture to enable capabilities Beyond Connectivity</a>：网络从数据管道向生产者/消费者转变。</li>
-          <li id="r5"><a href="https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_109_Beijing_2025-09/Docs/SP-251261.zip">SP-251261, Guidance on 6G related Work Tasks</a>：SA2/SA5等跨组协调。</li>
+          <li id="r5"><a href="https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_109_Beijing_2025-09/Docs/SP-251261.zip">SP-251261, LS on Guidance on 6G data related work tasks</a>：SA2/SA5等跨组协调。</li>
           <li id="r6"><a href="https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_110_Baltimore_2025-12/Docs/SP-251633.zip">SP-251633, Revised SID</a>：修订后的FS_6G_ARC研究项。</li>
           <li id="r7"><a href="https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_110_Baltimore_2025-12/Docs/SP-251634.zip">SP-251634, Detailed FS_6G_ARC Work Task scopes</a>：WT#5详细批准研究范围。</li>
           <li id="r8"><a href="https://www.3gpp.org/news-events/3gpp-news/rel21-timeline">3GPP Release 21 Timeline</a>：首个规范性6G Release的冻结计划。</li>
@@ -757,7 +758,7 @@
           <li id="r11"><a href="https://www.3gpp.org/dynareport/23288.htm">3GPP TS 23.288</a>：NWDAF、DCCF、ADRF和MFAF等5G数据分析基础。</li>
           <li id="r12"><a href="https://www.3gpp.org/technologies/nae-5gs-ct3">3GPP, Network Automation Enablers in 5GS</a>：5GS网络自动化数据功能说明。</li>
           <li id="r13"><a href="https://www.3gpp.org/technologies/mda-sa5">3GPP SA5 Management Data Analytics</a>：管理数据分析体系。</li>
-          <li id="r14"><a href="https://www.3gpp.org/dynareport/33801-01.htm">TR 33.801-01, Security for the 6G System</a>：SA3数据框架安全研究。</li>
+          <li id="r14"><a href="https://www.3gpp.org/dynareport/33801-01.htm">TR 33.801-01, Study on Security for the 6G system</a>：数据框架认证授权是其中Security Area #9，其他安全隐私内容仍在研究。</li>
           <li id="r15"><a href="https://www.3gpp.org/news-events/3gpp-news/6g-38914">3GPP, First 6G RAN study approved</a>：RAN 6G研究与跨组边界。</li>
           <li id="r16"><a href="https://www.gartner.com/en/data-analytics/topics/data-fabric">Gartner, What is Data Fabric?</a>：Data Fabric及主动元数据定义。</li>
           <li id="r17"><a href="https://doi.org/10.1007/s10257-025-00707-4">The Future of Data Management</a>, 2025：Data Fabric、Mesh、Space与Platform系统比较。</li>
@@ -774,6 +775,7 @@
           <li id="r28"><a href="https://www.3gpp.org/specifications-technologies/releases/release-20">3GPP Release 20</a>：6G Study Item清单。</li>
           <li id="r29"><a href="https://www.3gpp.org/specifications-technologies/releases/release-21">3GPP Release 21</a>：首个规范性6G Release说明。</li>
           <li id="r30"><a href="https://www.3gpp.org/ftp/tsg_sa/tsg_sa/TSGS_110_Baltimore_2025-12/TdocsByAgenda.htm">TSG SA#110官方文档决议表</a>：SP-251633/251634批准记录。</li>
+          <li id="r31"><a href="https://www.3gpp.org/ftp/workshop/2025-03-10_3GPP_6G_WS/Docs/6GWS-250243.zip">6GWS-250243, Final 3GPP 6G Workshop Chair Summary</a>：最终总结未保留“Unified Data Management Framework”术语，并明确不代表3GPP共识或优先级。</li>
         </ol>
         <div class="callout warn"><strong>版本说明：</strong>本报告是截至2026-08-05的标准研究快照。TR 23.801-01仍快速演进，任何NF名称、接口、方案编号和时间表都应在后续SA2会议及TSG SA全会后重新核验。</div>
       </div>
