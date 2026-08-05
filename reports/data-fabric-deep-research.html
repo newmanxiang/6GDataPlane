@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="面向中兴通讯战略专家组的数据编织与3GPP WT#5 6G数据框架战略研究，覆盖技术原理、标准态势、厂商竞合与行动建议。">
-  <title>数据编织 × 6G 数据框架：面向中兴通讯的战略研判</title>
+  <meta name="description" content="面向中兴通讯RAN大数据专家的6G RAN数据面与数据编织战略研究，覆盖RAN数据生产、近源处理、实时闭环、跨域供给和标准边界。">
+  <title>面向6G智能RAN的数据面与数据编织</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23082f3e'/%3E%3Cpath d='M12 18h40M12 32h40M12 46h40M18 12v40M32 12v40M46 12v40' stroke='%2363d7ca' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23cae85e'/%3E%3C/svg%3E">
   <style>
     :root{
@@ -145,21 +145,21 @@
     <a href="#abstract" aria-label="核心结论">核心结论</a><a href="#first" aria-label="第一性原理">第一性原理</a>
     <a href="#what" aria-label="定义">定义</a><a href="#why" aria-label="成因">成因</a>
     <a href="#anatomy" aria-label="组成">组成</a><a href="#compare" aria-label="比较">比较</a>
-    <a href="#future" aria-label="趋势">趋势</a><a href="#sixg" aria-label="WT5与6G">WT5与6G</a>
+    <a href="#future" aria-label="趋势">趋势</a><a href="#sixg" aria-label="RAN数据面">RAN数据面</a>
     <a href="#competition" aria-label="厂商竞合">厂商竞合</a><a href="#roadmap" aria-label="战略行动">战略行动</a><a href="#sources" aria-label="来源">来源</a>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
       <div class="classification">战略研究参考 · 非公司正式立场</div>
-      <div class="eyebrow">中兴通讯战略专家组 · 技术与产业战略研究</div>
-      <h1>数据编织 × 6G 数据框架<br><span>标准窗口与平台竞争研判</span></h1>
-      <p class="hero-sub">从 Data Fabric 的第一性原理出发，聚焦 3GPP SA2 WT#5 / KI#21，研判 6G 数据框架的标准控制点、爱立信与华为的路线差异，以及中兴可形成的架构与产业抓手。</p>
+      <div class="eyebrow">中兴通讯 RAN 大数据视角 · 技术与产业战略研究</div>
+      <h1>6G RAN 数据面 × 数据编织<br><span>生产、近源处理、智能闭环与跨域供给</span></h1>
+      <p class="hero-sub">从 Data Fabric 第一性原理出发，以RAN数据生命周期和智能闭环为中心，研究UE—RU—DU—CU—RIC—SMO多域数据如何形成可发现、可信、低时延、可治理的数据底座；SA2 WT#5作为系统级数据框架与跨域协同的在研标准背景，而非全文架构中心。</p>
       <div class="hero-meta">
-        <div><strong>决策对象</strong><span>架构、标准、产品与生态布局</span></div>
-        <div><strong>核心议题</strong><span>WT#5 数据框架与 Data Fabric</span></div>
-        <div><strong>竞合样本</strong><span>Ericsson / Huawei 公开动向</span></div>
-        <div><strong>研究截点</strong><span>2026 年 8 月 4 日</span></div>
+        <div><strong>核心数据域</strong><span>UE / RU / DU / CU / RIC / SMO</span></div>
+        <div><strong>主要标准锚点</strong><span>3GPP RAN / SA5 · O-RAN</span></div>
+        <div><strong>跨域协同研究</strong><span>SA2 WT#5 · Core / AF / MEC</span></div>
+        <div><strong>研究截点</strong><span>2026 年 8 月 5 日</span></div>
       </div>
     </div>
   </header>
@@ -168,25 +168,25 @@
     <section id="abstract">
       <div class="wrap">
         <div class="section-kicker"><span class="section-no">00</span>Executive judgement</div>
-        <h2>战略判断：数据编织正在从企业架构概念，进入 6G 标准与平台竞争</h2>
-        <p class="lead">数据编织（Data Fabric）的技术本质，是以主动元数据、语义、策略和编排形成统一控制面，在数据保持分布式的前提下完成发现、治理、处理和交付。3GPP SA2 Rel-20 WT#5 首次把数据发现与注册、采集与传输、标签/元数据、处理、存储、开放、质量、同意和治理系统纳入 6G 架构研究；这意味着“数据如何成为网络原生资源”已从企业 IT 议题进入通信系统架构主航道。</p>
-        <div class="big-quote">未来 6G 竞争不只发生在空口和核心网功能上，还将发生在<strong>谁定义数据需求、谁掌握语义目录、谁编排数据流、谁控制模型与动作证据链</strong>。这正是 Data Fabric 与 WT#5 的交汇处。</div>
+        <h2>战略判断：RAN不是数据源附件，而是6G智能的数据主场</h2>
+        <p class="lead">数据编织（Data Fabric）的技术本质，是以主动元数据、语义、质量、策略和编排形成逻辑控制面，在数据保持分布式的前提下完成发现、近源处理、可信供给和闭环反馈。对RAN而言，价值不在于把更多原始数据送往核心网，而在于将高频、短时效、强上下文的数据在RU/DU/CU/边缘侧转化为可复用特征、事件和数据产品，直接服务移动性、干扰、节能、QoE、NDT及模型生命周期。</p>
+        <div class="big-quote">真正的竞争点是：<strong>谁定义RAN数据语义和质量，谁控制近源处理，谁将数据—模型—策略—动作—效果连成证据链</strong>。SA2 WT#5正在研究并可能影响系统级数据能力与跨域接口，但不主导RAN内部的数据价值链。</div>
         <div class="grid-4">
-          <div class="mini-stat"><b>WT#5</b><span>3GPP SA2“6G data framework”正式工作任务。</span></div>
-          <div class="mini-stat"><b>KI#21</b><span>TR 23.801-01 中的对应关键问题；不是 KI#5。</span></div>
-          <div class="mini-stat"><b>2 个域</b><span>SA2 系统架构与 SA5 管理数据必须协同，避免重复方案。</span></div>
-          <div class="mini-stat"><b>1 个窗口</b><span>Rel-20 研究结论可能进入 Rel-21 规范工作或进一步研究。</span></div>
+          <div class="mini-stat"><b>4类角色</b><span>RAN同时是数据生产、近源处理、实时消费和跨域供给域。</span></div>
+          <div class="mini-stat"><b>4档时标</b><span>设备内环、Near-RT、Non-RT/OAM、训练与规划分层。</span></div>
+          <div class="mini-stat"><b>3类锚点</b><span>RAN定义无线事实，SA5管理数据，O-RAN开放智能控制。</span></div>
+          <div class="mini-stat"><b>1条边界</b><span>SA2 WT#5研究6GS系统级数据框架和RAN—CN跨域协同。</span></div>
         </div>
         <h3>给战略专家组的六项结论</h3>
         <div>
-          <div class="decision"><div class="decision-index">01</div><div><h4>应把 WT#5 视为 6G 平台控制权议题，而非单一数据网元议题</h4><p>最终是否新增专用 NF、数据接口或独立数据面尚未收敛；更稳定的竞争对象是元数据模型、数据需求表达（本文建议模型，非 3GPP 正式术语）、QoD、授权同意、跨域编排和开放接口。名称可能变化，控制点不会消失。</p></div></div>
-          <div class="decision"><div class="decision-index">02</div><div><h4>Data Fabric 是解释和工程化 WT#5 的强方法，但不能与标准画等号</h4><p>WT#5研究“3GPP可能需要规范哪些功能、流程和接口”；Data Fabric回答“如何将这些能力组织为逻辑统一、物理分布、元数据驱动的系统”。前者是标准研究边界，后者是架构方法和产品实现空间。</p></div></div>
-          <div class="decision"><div class="decision-index">03</div><div><h4>爱立信与华为正从两条路径影响标准方向和平台生态</h4><p>公开资料显示，爱立信重点主张 AI-ready data mesh、联邦数据湖和“采集一次、多方复用”；华为重点提出 DO/DA/DCP 数据面与 NET4AI。本文将其产品和研究材料归纳为两种竞争路径，不代表两家公司已正式发布统一的一体化产品路线。</p></div></div>
-          <div class="decision"><div class="decision-index">04</div><div><h4>中兴的差异化不应是复制竞品网元命名</h4><p>应围绕开放元数据、跨厂商运行时、可验证治理、NDT 安全闸门和运营商持有策略/密钥形成“运营商自主 Data Fabric”，用互操作与主权降低全栈锁定。</p></div></div>
-          <div class="decision"><div class="decision-index">05</div><div><h4>标准牵引与现网证据必须同频</h4><p>仅有标准提案不足以建立平台地位。需要以 5G-A 的 NWDAF、MDA、NDT、边缘、消息总线和 API 能力组成最小闭环，公开可复验的时延、复用、质量、节能和收入指标，反向支撑 Rel-21 取舍。</p></div></div>
-          <div class="decision"><div class="decision-index">06</div><div><h4>当前宜下注“控制面能力”，谨慎下注“单一物理拓扑”</h4><p>应优先投资元数据、语义、策略、编排和可观察性等跨拓扑资产；对专用 DFI、独立数据转发平面或通用语义空口保持可插拔验证，避免在 3GPP 尚未收敛前形成高成本路径依赖。</p></div></div>
+          <div class="decision"><div class="decision-index">01</div><div><h4>RAN数据面与传统U-plane必须严格区分</h4><p>本文所称数据面是面向AI、感知、孪生与自治的数据生产、处理、流通和消费能力集合，不是用户业务流量转发平面，也不是3GPP已经冻结的新网络平面。</p></div></div>
+          <div class="decision"><div class="decision-index">02</div><div><h4>主标准锚点应从SA2转向RAN、SA5与O-RAN</h4><p>RAN1负责物理测量，RAN2覆盖RRC及MAC/RLC/PDCP/SDAP和RRM程序，RAN3负责RAN架构与接口，RAN4负责RF、RRM、解调/CSI最低要求及测试；SA5管理PM/CM/Fault/Trace、MDA、模型与NDT；O-RAN提供开放智能路径。WT#5研究系统级互操作边界。</p></div></div>
+          <div class="decision"><div class="decision-index">03</div><div><h4>Data Fabric应按时标分层，不能进入所有关键路径</h4><p>设备内快速控制保留本地确定性数据；Near-RT只保留有界流处理、短期状态和特征；Non-RT/SMO负责历史、训练、治理和策略；跨域层只供给最小必要的数据产品。</p></div></div>
+          <div class="decision"><div class="decision-index">04</div><div><h4>中兴最有价值的控制点是RAN语义与QoD</h4><p>小区、波束、频段、UE群、拓扑、配置版本、采样窗口和动作历史决定RAN数据能否被正确使用。统一接口不等于统一口径，语义和质量是长期平台资产。</p></div></div>
+          <div class="decision"><div class="decision-index">05</div><div><h4>数据产品优先于原始数据搬运</h4><p>能传事件就不传连续流，能传特征就不传原始数据，能把模型下沉就不搬迁数据。跨域输出应带Owner、Schema、QoD、用途、版本和保留期。</p></div></div>
+          <div class="decision"><div class="decision-index">06</div><div><h4>闭环收益而非PB规模是第一评价标准</h4><p>平台价值必须落在切换成功率、频谱效率、边缘吞吐、能耗、故障恢复、模型泛化和动作安全上；采集量、接口数和Topic数不能替代业务结果。</p></div></div>
         </div>
-        <div class="callout warn"><strong>证据边界：</strong>TR 23.801-01 截至 2026 年 7 月仍为 Draft Technical Report，候选方案不代表最终规范；爱立信、华为公开材料中的“data mesh”“data plane”“agent fabric”等也分别包含参考架构、研究原型与产品能力，不能互相替代。本文把<strong>标准事实、厂商主张和战略推演</strong>分开标注。<a href="#s35">[S35]</a><a href="#s36">[S36]</a></div>
+        <div class="callout warn"><strong>术语与证据边界：</strong>3GPP和O-RAN目前都没有名为“RAN Data Fabric”的标准网元；它是建立在RAN、SA5与O-RAN标准接口之上的实现架构。SA2 WT#5正在研究系统级数据框架及跨域/RAN—CN相关候选问题，不预判采用统一网元或接口；RAN内部采集协议、节点接口和管理生命周期分别由RAN与SA5主导。</div>
       </div>
     </section>
 
@@ -439,178 +439,127 @@
 
     <section id="sixg" style="background:#071f3d;color:#e5f1f2">
       <div class="wrap">
-        <div class="section-kicker" style="color:#5eb6e4"><span class="section-no">07</span>3GPP WT#5 deep dive</div>
-        <h2 style="color:#fff">WT#5：6G 数据框架的标准窗口</h2>
-        <p class="lead" style="color:#c9dcde">6G 的“数据”不只是分析报表，而会同时成为网络感知、AI 训练、意图决策、数字孪生、算力调度和实时控制的输入。错误数据可能从坏图表升级为错误网络动作；数据的发现、质量、同意和处理位置因此必须成为系统架构能力。</p>
-        <div class="callout" style="border:1px solid #2b5966"><strong>标准事实：</strong>ITU-R M.2160 定义 IMT-2030 的六类使用场景：沉浸式通信、超可靠低时延通信、海量通信、泛在连接、AI 与通信、通感一体化，并以可持续性、安全与韧性、连接未连接者、泛在智能作为贯穿原则；它没有定义“6G 数据编织”。截至本报告日期，3GPP Release 20 主要承担 6G 研究，Release 21 是首个 6G 规范版本，Stage 3 计划于 2028 年 12 月冻结、ASN.1/OpenAPI 于 2029 年 3 月冻结。<a href="#s20">[S20]</a><a href="#s21">[S21]</a></div>
+        <div class="section-kicker" style="color:#5eb6e4"><span class="section-no">07</span>6G intelligent RAN data plane</div>
+        <h2 style="color:#fff">以RAN数据生命周期重画“数据面”</h2>
+        <p class="lead" style="color:#c9dcde">RAN数据同时具有高频、强时空上下文、短价值半衰期和闭环风险。合理的数据面不是中央总线，而是跨UE、RU、DU、CU、RIC、SMO和O-Cloud分层部署的生产—处理—消费体系。</p>
+        <div class="callout" style="border:1px solid #2b5966"><strong>术语限定：</strong>本文“6G RAN数据面”是研究性架构抽象，不是传统U-plane，也不是3GPP或O-RAN已经标准化的新平面。它表示支撑AI、感知、NDT与自治网络的数据生产、近源加工、流通、治理和消费能力集合。</div>
 
-        <h3 style="color:#fff">先把编号和状态说清楚</h3>
+        <h3 style="color:#fff">RAN的四类数据角色</h3>
+        <div class="grid-4">
+          <div class="card" style="color:#17202b"><span class="tag fact">生产域</span><h4>无线事实来源</h4><p>UE测量、MDT、物理层测量、调度、切换、波束、干扰、KPM、拓扑、配置、能耗、告警和感知结果首先产生于RAN。</p></div>
+          <div class="card" style="color:#17202b"><span class="tag infer">近源处理域</span><h4>数据减量与语义化</h4><p>在DU/CU/MEC完成过滤、聚合、压缩、特征提取、匿名化和异常检测，减少原始数据跨域搬运。</p></div>
+          <div class="card" style="color:#17202b"><span class="tag fact">实时消费域</span><h4>本地智能闭环</h4><p>调度、移动性、负载、干扰和节能模型直接消费本地数据；Near-RT RIC/xApp消费E2数据并执行受限动作。</p></div>
+          <div class="card" style="color:#17202b"><span class="tag infer">跨域供给域</span><h4>可治理数据产品</h4><p>向SMO、MDA、NDT、核心网、MEC和行业应用提供聚合指标、特征、事件与分析服务，而非默认开放原始流。</p></div>
+        </div>
+
+        <h3 style="color:#fff">RAN数据不是一种数据</h3>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>项目</th><th>经核验的正式信息</th><th>战略含义</th></tr></thead>
+            <thead><tr><th>数据族</th><th>典型内容</th><th>主要标准锚点</th><th>时间特征</th><th>Fabric关键问题</th></tr></thead>
             <tbody style="color:#17202b">
-              <tr><td>责任组织</td><td>3GPP TSG SA / SA2；Rel-20 研究项 <code>FS_6G_ARC</code>（Study on Architecture for 6G System）。</td><td>主体是 6G 系统与核心网 Stage 2 架构，不是 SA5 单独的 OAM 任务。</td></tr>
-              <tr><td>工作任务</td><td><strong>WT#5: 6G data framework in SA2</strong>；2025 年 6 月随 SID 获批，2025 年 12 月详细范围获批。<a href="#s35">[S35]</a></td><td>“WT#5”有明确原始出处，不宜泛化为所有 6G 数据研究。</td></tr>
-              <tr><td>关键问题</td><td>TR 23.801-01 的 <strong>KI#21: 6G data framework in SA WG2</strong>。</td><td>WT#5 ≠ KI#5；KI#5 是 6G QoS Framework。编号混淆会削弱报告可信度。</td></tr>
-              <tr><td>输出载体</td><td>TR 23.801-01《Study on Architecture for 6G System; Stage 2》，截至 2026-07-28 登记版本 0.8.0，状态 Draft。<a href="#s36">[S36]</a></td><td>现有架构均是研究候选，不是可宣称“3GPP 已采用”的标准方案。</td></tr>
-              <tr><td>跨组关系</td><td>SP-251634 明确要求与 SA5 协调共同数据处理能力，避免不兼容或重复；同时涉及 SA3、RAN 等。</td><td>标准竞争的关键是 SA2/SA5/RAN/SA3 接口边界，而非某一组内的功能最大化。</td></tr>
-              <tr><td>后续节奏</td><td>Rel-20 完成研究，研究结论作为 Rel-21 规范工作或进一步研究的基础。</td><td>当前是定义问题、信息模型和功能边界的高杠杆窗口；过早固化产品拓扑风险较高。</td></tr>
+              <tr><td><strong>无线测量</strong></td><td>物理层测量、RRC报告、MDT、覆盖与移动性数据</td><td>TS 38.215 / 38.331 / 37.320 / 32.422 / 32.423</td><td>毫秒至小时</td><td>采样代表性、时间/位置、UE隐私、配置版本</td></tr>
+              <tr><td><strong>近实时遥测</strong></td><td>E2SM-KPM测量报告；UE、Cell或Slice等粒度取决于测量项、REPORT Style和E2 Node声明能力</td><td>O-RAN WG3、E2/E2SM</td><td>Near-RT架构目标约10 ms—1 s；不是KPM周期保证</td><td>背压、乱序、短期状态、指标与对象映射</td></tr>
+              <tr><td><strong>管理数据</strong></td><td>PM、CM、Alarm、Trace、日志、软件和拓扑</td><td>3GPP SA5、O1、WG10</td><td>秒至天</td><td>跨域关联、历史、发现、管理生命周期</td></tr>
+              <tr><td><strong>策略与上下文</strong></td><td>A1 Policy、Enrichment Information、rApp输出</td><td>O-RAN WG2、A1、R1</td><td>秒至小时</td><td>Schema、新鲜度、策略范围、冲突与效果验证</td></tr>
+              <tr><td><strong>云基础设施</strong></td><td>O-Cloud库存、资源、加速器、部署、告警和容量</td><td>O-RAN WG6、O2</td><td>秒至小时</td><td>算力放置、数据驻留、故障域和成本</td></tr>
+              <tr><td><strong>AI与NDT</strong></td><td>训练集、特征、模型、推理、漂移、仿真快照</td><td>TS 28.105、28.561、RAN AI研究</td><td>毫秒至月</td><td>两项TS定义管理能力，不提供训练运行时、孪生保真度或闭环安全保证</td></tr>
+              <tr><td><strong>ISAC数据</strong></td><td>原始感知、特征、目标轨迹、事件和置信度</td><td>IMT-2030、3GPP/ETSI研究</td><td>亚秒至历史</td><td>近源最小化、旁观者隐私、空间质量和用途</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="callout warn"><strong>另一个易混点：</strong>2025 年 SA5 Network and Service Management 工作范围讨论稿 v0.0.7 在“2.2.9 Data Management”下曾提出一个拟议 WT-5，用于研究复用和增强用户同意机制；该讨论稿明确仍待研究项取舍，不能当作当前正式子任务编号。它也不是 SA2 的“WT#5 6G data framework”。本报告后文所称 WT#5 均指 SA2 FS_6G_ARC。<a href="#s37">[S37]</a></div>
 
-        <h3 style="color:#fff">WT#5 已批准的研究范围</h3>
-        <p>SP-251634 没有预设一个单体平台，而是先识别 AI/ML、UE 数据采集、感知等高层用例，再研究支撑这些用例的通用能力。其范围可以归纳为六类研究功能和三组横切考虑：质量/时延/数据量，运营商可见与可控，以及同意/隐私/安全/治理。</p>
-        <div class="grid-3">
-          <div class="card" style="color:#17202b"><span class="tag fact">01</span><h4>发现与注册</h4><p>研究数据发现和数据注册所需功能。具体需求表达、匹配通知与能力协商属于草案候选或本文建议，不是批准文本已确定的统一模型。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">02</span><h4>采集与传输</h4><p>研究数据源配置、数据采集、转移与分发。不同实体角色和具体传输路径仍是 TR 中待比较的候选方案。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">03</span><h4>标签与元数据</h4><p>对数据进行标签和元数据处理，使数据不仅“可到达”，还可被识别、筛选和与需求匹配。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">04</span><h4>处理与生成</h4><p>包括匿名化、分析、转换、聚合和数据生成等；处理可能靠近数据源，也可能部署在核心或边缘。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">05</span><h4>存储与检索</h4><p>保存原始或处理后数据，并支持按需求检索；架构仍需权衡驻留、生命周期、成本和数据新鲜度。</p></div>
-          <div class="card" style="color:#17202b"><span class="tag fact">06</span><h4>数据开放</h4><p>向 6GC NF、AF、管理域或第三方提供受控数据服务；开放机制可能复用/增强既有暴露功能，也可能形成专用功能。</p></div>
-        </div>
-        <div class="strategic-box"><strong>三组横切考虑：</strong>功能设计必须考虑数据质量、时延和数据量；架构层面还要处理用户同意、隐私、安全与数据治理，并保障运营商对数据处理过程的可见性和可控性。后两组决定了 6G 数据框架不能退化为高吞吐消息总线。</div>
-
-        <h3 style="color:#fff">WT#5 与 Data Fabric 的需求结合矩阵</h3>
+        <h3 style="color:#fff">标准所有权必须重新摆正</h3>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>WT#5问题</th><th>Data Fabric可提供的架构机制</th><th>需要争取的标准控制点</th><th>中兴产品化机会</th></tr></thead>
+            <thead><tr><th>标准域</th><th>对RAN Data Fabric的主要贡献</th><th>不负责什么</th></tr></thead>
             <tbody style="color:#17202b">
-              <tr><td><strong>发现与注册</strong></td><td>联邦目录、统一资源标识、主动元数据、能力与语义知识图；按数据需求而非按物理表发现数据。</td><td>本文建议研究“数据需求/数据供给”信息模型、注册发现服务、变化通知、能力协商和版本兼容；该模型尚非 3GPP 正式术语。</td><td>跨 RAN/Core/OAM/边缘的统一 Catalog 与 SDK，支持第三方数据源插件。</td></tr>
-              <tr><td><strong>标签与元数据</strong></td><td>技术、业务、运营、使用元数据联合；把来源、时间、位置、标签、同意状态与处理历史绑定。</td><td>最小公共元数据、扩展机制、跨域标识、语义映射和 metadata provenance。</td><td>Telco ontology、指标/实体语义层、自动映射与影响分析工具链。</td></tr>
-              <tr><td><strong>采集、转移与分发</strong></td><td>批、流、Pub/Sub、CDC、API、缓存与就地查询组合；主动元数据避免重复采集并选择路由。</td><td>源配置、订阅、事件模式、拥塞与优先级、UE/RAN/CN 传输路径和跨组接口。</td><td>可插拔 Data Agent runtime、边缘流处理、统一消息与协议适配，不绑定单一总线。</td></tr>
-              <tr><td><strong>处理、生成与编排</strong></td><td>依据时延、位置、成本、质量和策略动态构建数据流水线；将匿名化、聚合和特征工程作为可组合算子。</td><td>处理能力描述、placement、链路编排、状态管理、错误恢复及与 AI/计算框架边界。</td><td>策略驱动的数据编排器、算子市场、NDT/合成数据流水线和边云放置优化。</td></tr>
-              <tr><td><strong>Quality of Data</strong></td><td>数据契约、profiling、质量 SLO、漂移检测和根因血缘；质量不仅是准确性，还含新鲜度、完整性、代表性和可信来源。</td><td>QoD 指标集合、测量点、报告/协商、端到端责任、质量退化与补偿机制。</td><td>QoD 评估服务、质量可观察性、数据采购/计费与 SLA 证据。</td></tr>
-              <tr><td><strong>同意、隐私与治理</strong></td><td>策略即代码、用途绑定、动态脱敏、保留/销毁、可验证凭证、血缘审计和隐私增强计算。</td><td>同意对象与作用域、撤回传播、purpose/retention、跨域授权、责任审计和最小化原则。</td><td>运营商持有密钥与策略的治理控制面，支持本地部署、机密计算与联邦学习。</td></tr>
-              <tr><td><strong>数据开放与变现</strong></td><td>把输出封装为有 owner、契约、QoD、许可、计量和生命周期的数据产品/API。</td><td>DEF/NEF 边界、授权粒度、计量、计费、产品描述与 CAMARA/外部数据空间衔接。</td><td>面向 AI、感知、NDT 的 Data-as-a-Service，与 Open Gateway 行业解决方案联动。</td></tr>
-              <tr><td><strong>MNO可见与可控</strong></td><td>端到端 lineage、策略决策日志、数据位置视图、成本/能耗遥测、审批与回滚。</td><td>运营商策略优先级、审计接口、处理证明、紧急阻断、跨厂商可观察性。</td><td>“运营商自主”作为差异化：不把目录、策略和训练数据控制权让渡给设备商或云商。</td></tr>
+              <tr><td><strong>3GPP RAN1/2/3/4</strong></td><td>RAN1负责物理层；RAN2负责RRC、L2/3与RRM程序；RAN3负责架构和接口；RAN4负责RF/RRM/解调与CSI最低要求及测试。</td><td>不定义企业数据湖、完整Data Fabric或OAM数据产品运营。</td></tr>
+              <tr><td><strong>3GPP SA5</strong></td><td>PM/CM/Fault/Trace、管理数据发现、MDA、AI/ML生命周期和NDT管理；是RAN管理数据主锚点。</td><td>不定义毫秒级无线调度算法，也不替代RAN协议。</td></tr>
+              <tr><td><strong>O-RAN</strong></td><td>Non-RT RIC是SMO内逻辑功能；Near-RT RIC是独立O-RAN NF；O1/O2/A1/E2/R1提供分层管理和智能控制。</td><td>没有定义一个名为RAN Data Fabric的统一组件，也不覆盖全部业务和治理。</td></tr>
+              <tr><td><strong>3GPP SA2 WT#5</strong></td><td>正在研究可能适用数据框架的候选用例与发现、采集、处理、存储、暴露等功能，UE数据和Sensing只是示例方向。</td><td>不预判统一框架/网元/接口，也不主导RRC、F1/E1/Xn内部协议或RAN OAM实现。</td></tr>
+              <tr><td><strong>SA3 / O-RAN安全</strong></td><td>接口身份、认证授权、传输保护和安全日志，并逐步扩展数据框架安全。</td><td>接口安全不自动等于完整用途、保留、隐私和数据主权治理。</td></tr>
             </tbody>
           </table>
         </div>
+        <p>需要避免把单一规范扩大化：TS 37.320是MDT总体描述和Stage 2，不是全部无线测量规范；MDT管理控制和记录报告还涉及TS 32.422/32.423。TS 28.552定义5G性能测量，TS 28.558定义UE级测量及管理采集/报告机制。TS 28.104定义MDA管理服务契约，不是通用原始数据总线。<a href="#s58">[S58]</a><a href="#s59">[S59]</a><a href="#s65">[S65]</a><a href="#s66">[S66]</a><a href="#s67">[S67]</a></p>
+        <div class="strategic-box"><strong>准确边界：</strong>不能把WT#5说成“只管核心网”；它把UE数据采集和Sensing列为潜在用例示例，并研究系统级及RAN—CN相关候选问题，但不预判所有用例采用统一框架。RAN内部采集语义、节点接口与管理数据生命周期仍由RAN和SA5主导。<a href="#s36">[S36]</a><a href="#s58">[S58]</a><a href="#s59">[S59]</a></div>
 
-        <h3 style="color:#fff">TR 0.8.0 暴露出的架构分歧</h3>
-        <p>草案并未收敛为单一方案，而是保留多类候选：在单个 6GC NF 内形成“数据岛”；复用/增强 5GC 数据功能；引入多个专用数据 NF；新增 data-agent 功能；通过 AI 域理解和执行数据意图；以及 UE 数据经用户面、控制信令或 OAM 路径传输等不同选择。RAN—CN 之间也存在复用控制信令、定义专用数据框架接口或不由 SA2 统一定义等分歧。</p>
-        <div class="grid-2">
-          <div class="card" style="color:#17202b"><h4>分歧一：演进增强还是新建平面</h4><p>复用 DCCF、ADRF、NEF 等现有功能可保护 5G-A 投资并减少新接口；专用数据功能/平面更适合多源多宿、任意拓扑与高速分发。战略上应支持共同信息模型和可插拔执行器，使产品同时覆盖“增强现网”和“新平面 PoC”。</p></div>
-          <div class="card" style="color:#17202b"><h4>分歧二：集中编排还是分布自治</h4><p>集中编排便于全局策略和资源优化，却可能成为时延、规模与故障瓶颈；分布式 Agent 更贴近数据，但增加一致性和治理难度。建议采用层级控制：全局定义意图、策略和契约，本地在授权边界内执行与降级。</p></div>
-          <div class="card" style="color:#17202b"><h4>分歧三：统一功能还是按用例裁剪</h4><p>SP-251634 明确，“data framework”不意味着所有用例使用同一组功能、流程、NF、服务或数据格式。中兴应推动公共最小内核 + 可扩展 profile，避免统一框架演化为臃肿单体。</p></div>
-          <div class="card" style="color:#17202b"><h4>分歧四：数据移动还是计算移动</h4><p>AI、感知和 UE 数据受到带宽、隐私、驻留与时效约束。Data Fabric 应同时支持数据到模型、模型到数据和两者到可信执行环境；标准需要表达处理能力和位置约束，而不只定义传输。</p></div>
-        </div>
-
-        <h3 style="color:#fff">建议中兴在 Rel-20 / Rel-21 坚持的七项立场</h3>
-        <div class="principles" style="color:#dbe8f1">
-          <div class="principle"><div><h4 style="color:#fff">公共语义内核，可扩展而非单一大模型</h4><p style="color:#bfcfdb">统一身份、来源、时间、位置、质量、用途和处理历史等最小元数据；用 profile 支撑 AI、ISAC、NDT、UE 训练等差异，避免强制统一所有 payload。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">研究数据需求与数据产品双向协商</h4><p style="color:#bfcfdb">本文建议消费者表达所需语义、QoD、时延、位置和隐私条件，生产者描述能力与约束；由框架匹配，而不是消费者硬编码数据源和网元。具体信息模型需通过标准讨论验证。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">采集一次、授权复用，但允许局部冗余</h4><p style="color:#bfcfdb">以元数据识别重复采集，以契约授权多方复用；对可靠性、隔离和快环需求允许策略化复制，避免把口号绝对化。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">QoD必须端到端可测、可定位责任</h4><p style="color:#bfcfdb">除格式正确外，应覆盖新鲜度、完整性、真实性、代表性、标签质量和分布漂移；明确生产、处理、传输和消费各段的责任与证据。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">运营商策略权优先于平台便利</h4><p style="color:#bfcfdb">同意、用途、驻留、保留与跨境策略由运营商控制，策略随数据和派生物传播；提供标准审计和紧急阻断，不把治理封装成黑盒。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">控制面开放，数据面可替换</h4><p style="color:#bfcfdb">标准化元数据、需求、策略、编排和遥测接口；允许流总线、专用 DFI、用户面或 OAM 通道按部署替换，降低运营商和产业链锁定。</p></div></div>
-          <div class="principle"><div><h4 style="color:#fff">SA2/SA5/RAN/SA3形成一条证据链</h4><p style="color:#bfcfdb">系统数据、管理数据、RAN 数据和安全策略必须共享标识、血缘和生命周期语义；标准组织间若形成两个目录、两套同意和两种 QoD，将直接制造 6G 集成债务。</p></div></div>
-        </div>
-        <div class="grid-3">
-          <div class="card" style="color:#13222d"><span class="tag fact">AIAC</span><h3>AI 与通信</h3><p>网络既承载 AI，也用 AI 优化自身。训练、特征、推理和动作必须共享语义、版本、血缘与质量证据，避免训练—服务偏差。</p></div>
-          <div class="card" style="color:#13222d"><span class="tag pre">ISAC</span><h3>通感一体</h3><p>RF 感知会生成位置、轨迹、成像等高敏感数据。原始 IQ/点云宜在 RAN/MEC 就地处理，跨域优先交换事件、特征与置信度。</p></div>
-          <div class="card" style="color:#13222d"><span class="tag infer">NDT</span><h3>网络数字孪生</h3><p>孪生需要拓扑、配置、遥测、模型与业务数据的一致快照。每个预测都应带输入时间、版本、假设、同步滞后与置信度。</p></div>
-          <div class="card" style="color:#13222d"><span class="tag fact">Edge</span><h3>边云协同</h3><p>毫秒级闭环必须本地执行；全局目录、长期训练和跨域优化可在云侧。Fabric 负责同步策略、摘要、模型和血缘，而非把远端查询塞进快环。</p></div>
-          <div class="card" style="color:#13222d"><span class="tag pre">NTN</span><h3>天地与跨域融合</h3><p>地面网、卫星、专网、边缘云和合作运营商具有断续连接、带宽和主权差异，需要可离线的边缘子 Fabric 与冲突合并机制。</p></div>
-          <div class="card" style="color:#13222d"><span class="tag pre">SemCom</span><h3>语义通信</h3><p>任务导向传输和生成式重建仍以研究和早期技术报告为主，尚非成熟 6G 空口标准。共享知识版本、语义失真与安全回退是未决问题。</p></div>
-        </div>
-
-        <h3 style="color:#fff">现有标准已经给出哪些“积木”？</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>组织 / 体系</th><th>已发布能力</th><th>可贡献给 6G Fabric</th><th>边界</th></tr></thead>
-            <tbody style="color:#13222d">
-              <tr><td>3GPP</td><td>NWDAF、DCCF、ADRF、MDA、AI/ML 生命周期、NDT</td><td>核心网分析、采集协调、模型训练/推理、跨域保障和孪生管理。<a href="#s22">[S22]</a><a href="#s23">[S23]</a></td><td>不是跨所有 SDO 与企业的统一数据治理层。</td></tr>
-              <tr><td>ETSI ZSM / ENI</td><td>管理域、跨域集成、意图闭环、AI enabler、知识与策略</td><td>跨域服务编排、闭环协调与安全治理。<a href="#s26">[S26]</a></td><td>ZSM 的 Integration Fabric 不等于本文完整 Data Fabric。</td></tr>
-              <tr><td>ETSI MEC</td><td>边缘主机、平台、编排器和 Federation</td><td>本地处理、应用发现、边云协同和低时延放置。<a href="#s27">[S27]</a></td><td>不是企业级数据语义与质量标准。</td></tr>
-              <tr><td>O-RAN</td><td>SMO、Non-RT / Near-RT RIC、A1/E2/O1/R1</td><td>按时标分层的 RAN 数据、策略、模型与动作通道。<a href="#s28">[S28]</a></td><td>不覆盖完整核心网、传输、OSS/BSS 与外部生态。</td></tr>
-              <tr><td>TM Forum</td><td>Autonomous Networks、ODA、TMF921 Intent</td><td>业务意图、自治等级、OSS/BSS 组件化与开放 API。<a href="#s29">[S29]</a></td><td>不是无线实时控制标准。</td></tr>
-              <tr><td>CAMARA</td><td>QoD、位置验证、边缘发现、SIM Swap 等 API</td><td>把受控网络能力包装为开发者可消费产品。<a href="#s30">[S30]</a></td><td>外部能力 API，不是运营商内部控制接口。</td></tr>
-              <tr><td>IDS / Gaia-X / DSP</td><td>身份、目录、合同协商、凭证和使用策略</td><td>跨运营商、行业与公共机构的数据主权交换。<a href="#s19">[S19]</a></td><td>不适合直接进入亚秒级无线控制路径。</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="color:#fff">本文提出的 6G 数据编织参考架构</h3>
-        <p><span class="tag infer">本文推演</span>下图是把现有标准积木组合为端到端体系，并非 ITU、3GPP 或 ETSI 已发布的统一架构。</p>
+        <h3 style="color:#fff">本文提出的RAN Data Fabric分层架构</h3>
+        <p><span class="tag infer">本文推演</span>统一的是身份、语义、质量、策略和证据，不是所有数据使用同一协议、存储或处理时延。</p>
         <div class="anatomy" style="background:#041b24;border:1px solid #234a56">
-          <svg viewBox="0 0 1100 740" role="img" aria-label="6G数据编织七层参考架构">
-            <defs><linearGradient id="sixG" x1="0" x2="1"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#cae85e"/><stop offset="1" stop-color="#63d7ca"/></linearGradient></defs>
-            <g font-family="sans-serif">
-              <rect x="35" y="30" width="1030" height="75" rx="15" fill="#e6f4f2"/>
-              <text x="63" y="61" fill="#082f3e" font-size="13" font-weight="800">L6 · 业务与生态暴露</text>
-              <text x="63" y="87" fill="#264954" font-size="16">TMF Open APIs　CAMARA APIs　行业数据空间　合作伙伴数据产品</text>
-              <rect x="35" y="120" width="1030" height="86" rx="15" fill="#cae85e"/>
-              <text x="63" y="153" fill="#082f3e" font-size="13" font-weight="800">L5 · 意图、编排与有界自治</text>
-              <text x="63" y="181" fill="#082f3e" font-size="16">意图解析　冲突消解　闭环协调　动作审批　熔断/回滚　人工接管</text>
-              <rect x="35" y="221" width="1030" height="86" rx="15" fill="#63d7ca"/>
-              <text x="63" y="254" fill="#082f3e" font-size="13" font-weight="800">L4 · AI、知识与网络数字孪生</text>
-              <text x="63" y="282" fill="#082f3e" font-size="16">特征库　模型注册表　联邦学习　知识图谱　NDT　仿真 / 合成数据</text>
-              <rect x="35" y="322" width="1030" height="112" rx="15" fill="#0e7780"/>
-              <text x="63" y="355" fill="#cae85e" font-size="13" font-weight="800">L3 · 数据编织控制面</text>
-              <text x="63" y="384" fill="#fff" font-size="16">产品目录　Schema/语义　数据契约　Lineage　质量 SLO　身份/同意　用途策略</text>
-              <text x="63" y="411" fill="#d9ffff" font-size="14">连接数据 → 模型 → 意图 → 策略 → 动作 → 结果，形成可追责证据链</text>
-              <rect x="35" y="449" width="1030" height="86" rx="15" fill="#174656"/>
-              <text x="63" y="482" fill="#63d7ca" font-size="13" font-weight="800">L2 · 联邦数据平面</text>
-              <text x="63" y="510" fill="#fff" font-size="16">Event / CDC　查询联邦　边缘缓存　时序/对象/图　Connector　PET / TEE</text>
-              <rect x="35" y="550" width="1030" height="86" rx="15" fill="#345d6a"/>
-              <text x="63" y="583" fill="#cae85e" font-size="13" font-weight="800">L1 · 域适配与边缘采集</text>
-              <text x="63" y="611" fill="#fff" font-size="16">NWDAF / DCCF / MDA　O-RAN E2/O1/A1/R1　MEC　OSS/BSS　ISAC　NTN</text>
-              <rect x="35" y="651" width="1030" height="58" rx="15" fill="url(#sixG)"/>
-              <text x="550" y="687" fill="#082f3e" font-size="16" font-weight="800" text-anchor="middle">UE　RAN　Core　Transport　Edge / Cloud　Sensors　Robots · 物理资源与动作执行</text>
-              <path d="M1005 670 V65" stroke="#ff8a4c" stroke-width="3" stroke-dasharray="8 6"/>
-              <text x="1035" y="370" fill="#ff8a4c" font-size="13" text-anchor="middle" transform="rotate(-90 1035 370)">零信任 · 最小化 · 责任 AI · 供应链安全 · 可持续性</text>
-            </g>
+          <svg viewBox="0 0 1100 760" role="img" aria-label="RAN Data Fabric七层架构">
+            <defs><linearGradient id="ranG" x1="0" x2="1"><stop stop-color="#c51d3a"/><stop offset=".6" stop-color="#5eb6e4"/><stop offset="1" stop-color="#f3c553"/></linearGradient></defs>
+            <rect x="35" y="25" width="1030" height="75" rx="12" fill="#e9f3f9"/><text x="62" y="57" fill="#071f3d" font-size="13" font-weight="800">L7 · 跨域供给</text><text x="62" y="82" fill="#23475f" font-size="16">SA2 WT#5 / Core Analytics　OSS/BSS　MEC　NDT　行业平台 · 授权数据产品/API</text>
+            <rect x="35" y="115" width="1030" height="80" rx="12" fill="#f3c553"/><text x="62" y="148" fill="#071f3d" font-size="13" font-weight="800">L6 · 智能闭环与安全闸门</text><text x="62" y="176" fill="#071f3d" font-size="16">rApp / xApp　MDA　策略与模型服务　冲突仲裁　NDT预演　灰度与回滚</text>
+            <rect x="35" y="210" width="1030" height="90" rx="12" fill="#5eb6e4"/><text x="62" y="243" fill="#071f3d" font-size="13" font-weight="800">L5 · RAN Data Fabric控制面</text><text x="62" y="271" fill="#071f3d" font-size="16">Catalog　Schema / RAN语义　QoD　Lineage　数据契约　用途策略　生命周期</text>
+            <rect x="35" y="315" width="1030" height="80" rx="12" fill="#075f9e"/><text x="62" y="348" fill="#f3c553" font-size="13" font-weight="800">L4 · Non-RT / 管理数据平面</text><text x="62" y="376" fill="#fff" font-size="16">SMO / Non-RT RIC　O1 / O2 / R1 / A1　PM / CM / FM / Trace　训练与历史分析</text>
+            <rect x="35" y="410" width="1030" height="80" rx="12" fill="#184a70"/><text x="62" y="443" fill="#5eb6e4" font-size="13" font-weight="800">L3 · Near-RT数据平面</text><text x="62" y="471" fill="#fff" font-size="16">Near-RT RIC / xApps　E2 / E2SM-KPM　流处理　短期状态 / SDL　特征缓存</text>
+            <rect x="35" y="505" width="1030" height="95" rx="12" fill="#173a5a"/><text x="62" y="538" fill="#f3c553" font-size="13" font-weight="800">L2 · 近源处理</text><text x="62" y="566" fill="#fff" font-size="16">DU / CU / MEC：过滤　聚合　压缩　特征提取　匿名化　异常检测　时间对齐</text>
+            <rect x="35" y="615" width="1030" height="75" rx="12" fill="#354f62"/><text x="62" y="647" fill="#fff" font-size="13" font-weight="800">L1 · 数据生产</text><text x="62" y="674" fill="#fff" font-size="16">UE　RU / DU / CU　RIC　OAM　O-Cloud　环境 / 拓扑 / ISAC</text>
+            <rect x="35" y="710" width="1030" height="30" rx="8" fill="url(#ranG)"/><text x="550" y="731" fill="#071f3d" font-size="13" font-weight="800" text-anchor="middle">横向：安全与隐私 · 时间同步 · 可观察性 · 数据主权 · 模型治理 · 成本与能耗</text>
           </svg>
         </div>
-        <div class="big-quote" style="color:white;border-color:#cae85e">部署原则：<em style="color:#cae85e">治理可统一，数据应分布；训练可联邦，推理靠近动作；慢环可跨域，快环必须本地；高风险动作先过孪生与策略护栏。</em></div>
 
-        <h3 style="color:#fff">快环与慢环：Fabric 不能进入所有关键路径</h3>
-        <div class="grid-3">
-          <div class="card" style="color:#13222d"><h4>&lt; 10 ms：设备 / RAN 内环</h4><p>使用本地状态、预编译策略和已验证模型。禁止依赖远端目录查询、跨云联邦或在线治理审批；Fabric 在环外负责模型、策略和证据同步。</p></div>
-          <div class="card" style="color:#13222d"><h4>约 10 ms—1 s：Near-RT</h4><p>使用边缘缓存、流式特征和受限动作集。可消费 Non-RT 下发的 enrichment、策略和模型，但必须在本地完成时限与安全校验。</p></div>
-          <div class="card" style="color:#13222d"><h4>&gt; 1 s：Non-RT / 管理域</h4><p>适合跨域分析、长期优化、模型训练、NDT 验证、意图分解与合规审计，是完整 Fabric 发挥作用的主要层次。</p></div>
-        </div>
-
-        <figure class="figure">
-          <img src="data-fabric-assets/6g-ddaa-architecture.png" alt="开放论文中面向6G的数据驱动分布式自治架构原图" loading="lazy">
-          <figcaption><span class="figure-tools"><a href="data-fabric-assets/6g-ddaa-architecture.png" download>下载原图</a><a href="https://www.mdpi.com/2079-9292/15/1/102" target="_blank" rel="noopener">原始论文 ↗</a></span><strong>图 5｜面向 6G 的数据驱动分布式自治架构（DDAA）。</strong>图中网络控制、数据与智能单元通过 DTI/SBI 协同，说明“智能面”和“数据面”正在成为 6G 研究中的一等对象。它是开放学术论文提出的架构，不是 3GPP 规范。来源：<em>Electronics</em> 2026, 15(1), 102，CC BY 4.0。</figcaption>
-        </figure>
-
-        <h3 style="color:#fff">五个值得优先验证的业务闭环</h3>
+        <h3 style="color:#fff">O-RAN接口不是一条“统一数据总线”</h3>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>闭环</th><th>数据链</th><th>Fabric 的作用</th><th>关键护栏</th></tr></thead>
-            <tbody style="color:#13222d">
-              <tr><td><strong>QoD / SLA 保障</strong></td><td>业务意图 → NWDAF/MDA/RIC/MEC → 违约预测 → 调整 → QoE 验证</td><td>统一业务 SLA、网络 KPI、拓扑和动作血缘；跨域关联 RAN/Core/MEC。</td><td>动作白名单、租约、回滚；不能以单域 KPI 牺牲端到端体验。</td></tr>
-              <tr><td><strong>故障自愈</strong></td><td>告警/拓扑/性能 → 根因与影响 → NDT 验证 → 编排修复 → 恢复检查</td><td>提供跨域时序、配置版本、历史案例和因果候选；记录证据。</td><td>孪生保真度门槛、变更窗口、幂等和人工接管。</td></tr>
-              <tr><td><strong>能耗优化</strong></td><td>流量预测 + 能耗 + 覆盖 → 约束优化 → 小区/算力调整 → 效果复核</td><td>把网络能耗、云碳强度、QoE 和业务收益放入共同语义。</td><td>核算训练与传输能耗，防止“AI 节能”的反弹效应。</td></tr>
-              <tr><td><strong>ISAC 城市感知</strong></td><td>RF/外部传感器 → MEC 融合 → 事件/轨迹 → 城市孪生 → 联合行动</td><td>就地最小化，跨域发布有用途、保留期和置信度的数据产品。</td><td>旁观者隐私、目的限制、短保留期、输出披露控制。</td></tr>
-              <tr><td><strong>联邦模型闭环</strong></td><td>边缘训练 → 安全聚合 → 验证 → 灰度发布 → 漂移监控 → 回滚</td><td>联合版本化数据、特征、模型、代码、策略与设备群。</td><td>投毒检测、来源证明、签名制品、差分隐私与安全聚合。</td></tr>
+            <thead><tr><th>接口</th><th>正式用途</th><th>作为Fabric数据源/控制点</th><th>不能误解为</th></tr></thead>
+            <tbody style="color:#17202b">
+              <tr><td><strong>O1</strong></td><td>SMO与O-RAN NF间的配置、PM、FM、文件、日志和Trace</td><td>长周期管理数据、拓扑和变更的重要来源</td><td>毫秒级RAN遥测总线</td></tr>
+              <tr><td><strong>O2</strong></td><td>SMO与O-Cloud；O2ims管理基础设施资源，O2dms管理部署生命周期</td><td>算力、加速器、位置、容量和故障域元数据</td><td>E2 KPM或用户数据接口</td></tr>
+              <tr><td><strong>A1</strong></td><td>Non-RT RIC与Near-RT RIC间的Policy、EI及模型相关协同</td><td>策略、上下文、模型工作流和跨时标控制</td><td>直接调度UE的接口或通用数据湖API</td></tr>
+              <tr><td><strong>E2</strong></td><td>Near-RT RIC与E2 Node间的订阅、报告和控制</td><td>具体对象粒度和动作能力取决于E2SM、REPORT/Control Style及E2 Node声明</td><td>持久化、可靠重放和任意RAN数据出口</td></tr>
+              <tr><td><strong>R1</strong></td><td>rApp与Non-RT RIC/SMO框架之间生产或消费服务</td><td>数据/服务类型注册、发现、请求、订阅和交付</td><td>标准化rApp到xApp直连接口</td></tr>
             </tbody>
           </table>
         </div>
+        <p>E2SM-KPM定义测量订阅和REPORT结构，不提供控制动作；控制需E2SM-RC、E2SM-CCC或E2 Node声明支持的其他控制型E2SM。A1-EI定义EI Type、EI Job及结果交付，却不保证断链期间无损缓存。R1严格终结于rApp与Non-RT RIC/SMO框架之间；DME作为SMO服务可向SMO内外授权消费者暴露数据，但不能把外部接口统称为R1。它们都未规定跨O1/O2/A1/E2的统一语义、血缘和QoD。<a href="#s60">[S60]</a><a href="#s61">[S61]</a><a href="#s62">[S62]</a></p>
+
+        <h3 style="color:#fff">按闭环时标分层</h3>
+        <div class="grid-4">
+          <div class="card" style="color:#17202b"><h4>&lt;10 ms：原生内环</h4><p>L1/L2/RRM本地确定性控制。Fabric不进入关键路径，只在环外同步模型、策略和审计摘要。</p></div>
+          <div class="card" style="color:#17202b"><h4>约10 ms—1 s：Near-RT</h4><p>这是Near-RT控制环的架构量级，不是E2SM-KPM报告周期保证。使用有界流处理、短期状态和特征缓存，禁止远端Catalog成为在线依赖。</p></div>
+          <div class="card" style="color:#17202b"><h4>&gt;1 s：Non-RT / OAM</h4><p>SMO、rApp、MDA、A1、O1。适合策略、跨小区优化、历史分析、模型和治理。</p></div>
+          <div class="card" style="color:#17202b"><h4>分钟—月：训练与规划</h4><p>数据湖仓、NDT、跨域规划和模型训练。关注代表性、版本、成本与长期生命周期。</p></div>
+        </div>
+
+        <h3 style="color:#fff"><span class="tag infer">本文推演</span>六个优先闭环</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>闭环</th><th>关键数据</th><th>分析与动作</th><th>标准支点</th><th>主要护栏</th></tr></thead>
+            <tbody style="color:#17202b">
+              <tr><td><strong>移动性优化</strong></td><td>UE测量、切换事件、邻区、负荷、配置版本</td><td>识别乒乓/失败热点，调整参数并验证</td><td>RAN2/3、MDT、E2、O1</td><td>作用域、UE隐私、灰度和回退</td></tr>
+              <tr><td><strong>干扰与负载协同</strong></td><td>PRB、干扰、吞吐、拓扑、波束</td><td>小区间负载均衡与资源策略</td><td>E2SM-KPM负责报告；动作需E2SM-RC/CCC或其他控制型E2SM及xApp</td><td>近实时预算、跨xApp冲突仲裁</td></tr>
+              <tr><td><strong>节能闭环</strong></td><td>业务预测、能耗、覆盖关系、唤醒历史</td><td>载波/小区节能与动态恢复</td><td>SA5/O1、rApp、A1</td><td>覆盖和QoE底线、训练能耗核算</td></tr>
+              <tr><td><strong>故障自愈</strong></td><td>告警、KPI、日志、配置和软件变更</td><td>跨域根因、隔离、恢复、效果确认</td><td>SA5、O1、MDA、NDT</td><td>因果证据、变更窗口、幂等回滚</td></tr>
+              <tr><td><strong>QoE保障</strong></td><td>无线质量、会话体验、核心网和业务状态</td><td>端到端根因和资源/策略协同</td><td>SA5/O-RAN、SA2跨域</td><td>不以单域KPI牺牲业务效用</td></tr>
+              <tr><td><strong>模型生命周期</strong></td><td>训练特征、标签、推理、漂移和动作结果</td><td>训练、验证、部署、监测和回滚</td><td>TS 28.105、SMO、A1/R1</td><td>数据—模型版本、投毒和低置信拦截</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="color:#fff"><span class="tag infer">待验证假设</span>RAN专属QoD：最值得形成话语权的资产</h3>
+        <p>通用完整性和新鲜度不足以判断RAN数据是否可用。本文建议同时度量小区/波束/频段/UE群代表性、采样密度、无线测量误差、时间同步偏差、配置和软件版本、拓扑一致性、标签来源及训练—服务分布差异。O1/3GPP PM文件的suspectFlag和KPM记录级incompleteFlag只是局部信号，不构成接口级QoD保证。</p>
+        <div class="strategic-box"><strong>北向协同推演：</strong>RAN Data Fabric先在内部完成数据减量、语义对齐和质量证明，再通过SA5管理服务、DME等SMO服务或SA2 WT#5候选机制向Core/AF供给数据产品。R1仅用于rApp访问Non-RT RIC/SMO框架服务，不是面向Core/AF的直接暴露接口。</div>
       </div>
     </section>
 
     <section id="competition" style="background:#e8eef5">
       <div class="wrap">
         <div class="section-kicker"><span class="section-no">08</span>Competitive intelligence</div>
-        <h2>主流厂商动向：竞争焦点正在上移</h2>
-        <p class="lead">公开材料显示，爱立信与华为都已把数据从“网络管理的副产品”提升为 AI 原生网络的基础资源，但两者的起点、架构叙事和商业控制点不同。以下分析严格区分已商用产品、标准贡献、研究架构和本文判断。</p>
+        <h2>厂商动向：RAN竞争正从设备能力上移到数据与智能控制点</h2>
+        <p class="lead">公开材料显示，爱立信与华为都在把RAN遥测、管理数据、AI模型、数字孪生和网络API连接成平台能力，但尚没有一家公开证明跨RAN、RIC、SMO和Core的统一商用Data Fabric已广泛部署。以下从RAN大数据视角区分产品事实、标准输入、研究架构和本文判断。</p>
 
         <div class="table-scroll">
           <table>
-            <thead><tr><th>维度</th><th>Ericsson</th><th>Huawei</th><th>对中兴的核心启示</th></tr></thead>
+            <thead><tr><th>RAN数据竞争维度</th><th>Ericsson</th><th>Huawei</th><th>对中兴的核心启示</th></tr></thead>
             <tbody>
-              <tr><td><strong>数据架构主张</strong></td><td>AI-ready data mesh / federated data lake / data fabric；强调“采集一次、授权多用”、数据岛联邦和 no-data-copy（厂商架构主张，仍允许必要镜像）。</td><td>专用 6G Data Plane；DO 编排、DA 执行、DCP 以 Pub/Sub 分发，强调非连接数据的任意拓扑协作。</td><td>不要在 mesh 与独立平面之间二选一；控制面应统一，执行面应允许两种形态共存。</td></tr>
+              <tr><td><strong>数据架构主张</strong></td><td>AI-ready data mesh / federated data lake / data fabric；强调“采集一次、授权多用”和数据岛联邦。</td><td>专用6G Data Plane；DO编排、DA近源执行、DCP以Pub/Sub分发非连接数据。</td><td>RAN侧应统一语义、质量和策略，允许O1/E2流、管理文件、边缘缓存和跨域框架多后端共存。</td></tr>
               <tr><td><strong>公开路线拼图</strong></td><td>本文归纳：5G SA、NWDAF、EIAP/rApps、EFDL、网络 API 与 6G intelligent fabric 愿景；不是 Ericsson 宣布的单一产品路线。<a href="#s55">[S55]</a><a href="#s56">[S56]</a></td><td>本文归纳：NET4AI、NDT、AI Core/Open Gateway、AgenticCore 与新数据/计算平面研究；不是 Huawei 宣布的完整 6G Data Plane 产品链。</td><td>需要同时给运营商“保护 5G-A 投资”和“验证 6G 新架构”两条可选择路径。</td></tr>
-              <tr><td><strong>智能控制</strong></td><td>分层 AI、intent、rApp/cApp、agent fabric、digital twin safety gate。</td><td>AI4NET/NET4AI、Agentic Core、Agent Fabric、NDT sandbox、语义数字孪生。<a href="#s57">[S57]</a></td><td>Agent 不应直接获得生产网无限权限；NDT、策略与可回滚执行应组成安全闸门。</td></tr>
+              <tr><td><strong>RAN智能控制</strong></td><td>EIAP、rApps/cApps、分层AI、intent与Network Digital Twin愿景。</td><td>RAN Agent、AI4NET/NET4AI、Telco Twin与Agentic Core等产品/研究拼图。<a href="#s57">[S57]</a></td><td>模型、策略和动作必须与RAN数据版本关联；Agent不能绕过作用域、置信门限和回滚。</td></tr>
               <tr><td><strong>商业外延</strong></td><td>CCES/NEF 提供能力开放；Aduna 由 Ericsson 持股 50%，12 家运营商合计持股 50%，Vonage 等属于生态渠道。</td><td>华为以 GSMA Open Gateway Channel Partner 身份参与生态，并分别发布 AI Core 与云边产品；尚无证据证明这些能力已形成统一 6G 商业平台。</td><td>数据框架最终要连接计量、计费和行业产品，但必须分别验证产品覆盖、渠道与真实收入。</td></tr>
               <tr><td><strong>主要优势</strong></td><td>全球运营商关系、O-RAN/ETSI/Hexa-X 参与度，以及 NWDAF/EIAP/API 等公开产品锚点。</td><td>RAN—Core—IP—Cloud—AI 算力—终端覆盖较广，研究主张、标准输入和局部产品之间具备衔接条件。</td><td>对中兴自身的相对优劣仍需内部资产、标准席位、客户部署和成本数据盘点后确认。</td></tr>
-              <tr><td><strong>公开缺口</strong></td><td>尚无证据证明统一跨 RAN/Core/OSS/BSS 的商用 data fabric 已广泛部署；agent/NDT 多为演进中能力。</td><td>DO/DA/DCP 未成为 3GPP 既定网元；跨厂商互操作、完整治理与语义通信商用证据不足。</td><td>用标准接口、第三方互操作测试和现网 KPI 把竞品愿景与已验证能力区分开。</td></tr>
+              <tr><td><strong>公开缺口</strong></td><td>尚无证据证明统一跨RAN/Core/OSS/BSS的商用Data Fabric已广泛部署；实时NDT与Agent Fabric仍在演进。</td><td>DO/DA/DCP未成为3GPP既定网元；跨厂商RAN数据语义、治理与Agent互操作证据不足。</td><td>以O1/E2/A1/R1多接口语义映射、跨厂商闭环和现网收益验证真实差距。</td></tr>
             </tbody>
           </table>
         </div>
@@ -638,7 +587,7 @@
             <p>本文判断，爱立信可能希望 EIAP、EFDL、Core 与其 API 生态成为数据—智能—API 价值链的重要控制点；这不是厂商公开承诺，也不意味着其能单方面控制 Aduna。其潜在优势不在某个新数据网元，而在演进式架构、标准参与、运营商覆盖与软件平台的组合。<a href="#s55">[S55]</a></p>
           </div>
         </div>
-        <div class="strategic-box"><strong>竞争研判：</strong>爱立信正在公开倡导“采集一次、授权复用”和“按需求自动编排数据”；这些原则与 WT#5 具有较高契合度，可能影响后续标准讨论和运营商架构偏好，但目前不足以称为事实标准。中兴可围绕本文建议的数据需求表达、QoD、跨域目录和策略执行提出更开放、可替换的方案。</div>
+        <div class="strategic-box"><strong>RAN竞争研判：</strong>爱立信的关键动作不是一个独立数据网元，而是用EIAP、rApp/cApp、实时数据摄取和O-RAN生态把RAN与Core自动化连接起来。中兴需要在RAN对象语义、近源数据减量、跨接口QoD和第三方应用可移植性上形成可量化差异。</div>
 
         <h3>Huawei：以“专用数据面”连接 AI、感知、算力与 Agent</h3>
         <div class="grid-2">
@@ -663,7 +612,7 @@
             <p>华为在 3GPP SA5 研讨材料中明确主张跨厂商、跨网元、跨应用的数据传输框架，覆盖采集、处理、注册/发现/访问控制、分发与开放，并提出 Data QoS、Agent Fabric 和 NDT sandbox。这是可确认的厂商标准输入，不代表 3GPP 共识。<a href="#s47">[S47]</a></p>
           </div>
         </div>
-        <div class="strategic-box"><strong>竞争研判：</strong>华为公开材料覆盖网络数据生成、边缘处理、AI 算力、数字地图/孪生、核心网智能和 API 变现，具备形成全栈闭环的条件；但尚无一手证据证明这些能力已按统一 6G Data Plane 完整集成。中兴仍应避免只在单一消息总线、NWDAF 或 NEF 层逐项对标，而应以可验证的跨域闭环检验真实差距。</div>
+        <div class="strategic-box"><strong>RAN竞争研判：</strong>华为的潜在优势是把RAN数据生成、边缘处理、算力、数字孪生和核心网智能纳入全栈叙事；但尚无证据证明DO/DA/DCP已成为标准或完整商用平台。中兴不应复制网元名称，而应争夺RAN Data Agent运行时开放性、数据QoD和运营商自主治理。</div>
 
         <h3>竞合判断：哪些应跟进，哪些应差异化</h3>
         <div class="table-scroll">
@@ -681,45 +630,46 @@
           </table>
         </div>
 
-        <div class="big-quote">对中兴而言，最优战略不是在爱立信的“mesh”与华为的“data plane”之间站队，而是定义一个<em>控制面开放、执行面可替换、治理权归运营商</em>的 6G Telco Data Fabric。</div>
+        <div class="big-quote"><span class="tag infer">待内部验证的战略假设</span><br>对中兴RAN而言，不应在爱立信的“mesh”与华为的“data plane”之间机械站队；建议探索一个<em>RAN语义统一、近源执行、实时分层、北向开放、治理权归运营商</em>的RAN Data Fabric。</div>
       </div>
     </section>
 
     <section id="roadmap">
       <div class="wrap">
         <div class="section-kicker"><span class="section-no">09</span>Strategic action portfolio</div>
-        <h2>行动建议：标准、架构、产品与生态四线并进</h2>
-        <p class="lead">Fabric 最容易失败的方式，是先建设“大而全平台”，再寻找问题。对中兴更有效的路径，是以标准控制点为牵引、以 5G-A 资产为底座、以可测闭环为证据，形成可向 Rel-21 平滑演进的产品组合。</p>
-        <h3>建议目标架构：运营商自主的 Telco Data Fabric</h3>
-        <p>此处是战略工作命名，不代表中兴现有正式产品，也不代表已完成竞争差距分析。目标不是再造一个中央数据湖，而是在 RAN、Core、Transport、OSS/BSS、MEC 与云平台之上建立可独立演进的公共能力。</p>
-        <div class="callout warn"><strong>决策前置条件：</strong>以下优先级是基于外部竞争与标准窗口提出的战略假设。立项前必须完成中兴现有 NWDAF/MDA/NDT/API、元数据平台、标准席位、客户部署、第三方互操作、研发复用度和单位成本的内部资产盘点；若基线不成立，应调整自研、整合或生态合作比例。</div>
+        <h2>行动建议：先形成RAN数据内循环，再扩大跨域供给</h2>
+        <p class="lead">最容易失败的方式，是从中央平台或WT#5候选网元出发要求RAN“供数”。更有效的路径是先选择高价值RAN闭环，建立语义、QoD和近源处理能力，再以SA5、O-RAN及SA2边界逐步开放。</p>
+        <h3>建议目标架构：运营商自主的 RAN Data Fabric</h3>
+        <p>此处是战略工作命名，不代表中兴现有正式产品，也不声称O-RAN或3GPP已定义该组件。目标是在UE、RU、DU、CU、RIC、SMO和O-Cloud之间形成分层数据底座，并以标准接口向Core、OSS/BSS、MEC和行业平台供给产品。</p>
+        <div class="callout warn"><strong>决策前置条件：</strong>立项前应盘点现有MDT、PM/CM/FM/Trace、E2/O1/A1/R1、时序/流平台、RAN AI训练数据、NDT、元数据模型、多厂商适配和现网闭环收益。以下优先级是待内部资产验证的战略假设，不是已完成差距分析。</div>
         <div class="grid-2">
-          <div class="card"><h4>一套控制内核</h4><p>联邦 Catalog、Telco ontology、本文建议的数据需求表达、数据契约、QoD、lineage、同意与用途策略形成统一控制内核。元数据模型优先对齐 3GPP，同时为 O-RAN、TM Forum、CAMARA、工业数据空间保留扩展映射。</p></div>
-          <div class="card"><h4>多个可替换执行后端</h4><p>批、流、Pub/Sub、湖仓、查询联邦、边缘缓存、用户面和未来专用 DFI 都实现为可选择的执行器。策略根据时延、数据量、驻留、成本、能耗和可靠性决定数据移动、计算移动或模型移动。</p></div>
-          <div class="card"><h4>一个通信级信任闸门</h4><p>把 Agent 身份、最小权限、工具白名单、轨迹日志、策略决策、NDT 预演、灰度执行、熔断和回滚串成高风险动作的强制路径；通用 MCP/A2A 只作为适配层，不能绕过 3GPP/TMF/O-RAN 的功能授权。</p></div>
-          <div class="card"><h4>一组可经营的数据产品</h4><p>面向 AI 训练、ISAC、NDT、体验保障、能耗优化和行业 API 发布带 owner、QoD、许可、计量和成本的数据产品。内部复用与外部变现使用同一契约内核，但采用不同安全域与责任边界。</p></div>
+          <div class="card"><h4>一套RAN语义控制内核</h4><p>统一O1 DN、E2 Node/Cell/UE ID、A1 Scope、R1 Target、O2资源、拓扑和配置版本；用Schema、QoD、lineage、用途和保留策略管理跨接口数据。</p></div>
+          <div class="card"><h4>两级Fabric执行面</h4><p>Near-RT侧只保留有界流处理、短期状态和特征缓存；SMO/Non-RT侧负责历史、训练、治理、数据产品和跨域供给。快速内环不依赖远端目录。</p></div>
+          <div class="card"><span class="tag infer">本文推演</span><h4>一个RAN闭环安全闸门</h4><p>把模型版本、作用域、动作白名单、冲突仲裁、置信门限、NDT预演、灰度、熔断和回滚串成强制路径。TS 28.561只定义NDT管理能力，不保证孪生保真度或预演有效性。</p></div>
+          <div class="card"><h4>一组场景化数据产品</h4><p>面向移动性、干扰、节能、QoE、故障和模型训练发布带Owner、对象范围、时间粒度、QoD、配置版本和成本的数据产品。</p></div>
         </div>
         <h3>建议投入组合</h3>
         <div class="table-scroll">
           <table>
             <thead><tr><th>优先级</th><th>工作包</th><th>必须形成的成果</th><th>停止或调整条件</th></tr></thead>
             <tbody>
-              <tr><td><strong>P0</strong></td><td>WT#5 / SA5 标准牵引</td><td>研究数据需求表达，并围绕元数据、QoD、同意、跨域标识、开放与可观察性形成一致提案；争取 editor/rapporteur 或关键文本牵引。</td><td>若架构不收敛，转向公共信息模型与可扩展 profile，避免押注单一 NF。</td></tr>
-              <tr><td><strong>P0</strong></td><td>5G-A 最小产品闭环</td><td>打通 NWDAF/MDA/NDT/消息/API 的目录、血缘、质量和策略，完成“需求—数据—模型—动作—结果”证据链。</td><td>若无法量化减少重复采集、缩短定位时间或改善业务 KPI，不扩展平台范围。</td></tr>
-              <tr><td><strong>P1</strong></td><td>开放 Data Agent Runtime</td><td>跨 UE/RAN/Edge/Core 的可移植算子、能力描述、沙箱、远程证明与多后端传输，完成至少两家第三方互操作。</td><td>若标准倾向增强现有 NF，则将 runtime 下沉为内部实现，不强推新网元。</td></tr>
-              <tr><td><strong>P1</strong></td><td>NDT + Agent 安全执行</td><td>形成反事实测试、风险评分、冲突检测、灰度、回滚和审计的统一闸门，以故障自愈或节能闭环验证。</td><td>孪生同步滞后或保真度未达场景门槛时，只允许建议模式。</td></tr>
-              <tr><td><strong>P2</strong></td><td>数据/API/算力行业生态</td><td>在低空、工业、交通或机器人选择一到两个场景，把感知数据、边缘推理、网络 SLA 与 CAMARA API 组合为可计量产品。</td><td>没有多运营商覆盖、明确付费方或单位经济性时，不把技术 PoC 包装为平台业务。</td></tr>
+              <tr><td><strong>P0</strong></td><td>RAN语义与QoD基线</td><td>统一小区/波束/UE/切片/拓扑标识、指标口径、事件时间、采样粒度、配置版本和质量信封。</td><td>若跨产品线无法确定权威Owner和版本规则，不扩展自动化范围。</td></tr>
+              <tr><td><strong>P0</strong></td><td>两个最小闭环</td><td>选择移动性/负载和节能/故障中的两个场景，打通“源数据—特征—模型—策略—动作—效果”证据链。</td><td>若不能改善业务KPI或减少定位时间，停止平台化扩张。</td></tr>
+              <tr><td><strong>P1</strong></td><td>O1/E2/A1/R1数据协同</td><td>建立统一对象映射、跨接口Correlation ID、Schema兼容和质量规则，验证rApp/xApp协同。</td><td>若接口只能在同厂商闭环内互通，不宣称开放Fabric。</td></tr>
+              <tr><td><strong>P1</strong></td><td>RAN Data Agent Runtime</td><td>在DU/CU/MEC提供可移植过滤、聚合、特征、匿名和异常算子，支持沙箱、资源预算与远程证明。</td><td>若影响实时预算或标准未收敛，则作为内部可插拔实现，不固化网元名称。</td></tr>
+              <tr><td><strong>P1</strong></td><td>NDT + Agent安全执行（本文推演）</td><td>探索反事实测试、风险评分、冲突检测、灰度、回滚和审计的统一闸门；这些不是TS 28.561现成保证。</td><td>孪生同步滞后或保真度未达场景门槛时，只允许建议模式。</td></tr>
+              <tr><td><strong>P2</strong></td><td>北向RAN数据产品</td><td>向SA5 MDA/NDT、SA2/Core、MEC或行业平台开放聚合指标、特征和分析服务。</td><td>没有明确消费者、用途、QoD和单位经济性时，不开放原始高频数据。</td></tr>
             </tbody>
           </table>
         </div>
         <h3>能力成熟度闸门</h3>
         <div class="principles">
-          <div class="principle"><div><h4>G0｜定义边界与词汇</h4><p>确定一个场景及其目标函数；为关键数据、模型、意图和动作指定 owner、合法用途、语义版本、保留期和权威源。输出的是可审计责任图，而不是工具选型表。</p></div></div>
-          <div class="principle"><div><h4>G1｜只读可观察</h4><p>接入源与运行事件，建立目录、schema、事件时间、质量和端到端血缘。先证明能回答“数据从哪来、是否新鲜、谁在用、变化影响谁”，不执行自动动作。</p></div></div>
+          <div class="principle"><div><h4>G0｜定义RAN对象与时间语义</h4><p>确定场景目标，为小区、波束、UE群、切片、拓扑、配置、数据、模型和动作指定Owner、事件时间、语义版本、保留期和权威源。</p></div></div>
+          <div class="principle"><div><h4>G1｜只读可观察</h4><p>接入O1/E2/MDT/管理数据，建立目录、Schema、事件时间、配置版本、QoD和血缘；先证明能回答“哪份数据对应哪个网络状态”。</p></div></div>
           <div class="principle"><div><h4>G2｜数据产品与契约</h4><p>将高频复用输出封装为数据产品；在 CI 中验证兼容性、质量、用途和成本；减少重复采集与影子表。产品消费必须可度量，长期无人使用的资产应退出。</p></div></div>
           <div class="principle"><div><h4>G3｜影子闭环</h4><p>系统只给建议，与人工决策和真实结果比较。验证模型、规则、策略延迟、误报和收益；高风险动作先在数字孪生或沙箱中演练。</p></div></div>
           <div class="principle"><div><h4>G4｜有界自治</h4><p>仅对白名单、低风险、可回滚动作自动执行；配置风险预算、审批阈值、动作租约、冲突仲裁、熔断和人工接管。自治级别由证据决定，不由宣传口号决定。</p></div></div>
-          <div class="principle"><div><h4>G5｜跨域与数据空间</h4><p>在内部语义和责任稳定后，再以可验证凭证、合同协商、用途策略与 Connector 对外交换产品；持续测试撤销、删除传播和供应商迁移。</p></div></div>
+          <div class="principle"><div><h4>G5｜跨域供给</h4><p>在RAN内部语义、质量和闭环责任稳定后，再通过SA5管理服务、DME等SMO服务、SA2候选机制或API向Core、MEC和行业应用供给产品；R1只服务rApp到框架。</p></div></div>
         </div>
         <h3>必须量化的指标</h3>
         <div class="table-scroll">
@@ -727,11 +677,14 @@
             <thead><tr><th>类别</th><th>指标</th><th>建议定义</th></tr></thead>
             <tbody>
               <tr><td>数据</td><td>新鲜度 / 完整率 / 合同合规率</td><td><code>消费时间 − 源事件时间</code> 的 P50/P95/P99；必需字段或事件实收/应收；通过 schema、语义、质量与用途检查的比例。</td></tr>
+              <tr><td>RAN语义</td><td>对象映射率 / 时间同步误差 / 配置一致率</td><td>O1 DN、E2 ID、A1 Scope、R1 Target和O2资源可关联比例；事件与配置快照的时间偏差。</td></tr>
+              <tr><td>无线质量</td><td>采样覆盖 / 代表性 / suspect与incomplete比例</td><td>按区域、频段、小区、波束和UE群评估训练或分析数据覆盖，不能只统计记录数量。</td></tr>
               <tr><td>元数据</td><td>血缘覆盖率 / 变更发现时延</td><td>可追至源、变换、模型和动作的关键产品比例；从源变化到控制面感知的时间。</td></tr>
               <tr><td>治理</td><td>策略决策延迟 / 删除传播时间</td><td>PDP 收到请求至 PEP 获得决定的 P95/P99；删除或撤回到副本、缓存、特征和索引全部生效的时间。</td></tr>
               <tr><td>复用</td><td>重复采集减少率 / 产品复用率</td><td>相同源被重复抽取的下降比例；被两个以上独立消费者稳定使用的数据产品比例。</td></tr>
               <tr><td>AI / NDT</td><td>训练—服务偏差 / 孪生滞后与误差</td><td>线上特征相对训练定义的偏离；孪生与生产网同步时差及关键预测误差。</td></tr>
               <tr><td>闭环</td><td>Deadline 达标 / 无效动作 / 回滚</td><td>端到端闭环在预算内完成的比例；未改善或反向损害 KPI 的动作率；回滚成功率与耗时。</td></tr>
+              <tr><td>RAN业务</td><td>切换 / 频谱 / 边缘吞吐 / 能耗</td><td>按具体闭环监控切换成功率、乒乓率、频谱效率、边缘用户吞吐、能耗/比特和收益持续性。</td></tr>
               <tr><td>价值</td><td>数据到行动时间 / 单位有效任务成本</td><td>从需求提出到受治理交付并产生动作的周期；每个成功业务结果的计算、传输、人力和能耗。</td></tr>
             </tbody>
           </table>
@@ -753,14 +706,14 @@
     <section class="closing">
       <div class="wrap">
         <div class="section-kicker" style="color:#5eb6e4"><span class="section-no">10</span>Final synthesis</div>
-        <h2>最终研判：争夺数据框架，就是争夺 6G 智能的控制面</h2>
-        <p class="lead">数据编织的战略价值，不是增加一张平台架构图，而是把“数据需求—语义—质量—政策—模型—行动—结果”连成可观察、可验证、可回滚的链。WT#5 使其中的数据发现、采集、元数据、处理、存储、开放、QoD 与治理首次系统进入 3GPP 6G 架构研究；模型、行动和结果证据仍需与其他 KI、SA5 及自治管理工作协同。</p>
+        <h2>最终研判：争夺RAN数据语义与闭环证据，就是争夺6G智能RAN的控制权</h2>
+        <p class="lead">数据编织的战略价值，不是把RAN变成核心网数据源，也不是增加一张中央平台架构图，而是把“无线事实—近源处理—语义质量—模型策略—网络动作—效果反馈”连成可观察、可验证、可回滚的链。</p>
         <div class="grid-3" style="margin-top:42px">
-          <div class="card" style="color:#17202b"><h3>必须守住</h3><p>元数据、QoD、同意、策略和审计的运营商控制权；SA2/SA5/RAN/SA3 之间的一致语义；控制面开放与执行面可替换。</p></div>
-          <div class="card" style="color:#17202b"><h3>必须形成</h3><p>以 5G-A 现网能力验证的统一数据证据链、NDT 安全闸门、开放 Data Agent runtime，以及可经营的数据/API 产品。</p></div>
-          <div class="card" style="color:#17202b"><h3>必须避免</h3><p>照搬竞品网元命名、在标准未收敛前绑定单一数据拓扑、用实验室峰值代替端到端收益、把通用 Agent 直接接入生产控制。</p></div>
+          <div class="card" style="color:#17202b"><h3>必须守住</h3><p>RAN对象、指标、时间、拓扑、配置和QoD的定义权；近源处理与模型数据的运营商控制权；实时执行不依赖远端平台。</p></div>
+          <div class="card" style="color:#17202b"><h3>建议形成</h3><p>跨O1/E2/A1/R1的对象映射与血缘、两级Fabric、RAN数据产品；并验证NDT能否承担安全闸门及近源运行时是否可移植。</p></div>
+          <div class="card" style="color:#17202b"><h3>必须避免</h3><p>把RAN数据面等同U-plane、把WT#5当RAN内部架构中心、把O1当毫秒总线、让中央Fabric或通用Agent进入快速控制关键路径。</p></div>
         </div>
-        <div class="big-quote" style="color:#fff;border-color:#5eb6e4">战略北极星（本文建议，非 3GPP 既定范围）：<br><em style="color:#f3c553">让获授权的人、应用或 Agent 能以可互操作方式表达数据需求；网络在运营商策略边界内，发现、组合并交付满足 QoD 的数据，同时完整证明数据来自哪里、如何处理、为何允许使用。模型、动作和结果证据链还需与 AI、管理和自治标准协同。</em></div>
+        <div class="big-quote" style="color:#fff;border-color:#5eb6e4">战略北极星（本文建议，非标准既定范围）：<br><em style="color:#f3c553">让每一个RAN闭环都能证明：使用了哪一时空范围、哪一配置版本、什么质量的数据；经过何种近源处理和模型；为何执行该动作；动作是否在时限内产生持续收益，并能在失败时安全回退。</em></div>
       </div>
     </section>
 
@@ -793,9 +746,9 @@
           <li id="s20"><a href="https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en">Recommendation ITU-R M.2160, Framework and overall objectives of IMT-2030</a>；另见 <a href="https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2030/Pages/default.aspx">ITU IMT-2030 官方页</a>。</li>
           <li id="s21"><a href="https://www.3gpp.org/news-events/3gpp-news/rel21-timeline">3GPP, Timeline for Release 21</a>, 2026-06-10：首个规范性 6G Release 的冻结计划。</li>
           <li id="s22"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3579">3GPP TS 23.288, Architecture enhancements for 5GS to support network data analytics services</a>。</li>
-          <li id="s23"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3877">3GPP TS 28.104, Management Data Analytics service</a>。</li>
-          <li id="s24"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3970">3GPP TS 28.105, AI/ML management</a>：训练、测试、部署、推理与性能监测生命周期。</li>
-          <li id="s25"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin</a> 与 <a href="https://www.etsi.org/deliver/etsi_TS/128500_128599/128561/19.00.00_60/ts_128561v190000p.pdf">TS 28.561</a>。</li>
+          <li id="s23"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3877">3GPP TS 28.104, Management and orchestration; Management Data Analytics (MDA)</a>。</li>
+          <li id="s24"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3970">3GPP TS 28.105, AI/ML management</a>：标准化训练、测试、部署、推理控制与性能监测的管理能力和服务，不是训练/推理运行时。</li>
+          <li id="s25"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin</a> 与 <a href="https://www.etsi.org/deliver/etsi_TS/128500_128599/128561/19.00.00_60/ts_128561v190000p.pdf">TS 28.561</a>：定义NDT管理能力，不保证孪生保真度或闭环安全。</li>
           <li id="s26"><a href="https://www.etsi.org/deliver/etsi_gs/zsm/001_099/002/01.01.01_60/gs_zsm002v010101p.pdf">ETSI GS ZSM 002, Zero-touch network and Service Management Reference Architecture</a>；另见 ZSM 012/016。</li>
           <li id="s27"><a href="https://www.etsi.org/deliver/etsi_gs/MEC/001_099/003/04.01.01_60/gs_mec003v040101p.pdf">ETSI GS MEC 003 V4.1.1, Multi-access Edge Computing Framework and Reference Architecture</a>。</li>
           <li id="s28"><a href="https://www.o-ran.org/specifications">O-RAN Alliance Specifications</a> 与 <a href="https://www.etsi.org/deliver/etsi_TS/103900_103999/103982/14.00.00_60/ts_103982v140000p.pdf">ETSI TS 103 982</a>。</li>
@@ -828,17 +781,35 @@
           <li id="s55"><a href="https://www.ericsson.com/en/future-technologies/architecture/network-architecture-domains">Ericsson, Network architecture functional and physical domains</a>：EFDL、data mesh/data fabric 与跨域数据访问架构。</li>
           <li id="s56"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/6g-connectivity-and-beyond-for-the-2030s">Ericsson, 6G — connectivity and beyond for the 2030s</a>：AI-native intelligent fabric 愿景。</li>
           <li id="s57"><a href="https://www.huawei.com/en/huaweitech/future-technologies/semantic-digital-twins-wireless-communication-llm-inference">Huawei, Semantic Digital Twins for Wireless Communication</a>, 2024：语义 token、ISAC 数据与 LLM 推理研究。</li>
+          <li id="s58"><a href="https://www.3gpp.org/dynareport/37320.htm">3GPP TS 37.320, Radio measurement collection for Minimization of Drive Tests</a>：Logged/Immediate MDT及无线侧Stage 2流程。</li>
+          <li id="s59"><a href="https://www.3gpp.org/DynaReport/28104.htm">3GPP TS 28.104, Management Data Analytics</a>：MDA服务、数据源与报告方式；不是通用原始数据总线。</li>
+          <li id="s60"><a href="https://www.o-ran.org/specifications">O-RAN Alliance Specifications</a>：SMO、RIC、O1/O2/A1/E2/R1及最新版本入口。</li>
+          <li id="s61"><a href="https://www.etsi.org/deliver/etsi_ts/104000_104099/104040/04.00.00_60/ts_104040v040000p.pdf">ETSI TS 104 040, O-RAN E2 Service Model Framework</a>；另见<a href="https://www.etsi.org/deliver/etsi_TS/104000_104099/104039/04.00.00_60/ts_104039v040000p.pdf">E2AP</a>。</li>
+          <li id="s62"><a href="https://www.etsi.org/deliver/etsi_ts/104200_104299/104228/11.00.00_60/ts_104228v110000p.pdf">ETSI TS 104 228, O-RAN R1 General Aspects and Principles</a>：rApp与Non-RT RIC/SMO框架服务。</li>
+          <li id="s63"><a href="https://www.3gpp.org/DynaReport/28105.htm">3GPP TS 28.105, AI/ML management</a>：训练、测试、部署、推理控制与性能监测。</li>
+          <li id="s64"><a href="https://www.3gpp.org/dynareport/28561.htm">3GPP TS 28.561, Network Digital Twin management</a>：NDTFunction、NDTJob、NDTReport及生命周期。</li>
+          <li id="s65"><a href="https://www.3gpp.org/dynareport/28552.htm">3GPP TS 28.552, Management and orchestration; 5G performance measurements</a>：5G性能测量定义。</li>
+          <li id="s66"><a href="https://www.3gpp.org/dynareport/28558.htm">3GPP TS 28.558, Management and orchestration; UE level measurements for 5G system</a>：UE级测量及管理采集/报告机制。</li>
+          <li id="s67"><a href="https://www.3gpp.org/dynareport/32422.htm">3GPP TS 32.422</a>与<a href="https://www.3gpp.org/dynareport/32423.htm">TS 32.423</a>：Trace/MDT控制配置及数据定义与报告。</li>
+          <li id="s68"><a href="https://www.3gpp.org/dynareport/28545.htm">3GPP TS 28.545, Fault Supervision</a>：告警控制、订阅、通知和列表读取。</li>
+          <li id="s69"><a href="https://www.3gpp.org/dynareport/38331.htm">3GPP TS 38.331, NR RRC</a>：UE测量配置与报告协议。</li>
+          <li id="s70"><a href="https://www.3gpp.org/dynareport/38215.htm">3GPP TS 38.215</a>与<a href="https://www.3gpp.org/dynareport/38133.htm">TS 38.133</a>：NR物理层测量及RRM性能要求。</li>
+          <li id="s71"><a href="https://www.3gpp.org/dynareport/38760-2.htm">3GPP TR 38.760-2</a>与<a href="https://www.3gpp.org/dynareport/38760-3.htm">TR 38.760-3</a>：Rel-20 6G RAN2/RAN3 Draft研究。</li>
+          <li id="s72"><a href="https://www.etsi.org/deliver/etsi_TS/104000_104099/104043/11.00.00_60/ts_104043v110000p.pdf">ETSI TS 104 043, O-RAN O1 Interface</a>。</li>
+          <li id="s73"><a href="https://www.etsi.org/deliver/etsi_ts/103900_103999/103987/04.03.00_60/ts_103987v040300p.pdf">ETSI TS 103 987, O-RAN A1 Application Protocol</a>。</li>
+          <li id="s74"><a href="https://www.o-ran.org/technical-groups/wg6">O-RAN WG6 Cloudification and Orchestration</a>：O-Cloud、O2及云资源模型。</li>
+          <li id="s75"><a href="https://www.o-ran.org/technical-groups/wg2">O-RAN WG2</a>、<a href="https://www.o-ran.org/technical-groups/wg3">WG3</a>与<a href="https://www.o-ran.org/technical-groups/wg10">WG10</a>：Non-RT RIC、Near-RT RIC和OAM职责。</li>
         </ol>
         <h3>图片资产与复用说明</h3>
         <p>报告优先下载官方或开放论文的原始图片并保存在 <code>data-fabric-assets/</code>，避免依赖外链失效。每幅图的图题、原始页面和许可已在图注中列明。原图保留英文和原始配色；Gaia-X 图遵循 CC BY-NC-ND 4.0，未裁切、翻译或改色。Google、欧委会网页内容的具体复用范围仍应以原页最新条款为准。本文自行绘制的中文示意图用于综合分析，不声称来自任何标准组织。</p>
         <div class="license">版权边界：链接到公开内容不等于取得任意转载权。本报告未嵌入需要单独授权的 ITU、3GPP、ETSI、O-RAN、TM Forum、IBM、AWS 或华为架构原图，仅提供文字引用和原始来源链接。若用于商业出版或对外分发，应再次核验所有图片在目标司法辖区和传播方式下的许可。</div>
-        <p style="margin-top:28px;color:#687982"><strong>版本说明：</strong>研究快照截至 2026-08-04。TR 23.801-01、TR 32.801-01 与 Release 21 仍在演进；涉及候选 NF、接口和时间表的判断应在每次 3GPP 全会后复核。本文面向战略讨论，不代表中兴通讯的正式技术路线、标准立场或产品承诺。</p>
+        <p style="margin-top:28px;color:#687982"><strong>版本说明：</strong>研究快照截至2026-08-05。3GPP Rel-20 6G研究、O-RAN规范及RAN AI/ML工作持续演进；涉及接口版本、候选架构和时间表的判断应定期复核。本文面向战略讨论，不代表中兴通讯的正式技术路线、标准立场或产品承诺。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">《数据编织 × 6G 数据框架：面向中兴通讯的战略研判》 · 战略研究参考 · 2026-08-04<br>非公司正式立场；所有外部事实均应结合文末来源、成熟度与证据等级理解。</div>
+    <div class="wrap">《面向6G智能RAN的数据面与数据编织》 · 中兴RAN大数据视角战略研究参考 · 2026-08-05<br>非公司正式立场；“RAN Data Fabric”为本文架构抽象，不是3GPP或O-RAN既定网元。</div>
   </footer>
   <button class="backtop" id="backtop" aria-label="返回顶部">↑</button>
   <script>
