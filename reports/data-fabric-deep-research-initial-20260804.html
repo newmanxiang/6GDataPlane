@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从第一性原理解释数据编织（Data Fabric）的定义、成因、组成、未来趋势及其与电信6G的结合。">
+  <title>数据编织：从第一性原理到 6G 智能网络</title>
+  <style>
+    :root{
+      --ink:#13222d;--muted:#60717b;--paper:#f5f3ed;--card:#fff;
+      --navy:#082f3e;--cyan:#0f9f9a;--cyan2:#63d7ca;--orange:#ff8a4c;
+      --lime:#cae85e;--line:#d9e2df;--soft:#e9f5f2;--blue:#2667ff;
+      --shadow:0 18px 55px rgba(8,47,62,.10);--radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.82}
+    a{color:#087a77;text-underline-offset:3px}
+    a:hover{color:#e75f2d}
+    img{max-width:100%;height:auto}
+    .progress{position:fixed;left:0;top:0;width:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--lime),var(--cyan2));z-index:99}
+    .rail{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:8px}
+    .rail a{width:9px;height:9px;border-radius:50%;background:#aac0bd;border:2px solid var(--paper);box-shadow:0 0 0 1px #aac0bd;text-indent:-9999px;overflow:hidden}
+    .rail a:hover,.rail a.active{background:var(--orange);box-shadow:0 0 0 1px var(--orange)}
+    .hero{min-height:92vh;background:var(--navy);color:white;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+    .hero:before{content:"";position:absolute;width:680px;height:680px;border:1px solid rgba(99,215,202,.18);border-radius:50%;right:-130px;top:-250px;box-shadow:0 0 0 70px rgba(99,215,202,.03),0 0 0 140px rgba(99,215,202,.025)}
+    .hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(100deg,transparent 10%,#000 75%)}
+    .hero-inner{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:88px 0 72px;position:relative;z-index:2}
+    .eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:750;color:var(--cyan2)}
+    .eyebrow:before{content:"";width:34px;height:2px;background:var(--orange)}
+    h1{font-size:clamp(48px,8.2vw,110px);line-height:.96;letter-spacing:-.055em;margin:28px 0 32px;max-width:1020px;font-weight:850}
+    h1 span{color:var(--lime)}
+    .hero-sub{font-size:clamp(18px,2.1vw,27px);line-height:1.5;max-width:860px;color:#cfe3e5;font-weight:380}
+    .hero-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:68px;border-top:1px solid rgba(255,255,255,.18);padding-top:24px}
+    .hero-meta div{padding-right:14px;border-right:1px solid rgba(255,255,255,.15)}
+    .hero-meta div:last-child{border:0}
+    .hero-meta strong{display:block;font-size:12px;letter-spacing:.12em;color:var(--cyan2);margin-bottom:6px}
+    .hero-meta span{font-size:15px;color:#e9f4f4}
+    .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
+    section{padding:100px 0;scroll-margin-top:20px}
+    .section-kicker{font-size:12px;font-weight:800;color:#078f8a;letter-spacing:.16em;text-transform:uppercase}
+    .section-no{font-family:Georgia,serif;color:var(--orange);font-size:21px;font-style:italic;margin-right:8px}
+    h2{font-size:clamp(34px,5vw,62px);line-height:1.08;letter-spacing:-.035em;margin:14px 0 34px;color:var(--navy)}
+    h3{font-size:26px;line-height:1.3;margin:42px 0 15px;color:var(--navy)}
+    h4{font-size:18px;margin:24px 0 8px;color:var(--navy)}
+    p{margin:0 0 19px}
+    .lead{font-size:22px;line-height:1.7;color:#344a55;max-width:930px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid rgba(8,47,62,.08);border-radius:var(--radius);padding:28px;box-shadow:0 9px 34px rgba(8,47,62,.055)}
+    .card h3,.card h4{margin-top:0}
+    .card p:last-child{margin-bottom:0}
+    .big-quote{font-family:Georgia,"Songti SC",serif;font-size:clamp(28px,4vw,48px);line-height:1.4;color:var(--navy);border-left:6px solid var(--orange);padding:5px 0 5px 34px;margin:48px 0}
+    .big-quote em{color:#087f7a;font-style:normal}
+    .callout{border-radius:var(--radius);padding:28px 30px;background:var(--navy);color:#effafa;margin:34px 0}
+    .callout strong{color:var(--lime)}
+    .callout a{color:var(--cyan2)}
+    .callout.warn{background:#fff4e9;color:#55311e;border:1px solid #ffd2b7}
+    .callout.warn strong{color:#bd4218}
+    .formula{font-family:"SFMono-Regular",Consolas,monospace;background:#061f2a;color:#e8ffff;border-radius:18px;padding:26px 30px;margin:25px 0;font-size:17px;overflow-x:auto}
+    .formula b{color:var(--lime)}
+    .tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:750;letter-spacing:.04em;margin-right:4px}
+    .tag.fact{color:#075c59;background:#d9f2ed}.tag.pre{color:#7b4b00;background:#fff0c9}.tag.infer{color:#713a18;background:#ffe4d5}.tag.risk{color:#7a2230;background:#ffe0e5}
+    .mini-stat{padding:24px;border-top:4px solid var(--cyan);background:white;border-radius:0 0 16px 16px}
+    .mini-stat b{font-size:30px;line-height:1;color:var(--navy);display:block;margin-bottom:12px}
+    .mini-stat span{color:var(--muted);font-size:14px}
+    .anatomy{margin:42px 0;background:#071f2a;border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+    .anatomy svg{width:100%;height:auto;display:block}
+    .figure{background:white;border-radius:24px;padding:18px;margin:38px 0;box-shadow:var(--shadow);border:1px solid #e0e6e4}
+    .figure img{display:block;margin:auto;max-height:720px;object-fit:contain;border-radius:12px}
+    .figure figcaption{font-size:13px;line-height:1.65;color:#64757d;padding:14px 8px 2px;border-top:1px solid #e6ecea;margin-top:14px}
+    .figure figcaption strong{color:#263d47}
+    .figure-tools{float:right;display:flex;gap:9px}
+    .figure-tools a{display:inline-block;padding:3px 9px;border:1px solid #b9ceca;border-radius:20px;text-decoration:none;font-size:12px}
+    table{width:100%;border-collapse:separate;border-spacing:0;margin:30px 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:14px;line-height:1.65}
+    th{background:var(--navy);color:white;text-align:left;padding:14px 16px;vertical-align:top}
+    td{padding:14px 16px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top}
+    td:last-child,th:last-child{border-right:0}tr:last-child td{border-bottom:0}
+    tbody tr:hover{background:#f1faf8}
+    .table-scroll{overflow-x:auto}
+    .timeline{position:relative;margin:46px 0 0;padding-left:28px}
+    .timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--orange),var(--cyan),var(--lime))}
+    .time{position:relative;padding:0 0 34px 24px}
+    .time:before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;background:var(--paper);border:4px solid var(--cyan);border-radius:50%}
+    .time b{display:block;color:var(--orange);font-size:14px;letter-spacing:.05em}
+    .time h4{margin:3px 0 6px}.time p{color:#51636c;margin:0}
+    .weave{display:grid;grid-template-columns:1fr 80px 1fr;gap:16px;align-items:center;margin:46px 0}
+    .sources,.consumers{display:grid;gap:10px}
+    .sources div,.consumers div{padding:13px 16px;background:#fff;border:1px solid #dbe5e2;border-radius:13px;font-weight:650}
+    .threads{position:relative;height:260px}
+    .threads i{position:absolute;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--orange),var(--cyan));transform-origin:center}
+    .threads i:nth-child(1){top:14%;transform:rotate(31deg)}.threads i:nth-child(2){top:31%;transform:rotate(-25deg)}
+    .threads i:nth-child(3){top:49%;transform:rotate(18deg)}.threads i:nth-child(4){top:66%;transform:rotate(-30deg)}
+    .threads i:nth-child(5){top:82%;transform:rotate(24deg)}
+    .threads:after{content:"主动元数据";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg);white-space:nowrap;background:var(--navy);color:var(--lime);padding:8px 14px;border-radius:30px;font-size:12px;font-weight:750;letter-spacing:.08em}
+    .horizon{display:grid;grid-template-columns:125px 1fr;gap:0;margin-top:35px}
+    .horizon>div{padding:20px;border-bottom:1px solid #cad9d6}
+    .horizon .year{font-size:20px;font-weight:850;color:var(--navy);border-right:1px solid #cad9d6}
+    .horizon .trend{background:rgba(255,255,255,.45)}
+    .horizon .trend strong{color:#087f7a}
+    .loop{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:center;margin:35px 0}
+    .loop div{background:#fff;padding:15px 8px;border-radius:13px;text-align:center;border:1px solid #d9e5e2;font-size:12px;font-weight:750;position:relative}
+    .loop div:not(:last-child):after{content:"→";position:absolute;right:-12px;color:var(--orange);z-index:2;font-size:18px}
+    .loop div:nth-child(4){background:var(--navy);color:white}
+    .principles{counter-reset:p}
+    .principle{counter-increment:p;display:grid;grid-template-columns:65px 1fr;gap:14px;border-top:1px solid #cddbd8;padding:23px 0}
+    .principle:before{content:"0" counter(p);font-family:Georgia,serif;font-style:italic;color:var(--orange);font-size:25px}
+    .principle h4{margin:0 0 6px}.principle p{margin:0;color:#4f626c}
+    .refs{columns:2;column-gap:46px;padding-left:24px;font-size:13px}
+    .refs li{break-inside:avoid;margin:0 0 13px;padding-left:5px;line-height:1.55}
+    .license{font-size:12px;color:#61737c;background:#edf3f1;border-radius:12px;padding:11px 14px;margin-top:10px}
+    .closing{background:var(--navy);color:#dceced}
+    .closing h2{color:white}.closing .lead{color:#bdd2d4}
+    footer{background:#041b24;color:#93acb0;padding:36px 0;font-size:12px}
+    .backtop{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;border:0;background:var(--orange);color:#fff;font-weight:900;cursor:pointer;box-shadow:0 8px 24px rgba(231,95,45,.3);opacity:0;pointer-events:none;transition:.2s}
+    .backtop.show{opacity:1;pointer-events:auto}
+    @media(max-width:850px){
+      .rail{display:none}.hero{min-height:760px}.hero-meta,.grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}
+      section{padding:72px 0}.weave{grid-template-columns:1fr}.threads{height:100px;transform:rotate(90deg)}
+      .loop{grid-template-columns:1fr 1fr}.loop div:after{display:none}.refs{columns:1}
+    }
+    @media(max-width:520px){
+      .wrap,.hero-inner{width:min(100% - 30px,1180px)}h1{font-size:46px}
+      .hero-meta,.grid-4{grid-template-columns:1fr}.hero-meta div{border-right:0;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px}
+      .card{padding:21px}.figure{padding:10px}.figure-tools{float:none;margin-top:8px}
+    }
+    @media print{
+      .rail,.progress,.backtop{display:none!important}body{background:#fff;font-size:11pt}.hero{min-height:auto;break-after:page}
+      section{padding:35px 0}.card,.figure{box-shadow:none;break-inside:avoid}.wrap,.hero-inner{width:94%}a{color:inherit}
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="rail" aria-label="章节导航">
+    <a href="#abstract" aria-label="核心结论">核心结论</a><a href="#first" aria-label="第一性原理">第一性原理</a>
+    <a href="#what" aria-label="定义">定义</a><a href="#why" aria-label="成因">成因</a>
+    <a href="#anatomy" aria-label="组成">组成</a><a href="#compare" aria-label="比较">比较</a>
+    <a href="#future" aria-label="趋势">趋势</a><a href="#sixg" aria-label="6G">6G</a>
+    <a href="#roadmap" aria-label="落地">落地</a><a href="#sources" aria-label="来源">来源</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Independent research · 2026</div>
+      <h1>数据编织<br><span>不是一块布</span></h1>
+      <p class="hero-sub">它是让分散数据“可被发现、理解、信任、组合并安全行动”的智能控制体系——以及未来 6G AI 原生网络缺失的那层数据基础设施。</p>
+      <div class="hero-meta">
+        <div><strong>研究视角</strong><span>第一性原理，而非产品清单</span></div>
+        <div><strong>证据边界</strong><span>标准 / 预标准 / 推演分级</span></div>
+        <div><strong>覆盖范围</strong><span>架构、趋势、6G、实施与风险</span></div>
+        <div><strong>资料截点</strong><span>2026 年 8 月 4 日</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="abstract">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">00</span>Executive answer</div>
+        <h2>先给结论：编织的是关系、语义与控制</h2>
+        <p class="lead">数据编织（Data Fabric）不是一种数据库，也不等于把数据搬进同一个湖。它是一种仍在演进的数据管理与集成设计：以持续采集和分析的<strong>主动元数据</strong>作为智能控制面，把分布在数据库、湖仓、SaaS、流、边缘和合作伙伴处的数据连接起来，并按场景组合虚拟查询、ETL/ELT、CDC、事件流、API 与缓存，交付可信、受治理的数据与数据产品。</p>
+        <div class="big-quote">“编织”的本质，是把过去靠人脑维护的<strong>映射、血缘、规则、经验与责任</strong>，变成机器可读、可观察、可执行的<em>反馈网络</em>。</div>
+        <div class="grid-4">
+          <div class="mini-stat"><b>1 个核心</b><span>主动元数据：目录不能只记录，还要驱动动作。</span></div>
+          <div class="mini-stat"><b>2 个平面</b><span>统一的元数据控制面 + 分布式的数据执行面。</span></div>
+          <div class="mini-stat"><b>3 类价值</b><span>降集成熵、增数据可信度、缩短数据到行动的闭环。</span></div>
+          <div class="mini-stat"><b>0 个魔法</b><span>它不消灭网络时延、语义冲突、组织责任或数据质量问题。</span></div>
+        </div>
+        <div class="callout warn"><strong>成熟度提醒：</strong>“Data Fabric”尚无统一的 ISO、ITU 或 3GPP 参考标准。Gartner也将它称为“新兴设计概念”，并指出没有单一厂商以集成方式交付全部成熟组件。2025 年系统综述覆盖 189 项研究，同样指出缺乏直接比较不同范式真实效果的实证证据。所以下文讨论的是<strong>可验证的架构能力</strong>，不是采购品类或必然 ROI。<a href="#s4">[S4]</a><a href="#s5">[S5]</a></div>
+      </div>
+    </section>
+
+    <section id="first" style="background:#e6f1ee">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">01</span>First principles</div>
+        <h2>先忘掉“Fabric”：数据为何存在？</h2>
+        <p class="lead">企业保存数据，不是为了“拥有更多字节”，而是为了以更小的不确定性做出更好的行动。把问题还原后，数据系统是一条证据供应链。</p>
+        <div class="anatomy" aria-label="数据到行动的证据供应链">
+          <svg viewBox="0 0 1100 225" role="img">
+            <defs><linearGradient id="g1" x1="0" x2="1"><stop stop-color="#ff8a4c"/><stop offset="1" stop-color="#63d7ca"/></linearGradient></defs>
+            <path d="M70 112 H1030" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+            <g fill="#092f3e" stroke="#63d7ca" stroke-width="2">
+              <circle cx="90" cy="112" r="43"/><circle cx="245" cy="112" r="43"/><circle cx="400" cy="112" r="43"/>
+              <circle cx="555" cy="112" r="43"/><circle cx="710" cy="112" r="43"/><circle cx="865" cy="112" r="43"/><circle cx="1020" cy="112" r="43"/>
+            </g>
+            <g fill="#fff" font-size="15" text-anchor="middle" font-weight="700">
+              <text x="90" y="108">现实</text><text x="90" y="128">状态</text>
+              <text x="245" y="108">数据</text><text x="245" y="128">观测</text>
+              <text x="400" y="108">业务</text><text x="400" y="128">语义</text>
+              <text x="555" y="108">质量</text><text x="555" y="128">与来源</text>
+              <text x="710" y="108">合规</text><text x="710" y="128">访问</text>
+              <text x="865" y="108">计算</text><text x="865" y="128">与判断</text>
+              <text x="1020" y="108">行动</text><text x="1020" y="128">与反馈</text>
+            </g>
+            <text x="555" y="202" fill="#cae85e" font-size="15" text-anchor="middle">数据编织优化的是中间的证据传递，不替代目标、因果推断与业务责任</text>
+          </svg>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>可用信息 ≠ 原始数据</h3>
+            <p>一个名为 <code>revenue</code> 的字段，只有同时知道币种、会计口径、统计周期、来源系统、转换逻辑、更新时间、质量状态、访问限制和负责人，才可能成为可决策的信息。元数据不是边角料，而是数据获得意义所必需的上下文。</p>
+          </div>
+          <div class="card">
+            <h3>价值来自闭环，而非堆积</h3>
+            <p>数据只有在被合适的人或机器及时找到、正确解释、合法使用并转化为行动时才产生价值。反馈结果还要返回系统，修正质量规则、模型和管道。没有反馈，数据平台只能持续“供数”，无法学习哪种供给真正有效。</p>
+          </div>
+        </div>
+        <h3>三个不可约问题</h3>
+        <div class="grid-3">
+          <div class="card"><span class="tag fact">位置</span><h4>数据在哪里？</h4><p>源可能位于本地、云、SaaS、合作方或边缘；数据移动受到成本、时延、主权和源负载约束。</p></div>
+          <div class="card"><span class="tag fact">意义</span><h4>它到底表示什么？</h4><p>Schema 只能说明结构，不能裁定业务口径。语义对齐最终需要领域知识、责任人和版本治理。</p></div>
+          <div class="card"><span class="tag fact">信任</span><h4>为何应该相信并允许使用？</h4><p>答案来自血缘、质量、时效、身份、用途、同意、策略与审计证据，而不是一张“已治理”标签。</p></div>
+        </div>
+        <div class="formula"><b>可行动数据价值</b> ≈ 相关性 × 可发现性 × 语义一致性 × 质量 × 时效 × 合规性 ÷ 获取摩擦<br><small>任何一项接近 0，海量存储也不会自然转化为价值。该式为分析框架，不是财务计量公式。</small></div>
+      </div>
+    </section>
+
+    <section id="what">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">02</span>Definition & boundary</div>
+        <h2>数据编织究竟是什么？</h2>
+        <p class="lead">一个严格而可操作的定义，应同时说明对象、机制和结果。</p>
+        <div class="callout"><strong>工作定义：</strong>数据编织是一种跨异构、分布式环境的数据管理与集成设计。它以技术、业务、运营和社会/使用元数据构成的知识网络为控制面，持续观察数据及其使用行为，进而推荐或执行发现、集成、质量、安全、编排与交付动作，在不强制统一物理存储的前提下，为人、应用和 AI 提供可组合的数据产品。</div>
+        <p>这与 Gartner 的公开定义基本一致：目标是“灵活、可复用、增强式的数据集成”，并且“按定义将被动元数据转化为主动元数据”。IBM 则强调它是一种设计方法而非某一件软件，可跨本地和多云提供统一访问视图。<a href="#s1">[S1]</a><a href="#s2">[S2]</a></p>
+        <div class="weave">
+          <div class="sources">
+            <div>业务数据库 · 事务</div><div>湖仓 · 文件 · 模型</div><div>SaaS · API · 文档</div><div>事件流 · 日志 · IoT</div><div>边缘 · 外部数据空间</div>
+          </div>
+          <div class="threads" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="consumers">
+            <div>BI / SQL / 指标</div><div>数据科学 / 训练</div><div>RAG / AI Agent</div><div>运营应用 / API</div><div>自动化控制闭环</div>
+          </div>
+        </div>
+        <h3>“织物”隐喻中，分别是什么？</h3>
+        <div class="grid-3">
+          <div class="card"><h4>经线：稳定的治理骨架</h4><p>身份、术语、实体、策略、质量规则、数据契约、血缘和责任结构，决定一块数据在全生命周期中的基本约束。</p></div>
+          <div class="card"><h4>纬线：变化的数据流</h4><p>批处理、CDC、流、联邦查询、API、复制、缓存和模型特征，把不同速度、格式和位置的数据按需交付。</p></div>
+          <div class="card"><h4>织机：主动元数据闭环</h4><p>采集运行与使用信号，推断关系和影响，推荐或执行动作，再观察结果。它让静态目录变成系统的“感知—决策”层。</p></div>
+        </div>
+        <h3>什么不是数据编织</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>常见误认</th><th>为什么不够</th><th>在编织中的正确位置</th></tr></thead>
+            <tbody>
+              <tr><td>一个中央数据湖 / 湖仓</td><td>统一了部分存储，未必统一语义、策略和跨源交付。</td><td>是重要数据节点，可同时存在多个。</td></tr>
+              <tr><td>数据目录</td><td>如果只搜索和登记，仍是被动元数据。</td><td>发现入口与元数据图的一部分。</td></tr>
+              <tr><td>数据虚拟化</td><td>联邦查询不能独自解决源负载、跨源优化、质量与治理。</td><td>多种数据交付方式之一。</td></tr>
+              <tr><td>ETL/ELT 平台</td><td>管道移动和转换数据，但通常不了解全局语义、责任和用途。</td><td>数据平面的物化执行器。</td></tr>
+              <tr><td>知识图谱</td><td>图能表达实体与关系，却不等于接入、质量、编排和访问控制。</td><td>语义与元数据控制面的关键技术。</td></tr>
+              <tr><td>某厂商的 “Fabric” 产品</td><td>产品名不构成架构能力证明。</td><td>需逐项验证开放性、元数据激活和跨平台范围。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" style="background:#fdebdc">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">03</span>Why “weaving” emerged</div>
+        <h2>为什么会有“编织”？</h2>
+        <p class="lead">不是因为行业需要一个新名词，而是集中式统一和点对点集成同时碰到了规模边界。</p>
+        <div class="grid-2">
+          <div>
+            <h3>点对点连接会产生组合爆炸</h3>
+            <p>当每个数据源分别为每个消费者建一条专用管道，连接关系上界随节点数近似按 <em>n(n−1)/2</em> 增长。真实系统虽然不会全连接，但任何 schema、权限或业务口径变更都可能沿依赖链传播。工程师脑中的隐性映射越多，维护越脆弱。</p>
+            <div class="formula">潜在连接数 = <b>n × (n − 1) / 2</b><br>10 个节点 → 45；100 个节点 → 4,950；1,000 个节点 → 499,500</div>
+          </div>
+          <div>
+            <h3>“全部集中”也不是免费答案</h3>
+            <p>数据湖与云仓降低了分析存储成本，但无法取消数据驻留、出云费用、边缘时延、事务源负载、跨组织主权和超大规模复制。更重要的是，把数据放到一起并不会自动统一“客户”“故障”“活跃”或“覆盖”等业务含义。</p>
+            <div class="callout warn"><strong>第一性约束：</strong>数据具有重力，计算具有位置，语义属于领域，责任属于组织。可行架构必须允许“数据移动、查询移动、模型移动”三者按场景选择。</div>
+          </div>
+        </div>
+        <h3>六种同时增长的异构性</h3>
+        <div class="grid-3">
+          <div class="card"><h4>位置异构</h4><p>本地、多个云、SaaS、边缘、设备和合作伙伴长期共存。</p></div>
+          <div class="card"><h4>结构异构</h4><p>关系表、对象、时序、图、向量、文档、音视频和模型制品并存。</p></div>
+          <div class="card"><h4>速度异构</h4><p>月报、日批、秒级 CDC、毫秒事件和离线归档有不同时间语义。</p></div>
+          <div class="card"><h4>语义异构</h4><p>同名异义、异名同义、不同粒度与不断演进的指标版本。</p></div>
+          <div class="card"><h4>治理异构</h4><p>身份域、司法辖区、用途、同意、保留期和合同义务不同。</p></div>
+          <div class="card"><h4>消费异构</h4><p>人类分析、应用 API、AI 训练、RAG 和闭环控制需要不同 SLA。</p></div>
+        </div>
+        <h3>它不是凭空出现，而是多条路线汇流</h3>
+        <div class="timeline">
+          <div class="time"><b>1979—1990</b><h4>联邦数据库</h4><p>研究如何统一访问自治、异构、分布式数据库，奠定“不必先集中”的技术祖先。<a href="#s6">[S6]</a></p></div>
+          <div class="time"><b>2000s</b><h4>信息编织、数据虚拟化与企业服务</h4><p>逻辑视图、服务化访问和元数据目录开始覆盖多个物理来源，但元数据多用于记录与审计。</p></div>
+          <div class="time"><b>2010—2015</b><h4>数据湖、逻辑数据仓库与混合云</h4><p>原始数据保留和多平台共存成为现实；NetApp 也在混合云存储移动语境中使用 Data Fabric 名称。早期同名概念并不等于今天的主动元数据架构。<a href="#s7">[S7]</a></p></div>
+          <div class="time"><b>2019—2022</b><h4>主动元数据成为定义中心</h4><p>目录、血缘、知识图、可观察性与 ML 推荐相结合，Data Fabric 被系统化为增强式集成设计。</p></div>
+          <div class="time"><b>2023—现在</b><h4>从企业内编织走向 AI 上下文与数据空间</h4><p>数据产品、开放目录、RAG、AI Agent、机密计算和跨组织数据空间，把 Fabric 的边界从“找数”扩展到“可信行动”。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anatomy">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">04</span>Anatomy</div>
+        <h2>一张完整的数据编织由什么组成？</h2>
+        <p class="lead">没有唯一产品拓扑，但完整能力必须覆盖数据面、控制面、消费面和贯穿式保障。下面的七层模型是依据 Gartner、IBM、开放元数据与数据空间规范综合得到的分析框架，并非正式标准。</p>
+        <div class="anatomy">
+          <svg viewBox="0 0 1100 690" role="img" aria-labelledby="archTitle archDesc">
+            <title id="archTitle">数据编织七层参考架构</title>
+            <desc id="archDesc">从分布式数据源，经数据执行、主动元数据、产品和消费层，并由治理安全可观察性贯穿。</desc>
+            <defs><linearGradient id="archG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f9f9a"/><stop offset="1" stop-color="#2667ff"/></linearGradient></defs>
+            <rect x="30" y="25" width="1040" height="82" rx="16" fill="#effaf8"/>
+            <text x="62" y="58" fill="#07303e" font-size="14" font-weight="800">L6 · 消费与行动</text>
+            <text x="62" y="85" fill="#31505a" font-size="17">BI / SQL　Notebook　API / Event　AI / RAG / Agent　运营应用　自治闭环</text>
+            <rect x="30" y="122" width="1040" height="82" rx="16" fill="#d9f2ed"/>
+            <text x="62" y="155" fill="#07303e" font-size="14" font-weight="800">L5 · 数据产品与自助服务</text>
+            <text x="62" y="182" fill="#31505a" font-size="17">Marketplace　产品契约　指标与语义层　权限工作流　SLA / SLO　成本与价值</text>
+            <rect x="30" y="219" width="1040" height="115" rx="16" fill="url(#archG)"/>
+            <text x="62" y="253" fill="#cae85e" font-size="14" font-weight="800">L4 · 主动元数据与智能控制面</text>
+            <text x="62" y="283" fill="#fff" font-size="17">Catalog　Lineage　Profiling　Usage　Knowledge Graph　Policy　Recommendation</text>
+            <text x="62" y="310" fill="#d7ffff" font-size="14">观察元数据事件 → 关联语义与影响 → 推荐/执行动作 → 记录结果 → 持续学习</text>
+            <rect x="30" y="349" width="1040" height="82" rx="16" fill="#183d4b"/>
+            <text x="62" y="382" fill="#63d7ca" font-size="14" font-weight="800">L3 · 集成、编排与查询</text>
+            <text x="62" y="409" fill="#fff" font-size="17">ETL / ELT　CDC　Streaming　Replication　API　Virtualization　Cache　Workflow</text>
+            <rect x="30" y="446" width="1040" height="82" rx="16" fill="#315766"/>
+            <text x="62" y="479" fill="#cae85e" font-size="14" font-weight="800">L2 · 数据与 AI 运行时</text>
+            <text x="62" y="506" fill="#fff" font-size="17">Query Engine　Stream Engine　Lakehouse　Feature / Vector Store　Graph　TEE / PET</text>
+            <rect x="30" y="543" width="1040" height="82" rx="16" fill="#506e79"/>
+            <text x="62" y="576" fill="#fff" font-size="14" font-weight="800">L1 · 分布式权威数据源</text>
+            <text x="62" y="603" fill="#fff" font-size="17">SaaS　DB / DW　Lake　File　Event　Edge / Device　Partner Data Space</text>
+            <rect x="790" y="42" width="248" height="565" rx="15" fill="none" stroke="#ff8a4c" stroke-width="3" stroke-dasharray="8 7"/>
+            <text x="1018" y="323" fill="#ff8a4c" font-size="13" font-weight="800" text-anchor="end" transform="rotate(-90 1018 323)">横切保障 · 身份 · 质量 · 安全 · 隐私 · 驻留 · 审计 · 可观察性</text>
+            <text x="550" y="669" fill="#9bc3c5" font-size="14" text-anchor="middle">逻辑统一 ≠ 物理集中　|　控制面给出“应该怎样”，数据面决定“在哪里、如何执行”</text>
+          </svg>
+        </div>
+        <div class="principles">
+          <div class="principle"><div><h4>连接与采集</h4><p>连接数据库、SaaS、文件、消息、API 和边缘；识别 schema、采样质量并捕捉变更。关键不是连接器数量，而是连接行为能否产生可追踪元数据。</p></div></div>
+          <div class="principle"><div><h4>集成与编排</h4><p>批、ELT、CDC、流、复制、缓存、API 与联邦查询必须共存。选择依据是时延、成本、源负载、可用性、一致性和数据驻留，而不是固定教条。</p></div></div>
+          <div class="principle"><div><h4>统一元数据图</h4><p>关联表、字段、术语、实体、作业、查询、用户、策略、质量、模型和动作。它可以是中央图、联邦目录或混合索引；统一的是标识与关系，不一定是一个物理库。</p></div></div>
+          <div class="principle"><div><h4>语义与知识</h4><p>术语表、指标定义、分类法、本体、实体解析和知识图谱解决“结构相同但含义不同”。机器可以建议匹配，领域负责人必须裁定高影响语义。</p></div></div>
+          <div class="principle"><div><h4>质量、血缘与可观察性</h4><p>持续测量新鲜度、完整性、分布漂移、合同违约与下游影响；把 dataset/job/run 事件接入端到端 trace。OpenLineage 提供开放血缘事件，但不等于完整 Fabric。<a href="#s8">[S8]</a></p></div></div>
+          <div class="principle"><div><h4>安全、隐私与治理</h4><p>身份、最小权限、动态脱敏、用途限制、同意、驻留、保留、删除、审计和策略即代码贯穿所有层。治理不是在交付末端盖章，而是参与每次计划和执行。</p></div></div>
+          <div class="principle"><div><h4>数据产品与服务</h4><p>将可复用输出包装为有 owner、schema、质量目标、语义、访问方式、许可和生命周期的数据产品。消费者依赖合同，而不是依赖某位工程师对表名的口头解释。</p></div></div>
+          <div class="principle"><div><h4>主动元数据与自动化</h4><p>检测变更，计算影响，推荐可复用映射，自动生成测试或路由；对高风险授权、删除和网络动作保留审批、仿真、熔断与回滚。自动化的成熟标志不是“无人”，而是边界明确且证据完整。</p></div></div>
+        </div>
+        <h3>主动元数据：从“档案馆”变成“神经系统”</h3>
+        <div class="loop">
+          <div>采集<br>运行事件</div><div>理解<br>语义关系</div><div>检测<br>变化异常</div><div>推断影响<br>与候选动作</div><div>策略<br>风险校验</div><div>执行/建议<br>可回滚</div><div>反馈<br>效果与证据</div>
+        </div>
+        <p>例如：源字段类型变化后，系统不只是更新目录，而是定位受影响的管道、指标和模型，暂停高风险发布，生成兼容性测试，通知 owner，并在批准后重建物化视图。只有元数据真正触发了跨系统动作，才称得上“主动”。</p>
+        <div class="callout warn"><strong>不要神化 AI：</strong>推荐引擎可以从使用模式推断“这两列可能同义”，却不能自行决定财务收入应按订单、发货还是收入确认口径。Fabric 降低的是协调成本，不取消领域判断与问责。</div>
+      </div>
+    </section>
+
+    <section id="compare" style="background:#e8eef8">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">05</span>Concept map</div>
+        <h2>它与 Mesh、湖仓、中台和知识图谱是什么关系？</h2>
+        <p class="lead">这些概念分别回答不同问题。把它们放在同一条采购清单上比较，往往从一开始就错了。</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>范式</th><th>首要问题</th><th>性质 / 核心机制</th><th>与 Data Fabric 的关系</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Data Fabric</strong></td><td>如何跨异构环境连接、理解、治理并自动交付数据？</td><td>技术架构设计；主动元数据、语义、编排、多模式集成。</td><td>本体。</td></tr>
+              <tr><td><strong>Data Mesh</strong></td><td>大组织中谁对数据负责，如何扩展所有权？</td><td>社会—技术运营模型；领域所有权、数据即产品、自助平台、联邦治理。</td><td>Fabric 可提供 Mesh 的共享技术底座；Mesh 补上组织责任。<a href="#s9">[S9]</a></td></tr>
+              <tr><td><strong>Lakehouse</strong></td><td>如何在湖式存储上统一仓库事务、BI 与 ML？</td><td>存储计算平台；开放文件、事务表格式、统一引擎。</td><td>是 Fabric 可连接的一个或多个数据节点。<a href="#s10">[S10]</a></td></tr>
+              <tr><td><strong>数据中台</strong></td><td>如何沉淀企业共享数据能力并快速服务前台？</td><td>中国语境中的平台、资产、服务、组织和运营体系，实践常偏中央化。</td><td>可采用 Fabric 设计改造跨云和分布式接入；二者不能直接互译。</td></tr>
+              <tr><td><strong>知识图谱</strong></td><td>如何显式表达实体、关系、概念与规则？</td><td>图数据模型、实体链接、本体和推理。</td><td>常是 Fabric 的语义“神经网络”，但不负责全部集成与交付。<a href="#s11">[S11]</a></td></tr>
+              <tr><td><strong>Data Space</strong></td><td>自治组织如何在保有主权的同时交换数据？</td><td>跨组织身份、目录、合同协商、连接器和使用控制。</td><td>是企业 Fabric 跨越组织边界时的信任与协议层。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="figure">
+          <img src="data-fabric-assets/google-data-mesh-architecture.svg" alt="Google Cloud 数据网格架构原图，展示领域、治理与自助平台关系" loading="lazy">
+          <figcaption><span class="figure-tools"><a href="data-fabric-assets/google-data-mesh-architecture.svg" download>下载原图</a><a href="https://cloud.google.com/architecture/data-mesh" target="_blank" rel="noopener">原始页面 ↗</a></span><strong>图 1｜Data Mesh 架构组件。</strong>它直观说明 Mesh 主要重构领域所有权和自助平台，而不是规定一种存储。Fabric 可以作为其中跨领域的元数据、策略与自动化底座。来源：Google Cloud Architecture Center；文档通常按 CC BY 4.0 提供，具体以原页条款为准。</figcaption>
+        </figure>
+        <div class="big-quote">最实用的组合通常是：<em>Mesh 决定谁负责</em>，Fabric 决定技术上如何联通与治理，Lakehouse 承担部分存储计算，Knowledge Graph 统一语义，Data Space 解决跨组织信任。</div>
+      </div>
+    </section>
+
+    <section id="future">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">06</span>2026—2035</div>
+        <h2>未来：从数据集成层走向可信智能控制面</h2>
+        <p class="lead">下列趋势不是“十项独立产品”，而是一条因果链：数据越分布，越需要元数据事件；机器消费越多，越需要显式语义；自动化权限越大，越需要策略、证明和可回滚性。</p>
+        <div class="grid-2">
+          <div class="card"><span class="tag fact">高确定性</span><h3>元数据事件化</h3><p>Catalog 从定时扫描升级为事件驱动：schema、PII、质量、成本、查询和权限变化立即形成元数据事件，触发影响分析、SLO 告警和策略复核。OpenLineage、DataHub 等已验证了这种工程方向。<a href="#s8">[S8]</a></p></div>
+          <div class="card"><span class="tag fact">高确定性</span><h3>语义控制平面</h3><p>术语表将扩展为版本化 ontology / knowledge graph，关联业务实体、指标、数据产品、模型、Agent 工具与政策。W3C DCAT 3、PROV-O、ODRL 等开放词汇为互操作提供零件，但跨企业语义仍需协商。<a href="#s12">[S12]</a><a href="#s13">[S13]</a></p></div>
+          <div class="card"><span class="tag infer">快速演进</span><h3>Agent 可操作的 Fabric</h3><p>AI Agent 将首先承担元数据检索、SQL 草拟、产品推荐、质量调查和工单编排。下一步才是在最小权限、短期凭据和完整审计下执行低风险动作。删除、授权和生产控制不能因“Agent 化”跳过职责分离。</p></div>
+          <div class="card"><span class="tag infer">快速演进</span><h3>RAG 从检索插件变为治理路径</h3><p>向量相似度只是候选召回。生产级 RAG 会同时考虑关键词、图关系、SQL、时间、血缘、质量和行列权限，并把答案引用追溯到数据产品。RAG 仍不保证真相，知识库投毒和间接提示注入会成为 Fabric 安全问题。<a href="#s14">[S14]</a></p></div>
+          <div class="card"><span class="tag fact">高确定性</span><h3>流批与开放目录融合</h3><p>CDC、事件流、增量表和湖仓快照会被视作同一事实的不同延迟视图。竞争焦点从 Parquet 文件上移到开放 Catalog、临时凭据、行列策略、多引擎事务与 branch/tag；“开放文件”并不自动等于开放平台。</p></div>
+          <div class="card"><span class="tag fact">高确定性</span><h3>数据产品与契约即代码</h3><p>Schema、质量、SLA、许可、用途与 owner 进入机器可读契约和 CI。Open Data Product Specification 与 Open Data Contract Standard 已提供开放方案，但尚不是全球统一标准。<a href="#s15">[S15]</a></p></div>
+          <div class="card"><span class="tag infer">中高确定性</span><h3>隐私增强与机密计算组合</h3><p>差分隐私、MPC、PSI、联邦学习和可信执行环境按场景组合。远程证明可回答“代码是否在批准的环境中运行”，却不能证明算法目标合法或输出不会泄露。NIST 已发布差分隐私评估指南与 RATS 架构术语。<a href="#s16">[S16]</a><a href="#s17">[S17]</a></p></div>
+          <div class="card"><span class="tag infer">中等确定性</span><h3>内部 Fabric 接入外部 Data Space</h3><p>企业通过目录、可验证凭证、合同协商、ODRL 用途策略和连接器交换数据产品。欧盟 Data Act 已自 2025 年 9 月适用，推动数据处理与数据空间互操作；但数据离开受控环境后的用途义务仍需法律、审计和可信执行共同约束。<a href="#s18">[S18]</a></p></div>
+        </div>
+        <div class="horizon">
+          <div class="year">2026—2027</div><div class="trend"><strong>工程底座：</strong>事件化元数据、血缘、数据契约、开放 Catalog、受治理 RAG 和 Agent 辅助成为平台基线。</div>
+          <div class="year">2028—2030</div><div class="trend"><strong>语义与策略控制：</strong>ontology 连接数据、模型、政策和动作；低风险建议可自动执行，高风险操作由仿真、审批和回滚护栏约束。</div>
+          <div class="year">2031—2035</div><div class="trend"><strong>条件性自治：</strong>自动映射、异常调查、查询/管道优化、边云放置更成熟；跨企业自主签约、通用全同态加密和完全无人治理仍是低确定性判断。</div>
+        </div>
+        <h3>从企业内部走向可信数据空间</h3>
+        <figure class="figure">
+          <img src="data-fabric-assets/ids-reference-architecture.png" alt="International Data Spaces参考架构模型原图" loading="lazy">
+          <figcaption><span class="figure-tools"><a href="data-fabric-assets/ids-reference-architecture.png" download>下载原图</a><a href="https://github.com/International-Data-Spaces-Association/IDS-RAM_4_0" target="_blank" rel="noopener">官方仓库 ↗</a></span><strong>图 2｜IDS 参考架构模型。</strong>五个层次叠加安全、认证与治理三个横切视角，说明跨组织交换不仅是 API 互联。来源：International Data Spaces Association, IDS-RAM 4.0，CC BY 4.0。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="data-fabric-assets/gaia-x-data-space.png" alt="Gaia-X信任框架支撑数据空间架构原图" loading="lazy">
+          <figcaption><span class="figure-tools"><a href="data-fabric-assets/gaia-x-data-space.png" download>下载原图</a><a href="https://docs.gaia-x.eu/technical-committee/architecture-document/25.05/trust_framework_architecture/" target="_blank" rel="noopener">原始页面 ↗</a></span><strong>图 3｜Gaia-X Trust Framework 支撑的数据空间。</strong>Rulebook、规则引擎、可验证凭证、可信服务目录和合同协商把“信任”转化为可验证证据。来源：Gaia-X European Association for Data and Cloud AISBL，原图按 CC BY-NC-ND 4.0 原样转载，未修改。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="data-fabric-assets/eu-simpl-architecture.png" alt="欧盟Simpl-Open数据空间中间件架构原图" loading="lazy">
+          <figcaption><span class="figure-tools"><a href="data-fabric-assets/eu-simpl-architecture.png" download>下载原图</a><a href="https://simpl-programme.ec.europa.eu/documentation/architecture" target="_blank" rel="noopener">原始页面 ↗</a></span><strong>图 4｜Simpl-Open 架构能力。</strong>治理、安全、管理、数据、集成与基础设施能力展示了数据空间工程实现比“共享连接器”更宽。来源：European Commission Simpl Programme；欧委会自有内容通常按 CC BY 4.0 复用，第三方内容除外。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sixg" style="background:#082f3e;color:#e5f1f2">
+      <div class="wrap">
+        <div class="section-kicker" style="color:#63d7ca"><span class="section-no">07</span>Data Fabric × 6G</div>
+        <h2 style="color:#fff">为什么 6G 比企业 IT 更需要编织？</h2>
+        <p class="lead" style="color:#c9dcde">因为 6G 的“数据”不只是分析报表，而会同时成为网络感知、AI 训练、意图决策、数字孪生和实时控制的输入。错误数据可能从坏图表升级为错误网络动作。</p>
+        <div class="callout" style="border:1px solid #2b5966"><strong>标准事实：</strong>ITU-R M.2160 定义 IMT-2030 的六类使用场景：沉浸式通信、超可靠低时延通信、海量通信、泛在连接、AI 与通信、通感一体化，并以可持续性、安全与韧性、连接未连接者、泛在智能作为贯穿原则；它没有定义“6G 数据编织”。截至本报告日期，3GPP Release 20 主要承担 6G 研究，Release 21 是首个 6G 规范版本，Stage 3 计划于 2028 年 12 月冻结、ASN.1/OpenAPI 于 2029 年 3 月冻结。<a href="#s20">[S20]</a><a href="#s21">[S21]</a></div>
+        <div class="grid-3">
+          <div class="card" style="color:#13222d"><span class="tag fact">AIAC</span><h3>AI 与通信</h3><p>网络既承载 AI，也用 AI 优化自身。训练、特征、推理和动作必须共享语义、版本、血缘与质量证据，避免训练—服务偏差。</p></div>
+          <div class="card" style="color:#13222d"><span class="tag pre">ISAC</span><h3>通感一体</h3><p>RF 感知会生成位置、轨迹、成像等高敏感数据。原始 IQ/点云宜在 RAN/MEC 就地处理，跨域优先交换事件、特征与置信度。</p></div>
+          <div class="card" style="color:#13222d"><span class="tag infer">NDT</span><h3>网络数字孪生</h3><p>孪生需要拓扑、配置、遥测、模型与业务数据的一致快照。每个预测都应带输入时间、版本、假设、同步滞后与置信度。</p></div>
+          <div class="card" style="color:#13222d"><span class="tag fact">Edge</span><h3>边云协同</h3><p>毫秒级闭环必须本地执行；全局目录、长期训练和跨域优化可在云侧。Fabric 负责同步策略、摘要、模型和血缘，而非把远端查询塞进快环。</p></div>
+          <div class="card" style="color:#13222d"><span class="tag pre">NTN</span><h3>天地与跨域融合</h3><p>地面网、卫星、专网、边缘云和合作运营商具有断续连接、带宽和主权差异，需要可离线的边缘子 Fabric 与冲突合并机制。</p></div>
+          <div class="card" style="color:#13222d"><span class="tag pre">SemCom</span><h3>语义通信</h3><p>任务导向传输和生成式重建仍以研究和早期技术报告为主，尚非成熟 6G 空口标准。共享知识版本、语义失真与安全回退是未决问题。</p></div>
+        </div>
+
+        <h3 style="color:#fff">现有标准已经给出哪些“积木”？</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>组织 / 体系</th><th>已发布能力</th><th>可贡献给 6G Fabric</th><th>边界</th></tr></thead>
+            <tbody style="color:#13222d">
+              <tr><td>3GPP</td><td>NWDAF、DCCF、ADRF、MDA、AI/ML 生命周期、NDT</td><td>核心网分析、采集协调、模型训练/推理、跨域保障和孪生管理。<a href="#s22">[S22]</a><a href="#s23">[S23]</a></td><td>不是跨所有 SDO 与企业的统一数据治理层。</td></tr>
+              <tr><td>ETSI ZSM / ENI</td><td>管理域、跨域集成、意图闭环、AI enabler、知识与策略</td><td>跨域服务编排、闭环协调与安全治理。<a href="#s26">[S26]</a></td><td>ZSM 的 Integration Fabric 不等于本文完整 Data Fabric。</td></tr>
+              <tr><td>ETSI MEC</td><td>边缘主机、平台、编排器和 Federation</td><td>本地处理、应用发现、边云协同和低时延放置。<a href="#s27">[S27]</a></td><td>不是企业级数据语义与质量标准。</td></tr>
+              <tr><td>O-RAN</td><td>SMO、Non-RT / Near-RT RIC、A1/E2/O1/R1</td><td>按时标分层的 RAN 数据、策略、模型与动作通道。<a href="#s28">[S28]</a></td><td>不覆盖完整核心网、传输、OSS/BSS 与外部生态。</td></tr>
+              <tr><td>TM Forum</td><td>Autonomous Networks、ODA、TMF921 Intent</td><td>业务意图、自治等级、OSS/BSS 组件化与开放 API。<a href="#s29">[S29]</a></td><td>不是无线实时控制标准。</td></tr>
+              <tr><td>CAMARA</td><td>QoD、位置验证、边缘发现、SIM Swap 等 API</td><td>把受控网络能力包装为开发者可消费产品。<a href="#s30">[S30]</a></td><td>外部能力 API，不是运营商内部控制接口。</td></tr>
+              <tr><td>IDS / Gaia-X / DSP</td><td>身份、目录、合同协商、凭证和使用策略</td><td>跨运营商、行业与公共机构的数据主权交换。<a href="#s19">[S19]</a></td><td>不适合直接进入亚秒级无线控制路径。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="color:#fff">本文提出的 6G 数据编织参考架构</h3>
+        <p><span class="tag infer">本文推演</span>下图是把现有标准积木组合为端到端体系，并非 ITU、3GPP 或 ETSI 已发布的统一架构。</p>
+        <div class="anatomy" style="background:#041b24;border:1px solid #234a56">
+          <svg viewBox="0 0 1100 740" role="img" aria-label="6G数据编织七层参考架构">
+            <defs><linearGradient id="sixG" x1="0" x2="1"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#cae85e"/><stop offset="1" stop-color="#63d7ca"/></linearGradient></defs>
+            <g font-family="sans-serif">
+              <rect x="35" y="30" width="1030" height="75" rx="15" fill="#e6f4f2"/>
+              <text x="63" y="61" fill="#082f3e" font-size="13" font-weight="800">L6 · 业务与生态暴露</text>
+              <text x="63" y="87" fill="#264954" font-size="16">TMF Open APIs　CAMARA APIs　行业数据空间　合作伙伴数据产品</text>
+              <rect x="35" y="120" width="1030" height="86" rx="15" fill="#cae85e"/>
+              <text x="63" y="153" fill="#082f3e" font-size="13" font-weight="800">L5 · 意图、编排与有界自治</text>
+              <text x="63" y="181" fill="#082f3e" font-size="16">意图解析　冲突消解　闭环协调　动作审批　熔断/回滚　人工接管</text>
+              <rect x="35" y="221" width="1030" height="86" rx="15" fill="#63d7ca"/>
+              <text x="63" y="254" fill="#082f3e" font-size="13" font-weight="800">L4 · AI、知识与网络数字孪生</text>
+              <text x="63" y="282" fill="#082f3e" font-size="16">特征库　模型注册表　联邦学习　知识图谱　NDT　仿真 / 合成数据</text>
+              <rect x="35" y="322" width="1030" height="112" rx="15" fill="#0e7780"/>
+              <text x="63" y="355" fill="#cae85e" font-size="13" font-weight="800">L3 · 数据编织控制面</text>
+              <text x="63" y="384" fill="#fff" font-size="16">产品目录　Schema/语义　数据契约　Lineage　质量 SLO　身份/同意　用途策略</text>
+              <text x="63" y="411" fill="#d9ffff" font-size="14">连接数据 → 模型 → 意图 → 策略 → 动作 → 结果，形成可追责证据链</text>
+              <rect x="35" y="449" width="1030" height="86" rx="15" fill="#174656"/>
+              <text x="63" y="482" fill="#63d7ca" font-size="13" font-weight="800">L2 · 联邦数据平面</text>
+              <text x="63" y="510" fill="#fff" font-size="16">Event / CDC　查询联邦　边缘缓存　时序/对象/图　Connector　PET / TEE</text>
+              <rect x="35" y="550" width="1030" height="86" rx="15" fill="#345d6a"/>
+              <text x="63" y="583" fill="#cae85e" font-size="13" font-weight="800">L1 · 域适配与边缘采集</text>
+              <text x="63" y="611" fill="#fff" font-size="16">NWDAF / DCCF / MDA　O-RAN E2/O1/A1/R1　MEC　OSS/BSS　ISAC　NTN</text>
+              <rect x="35" y="651" width="1030" height="58" rx="15" fill="url(#sixG)"/>
+              <text x="550" y="687" fill="#082f3e" font-size="16" font-weight="800" text-anchor="middle">UE　RAN　Core　Transport　Edge / Cloud　Sensors　Robots · 物理资源与动作执行</text>
+              <path d="M1005 670 V65" stroke="#ff8a4c" stroke-width="3" stroke-dasharray="8 6"/>
+              <text x="1035" y="370" fill="#ff8a4c" font-size="13" text-anchor="middle" transform="rotate(-90 1035 370)">零信任 · 最小化 · 责任 AI · 供应链安全 · 可持续性</text>
+            </g>
+          </svg>
+        </div>
+        <div class="big-quote" style="color:white;border-color:#cae85e">部署原则：<em style="color:#cae85e">治理可统一，数据应分布；训练可联邦，推理靠近动作；慢环可跨域，快环必须本地；高风险动作先过孪生与策略护栏。</em></div>
+
+        <h3 style="color:#fff">快环与慢环：Fabric 不能进入所有关键路径</h3>
+        <div class="grid-3">
+          <div class="card" style="color:#13222d"><h4>&lt; 10 ms：设备 / RAN 内环</h4><p>使用本地状态、预编译策略和已验证模型。禁止依赖远端目录查询、跨云联邦或在线治理审批；Fabric 在环外负责模型、策略和证据同步。</p></div>
+          <div class="card" style="color:#13222d"><h4>约 10 ms—1 s：Near-RT</h4><p>使用边缘缓存、流式特征和受限动作集。可消费 Non-RT 下发的 enrichment、策略和模型，但必须在本地完成时限与安全校验。</p></div>
+          <div class="card" style="color:#13222d"><h4>&gt; 1 s：Non-RT / 管理域</h4><p>适合跨域分析、长期优化、模型训练、NDT 验证、意图分解与合规审计，是完整 Fabric 发挥作用的主要层次。</p></div>
+        </div>
+
+        <figure class="figure">
+          <img src="data-fabric-assets/6g-ddaa-architecture.png" alt="开放论文中面向6G的数据驱动分布式自治架构原图" loading="lazy">
+          <figcaption><span class="figure-tools"><a href="data-fabric-assets/6g-ddaa-architecture.png" download>下载原图</a><a href="https://www.mdpi.com/2079-9292/15/1/102" target="_blank" rel="noopener">原始论文 ↗</a></span><strong>图 5｜面向 6G 的数据驱动分布式自治架构（DDAA）。</strong>图中网络控制、数据与智能单元通过 DTI/SBI 协同，说明“智能面”和“数据面”正在成为 6G 研究中的一等对象。它是开放学术论文提出的架构，不是 3GPP 规范。来源：<em>Electronics</em> 2026, 15(1), 102，CC BY 4.0。</figcaption>
+        </figure>
+
+        <h3 style="color:#fff">五个值得优先验证的业务闭环</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>闭环</th><th>数据链</th><th>Fabric 的作用</th><th>关键护栏</th></tr></thead>
+            <tbody style="color:#13222d">
+              <tr><td><strong>QoD / SLA 保障</strong></td><td>业务意图 → NWDAF/MDA/RIC/MEC → 违约预测 → 调整 → QoE 验证</td><td>统一业务 SLA、网络 KPI、拓扑和动作血缘；跨域关联 RAN/Core/MEC。</td><td>动作白名单、租约、回滚；不能以单域 KPI 牺牲端到端体验。</td></tr>
+              <tr><td><strong>故障自愈</strong></td><td>告警/拓扑/性能 → 根因与影响 → NDT 验证 → 编排修复 → 恢复检查</td><td>提供跨域时序、配置版本、历史案例和因果候选；记录证据。</td><td>孪生保真度门槛、变更窗口、幂等和人工接管。</td></tr>
+              <tr><td><strong>能耗优化</strong></td><td>流量预测 + 能耗 + 覆盖 → 约束优化 → 小区/算力调整 → 效果复核</td><td>把网络能耗、云碳强度、QoE 和业务收益放入共同语义。</td><td>核算训练与传输能耗，防止“AI 节能”的反弹效应。</td></tr>
+              <tr><td><strong>ISAC 城市感知</strong></td><td>RF/外部传感器 → MEC 融合 → 事件/轨迹 → 城市孪生 → 联合行动</td><td>就地最小化，跨域发布有用途、保留期和置信度的数据产品。</td><td>旁观者隐私、目的限制、短保留期、输出披露控制。</td></tr>
+              <tr><td><strong>联邦模型闭环</strong></td><td>边缘训练 → 安全聚合 → 验证 → 灰度发布 → 漂移监控 → 回滚</td><td>联合版本化数据、特征、模型、代码、策略与设备群。</td><td>投毒检测、来源证明、签名制品、差分隐私与安全聚合。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">08</span>Build, measure, govern</div>
+        <h2>如何落地：从一个可测闭环开始</h2>
+        <p class="lead">Fabric 最容易失败的方式，是先购买一套“大而全平台”，再寻找问题。正确顺序是先选高价值、跨系统且可测的证据链，再补齐元数据和控制能力。</p>
+        <div class="principles">
+          <div class="principle"><div><h4>G0｜定义边界与词汇</h4><p>确定一个场景及其目标函数；为关键数据、模型、意图和动作指定 owner、合法用途、语义版本、保留期和权威源。输出的是可审计责任图，而不是工具选型表。</p></div></div>
+          <div class="principle"><div><h4>G1｜只读可观察</h4><p>接入源与运行事件，建立目录、schema、事件时间、质量和端到端血缘。先证明能回答“数据从哪来、是否新鲜、谁在用、变化影响谁”，不执行自动动作。</p></div></div>
+          <div class="principle"><div><h4>G2｜数据产品与契约</h4><p>将高频复用输出封装为数据产品；在 CI 中验证兼容性、质量、用途和成本；减少重复采集与影子表。产品消费必须可度量，长期无人使用的资产应退出。</p></div></div>
+          <div class="principle"><div><h4>G3｜影子闭环</h4><p>系统只给建议，与人工决策和真实结果比较。验证模型、规则、策略延迟、误报和收益；高风险动作先在数字孪生或沙箱中演练。</p></div></div>
+          <div class="principle"><div><h4>G4｜有界自治</h4><p>仅对白名单、低风险、可回滚动作自动执行；配置风险预算、审批阈值、动作租约、冲突仲裁、熔断和人工接管。自治级别由证据决定，不由宣传口号决定。</p></div></div>
+          <div class="principle"><div><h4>G5｜跨域与数据空间</h4><p>在内部语义和责任稳定后，再以可验证凭证、合同协商、用途策略与 Connector 对外交换产品；持续测试撤销、删除传播和供应商迁移。</p></div></div>
+        </div>
+        <h3>必须量化的指标</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>类别</th><th>指标</th><th>建议定义</th></tr></thead>
+            <tbody>
+              <tr><td>数据</td><td>新鲜度 / 完整率 / 合同合规率</td><td><code>消费时间 − 源事件时间</code> 的 P50/P95/P99；必需字段或事件实收/应收；通过 schema、语义、质量与用途检查的比例。</td></tr>
+              <tr><td>元数据</td><td>血缘覆盖率 / 变更发现时延</td><td>可追至源、变换、模型和动作的关键产品比例；从源变化到控制面感知的时间。</td></tr>
+              <tr><td>治理</td><td>策略决策延迟 / 删除传播时间</td><td>PDP 收到请求至 PEP 获得决定的 P95/P99；删除或撤回到副本、缓存、特征和索引全部生效的时间。</td></tr>
+              <tr><td>复用</td><td>重复采集减少率 / 产品复用率</td><td>相同源被重复抽取的下降比例；被两个以上独立消费者稳定使用的数据产品比例。</td></tr>
+              <tr><td>AI / NDT</td><td>训练—服务偏差 / 孪生滞后与误差</td><td>线上特征相对训练定义的偏离；孪生与生产网同步时差及关键预测误差。</td></tr>
+              <tr><td>闭环</td><td>Deadline 达标 / 无效动作 / 回滚</td><td>端到端闭环在预算内完成的比例；未改善或反向损害 KPI 的动作率；回滚成功率与耗时。</td></tr>
+              <tr><td>价值</td><td>数据到行动时间 / 单位有效任务成本</td><td>从需求提出到受治理交付并产生动作的周期；每个成功业务结果的计算、传输、人力和能耗。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="formula"><b>T<sub>loop</sub></b> = T<sub>sense</sub> + T<sub>transport</sub> + T<sub>validate</sub> + T<sub>infer</sub> + T<sub>decide</sub> + T<sub>authorize</sub> + T<sub>actuate</sub> + T<sub>verify</sub><br><small>不同控制环必须分别预算；不要用一个“实时”标签掩盖 P99 时延。</small></div>
+
+        <h3>最常见的失败模式</h3>
+        <div class="grid-2">
+          <div class="card"><span class="tag risk">架构</span><h4>Fabric 变成新的中央平台</h4><p>所有数据、查询和审批被迫经过一个中心，产生时延、成本与单点故障。对策：明确控制面/数据面边界，保留本地执行与联邦权威源。</p></div>
+          <div class="card"><span class="tag risk">语义</span><h4>自动映射放大错误</h4><p>相似字段被误判为同义，错误关系传播到指标和模型。对策：置信度、人工裁定、版本化映射、影响预演和可逆发布。</p></div>
+          <div class="card"><span class="tag risk">治理</span><h4>错误策略造成级联封禁或泄露</h4><p>错误分类、血缘或用途规则会被自动化大范围执行。对策：dry-run、职责分离、策略单元测试、熔断与紧急访问。</p></div>
+          <div class="card"><span class="tag risk">组织</span><h4>有目录，无 owner</h4><p>工具能找到表，却没人对含义、质量和生命周期负责。对策：将产品 SLO 与领域责任绑定，治理团队制定最低规则而非代替领域做所有决定。</p></div>
+          <div class="card"><span class="tag risk">6G</span><h4>把中央编织塞进快环</h4><p>远端元数据查询和跨域审批导致抖动。对策：本地缓存、预编译策略、已验证模型，Fabric 通过异步方式向快环提供制品。</p></div>
+          <div class="card"><span class="tag risk">商业</span><h4>把厂商预测当作 ROI 承诺</h4><p>“设计时间减少 30%、维护减少 70%”等公开宣传缺少可复核样本与基线。只能作为假设，必须用本组织指标验证。<a href="#s3">[S3]</a></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <div class="section-kicker" style="color:#63d7ca"><span class="section-no">09</span>Final synthesis</div>
+        <h2>真正的 Fabric，是可追责的行动网络</h2>
+        <p class="lead">数据编织的长期价值，不是让企业看起来拥有一张更大的架构图，而是把“数据—语义—政策—模型—行动—结果”连成可观察、可验证、可回滚的链。</p>
+        <div class="grid-3" style="margin-top:42px">
+          <div class="card" style="color:#13222d"><h3>今天</h3><p>从主动元数据、关键数据产品和只读血缘开始；复用现有湖、仓、流和目录，不以推倒重建为前提。</p></div>
+          <div class="card" style="color:#13222d"><h3>到 2030</h3><p>语义和策略成为人、应用与 Agent 的共同控制平面；自动化以最小权限、完整证据和人在回路为边界。</p></div>
+          <div class="card" style="color:#13222d"><h3>面向 6G</h3><p>用 5G-A 已有的 NWDAF、MDA、RIC、MEC、NDT 等积木先构建有界闭环，再随 Release 21 的真实规范演进接口。</p></div>
+        </div>
+        <div class="big-quote" style="color:#fff;border-color:#63d7ca">一句话判断一个方案是否真是数据编织：<br><em style="color:#cae85e">当数据、结构、质量、权限或业务目标变化时，系统能否知道影响谁、为什么、应该做什么，并以受控方式完成或建议动作？</em></div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-kicker"><span class="section-no">10</span>Evidence & sources</div>
+        <h2>研究方法、来源与图片许可</h2>
+        <p>本报告未使用仓库内既有研究内容，独立检索并优先采用正式标准、标准组织原页、同行评审论文、开放规范和厂商工程文档。对事实状态使用以下标记：<span class="tag fact">已发布事实/标准</span><span class="tag pre">预标准/行业规范</span><span class="tag infer">本文推演/趋势判断</span>。由于 Data Fabric 仍是新兴概念，厂商或分析机构的量化收益若缺少公开方法，不作为已证实结论。</p>
+        <h3>核心来源</h3>
+        <ol class="refs">
+          <li id="s1"><a href="https://www.gartner.com/en/data-analytics/topics/data-fabric">Gartner, What is Data Fabric? Uses, Definition & Trends</a>：定义、四类元数据与主动化。</li>
+          <li id="s2"><a href="https://www.ibm.com/think/topics/data-fabric">IBM, What Is a Data Fabric?</a>：设计方法、架构组件与混合云视角。</li>
+          <li id="s3"><a href="https://www.gartner.com/smarterwithgartner/gartner-top-10-data-and-analytics-trends-for-2021">Gartner Top 10 Data and Analytics Trends for 2021</a>：30%/30%/70% 收益表述；公开页无完整基线，本文仅作营销边界说明。</li>
+          <li id="s4"><a href="https://www.gartner.com/en/topics/data-and-analytics">Gartner, What Is Data and Analytics</a>：新兴设计、组件成熟度与单一厂商边界。</li>
+          <li id="s5"><a href="https://doi.org/10.1007/s10257-025-00707-4">The Future of Data Management: A Delimitation of Data Platforms, Data Spaces, Data Meshes, and Data Fabrics</a>, 2025：189 项研究的系统综述与实证局限。</li>
+          <li id="s6"><a href="https://doi.org/10.1145/96602.96604">Sheth & Larson, Federated Database Systems for Managing Distributed, Heterogeneous, and Autonomous Databases</a>, ACM CSUR, 1990。</li>
+          <li id="s7"><a href="https://www.netapp.com/blog/bringing-data-fabric-to-life-with-support-for-hybrid-multicloud-and-devops/">NetApp, Bringing Data Fabric to Life</a>：混合多云存储语境的早期 Data Fabric 路线。</li>
+          <li id="s8"><a href="https://openlineage.io/docs/">OpenLineage Documentation</a>：dataset/job/run 与可扩展 facet 的开放血缘事件模型。</li>
+          <li id="s9"><a href="https://martinfowler.com/articles/data-mesh-principles.html">Zhamak Dehghani, Data Mesh Principles and Logical Architecture</a>：Data Mesh 四原则。</li>
+          <li id="s10"><a href="https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">Lakehouse: A New Generation of Open Platforms</a>, CIDR 2021：Lakehouse 原始论文。</li>
+          <li id="s11"><a href="https://aidanhogan.com/docs/knowledge-graphs-computing-surveys.pdf">Hogan et al., Knowledge Graphs</a>, ACM CSUR, 2021。</li>
+          <li id="s12"><a href="https://www.w3.org/TR/vocab-dcat-3/">W3C Data Catalog Vocabulary (DCAT) 3</a>：数据目录与数据服务词汇。</li>
+          <li id="s13"><a href="https://www.w3.org/TR/odrl-model/">W3C ODRL Information Model 2.2</a>：权限、禁止与义务的机器可读策略模型。</li>
+          <li id="s14"><a href="https://www.usenix.org/system/files/usenixsecurity25-zou-poisonedrag.pdf">PoisonedRAG: Knowledge Corruption Attacks to RAG</a>, USENIX Security 2025。</li>
+          <li id="s15"><a href="https://opendataproducts.org/v4.1/">Open Data Product Specification 4.1</a> 与 <a href="https://github.com/bitol-io/open-data-contract-standard/releases/tag/v3.1.0">Open Data Contract Standard 3.1</a>。</li>
+          <li id="s16"><a href="https://csrc.nist.gov/pubs/sp/800/226/final">NIST SP 800-226, Guidelines for Evaluating Differential Privacy Guarantees</a>, 2025。</li>
+          <li id="s17"><a href="https://www.rfc-editor.org/rfc/rfc9334.html">RFC 9334, Remote ATtestation procedureS (RATS) Architecture</a>：Attester、Verifier 与 Relying Party。</li>
+          <li id="s18"><a href="https://eur-lex.europa.eu/eli/reg/2023/2854">Regulation (EU) 2023/2854 — Data Act</a>。</li>
+          <li id="s19"><a href="https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1/">Eclipse Dataspace Protocol 2025-1</a>：目录发布、合同协商和传输流程。</li>
+          <li id="s20"><a href="https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en">Recommendation ITU-R M.2160, Framework and overall objectives of IMT-2030</a>；另见 <a href="https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2030/Pages/default.aspx">ITU IMT-2030 官方页</a>。</li>
+          <li id="s21"><a href="https://www.3gpp.org/news-events/3gpp-news/rel21-timeline">3GPP, Timeline for Release 21</a>, 2026-06-10：首个规范性 6G Release 的冻结计划。</li>
+          <li id="s22"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3579">3GPP TS 23.288, Architecture enhancements for 5GS to support network data analytics services</a>。</li>
+          <li id="s23"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3877">3GPP TS 28.104, Management Data Analytics service</a>。</li>
+          <li id="s24"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3970">3GPP TS 28.105, AI/ML management</a>：训练、测试、部署、推理与性能监测生命周期。</li>
+          <li id="s25"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin</a> 与 <a href="https://www.etsi.org/deliver/etsi_TS/128500_128599/128561/19.00.00_60/ts_128561v190000p.pdf">TS 28.561</a>。</li>
+          <li id="s26"><a href="https://www.etsi.org/deliver/etsi_gs/zsm/001_099/002/01.01.01_60/gs_zsm002v010101p.pdf">ETSI GS ZSM 002, Zero-touch network and Service Management Reference Architecture</a>；另见 ZSM 012/016。</li>
+          <li id="s27"><a href="https://www.etsi.org/deliver/etsi_gs/MEC/001_099/003/04.01.01_60/gs_mec003v040101p.pdf">ETSI GS MEC 003 V4.1.1, Multi-access Edge Computing Framework and Reference Architecture</a>。</li>
+          <li id="s28"><a href="https://www.o-ran.org/specifications">O-RAN Alliance Specifications</a> 与 <a href="https://www.etsi.org/deliver/etsi_TS/103900_103999/103982/14.00.00_60/ts_103982v140000p.pdf">ETSI TS 103 982</a>。</li>
+          <li id="s29"><a href="https://www.tmforum.org/open-digital-architecture/open-apis/intent-management-api-TMF921/v4.0">TM Forum TMF921 Intent Management API v4.0</a> 与 Autonomous Networks 资料。</li>
+          <li id="s30"><a href="https://camaraproject.org/api-overview/">CAMARA API Overview</a>：网络能力 API 及身份、同意框架入口。</li>
+          <li id="s31"><a href="https://www.itu.int/rec/T-REC-Y.3090-202202-I/">ITU-T Y.3090, Digital twin network — Requirements and architecture</a>。</li>
+          <li id="s32"><a href="https://www.etsi.org/technical-groups/isac/">ETSI ISAC Industry Specification Group</a>：6G 通感用例、架构、安全与隐私预标准研究。</li>
+          <li id="s33"><a href="https://www.nist.gov/publications/zero-trust-architecture">NIST SP 800-207, Zero Trust Architecture</a>。</li>
+          <li id="s34"><a href="https://www.w3.org/TR/vc-data-model-2.0/">W3C Verifiable Credentials Data Model v2.0</a>。</li>
+        </ol>
+        <h3>图片资产与复用说明</h3>
+        <p>报告优先下载官方或开放论文的原始图片并保存在 <code>data-fabric-assets/</code>，避免依赖外链失效。每幅图的图题、原始页面和许可已在图注中列明。原图保留英文和原始配色；Gaia-X 图遵循 CC BY-NC-ND 4.0，未裁切、翻译或改色。Google、欧委会网页内容的具体复用范围仍应以原页最新条款为准。本文自行绘制的中文示意图用于综合分析，不声称来自任何标准组织。</p>
+        <div class="license">版权边界：链接到公开内容不等于取得任意转载权。本报告未嵌入需要单独授权的 ITU、3GPP、ETSI、O-RAN、TM Forum、IBM、AWS 或华为架构原图，仅提供文字引用和原始来源链接。若用于商业出版或对外分发，应再次核验所有图片在目标司法辖区和传播方式下的许可。</div>
+        <p style="margin-top:28px;color:#687982"><strong>版本说明：</strong>研究快照截至 2026-08-04。6G 标准化与部分开放规范仍在快速演进；涉及 Release 21、RDF/SPARQL、Agent 协议、数据空间和 AI 法规的实施结论应在项目启动时重新核验。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">《数据编织：从第一性原理到 6G 智能网络》 · 独立研究报告 · 2026-08-04<br>HTML 单页版支持响应式阅读与打印；所有外部事实均应结合文末来源与证据等级理解。</div>
+  </footer>
+  <button class="backtop" id="backtop" aria-label="返回顶部">↑</button>
+  <script>
+    const progress=document.getElementById('progress');
+    const topButton=document.getElementById('backtop');
+    const sections=[...document.querySelectorAll('main section[id]')];
+    const dots=[...document.querySelectorAll('.rail a')];
+    function onScroll(){
+      const h=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=(h>0?scrollY/h*100:0)+'%';
+      topButton.classList.toggle('show',scrollY>700);
+      let current=sections[0]?.id;
+      for(const section of sections){if(section.getBoundingClientRect().top<innerHeight*.45)current=section.id}
+      dots.forEach(dot=>dot.classList.toggle('active',dot.getAttribute('href')==='#'+current));
+    }
+    addEventListener('scroll',onScroll,{passive:true});onScroll();
+    topButton.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
