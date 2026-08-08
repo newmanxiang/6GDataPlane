@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据编织三张胶片｜定义与组成 · 成熟度 · 演进趋势</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#071f3d;
+  --ink:#0a2744;
+  --teal:#0f9f9a;
+  --cyan:#5eb6e4;
+  --lime:#cae85e;
+  --coral:#ff8a4c;
+  --sand:#f4f7fb;
+  --mist:#dce7f2;
+  --muted:#5a738a;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--navy);color:var(--ink);font-family:"Noto Sans SC",sans-serif}
+body{overflow:hidden}
+.deck{height:100%;width:100%;position:relative}
+.slide{
+  position:absolute;inset:0;display:none;padding:36px 48px 56px;
+  background:
+    radial-gradient(1200px 600px at 8% -10%,rgba(94,182,228,.22),transparent 55%),
+    radial-gradient(900px 500px at 95% 10%,rgba(15,159,154,.18),transparent 50%),
+    linear-gradient(160deg,#f7fafc 0%,#e8f1f6 48%,#dceaf1 100%);
+  overflow:hidden;
+}
+.slide.active{display:flex;flex-direction:column;animation:fadeIn .45s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.slide:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0,rgba 48px),
+    linear-gradient(transparent 0,transparent calc(100% - 48px),rgba(7,31,61,.04) calc(100% - 48px)),
+    repeating-linear-gradient(135deg,rgba(7,31,61,.025) 0 1px,transparent 1px 18px);
+}
+.slide > *{position:relative;z-index:1}
+.topbar{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px}
+.brand{font-family:Outfit,sans-serif;font-weight:800;letter-spacing:.04em;color:var(--navy);font-size:15px}
+.brand span{color:var(--teal)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.kicker i{width:28px;height:2px;background:var(--teal);display:inline-block}
+h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px);line-height:1.15;font-weight:800;color:var(--navy);margin:6px 0 8px}
+.lead{font-size:15px;line-height:1.55;color:var(--muted);max-width:920px}
+.badge{font-size:12px;font-weight:700;color:var(--navy);background:rgba(202,232,94,.55);border:1px solid rgba(7,31,61,.08);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.footer{
+  margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+  padding-top:14px;border-top:1px solid rgba(7,31,61,.1);font-size:12px;color:var(--muted)
+}
+.page{font-family:Outfit,sans-serif;font-weight:700;color:var(--navy)}
+.nav-hint{opacity:.8}
+
+/* Slide 1 */
+.def-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;flex:1;min-height:0;margin-top:10px}
+.def-card{
+  background:rgba(255,255,255,.72);border:1px solid rgba(7,31,61,.08);
+  border-radius:18px;padding:18px 20px;backdrop-filter:blur(8px);
+  box-shadow:0 10px 30px rgba(7,31,61,.06);
+}
+.def-card h2{font-size:15px;font-weight:800;margin-bottom:10px;color:var(--navy)}
+.work-def{
+  background:linear-gradient(135deg,var(--navy),#12375f);
+  color:#e8f4ff;border-radius:16px;padding:16px 18px;font-size:14.5px;line-height:1.65;
+  border:1px solid rgba(202,232,94,.25);
+}
+.work-def strong{color:var(--lime)}
+.meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.meta-row div{
+  background:#f0f7fb;border:1px solid rgba(7,31,61,.06);border-radius:12px;
+  padding:10px 8px;text-align:center;font-size:12px;font-weight:700;color:var(--ink)
+}
+.meta-row small{display:block;margin-top:4px;font-weight:500;color:var(--muted);font-size:11px}
+.weave-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.weave-meta article{
+  border-radius:12px;padding:12px;background:#fff;border:1px solid rgba(7,31,61,.07)
+}
+.weave-meta h3{font-size:13px;margin-bottom:4px}
+.weave-meta p{font-size:12px;line-height:1.45;color:var(--muted)}
+.layers{display:flex;flex-direction:column;gap:6px;height:100%}
+.layer{
+  display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;
+  border-radius:12px;padding:9px 12px;min-height:0;flex:1
+}
+.layer .idx{font-family:Outfit,sans-serif;font-weight:800;font-size:13px}
+.layer .body{font-size:12.5px;line-height:1.35}
+.layer .body b{display:block;font-size:13px;margin-bottom:2px}
+.layer.l6{background:#effaf8}.layer.l5{background:#d9f2ed}
+.layer.l4{background:linear-gradient(90deg,#0f9f9a,#2667ff);color:#fff}
+.layer.l4 .body{color:#eef}.layer.l4 .body b{color:var(--lime)}
+.layer.l3{background:#183d4b;color:#fff}.layer.l3 .body b{color:#63d7ca}
+.layer.l2{background:#315766;color:#fff}.layer.l2 .body b{color:var(--lime)}
+.layer.l1{background:#506e79;color:#fff}
+.layer.lx{background:rgba(255,138,76,.12);border:1px dashed var(--coral)}
+.layer.lx .idx{color:var(--coral)}
+.not-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.not-list span{
+  font-size:11.5px;padding:5px 9px;border-radius:999px;background:#fff;
+  border:1px solid rgba(7,31,61,.1);color:var(--muted)
+}
+
+/* Slide 2 */
+.mat-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;flex:1;min-height:0;margin-top:10px}
+.maturity-track{display:flex;flex-direction:column;gap:8px}
+.gate{
+  display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:stretch;
+  background:rgba(255,255,255,.78);border:1px solid rgba(7,31,61,.08);
+  border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(7,31,61,.05)
+}
+.gate .g{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:var(--navy);color:var(--lime);font-family:Outfit,sans-serif;font-weight:800;font-size:18px
+}
+.gate .g small{font-size:10px;color:#9ab;font-weight:600;letter-spacing:.06em;margin-top:2px}
+.gate .c{padding:10px 14px}
+.gate .c h3{font-size:14px;margin-bottom:3px}
+.gate .c p{font-size:12.5px;line-height:1.45;color:var(--muted)}
+.side-stack{display:flex;flex-direction:column;gap:10px}
+.panel{
+  background:rgba(255,255,255,.78);border:1px solid rgba(7,31,61,.08);
+  border-radius:16px;padding:14px 16px;box-shadow:0 8px 22px rgba(7,31,61,.05)
+}
+.panel h2{font-size:14px;font-weight:800;margin-bottom:8px}
+.checks{display:grid;gap:7px}
+.checks li{
+  list-style:none;display:grid;grid-template-columns:18px 1fr;gap:8px;
+  font-size:12.5px;line-height:1.45;color:var(--ink)
+}
+.checks li:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:5px}
+.warn{
+  background:linear-gradient(135deg,#fff7f0,#ffe8d8);border:1px solid rgba(255,138,76,.35);
+  border-radius:14px;padding:14px 16px;font-size:13px;line-height:1.55;color:#5a3418
+}
+.warn strong{color:#b34a12}
+.metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.metric{
+  background:#f3f8fb;border-radius:12px;padding:10px 12px;border:1px solid rgba(7,31,61,.06)
+}
+.metric b{display:block;font-size:12.5px;margin-bottom:3px}
+.metric span{font-size:11.5px;color:var(--muted);line-height:1.4}
+
+/* Slide 3 */
+.trend-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;flex:1;min-height:0;margin-top:10px}
+.trend-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;align-content:start}
+.tcard{
+  background:rgba(255,255,255,.8);border:1px solid rgba(7,31,61,.08);
+  border-radius:14px;padding:12px 13px;box-shadow:0 8px 20px rgba(7,31,61,.05)
+}
+.tcard .tag{
+  display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;
+  padding:3px 8px;border-radius:999px;margin-bottom:6px
+}
+.tag.fact{background:rgba(15,159,154,.15);color:#0a6e6a}
+.tag.fast{background:rgba(38,103,255,.12);color:#1d4ed8}
+.tag.mid{background:rgba(255,138,76,.16);color:#b45309}
+.tcard h3{font-size:13.5px;margin-bottom:4px}
+.tcard p{font-size:12px;line-height:1.45;color:var(--muted)}
+.horizon{
+  display:flex;flex-direction:column;gap:10px;height:100%
+}
+.hcard{
+  flex:1;border-radius:16px;padding:16px 18px;color:#fff;
+  display:flex;flex-direction:column;justify-content:center;
+  box-shadow:0 12px 28px rgba(7,31,61,.18)
+}
+.hcard .yr{font-family:Outfit,sans-serif;font-weight:800;font-size:20px;color:var(--lime);margin-bottom:6px}
+.hcard h3{font-size:15px;margin-bottom:6px}
+.hcard p{font-size:12.5px;line-height:1.5;color:#d7e8f8}
+.h1{background:linear-gradient(145deg,#0b2a4a,#0f9f9a)}
+.h2{background:linear-gradient(145deg,#12375f,#2667ff)}
+.h3{background:linear-gradient(145deg,#1a2744,#5a3d8a)}
+.chain{
+  margin-top:8px;background:rgba(7,31,61,.92);color:#dcecff;border-radius:14px;
+  padding:12px 16px;font-size:13px;line-height:1.5;display:flex;gap:10px;align-items:center
+}
+.chain strong{color:var(--lime);white-space:nowrap}
+.chain .arrows{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chain em{
+  font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;padding:4px 10px;font-size:12px
+}
+
+.controls{
+  position:fixed;right:22px;bottom:22px;z-index:20;display:flex;gap:8px
+}
+.controls button{
+  border:0;background:var(--navy);color:#fff;width:42px;height:42px;border-radius:50%;
+  cursor:pointer;font-size:18px;box-shadow:0 8px 20px rgba(7,31,61,.35)
+}
+.controls button:hover{background:#0f3a6b}
+.dots{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:20;display:flex;gap:8px}
+.dots button{
+  width:10px;height:10px;border-radius:50%;border:0;background:rgba(7,31,61,.25);cursor:pointer
+}
+.dots button.on{background:var(--teal);transform:scale(1.2)}
+
+@media (max-width:1100px){
+  .slide{padding:24px 20px 64px;overflow:auto}
+  body{overflow:auto}
+  .def-grid,.mat-grid,.trend-grid{grid-template-columns:1fr}
+  .meta-row{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:26px}
+  .chain{flex-direction:column;align-items:flex-start}
+}
+@media print{
+  body{overflow:visible;background:#fff}
+  .slide{position:relative;display:flex!important;page-break-after:always;height:100vh;animation:none}
+  .controls,.dots{display:none}
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck" aria-live="polite">
+
+  <!-- ========== SLIDE 1 ========== -->
+  <section class="slide active" data-slide="1" aria-label="胶片1 定义与组成">
+    <div class="topbar">
+      <div>
+        <div class="kicker"><i></i>Data Fabric · Slide 01 / 03</div>
+        <h1>数据编织：定义与组成</h1>
+        <p class="lead">跨异构、分布式环境的数据管理与集成设计——以主动元数据为控制面，交付可组合的数据产品，而非强制物理集中。</p>
+      </div>
+      <div class="badge">逻辑统一 ≠ 物理集中</div>
+    </div>
+
+    <div class="def-grid">
+      <div class="def-card">
+        <h2>工作定义</h2>
+        <div class="work-def">
+          数据编织是一种跨异构、分布式环境的<strong>数据管理与集成设计</strong>。它以技术、业务、运营和社会/使用元数据构成的知识网络为<strong>控制面</strong>，持续观察数据及其使用行为，进而推荐或执行发现、集成、质量、安全、编排与交付动作，在<strong>不强制统一物理存储</strong>的前提下，为人、应用和 AI 提供<strong>可组合的数据产品</strong>。
+        </div>
+        <div class="meta-row">
+          <div>技术元数据<small>schema · 血缘 · 作业</small></div>
+          <div>业务元数据<small>术语 · 指标 · 实体</small></div>
+          <div>运营元数据<small>SLA · 成本 · 健康</small></div>
+          <div>使用元数据<small>查询 · 消费 · 反馈</small></div>
+        </div>
+        <div class="weave-meta">
+          <article>
+            <h3>经线 · 治理骨架</h3>
+            <p>身份、术语、策略、质量规则、契约、血缘与责任结构。</p>
+          </article>
+          <article>
+            <h3>纬线 · 数据流</h3>
+            <p>批 / CDC / 流 / 联邦 / API / 复制 / 缓存，按场景选择交付方式。</p>
+          </article>
+          <article>
+            <h3>织机 · 主动闭环</h3>
+            <p>观察 → 推断 → 推荐/执行 → 反馈；目录从档案馆变为神经系统。</p>
+          </article>
+        </div>
+        <div class="not-list" aria-label="不是什么">
+          <span>≠ 中央湖仓</span><span>≠ 被动目录</span><span>≠ 单靠虚拟化</span>
+          <span>≠ 仅 ETL 平台</span><span>≠ 厂商产品名</span>
+        </div>
+      </div>
+
+      <div class="def-card" style="display:flex;flex-direction:column">
+        <h2>七层参考组成（分析框架，非正式标准）</h2>
+        <div class="layers">
+          <div class="layer l6"><div class="idx">L6</div><div class="body"><b>消费与行动</b>BI / API / RAG / Agent / 运营闭环</div></div>
+          <div class="layer l5"><div class="idx">L5</div><div class="body"><b>数据产品与自助</b>Marketplace · 契约 · 语义层 · SLO</div></div>
+          <div class="layer l4"><div class="idx">L4</div><div class="body"><b>主动元数据控制面</b>Catalog · Lineage · Policy · Recommendation</div></div>
+          <div class="layer l3"><div class="idx">L3</div><div class="body"><b>集成、编排与查询</b>ETL · CDC · Stream · Virtualization · Workflow</div></div>
+          <div class="layer l2"><div class="idx">L2</div><div class="body"><b>数据与 AI 运行时</b>Lakehouse · Feature/Vector · Graph · PET</div></div>
+          <div class="layer l1"><div class="idx">L1</div><div class="body"><b>分布式权威源</b>DB · Lake · Event · Edge · Partner Space</div></div>
+          <div class="layer lx"><div class="idx">横切</div><div class="body"><b>身份 · 质量 · 安全 · 隐私 · 驻留 · 审计 · 可观察性</b></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>依据深度调研工作定义；对齐 Gartner 主动元数据与 IBM「设计方法」表述</div>
+      <div class="page">01 / 03</div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 2 ========== -->
+  <section class="slide" data-slide="2" aria-label="胶片2 成熟度">
+    <div class="topbar">
+      <div>
+        <div class="kicker"><i></i>Data Fabric · Slide 02 / 03</div>
+        <h1>数据编织成熟度：能力闸门 G0—G5</h1>
+        <p class="lead">成熟度不是采购清单打分，而是可验证的能力闸门：先可观察、再产品化、再影子闭环，最后才有界自治与跨域供给。</p>
+      </div>
+      <div class="badge">证据驱动 · 非口号驱动</div>
+    </div>
+
+    <div class="mat-grid">
+      <div class="maturity-track">
+        <div class="gate"><div class="g">G0<small>BOUND</small></div><div class="c"><h3>边界、对象与词汇</h3><p>明确场景目标；为关键对象、数据、模型与动作指定 Owner、时间语义、版本、保留期与权威源。</p></div></div>
+        <div class="gate"><div class="g">G1<small>SEE</small></div><div class="c"><h3>只读可观察</h3><p>接入关键源，建立目录、Schema、事件时间、QoD 与血缘；先证明能回答「哪份数据对应哪个状态」。</p></div></div>
+        <div class="gate"><div class="g">G2<small>PRODUCT</small></div><div class="c"><h3>数据产品与契约</h3><p>高频复用输出封装为产品；CI 校验兼容性、质量、用途与成本；无人使用的资产应退出。</p></div></div>
+        <div class="gate"><div class="g">G3<small>SHADOW</small></div><div class="c"><h3>影子闭环</h3><p>系统只给建议，对照人工决策与真实结果；高风险动作先在沙箱/孪生中演练。</p></div></div>
+        <div class="gate"><div class="g">G4<small>BOUND-AUTO</small></div><div class="c"><h3>有界自治</h3><p>仅对白名单、低风险、可回滚动作自动执行；配置风险预算、熔断与人工接管。</p></div></div>
+        <div class="gate"><div class="g">G5<small>SUPPLY</small></div><div class="c"><h3>跨域可信供给</h3><p>内部语义与质量稳定后，再向外部域/伙伴/上层系统供给最小必要的数据产品。</p></div></div>
+      </div>
+
+      <div class="side-stack">
+        <div class="panel">
+          <h2>何时值得建设（最小充分性）</h2>
+          <ul class="checks">
+            <li>异构来源长期共存，且跨域复用频繁</li>
+            <li>语义冲突显著，变更影响难追踪</li>
+            <li>治理约束复杂（用途、驻留、责任边界）</li>
+            <li>已有明确场景、Owner 与可量化结果</li>
+          </ul>
+          <p style="margin-top:8px;font-size:12px;color:var(--muted)">同时满足至少三项，才值得验证 Fabric；否则先解最窄瓶颈。</p>
+        </div>
+        <div class="panel">
+          <h2>建议跟踪的成熟信号</h2>
+          <div class="metric-row">
+            <div class="metric"><b>新鲜度 / 完整率</b><span>消费时间相对源事件时间；必需字段实收比</span></div>
+            <div class="metric"><b>血缘覆盖 / 发现时延</b><span>关键产品可追至源与动作；变更感知时延</span></div>
+            <div class="metric"><b>产品复用率</b><span>≥2 独立消费者稳定使用；重复采集下降</span></div>
+            <div class="metric"><b>闭环有效性</b><span>Deadline 达标、无效动作率、回滚耗时</span></div>
+          </div>
+        </div>
+        <div class="warn">
+          <strong>边界提醒：</strong>Gartner 将 Data Fabric 视为新兴设计组合，组件成熟度不一，尚无单一 ISO/ITU/3GPP「Data Fabric 产品」标准。自动化成熟的标志不是「无人」，而是边界明确、证据完整、高风险动作可回滚。
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>闸门模型综合调研中的能力演进逻辑；组织应按场景裁剪，不可跳级宣称「自治」</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 3 ========== -->
+  <section class="slide" data-slide="3" aria-label="胶片3 演进趋势">
+    <div class="topbar">
+      <div>
+        <div class="kicker"><i></i>Data Fabric · Slide 03 / 03</div>
+        <h1>演进趋势：从集成层到可信智能控制面</h1>
+        <p class="lead">2026—2035 不是十项独立产品清单，而是一条因果链：分布驱动元数据事件化 → 机器消费驱动语义显式化 → 自动化驱动策略与可回滚性。</p>
+      </div>
+      <div class="badge">事实 / 推演分层</div>
+    </div>
+
+    <div class="trend-grid">
+      <div>
+        <div class="trend-cards">
+          <article class="tcard">
+            <span class="tag fact">高确定性</span>
+            <h3>元数据事件化</h3>
+            <p>Catalog 从定时扫描升级为事件驱动；schema/质量/权限变化触发影响分析与策略复核。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag fact">高确定性</span>
+            <h3>语义控制平面</h3>
+            <p>版本化 ontology / 知识图关联实体、指标、产品、模型、Agent 工具与政策。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag fact">高确定性</span>
+            <h3>产品与契约即代码</h3>
+            <p>Schema、SLA、许可、用途进入机器可读契约与 CI；开放规范兴起但未全球统一。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag fact">高确定性</span>
+            <h3>流批与开放 Catalog</h3>
+            <p>CDC/流/增量表/快照视为同一事实的不同延迟视图；竞争上移到 Catalog 与策略。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag fast">快速演进</span>
+            <h3>Agent 可操作 Fabric</h3>
+            <p>先辅助检索、草拟、调查与编排；再在最小权限与审计下执行低风险动作。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag fast">快速演进</span>
+            <h3>RAG 成为治理路径</h3>
+            <p>向量召回叠加图/SQL/血缘/权限；答案追溯到数据产品，防投毒与提示注入。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag mid">中高确定性</span>
+            <h3>PET + 机密计算</h3>
+            <p>差分隐私、MPC、联邦学习与 TEE 按场景组合；证明环境≠证明用途合法。</p>
+          </article>
+          <article class="tcard">
+            <span class="tag mid">中等确定性</span>
+            <h3>接入外部 Data Space</h3>
+            <p>凭证、合同协商、用途策略与连接器；跨组织交换仍需法律与审计共约束。</p>
+          </article>
+        </div>
+        <div class="chain">
+          <strong>因果链</strong>
+          <div class="arrows">
+            <em>数据分布</em> → <em>元数据事件</em> → <em>显式语义</em> → <em>有界自动化</em> → <em>策略·证明·回滚</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizon">
+        <div class="hcard h1">
+          <div class="yr">2026—2027</div>
+          <h3>工程底座</h3>
+          <p>事件化元数据、血缘、数据契约、开放 Catalog、受治理 RAG 与 Agent 辅助成为平台基线。</p>
+        </div>
+        <div class="hcard h2">
+          <div class="yr">2028—2030</div>
+          <h3>语义与策略控制</h3>
+          <p>ontology 连接数据、模型、政策与动作；低风险建议可自动执行，高风险操作由仿真、审批与回滚护栏约束。</p>
+        </div>
+        <div class="hcard h3">
+          <div class="yr">2031—2035</div>
+          <h3>条件性自治</h3>
+          <p>自动映射、异常调查、管道优化、边云放置更成熟；跨企业自主签约与完全无人治理仍属低确定性判断。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>研究快照口径 · 区分高确定性工程趋势与中长期推演；不构成产品承诺</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </section>
+</div>
+
+<div class="controls" aria-label="翻页">
+  <button type="button" id="prev" title="上一张" aria-label="上一张">‹</button>
+  <button type="button" id="next" title="下一张" aria-label="下一张">›</button>
+</div>
+<div class="dots" id="dots" aria-label="页码指示"></div>
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=document.getElementById('dots');
+  let i=0;
+  slides.forEach((_,idx)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.setAttribute('aria-label','第 '+(idx+1)+' 张');
+    b.addEventListener('click',()=>go(idx));
+    dots.appendChild(b);
+  });
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+    history.replaceState(null,'','#'+(i+1));
+  }
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  window.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(i+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}
+    if(e.key==='Home')go(0);
+    if(e.key==='End')go(slides.length-1);
+  });
+  const hash=parseInt((location.hash||'#1').slice(1),10);
+  go(Number.isFinite(hash)?hash-1:0);
+})();
+</script>
+</body>
+</html>
