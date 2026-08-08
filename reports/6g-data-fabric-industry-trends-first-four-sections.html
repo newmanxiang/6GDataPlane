@@ -87,6 +87,14 @@
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
       .landscape{grid-template-columns:1fr}.judgement{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .figure,.table-scroll{position:relative}
+      .figure:before,.table-scroll:before{
+        content:"← 左右滑动查看完整内容 →";display:block;position:sticky;left:0;z-index:3;
+        width:max-content;margin:0 0 8px;padding:4px 9px;border-radius:999px;
+        background:#071f3d;color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em
+      }
+      .figure{overflow-x:auto}.figure svg,.figure img{min-width:760px}
+      .figure figcaption{position:sticky;left:0;max-width:calc(100vw - 64px)}
     }
     @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats{grid-template-columns:1fr}main section{padding:62px 0}}
     @media print{.nav,.progress{display:none}.hero{min-height:auto;break-after:page}main section{padding:36px 0}.card,.figure{box-shadow:none;break-inside:avoid}.wrap,.hero-inner{width:94%}a{color:inherit}}
