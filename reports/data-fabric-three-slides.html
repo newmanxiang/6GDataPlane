@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>数据编织三张胶片｜定义与组成 · 成熟度 · 演进趋势</title>
+<title>数据编织三张胶片｜为什么·是什么·组成 · 成熟度 · 演进趋势</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -57,40 +57,90 @@ h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px)
 .page{font-family:Outfit,sans-serif;font-weight:700;color:var(--navy)}
 .nav-hint{opacity:.8}
 
-/* Slide 1 */
-.def-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;flex:1;min-height:0;margin-top:10px}
+/* Slide 1 — Why / What / Composition */
+.story-rail{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 0 10px
+}
+.story-rail .step{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.85);border:1px solid rgba(7,31,61,.1);
+  border-radius:999px;padding:5px 12px 5px 6px;font-size:12px;font-weight:700;color:var(--navy)
+}
+.story-rail .step b{
+  width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--navy);color:var(--lime);font-family:Outfit,sans-serif;font-size:11px
+}
+.story-rail .arrow{color:var(--teal);font-weight:800;font-family:Outfit,sans-serif}
+.def-grid{
+  display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:12px;flex:1;min-height:0
+}
 .def-card{
   background:rgba(255,255,255,.72);border:1px solid rgba(7,31,61,.08);
-  border-radius:18px;padding:18px 20px;backdrop-filter:blur(8px);
-  box-shadow:0 10px 30px rgba(7,31,61,.06);
+  border-radius:16px;padding:14px 14px 12px;backdrop-filter:blur(8px);
+  box-shadow:0 10px 30px rgba(7,31,61,.06);display:flex;flex-direction:column;min-height:0
 }
-.def-card h2{font-size:15px;font-weight:800;margin-bottom:10px;color:var(--navy)}
+.def-card .sec-label{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:8px
+}
+.def-card .sec-label .n{
+  width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;
+  font-family:Outfit,sans-serif;font-weight:800;font-size:12px;background:var(--navy);color:var(--lime)
+}
+.def-card .sec-label h2{font-size:15px;font-weight:800;color:var(--navy);margin:0}
+.def-card .sec-sub{font-size:12px;color:var(--muted);line-height:1.4;margin:-2px 0 10px}
+.why-dual{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.why-dual article{
+  background:#fff;border:1px solid rgba(7,31,61,.07);border-radius:12px;padding:10px
+}
+.why-dual h3{font-size:12.5px;margin-bottom:4px}
+.why-dual p{font-size:11.5px;line-height:1.4;color:var(--muted)}
+.formula{
+  background:var(--navy);color:#d7e8f8;border-radius:10px;padding:8px 10px;
+  font-size:11.5px;line-height:1.45;margin-bottom:8px
+}
+.formula strong{color:var(--lime)}
+.hetero{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.hetero span{
+  background:#f0f7fb;border:1px solid rgba(7,31,61,.06);border-radius:10px;
+  padding:7px 6px;text-align:center;font-size:11px;font-weight:700;color:var(--ink)
+}
+.constraint{
+  margin-top:auto;background:rgba(255,138,76,.12);border:1px solid rgba(255,138,76,.35);
+  border-radius:10px;padding:8px 10px;font-size:11.5px;line-height:1.45;color:#5a3418
+}
+.constraint strong{color:#b34a12}
 .work-def{
   background:linear-gradient(135deg,var(--navy),#12375f);
-  color:#e8f4ff;border-radius:16px;padding:16px 18px;font-size:14.5px;line-height:1.65;
+  color:#e8f4ff;border-radius:12px;padding:12px 13px;font-size:12.5px;line-height:1.55;
   border:1px solid rgba(202,232,94,.25);
 }
 .work-def strong{color:var(--lime)}
-.meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.meta-row{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}
 .meta-row div{
-  background:#f0f7fb;border:1px solid rgba(7,31,61,.06);border-radius:12px;
-  padding:10px 8px;text-align:center;font-size:12px;font-weight:700;color:var(--ink)
+  background:#f0f7fb;border:1px solid rgba(7,31,61,.06);border-radius:10px;
+  padding:8px 8px;text-align:center;font-size:11.5px;font-weight:700;color:var(--ink)
 }
-.meta-row small{display:block;margin-top:4px;font-weight:500;color:var(--muted);font-size:11px}
-.weave-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.meta-row small{display:block;margin-top:3px;font-weight:500;color:var(--muted);font-size:10.5px}
+.weave-meta{display:grid;grid-template-columns:1fr;gap:6px;margin-top:8px}
 .weave-meta article{
-  border-radius:12px;padding:12px;background:#fff;border:1px solid rgba(7,31,61,.07)
+  border-radius:10px;padding:8px 10px;background:#fff;border:1px solid rgba(7,31,61,.07);
+  display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center
 }
-.weave-meta h3{font-size:13px;margin-bottom:4px}
-.weave-meta p{font-size:12px;line-height:1.45;color:var(--muted)}
-.layers{display:flex;flex-direction:column;gap:6px;height:100%}
+.weave-meta h3{font-size:12px;margin:0}
+.weave-meta p{font-size:11.5px;line-height:1.35;color:var(--muted)}
+.not-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.not-list span{
+  font-size:10.5px;padding:4px 8px;border-radius:999px;background:#fff;
+  border:1px solid rgba(7,31,61,.1);color:var(--muted)
+}
+.layers{display:flex;flex-direction:column;gap:5px;flex:1;min-height:0}
 .layer{
-  display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;
-  border-radius:12px;padding:9px 12px;min-height:0;flex:1
+  display:grid;grid-template-columns:42px 1fr;gap:8px;align-items:center;
+  border-radius:10px;padding:7px 10px;min-height:0;flex:1
 }
-.layer .idx{font-family:Outfit,sans-serif;font-weight:800;font-size:13px}
-.layer .body{font-size:12.5px;line-height:1.35}
-.layer .body b{display:block;font-size:13px;margin-bottom:2px}
+.layer .idx{font-family:Outfit,sans-serif;font-weight:800;font-size:12px}
+.layer .body{font-size:11.5px;line-height:1.3}
+.layer .body b{display:block;font-size:12px;margin-bottom:1px}
 .layer.l6{background:#effaf8}.layer.l5{background:#d9f2ed}
 .layer.l4{background:linear-gradient(90deg,#0f9f9a,#2667ff);color:#fff}
 .layer.l4 .body{color:#eef}.layer.l4 .body b{color:var(--lime)}
@@ -99,11 +149,7 @@ h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px)
 .layer.l1{background:#506e79;color:#fff}
 .layer.lx{background:rgba(255,138,76,.12);border:1px dashed var(--coral)}
 .layer.lx .idx{color:var(--coral)}
-.not-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.not-list span{
-  font-size:11.5px;padding:5px 9px;border-radius:999px;background:#fff;
-  border:1px solid rgba(7,31,61,.1);color:var(--muted)
-}
+.compose-note{margin-top:8px;font-size:11px;color:var(--muted);line-height:1.4}
 
 /* Slide 2 */
 .mat-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;flex:1;min-height:0;margin-top:10px}
@@ -204,6 +250,7 @@ h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px)
   .slide{padding:24px 20px 64px;overflow:auto}
   body{overflow:auto}
   .def-grid,.mat-grid,.trend-grid{grid-template-columns:1fr}
+  .why-dual,.hetero{grid-template-columns:1fr 1fr}
   .meta-row{grid-template-columns:repeat(2,1fr)}
   h1{font-size:26px}
   .chain{flex-direction:column;align-items:flex-start}
@@ -219,21 +266,57 @@ h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px)
 <div class="deck" id="deck" aria-live="polite">
 
   <!-- ========== SLIDE 1 ========== -->
-  <section class="slide active" data-slide="1" aria-label="胶片1 定义与组成">
+  <section class="slide active" data-slide="1" aria-label="胶片1 为什么·是什么·组成">
     <div class="topbar">
       <div>
         <div class="kicker"><i></i>Data Fabric · Slide 01 / 03</div>
-        <h1>数据编织：定义与组成</h1>
-        <p class="lead">跨异构、分布式环境的数据管理与集成设计——以主动元数据为控制面，交付可组合的数据产品，而非强制物理集中。</p>
+        <h1>数据编织：为什么 · 是什么 · 由什么组成</h1>
+        <p class="lead">先回答约束为何出现，再给出可操作定义，最后展开能力组成——避免把 Fabric 当成新名词或采购清单。</p>
       </div>
-      <div class="badge">逻辑统一 ≠ 物理集中</div>
+      <div class="badge">为什么 → 是什么 → 组成</div>
+    </div>
+
+    <div class="story-rail" aria-hidden="true">
+      <span class="step"><b>1</b>为什么会出现</span>
+      <span class="arrow">→</span>
+      <span class="step"><b>2</b>它是什么</span>
+      <span class="arrow">→</span>
+      <span class="step"><b>3</b>由什么组成</span>
     </div>
 
     <div class="def-grid">
+      <!-- WHY -->
       <div class="def-card">
-        <h2>工作定义</h2>
+        <div class="sec-label"><span class="n">01</span><h2>为什么</h2></div>
+        <p class="sec-sub">不是行业需要新名词，而是点对点集成与强制集中同时碰到规模边界。</p>
+        <div class="why-dual">
+          <article>
+            <h3>点对点 → 组合爆炸</h3>
+            <p>每个源为每个消费者建专用管道，变更沿依赖链扩散；隐性映射越多，维护越脆弱。</p>
+          </article>
+          <article>
+            <h3>全部集中 ≠ 免费</h3>
+            <p>驻留、出云、边缘时延、源负载与主权约束仍在；把数据放一起也不会自动统一语义。</p>
+          </article>
+        </div>
+        <div class="formula">
+          潜在连接上界 ≈ <strong>n(n−1)/2</strong>　·　10→45　·　100→4,950　·　1,000→499,500
+        </div>
+        <div class="hetero" aria-label="六种异构性">
+          <span>位置</span><span>结构</span><span>速度</span>
+          <span>语义</span><span>治理</span><span>消费</span>
+        </div>
+        <div class="constraint">
+          <strong>第一性约束：</strong>数据有重力，计算有位置，语义属领域，责任属组织——须按场景选择「数据移动 / 查询移动 / 模型移动」。
+        </div>
+      </div>
+
+      <!-- WHAT -->
+      <div class="def-card">
+        <div class="sec-label"><span class="n">02</span><h2>是什么</h2></div>
+        <p class="sec-sub">一种设计方法与架构能力，而非某一件软件或强制物理集中。</p>
         <div class="work-def">
-          数据编织是一种跨异构、分布式环境的<strong>数据管理与集成设计</strong>。它以技术、业务、运营和社会/使用元数据构成的知识网络为<strong>控制面</strong>，持续观察数据及其使用行为，进而推荐或执行发现、集成、质量、安全、编排与交付动作，在<strong>不强制统一物理存储</strong>的前提下，为人、应用和 AI 提供<strong>可组合的数据产品</strong>。
+          跨异构、分布式环境的<strong>数据管理与集成设计</strong>：以技术/业务/运营/使用元数据知识网络为<strong>控制面</strong>，观察数据与使用行为并推荐或执行发现、集成、质量、安全、编排与交付；在<strong>不强制统一物理存储</strong>的前提下，交付<strong>可组合数据产品</strong>。
         </div>
         <div class="meta-row">
           <div>技术元数据<small>schema · 血缘 · 作业</small></div>
@@ -243,40 +326,43 @@ h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(28px,3.2vw,40px)
         </div>
         <div class="weave-meta">
           <article>
-            <h3>经线 · 治理骨架</h3>
-            <p>身份、术语、策略、质量规则、契约、血缘与责任结构。</p>
+            <h3>经线 · 治理</h3>
+            <p>身份、术语、策略、契约、血缘与责任骨架。</p>
           </article>
           <article>
-            <h3>纬线 · 数据流</h3>
-            <p>批 / CDC / 流 / 联邦 / API / 复制 / 缓存，按场景选择交付方式。</p>
+            <h3>纬线 · 流转</h3>
+            <p>批 / CDC / 流 / 联邦 / API，按 SLA 选择交付。</p>
           </article>
           <article>
-            <h3>织机 · 主动闭环</h3>
-            <p>观察 → 推断 → 推荐/执行 → 反馈；目录从档案馆变为神经系统。</p>
+            <h3>织机 · 主动</h3>
+            <p>观察 → 推断 → 推荐/执行 → 反馈闭环。</p>
           </article>
         </div>
         <div class="not-list" aria-label="不是什么">
           <span>≠ 中央湖仓</span><span>≠ 被动目录</span><span>≠ 单靠虚拟化</span>
-          <span>≠ 仅 ETL 平台</span><span>≠ 厂商产品名</span>
+          <span>≠ 仅 ETL</span><span>≠ 厂商产品名</span>
         </div>
       </div>
 
-      <div class="def-card" style="display:flex;flex-direction:column">
-        <h2>七层参考组成（分析框架，非正式标准）</h2>
+      <!-- COMPOSITION -->
+      <div class="def-card">
+        <div class="sec-label"><span class="n">03</span><h2>由什么组成</h2></div>
+        <p class="sec-sub">覆盖数据面、控制面、消费面与横切保障；七层为分析框架，非正式标准。</p>
         <div class="layers">
-          <div class="layer l6"><div class="idx">L6</div><div class="body"><b>消费与行动</b>BI / API / RAG / Agent / 运营闭环</div></div>
-          <div class="layer l5"><div class="idx">L5</div><div class="body"><b>数据产品与自助</b>Marketplace · 契约 · 语义层 · SLO</div></div>
-          <div class="layer l4"><div class="idx">L4</div><div class="body"><b>主动元数据控制面</b>Catalog · Lineage · Policy · Recommendation</div></div>
-          <div class="layer l3"><div class="idx">L3</div><div class="body"><b>集成、编排与查询</b>ETL · CDC · Stream · Virtualization · Workflow</div></div>
-          <div class="layer l2"><div class="idx">L2</div><div class="body"><b>数据与 AI 运行时</b>Lakehouse · Feature/Vector · Graph · PET</div></div>
-          <div class="layer l1"><div class="idx">L1</div><div class="body"><b>分布式权威源</b>DB · Lake · Event · Edge · Partner Space</div></div>
-          <div class="layer lx"><div class="idx">横切</div><div class="body"><b>身份 · 质量 · 安全 · 隐私 · 驻留 · 审计 · 可观察性</b></div></div>
+          <div class="layer l6"><div class="idx">L6</div><div class="body"><b>消费与行动</b>BI / API / RAG / Agent / 闭环</div></div>
+          <div class="layer l5"><div class="idx">L5</div><div class="body"><b>数据产品与自助</b>Marketplace · 契约 · 语义 · SLO</div></div>
+          <div class="layer l4"><div class="idx">L4</div><div class="body"><b>主动元数据控制面</b>Catalog · Lineage · Policy</div></div>
+          <div class="layer l3"><div class="idx">L3</div><div class="body"><b>集成编排查询</b>ETL · CDC · Stream · Virtualization</div></div>
+          <div class="layer l2"><div class="idx">L2</div><div class="body"><b>数据与 AI 运行时</b>Lakehouse · Feature/Vector · PET</div></div>
+          <div class="layer l1"><div class="idx">L1</div><div class="body"><b>分布式权威源</b>DB · Lake · Event · Edge · Space</div></div>
+          <div class="layer lx"><div class="idx">横切</div><div class="body"><b>身份 · 质量 · 安全 · 隐私 · 审计 · 可观察</b></div></div>
         </div>
+        <p class="compose-note">控制面回答「应该怎样」；数据面决定「在哪里、如何执行」。逻辑统一 ≠ 物理集中。</p>
       </div>
     </div>
 
     <div class="footer">
-      <div>依据深度调研工作定义；对齐 Gartner 主动元数据与 IBM「设计方法」表述</div>
+      <div>叙事结构：约束 → 定义 → 能力组成；对齐深度调研与 Gartner/IBM 公开表述</div>
       <div class="page">01 / 03</div>
     </div>
   </section>
