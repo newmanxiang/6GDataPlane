@@ -478,6 +478,7 @@
               <h4>架构主线：数据摄取 → 联邦网格 → 智能平台</h4>
               <p>2021架构先解决重复采集：源数据进入EDCA，应用在客户侧或外部应用集群消费；DRG承担跨边界数据中继，DDC与Global Data Catalog协同形成联邦数据湖。2026 AI-ready data mesh又把数据源、摄取、refinement &amp; governance、consumer support串成面向AI与多Agent的参考架构，强调计算靠近数据、数据按产品与授权复用。<a href="#s9">[S9]</a><a href="#s10">[S10]</a></p>
               <p>6G愿景中的common data plane进一步提出网络数据的采集、传输、潜在存储与治理，并由模型编排器选择「把数据送到智能」还是「把智能送到数据」。这是一条从现有摄取/自动化产品向6G分布式数据基础设施延伸的连续路线，但common data plane不是3GPP标准。<a href="#s9">[S9]</a></p>
+              <p>成熟度上，各层并不一致：Swisscom等合同证明EIAP进入运营网络；Mediation/Telco DataOps拥有成熟采集加工底座，Grameenphone案例披露每日超过60亿条记录；但这些数字不证明AI-ready data mesh、EFDL或common data plane已按相同规模形成统一产品。<a href="#s35">[S35]</a><a href="#s36">[S36]</a></p>
             </div>
           </div>
 
@@ -513,6 +514,7 @@
               <h4>架构主线：服务需求 → 数据拓扑 → 近源执行 → 异步分发</h4>
               <p>DO将服务需求拆成采集、过滤、聚合、转换和分析等操作，依据DA/DPF能力形成任意拓扑；DA既可作为源，也可承载模型和数据处理；DCP用消息代理、队列和Pub/Sub分发非连接类数据。方案直接回应AI/ISAC的多输入、多处理、多输出问题，并给出与RocketMQ的原型比较。<a href="#s12">[S12]</a></p>
               <p>但DO/DA/DCP的技术价值与标准状态必须分开：它证明了「拓扑编排、近源算子、异步多消费者」值得研究，不证明必须引入独立Data Plane或这些名称会进入3GPP。NET4AI同样属于network-for-AI的研究路径。<a href="#s13">[S13]</a></p>
+              <p>AUTINOps则是当前商用桥梁：Platform层以跨域DTN、EDNS 2.0和统一语义数据底座形成认知基础，Agent层承载场景数字员工，Service层组织专家监督与Agent闭环。IOH联合案例披露其已覆盖无线、微波、IP、传输和能源域，故障一次闭环率80%、MTTR下降15%、年Agent调用超过200万；这些是厂商/客户联合数据，能证明部署，不能证明6G专用Data Plane商用。<a href="#s37">[S37]</a><a href="#s38">[S38]</a></p>
             </div>
           </div>
 
@@ -541,13 +543,14 @@
 
           <div class="vendor-grid">
             <figure class="figure">
-              <img src="data-fabric-assets/nokia-distributed-data-platform.png" alt="Nokia分布式电信数据平台蓝图，包含域湖仓、公共数据Fabric层、服务域和AIOps闭环">
-              <figcaption><span><a href="data-fabric-assets/nokia-distributed-data-platform.png" download>下载架构图</a> · <a href="https://www.nokia.com/asset/f/214288/" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图6｜Nokia分布式电信数据平台蓝图。</strong>接入、核心、传输等域分别管理数据采集/加工和域湖仓，由公共Data Fabric连接共享湖仓、服务域、AIOps与策略/目录/元数据横切能力。图源：Nokia Bell Labs Consulting，Figure 8；仅裁切页面空白，版权归Nokia。</figcaption>
+              <img src="data-fabric-assets/nokia-autonomous-network-fabric.png" alt="Nokia Autonomous Network Fabric架构，包含Sense Think Act、多云部署、AN Apps、API暴露和Marketplace">
+              <figcaption><span><a href="data-fabric-assets/nokia-autonomous-network-fabric.png" download>下载架构图</a> · <a href="https://www.nokia.com/asset/f/214909/" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图6｜Nokia Autonomous Network Fabric。</strong>底层多云Fabric承载Sense—Think—Act智能循环，通过Fabric Experience与API连接AN Apps，再向Network Monetization Platform和Marketplace暴露。图源：Nokia 2025，p.7；仅裁切说明文字与页脚，版权归Nokia。</figcaption>
             </figure>
             <div>
               <h4>架构主线：域自治数据 → 公共Fabric → 数据产品 → 解释性自动化</h4>
-              <p>Nokia的分布式蓝图允许各网络域保留采集、加工、存储和AI闭环自治，通过common data fabric layer与common data lakehouse共享purpose-built data。2025 Autonomous Network Fabric把这一逻辑产品化为跨厂商统一智能层，组合统一数据管理、360°可观察、telco-trained AI、安全和自动化应用。<a href="#s23">[S23]</a></p>
+              <p>Nokia的分布式蓝图允许各网络域保留采集、加工、存储和AI闭环自治，通过common data fabric layer与common data lakehouse共享purpose-built data。2025 Autonomous Network Fabric把这一逻辑产品化为跨厂商统一智能层，组合统一数据管理、360°可观察、telco-trained AI、安全和自动化应用。<a href="#s23">[S23]</a><a href="#s31">[S31]</a><a href="#s39">[S39]</a></p>
               <p>Data Suite进一步以可复用数据产品、TM Forum语义、目录、血缘、质量和多厂商适配支撑Glass-Box AI；与Google Cloud合作使其可在公有云、本地与混合云部署。它是三家中最接近「数据产品 + Fabric + 自治」显式商品组合的路线。<a href="#s24">[S24]</a></p>
+              <p>KDDI的20万4G/5G RAN异常检测、stc的Cognitive SON和Indosat节能部署证明Nokia域应用与执行组件可在商用网运行；但这些案例不能替代「AN Fabric已跨RAN/Core/传输形成统一生产闭环」的证据。<a href="#s32">[S32]</a><a href="#s33">[S33]</a><a href="#s34">[S34]</a></p>
             </div>
           </div>
 
@@ -861,6 +864,14 @@
           <li id="s29"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin management</a>：NDT管理能力、数据同步与生命周期边界。</li>
           <li id="s30"><a href="https://doi.org/10.23919/etr.2021.9904675">Ericsson Technology Review, Data ingestion architecture for telecom applications</a>, 2021：EDCA、DRG、DDC、GDC及联邦数据湖。</li>
           <li id="s31"><a href="https://www.nokia.com/asset/f/214288/">Nokia, Data mesh and distributed data architecture for telco networks</a>：域湖仓、公共Data Fabric、AIOps与服务域蓝图。</li>
+          <li id="s32"><a href="https://www.nokia.com/newsroom/nokia-ava-pddr-solution-deployed-by-kddi-to-boost-network-quality/">Nokia / KDDI AVA PDDR deployment</a>：面向20万4G/5G RAN的异常检测域应用证据。</li>
+          <li id="s33"><a href="https://www.nokia.com/newsroom/nokia-and-stc-group-optimize-network-with-ai-powered-mantaray-cognitive-son-solution-in-saudi-arabia/">Nokia / stc MantaRay Cognitive SON</a>：商用RAN优化与自动动作案例。</li>
+          <li id="s34"><a href="https://www.nokia.com/newsroom/indosat-ooredoo-hutchison-and-nokia-partner-to-reduce-energy-demand-and-support-ai-powered-sustainable-operations/">Nokia / Indosat Energy Efficiency</a>：AI节能域应用部署。</li>
+          <li id="s35"><a href="https://www.ericsson.com/en/news/2024/4/swisscom-selects-ericsson-to-future-proof-mobile-network">Ericsson / Swisscom EIAP agreement</a>：EIAP进入运营网络的合同证据。</li>
+          <li id="s36"><a href="https://www.ericsson.com/en/press-releases/2/2024/10/grameenphone-enhances-customer-billing-precision-with-one-of-the-worlds-largest-deployments-of-ericsson-mediation">Ericsson / Grameenphone Mediation deployment</a>：每日超过60亿条记录的数据加工底座证据，不等同完整Data Fabric。</li>
+          <li id="s37"><a href="https://www.huawei.com/en/news/2026/3/mwc-ai-solution">Huawei AUTINOps launch</a>：Platform/Agent/Service三层、DTN、EDNS 2.0与统一语义数据底座。</li>
+          <li id="s38"><a href="https://www.huawei.com/en/news/2026/6/dtw-excellence-award-autinops">Huawei / IOH AUTINOps deployment</a>：跨域部署和运营指标为厂商/客户联合披露。</li>
+          <li id="s39"><a href="https://www.nokia.com/asset/f/214909/">Nokia, Autonomous Network Fabric: evolve to full autonomy</a>, 2025：Sense—Think—Act、AN Apps、API暴露、Marketplace与多云部署架构。</li>
         </ol>
         <div class="boundary"><strong>研究边界：</strong>本文综合了两份仓库内深度研究的第一性原理、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的官方资料。标题中的“Data Fabric × 6G”为战略分析框架，不是ITU、3GPP或O-RAN正式网元名称。</div>
       </div>
