@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据编织 × 6G 数据面｜战略简报（需求·现状·趋势·判断）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2744;--ink:#14293c;--teal:#0e8f8a;--cyan:#2a9fc9;--sand:#f3f6f9;
+  --card:#fff;--muted:#5a6f82;--line:rgba(10,39,68,.12);--coral:#d96a32;
+  --ok:#0b7a56;--mid:#b45309;--low:#6b7280;--lime:#b8d45a;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans SC",sans-serif;color:var(--ink);background:var(--sand);line-height:1.75}
+a{color:#0b6e9a}img{max-width:100%;height:auto;display:block}
+.wrap{width:min(1100px,92vw);margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;background:rgba(10,39,68,.94);backdrop-filter:blur(8px)}
+.nav .inner{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:800;color:#fff;letter-spacing:.04em;font-size:13px}
+.brand span{color:var(--lime)}
+.nav a{color:#c9dcea;font-size:12.5px;font-weight:600;text-decoration:none}
+.nav a:hover{color:#fff}
+.hero{
+  background:
+    radial-gradient(900px 420px at 8% -10%,rgba(14,143,138,.35),transparent 55%),
+    radial-gradient(700px 380px at 95% 0%,rgba(42,159,201,.28),transparent 50%),
+    linear-gradient(155deg,#071f35 0%,#0d3558 55%,#11404a 100%);
+  color:#e8f3ff;padding:64px 0 48px
+}
+.hero .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.hero h1{font-family:"Source Serif 4","Noto Sans SC",serif;font-size:clamp(28px,4vw,44px);line-height:1.2;margin:12px 0 14px;max-width:16em}
+.hero .lead{font-size:16.5px;max-width:48em;color:#c5dced}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);border-radius:999px;padding:6px 11px;font-size:12px}
+section{padding:52px 0}
+section.alt{background:#e9f0f5}
+h2{font-family:"Source Serif 4","Noto Sans SC",serif;font-size:clamp(24px,2.8vw,32px);margin:0 0 8px;color:var(--navy)}
+h3{font-size:18px;margin:28px 0 10px;color:var(--navy)}
+h4{font-size:15px;margin:0 0 8px;color:var(--navy)}
+.section-kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.lead{color:var(--muted);font-size:15.5px;max-width:54em}
+.grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 17px;box-shadow:0 8px 24px rgba(10,39,68,.04)}
+.card p,.card li{font-size:14px;color:var(--muted)}
+.callout{border-left:4px solid var(--teal);background:#eef8f7;padding:14px 16px;border-radius:0 12px 12px 0;margin:16px 0;font-size:14.5px}
+.callout.warn{border-left-color:var(--coral);background:#fff5ee}
+.callout strong{color:var(--navy)}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
+.tag.high{background:rgba(11,122,86,.12);color:var(--ok)}
+.tag.mid{background:rgba(180,83,9,.12);color:var(--mid)}
+.tag.low{background:rgba(107,114,128,.14);color:var(--low)}
+.table-scroll{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:14px 0}
+table{width:100%;border-collapse:collapse;min-width:720px;font-size:13.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#eef4f8;color:var(--navy);font-weight:800}
+figure{margin:18px 0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+figure img{width:100%}
+figcaption{padding:12px 14px;font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line)}
+figcaption strong{color:var(--navy)}
+.diagram{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:16px 0}
+.diagram svg{width:100%;height:auto;display:block}
+.timeline{display:grid;gap:10px;margin-top:14px}
+.titem{display:grid;grid-template-columns:120px 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.titem b{color:var(--teal);font-weight:800}
+.quote{
+  margin:18px 0;padding:18px 20px;border-radius:14px;
+  background:linear-gradient(135deg,#0a2744,#123a5c);color:#e7f2ff;font-size:16px;line-height:1.65
+}
+.quote em{color:var(--lime);font-style:normal}
+.footer{background:var(--navy);color:#9eb4c6;padding:28px 0;font-size:13px}
+.sources{font-size:13px;color:var(--muted)}
+.sources ol{padding-left:18px}.sources li{margin:6px 0}
+@media (max-width:900px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .titem{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap inner">
+    <div class="brand">DATA FABRIC <span>×</span> 6G · 战略简报 P1–P4</div>
+    <nav>
+      <a href="#need">需求目标</a>
+      <a href="#env">行业现状</a>
+      <a href="#trend">趋势预判</a>
+      <a href="#horizon">3年/5年</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Strategy Brief · Template Parts 1–4</div>
+    <h1>数据编织如何成为 6G 数据面的「成品化」底座</h1>
+    <p class="lead">综合最新 RAN 中心深度调研与初版通用报告，按战略模版输出前四部分：需求与目标、行业环境与竞争、产业趋势预判，以及「3 年看透、5 年看清」。判断均标注信心；标准未定结论处明确边界。</p>
+    <div class="meta">
+      <span>研究截点：2026-08</span>
+      <span>范围：模版前四部分</span>
+      <span>骨干：deep-research + initial-20260804</span>
+      <span>补充：3GPP Rel-21 / 厂商公开主张</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 1 需求和目标 ========== -->
+<section id="need">
+  <div class="wrap">
+    <div class="section-kicker">01 · Needs & Goals</div>
+    <h2>需求和目标</h2>
+    <p class="lead">本简报要回答的不是「要不要跟风提 Data Fabric」，而是：6G 把网络变成数据生产者之后，<strong>数据管理层缺位如何补齐</strong>，以及数据编织以何种方式、在什么时间窗嵌入主航道。</p>
+
+    <h3>需求（简述）</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>网络成为数据生产者，但「成品化」无人供给</h4>
+        <p>6G 场景下，通感（ISAC）、AI 原生、数字孪生使网络同时产生感知、训练/推理与全网状态数据。业界围绕「数据面 / 数据框架」讨论运输与编排，但目录、语义、血缘、质量与用途治理仍系统性缺位。</p>
+        <p style="margin-top:8px"><strong>运输不等于价值。</strong>运营商不会为「第二条管道」付钱；会付钱的是管道尽头可直接使用的成品——AI 特征与语料、合规感知产品、支撑孪生保真度的统一语义遥测。</p>
+      </div>
+      <div class="card">
+        <h4>编织要解决的四个动词</h4>
+        <p>数据编织（Data Fabric）以主动元数据、语义、策略与多模式集成为控制面，使数据被<strong>找到、理解、信任、合规使用</strong>，并交付为可组合数据产品——不强制物理集中。</p>
+        <p style="margin-top:8px">对 RAN 而言，价值不在把更多原始数据送往核心网，而在近源把高频短时效数据变成特征、事件与数据产品，服务闭环与模型生命周期。</p>
+      </div>
+    </div>
+
+    <div class="quote">一句话需求：<em>把 6G「能产生的数据」变成「可行动的证据供应链」</em>——在分布、实时与多主体约束下，降低获取摩擦，而不是堆存储与管道。</div>
+
+    <div class="diagram" aria-label="证据供应链示意">
+      <svg viewBox="0 0 1000 220" role="img">
+        <title>从原始数据到可行动证据</title>
+        <rect width="1000" height="220" fill="#f7fafc"/>
+        <rect x="30" y="50" width="150" height="120" rx="12" fill="#0a2744"/>
+        <text x="105" y="105" fill="#b8d45a" font-size="15" font-weight="700" text-anchor="middle">原始事实</text>
+        <text x="105" y="130" fill="#cfe3f2" font-size="12" text-anchor="middle">无线/感知/管理</text>
+        <path d="M190 110 H230" stroke="#d96a32" stroke-width="3" marker-end="url(#a)"/>
+        <rect x="240" y="50" width="170" height="120" rx="12" fill="#0e8f8a"/>
+        <text x="325" y="100" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">近源理解</text>
+        <text x="325" y="125" fill="#e7fff9" font-size="12" text-anchor="middle">减量·标注·特征</text>
+        <path d="M420 110 H460" stroke="#d96a32" stroke-width="3"/>
+        <rect x="470" y="50" width="180" height="120" rx="12" fill="#2a9fc9"/>
+        <text x="560" y="100" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">编织控制面</text>
+        <text x="560" y="125" fill="#eef8ff" font-size="12" text-anchor="middle">目录·语义·策略·契约</text>
+        <path d="M660 110 H700" stroke="#d96a32" stroke-width="3"/>
+        <rect x="710" y="50" width="250" height="120" rx="12" fill="#123a5c"/>
+        <text x="835" y="95" fill="#b8d45a" font-size="15" font-weight="700" text-anchor="middle">可行动产品</text>
+        <text x="835" y="120" fill="#cfe3f2" font-size="12" text-anchor="middle">闭环 / AI / NDT / 行业暴露</text>
+        <text x="835" y="145" fill="#9ec4de" font-size="11" text-anchor="middle">找到·理解·信任·合规使用</text>
+        <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d96a32"/></marker></defs>
+      </svg>
+    </div>
+
+    <h3>目标（简述）</h3>
+    <div class="grid-3">
+      <div class="card"><span class="tag high">高</span><h4>校准需求边界</h4><p>分清控制系统时延与数据管理层时延；明确 D1–D5 类需求对编织的真实要求，避免用亚毫秒指标绑架平台投资。</p></div>
+      <div class="card"><span class="tag high">高</span><h4>看清供给与鸿沟</h4><p>给出数据编织能力全景、演进与 6G/RAN 结合点，以及标准/厂商竞争中可争的定义权窗口。</p></div>
+      <div class="card"><span class="tag mid">中高</span><h4>形成趋势断言</h4><p>给出产业趋势预判，并以「3 年看透 / 5 年看清」收束可验证判断，服务后续定位与策略章节（本文件不展开）。</p></div>
+    </div>
+    <div class="callout">
+      <strong>研判基线：</strong>「需要数据编织」与「需要独立数据面」是两个独立命题。前者由数据管理层缺位论证；后者属传输/架构路线之争（SA2 等持续研究）。本简报建议<strong>路线无关（route-agnostic）</strong>：无论独立面、增强用户面或混合路线，统一的目录/语义/治理层都成立。
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2 行业环境 ========== -->
+<section id="env" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">02 · Industry & Competition</div>
+    <h2>行业环境或竞争现状</h2>
+    <p class="lead">以需求为牵引：先看 6G 对数据管理层要什么，再看编织能供给什么、如何与 6G 结合及卡点，最后看标准与厂商如何争夺定义权与控制点。</p>
+
+    <!-- 2.1 -->
+    <h3>2.1 6G 数据架构的范式转变与数据管理层需求</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>范式转变：从「连接管道」到「数据生产者」</h4>
+        <p>IMT-2030 场景把 AI 与通信、通感一体等推到前台；3GPP 将 6G 研究放在 Rel-20，规范性工作在 Rel-21（Stage-3 计划 2028-12 冻结，ASN.1/OpenAPI 2029-03）。网络角色从数据管道扩展为数据生成者与消费者。</p>
+        <p style="margin-top:8px">公开架构讨论中的「数据面 / 数据框架」多指支撑 AI、感知、孪生与自治的数据生产—处理—流通—消费能力集合——<strong>不是</strong>传统用户面（U-plane），也<strong>不是</strong>已冻结的单一标准网元。</p>
+      </div>
+      <div class="card">
+        <h4>对数据管理层的五项需求（D1–D5）</h4>
+        <p><strong>D1</strong> 统一框架：注册/发现、采集/分发、处理/存储、访问/暴露。<br>
+        <strong>D2</strong> AI 原生供数：跨域语义、血缘、特征级供给、联邦训练。<br>
+        <strong>D3</strong> 感知服务化：分级分类、脱敏、授权与计费元数据。<br>
+        <strong>D4</strong> 孪生供数：跨域遥测统一语义与变更传播。<br>
+        <strong>D5</strong> 跨主体合规流动：策略即代码、用途控制、可审计出处。</p>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>时效层</th><th>典型场景</th><th>对数据管理层的要求</th><th>边界</th></tr></thead>
+        <tbody>
+          <tr><td>&lt;10 ms（快环）</td><td>设备内 / 确定性控制</td><td>环外同步模型、策略与审计制品</td><td><span class="tag high">高</span> Fabric 不进关键路径</td></tr>
+          <tr><td>~10 ms–1 s</td><td>Near-RT 特征、有界流</td><td>短期状态、背压、对象映射；禁远端目录在线依赖</td><td>有界近源处理</td></tr>
+          <tr><td>&gt;1 s / 分钟+</td><td>SMO/MDA、训练、治理、规划</td><td>目录、血缘、契约、质量、策略——编织主战场</td><td>企业能力可复用，缺电信本体</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <strong>口径校准：</strong>①「亚毫秒」是控制系统指标，不是编织时延 KPI；②「ZB 级/天」类原始产生量估算（若成立）论证的是<strong>源头筛选与理解</strong>，不是全量存传投资。误读二者会导向错误平台方案。
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1000 280" role="img" aria-label="时标分层与编织主战场">
+        <title>时标分层</title>
+        <rect width="1000" height="280" fill="#fff"/>
+        <text x="40" y="36" fill="#0a2744" font-size="16" font-weight="800">时标分层：编织主战场在秒级及以上</text>
+        <rect x="40" y="60" width="220" height="160" rx="12" fill="#efe4dc"/>
+        <text x="150" y="100" text-anchor="middle" fill="#9a4a14" font-size="14" font-weight="800">&lt;10 ms</text>
+        <text x="150" y="130" text-anchor="middle" fill="#5a3418" font-size="13">本地确定性</text>
+        <text x="150" y="155" text-anchor="middle" fill="#5a3418" font-size="12">不进关键路径</text>
+        <text x="150" y="185" text-anchor="middle" fill="#5a3418" font-size="12">环外同步制品</text>
+        <rect x="280" y="60" width="220" height="160" rx="12" fill="#e7f2f8"/>
+        <text x="390" y="100" text-anchor="middle" fill="#176a95" font-size="14" font-weight="800">10 ms–1 s</text>
+        <text x="390" y="130" text-anchor="middle" fill="#234" font-size="13">有界近源</text>
+        <text x="390" y="155" text-anchor="middle" fill="#234" font-size="12">特征 / 事件 / 状态</text>
+        <text x="390" y="185" text-anchor="middle" fill="#234" font-size="12">禁远端在线依赖</text>
+        <rect x="520" y="60" width="440" height="160" rx="12" fill="#0e8f8a"/>
+        <text x="740" y="100" text-anchor="middle" fill="#b8d45a" font-size="14" font-weight="800">&gt;1 s · 分钟–月　＝　编织主战场</text>
+        <text x="740" y="135" text-anchor="middle" fill="#fff" font-size="13">目录 · 血缘 · 契约 · 语义 · 策略 · 训练 / NDT / 跨域产品</text>
+        <text x="740" y="165" text-anchor="middle" fill="#e7fff9" font-size="12">对应需求 D1 / D2 / D4 / D5 的主体能力规格</text>
+        <text x="740" y="195" text-anchor="middle" fill="#e7fff9" font-size="12">D3 感知变现依赖横切合规能力前置</text>
+      </svg>
+    </div>
+
+    <!-- 2.2 -->
+    <h3>2.2 数据编织能力全景、演进，如何与 6G 结合及关键技术挑战</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>能力全景（企业侧七层，可映射电信）</h4>
+        <p>L1 分布式权威源 → L2 运行时节点 → L3 集成编排查询 → <strong>L4 主动元数据控制面</strong> → L5 数据产品与自助 → L6 消费与行动；横切身份/质量/安全/驻留/审计/可观察。</p>
+        <p style="margin-top:8px">经线是治理骨架，纬线是多模式交付，织机是主动元数据闭环。≠湖仓、≠被动目录、≠厂商产品名。</p>
+      </div>
+      <div class="card">
+        <h4>演进脉络</h4>
+        <p>联邦数据库 → 信息编织/虚拟化 → 湖与混合云同名早期用法 → 2019 后主动元数据成为定义中心 → 2023 后进入 AI 上下文、数据产品与 Data Space。</p>
+        <p style="margin-top:8px">成熟度事实：无单一 ISO/ITU/3GPP「Data Fabric」产品标准；品类可采购，组织可运营证据普遍落后于厂商叙事。</p>
+      </div>
+    </div>
+
+    <h4 style="margin-top:18px">与 6G / RAN 的结合架构（综合初版与最新报告）</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 1000 420" role="img">
+        <title>RAN 数据生命周期与编织控制面</title>
+        <rect width="1000" height="420" fill="#f8fbfc"/>
+        <text x="40" y="34" fill="#0a2744" font-size="16" font-weight="800">结合点：RAN 数据生命周期 × 编织控制面（架构抽象，非标准网元）</text>
+        <rect x="40" y="55" width="920" height="48" rx="10" fill="#effaf8"/>
+        <text x="56" y="85" fill="#0a2744" font-size="13" font-weight="700">L7 跨域供给 · 管理服务 / 数据产品 / Core·MEC·行业 ·（SA2 候选机制为背景）</text>
+        <rect x="40" y="113" width="920" height="48" rx="10" fill="#d9f2ed"/>
+        <text x="56" y="143" fill="#0a2744" font-size="13" font-weight="700">L6 智能闭环闸门 · 建议 / 影子 / 有界自治 · 回滚与审计</text>
+        <rect x="40" y="171" width="920" height="56" rx="10" fill="url(#g)"/>
+        <text x="56" y="195" fill="#b8d45a" font-size="13" font-weight="800">L5 RAN Data Fabric 控制面</text>
+        <text x="56" y="215" fill="#fff" font-size="12">目录 · RAN 语义 · QoD · 血缘 · 契约 · 用途策略 · 生命周期</text>
+        <rect x="40" y="237" width="920" height="42" rx="10" fill="#183d4b"/>
+        <text x="56" y="263" fill="#fff" font-size="13">L4 Non-RT / SMO / 管理数据 · 历史 · 训练 · 治理</text>
+        <rect x="40" y="289" width="920" height="42" rx="10" fill="#315766"/>
+        <text x="56" y="315" fill="#fff" font-size="13">L3 Near-RT · 有界流处理 · 短期状态 · 特征</text>
+        <rect x="40" y="341" width="450" height="50" rx="10" fill="#506e79"/>
+        <text x="56" y="371" fill="#fff" font-size="13">L2 近源处理 · 减量 / 语义化</text>
+        <rect x="510" y="341" width="450" height="50" rx="10" fill="#6a8089"/>
+        <text x="526" y="371" fill="#fff" font-size="13">L1 生产域 · UE—RU—DU—CU 事实</text>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0e8f8a"/><stop offset="1" stop-color="#2667ff"/></linearGradient></defs>
+      </svg>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">说明：接口层可映射 O1/E2/A1/R1 等，但接口本身不提供统一语义、血缘与 QoD；「RAN Data Fabric」为研究性抽象。</p>
+
+    <div class="grid-3" style="margin-top:14px">
+      <div class="card"><h4>结合原则</h4><p>能传事件不传连续流；能传特征不传原始；能下沉模型就不搬数据。跨域产品必须带责任人、Schema、QoD、用途、版本与保留期。</p></div>
+      <div class="card"><h4>关键技术挑战</h4><p>流式主动元数据；电信协议原生连接器；多模态/RAN 语义与三本体映射；边缘原生执行；线速治理与数据合约；Agent 供数的权限与审计。</p></div>
+      <div class="card"><h4>失败模式</h4><p>中央平台化；自动映射放大错误口径；策略级联；有目录无责任人；把中央编织塞进快环；把厂商 ROI 宣传当承诺。</p></div>
+    </div>
+
+    <figure>
+      <img src="data-fabric-assets/google-data-mesh-architecture.svg" alt="Data Mesh 架构组件示意" loading="lazy">
+      <figcaption><strong>图 1｜Data Mesh 与 Fabric 的分工。</strong>Mesh 主要重构领域所有权与自助平台；Fabric 更适合作为跨域的元数据、策略与自动化底座。来源：Google Cloud Architecture Center（通常 CC BY 4.0）。</figcaption>
+    </figure>
+
+    <!-- 2.3 -->
+    <h3>2.3 标准与厂商竞争格局</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>标准域</th><th>对「编织 / 数据框架」的贡献</th><th>不负责 / 易误读</th></tr></thead>
+        <tbody>
+          <tr><td><strong>3GPP RAN</strong></td><td>测量、架构接口、无线程序——生产侧事实来源</td><td>不定企业湖或完整 Data Fabric</td></tr>
+          <tr><td><strong>3GPP SA5</strong></td><td>PM/CM/Fault/Trace、MDA、AI/ML 管理、NDT——管理数据主锚点</td><td>不定毫秒调度；管理能力≠孪生保真度保证</td></tr>
+          <tr><td><strong>O-RAN</strong></td><td>Non-RT / Near-RT RIC；O1/O2/A1/E2/R1 分层智能</td><td>无「RAN Data Fabric」组件；R1 不是 Core/AF 直暴露口</td></tr>
+          <tr><td><strong>SA2 WT#5</strong><br><span style="font-weight:500">6G data framework</span></td><td>系统级数据框架候选问题（发现/采集/处理/存储/暴露等）；Rel-20 研究中</td><td>不预判统一网元；不是 RAN 内部架构中心，也不可简单说「只管核心网」</td></tr>
+          <tr><td><strong>ETSI ZSM / MEC / TMF / CAMARA</strong></td><td>自动化集成、边缘、意图与网络 API 生态积木</td><td>Integration Fabric ≠ 完整 Data Fabric；不宜进亚秒无线控制路径</td></tr>
+          <tr><td><strong>IDS / Gaia-X / Simpl</strong></td><td>跨组织信任、凭证、合同、连接器——Data Space 层</td><td>不能替代企业内部控制面</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>竞争焦点校准：</strong>2026–2027 窗口争的是<strong>元数据模型、数据服务接口、语义/QoD 定义权</strong>，而不是押注「独立数据面 vs 增强用户面」的最终输赢。
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Ericsson：演进式「智能织物 / 数据网格」</h4>
+        <p>公开叙事强调 AI-native intelligent fabric、AI-ready data mesh、「采集一次、授权多用」；产品拼图含 NWDAF、智能自动化平台、网络 API / Aduna 生态等。MWC 2026 继续把 5G SA/Advanced 与分布式算力作为通向 6G 的路径。</p>
+        <p style="margin-top:8px"><span class="tag mid">中</span> 其 “fabric” 范围常大于 Data Fabric，不宜术语混用。尚无公开证据证明跨 RAN/RIC/SMO/Core 的统一商用 Data Fabric 已广泛部署。</p>
+      </div>
+      <div class="card">
+        <h4>Huawei：专用数据面研究 + 产品桥</h4>
+        <p>研究侧提出 AI-native 6G 专用数据面（DO/DA/DCP 等）与 DaaS；产品/方案侧可见 AI Core、Agentic 方向、数字地图与 Open Gateway 渠道等「通向 6G 的桥」。</p>
+        <p style="margin-top:8px"><span class="tag mid">中</span> 厂商输入≠3GPP 共识；传输层提案完整，但目录/语义/血缘/治理在叙事中相对薄弱——这正是编织的补位空间。</p>
+      </div>
+    </div>
+    <div class="quote">格局判断：<em>不在「mesh」与「data plane」之间机械站队</em>；可争控制点在 RAN 语义与 QoD、近源执行、实时分层、北向可治理供给，以及治理权归属运营商的可移植能力。</div>
+  </div>
+</section>
+
+<!-- ========== 3 趋势 ========== -->
+<section id="trend">
+  <div class="wrap">
+    <div class="section-kicker">03 · Trend Outlook</div>
+    <h2>产业趋势预判：数据编织与 6G 结合如何展开</h2>
+    <p class="lead">总命题：编织从「数据集成层」走向「可信智能控制面」。集成层不消失，仍负责执行；控制面负责感知、语义、策略与回滚。6G 把这一命题从企业 IT 推到电信实时与多主体约束下。</p>
+
+    <h3>因果链：四步上移</h3>
+    <div class="timeline">
+      <div class="titem"><b>可观察</b><div>元数据事件化 + 流批/开放目录：把管道运行态变成结构、质量、成本、权限的即时信号——6G 侧对应遥测/管理数据的在线标注与血缘。</div></div>
+      <div class="titem"><b>可理解</b><div>语义控制平面 + 数据产品/契约即代码：表名升级为版本化含义、用途与 SLO——6G 侧对应 RAN/管理/感知多本体对齐与 QoD。</div></div>
+      <div class="titem"><b>可行动</b><div>受治理 RAG + Agent 可操作 Fabric：从检索辅助到低风险编排/执行——6G 侧对应 rApp/xApp/运维 Agent，但不得跳过职责分离。</div></div>
+      <div class="titem"><b>可信</b><div>隐私增强/机密计算 + 接入 Data Space：把「能做」收束为「在证明与合同下可做」——支撑感知变现与跨主体协作。</div></div>
+    </div>
+
+    <h3>与 6G 结合的展开路径（预判）</h3>
+    <div class="grid-3">
+      <div class="card">
+        <span class="tag high">高</span>
+        <h4>路径 A · 网络内循环优先</h4>
+        <p>先打通「源 → 特征 → 模型 → 策略 → 动作 → 效果」证据链，服务自智与节能/故障/负载类闭环。这是当期真实付费最近的路径。</p>
+      </div>
+      <div class="card">
+        <span class="tag mid">中高</span>
+        <h4>路径 B · 北向数据产品化</h4>
+        <p>在内部语义与 QoD 稳定后，向 Core/AF/MEC/行业供给最小必要产品。依赖 Rel-21 前后系统级框架与管理服务成熟度。</p>
+      </div>
+      <div class="card">
+        <span class="tag mid">中</span>
+        <h4>路径 C · 感知与空间外溢</h4>
+        <p>ISAC 数据产品化与 Data Space 互操作打开新收入想象，但付费需求与旁观者隐私约束仍需验证；宜试点而非押注。</p>
+      </div>
+    </div>
+
+    <figure>
+      <img src="data-fabric-assets/ids-reference-architecture.png" alt="IDS 参考架构" loading="lazy">
+      <figcaption><strong>图 2｜跨组织「可信」不是 API 互联。</strong>IDS-RAM 展示分层能力叠加安全、认证与治理横切，对应趋势链最后一环。来源：IDSA，CC BY 4.0。</figcaption>
+    </figure>
+    <div class="grid-2">
+      <figure style="margin:0">
+        <img src="data-fabric-assets/gaia-x-data-space.png" alt="Gaia-X 数据空间" loading="lazy">
+        <figcaption><strong>图 3｜Gaia-X：信任→可验证证据。</strong>凭证、目录与合同协商。原图 CC BY-NC-ND 4.0，未修改。</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <img src="data-fabric-assets/eu-simpl-architecture.png" alt="Simpl-Open 架构" loading="lazy">
+        <figcaption><strong>图 4｜Simpl-Open：数据空间工程面更宽。</strong>治理到基础设施的能力栈，说明外溢路径的复杂度。</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <img src="data-fabric-assets/6g-ddaa-architecture.png" alt="6G DDAA 架构示意" loading="lazy">
+      <figcaption><strong>图 5｜学术视角：数据与智能成为一等对象。</strong>数据驱动分布式自治架构（DDAA）示意网络控制、数据与智能单元协同；属开放论文架构，非 3GPP 规范。来源：Electronics 2026，CC BY 4.0。</figcaption>
+    </figure>
+
+    <div class="callout warn">
+      <strong>趋势边界：</strong>「走向可信智能控制面」≠ 无人值守，≠ 取消集成层。若事件化元数据与契约基线未立，直接上 Agent/自治，只会把隐式错误自动化放大——在 RAN 快环中尤其危险。
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4 3年5年 ========== -->
+<section id="horizon" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">04 · 3-Year / 5-Year View</div>
+    <h2>趋势判断总结：3 年看透、5 年看清</h2>
+    <p class="lead">重点写清未来 1–3 年可验证事项；5 年给出方向性终局与仍低确定性的边界。时间锚点对齐 Rel-20/21 与编织三阶段。</p>
+
+    <h3>3 年看透（约 2026–2028）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>判断</th><th>含义</th><th>信心</th><th>若看错的代价</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>标准争的是定义权，不是押路线</strong></td>
+            <td>WT#5 / 管理侧研究与开放接口条目收敛；目录、语义、QoD、数据服务接口可提交可争论。独立面/增强面裁决不影响「需要编织层」。</td>
+            <td><span class="tag high">高</span></td>
+            <td>把资源押在单一网元命名，错过接口与本体窗口</td>
+          </tr>
+          <tr>
+            <td><strong>工程底座必达，自治不可宣称</strong></td>
+            <td>事件化元数据、血缘、契约、开放 Catalog、受治理助手成为基线；价值是把运行态变成可观察信号。</td>
+            <td><span class="tag high">高</span></td>
+            <td>平台叙事超前，现场无证据链</td>
+          </tr>
+          <tr>
+            <td><strong>RAN 内循环优先于北向大平台</strong></td>
+            <td>先语义+QoD+少数高价值闭环（如负载/节能/故障类），打通证据链；无 KPI/定位时间收益则停止平台扩张。</td>
+            <td><span class="tag high">高</span></td>
+            <td>中央湖+通用 Agent 进快环，事故与抵制</td>
+          </tr>
+          <tr>
+            <td><strong>两处口径必须校准</strong></td>
+            <td>亚毫秒≠编织时延；ZB/天≠存传投资依据。主战场在秒级流上标注与分钟级管理面。</td>
+            <td><span class="tag high">高</span></td>
+            <td>错误投资与错误 KPI</td>
+          </tr>
+          <tr>
+            <td><strong>厂商统一商用 Fabric 证据仍缺</strong></td>
+            <td>Ericsson / Huawei 均在拼数据—智能—API 能力，但跨域统一商用 Fabric 未获广泛公开证明；跟进控制面、差异化近源与 QoD。</td>
+            <td><span class="tag mid">中高</span></td>
+            <td>被叙事牵着走，失去补位空间</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1000 200" role="img">
+        <title>三年看透时间条</title>
+        <rect width="1000" height="200" fill="#fff"/>
+        <text x="40" y="36" fill="#0a2744" font-size="15" font-weight="800">1–3 年关键锚点（示意）</text>
+        <rect x="40" y="70" width="280" height="90" rx="12" fill="#0a2744"/>
+        <text x="180" y="108" text-anchor="middle" fill="#b8d45a" font-size="14" font-weight="800">2026–27</text>
+        <text x="180" y="132" text-anchor="middle" fill="#cfe3f2" font-size="12">工程底座 · 定义权提案</text>
+        <rect x="340" y="70" width="300" height="90" rx="12" fill="#0e8f8a"/>
+        <text x="490" y="108" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">2027–28</text>
+        <text x="490" y="132" text-anchor="middle" fill="#e7fff9" font-size="12">研究收束 · Rel-21 规范爬坡</text>
+        <rect x="660" y="70" width="300" height="90" rx="12" fill="#2a9fc9"/>
+        <text x="810" y="108" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">→ 2028 末</text>
+        <text x="810" y="132" text-anchor="middle" fill="#eef8ff" font-size="12">Stage-3 冻结窗口临近</text>
+      </svg>
+    </div>
+
+    <h3>5 年看清（约 2029–2031+）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>判断</th><th>含义</th><th>信心</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>控制面主体能力成型</strong></td>
+            <td>ontology 连接数据—模型—政策—动作；「可信」成为上线门槛；低风险建议可规模自动，高风险保持仿真/审批/回滚。</td>
+            <td><span class="tag mid">中高</span></td>
+          </tr>
+          <tr>
+            <td><strong>首批 6G 规范落地后，北向供给形态可见</strong></td>
+            <td>随 Rel-21 实现与早期商用准备（业界多指向 2030 前后），系统级数据框架与跨域暴露方式从研究变为可对接对象；此时才谈规模化北向数据产品。</td>
+            <td><span class="tag mid">中</span></td>
+          </tr>
+          <tr>
+            <td><strong>条件性自治，而非无人治理</strong></td>
+            <td>自动映射、异常调查、管道/边云优化更成熟；跨企业自主签约、通用全同态、完全无人治理仍低确定性——自治级别由证据与风险预算决定。</td>
+            <td><span class="tag mid">中</span></td>
+          </tr>
+          <tr>
+            <td><strong>Data Space / 感知变现进入验证窗口</strong></td>
+            <td>内部 Fabric 对接外部信任机制的工程路径清晰化；感知产品化能否形成稳定付费仍待市场检验。</td>
+            <td><span class="tag low">中低</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quote">收束断言：<em>3 年把「可观察的电信数据底座」做成；5 年把「可信的语义—策略控制面」做成。</em>北向生意与感知变现在证据之前都只是期权，不是主叙事。</div>
+
+    <div class="callout">
+      <strong>本文件范围说明：</strong>按模版仅覆盖「需求目标 / 行业现状 / 趋势预判 / 3·5 年判断」。公司定位、机会点、策略表与 AP 建议属后续部分，需结合内部资产与组织边界另册编写。
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="wrap">
+    <div class="section-kicker">Sources</div>
+    <h2>主要依据</h2>
+    <div class="sources">
+      <ol>
+        <li><code>reports/data-fabric-deep-research.html</code>：RAN 中心深度调研（定义、时标、标准边界、厂商竞合、趋势命题解读）。</li>
+        <li><code>reports/data-fabric-deep-research-initial-20260804.html</code>：初版通用报告（企业七层、IMT-2030/标准积木、DDAA 图、早期 6G 结合）。</li>
+        <li><code>reports/data-fabric-composition-maturity-research.html</code>：组成与成熟度分层（六层+横切）辅助口径。</li>
+        <li>3GPP：Rel-20/Rel-21 时间线；FS_6G_ARC / 6G data framework 公开表述。</li>
+        <li>厂商公开：Ericsson intelligent fabric / AI-ready data mesh；Huawei AI-native 6G data plane / DaaS 研究。</li>
+        <li>数据空间：IDS-RAM、Gaia-X、EU Simpl 架构原图（见 <code>reports/data-fabric-assets/</code>）。</li>
+      </ol>
+      <p>信心标签：<span class="tag high">高</span>公开事实或强工程约束；<span class="tag mid">中/中高</span>多源一致推演；<span class="tag low">中低/低</span>付费或终局仍待验证。本文不代表公司正式立场或产品承诺。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    《数据编织 × 6G 数据面｜战略简报 P1–P4》 · 依据模版前四部分 · 2026-08<br>
+    「RAN Data Fabric / 6G 数据面」为架构抽象，非 3GPP/O-RAN 既定网元。
+  </div>
+</footer>
+</body>
+</html>
