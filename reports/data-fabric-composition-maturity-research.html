@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Fabric 组成与成熟度深度调研｜多元架构对照与能力评估</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#071f3d;--ink:#0d2740;--teal:#0f9f9a;--cyan:#3aa8d8;--lime:#c5e36a;
+  --coral:#e87a3a;--sand:#f5f8fb;--mist:#e4eef5;--muted:#5b738a;--line:rgba(7,31,61,.1);
+  --card:#fff;--warn:#fff4ea;--ok:#eefaf6;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans SC",sans-serif;color:var(--ink);background:var(--sand);line-height:1.7}
+a{color:#0b6e9a;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.nav{
+  position:sticky;top:0;z-index:30;backdrop-filter:blur(10px);
+  background:rgba(7,31,61,.92);border-bottom:1px solid rgba(255,255,255,.08)
+}
+.nav .inner{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:12px 0;flex-wrap:wrap}
+.nav .brand{font-family:Outfit,sans-serif;font-weight:800;color:#fff;letter-spacing:.03em}
+.nav .brand span{color:var(--lime)}
+.nav a{color:#cfe3f2;font-size:13px;font-weight:600}
+.hero{
+  background:
+    radial-gradient(900px 420px at 10% 0%,rgba(15,159,154,.35),transparent 55%),
+    radial-gradient(700px 380px at 90% 20%,rgba(58,168,216,.28),transparent 50%),
+    linear-gradient(160deg,#071f3d 0%,#0d3558 55%,#123a4d 100%);
+  color:#eaf4ff;padding:72px 0 56px
+}
+.hero .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.hero h1{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(30px,4vw,46px);line-height:1.15;margin:14px 0 16px;max-width:18em}
+.hero .lead{font-size:17px;max-width:46em;color:#c7dcec}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.meta span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 12px;font-size:12px;color:#d7e9f7}
+section{padding:56px 0}
+section.alt{background:#eef4f8}
+h2{font-family:Outfit,"Noto Sans SC",sans-serif;font-size:clamp(24px,2.6vw,32px);margin:0 0 10px;color:var(--navy)}
+h3{font-size:18px;margin:26px 0 10px;color:var(--navy)}
+.section-kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.lead{color:var(--muted);font-size:15.5px;max-width:54em}
+.grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;
+  box-shadow:0 10px 28px rgba(7,31,61,.04)
+}
+.card h4{margin:0 0 8px;font-size:15px}
+.card p,.card li{font-size:14px;color:var(--muted)}
+.callout{
+  border-left:4px solid var(--teal);background:#eefaf8;padding:14px 16px;border-radius:0 12px 12px 0;margin:16px 0
+}
+.callout.warn{border-left-color:var(--coral);background:var(--warn)}
+.callout strong{color:var(--navy)}
+.table-scroll{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff;margin:16px 0}
+table{width:100%;border-collapse:collapse;min-width:760px;font-size:13.5px}
+th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f2f7fb;color:var(--navy);font-weight:800}
+tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;margin-right:4px}
+.tag.core{background:rgba(15,159,154,.15);color:#0a6b67}
+.tag.opt{background:rgba(58,168,216,.14);color:#176a95}
+.tag.mkt{background:rgba(232,122,58,.16);color:#9a4a14}
+.tag.high{background:rgba(15,159,154,.15);color:#0a6b67}
+.tag.mid{background:rgba(232,122,58,.16);color:#9a4a14}
+.tag.low{background:rgba(7,31,61,.08);color:#44586b}
+.bar-row{display:grid;grid-template-columns:160px 1fr 48px;gap:10px;align-items:center;margin:8px 0}
+.bar{height:10px;background:#e6eef4;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:999px}
+.bar-row b{font-size:13px}.bar-row span{font-size:12px;color:var(--muted);text-align:right}
+.layers{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.layer{display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;border-radius:12px;padding:10px 12px}
+.layer .idx{font-family:Outfit,sans-serif;font-weight:800}
+.layer .body{font-size:13px;line-height:1.4}
+.layer .body b{display:block;margin-bottom:2px}
+.l6{background:#eefaf7}.l5{background:#dff4ef}.l4{background:linear-gradient(90deg,#0f9f9a,#2667ff);color:#fff}
+.l4 .body{color:#eef}.l4 b{color:var(--lime)}.l3{background:#183d4b;color:#fff}
+.l2{background:#315766;color:#fff}.l1{background:#506e79;color:#fff}
+.lx{background:rgba(232,122,58,.12);border:1px dashed var(--coral)}
+.maturity{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:150px}
+.mcard .lv{font-family:Outfit,sans-serif;font-weight:800;color:var(--teal);font-size:13px;letter-spacing:.06em}
+.mcard h4{margin:6px 0;font-size:14px}.mcard p{font-size:12.5px;color:var(--muted);margin:0}
+.timeline{display:grid;gap:10px;margin-top:14px}
+.titem{display:grid;grid-template-columns:110px 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.titem b{color:var(--teal);font-family:Outfit,sans-serif}
+.sources ol{padding-left:18px}.sources li{margin:8px 0;font-size:13.5px;color:var(--muted)}
+.footer{background:var(--navy);color:#9eb6c8;padding:28px 0;font-size:13px}
+.big-quote{
+  margin:18px 0;padding:18px 20px;border-radius:16px;
+  background:linear-gradient(135deg,#0b2a4a,#12375f);color:#e7f3ff;font-size:16px;line-height:1.65
+}
+.big-quote em{color:var(--lime);font-style:normal}
+@media (max-width:960px){
+  .grid-2,.grid-3,.grid-4,.maturity{grid-template-columns:1fr}
+  .titem{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap inner">
+    <div class="brand">DATA <span>FABRIC</span> · COMPOSITION & MATURITY</div>
+    <nav>
+      <a href="#why">为何发散</a>
+      <a href="#schools">组成学派</a>
+      <a href="#matrix">对照矩阵</a>
+      <a href="#core">核心能力</a>
+      <a href="#maturity">成熟度</a>
+<a href="#assess">评估方法</a>
+      <a href="#deep-comp">组件深潜</a>
+      <a href="#conclusion">结论</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Deep Research · Composition & Maturity</div>
+    <h1>业界对 Data Fabric 组成为何繁多？当前成熟到哪一步？</h1>
+    <p class="lead">本报告独立对照分析师、厂商、学术与产品品牌四类叙事，拆解 Data Fabric「由什么组成」的分歧根源；并在概念成熟度、组件成熟度、组织能力成熟度三个层面评估现状。目标不是再发明一个口号，而是给出可审计的能力清单与成熟度闸门。</p>
+    <div class="meta">
+      <span>研究截点：2026-08</span>
+      <span>焦点：组成多样性 × 成熟度证据</span>
+      <span>性质：战略研究参考，非采购背书</span>
+      <span>方法：公开文献对照 + 能力综合</span>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-kicker">01 · Problem</div>
+    <h2>为什么「组成」会如此繁多？</h2>
+    <p class="lead">Data Fabric 不是单一标准网元，也不是单一可安装软件包。它同时被当作<em>设计概念</em>、<em>平台品类</em>、<em>厂商产品线</em>和<em>组织转型口号</em>使用，四套话语互相借用词汇，却回答不同问题。</p>
+    <div class="grid-3" style="margin-top:18px">
+      <div class="card">
+        <h4>概念边界未冻结</h4>
+        <p>Gartner 将其定义为新兴数据管理/集成设计；IBM 强调设计方法而非单一软件；Forrester 则以「统一智能端到端数据平台」评价厂商。同一名词对应不同评价单元。</p>
+      </div>
+      <div class="card">
+        <h4>产品营销扩张边界</h4>
+        <p>集成、虚拟化、目录、湖仓、MDM、治理、Marketplace、GenAI 都被塞进「Fabric」包装。组成清单随厂商优势能力膨胀，而非随最小必要能力收敛。</p>
+      </div>
+      <div class="card">
+        <h4>实证与形式化不足</h4>
+        <p>学术综述与参考能力模型指出：多数架构论文停留在概念层；完整实现与可复现实证很少；组件细节往往不足以判断「同名是否同物」。</p>
+      </div>
+    </div>
+    <div class="callout warn">
+      <strong>关键判断：</strong>「组成繁多」本身不是信息噪音，而是信号——说明市场仍处在<em>能力拼装期</em>，尚未进入<em>标准架构期</em>。采购与建设应以「能力是否被证明」而非「清单是否最长」为准。
+    </div>
+    <div class="big-quote">最实用的拆法是：把任何一份「Data Fabric 组成图」还原为三个问题——它在回答<em>分析师定义</em>、<em>厂商可售能力</em>，还是<em>组织可运营能力</em>？三者混谈，组成必然发散。</div>
+  </div>
+</section>
+
+<section id="schools" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">02 · Composition Schools</div>
+    <h2>四类组成学派：各自在画什么图？</h2>
+    <p class="lead">下列学派并非互斥阵营，而是同一市场中的四种构图方式。理解构图意图，才能读懂清单差异。</p>
+
+    <h3>A. 分析师学派：以主动元数据为中心的设计</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>Gartner</h4>
+        <p>公开定义强调：灵活、可复用、增强式数据集成；按定义把被动元数据转化为主动元数据。组成上突出增强目录、图谱分析、推荐/自动化，以及多模式集成。2025 趋势语境中出现「Multimodal Data Fabric」，把编排洞察与 DataOps、数据产品更紧密连接。</p>
+      </div>
+      <div class="card">
+        <h4>Forrester</h4>
+        <p>公开材料给出六层功能：data management、ingest、processing、orchestration、discovery、access。Wave 评估把品类推进为「Data Fabric Platforms」（至 2025 Q4 仍有平台评级），评价维度覆盖端到端体验、语义、GenAI、交付与产品化等。组成更偏「可被买到的平台能力」。</p>
+      </div>
+    </div>
+
+    <h3>B. 厂商架构学派：可落地的能力模块</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h4>IBM</h4>
+        <p>知识目录 / 语义、统一治理与合规、智能集成（批/流/CDC/虚拟化）、自助访问、统一生命周期（含 MLOps）。反复强调「不是一件软件，而是覆盖混合多云的设计方法」。</p>
+      </div>
+      <div class="card">
+        <h4>Informatica</h4>
+        <p>五支柱：增强目录、语义知识图、元数据激活与推荐引擎、数据准备与交付、编排与 DataOps。组成重心落在 CLAIRE 式主动元数据与自动化任务。</p>
+      </div>
+      <div class="card">
+        <h4>Denodo 等虚拟化路线</h4>
+        <p>强调逻辑访问层、目录、隐私与访问控制、消费协议、治理策略管理与数据产品购物车。组成更偏「逻辑编织」，物理湖仓可外置。</p>
+      </div>
+    </div>
+
+    <h3>C. 产品品牌学派：把平台命名为 Fabric</h3>
+    <div class="callout">
+      <strong>Microsoft Fabric / OneLake：</strong>以租户级 OneLake、工作区、Lakehouse/Warehouse/Eventhouse 等工作负载，以及 OneLake Catalog、Shortcuts/Mirroring 构成统一分析平台。它是高强度产品化的「Fabric」品牌，能力完整且可运营，但不宜直接等同于 Gartner 意义上的跨异构主动元数据设计；评估时必须区分「品牌同名」与「架构同构」。
+    </div>
+
+    <h3>D. 学术 / EA 学派：能力参考模型与边界划定</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>DFA-RCM（Oostrik, 2025）</h4>
+        <p>以 ArchiMate 能力图形式给出 Data Fabric Architecture Reference Capability Model，并提炼 Core Capability Set（CCS）。对 8 份架构文献做组件流行度统计，指出完整实现极少、形式化不足。</p>
+      </div>
+      <div class="card">
+        <h4>概念划界研究（2024–2025）</h4>
+        <p>把 Fabric 与 Platform、Space、Mesh、Lakehouse 放在治理集中度 / 主权维度上比较：Fabric 常被描述为「数据可分布、访问与治理相对集中协调」的混合位置；Mesh 更偏组织去中心；Lakehouse 更偏存储集中。</p>
+      </div>
+    </div>
+
+    <h3>为什么四派会画出不同的「组成」？</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>分歧来源</th><th>表现</th><th>对读者的误导</th><th>纠偏问法</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>评价单元不同</td>
+            <td>有人评「设计原则」，有人评「可采购平台」，有人评「组织转型包」</td>
+            <td>把 Wave 排名直接当成架构正确性证明</td>
+            <td>这份组成图的评价对象是设计、产品还是组织？</td>
+          </tr>
+          <tr>
+            <td>历史路径依赖</td>
+            <td>集成厂商从管道长出 Fabric；虚拟化厂商从逻辑层长出；云厂商从湖仓长出</td>
+            <td>把「我擅长的模块」写成「Fabric 的必要模块」</td>
+            <td>若去掉该厂商优势模块，是否仍可称为 Fabric？</td>
+          </tr>
+          <tr>
+            <td>中心化叙事冲突</td>
+            <td>有文献称 Fabric 偏集中治理；有厂商强调分布不搬迁；Mesh 拥趸批评其中心化</td>
+            <td>在「集中 vs 分布」二元里站队，忽略协调/执行可分离</td>
+            <td>协调在哪里集中？执行在哪里分布？</td>
+          </tr>
+          <tr>
+            <td>时间切片不同</td>
+            <td>2019 构图偏目录+图谱+增强集成；2024–2025 构图叠加产品、可观察、GenAI</td>
+            <td>用最新营销清单要求存量平台「一次齐套」</td>
+            <td>哪些是 2019 核心，哪些是近年加项？</td>
+          </tr>
+          <tr>
+            <td>语言通胀</td>
+            <td>active metadata、intelligent、autonomous、AI-ready 被广泛复用</td>
+            <td>把 UI 推荐气泡等同生产级闭环</td>
+            <td>元数据事件能否改变跨系统行为并留下审计？</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>一条演化时间线：组成清单如何变长</h3>
+    <div class="timeline">
+      <div class="titem"><b>2019 前后</b><div>Gartner 早期愿景把元数据目录、语义知识图、主动元数据、动态集成与自动化编排推到台前。组成相对「瘦」，中心问题是：如何用元数据降低集成手工。</div></div>
+      <div class="titem"><b>2020–2022</b><div>治理、虚拟化、Data-as-a-Service、MDM、DataOps、自助访问被显式写入厂商与咨询架构。Forrester 以六层功能与 Wave 评估把 Fabric 推进为可比较品类。</div></div>
+      <div class="titem"><b>2023–2024</b><div>数据产品、Marketplace、可观察性、开放 Catalog/契约进入主流叙事；与 Mesh 的「互补而非二选一」成为常见口径。</div></div>
+      <div class="titem"><b>2025–2026</b><div>GenAI/LLM、语义集成、Agent 辅助、Multimodal Data Fabric 等词汇叠加；平台 Wave 继续存在，但「组成完备」与「企业可运营」之间的落差被学术与实践同时指出。</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="section-kicker">03 · Comparative Matrix</div>
+    <h2>组成对照矩阵：同名组件，不同权重</h2>
+    <p class="lead">下表把常见组成项映射到各学派的「显式强调程度」。★ = 核心强调；● = 通常包含；○ = 可选/外围；— = 非其构图主轴。</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>组成项</th>
+            <th>Gartner 设计</th>
+            <th>Forrester 六层/平台</th>
+            <th>IBM 能力模块</th>
+            <th>Informatica 五支柱</th>
+            <th>虚拟化路线</th>
+            <th>MS Fabric 品牌</th>
+            <th>学术 DFA-RCM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>增强/知识目录</td><td>★</td><td>★（discovery）</td><td>★</td><td>★</td><td>★</td><td>●</td><td>★</td></tr>
+          <tr><td>主动元数据 / 推荐</td><td>★</td><td>●</td><td>●</td><td>★</td><td>○</td><td>○</td><td>★</td></tr>
+          <tr><td>语义 / 知识图</td><td>★</td><td>●</td><td>★</td><td>★</td><td>○</td><td>○</td><td>●</td></tr>
+          <tr><td>虚拟化 / 联邦查询</td><td>●</td><td>●</td><td>●</td><td>●</td><td>★</td><td>●（shortcuts 等）</td><td>★（CCS）</td></tr>
+          <tr><td>物理集成（批/CDC/流）</td><td>●</td><td>★（ingest/process）</td><td>★</td><td>●</td><td>○</td><td>●</td><td>●</td></tr>
+          <tr><td>编排 / DataOps</td><td>●</td><td>★</td><td>★</td><td>★</td><td>○</td><td>●</td><td>●</td></tr>
+          <tr><td>治理 / 策略 / 安全</td><td>●</td><td>★（management）</td><td>★</td><td>●</td><td>★</td><td>●</td><td>★（CCS）</td></tr>
+          <tr><td>MDM / 黄金记录</td><td>○</td><td>○</td><td>●</td><td>●</td><td>○</td><td>—</td><td>●</td></tr>
+          <tr><td>自助准备 / 访问</td><td>●</td><td>★（access）</td><td>★</td><td>★</td><td>●</td><td>●</td><td>★（CCS）</td></tr>
+          <tr><td>数据产品 / Marketplace</td><td>●</td><td>●</td><td>●</td><td>○</td><td>●</td><td>●</td><td>○</td></tr>
+          <tr><td>可观察性 / FinOps</td><td>○</td><td>●</td><td>●</td><td>●</td><td>○</td><td>●</td><td>●</td></tr>
+          <tr><td>统一存储湖仓底座</td><td>—</td><td>○</td><td>○</td><td>○</td><td>—</td><td>★（OneLake）</td><td>○（语境）</td></tr>
+          <tr><td>GenAI / Agent 辅助</td><td>●</td><td>★（近年 Wave）</td><td>●</td><td>●</td><td>○</td><td>●</td><td>○</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>读表要点：</strong>唯一接近「共识核心」的是目录/元数据、治理策略与某种形式的数据访问（虚拟或物理）。知识图、Marketplace、MDM、统一湖仓、GenAI 属于高频加项，不应被默认当成 Data Fabric 的必要条件。
+    </div>
+
+    <h3>三种「看起来都叫 Fabric」的实现骨架</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h4>骨架 1：元数据控制面优先</h4>
+        <p>以增强目录 + 图谱 + 推荐/自动化为中枢，向下驱动多模式集成与策略。Gartner/Informatica 叙事接近此骨架。优点是贴近「主动元数据」定义；风险是若推荐无法落地为受治动作，会退化为智能一点的目录。</p>
+      </div>
+      <div class="card">
+        <h4>骨架 2：逻辑访问层优先</h4>
+        <p>以虚拟化/联邦查询为统一入口，叠加目录、策略与消费协议。Denodo 类路线接近此骨架。优点是少搬迁、快见效；风险是源系统负载、跨源性能与复杂变换仍可能迫使物理管道回流。</p>
+      </div>
+      <div class="card">
+        <h4>骨架 3：统一分析平台优先</h4>
+        <p>以湖仓/OneLake 类统一存储与多引擎混合为底座，再补目录与治理。Microsoft Fabric 品牌接近此骨架。优点是工程内聚、体验完整；风险是「平台内统一」不等于「企业全异构统一」，跨云/跨厂商仍要额外编织。</p>
+      </div>
+    </div>
+    <div class="callout warn">
+      <strong>选型含义：</strong>三套骨架可以组合，但不应在一份 RFP 里要求「同时以三者为唯一中心」。先选定主骨架，再把另外两者降为补充能力，组成争论才会收敛。
+    </div>
+
+    <h3>文献中的组件流行度（学术对照）</h3>
+    <p class="lead">Oostrik（2025）对多份 Data Fabric 架构文献统计组件出现率，提供了比厂商白皮书更冷静的分布信号（样本有限，仅作相对参照）。</p>
+    <div class="card">
+      <div class="bar-row"><b>多类型持久化</b><div class="bar"><i style="width:100%"></i></div><span>100%</span></div>
+      <div class="bar-row"><b>数据目录</b><div class="bar"><i style="width:100%"></i></div><span>100%</span></div>
+      <div class="bar-row"><b>虚拟集成</b><div class="bar"><i style="width:100%"></i></div><span>100%</span></div>
+      <div class="bar-row"><b>混合多云持久化</b><div class="bar"><i style="width:86%"></i></div><span>86%</span></div>
+      <div class="bar-row"><b>语义知识图</b><div class="bar"><i style="width:86%"></i></div><span>86%</span></div>
+      <div class="bar-row"><b>治理策略 / MDM</b><div class="bar"><i style="width:86%"></i></div><span>86%</span></div>
+      <div class="bar-row"><b>主动元数据分析</b><div class="bar"><i style="width:71%"></i></div><span>71%</span></div>
+      <div class="bar-row"><b>推荐引擎</b><div class="bar"><i style="width:71%"></i></div><span>71%</span></div>
+      <div class="bar-row"><b>物理集成</b><div class="bar"><i style="width:71%"></i></div><span>71%</span></div>
+      <div class="bar-row"><b>质量监测</b><div class="bar"><i style="width:71%"></i></div><span>71%</span></div>
+      <div class="bar-row"><b>编排</b><div class="bar"><i style="width:57%"></i></div><span>57%</span></div>
+      <div class="bar-row"><b>自助准备</b><div class="bar"><i style="width:57%"></i></div><span>57%</span></div>
+      <div class="bar-row"><b>可观察性</b><div class="bar"><i style="width:43%"></i></div><span>43%</span></div>
+      <div class="bar-row"><b>产品与 Marketplace</b><div class="bar"><i style="width:43%"></i></div><span>43%</span></div>
+      <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">来源：Towards a Data Fabric Architecture Reference Capability Model（文献组件流行度表）。百分比为架构文献出现率，不等于企业部署率。</p>
+    </div>
+  </div>
+</section>
+
+<section id="core" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">04 · Synthesis</div>
+    <h2>综合参考组成：核心、常见扩展、营销膨胀</h2>
+    <p class="lead">综合分析师定义、厂商模块、学术 CCS 与流行度统计，本文提出「可审计」的三层组成观。它不是新标准，而是用于过滤清单的工作框架。</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="tag core">CORE</span>
+        <h4>最小核心（缺一难称 Fabric）</h4>
+        <p>① 元数据获取—组织—访问；② 策略定义与强制；③ 跨源连接；④ 至少一种逻辑或物理集成交付；⑤ 受治理的消费访问。学术 CCS 将其概括为「元数据驱动的分布式受治访问」。</p>
+      </div>
+      <div class="card">
+        <span class="tag opt">COMMON</span>
+        <h4>高频扩展（按场景启用）</h4>
+        <p>主动元数据分析与推荐、语义知识图、批/流/CDC 多模式、编排与 DataOps、质量监测、自助准备、MDM、数据产品/Marketplace、可观察性与成本优化。</p>
+      </div>
+      <div class="card">
+        <span class="tag mkt">INFLATED</span>
+        <h4>易膨胀项（需单独证明）</h4>
+        <p>「统一替换全部湖仓」、厂商全栈独家、完全无人自治、把 GenAI 聊天框等同主动元数据、把 Mesh 组织改革打包进 Fabric 采购合同。</p>
+      </div>
+    </div>
+
+    <h3>六层 + 横切：用于沟通的分层视图</h3>
+    <p class="lead">为便于跨团队沟通，可将核心与扩展映射为分层视图（分析框架，非正式标准）。L4 主动元数据是把「目录」升级为「控制系统」的分水岭。</p>
+    <div class="layers">
+      <div class="layer l6"><div class="idx">L6</div><div class="body"><b>消费与行动</b>BI / API / Notebook / RAG / Agent / 运营应用</div></div>
+      <div class="layer l5"><div class="idx">L5</div><div class="body"><b>数据产品与自助</b>Marketplace · 契约 · 语义层 · SLO · 成本可见</div></div>
+      <div class="layer l4"><div class="idx">L4</div><div class="body"><b>主动元数据控制面</b>Catalog · Lineage · Graph · Policy · Recommendation · Automation</div></div>
+      <div class="layer l3"><div class="idx">L3</div><div class="body"><b>集成、编排与查询</b>ETL/ELT · CDC · Stream · Virtualization · Workflow</div></div>
+      <div class="layer l2"><div class="idx">L2</div><div class="body"><b>运行时与存储节点</b>Warehouse · Lakehouse · Feature/Vector · Graph · PET/TEE</div></div>
+      <div class="layer l1"><div class="idx">L1</div><div class="body"><b>分布式权威源</b>SaaS · DB · Files · Events · Edge · Partner / Data Space</div></div>
+      <div class="layer lx"><div class="idx">横切</div><div class="body"><b>身份 · 质量 · 安全隐私 · 驻留 · 审计 · 可观察性 · FinOps</b></div></div>
+    </div>
+
+    <h3>与相邻范式的组成边界</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>范式</th><th>组成重心</th><th>与 Fabric 的关系</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lakehouse</strong></td><td>开放表格式 + 统一分析引擎 + 事务/治理表能力</td><td>常是 Fabric 可连接的一个或多个运行时节点，不是控制面本身。</td></tr>
+          <tr><td><strong>Data Mesh</strong></td><td>领域所有权、数据产品、自助平台、联邦治理</td><td>组织/运营模型；Fabric 可作其技术底座，但不自动完成领域责任制。</td></tr>
+          <tr><td><strong>Data Space</strong></td><td>跨组织身份、合同、连接器、用途控制</td><td>企业 Fabric 向外延伸时的信任与协议层。</td></tr>
+          <tr><td><strong>知识图谱</strong></td><td>实体—关系—本体</td><td>语义层关键技术；不能单独承担集成、编排与访问控制。</td></tr>
+          <tr><td><strong>集成 iPaaS / ETL</strong></td><td>连接器与管道执行</td><td>数据面执行器；缺全局语义、用途策略与主动闭环时仍非 Fabric。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>学术 CCS：什么被专家视为「不能不做」</h3>
+    <p class="lead">DFA-RCM 通过文献流行度与专家访谈收敛出 Core Capability Set。其主张值得单独强调：多位专家认为 Data Fabric 的本质接近「元数据驱动的数据虚拟化」——在混合/多云分布景观中访问数据，而不必然先把数据中央化。</p>
+    <div class="grid-2">
+      <div class="card">
+        <h4>CCS 包含</h4>
+        <p>Data Policy Management；Metadata Acquisition / Management / Access；Connectivity Management；Virtual Data Integration；Data Access。这些能力共同保证：找得到、连得上、逻辑上用得了、策略上控得住。</p>
+      </div>
+      <div class="card">
+        <h4>CCS 之外仍常见但不「核心」</h4>
+        <p>物理集成、编排优化、Marketplace、MDM、可观察性、Agent 管理等被模型收录，却未全部进入 CCS。含义是：它们能显著提升价值，但缺少其中某几项，并不自动否定「你在做 Fabric」。</p>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>对战略团队的用法：</strong>用 CCS 做「准入门槛」，用扩展清单做「场景增益」。这样可避免 RFP 变成「把所有学派的组成取并集」。
+    </div>
+  </div>
+</section>
+
+<section id="maturity">
+  <div class="wrap">
+    <div class="section-kicker">05 · Maturity</div>
+    <h2>当前成熟度：三个层面分别看</h2>
+    <p class="lead">「Data Fabric 成熟了吗？」是坏问题。应拆成：概念是否稳定、组件是否可用、组织是否具备运营证据。</p>
+
+    <h3>层面一：概念与品类成熟度</h3>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag mid">中等成熟</span>
+        <h4>概念：新兴设计，尚未标准冻结</h4>
+        <p>Gartner 仍将其表述为 emerging design；学术论文确认「共识不足」是企业架构师的真实痛点。尚无 ISO/ITU/3GPP 意义上的单一 Data Fabric 产品标准。概念可用于沟通，不可直接当作合规对象。</p>
+      </div>
+      <div class="card">
+        <span class="tag high">相对成熟</span>
+        <h4>品类：已有分析师平台评级</h4>
+        <p>Forrester 从 Enterprise Data Fabric Wave（2022/2024）演进到 Data Fabric Platforms Wave（2025 Q4），说明买方市场已形成可比较的平台品类。但这衡量的是<em>厂商平台完整度</em>，不等于企业落地成熟度。</p>
+      </div>
+    </div>
+
+    <h3>层面二：组件技术成熟度（2026 观察）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>组件</th><th>成熟度判断</th><th>证据信号</th><th>主要风险</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>数据目录 / 技术元数据</td><td><span class="tag high">高</span></td>
+            <td>多厂商可商用；扫描、血缘、检索已成为基线能力</td>
+            <td>停在被动目录，未进入动作闭环</td>
+          </tr>
+          <tr>
+            <td>多模式集成（批/CDC/流/API）</td><td><span class="tag high">高</span></td>
+            <td>工程实践成熟，工具链丰富</td>
+            <td>管道烟囱化；缺全局语义与影响分析</td>
+          </tr>
+          <tr>
+            <td>虚拟化 / 联邦查询</td><td><span class="tag high">中高</span></td>
+            <td>Denodo 等长期验证；Shortcuts/Mirroring 扩大采用</td>
+            <td>源负载、跨源优化、缓存一致性</td>
+          </tr>
+          <tr>
+            <td>策略与访问治理</td><td><span class="tag mid">中</span></td>
+            <td>行列权限、分类、脱敏常见；策略即代码在扩展</td>
+            <td>跨平台一致强制与用途控制仍碎片化</td>
+          </tr>
+          <tr>
+            <td>主动元数据推荐/自动化</td><td><span class="tag mid">中</span></td>
+            <td>厂商演示丰富；部分场景可降本</td>
+            <td>误推荐；高风险动作护栏不足；ROI 难量化</td>
+          </tr>
+          <tr>
+            <td>企业级语义/本体运营</td><td><span class="tag mid">中低</span></td>
+            <td>术语表常见；跨域 ontology 运营少</td>
+            <td>语义治理组织成本高，易沦为文档工程</td>
+          </tr>
+          <tr>
+            <td>数据产品 / Marketplace</td><td><span class="tag mid">中低</span></td>
+            <td>开放规范兴起；内部商店试点增多</td>
+            <td>有货架无契约；复用率与退出机制缺失</td>
+          </tr>
+          <tr>
+            <td>Agent 可操作 Fabric</td><td><span class="tag low">低—快速演进</span></td>
+            <td>辅助检索/草拟已可见；受治执行刚起步</td>
+            <td>权限、审计、提示注入、责任边界</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <strong>实证边界：</strong>Oostrik 指出，在其审查的架构文献中，仅少数描述真实实现，完整 Fabric 实现声称更少。Gartner/咨询材料中的「访问准备时间下降 40–60%」等收益数字多见转述，应视为厂商/咨询主张，需用本组织基线复测，不可直接当作行业统计事实。
+    </div>
+
+    <h3>层面三：组织能力成熟度模型对照</h3>
+    <p class="lead">组织侧成熟度模型同样多元。共同点是：从被动目录/手工管道，走向元数据激活与有界自动化；差异在维度切分与级数命名。</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>模型来源</th><th>结构</th><th>对 Fabric 的含义</th><th>局限</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Gartner 数据集成成熟度（L1–L5）</td>
+            <td>L5 = Augmented：激活元数据驱动 ML/AI；并明确 data fabric design 是 L5 要素之一</td>
+            <td>把 Fabric 锚定在「增强式集成」终点能力，而不是入门项目</td>
+            <td>偏集成职能视角，组织/产品运营维度较弱</td>
+          </tr>
+          <tr>
+            <td>LTIMindtree FABMAT</td>
+            <td>分阶段能力叠加：评估策略 → 数据管理 → 摄入与知识图 → Marketplace → 洞察</td>
+            <td>强调用例驱动、小步构建</td>
+            <td>公开材料偏方法宣传，独立验证有限</td>
+          </tr>
+          <tr>
+            <td>实践向五级模型（如 datafabric.cloud 等）</td>
+            <td>通常覆盖战略、集成、元数据、治理、质量、自助、可观察 等 6–8 域 × 5 级</td>
+            <td>便于内部打分与对标</td>
+            <td>非权威标准；域权重需按行业裁剪</td>
+          </tr>
+          <tr>
+            <td>本文综合闸门 G0–G5</td>
+            <td>边界词汇 → 只读可观察 → 产品契约 → 影子闭环 → 有界自治 → 跨域供给</td>
+            <td>强调证据与风险预算，抑制「跳级自治」</td>
+            <td>分析框架，需映射到组织 KPI</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>本文建议的组织成熟度闸门（G0–G5）</h3>
+    <div class="maturity">
+      <div class="mcard"><div class="lv">G0</div><h4>边界与词汇</h4><p>场景目标、Owner、对象语义、权威源、保留期明确。没有 G0，目录只会固化混乱。</p></div>
+      <div class="mcard"><div class="lv">G1</div><h4>只读可观察</h4><p>关键源接入；Schema、事件时间、血缘、QoD 可查询。先证明「哪份数据对应哪个状态」。</p></div>
+      <div class="mcard"><div class="lv">G2</div><h4>产品与契约</h4><p>高频输出产品化；契约进 CI；复用可度量；无人使用的资产退出。</p></div>
+      <div class="mcard"><div class="lv">G3</div><h4>影子闭环</h4><p>系统建议对照人工与结果；高风险动作先沙箱/孪生。主动元数据开始改变决策质量。</p></div>
+      <div class="mcard"><div class="lv">G4–G5</div><h4>有界自治 → 跨域</h4><p>白名单低风险自动执行；熔断与回滚齐全后再谈跨域最小必要供给。</p></div>
+    </div>
+
+    <h3>行业落位的总体判断（2026）</h3>
+    <div class="timeline">
+      <div class="titem"><b>多数企业</b><div>停留在 G1 附近：有目录与若干集成平台，但元数据多为被动；跨工具策略不一致；「Fabric」常等于采购叙事。</div></div>
+      <div class="titem"><b>领先实践</b><div>进入 G2–G3：数据契约、开放 Catalog、影响分析、受治自助与部分推荐自动化跑通；仍少见生产级全面自治。</div></div>
+      <div class="titem"><b>厂商平台</b><div>品类成熟度高于平均企业落地成熟度：Wave 中的 Leaders 展示端到端能力，但客户要自己补齐语义责任、组织机制与场景 ROI。</div></div>
+      <div class="titem"><b>前沿探索</b><div>G4 有界自治与 Agent 操作面、跨组织 Data Space 接入并存；证据密度低，适合受控试点，不适合作为全面承诺。</div></div>
+    </div>
+
+    <h3>成熟度错位：最常见的四种自欺</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>1. 用平台 Wave 分数代替组织闸门</h4>
+        <p>买到 Leaders 象限产品，只证明供应商能力包较完整，不证明本组织已达 G2/G3。合同签字≠血缘覆盖，更≠契约复用。</p>
+      </div>
+      <div class="card">
+        <h4>2. 用目录覆盖率代替主动元数据</h4>
+        <p>资产入湖/入目录是 G1 信号。若 schema 变更不会触发影响分析、测试闸门或策略复核，则仍属被动元数据阶段。</p>
+      </div>
+      <div class="card">
+        <h4>3. 用 AI 演示代替有界自治</h4>
+        <p>自然语言查数、自动映射建议属于辅助生产力。一旦涉及授权变更、删除传播、生产控制，缺少熔断/审批/回滚就不能计为 G4。</p>
+      </div>
+      <div class="card">
+        <h4>4. 用组成清单长度代替场景闭环</h4>
+        <p>清单越长越像「齐全」，却可能稀释 Owner 与 KPI。成熟组织通常先在 1–2 个高复用场景打穿 G2/G3，再扩展组成面。</p>
+      </div>
+    </div>
+
+    <h3>分行业的成熟度差异（观察性判断）</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>场景类型</th><th>常见主骨架</th><th>相对成熟点</th><th>相对薄弱点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>大型银行 / 保险</td>
+            <td>治理 + 目录 + 集成/虚拟化</td>
+            <td>策略、分类、审计、MDM 基础较好</td>
+            <td>跨域语义协商慢；主动自动化受合规约束</td>
+          </tr>
+          <tr>
+            <td>互联网 / 数字化原生</td>
+            <td>湖仓 + 流批 + 平台工程</td>
+            <td>管道、观察性、自助效率高</td>
+            <td>企业级语义与用途治理未必系统化</td>
+          </tr>
+          <tr>
+            <td>制造 / 运营商类</td>
+            <td>多源接入 + 近源处理 + 管理数据</td>
+            <td>实时/准实时集成需求清晰</td>
+            <td>OT/IT/管理域语义割裂；跨厂商元数据难统一</td>
+          </tr>
+          <tr>
+            <td>公共部门 / 跨境协作</td>
+            <td>Data Space 协议 + 内部 Catalog</td>
+            <td>主权、合同、用途控制议题靠前</td>
+            <td>内部 Fabric 与外部空间的互操作成本高</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px">上表为公开叙事与项目经验的综合观察，不是抽样统计结论；用于提示「成熟度必须按约束裁剪」，避免用单一行业标杆要求所有组织。</p>
+  </div>
+</section>
+
+<section id="assess" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">06 · How to Assess</div>
+    <h2>如何评估一份「组成方案」与「成熟度声称」</h2>
+    <p class="lead">面对繁多组成图，评估应坚持：先核心后扩展、先证据后愿景、先场景后平台。</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>组成方案六问</h4>
+        <p>1. 主动元数据是否能触发跨系统动作，还是仅展示？<br>
+        2. 集成是多模式可选，还是被单一教条绑定？<br>
+        3. 策略能否在访问路径强制，而非文档宣示？<br>
+        4. 语义责任人是否明确（机器建议 ≠ 领域裁定）？<br>
+        5. 数据产品是否有契约、SLO 与退出机制？<br>
+        6. 哪些项是本场景必需，哪些是厂商赠送清单？</p>
+      </div>
+      <div class="card">
+        <h4>成熟度声称五问</h4>
+        <p>1. 声称对应概念/组件/组织哪一层？<br>
+        2. 有无基线与对照（时间、成本、事故、复用）？<br>
+        3. 自动化覆盖的是低风险建议还是高风险变更？<br>
+        4. 跨平台强制是否被抽检过？<br>
+        5. 若去掉品牌名「Fabric」，剩余能力是否仍成立？</p>
+      </div>
+    </div>
+
+    <h3>最小充分性：何时值得按 Fabric 建设</h3>
+    <div class="callout">
+      <strong>建议阈值：</strong>若同时满足「异构来源长期共存、跨域复用频繁、语义冲突显著、治理约束复杂、变更影响难追踪」中至少三项，并且已有明确场景、Owner 与可量化结果，再进入 G0。否则优先解决最窄瓶颈（口径、权限、单条关键管道或责任人），避免预付控制面复杂度。
+    </div>
+
+    <h3>建议跟踪指标（与闸门对齐）</h3>
+    <div class="grid-4">
+      <div class="card"><h4>G1+</h4><p>新鲜度 P95、完整率、血缘覆盖、变更发现时延</p></div>
+      <div class="card"><h4>G2+</h4><p>产品复用率、重复采集下降、契约合规率</p></div>
+      <div class="card"><h4>G3+</h4><p>建议采纳率、误报率、影子对照偏差</p></div>
+      <div class="card"><h4>G4+</h4><p>自动动作成功率、回滚耗时、无效动作率</p></div>
+    </div>
+
+    <h3>90 日诊断路径（可落地）</h3>
+    <div class="timeline">
+      <div class="titem"><b>Day 0–15</b><div><strong>构图审计：</strong>收集现有「Fabric」架构图/采购材料，标注每项属于 CORE / COMMON / INFLATED；识别主骨架（控制面 / 逻辑访问 / 统一平台）。输出一页「组成分歧表」。</div></div>
+      <div class="titem"><b>Day 16–45</b><div><strong>证据抽样：</strong>选 2 个高价值数据链路，实测目录是否被动、策略是否强制、变更是否可影响分析、复用是否发生。对照 G0–G2 打分，禁止只看工具清单。</div></div>
+      <div class="titem"><b>Day 46–75</b><div><strong>缺口排序：</strong>按「场景损失 × 修复成本 × 风险」排序。优先补 CCS 缺口与 G1/G2 指标，而不是先上 GenAI 或 Marketplace 门面。</div></div>
+      <div class="titem"><b>Day 76–90</b><div><strong>目标态裁剪：</strong>给出 12 个月组成目标（必须有 / 可以后补 / 明确不做），并设定 G2 或 G3 的可验证出口条件。同步明确语义 Owner 与升级路径。</div></div>
+    </div>
+
+    <h3>给架构评审的一句话标准</h3>
+    <div class="big-quote">若一份方案不能说明<em>元数据如何变成动作</em>、<em>策略如何在访问路径强制</em>、<em>哪个场景在何闸门退出</em>，则无论组成图多完整，成熟度声称都应降级处理。</div>
+  </div>
+</section>
+
+<section id="deep-comp">
+  <div class="wrap">
+    <div class="section-kicker">07 · Component Deep Dive</div>
+    <h2>关键组成项：各自成熟到什么程度、如何验收</h2>
+    <p class="lead">组成争论常停在「要不要这一项」。更有效的做法是：对每一项定义<em>存在</em>、<em>可用</em>、<em>主动</em>三档证据，再决定是否纳入本阶段范围。</p>
+
+    <h3>1. 目录与元数据层</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>技术元数据扫描、血缘、检索已高度商品化；业务术语表与所有权字段也常见。瓶颈转移到：多工具目录联邦、运行时/使用元数据回流，以及「变更事件」能否进入统一总线。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p><strong>存在：</strong>关键源可检索。<strong>可用：</strong>Owner、schema、血缘对关键产品完整。<strong>主动：</strong>schema/权限/质量变化在约定时延内触发影响分析或工单，而不是等人发现。</p>
+      </div>
+    </div>
+
+    <h3>2. 主动元数据与推荐自动化</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>这是 Gartner 定义的「点睛之笔」，也是成熟度落差最大处。厂商可展示相似列推荐、映射建议、异常提示；但跨平台自动修复、自动授权、自动生产发布仍受组织风险偏好限制。公开实证少于演示。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>把自动化拆成「建议类 / 低风险执行类 / 高风险执行类」。只有建议类稳定提升人效，且低风险执行类具备审计与回滚时，才可宣称进入增强式阶段。禁止用聊天式问答替代该验收。</p>
+      </div>
+    </div>
+
+    <h3>3. 集成与交付层（虚拟 + 物理）</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>学术 CCS 强调虚拟集成，但工程现实是多模式并存：高频复用与重变换仍常物化；CDC/流成为近实时标配；虚拟化适合探索、联邦与受治访问。成熟标志不是「只用一种」，而是「由元数据与策略选择模式」。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>对同一业务对象，能否解释为何批/流/虚拟被选中（时延、成本、源负载、驻留）？模式切换是否留下运营元数据？重复管道是否下降？</p>
+      </div>
+    </div>
+
+    <h3>4. 治理、安全与用途控制</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>身份、RBAC/ABAC、动态脱敏、分类标签已较成熟；难点是用途限制（purpose）、跨系统删除传播、以及策略在虚拟化/物化/API/RAG 多路径上的一致强制。Data Space 议题把用途控制推到组织间，内部尚未做稳时不宜外扩。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>抽检：同一敏感字段经 SQL、API、导出、向量检索四条路径，策略结论是否一致？撤销访问或删除请求的端到端生效时间是否可测？</p>
+      </div>
+    </div>
+
+    <h3>5. 语义、产品与 Marketplace</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>术语表普及，企业级 ontology 运营稀缺。数据产品概念升温，但很多「产品」仍是挂了描述的表。Marketplace 若没有契约、SLO、成本与退出，只会制造新的影子资产目录。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>产品必须具备 Owner、schema/语义版本、质量目标、访问方式、许可/用途、消费者与退出条件。复用率与契约违规率比「上架数量」更能衡量成熟度。</p>
+      </div>
+    </div>
+
+    <h3>6. GenAI / Agent 操作面</h3>
+    <div class="callout warn">
+      <strong>当前位置：</strong>适合作为 G2/G3 的加速器（检索、草拟、调查、编排辅助），不适合作为 G0/G1 的替代。若基础元数据与权限不可信，Agent 只会更快传播错误。对生产动作必须最小权限、短时凭据、完整审计，并保留人工接管。
+    </div>
+  </div>
+</section>
+
+<section id="gaps" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">08 · Limits</div>
+    <h2>证据缺口与误判风险</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h4>组成「最大公约数」仍在形成</h4>
+        <p>目录、虚拟/物理访问、治理是强共识；Marketplace、可观察性、Agent 仍在快速写入清单，明年的「标准组成」可能再次位移。</p>
+      </div>
+      <div class="card">
+        <h4>缺少可比的横向实证</h4>
+        <p>公开成功案例多为单厂商故事；跨组织、跨工具的对照试验稀缺。成熟度自评容易乐观。</p>
+      </div>
+      <div class="card">
+        <h4>同名产品不等于同构架构</h4>
+        <p>Microsoft Fabric、厂商 Intelligent Data Fabric、咨询公司参考架构图，可能共享词汇而共享很少机制。评估必须下钻到元数据事件、策略强制与集成模式。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conclusion">
+  <div class="wrap">
+    <div class="section-kicker">09 · Conclusion</div>
+    <h2>结论：如何在「组成繁多」中做决定</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h4>关于组成</h4>
+        <p>业界繁多不是因为存在很多互不兼容的真理，而是因为分析师设计、厂商平台、产品品牌与学术能力模型在用同一词汇回答不同问题。可操作的收敛方式是：承认三种实现骨架，守住 CCS/核心能力，把其余项按场景增益排序。</p>
+      </div>
+      <div class="card">
+        <h4>关于成熟度</h4>
+        <p>2026 年的总体图景是：品类与组件「可买」程度高于组织「可运营」程度；多数企业在被动目录与增强集成之间；G3 影子闭环可见但未普及；G4 有界自治与跨域供给仍属受控前沿。成熟度应用闸门与指标证明，而不是用组成图长度宣称。</p>
+      </div>
+    </div>
+    <div class="big-quote">决策口诀：<em>先定主骨架，再守核心集，后补扩展项；先拿 G1/G2 证据，再谈 G3/G4 自动化。</em>凡不能通过「元数据→动作」「策略→强制」「场景→闸门」三检验的方案，组成再完整也应降级。</div>
+  </div>
+</section>
+
+<section id="sources" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">10 · Sources</div>
+    <h2>主要公开来源</h2>
+    <div class="sources">
+      <ol>
+        <li id="s1"><a href="https://www.gartner.com/en/data-analytics/topics/data-fabric" target="_blank" rel="noopener">Gartner, What is Data Fabric?</a>：定义、四类元数据、被动→主动、增强目录与自动化。</li>
+        <li id="s2"><a href="https://www.gartner.com/en/articles/data-integration" target="_blank" rel="noopener">Gartner, Data Integration Strategies…</a>：集成成熟度 L5 Augmented 与 data fabric design。</li>
+        <li id="s3"><a href="https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-identifies-top-trends-in-data-and-analytics-for-2025" target="_blank" rel="noopener">Gartner Top Trends in D&A 2025</a>：元数据管理与 Multimodal Data Fabric 趋势语境。</li>
+        <li id="s4"><a href="https://www.ibm.com/think/topics/data-fabric" target="_blank" rel="noopener">IBM, What is a data fabric?</a>：设计方法、核心能力、与 Mesh/Lakehouse 关系；转述 Forrester 六层。</li>
+        <li id="s5"><a href="https://www.ibm.com/think/insights/data-fabric-architecture" target="_blank" rel="noopener">IBM, Core capabilities of a data fabric architecture</a>：知识目录、治理、智能集成、自助、统一生命周期。</li>
+        <li id="s6"><a href="https://www.informatica.com/resources/articles/data-fabric-the-transformative-next-step-in-data-management.html" target="_blank" rel="noopener">Informatica, Data Fabric pillars</a>：五支柱与主动元数据引擎叙事；引用 Forrester Wave 2022。</li>
+        <li id="s7"><a href="https://www.forrester.com/blogs/supercharging-data-fabrics-with-generative-ai/" target="_blank" rel="noopener">Forrester blog on GenAI + data fabrics</a>：六层架构与 GenAI 增强。</li>
+        <li id="s8"><a href="https://www.forrester.com/report/the-forrester-wave-tm-data-fabric-platforms-q4-2025/RES186661" target="_blank" rel="noopener">Forrester Wave: Data Fabric Platforms, Q4 2025</a>：平台品类持续评级（付费报告）。</li>
+        <li id="s9"><a href="https://www.denodo.com/en/document/analyst-report/forrester-wave-enterprise-data-fabric-q1-2024" target="_blank" rel="noopener">Denodo on Forrester Wave Q1 2024</a>：企业级 Fabric 平台评价维度摘要。</li>
+        <li id="s10"><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview" target="_blank" rel="noopener">Microsoft OneLake / Fabric docs</a>：产品品牌化组成（OneLake、Catalog、Shortcuts 等）。</li>
+        <li id="s11"><a href="https://doi.org/10.1007/s10257-025-00707-4" target="_blank" rel="noopener">The Future of Data Management… (2025)</a>：Platform / Space / Mesh / Fabric 划界综述。</li>
+        <li id="s12"><a href="https://essay.utwente.nl/fileshare/file/110008/Oostrik_Towards_A_Data_Fabric_Architecture_Reference_Capability_Model.pdf" target="_blank" rel="noopener">Oostrik, DFA-RCM (2025)</a>：参考能力模型、CCS、组件流行度与实证局限。</li>
+        <li id="s13"><a href="https://doi.org/10.1007/s12599-024-00876-5" target="_blank" rel="noopener">Data products, data mesh, and data fabric (BISE)</a>：产品/Mesh/Fabric 概念比较。</li>
+        <li id="s14"><a href="https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/whitepapers/2025/01/GENAI-POWERED-DATA-FABRIC-.pdf" target="_blank" rel="noopener">LTIMindtree, GenAI-Powered Data Fabric</a>：组成对照与 FABMAT 成熟度方法。</li>
+        <li id="s15"><a href="https://datafabric.cloud/data-fabric-maturity-model" target="_blank" rel="noopener">Data Fabric Maturity Model for Benchmarking</a>：实践向五级多域成熟度框架示例。</li>
+      </ol>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);font-size:13.5px"><strong>版本说明：</strong>研究快照截至 2026 年 8 月。分析师报告、厂商产品线与学术模型持续演进；涉及 Wave 排名、收益百分比与产品路线的判断应定期复核。本文不代表任何厂商或运营商的正式立场。</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    《Data Fabric 组成与成熟度深度调研》 · 公开资料综合分析 · 2026-08<br>
+    组成框架与 G0–G5 闸门为研究综合，非正式标准；「Fabric」产品名不等于架构能力证明。
+  </div>
+</footer>
+</body>
+</html>
