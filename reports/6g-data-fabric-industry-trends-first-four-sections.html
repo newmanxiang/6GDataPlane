@@ -80,13 +80,31 @@
     .horizon-card .yr{font-size:34px;color:var(--lime);font-weight:900}.horizon-card h3{margin:4px 0 16px;color:#fff}.horizon-card ul{padding-left:19px}.horizon-card li{margin:8px 0;color:#dbeaf3}
     .judgements{display:grid;gap:10px}.judgement{display:grid;grid-template-columns:56px 1fr 120px;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}
     .judgement .n{font:italic 700 24px Georgia,serif;color:var(--orange)}.judgement p{margin:2px 0;color:#4e6575}.certainty{text-align:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:850}
+    .requirements{display:grid;gap:10px;margin:22px 0}
+    .requirement{display:grid;grid-template-columns:70px 170px 1fr 210px;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 17px}
+    .requirement .rid{font:italic 800 20px Georgia,serif;color:var(--orange)}.requirement b{color:var(--navy)}.requirement p{margin:0;color:#536979;font-size:13.5px}.requirement .proof{font-size:12px;color:#0a746e;background:#e3f5f0;border-radius:10px;padding:8px 10px}
+    .fit-verdict{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin:22px 0}
+    .fit-verdict>div{border-radius:18px;padding:22px}.fit-yes{background:#0b3157;color:#fff}.fit-yes h4{color:var(--lime)}.fit-yes p{color:#dceaf3}.fit-gap{background:#fff0e7;border:1px solid #f0c9b2}.fit-gap p{color:#6c4936}
+    .maturity-map{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0}
+    .maturity-stage{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px;min-height:170px}.maturity-stage .mno{font-weight:900;color:var(--teal);font-size:12px}.maturity-stage h4{font-size:14px;margin-top:5px}.maturity-stage p{font-size:12px;color:var(--muted);margin:0}
+    .vendor-chapter{margin:42px 0 56px;padding:28px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+    .vendor-head{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}
+    .vendor-mark{width:84px;height:84px;border-radius:22px;background:var(--navy);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900}
+    .vendor-head h3{margin:0 0 4px}.vendor-head p{margin:0;color:var(--muted)}.vendor-level{font-size:11px;font-weight:850;padding:6px 11px;border-radius:999px;background:#dff4ed;color:#08736e}
+    .vendor-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.vendor-grid .figure{margin:0}.vendor-grid p{color:#4e6575}
+    .evidence-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}.evidence-strip>div{background:#edf3f6;border-radius:12px;padding:11px;font-size:12px;color:#4f6676}.evidence-strip b{display:block;color:var(--navy);margin-bottom:3px}
+    .vendor-findings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.vendor-findings>div{border-left:3px solid var(--teal);background:#f5f8fa;padding:13px 14px}.vendor-findings b{display:block;font-size:13px;color:var(--navy)}.vendor-findings span{font-size:12px;color:var(--muted)}
+    .status-summary{background:linear-gradient(145deg,#071f3d,#0e4d59);color:#fff;border-radius:24px;padding:30px;margin-top:40px}.status-summary h3{color:var(--lime);margin-top:0}.status-summary p{color:#d7e7f0}.status-summary .grid-3 .card{box-shadow:none}.status-summary .grid-3 .card p{color:#526777}
+    .trend-chapters{display:grid;gap:22px;margin:28px 0}.trend-chapter{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 12px 30px rgba(7,31,61,.06)}
+    .trend-title{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:start}.trend-no{font:italic 800 27px Georgia,serif;color:var(--orange)}.trend-title h3{margin:0 0 6px}.trend-title p{margin:0;color:var(--muted)}.trend-body{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}.trend-body>div{background:#f3f7f9;border-radius:14px;padding:17px}.trend-body h4{font-size:14px}.trend-body p,.trend-body li{font-size:13px;color:#536979}.trend-body ul{padding-left:18px;margin:8px 0 0}
+    .logic-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.logic-proof>div{border-top:3px solid var(--cyan);padding:10px;background:#fff}.logic-proof b{display:block;font-size:12px;color:var(--navy)}.logic-proof span{font-size:11.5px;color:var(--muted)}
     .source-list{columns:2;column-gap:34px;padding-left:22px}.source-list li{break-inside:avoid;margin:0 0 11px;font-size:12.5px;color:#586e7d}
     .boundary{font-size:12px;color:#6a7c89;background:#e7edef;padding:12px 15px;border-radius:12px;margin-top:18px}
     footer{background:#06172e;color:#97adbd;padding:30px 0;font-size:12px}
     @media(max-width:900px){
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape{grid-template-columns:1fr}.judgement{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
         content:"← 左右滑动查看完整内容 →";display:block;position:sticky;left:0;z-index:3;
@@ -96,7 +114,7 @@
       .figure{overflow-x:auto}.figure svg,.figure img{min-width:760px}
       .figure figcaption{position:sticky;left:0;max-width:calc(100vw - 64px)}
     }
-    @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats{grid-template-columns:1fr}main section{padding:62px 0}}
+    @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats,.maturity-map,.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr}main section{padding:62px 0}.vendor-chapter,.trend-chapter{padding:18px}}
     @media print{.nav,.progress{display:none}.hero{min-height:auto;break-after:page}main section{padding:36px 0}.card,.figure{box-shadow:none;break-inside:avoid}.wrap,.hero-inner{width:94%}a{color:inherit}}
   </style>
 </head>
@@ -253,8 +271,81 @@
           <div class="card"><span class="tag infer">生态开放</span><h4>数据与能力将以产品/API外延</h4><p>Open Gateway正在推动标准化网络API；但真正变现取决于跨运营商一致语义、计量、商业渠道与行业工作流，而非接口数量。</p></div>
         </div>
 
+        <h4>由六类场景反推：6G对数据管理层提出八项刚性需求</h4>
+        <p>上述场景不是六个功能孤岛。它们共同改变了数据管理层的目标：从「把数据送到分析平台」转为「在多域、多时标、多主体之间，持续提供机器可理解、策略可约束、结果可验证的数据与制品」。因此，6G数据管理层至少应满足以下需求。</p>
+        <div class="requirements">
+          <div class="requirement">
+            <div class="rid">R1</div><b>统一发现与语义寻址</b>
+            <p>消费者不仅要知道数据位于哪个接口/Topic，还要知道对象、时间、空间、配置版本、业务含义和权威源。RAN小区、E2对象、O1 DN、Core会话、云资源必须可关联。</p>
+            <div class="proof">验收：跨域对象映射率、语义版本覆盖率</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R2</div><b>按需采集与近源减量</b>
+            <p>ISAC、UE测量和高频遥测不能默认全量上送。管理层需按消费者SLO编排采样、过滤、聚合、特征提取、匿名化，并决定数据移动还是模型下沉。</p>
+            <div class="proof">验收：重复采集下降率、跨域字节/有效任务</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R3</div><b>跨时标多模式交付</b>
+            <p>亚10ms内环、Near-RT、Non-RT/OAM和月度训练不能共享同一在线依赖。需同时支持本地状态、流、变更捕获、批、联邦查询、缓存和异步制品同步。</p>
+            <div class="proof">验收：分时标P99、新鲜度与截止期达标率</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R4</div><b>通信级数据质量 QoD</b>
+            <p>完整性与新鲜度不够。无线数据还要描述采样代表性、对象/频段/波束覆盖、时间同步误差、配置一致性、测量置信度和训练—服务分布偏差。</p>
+            <div class="proof">验收：质量信封覆盖、suspect/incomplete比例</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R5</div><b>数据—模型—策略—动作血缘</b>
+            <p>每个模型结论和网络动作必须可追溯到输入数据、特征定义、模型版本、策略、作用域和结果；反馈还要能反向修正采集、质量与模型。</p>
+            <div class="proof">验收：端到端证据链覆盖率、回放成功率</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R6</div><b>用途、安全与主权强制</b>
+            <p>身份、同意、目的限制、驻留、保留和删除必须贯穿查询、API、导出、特征库、向量索引与模型训练，而不是只在目录挂标签。</p>
+            <div class="proof">验收：跨路径策略一致率、删除传播时长</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R7</div><b>有界智能与冲突治理</b>
+            <p>多个Agent、模型和闭环可能争夺同一资源。数据管理层需提供身份、委托权限、风险预算、动作租约、冲突仲裁、仿真、熔断和人工接管证据。</p>
+            <div class="proof">验收：越权拦截、无效动作率、回滚耗时</div>
+          </div>
+          <div class="requirement">
+            <div class="rid">R8</div><b>数据产品与跨组织运营</b>
+            <p>向Core、行业平台和伙伴输出的数据需具备Owner、契约、QoD、用途、SLO、成本与退出机制，并能与CAMARA/Operate API、数据空间合同和计量体系衔接。</p>
+            <div class="proof">验收：复用消费者数、契约合规与单位收入</div>
+          </div>
+        </div>
+        <div class="big-quote">数据管理层的目标由此明确：<em>不是建立一个更大的数据池，而是建立一套跨域、跨时标的「数据供应与行动证据控制系统」</em>。它必须允许执行分布在RAN/Core/边云，同时统一语义、质量、策略与责任。</div>
+
         <h3>2.2 数据编织能力全景、演进、与6G结合及关键挑战</h3>
-        <p>数据编织不是6G新增网元，而是一种跨异构、分布式环境的数据管理与集成设计：以主动元数据、语义、质量、策略和编排构成逻辑控制面，在不强制物理集中前提下交付数据产品。映射到6G后，其核心价值是把「网络事实—近源处理—模型策略—网络动作—效果反馈」连成证据链。</p>
+        <p>在展开能力清单前，必须先回答核心问题：<strong>Data Fabric能否满足R1—R8？</strong> 数据编织不是6G新增网元，而是一种跨异构、分布式环境的数据管理与集成设计：以主动元数据、语义、质量、策略和编排构成逻辑控制面，在不强制物理集中前提下交付数据产品。它与6G需求高度同构，但通用企业Data Fabric并不能原样进入通信网络。</p>
+
+        <div class="fit-verdict">
+          <div class="fit-yes">
+            <h4>结论：架构机制总体适配</h4>
+            <p>数据分布但元数据统一、控制与执行分离、多模式集成、主动元数据、数据产品和贯穿治理，分别对应R1/R2/R3、R5、R8与R6。Data Fabric可以成为6G数据管理层的<strong>设计骨架</strong>，尤其适合Non-RT/管理域、跨域数据供给及快环的环外支撑。</p>
+          </div>
+          <div class="fit-gap">
+            <h4>但必须通信级增强</h4>
+            <p>通用Fabric缺少RAN对象与时空语义、无线QoD、亚秒时标隔离、动作安全、NDT证据门槛和多Agent冲突治理。它不能替代RAN协议、SA2/SA5功能或O-RAN接口，也不能成为毫秒快环的远端在线依赖。</p>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>6G需求</th><th>Data Fabric原生机制</th><th>适配判断</th><th>必须补齐的通信扩展</th></tr></thead>
+            <tbody>
+              <tr><td>R1 发现与语义</td><td>目录、知识图谱、血缘、主动元数据</td><td><span class="tag fact">高适配</span></td><td>O1/E2/Core/云对象统一、事件时间和配置版本</td></tr>
+              <tr><td>R2 近源减量</td><td>联邦查询、策略编排、计算下推</td><td><span class="tag fact">高适配</span></td><td>DU/CU/MEC可移植算子、实时资源预算和断链策略</td></tr>
+              <tr><td>R3 跨时标交付</td><td>批/流/变更捕获/API/缓存多模式</td><td><span class="tag study">中高适配</span></td><td>按闭环时标隔离；本地确定性路径不依赖远端控制面</td></tr>
+              <tr><td>R4 通信QoD</td><td>质量规则、Profiling、SLO</td><td><span class="tag study">部分适配</span></td><td>时空代表性、无线误差、同步/配置/采样质量信封</td></tr>
+              <tr><td>R5 证据链</td><td>数据/模型血缘、元数据事件、可观察性</td><td><span class="tag fact">高适配</span></td><td>模型—策略—动作—网络效果的闭环血缘与回放</td></tr>
+              <tr><td>R6 安全主权</td><td>身份、策略即代码、用途与审计</td><td><span class="tag study">中高适配</span></td><td>跨路径强制、ISAC旁观者隐私、撤销/删除到缓存与模型</td></tr>
+              <tr><td>R7 有界智能</td><td>策略、工作流、推荐与自动化</td><td><span class="tag infer">能力不足</span></td><td>Agent身份、动作租约、冲突仲裁、NDT预演、熔断回滚</td></tr>
+              <tr><td>R8 产品运营</td><td>数据产品、契约、Marketplace</td><td><span class="tag study">中等适配</span></td><td>网络QoD计量、CAMARA/TMF运营接口、结果定价与责任</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="stack" aria-label="6G数据编织六层能力栈">
           <div class="layer l6"><div class="id">L6</div><div class="body"><b>业务、生态与网络行动</b><span>网络API · 行业数据空间 · RAG/Agent · 运营闭环 · 自动控制</span></div><div class="status m-low">成熟度：传统消费高；受治Agent低</div></div>
@@ -265,6 +356,33 @@
           <div class="layer l1"><div class="id">L1</div><div class="body"><b>分布式权威数据源</b><span>UE · RU/DU/CU · RIC · Core NF · O-Cloud · OSS/BSS · ISAC/NTN</span></div><div class="status">成熟度：数据存在；权威语义分散</div></div>
           <div class="layer lx"><div class="id">横切</div><div class="body"><b>通信级保障</b><span>身份 · 质量 · 安全隐私 · 时间同步 · 驻留 · 审计 · 可观察 · 能耗/成本</span></div><div class="status m-mid">难点：跨路径一致强制与可证明</div></div>
         </div>
+
+        <h4>当前成熟度：基础组件成熟，通信级控制闭环未成熟</h4>
+        <p>成熟度必须分层判断，不能因为目录、湖仓或流平台已经商用，就宣称「6G Data Fabric成熟」。截至研究截点，L1—L3的大部分组件可买可建；真正决定Fabric是否成立的L4主动元数据、L5产品化、R7有界智能和跨路径横切治理仍处在试点或研究阶段。</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>能力层</th><th>行业成熟度</th><th>已有证据</th><th>尚未解决</th><th>对应6G需求</th></tr></thead>
+            <tbody>
+              <tr><td><strong>L1 数据源与连接</strong></td><td><span class="tag fact">高</span></td><td>RAN/Core/OAM数据接口和连接器长期商用</td><td>跨厂商权威对象、统一时间与配置语义</td><td>R1、R2</td></tr>
+              <tr><td><strong>L2 运行时/近源处理</strong></td><td><span class="tag fact">中高</span></td><td>湖仓、流引擎、MEC、特征/向量存储成熟</td><td>算子可移植性、按网络时限调度、端云成本联动</td><td>R2、R3</td></tr>
+              <tr><td><strong>L3 多模式集成</strong></td><td><span class="tag fact">中高</span></td><td>批、流、变更捕获、API、联邦查询均有产品</td><td>跨O1/E2/A1/R1语义、模式自动选择与端到端SLO</td><td>R1、R3</td></tr>
+              <tr><td><strong>L4 主动控制面</strong></td><td><span class="tag study">中</span></td><td>目录、血缘、影响分析、部分推荐已可用</td><td>元数据真正触发跨系统动作；通信QoD与动作证据闭环</td><td>R4、R5、R6</td></tr>
+              <tr><td><strong>L5 数据产品</strong></td><td><span class="tag study">中低</span></td><td>厂商Data Suite/Marketplace与开放契约试点</td><td>运营商跨域语义、复用度量、退出机制与单位经济性</td><td>R8</td></tr>
+              <tr><td><strong>L6 Agent/行动</strong></td><td><span class="tag infer">低—中</span></td><td>诊断助手、工单编排、Non-RT闭环出现部署</td><td>多Agent互操作、高风险动作强制护栏和责任划分</td><td>R7、R8</td></tr>
+              <tr><td><strong>横切保障</strong></td><td><span class="tag study">中</span></td><td>单平台身份、脱敏、审计、监控成熟</td><td>查询/API/导出/向量/模型多路径一致强制与删除传播</td><td>R4、R6、R7</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>组织落地闸门：不能从连接器直接跳到自治</h4>
+        <div class="maturity-map">
+          <div class="maturity-stage"><div class="mno">G0</div><h4>边界与语义</h4><p>场景、Owner、对象、时间、配置、权威源和用途明确；没有这一步，自动化只会传播歧义。</p></div>
+          <div class="maturity-stage"><div class="mno">G1</div><h4>只读可观察</h4><p>目录、Schema、QoD、血缘可查询，先证明能回答「哪份数据对应哪个网络状态」。</p></div>
+          <div class="maturity-stage"><div class="mno">G2</div><h4>产品与契约</h4><p>高频输出产品化，契约进入持续集成，消费者、成本、复用和退出可度量。</p></div>
+          <div class="maturity-stage"><div class="mno">G3</div><h4>影子闭环</h4><p>系统只给建议，对照人工与真实结果；高风险动作先在孪生/沙箱演练。</p></div>
+          <div class="maturity-stage"><div class="mno">G4–G5</div><h4>有界自治与跨域</h4><p>白名单低风险动作自动执行；内部证据稳定后再向Core、行业和伙伴供给产品。</p></div>
+        </div>
+        <div class="callout warn"><strong>成熟度结论：</strong>Data Fabric作为企业数据架构已进入产品化阶段；作为6G通信级数据管理层则总体位于<strong>G1—G2、局部G3</strong>。厂商已发布的自治平台不等于跨RAN/Core/OSS/BSS、跨厂商的完整6G Fabric已成熟。</div>
 
         <div class="callout"><strong>结合原则：</strong>Data Fabric不应进入所有实时关键路径。设备/RAN内环使用本地状态、预编译策略与已验证模型；Near-RT使用边缘缓存、流式特征和受限动作；Non-RT/SMO承担历史、训练、语义、治理和策略；跨域只供给最小必要的数据产品。</div>
 
@@ -277,6 +395,8 @@
           <div>有界自治<br><small>白名单、回滚、证据</small></div>
         </div>
 
+        <h4>适配性论证后的剩余挑战</h4>
+        <p>挑战不是对Data Fabric适配性的否定，而是从通用数据架构走向通信级控制系统时必须补齐的工程与治理门槛。</p>
         <div class="table-scroll">
           <table>
             <thead><tr><th>关键技术挑战</th><th>为什么在6G更难</th><th>关键突破点</th><th>错误路线</th></tr></thead>
@@ -338,6 +458,132 @@
 
         <div class="callout"><strong>证据分层：</strong>「已有运营商部署」不等于「已形成跨域统一Fabric」；「厂商已发布产品」不等于「已广泛商用」；「标准贡献被合并进Draft TR」不等于「形成规范性TS」。本报告把产品、参考架构、标准输入、原型和愿景分别判断，避免用同一成熟度描述。</div>
         <div class="callout warn"><strong>竞争本质：</strong>设备商争夺「网络数据如何生成、减量、关联和转化为动作」；云/数据平台争夺「数据存储、Catalog、模型与Agent工具链」；API聚合商争夺「开发者入口、跨运营商一致性与计费」。长期胜负不在新网元名称，而在跨域语义、QoD、可信执行和生态分发能否形成复利。</div>
+
+        <article class="vendor-chapter" id="vendor-ericsson">
+          <div class="vendor-head">
+            <div class="vendor-mark">E</div>
+            <div>
+              <h3>2.3.1 Ericsson：以联邦数据管理连接网络自动化与API生态</h3>
+              <p>路线特征：演进式、平台组合式；从「采集一次、授权复用」扩展到AI-ready data mesh和6G common data plane。</p>
+            </div>
+            <div class="vendor-level">产品 C1/C2 · 架构 A · 愿景 V</div>
+          </div>
+
+          <div class="vendor-grid">
+            <figure class="figure">
+              <img src="data-fabric-assets/ericsson-data-ingestion-architecture.png" alt="Ericsson电信数据摄取架构，包含EDCA、DRG、DDC和全局数据目录">
+              <figcaption><span><a href="data-fabric-assets/ericsson-data-ingestion-architecture.png" download>下载架构图</a> · <a href="https://doi.org/10.23919/etr.2021.9904675" target="_blank" rel="noopener">原始论文</a></span><br><strong>图4｜Ericsson Data Ingestion Architecture。</strong>EDCA汇集源数据，经DRG跨域转发，DDC与Global Data Catalog支持外部应用集群和联邦数据湖。图源：Ericsson Technology Review 2021，Figure 2；为研究引用仅裁切页面空白，版权归Ericsson。</figcaption>
+            </figure>
+            <div>
+              <h4>架构主线：数据摄取 → 联邦网格 → 智能平台</h4>
+              <p>2021架构先解决重复采集：源数据进入EDCA，应用在客户侧或外部应用集群消费；DRG承担跨边界数据中继，DDC与Global Data Catalog协同形成联邦数据湖。2026 AI-ready data mesh又把数据源、摄取、refinement &amp; governance、consumer support串成面向AI与多Agent的参考架构，强调计算靠近数据、数据按产品与授权复用。<a href="#s9">[S9]</a><a href="#s10">[S10]</a></p>
+              <p>6G愿景中的common data plane进一步提出网络数据的采集、传输、潜在存储与治理，并由模型编排器选择「把数据送到智能」还是「把智能送到数据」。这是一条从现有摄取/自动化产品向6G分布式数据基础设施延伸的连续路线，但common data plane不是3GPP标准。<a href="#s9">[S9]</a></p>
+            </div>
+          </div>
+
+          <div class="evidence-strip">
+            <div><b>商用锚点</b>NWDAF、EIAP/rApps、CCES与2025 Telco DataOps Platform分别覆盖分析、自动化、暴露和数据加工。</div>
+            <div><b>参考架构</b>AI-ready data mesh、EFDL和早期数据摄取架构描述跨域数据管理机制。</div>
+            <div><b>6G愿景</b>Common Data Plane与intelligent fabric强调连接、算力、云、数据和AI协同。</div>
+            <div><b>生态外延</b>Aduna将CAMARA网络API聚合到跨运营商销售渠道，但它是独立合资公司。</div>
+          </div>
+          <div class="vendor-findings">
+            <div><b>优势控制点</b><span>全球运营商关系、SMO/RIC应用生态、Core分析和API渠道可形成演进复利。</span></div>
+            <div><b>关键短板</b><span>产品与架构名称较多，尚无运营商中立证据证明已组合成跨域统一Fabric。</span></div>
+            <div><b>竞争判断</b><span>Ericsson不会押注单一新网元，更可能用平台组合占据数据—自动化—API链路。</span></div>
+          </div>
+        </article>
+
+        <article class="vendor-chapter" id="vendor-huawei">
+          <div class="vendor-head">
+            <div class="vendor-mark">H</div>
+            <div>
+              <h3>2.3.2 Huawei：以专用数据面研究连接全栈智能与Agent闭环</h3>
+              <p>路线特征：研究架构激进、产品桥梁广；DO/DA/DCP提出独立数据协作逻辑，AUTINOps提供当前部署证据。</p>
+            </div>
+            <div class="vendor-level">部署 C2 · 产品 C1 · 原型 P · 标准输入 S</div>
+          </div>
+
+          <div class="vendor-grid">
+            <figure class="figure">
+              <img src="data-fabric-assets/huawei-6g-data-plane-architecture.jpg" alt="Huawei提出的6G数据平面架构，包含DO、DA、DCP和Data Spine">
+              <figcaption><span><a href="data-fabric-assets/huawei-6g-data-plane-architecture.jpg" download>下载架构图</a> · <a href="https://www.huawei.com/en/huaweitech/future-technologies/data-plane-design-ai-native-6g-networks" target="_blank" rel="noopener">原始页面</a></span><br><strong>图5｜Huawei提出的6G Data Plane。</strong>控制面由DO编排数据拓扑，DA/DPF在终端、网络和边缘执行数据/AI处理，DCP/Data Spine以发布订阅解耦生产者和消费者。图源：Huawei 2024，原图未修改；厂商研究架构，不是3GPP既定方案。</figcaption>
+            </figure>
+            <div>
+              <h4>架构主线：服务需求 → 数据拓扑 → 近源执行 → 异步分发</h4>
+              <p>DO将服务需求拆成采集、过滤、聚合、转换和分析等操作，依据DA/DPF能力形成任意拓扑；DA既可作为源，也可承载模型和数据处理；DCP用消息代理、队列和Pub/Sub分发非连接类数据。方案直接回应AI/ISAC的多输入、多处理、多输出问题，并给出与RocketMQ的原型比较。<a href="#s12">[S12]</a></p>
+              <p>但DO/DA/DCP的技术价值与标准状态必须分开：它证明了「拓扑编排、近源算子、异步多消费者」值得研究，不证明必须引入独立Data Plane或这些名称会进入3GPP。NET4AI同样属于network-for-AI的研究路径。<a href="#s13">[S13]</a></p>
+            </div>
+          </div>
+
+          <div class="evidence-strip">
+            <div><b>当前部署</b>AUTINOps/IOH案例覆盖无线、微波、IP、传输和能源域，显示跨域孪生与多Agent运维已进入生产。</div>
+            <div><b>产品桥梁</b>AI Core/AgenticCore、Network Digital Map与Open Gateway分别连接Core、IP孪生和生态开放。</div>
+            <div><b>研究架构</b>DO/DA/DCP与NET4AI针对6G AI/数据协作，不是现网产品或既定NF。</div>
+            <div><b>标准输入</b>SA5材料提出DMFW、Data QoS、Agent Fabric、NDT sandbox；部分内容进入Draft TR编辑过程。</div>
+          </div>
+          <div class="vendor-findings">
+            <div><b>优势控制点</b><span>RAN—Core—IP—Cloud—AI算力—终端覆盖广，可把近源处理与全域管理形成全栈协同。</span></div>
+            <div><b>关键短板</b><span>部署案例来自厂商/客户联合披露；研究架构、产品路线和标准共识之间仍有距离。</span></div>
+            <div><b>竞争判断</b><span>不宜复制DO/DA/DCP命名，应识别其背后的可组合算子、数据QoD和异步分发需求。</span></div>
+          </div>
+        </article>
+
+        <article class="vendor-chapter" id="vendor-nokia">
+          <div class="vendor-head">
+            <div class="vendor-mark">N</div>
+            <div>
+              <h3>2.3.3 Nokia：把Data Mesh产品化为自治网络的统一智能层</h3>
+              <p>路线特征：产品命名最直接；Autonomous Network Fabric + Data Suite连接电信数据产品、可观察性、解释性AI与多厂商自动化。</p>
+            </div>
+            <div class="vendor-level">产品 C1 · 有限部署证据 · 架构 A/S</div>
+          </div>
+
+          <div class="vendor-grid">
+            <figure class="figure">
+              <img src="data-fabric-assets/nokia-distributed-data-platform.png" alt="Nokia分布式电信数据平台蓝图，包含域湖仓、公共数据Fabric层、服务域和AIOps闭环">
+              <figcaption><span><a href="data-fabric-assets/nokia-distributed-data-platform.png" download>下载架构图</a> · <a href="https://www.nokia.com/asset/f/214288/" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图6｜Nokia分布式电信数据平台蓝图。</strong>接入、核心、传输等域分别管理数据采集/加工和域湖仓，由公共Data Fabric连接共享湖仓、服务域、AIOps与策略/目录/元数据横切能力。图源：Nokia Bell Labs Consulting，Figure 8；仅裁切页面空白，版权归Nokia。</figcaption>
+            </figure>
+            <div>
+              <h4>架构主线：域自治数据 → 公共Fabric → 数据产品 → 解释性自动化</h4>
+              <p>Nokia的分布式蓝图允许各网络域保留采集、加工、存储和AI闭环自治，通过common data fabric layer与common data lakehouse共享purpose-built data。2025 Autonomous Network Fabric把这一逻辑产品化为跨厂商统一智能层，组合统一数据管理、360°可观察、telco-trained AI、安全和自动化应用。<a href="#s23">[S23]</a></p>
+              <p>Data Suite进一步以可复用数据产品、TM Forum语义、目录、血缘、质量和多厂商适配支撑Glass-Box AI；与Google Cloud合作使其可在公有云、本地与混合云部署。它是三家中最接近「数据产品 + Fabric + 自治」显式商品组合的路线。<a href="#s24">[S24]</a></p>
+            </div>
+          </div>
+
+          <div class="evidence-strip">
+            <div><b>产品形态</b>Autonomous Network Fabric是统一智能层；Data Suite提供电信数据产品和Data Mesh工具。</div>
+            <div><b>规模信号</b>公开页面披露匿名Tier-1客户25万小区、27万报告/秒，属厂商数据而非独立审计。</div>
+            <div><b>6G主张</b>Holistic data framework/data prosumer强调目录、抽象、产品和AI生命周期。</div>
+            <div><b>生态协同</b>Google Cloud提供Vertex AI、BigQuery与混合云承载，但不定义网络域语义。</div>
+          </div>
+          <div class="vendor-findings">
+            <div><b>优势控制点</b><span>产品定义聚焦数据产品、多厂商语义、解释性与端到端可观察，贴近运营商自治诉求。</span></div>
+            <div><b>关键短板</b><span>命名客户与广泛部署证据弱于产品发布力度；大规模指标来自匿名案例。</span></div>
+            <div><b>竞争判断</b><span>Nokia证明Data Fabric已从白皮书概念进入可售产品，不能再仅作为相邻路线旁注。</span></div>
+          </div>
+        </article>
+
+        <h4>2.3.4 相邻竞合者：云、湖仓与API聚合商控制外层入口</h4>
+        <div class="grid-3">
+          <div class="card"><span class="tag study">云平台</span><h4>Microsoft / Google / AWS</h4><p>控制云基础设施、数据/模型运行时、Agent工具和开发者生态。Google Telecom Data Fabric仍为Private Preview；云平台通常依赖设备商/OSS伙伴完成网络采集与执行。</p></div>
+          <div class="card"><span class="tag fact">数据平台</span><h4>Databricks / Snowflake</h4><p>控制湖仓、Catalog、跨企业共享、流批与MLOps，适合作为可替换数据/AI后端；但不具备RAN快环、3GPP/O-RAN对象语义和网络动作安全的天然优势。</p></div>
+          <div class="card"><span class="tag fact">API渠道</span><h4>Aduna / CPaaS / Marketplace</h4><p>控制跨运营商聚合、开发者触达、目录、使用量和计费。其商业势能会倒逼运营商内部先完成数据产品化和服务行为一致性。</p></div>
+        </div>
+
+        <div class="status-summary">
+          <h3>2.4 行业现状小结：能力方向趋同，架构形态和控制权尚未收敛</h3>
+          <p>把标准与三家路线放在一起，可得出五项现状判断。它们比「谁已经拥有完整6G Data Fabric」更符合公开证据。</p>
+          <div class="grid-3">
+            <div class="card"><h4>共识已形成</h4><p>数据必须分布式接入、近源处理、统一语义/QoD、产品化供给，并与AI/Agent和闭环证据关联。</p></div>
+            <div class="card"><h4>标准未冻结</h4><p>SA2/SA5仍是Rel-20研究；独立数据面、新NF、增强既有功能或混合实现均未定型。</p></div>
+            <div class="card"><h4>产品先于6G</h4><p>EIAP/DataOps、AUTINOps、Nokia AN Fabric已用5G-A/OAM场景验证部分能力，成为6G前置桥梁。</p></div>
+            <div class="card"><h4>成熟度不均</h4><p>采集、湖仓、流和目录成熟；跨域主动元数据、QoD、Agent治理和高风险闭环仍在G1—G3。</p></div>
+            <div class="card"><h4>竞争跨层展开</h4><p>设备商争语义和执行，云/数据平台争运行时，聚合商争渠道；运营商争主权和可替换性。</p></div>
+            <div class="card"><h4>尚无绝对领先</h4><p>没有运营商中立证据证明任何一家已在多运营商、多厂商环境广泛部署完整跨域Fabric。</p></div>
+          </div>
+          <div class="big-quote">现阶段最稳健的断言是：<em>产业已经确认「需要哪些能力」，但仍在竞争「以什么架构组合、由谁控制、怎样证明价值」。</em></div>
+        </div>
       </div>
     </section>
 
@@ -355,15 +601,166 @@
           <div>可信控制与生态<br><small>策略·证明·回滚·计量</small></div>
         </div>
 
-        <div class="grid-2">
-          <div class="card"><span class="tag fact">趋势 1 · 高确定性</span><h4>网络数据从「采集对象」变为「可运营产品」</h4><p>数据输出将携带对象范围、事件时间、语义版本、QoD、用途、保留期、成本和负责人。跨域默认交换聚合指标、事件、特征与分析服务，而非原始高频流。</p></div>
-          <div class="card"><span class="tag fact">趋势 2 · 高确定性</span><h4>元数据事件化成为控制面输入</h4><p>结构、配置、质量、成本、权限与模型变化由扫描记录升级为事件，触发影响分析、契约测试、策略复核与发布闸门。开放元数据事件比单一中央目录更重要。</p></div>
-          <div class="card"><span class="tag fact">趋势 3 · 高确定性</span><h4>边缘子Fabric与两级控制将普及</h4><p>快环保留本地状态与预验证制品；Non-RT/SMO维护全局语义、策略和历史。断续连接的NTN/专网/边缘需要可离线运行、异步合并的局部数据能力。</p></div>
-          <div class="card"><span class="tag study">趋势 4 · 中高确定性</span><h4>Data Fabric与AI Fabric开始耦合</h4><p>数据目录、特征库、模型注册表、Agent工具目录和策略图逐步关联。编排器将共同决定数据、模型与算力位置；但数据治理与Agent治理不会合并为一个无边界“大脑”。</p></div>
-          <div class="card"><span class="tag study">趋势 5 · 中高确定性</span><h4>NDT由规划工具走向闭环安全闸门</h4><p>高风险动作先过反事实测试、冲突检测和风险评分，再灰度执行并回滚。瓶颈不是孪生可视化，而是同步滞后、保真度阈值与生产证据是否可量化。</p></div>
-          <div class="card"><span class="tag study">趋势 6 · 中高确定性</span><h4>QoD将成为6G数据标准竞争焦点</h4><p>通用完整性/新鲜度不足以描述无线数据。采样覆盖、时空代表性、配置一致性、测量误差和训练—服务分布偏差将进入数据契约与模型验收。</p></div>
-          <div class="card"><span class="tag study">趋势 7 · 中等确定性</span><h4>跨域数据空间与网络API逐步汇合</h4><p>内部Fabric负责生产可信产品，Open Gateway/CAMARA负责服务API，TM Forum负责运营接口，数据空间提供身份、合同与用途约束。商业成功取决于垂直场景和结果定价。</p></div>
-          <div class="card"><span class="tag infer">趋势 8 · 低—中确定性</span><h4>专用数据面可能被「能力集合」吸收</h4><p>DO/DA/DCP等研究验证了编排、近源执行与异步分发需求，但最终标准可能采用新功能、增强既有NF或混合实现，不必固化为一个独立平面或统一网元。</p></div>
+        <div class="trend-chapters">
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T1</div>
+              <div><h3>网络数据从「采集对象」变为「可运营产品」</h3><p>数据价值的计量单位将从表、Topic和PB，转为满足明确消费者与SLO的数据产品。</p></div>
+              <span class="tag fact">高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>AI、NDT和跨域自动化需要稳定契约，而不是一次性取数。Nokia Data Suite已把电信语义、血缘、质量和多厂商数据包装为可复用产品；Ericsson AI-ready data mesh也强调数据按产品和授权复用。Open Gateway则从消费侧要求API在不同运营商具有一致行为。<a href="#s10">[S10]</a><a href="#s24">[S24]</a></p>
+                <p>因此，跨域默认输出将从原始流转向事件、聚合指标、特征、模型输入和分析服务；每个产品必须携带对象范围、事件时间、语义版本、QoD、用途、保留期、成本和Owner。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>先在移动性、节能、故障、QoE和模型训练形成少量高复用产品。</li><li>用消费者数、契约合规、重复采集减少和单位有效任务成本评价。</li><li>若只有Marketplace页面、没有Owner/SLO/退出机制，仍是资产目录，不是产品化。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>厂商Data Suite、开放契约、产品目录进入平台基线</span></div><div><b>验证指标</b><span>复用率、交付周期、契约违规、单位成本</span></div><div><b>反证条件</b><span>长期无人消费、仍为每个场景重复采集/清洗</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T2</div>
+              <div><h3>元数据事件化成为可信控制面的输入</h3><p>目录将从「定期盘点」升级为感知结构、配置、质量、权限、成本和模型变化的事件网络。</p></div>
+              <span class="tag fact">高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>当模型和Agent直接消费网络数据时，目录延迟数小时意味着错误结构、过期配置或权限变化会进入生产决策。只有把Schema、拓扑、配置、QoD、血缘和使用行为形成事件，系统才能触发影响分析、契约测试、策略复核和发布闸门。OpenLineage等事件规范已经验证工程可行性。<a href="#s27">[S27]</a></p>
+                <p>在6G中，元数据事件还需要包含小区/波束/频段、配置版本、事件时间与模型/动作作用域；这比企业IT表字段血缘更接近「网络状态证据」。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>跨O1/E2/A1/R1和Core统一事件标识与Correlation ID。</li><li>高风险事件先触发阻断/审批，低风险事件自动生成测试或建议。</li><li>事件总线不能成为快环同步依赖；快环使用预编译策略和本地缓存。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>血缘/配置/QoD变更自动触发CI与策略检查</span></div><div><b>验证指标</b><span>变更发现P95、影响覆盖率、误报/漏报率</span></div><div><b>反证条件</b><span>目录更新仍靠人工扫描，变更后才由事故发现</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T3</div>
+              <div><h3>边缘子Fabric与两级控制将成为主流部署形态</h3><p>集中协调与分布执行并存：全局控制面管理语义和策略，本地子Fabric保证时限、自治和断链生存。</p></div>
+              <span class="tag fact">高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>RAN快环、MEC、专网和NTN无法依赖远端联邦查询；同时，跨域模型训练、策略与治理又需要全局一致。Ericsson提出数据/智能动态放置，Nokia蓝图保留域湖仓并通过公共Fabric协同，Huawei DA/DPF研究近源算子，三条路线在部署原则上趋同。<a href="#s9">[S9]</a><a href="#s12">[S12]</a><a href="#s20">[S20]</a></p>
+                <p>形态上更可能是「SMO/Non-RT全局控制 + RAN/Edge局部执行」：全局下发版本化模型、策略和数据产品定义，本地执行过滤、特征、推理与受限动作，并异步回传证据。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>明确&lt;10ms、Near-RT、Non-RT和训练时标的在线依赖清单。</li><li>子Fabric需支持断链运行、缓存保留、冲突合并和版本回退。</li><li>过度中央化会产生时延/单点风险；过度分散会产生语义与策略漂移。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>近源算子与全局目录/策略解耦，支持异步证据回流</span></div><div><b>验证指标</b><span>断链可用、P99、跨域字节、策略同步时延</span></div><div><b>反证条件</b><span>所有查询/审批必须经过中心，或各域无法共享语义</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T4</div>
+              <div><h3>Data Fabric与AI/Agent Fabric开始耦合，但不会合并成无边界“大脑”</h3><p>数据、特征、模型、工具、Agent和策略目录将互相引用，编排对象从数据管道扩展为数据—模型—算力—动作组合。</p></div>
+              <span class="tag study">中高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>AI原生网络要求训练、验证、部署和推理共同访问可信数据；Agent执行还需要工具目录、身份和委托权限。3GPP已分别研究Network for AI、AI for Network、数据框架和计算支持；厂商平台也把数据产品、telco模型、Agent工作流和可观察性放到同一套产品叙事。<a href="#s4">[S4]</a><a href="#s23">[S23]</a></p>
+                <p>耦合的核心是共同证据图，而不是把数据治理、模型治理和Agent治理混成一个系统：数据有用途/保留责任，模型有性能/漂移责任，Agent有身份/权限/动作责任。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>关联数据产品、特征、模型、提示、工具、策略、动作与结果版本。</li><li>采用身份—策略—可观察—证据（IPOE）约束Agent运行时。<a href="#s28">[S28]</a></li><li>先在OAM/Non-RT辅助与低风险动作落地，快环保留确定性执行。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>数据/模型/Agent目录可关联，权限与审计跨工具传播</span></div><div><b>验证指标</b><span>越权拦截、证据完整率、模型—数据偏差、回滚</span></div><div><b>反证条件</b><span>只有聊天入口，无身份、作用域和动作证据</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T5</div>
+              <div><h3>NDT由规划工具走向高风险闭环的证据闸门</h3><p>数字孪生的竞争点将从可视化和仿真规模，转向能否为生产动作提供可量化的反事实证据。</p></div>
+              <span class="tag study">中高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>网络自治提高后，直接在现网试错不可接受。NDT可在动作前复现拓扑、配置、流量、故障与策略，验证候选动作的收益、冲突和副作用；SA5已具备NDT管理规范与Rel-20增强研究，Huawei/Nokia/运营平台也把孪生纳入闭环。<a href="#s29">[S29]</a></p>
+                <p>但孪生不是数学意义上的安全证明。只有输入快照、模型版本、同步滞后、覆盖场景、预测误差和生产回放都可量化，孪生结果才可成为放行动作的证据。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>为每类闭环定义保真度、最大同步滞后和可接受误差。</li><li>把「孪生通过」与灰度、风险预算、熔断和人工接管组合。</li><li>持续用生产结果校准孪生；超过误差门槛退回建议模式。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>NDT进入变更审批和Agent动作强制路径</span></div><div><b>验证指标</b><span>同步滞后、预测误差、场景覆盖、生产回放一致</span></div><div><b>反证条件</b><span>只有可视化模型，无误差门槛和生产反馈</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T6</div>
+              <div><h3>QoD将成为6G数据标准与产品竞争的核心标尺</h3><p>无线数据的可用性由「在哪个网络状态、以何种采样和误差产生」决定，不能只用完整性和新鲜度描述。</p></div>
+              <span class="tag study">中高确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>同一个KPI在不同小区、频段、波束、UE群、配置版本和采样窗口下不可直接比较；训练数据数量很大，也可能因覆盖偏差导致模型失效。Huawei在SA5输入中提出Data QoS，Nokia强调数据有效性与电信语义，Ericsson强调质量与生命周期，表明竞争正在从连接器数量转向数据可信度。<a href="#s10">[S10]</a><a href="#s14">[S14]</a><a href="#s24">[S24]</a></p>
+                <p>预计QoD会先以厂商契约和场景指标出现，再逐步收敛公共属性；短期难形成覆盖所有数据族的单一评分。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>建立按数据族定义的质量信封，而非一个总分。</li><li>把采样覆盖、时空代表性、同步、配置、标签来源和训练—服务偏差纳入。</li><li>把QoD与产品SLO、模型验收和动作风险绑定。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>QoD进入数据契约、模型卡与跨域暴露接口</span></div><div><b>验证指标</b><span>覆盖、误差、漂移、配置一致、suspect/incomplete</span></div><div><b>反证条件</b><span>只统计记录量、接口成功率或单一完整性分数</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T7</div>
+              <div><h3>内部Data Fabric、数据空间与网络API将形成分层商业链</h3><p>内部数据治理解决「可信生产」，网络API解决「标准消费」，Operate API和聚合渠道解决「规模运营」。</p></div>
+              <span class="tag study">中等确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>CAMARA把QoD、位置验证等能力包装为开发者API，TM Forum Operate API支持伙伴入驻、目录和用量，Aduna/CPaaS/云市场负责跨运营商分发。外部服务的一致性最终依赖内部对象语义、QoD、权限、血缘和计量；内部Fabric不成熟，外部API只会把差异暴露给开发者。<a href="#s16">[S16]</a><a href="#s18">[S18]</a></p>
+                <p>数据空间提供可验证身份、合同协商和用途控制，可补上跨组织交换的信任层，但不适合直接进入RAN快环。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>先产品化内部数据/分析服务，再映射CAMARA或行业API。</li><li>计价从每次API调用走向交易、会话或业务结果。</li><li>商业成功取决于多运营商覆盖、行为一致、责任与撤销机制。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>Service API + Operate API + 聚合渠道协同认证</span></div><div><b>验证指标</b><span>跨网一致率、付费调用、行业转化、收入/成本</span></div><div><b>反证条件</b><span>API数量增加但无跨网一致、活跃开发者和收入</span></div></div>
+          </article>
+
+          <article class="trend-chapter">
+            <div class="trend-title">
+              <div class="trend-no">T8</div>
+              <div><h3>专用数据面概念可能被标准化为「能力集合」，而非固定新网元</h3><p>需求会留下，拓扑和名称未必留下：发现、编排、处理、Pub/Sub、存储、暴露与治理可能分布到新旧功能中。</p></div>
+              <span class="tag infer">低—中确定性</span>
+            </div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么成立</h4>
+                <p>SA2 KI#21明确研究数据发现、采集、处理、存储和暴露，但不要求所有用例共享同一组NF/服务/流程；SA5 DMFW研究管理侧数据框架；Huawei DO/DA/DCP只是候选原型。3GPP通常倾向在复用既有能力、引入新功能和复杂度之间折中。<a href="#s5">[S5]</a><a href="#s12">[S12]</a><a href="#s26">[S26]</a></p>
+                <p>因此，未来更可能收敛的是能力、信息模型、生命周期和接口行为；部署上可由增强DCCF/ADRF/NWDAF/MDA、SMO服务、边缘Agent或新NF组合实现。</p>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul><li>标准跟踪聚焦能力语义与接口，不押注某个厂商网元名称。</li><li>产品架构采用可插拔运行时与多后端，保留标准演进空间。</li><li>如果独立平面增加时延、状态和治理重复，应退回能力增强方案。</li></ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>Rel-21收敛功能与接口，但允许多种部署拓扑</span></div><div><b>验证指标</b><span>复用率、互操作、额外时延/状态、迁移成本</span></div><div><b>反证条件</b><span>3GPP明确冻结独立统一数据平面及必选NF</span></div></div>
+          </article>
         </div>
 
         <h3>趋势判断的四条主线</h3>
@@ -459,6 +856,11 @@
           <li id="s24"><a href="https://www.nokia.com/ai-and-analytics/data-suite/">Nokia Data Suite</a>：数据网格、目录、血缘、质量、TM Forum语义与多厂商适配。</li>
           <li id="s25"><a href="https://cloud.google.com/telecom-data-fabric">Google Cloud Telecom Data Fabric</a>：截至研究截点标注Private Preview，不能与已发布产品同档比较。</li>
           <li id="s26"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491">3GPP TR 32.801-01</a>：Rel-20 Draft Technical Report，研究6G OAM与管理侧数据框架等内容。</li>
+          <li id="s27"><a href="https://openlineage.io/docs/">OpenLineage Documentation</a>：开放运行/血缘事件模型，支撑元数据事件化的工程方向。</li>
+          <li id="s28"><a href="https://www.tmforum.org/catalysts/projects/C26.0.933/zerotrust-agents-for-autonomous-networks">TM Forum, Zero-Trust Agents for Autonomous Networks</a>：Identity、Policy、Observability、Evidence（IPOE）可信Agent模式。</li>
+          <li id="s29"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin management</a>：NDT管理能力、数据同步与生命周期边界。</li>
+          <li id="s30"><a href="https://doi.org/10.23919/etr.2021.9904675">Ericsson Technology Review, Data ingestion architecture for telecom applications</a>, 2021：EDCA、DRG、DDC、GDC及联邦数据湖。</li>
+          <li id="s31"><a href="https://www.nokia.com/asset/f/214288/">Nokia, Data mesh and distributed data architecture for telco networks</a>：域湖仓、公共Data Fabric、AIOps与服务域蓝图。</li>
         </ol>
         <div class="boundary"><strong>研究边界：</strong>本文综合了两份仓库内深度研究的第一性原理、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的官方资料。标题中的“Data Fabric × 6G”为战略分析框架，不是ITU、3GPP或O-RAN正式网元名称。</div>
       </div>
