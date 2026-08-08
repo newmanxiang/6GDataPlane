@@ -113,7 +113,9 @@ tr:last-child td{border-bottom:0}
       <a href="#matrix">对照矩阵</a>
       <a href="#core">核心能力</a>
       <a href="#maturity">成熟度</a>
-      <a href="#assess">评估方法</a>
+<a href="#assess">评估方法</a>
+      <a href="#deep-comp">组件深潜</a>
+      <a href="#conclusion">结论</a>
       <a href="#sources">来源</a>
     </nav>
   </div>
@@ -639,9 +641,82 @@ tr:last-child td{border-bottom:0}
   </div>
 </section>
 
-<section id="gaps">
+<section id="deep-comp">
   <div class="wrap">
-    <div class="section-kicker">07 · Limits</div>
+    <div class="section-kicker">07 · Component Deep Dive</div>
+    <h2>关键组成项：各自成熟到什么程度、如何验收</h2>
+    <p class="lead">组成争论常停在「要不要这一项」。更有效的做法是：对每一项定义<em>存在</em>、<em>可用</em>、<em>主动</em>三档证据，再决定是否纳入本阶段范围。</p>
+
+    <h3>1. 目录与元数据层</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>技术元数据扫描、血缘、检索已高度商品化；业务术语表与所有权字段也常见。瓶颈转移到：多工具目录联邦、运行时/使用元数据回流，以及「变更事件」能否进入统一总线。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p><strong>存在：</strong>关键源可检索。<strong>可用：</strong>Owner、schema、血缘对关键产品完整。<strong>主动：</strong>schema/权限/质量变化在约定时延内触发影响分析或工单，而不是等人发现。</p>
+      </div>
+    </div>
+
+    <h3>2. 主动元数据与推荐自动化</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>这是 Gartner 定义的「点睛之笔」，也是成熟度落差最大处。厂商可展示相似列推荐、映射建议、异常提示；但跨平台自动修复、自动授权、自动生产发布仍受组织风险偏好限制。公开实证少于演示。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>把自动化拆成「建议类 / 低风险执行类 / 高风险执行类」。只有建议类稳定提升人效，且低风险执行类具备审计与回滚时，才可宣称进入增强式阶段。禁止用聊天式问答替代该验收。</p>
+      </div>
+    </div>
+
+    <h3>3. 集成与交付层（虚拟 + 物理）</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>学术 CCS 强调虚拟集成，但工程现实是多模式并存：高频复用与重变换仍常物化；CDC/流成为近实时标配；虚拟化适合探索、联邦与受治访问。成熟标志不是「只用一种」，而是「由元数据与策略选择模式」。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>对同一业务对象，能否解释为何批/流/虚拟被选中（时延、成本、源负载、驻留）？模式切换是否留下运营元数据？重复管道是否下降？</p>
+      </div>
+    </div>
+
+    <h3>4. 治理、安全与用途控制</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>身份、RBAC/ABAC、动态脱敏、分类标签已较成熟；难点是用途限制（purpose）、跨系统删除传播、以及策略在虚拟化/物化/API/RAG 多路径上的一致强制。Data Space 议题把用途控制推到组织间，内部尚未做稳时不宜外扩。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>抽检：同一敏感字段经 SQL、API、导出、向量检索四条路径，策略结论是否一致？撤销访问或删除请求的端到端生效时间是否可测？</p>
+      </div>
+    </div>
+
+    <h3>5. 语义、产品与 Marketplace</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>业界现状</h4>
+        <p>术语表普及，企业级 ontology 运营稀缺。数据产品概念升温，但很多「产品」仍是挂了描述的表。Marketplace 若没有契约、SLO、成本与退出，只会制造新的影子资产目录。</p>
+      </div>
+      <div class="card">
+        <h4>验收口径</h4>
+        <p>产品必须具备 Owner、schema/语义版本、质量目标、访问方式、许可/用途、消费者与退出条件。复用率与契约违规率比「上架数量」更能衡量成熟度。</p>
+      </div>
+    </div>
+
+    <h3>6. GenAI / Agent 操作面</h3>
+    <div class="callout warn">
+      <strong>当前位置：</strong>适合作为 G2/G3 的加速器（检索、草拟、调查、编排辅助），不适合作为 G0/G1 的替代。若基础元数据与权限不可信，Agent 只会更快传播错误。对生产动作必须最小权限、短时凭据、完整审计，并保留人工接管。
+    </div>
+  </div>
+</section>
+
+<section id="gaps" class="alt">
+  <div class="wrap">
+    <div class="section-kicker">08 · Limits</div>
     <h2>证据缺口与误判风险</h2>
     <div class="grid-3">
       <div class="card">
@@ -660,9 +735,27 @@ tr:last-child td{border-bottom:0}
   </div>
 </section>
 
+<section id="conclusion">
+  <div class="wrap">
+    <div class="section-kicker">09 · Conclusion</div>
+    <h2>结论：如何在「组成繁多」中做决定</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h4>关于组成</h4>
+        <p>业界繁多不是因为存在很多互不兼容的真理，而是因为分析师设计、厂商平台、产品品牌与学术能力模型在用同一词汇回答不同问题。可操作的收敛方式是：承认三种实现骨架，守住 CCS/核心能力，把其余项按场景增益排序。</p>
+      </div>
+      <div class="card">
+        <h4>关于成熟度</h4>
+        <p>2026 年的总体图景是：品类与组件「可买」程度高于组织「可运营」程度；多数企业在被动目录与增强集成之间；G3 影子闭环可见但未普及；G4 有界自治与跨域供给仍属受控前沿。成熟度应用闸门与指标证明，而不是用组成图长度宣称。</p>
+      </div>
+    </div>
+    <div class="big-quote">决策口诀：<em>先定主骨架，再守核心集，后补扩展项；先拿 G1/G2 证据，再谈 G3/G4 自动化。</em>凡不能通过「元数据→动作」「策略→强制」「场景→闸门」三检验的方案，组成再完整也应降级。</div>
+  </div>
+</section>
+
 <section id="sources" class="alt">
   <div class="wrap">
-    <div class="section-kicker">08 · Sources</div>
+    <div class="section-kicker">10 · Sources</div>
     <h2>主要公开来源</h2>
     <div class="sources">
       <ol>
