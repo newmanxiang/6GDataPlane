@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="结合数据编织与6G数据架构研究，对需求目标、行业竞争、产业趋势及3年/5年判断进行战略研判。">
+  <title>6G 数据架构 × 数据编织：行业环境、竞争格局与趋势研判</title>
+  <style>
+    :root{
+      --navy:#071f3d;--navy2:#0b3157;--ink:#13293d;--muted:#5d7183;--paper:#f4f7f8;
+      --white:#fff;--teal:#0f9f9a;--cyan:#5eb6e4;--lime:#cae85e;--orange:#ff8a4c;
+      --red:#c84f48;--line:#d8e2e7;--soft:#e9f3f4;--blue:#2667ff;
+      --shadow:0 18px 48px rgba(7,31,61,.09);--radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.76}
+    a{color:#087c79;text-underline-offset:3px}
+    img,svg{max-width:100%;height:auto}
+    .progress{position:fixed;left:0;top:0;height:4px;width:0;z-index:100;background:linear-gradient(90deg,var(--orange),var(--lime),var(--cyan))}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(7,31,61,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+    .nav-inner{width:min(1200px,calc(100% - 40px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+    .brand{font-weight:850;color:#fff;letter-spacing:.05em;font-size:13px}.brand span{color:var(--lime)}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap}.nav-links a{font-size:12px;color:#d6e6f2;text-decoration:none}.nav-links a:hover{color:var(--lime)}
+    .hero{min-height:84vh;color:#fff;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:
+      radial-gradient(650px 650px at 88% 5%,rgba(94,182,228,.23),transparent 60%),
+      radial-gradient(620px 500px at 15% 12%,rgba(15,159,154,.18),transparent 60%),
+      linear-gradient(145deg,#06172e,#0b3157 62%,#104450)}
+    .hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);background-size:27px 27px;mask-image:linear-gradient(105deg,transparent 8%,#000 80%)}
+    .hero-inner,.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+    .hero-inner{position:relative;z-index:2;padding:74px 0 62px}
+    .classification{display:inline-flex;border:1px solid rgba(255,255,255,.25);padding:6px 11px;border-radius:4px;font-size:11px;letter-spacing:.12em;color:#dbe9f4}
+    .eyebrow{margin-top:22px;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800;color:var(--cyan)}
+    h1{font-size:clamp(44px,7.2vw,90px);line-height:1.02;letter-spacing:-.045em;margin:22px 0 24px;max-width:1050px}
+    h1 span{color:var(--lime)}
+    .hero-sub{font-size:clamp(17px,2vw,24px);line-height:1.55;color:#cfe0ec;max-width:900px}
+    .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.18);margin-top:48px;padding-top:22px}
+    .hero-meta>div{padding:0 16px;border-right:1px solid rgba(255,255,255,.16)}.hero-meta>div:first-child{padding-left:0}.hero-meta>div:last-child{border:0}
+    .hero-meta strong{display:block;color:var(--cyan);font-size:11px;letter-spacing:.1em;margin-bottom:4px}.hero-meta span{font-size:14px;color:#edf5fa}
+    main section{padding:86px 0;scroll-margin-top:54px}main section:nth-child(even){background:#eaf1f4}
+    .section-kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-size:12px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .section-kicker i{font-style:normal;font-family:Georgia,serif;color:var(--orange);font-size:26px}
+    h2{font-size:clamp(30px,4.4vw,52px);line-height:1.13;letter-spacing:-.035em;color:var(--navy);margin:14px 0 18px}
+    h3{font-size:24px;line-height:1.3;color:var(--navy);margin:44px 0 16px}h4{font-size:17px;margin:0 0 8px;color:var(--navy)}
+    .lead{font-size:18px;line-height:1.7;color:#455b6c;max-width:940px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .card p{margin:0;color:#526777}.card ul{padding-left:19px;margin:10px 0 0;color:#526777}.card li{margin:5px 0}
+    .tag{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;font-size:10px;font-weight:850;letter-spacing:.07em;margin-bottom:10px}
+    .fact{background:#dff4ed;color:#08736e}.study{background:#e6eefb;color:#315fae}.infer{background:#fff0e7;color:#a6541c}.risk{background:#fce5e5;color:#9a3f3f}
+    .callout{border-left:4px solid var(--teal);background:#edf8f6;border-radius:0 14px 14px 0;padding:18px 21px;margin:22px 0;color:#344d5d}
+    .callout.warn{border-left-color:var(--orange);background:#fff1e8}.callout strong{color:var(--navy)}
+    .big-quote{border:1px solid #b9d6d6;background:linear-gradient(135deg,#082d4d,#0c4651);border-radius:18px;padding:25px 28px;color:#fff;font-size:20px;line-height:1.6;margin:26px 0}
+    .big-quote em{font-style:normal;color:var(--lime)}
+    .mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 20px rgba(7,31,61,.05)}
+    .stat b{display:block;font-size:21px;color:var(--navy)}.stat span{font-size:13px;color:var(--muted)}
+    .figure{margin:28px 0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow)}
+    .figure svg{display:block;width:100%}.figure img{display:block;width:100%;border-radius:12px}
+    figcaption{padding:12px 8px 2px;font-size:12.5px;color:var(--muted);line-height:1.55}
+    .table-scroll{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;margin:20px 0}
+    table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:14px 15px;text-align:left;vertical-align:top;border-bottom:1px solid #e1e8eb;font-size:13.5px}
+    th{background:#0b3157;color:#fff;font-size:12px;letter-spacing:.03em}tr:last-child td{border-bottom:0}
+    .logic-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;margin:24px 0}
+    .logic-chain>div{position:relative;background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px;text-align:center;font-size:13px;font-weight:750;color:var(--navy)}
+    .logic-chain>div:not(:last-child):after{content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);z-index:2;color:var(--orange);font-size:20px}
+    .stack{display:grid;gap:8px;margin:24px 0}.layer{display:grid;grid-template-columns:68px 1fr 205px;gap:13px;align-items:center;border-radius:14px;padding:14px 18px}
+    .layer .id{font-weight:900;font-size:15px}.layer .body b{display:block;font-size:15px}.layer .body span,.layer .status{font-size:12.5px}
+    .l6{background:#eefaf7}.l5{background:#dcf1ec}.l4{background:linear-gradient(90deg,#0f9f9a,#2667ff);color:#fff}.l4 .body b{color:var(--lime)}
+    .l3{background:#173f50;color:#fff}.l2{background:#315b6c;color:#fff}.l1{background:#526f7c;color:#fff}.lx{background:#fff0e7;border:1px dashed var(--orange)}
+    .m-high{color:#0a746e}.m-mid{color:#c26125}.m-low{color:#9a3f3f}
+    .timeline{display:grid;grid-template-columns:130px 1fr;gap:0;margin:24px 0}.timeline>*{padding:18px;border-bottom:1px solid #ccdadd}
+    .timeline .year{font-size:18px;font-weight:900;color:var(--navy);border-right:1px solid #ccdadd}.timeline .event{background:rgba(255,255,255,.55)}
+    .landscape{display:grid;grid-template-columns:150px repeat(3,1fr);gap:8px;margin:24px 0}
+    .landscape>div{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;font-size:12.5px}.landscape .head{background:var(--navy);color:#fff;font-weight:800}.landscape .axis{font-weight:800;color:var(--navy);background:#e7f1f3}
+    .horizon{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+    .horizon-card{border-radius:20px;padding:28px;min-height:320px;color:#fff;background:linear-gradient(145deg,#0b3157,#0f746f)}
+    .horizon-card:nth-child(2){background:linear-gradient(145deg,#12375f,#354c7b)}
+    .horizon-card .yr{font-size:34px;color:var(--lime);font-weight:900}.horizon-card h3{margin:4px 0 16px;color:#fff}.horizon-card ul{padding-left:19px}.horizon-card li{margin:8px 0;color:#dbeaf3}
+    .judgements{display:grid;gap:10px}.judgement{display:grid;grid-template-columns:56px 1fr 120px;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}
+    .judgement .n{font:italic 700 24px Georgia,serif;color:var(--orange)}.judgement p{margin:2px 0;color:#4e6575}.certainty{text-align:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:850}
+    .source-list{columns:2;column-gap:34px;padding-left:22px}.source-list li{break-inside:avoid;margin:0 0 11px;font-size:12.5px;color:#586e7d}
+    .boundary{font-size:12px;color:#6a7c89;background:#e7edef;padding:12px 15px;border-radius:12px;margin-top:18px}
+    footer{background:#06172e;color:#97adbd;padding:30px 0;font-size:12px}
+    @media(max-width:900px){
+      .nav-links{display:none}.hero-meta,.grid-4,.mini-stats{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon{grid-template-columns:1fr}
+      .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
+      .landscape{grid-template-columns:1fr}.judgement{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+    }
+    @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats{grid-template-columns:1fr}main section{padding:62px 0}}
+    @media print{.nav,.progress{display:none}.hero{min-height:auto;break-after:page}main section{padding:36px 0}.card,.figure{box-shadow:none;break-inside:avoid}.wrap,.hero-inner{width:94%}a{color:inherit}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="nav" aria-label="章节导航">
+    <div class="nav-inner">
+      <div class="brand">6G DATA ARCHITECTURE <span>× DATA FABRIC</span></div>
+      <div class="nav-links">
+        <a href="#need">需求和目标</a>
+        <a href="#industry">行业环境与竞争</a>
+        <a href="#trends">产业趋势预判</a>
+        <a href="#horizon">3年看透·5年看清</a>
+        <a href="#sources">证据来源</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="classification">产业战略研究 · 模板前四部分 · 非公司正式立场</div>
+      <div class="eyebrow">6G DATA ARCHITECTURE · DATA FABRIC · INDUSTRY OUTLOOK</div>
+      <h1>6G 数据架构 × 数据编织<br><span>行业环境、竞争格局与趋势研判</span></h1>
+      <p class="hero-sub">从「连接如何建立」转向「数据如何生产、理解、治理并驱动可信行动」：围绕6G数据架构的范式转变、数据编织能力全景、标准与厂商竞争，形成3年可验证、5年可定位的产业判断。</p>
+      <div class="hero-meta">
+        <div><strong>对应模板</strong><span>需求目标 · 行业现状 · 趋势判断 · 3/5年总结</span></div>
+        <div><strong>核心标准锚点</strong><span>ITU IMT-2030 · 3GPP RAN/SA2/SA5 · O-RAN</span></div>
+        <div><strong>研究对象</strong><span>RAN · Core · SMO/RIC · Edge/Cloud · 生态暴露</span></div>
+        <div><strong>研究截点</strong><span>2026 年 8 月</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="need">
+      <div class="wrap">
+        <div class="section-kicker"><i>01</i> Requirement & objective</div>
+        <h2>需求和目标</h2>
+        <p class="lead">本报告需要解决的不是「是否要再建一个数据平台」，而是：当6G网络同时成为数据生产者、AI训练/推理载体、感知系统和自治执行体时，如何建立一套跨RAN、Core、管理域与边云的可信数据能力，并判断哪些能力将在标准与产业竞争中成为真正的控制点。</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <span class="tag fact">需求 1</span>
+            <h4>识别架构范式变化</h4>
+            <p>回答6G为何不能只沿用「会话连接 + 中央分析」思路，以及数据管理为何从后台支撑能力上升为AI原生、通感一体、数字孪生与自治闭环的共同底座。</p>
+          </div>
+          <div class="card">
+            <span class="tag fact">需求 2</span>
+            <h4>建立统一能力地图</h4>
+            <p>用数据编织把分散的目录、语义、质量、集成、编排、数据产品、安全和可观察能力组织成同一逻辑控制面，并明确快环/慢环、控制面/执行面的边界。</p>
+          </div>
+          <div class="card">
+            <span class="tag fact">需求 3</span>
+            <h4>看清标准与竞争窗口</h4>
+            <p>区分3GPP/O-RAN既定积木、Rel-20研究、Rel-21规范窗口、厂商候选架构与商业产品，避免把研究主张误判为标准结论，也避免错过语义与QoD话语权。</p>
+          </div>
+        </div>
+
+        <h3>报告目标：形成四个可交付判断</h3>
+        <div class="mini-stats">
+          <div class="stat"><b>1 张范式图</b><span>解释连接架构如何演进为数据—智能—行动架构。</span></div>
+          <div class="stat"><b>1 套能力栈</b><span>统一数据编织与6G数据生命周期，不重复造体系。</span></div>
+          <div class="stat"><b>1 个竞争矩阵</b><span>比较标准域与Ericsson/Huawei/Nokia等主张。</span></div>
+          <div class="stat"><b>2 个时间窗</b><span>3年看标准收敛与工程底座，5年看控制点与生态格局。</span></div>
+        </div>
+
+        <figure class="figure">
+          <svg viewBox="0 0 1120 340" role="img" aria-labelledby="goal-title goal-desc">
+            <title id="goal-title">从数据观测到可信行动的研究目标</title>
+            <desc id="goal-desc">从物理网络事实，经近源处理、数据编织控制面、模型策略到网络动作和反馈。</desc>
+            <defs>
+              <linearGradient id="goalG" x1="0" x2="1"><stop stop-color="#ff8a4c"/><stop offset=".48" stop-color="#cae85e"/><stop offset="1" stop-color="#5eb6e4"/></linearGradient>
+              <filter id="sh"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-opacity=".12"/></filter>
+            </defs>
+            <path d="M90 165 H1030" stroke="url(#goalG)" stroke-width="5" stroke-linecap="round"/>
+            <g filter="url(#sh)">
+              <g fill="#fff" stroke="#cddde2"><rect x="35" y="95" width="160" height="140" rx="18"/><rect x="215" y="95" width="160" height="140" rx="18"/><rect x="395" y="70" width="330" height="190" rx="22" fill="#082f4d" stroke="#5eb6e4"/><rect x="745" y="95" width="160" height="140" rx="18"/><rect x="925" y="95" width="160" height="140" rx="18"/></g>
+            </g>
+            <g font-family="sans-serif" text-anchor="middle">
+              <text x="115" y="135" fill="#071f3d" font-size="14" font-weight="800">网络与环境事实</text><text x="115" y="166" fill="#526777" font-size="12">RAN · Core · 云</text><text x="115" y="188" fill="#526777" font-size="12">终端 · 感知 · 业务</text>
+              <text x="295" y="135" fill="#071f3d" font-size="14" font-weight="800">近源处理</text><text x="295" y="166" fill="#526777" font-size="12">过滤 · 聚合 · 特征</text><text x="295" y="188" fill="#526777" font-size="12">匿名 · 时间对齐</text>
+              <text x="560" y="116" fill="#cae85e" font-size="15" font-weight="850">数据编织逻辑控制面</text><text x="560" y="151" fill="#fff" font-size="13">目录 · 语义 · QoD · 血缘 · 契约</text><text x="560" y="178" fill="#fff" font-size="13">策略 · 编排 · 模型/数据版本 · 证据</text><text x="560" y="215" fill="#5eb6e4" font-size="12">统一的是理解与约束，不是所有存储与时延</text>
+              <text x="825" y="135" fill="#071f3d" font-size="14" font-weight="800">智能与孪生</text><text x="825" y="166" fill="#526777" font-size="12">训练 · 推理 · NDT</text><text x="825" y="188" fill="#526777" font-size="12">意图 · 策略 · Agent</text>
+              <text x="1005" y="135" fill="#071f3d" font-size="14" font-weight="800">行动与反馈</text><text x="1005" y="166" fill="#526777" font-size="12">控制 · 开放 · 变现</text><text x="1005" y="188" fill="#526777" font-size="12">效果 · 回滚 · 审计</text>
+              <text x="560" y="315" fill="#5d7183" font-size="13">目标不是搬运更多原始数据，而是让每次数据使用与网络动作都可解释、可约束、可验证、可回退</text>
+            </g>
+          </svg>
+          <figcaption><strong>图1｜研究对象是一条「事实—数据—智能—行动」证据链。</strong>数据编织位于逻辑控制面，近源执行与快环保持分布式。</figcaption>
+        </figure>
+
+        <div class="big-quote">核心需求可压缩为一句话：<em>6G必须把数据从「网络运行副产物」升级为「可发现、可理解、可组合、可约束、可证明的生产要素」</em>；否则AI原生只会把数据孤岛与错误动作自动化。</div>
+      </div>
+    </section>
+
+    <section id="industry">
+      <div class="wrap">
+        <div class="section-kicker"><i>02</i> Industry & competition</div>
+        <h2>行业环境或竞争现状</h2>
+        <p class="lead">行业处于「愿景已定、研究展开、规范未冻、厂商抢位」的窗口。ITU已给出IMT-2030总体框架；3GPP Rel-20推进6G研究，Rel-21将成为首个规范性6G Release；数据框架、AI使能与跨域自动化仍在形成关键问题与候选方案。<a href="#s1">[S1]</a><a href="#s2">[S2]</a><a href="#s3">[S3]</a></p>
+
+        <h3>2.1 6G数据架构的范式转变与数据管理层需求</h3>
+        <p>5G的主架构叙事仍以连接、会话、网络功能和暴露为中心，数据分析主要集中在NWDAF、MDA等特定能力。6G的变化不是「多一个数据湖」，而是网络中几乎每个域都可能同时生产数据、消费数据、运行模型并执行动作：RAN产生无线测量、调度、波束、拓扑与感知数据；Core关联会话、策略与业务上下文；SMO/RIC承载管理与智能控制；边云提供训练、推理与孪生运行时。Nokia也明确把data prosumer、数据目录、抽象、产品与生命周期列为AI-native 6G使能能力。<a href="#s8">[S8]</a></p>
+
+        <figure class="figure">
+          <svg viewBox="0 0 1120 530" role="img" aria-labelledby="shift-title shift-desc">
+            <title id="shift-title">6G数据架构范式转变</title>
+            <desc id="shift-desc">5G以连接和中心分析为主，6G走向分布式数据生产消费、近源处理和可信智能控制。</desc>
+            <defs><linearGradient id="shiftG" x1="0" x2="1"><stop stop-color="#0f9f9a"/><stop offset="1" stop-color="#2667ff"/></linearGradient></defs>
+            <rect x="30" y="28" width="445" height="445" rx="24" fill="#edf3f6" stroke="#d3dfe5"/>
+            <rect x="645" y="28" width="445" height="445" rx="24" fill="#071f3d" stroke="#5eb6e4"/>
+            <text x="60" y="75" fill="#071f3d" font-size="24" font-weight="850">5G/5G-A 主导范式</text>
+            <text x="675" y="75" fill="#cae85e" font-size="24" font-weight="850">6G 数据—智能原生范式</text>
+            <g font-family="sans-serif">
+              <g fill="#fff" stroke="#d3dfe5">
+                <rect x="70" y="115" width="160" height="76" rx="14"/><rect x="275" y="115" width="160" height="76" rx="14"/>
+                <rect x="170" y="245" width="165" height="88" rx="14"/><rect x="170" y="385" width="165" height="58" rx="14"/>
+              </g>
+              <g text-anchor="middle" fill="#071f3d">
+                <text x="150" y="145" font-size="14" font-weight="800">RAN / 接入</text><text x="150" y="169" font-size="12">测量与用户流量</text>
+                <text x="355" y="145" font-size="14" font-weight="800">Core / 管理</text><text x="355" y="169" font-size="12">会话、策略、OAM</text>
+                <text x="252" y="278" font-size="14" font-weight="800">中心分析能力</text><text x="252" y="302" font-size="12">NWDAF / MDA / 湖仓</text>
+                <text x="252" y="420" font-size="13" font-weight="800">报表 / 优化建议</text>
+              </g>
+              <path d="M150 191 L225 245 M355 191 L280 245 M252 333 V385" stroke="#8ba2b1" stroke-width="3"/>
+              <g fill="url(#shiftG)" stroke="#5eb6e4">
+                <rect x="680" y="108" width="150" height="64" rx="13"/><rect x="900" y="108" width="150" height="64" rx="13"/>
+                <rect x="680" y="220" width="150" height="64" rx="13"/><rect x="900" y="220" width="150" height="64" rx="13"/>
+                <rect x="770" y="344" width="190" height="78" rx="16"/>
+              </g>
+              <g text-anchor="middle" fill="#fff">
+                <text x="755" y="137" font-size="14" font-weight="800">RAN数据生产/消费</text><text x="755" y="157" font-size="11">无线事实 · ISAC · 本地AI</text>
+                <text x="975" y="137" font-size="14" font-weight="800">Core / 业务上下文</text><text x="975" y="157" font-size="11">意图 · 会话 · 暴露</text>
+                <text x="755" y="249" font-size="14" font-weight="800">边云算力与孪生</text><text x="755" y="269" font-size="11">训练 · 推理 · 仿真</text>
+                <text x="975" y="249" font-size="14" font-weight="800">SMO / RIC / OAM</text><text x="975" y="269" font-size="11">跨时标策略与闭环</text>
+                <text x="865" y="376" font-size="14" font-weight="850">可信数据管理层</text><text x="865" y="400" font-size="12">语义 · QoD · 契约 · 策略 · 证据</text>
+              </g>
+              <g stroke="#cae85e" stroke-width="2.5" fill="none" marker-end="url(#none)">
+                <path d="M755 172 V220"/><path d="M975 172 V220"/><path d="M755 284 L820 344"/><path d="M975 284 L910 344"/><path d="M830 140 H900"/><path d="M830 252 H900"/>
+              </g>
+            </g>
+            <path d="M505 250 H615" stroke="#ff8a4c" stroke-width="5" stroke-linecap="round"/><path d="M602 235 L620 250 L602 265" fill="none" stroke="#ff8a4c" stroke-width="5"/>
+            <text x="562" y="222" fill="#c55d20" text-anchor="middle" font-size="13" font-weight="850">连接中心 → 数据/智能中心</text>
+            <text x="560" y="510" fill="#526777" text-anchor="middle" font-size="13">范式变化不是取消网络功能，而是给分布式网络增加统一的数据理解、策略与证据层</text>
+          </svg>
+          <figcaption><strong>图2｜范式转变。</strong>从「特定分析功能消费数据」转向「每个域都是数据生产者/消费者（prosumer）」。右侧为本文综合，不是3GPP既定统一架构。</figcaption>
+        </figure>
+
+        <div class="grid-3">
+          <div class="card"><span class="tag fact">AI原生</span><h4>数据成为模型生命周期燃料</h4><p>训练、验证、部署、监控、回滚都依赖数据/特征/模型/策略版本一致。AI错误将从「判断偏差」升级为「网络动作风险」。</p></div>
+          <div class="card"><span class="tag fact">通感一体</span><h4>网络成为高敏感数据生成器</h4><p>ISAC产生位置、轨迹、目标与环境数据，必须近源最小化、用途绑定、短期保留，并把置信度作为产品属性。</p></div>
+          <div class="card"><span class="tag fact">边云一体</span><h4>算力和数据位置共同决定架构</h4><p>快环不能依赖远端目录；慢环可做跨域优化。架构要能在「数据到智能」和「智能到数据」之间动态选择。</p></div>
+          <div class="card"><span class="tag study">数字孪生</span><h4>网络状态需要一致快照</h4><p>NDT必须关联拓扑、配置、遥测、模型与业务上下文；没有事件时间、版本和血缘，仿真结果不能成为闭环证据。</p></div>
+          <div class="card"><span class="tag study">跨域自治</span><h4>局部智能必须服从全局约束</h4><p>RAN、Core、云、业务多个Agent可能目标冲突，需要意图分解、策略仲裁、风险预算、租约、熔断和人工接管。</p></div>
+          <div class="card"><span class="tag infer">生态开放</span><h4>数据与能力将以产品/API外延</h4><p>Open Gateway正在推动标准化网络API；但真正变现取决于跨运营商一致语义、计量、商业渠道与行业工作流，而非接口数量。</p></div>
+        </div>
+
+        <h3>2.2 数据编织能力全景、演进、与6G结合及关键挑战</h3>
+        <p>数据编织不是6G新增网元，而是一种跨异构、分布式环境的数据管理与集成设计：以主动元数据、语义、质量、策略和编排构成逻辑控制面，在不强制物理集中前提下交付数据产品。映射到6G后，其核心价值是把「网络事实—近源处理—模型策略—网络动作—效果反馈」连成证据链。</p>
+
+        <div class="stack" aria-label="6G数据编织六层能力栈">
+          <div class="layer l6"><div class="id">L6</div><div class="body"><b>业务、生态与网络行动</b><span>网络API · 行业数据空间 · RAG/Agent · 运营闭环 · 自动控制</span></div><div class="status m-low">成熟度：传统消费高；受治Agent低</div></div>
+          <div class="layer l5"><div class="id">L5</div><div class="body"><b>数据产品与可信自助</b><span>产品目录 · 数据契约 · 语义指标 · QoD/SLO · 计量与价值</span></div><div class="status m-mid">成熟度：试点增多，跨域语义偏弱</div></div>
+          <div class="layer l4"><div class="id">L4</div><div class="body"><b>主动元数据与智能控制面</b><span>目录 · 血缘 · RAN/Core语义 · 策略 · 推荐 · 影响分析 · 自动化</span></div><div class="status">成熟度：被动目录成熟，主动闭环中等</div></div>
+          <div class="layer l3"><div class="id">L3</div><div class="body"><b>集成、编排与跨时标数据平面</b><span>批/变更捕获/流 · 联邦查询 · O1/E2/A1/R1适配 · 缓存 · 工作流</span></div><div class="status">成熟度：中高；多接口统一语义不足</div></div>
+          <div class="layer l2"><div class="id">L2</div><div class="body"><b>近源处理、运行时与存储节点</b><span>DU/CU/MEC处理 · SMO/Non-RT · 湖仓 · 特征/向量/图 · NDT</span></div><div class="status">成熟度：组件高；跨域编排中等</div></div>
+          <div class="layer l1"><div class="id">L1</div><div class="body"><b>分布式权威数据源</b><span>UE · RU/DU/CU · RIC · Core NF · O-Cloud · OSS/BSS · ISAC/NTN</span></div><div class="status">成熟度：数据存在；权威语义分散</div></div>
+          <div class="layer lx"><div class="id">横切</div><div class="body"><b>通信级保障</b><span>身份 · 质量 · 安全隐私 · 时间同步 · 驻留 · 审计 · 可观察 · 能耗/成本</span></div><div class="status m-mid">难点：跨路径一致强制与可证明</div></div>
+        </div>
+
+        <div class="callout"><strong>结合原则：</strong>Data Fabric不应进入所有实时关键路径。设备/RAN内环使用本地状态、预编译策略与已验证模型；Near-RT使用边缘缓存、流式特征和受限动作；Non-RT/SMO承担历史、训练、语义、治理和策略；跨域只供给最小必要的数据产品。</div>
+
+        <h4>能力演进不是「平台越大越先进」，而是控制面逐步主动化</h4>
+        <div class="logic-chain">
+          <div>被动采集<br><small>有源、有管道</small></div>
+          <div>可观察<br><small>目录、血缘、QoD</small></div>
+          <div>可产品化<br><small>契约、语义、SLO</small></div>
+          <div>影子闭环<br><small>建议与结果对照</small></div>
+          <div>有界自治<br><small>白名单、回滚、证据</small></div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>关键技术挑战</th><th>为什么在6G更难</th><th>关键突破点</th><th>错误路线</th></tr></thead>
+            <tbody>
+              <tr><td><strong>跨域语义与身份</strong></td><td>O1 DN、E2对象、Core会话、切片、云资源与业务实体标识体系不同</td><td>版本化对象模型、Correlation ID、语义映射与权威源</td><td>把接口互通等同语义统一</td></tr>
+              <tr><td><strong>RAN数据QoD</strong></td><td>采样代表性、时间/空间粒度、配置版本直接影响模型与闭环</td><td>质量信封：覆盖、时效、同步误差、suspect/incomplete、配置一致性</td><td>只统计记录数或PB规模</td></tr>
+              <tr><td><strong>快环/慢环协同</strong></td><td>从亚10ms到月度训练跨越多个数量级</td><td>本地快环、异步元数据、分层缓存、模型/策略制品同步</td><td>让远端目录成为在线依赖</td></tr>
+              <tr><td><strong>模型—数据—动作证据链</strong></td><td>模型输出可直接改变网络状态，训练服务偏差会扩大故障半径</td><td>数据/特征/模型/策略/动作版本绑定，NDT预演与效果回流</td><td>只管模型仓库，不管数据与动作</td></tr>
+              <tr><td><strong>Agent治理与冲突</strong></td><td>多域Agent目标、权限与时限不同，可能局部最优伤害全局</td><td>身份、策略、可观察、证据（IPOE）、租约、冲突仲裁、人工接管</td><td>把自然语言界面当作自治</td></tr>
+              <tr><td><strong>数据主权与隐私</strong></td><td>ISAC/位置/终端/行业数据敏感，跨组织用途难持续强制</td><td>近源最小化、用途策略、可信执行、远程证明、删除传播</td><td>以接口加密替代全生命周期治理</td></tr>
+              <tr><td><strong>多厂商互操作</strong></td><td>接口可标准化，目录、QoD、策略、模型与Agent语义仍可能锁定</td><td>开放元数据事件、数据契约、可移植运行时与一致性测试</td><td>把单厂商端到端等同开放</td></tr>
+              <tr><td><strong>单位经济性</strong></td><td>高频遥测、跨云传输、训练与孪生能耗可能吞噬收益</td><td>近源减量、按消费者SLO采集、成本/能耗纳入编排</td><td>默认采集越多越好</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="figure">
+          <img src="data-fabric-assets/6g-ddaa-architecture.png" alt="面向6G的数据驱动分布式自治架构图">
+          <figcaption><strong>图3｜面向6G的数据驱动分布式自治架构（DDAA）。</strong>图中网络控制、数据与智能单元通过接口协同，说明数据与智能已成为6G研究的一等对象。来源：<em>Electronics</em> 2026, 15(1), 102，CC BY 4.0；学术架构，不是3GPP规范。<a href="#s17">[S17]</a></figcaption>
+        </figure>
+
+        <h3>2.3 标准与厂商竞争格局</h3>
+        <p>标准竞争的核心不是「是否出现一个名为Data Fabric的新网元」，而是哪些组织定义数据的来源、语义、质量、发现、处理、暴露、安全和行动边界。当前职责分散且互补：RAN定义无线事实与接口，SA5管理数据与AI/NDT生命周期，SA2研究系统级6G数据框架，O-RAN开放RAN管理与智能控制，TM Forum/GSMA/CAMARA连接自治运营与商业暴露。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>标准域</th><th>当前可确认进展</th><th>对6G Data Fabric的贡献</th><th>不能扩大化为</th></tr></thead>
+            <tbody>
+              <tr><td><strong>ITU-R IMT-2030</strong></td><td>M.2160已生效；定义六类使用场景及泛在智能、通感、孪生等趋势</td><td>给出6G目标与能力边界</td><td>未定义「6G数据编织」网元或接口</td></tr>
+              <tr><td><strong>3GPP Rel-20 / Rel-21</strong></td><td>Rel-20以研究为主；Rel-21为首个规范性6G Release，Stage 2计划2028-06冻结</td><td>2026–2028是架构方案收敛与标准输入窗口</td><td>Rel-20研究文本不是最终规范</td></tr>
+              <tr><td><strong>3GPP SA2</strong></td><td>TR 23.801-01仍为Draft；KI#21正式名为“6G data framework in SA WG2”</td><td>研究系统级发现、采集、处理、存储、暴露等候选能力</td><td>不预判统一框架/网元，也不主导RAN内部协议</td></tr>
+              <tr><td><strong>3GPP RAN / SA5</strong></td><td>RAN研究无线场景、协议与测量；SA5已有PM/CM/FM/Trace、MDA、AI/ML和NDT管理积木</td><td>无线事实、管理数据、模型/孪生生命周期的主锚点</td><td>SA5管理服务不是毫秒级RAN数据总线</td></tr>
+              <tr><td><strong>O-RAN</strong></td><td>WG2定义Non-RT RIC/A1/R1；WG3定义Near-RT RIC/E2；WG10定义O1/OAM</td><td>按时标提供RAN数据、策略、模型和动作通道</td><td>不是跨O1/O2/A1/E2/R1统一语义总线</td></tr>
+              <tr><td><strong>TM Forum / GSMA / CAMARA</strong></td><td>AN等级、AI/数据治理、Open Gateway服务与Operate API认证推进</td><td>把受治理网络能力包装为可运营、可计量、可聚合的生态产品</td><td>不定义无线快环或内部数据处理实现</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>厂商路线：不是简单的「Mesh vs Data Plane」二选一</h4>
+        <div class="landscape" role="table" aria-label="厂商竞争矩阵">
+          <div class="head">竞争维度</div><div class="head">Ericsson</div><div class="head">Huawei</div><div class="head">Nokia / 平台生态</div>
+          <div class="axis">数据架构主张</div>
+          <div>AI-ready data mesh、联邦数据湖、common data plane；强调采集一次、授权复用和数据/智能动态放置。</div>
+          <div>6G专用Data Plane研究；DO/DA/DCP进行数据拓扑编排、近源操作与发布订阅分发。</div>
+          <div>Data mesh / distributed data architecture、data prosumer、数据目录与AI原生使能；云与数据平台争夺目录/湖仓/AI工具入口。</div>
+          <div class="axis">可确认产品锚点</div>
+          <div>NWDAF、EIAP/rApps、CCES、EFDL相关架构、Aduna/API生态。</div>
+          <div>AI Core/AgenticCore、iMaster NCE Network Digital Map、Open Gateway渠道等；不同产品线不可自动拼成统一平台。</div>
+          <div>NWDAF/自动化平台、Bell Labs UNEXT愿景；Microsoft/AWS/Google等提供云、AI、数据平台和API分发渠道。</div>
+          <div class="axis">潜在控制点</div>
+          <div>运营商覆盖 + SMO/RIC应用生态 + Core/API + 数据集成平台。</div>
+          <div>RAN—Core—IP—Cloud—AI算力—终端全栈协同与标准输入能力。</div>
+          <div>开放标准话语 + 多厂商中立叙事；超大云/数据平台控制开发者、Catalog、Agent工具链。</div>
+          <div class="axis">证据边界</div>
+          <div>尚无公开证据证明统一跨RAN/Core/OSS/BSS的商用Fabric已广泛部署。</div>
+          <div>DO/DA/DCP仍是候选研究架构，不是3GPP既定网元；Agentic主张需区分愿景与商用覆盖。</div>
+          <div>Data mesh/UNEXT属参考路线；云平台的企业数据优势不自动转化为通信快环与RAN语义优势。</div>
+        </div>
+
+        <div class="callout warn"><strong>竞争本质：</strong>设备商争夺「网络数据如何生成、减量、关联和转化为动作」；云/数据平台争夺「数据存储、Catalog、模型与Agent工具链」；API聚合商争夺「开发者入口、跨运营商一致性与计费」。长期胜负不在新网元名称，而在跨域语义、QoD、可信执行和生态分发能否形成复利。</div>
+      </div>
+    </section>
+
+    <section id="trends">
+      <div class="wrap">
+        <div class="section-kicker"><i>03</i> Industry trend judgement</div>
+        <h2>产业趋势预判：数据编织与6G如何结合</h2>
+        <p class="lead">趋势不是八个平行产品，而是一条因果链：数据越分布，越需要元数据事件；机器消费越多，越需要显式语义与契约；自动化权限越大，越需要策略、证明和可回滚性；跨组织流通越多，越需要数据空间式信任与商业运营。</p>
+
+        <div class="logic-chain">
+          <div>分布式数据生产<br><small>RAN/Core/Edge/ISAC</small></div>
+          <div>元数据事件化<br><small>发现变化与影响</small></div>
+          <div>语义与产品契约<br><small>机器可理解、可组合</small></div>
+          <div>智能/Agent行动<br><small>建议→低风险执行</small></div>
+          <div>可信控制与生态<br><small>策略·证明·回滚·计量</small></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card"><span class="tag fact">趋势 1 · 高确定性</span><h4>网络数据从「采集对象」变为「可运营产品」</h4><p>数据输出将携带对象范围、事件时间、语义版本、QoD、用途、保留期、成本和负责人。跨域默认交换聚合指标、事件、特征与分析服务，而非原始高频流。</p></div>
+          <div class="card"><span class="tag fact">趋势 2 · 高确定性</span><h4>元数据事件化成为控制面输入</h4><p>结构、配置、质量、成本、权限与模型变化由扫描记录升级为事件，触发影响分析、契约测试、策略复核与发布闸门。开放元数据事件比单一中央目录更重要。</p></div>
+          <div class="card"><span class="tag fact">趋势 3 · 高确定性</span><h4>边缘子Fabric与两级控制将普及</h4><p>快环保留本地状态与预验证制品；Non-RT/SMO维护全局语义、策略和历史。断续连接的NTN/专网/边缘需要可离线运行、异步合并的局部数据能力。</p></div>
+          <div class="card"><span class="tag study">趋势 4 · 中高确定性</span><h4>Data Fabric与AI Fabric开始耦合</h4><p>数据目录、特征库、模型注册表、Agent工具目录和策略图逐步关联。编排器将共同决定数据、模型与算力位置；但数据治理与Agent治理不会合并为一个无边界“大脑”。</p></div>
+          <div class="card"><span class="tag study">趋势 5 · 中高确定性</span><h4>NDT由规划工具走向闭环安全闸门</h4><p>高风险动作先过反事实测试、冲突检测和风险评分，再灰度执行并回滚。瓶颈不是孪生可视化，而是同步滞后、保真度阈值与生产证据是否可量化。</p></div>
+          <div class="card"><span class="tag study">趋势 6 · 中高确定性</span><h4>QoD将成为6G数据标准竞争焦点</h4><p>通用完整性/新鲜度不足以描述无线数据。采样覆盖、时空代表性、配置一致性、测量误差和训练—服务分布偏差将进入数据契约与模型验收。</p></div>
+          <div class="card"><span class="tag study">趋势 7 · 中等确定性</span><h4>跨域数据空间与网络API逐步汇合</h4><p>内部Fabric负责生产可信产品，Open Gateway/CAMARA负责服务API，TM Forum负责运营接口，数据空间提供身份、合同与用途约束。商业成功取决于垂直场景和结果定价。</p></div>
+          <div class="card"><span class="tag infer">趋势 8 · 低—中确定性</span><h4>专用数据面可能被「能力集合」吸收</h4><p>DO/DA/DCP等研究验证了编排、近源执行与异步分发需求，但最终标准可能采用新功能、增强既有NF或混合实现，不必固化为一个独立平面或统一网元。</p></div>
+        </div>
+
+        <h3>趋势判断的四条主线</h3>
+        <div class="timeline">
+          <div class="year">工程主线</div><div class="event"><strong>从管道到事件化控制面：</strong>批/流/虚拟化继续存在，差异化转向元数据激活、跨接口语义、QoD、影响分析和策略强制。</div>
+          <div class="year">标准主线</div><div class="event"><strong>从研究问题到规范能力包：</strong>Rel-20验证候选方案，Rel-21选择最小可标准化集合；统一网元概率低于统一语义/接口/流程概率。</div>
+          <div class="year">产品主线</div><div class="event"><strong>从平台功能到场景闭环：</strong>客户不再为「数据湖规模」买单，而为故障定位、能耗、移动性、QoE、模型泛化和开放收入的可测结果买单。</div>
+          <div class="year">竞争主线</div><div class="event"><strong>从设备份额到控制点份额：</strong>谁掌握数据语义、QoD、近源运行时、模型/策略证据链和API渠道，谁更可能获得软件与生态复利。</div>
+        </div>
+
+        <div class="big-quote">产业断言：<em>6G Data Fabric不会以一个“大一统平台”胜出，而会以「统一控制语义 + 分布式执行 + 场景化数据产品 + 有界智能」的组合形态进入网络。</em>标准化重点将是可互操作的能力与证据，而不是统一所有存储、协议和时延。</div>
+      </div>
+    </section>
+
+    <section id="horizon">
+      <div class="wrap">
+        <div class="section-kicker"><i>04</i> 3-year / 5-year outlook</div>
+        <h2>趋势判断总结：3年看透、5年看清</h2>
+        <p class="lead">「看透」指在标准冻结前看透不会改变的底层需求与可验证能力；「看清」指到首批6G商用准备期，看清真正形成产品控制点、生态分工和商业闭环的路线。</p>
+
+        <div class="horizon">
+          <div class="horizon-card">
+            <div class="yr">未来 1–3 年</div>
+            <h3>看透：标准收敛前，先看不变量</h3>
+            <ul>
+              <li><strong>标准窗口：</strong>Rel-21于2027年确定包与Stage 1，2028年完成Stage 2/3主要冻结；数据框架将从候选功能向最小规范集合收敛。</li>
+              <li><strong>工程底座：</strong>元数据事件、跨O1/E2/A1/R1对象映射、RAN QoD、数据契约和模型/动作血缘成为领先试点基线。</li>
+              <li><strong>产品形态：</strong>SMO/Non-RT数据能力、近源处理运行时、NDT预演、受治理RAG/Agent先以外挂或增强组件落地，不会一次性重构全网。</li>
+              <li><strong>竞争焦点：</strong>厂商继续提交统一框架/数据面/Agent Fabric主张，但市场将用现网闭环收益和多厂商互操作过滤营销。</li>
+              <li><strong>商业现实：</strong>Open Gateway供给侧与认证趋于成熟，瓶颈转向行业工作流、跨运营商行为一致和结果定价。</li>
+            </ul>
+          </div>
+          <div class="horizon-card">
+            <div class="yr">未来 3–5 年</div>
+            <h3>看清：谁拥有控制点，谁获得复利</h3>
+            <ul>
+              <li><strong>架构落位：</strong>控制面集中协调、数据/算力分布执行成为主形态；独立数据面是否存在不再重要，能力是否可组合和可证明更重要。</li>
+              <li><strong>智能边界：</strong>低风险网络动作进入有界自治；高风险动作形成「策略—孪生—灰度—回滚—证据」强制路径，全面无人治理仍不可信。</li>
+              <li><strong>产业分层：</strong>设备商控制网络语义与近源执行，云/数据平台控制模型与开发工具，聚合商控制API分发；运营商要求数据主权和可替换性。</li>
+              <li><strong>价值产品：</strong>移动性、节能、故障、QoE、模型生命周期及ISAC行业数据形成可计量产品；原始数据出售不成为主模式。</li>
+              <li><strong>胜负手：</strong>多厂商语义映射、QoD标准、Agent可信运行时、NDT证据门槛和跨域产品运营能力形成长期壁垒。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>十条趋势判断</h3>
+        <div class="judgements">
+          <div class="judgement"><div class="n">01</div><div><h4>6G一定需要通用数据能力，但未必需要一个独立「数据面」网元</h4><p>采集、处理、发现、暴露与治理需求明确；实现可能增强既有NF、引入新功能或采用混合架构。</p></div><div class="certainty fact">高确定性</div></div>
+          <div class="judgement"><div class="n">02</div><div><h4>RAN数据语义与QoD将比原始数据规模更稀缺</h4><p>无线数据能否用于模型与闭环取决于时空粒度、采样代表性、配置版本和测量误差。</p></div><div class="certainty fact">高确定性</div></div>
+          <div class="judgement"><div class="n">03</div><div><h4>Data Fabric的价值重心将从「集成」上移到「可信智能控制」</h4><p>管道和存储趋于商品化，元数据激活、策略、契约、证据与回滚形成差异。</p></div><div class="certainty fact">高确定性</div></div>
+          <div class="judgement"><div class="n">04</div><div><h4>快环不会被中央Fabric接管</h4><p>亚秒与毫秒路径继续本地执行；Fabric通过异步方式供应模型、策略、摘要并回收证据。</p></div><div class="certainty fact">高确定性</div></div>
+          <div class="judgement"><div class="n">05</div><div><h4>Agent将先辅助、后有界执行，不会直接跨越治理成熟度</h4><p>检索、调查、工单编排先规模化；生产动作必须绑定身份、授权、作用域、租约与回滚。</p></div><div class="certainty study">中高确定性</div></div>
+          <div class="judgement"><div class="n">06</div><div><h4>NDT会成为高风险闭环的重要证据源，但不是绝对安全证明</h4><p>保真度、同步滞后与场景覆盖必须量化；孪生通过不等于生产环境无风险。</p></div><div class="certainty study">中高确定性</div></div>
+          <div class="judgement"><div class="n">07</div><div><h4>Mesh、Fabric、Lakehouse将组合，而不是决出唯一赢家</h4><p>Mesh解决领域责任，Fabric解决跨域技术控制，Lakehouse承载存储计算，Data Space解决组织间信任。</p></div><div class="certainty fact">高确定性</div></div>
+          <div class="judgement"><div class="n">08</div><div><h4>网络API商业化将倒逼内部数据产品化</h4><p>外部一致性、安全与计量无法建立在内部语义、QoD和血缘不稳定之上。</p></div><div class="certainty study">中高确定性</div></div>
+          <div class="judgement"><div class="n">09</div><div><h4>云与数据平台将成为设备商之外的关键竞合方</h4><p>它们控制Catalog、模型、Agent工具链和开发者入口，但难独自替代通信实时性与RAN语义资产。</p></div><div class="certainty study">中等确定性</div></div>
+          <div class="judgement"><div class="n">10</div><div><h4>跨企业自主签约与完全无人治理五年内仍不会成为普遍现实</h4><p>法律责任、语义协商、用途持续强制和异常接管仍要求人和组织承担责任。</p></div><div class="certainty infer">中等确定性</div></div>
+        </div>
+
+        <div class="callout warn"><strong>最终边界：</strong>上述3年/5年判断是基于截至2026年8月的标准进度、公开产品与研究主张推演，不等于3GPP已采纳方案，也不构成任何厂商产品承诺。真正的趋势验证点是：Rel-21规范文本、跨厂商互操作、现网闭环收益与可持续商业收入。</div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-kicker"><i>A</i> Evidence & sources</div>
+        <h2>证据来源与口径</h2>
+        <p class="lead">优先引用官方标准组织与厂商一手材料；按「正式标准/已发布事实」「研究/预标准」「本文趋势推演」分级。厂商白皮书用于识别路线，不用于证明行业共识或普遍商用。</p>
+        <ol class="source-list">
+          <li id="s1"><a href="https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en">ITU-R M.2160, IMT-2030 Framework</a>：六类使用场景、能力与总体目标。</li>
+          <li id="s2"><a href="https://www.3gpp.org/news-events/3gpp-news/rel21-timeline">3GPP, Timeline for Release 21</a>, 2026-06-10：Stage 1/2/3与ASN.1/OpenAPI冻结时间。</li>
+          <li id="s3"><a href="https://www.3gpp.org/specifications-technologies/releases/release-21">3GPP Release 21</a>：首个规范性6G Release定位。</li>
+          <li id="s4"><a href="https://www.3gpp.org/technologies/6g-architecture">3GPP, 6G Architecture to enable capabilities Beyond Connectivity</a>：AI、ISAC、数据框架、计算支持四类Beyond Connectivity任务。</li>
+          <li id="s5"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4423">3GPP TR 23.801-01</a>：Rel-20 Draft；KI#21为“6G data framework in SA WG2”。</li>
+          <li id="s6"><a href="https://www.3gpp.org/dynareport/28104.htm">3GPP TS 28.104, Management Data Analytics</a>：SA5管理数据分析服务。</li>
+          <li id="s7"><a href="https://www.o-ran.org/technical-groups">O-RAN Technical Groups</a>：WG2/WG3/WG10等职责；另见<a href="https://www.o-ran.org/specifications">规范入口</a>。</li>
+          <li id="s8"><a href="https://www.nokia.com/6g/unlocking-the-full-potential-of-ai-native-6g-through-standards/">Nokia, AI-native 6G through standards</a>：data prosumer、目录、抽象、产品及AI生命周期主张。</li>
+          <li id="s9"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/co-creating-a-cyber-physical-world">Ericsson, Co-creating a cyber-physical world</a>：common data plane与数据/智能放置主张。</li>
+          <li id="s10"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/future-proof-data-management-for-ai-networks">Ericsson, From data mess to AI-ready data mesh</a>：AI网络数据管理参考架构。</li>
+          <li id="s11"><a href="https://www.ericsson.com/en/ran/intelligent-ran-automation/intelligent-automation-platform">Ericsson Intelligent Automation Platform</a>：EIAP/rApp等公开产品能力。</li>
+          <li id="s12"><a href="https://www.huawei.com/en/huaweitech/future-technologies/data-plane-design-ai-native-6g-networks">Huawei, Data Plane Design for AI-Native 6G Networks</a>：DO/DA/DCP候选研究架构。</li>
+          <li id="s13"><a href="https://www.huawei.com/en/huaweitech/future-technologies/net4ai-supporting-ai-as-a-sevice-6g">Huawei, NET4AI</a>：6G AIaaS控制/计算与数据通信研究。</li>
+          <li id="s14"><a href="https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5_Workshop_on_6G_Rel20/Huawei%20view%20on%20SA5%20Rel-20%206G%20Priorities.pdf">Huawei view on SA5 Rel-20 6G Priorities</a>：数据框架、Data QoS、Agent Fabric等厂商输入。</li>
+          <li id="s15"><a href="https://www.tmforum.org/opendigitalframework/introducing-ai-and-an/">TM Forum AI & Autonomous Networks Framework</a>：AN等级、AI/数据治理体系。</li>
+          <li id="s16"><a href="https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-and-tm-forum-partner-to-advance-network-api-monetization-at-scale/">GSMA/TM Forum Open Gateway certification</a>：服务API与Operate API互操作和商业运营。</li>
+          <li id="s17"><a href="https://www.mdpi.com/2079-9292/15/1/102">Electronics 2026, Data-Driven Distributed Autonomous Architecture for 6G</a>：本地配图来源，CC BY 4.0。</li>
+          <li id="s18"><a href="https://www.ericsson.com/en/press-releases/2025/7/ericsson-announces-completion-of-aduna-transaction">Ericsson / Aduna transaction</a>：API聚合生态结构事实。</li>
+          <li id="s19"><a href="https://www.huawei.com/en/news/2026/3/mwc-6g-agenticcore">Huawei Agentic Core Networks, MWC 2026</a>：6G-oriented Agentic Core厂商愿景。</li>
+          <li id="s20"><a href="https://www.nokia.com/6g/6g-system-architecture-where-innovation-meets-evolution-for-a-more-sustainable-and-connected-world/">Nokia 6G System Architecture</a>：AI原生、数据框架与端到端生命周期观点。</li>
+        </ol>
+        <div class="boundary"><strong>研究边界：</strong>本文综合了两份仓库内深度研究的第一性原理、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的官方资料。标题中的“Data Fabric × 6G”为战略分析框架，不是ITU、3GPP或O-RAN正式网元名称。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">《6G数据架构 × 数据编织：行业环境、竞争格局与趋势研判》 · 对应 template.md 前四部分 · 2026-08<br>战略研究参考，非公司正式立场；事实、研究主张和趋势推演应分级使用。</div>
+  </footer>
+  <script>
+    const progress=document.getElementById('progress');
+    addEventListener('scroll',()=>{
+      const h=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=(h>0?scrollY/h*100:0)+'%';
+    },{passive:true});
+  </script>
+</body>
+</html>
