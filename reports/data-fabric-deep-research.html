@@ -100,6 +100,34 @@
     .horizon .year{font-size:20px;font-weight:850;color:var(--navy);border-right:1px solid #cad9d6}
     .horizon .trend{background:rgba(255,255,255,.45)}
     .horizon .trend strong{color:#087f7a}
+    .shift-read{
+      display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;
+      margin:22px 0 28px
+    }
+    .shift-read .pole{
+      background:#fff;border:1px solid #d5e2df;border-radius:16px;padding:18px 18px 16px
+    }
+    .shift-read .pole h4{margin:0 0 8px;font-size:16px}
+    .shift-read .pole p{margin:0;color:#4f626c;font-size:14px;line-height:1.6}
+    .shift-read .pole ul{margin:10px 0 0;padding-left:18px;color:#4f626c;font-size:13.5px}
+    .shift-read .pole li{margin:4px 0}
+    .shift-read .arrow{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      min-width:72px;color:var(--orange);font-weight:800;font-size:13px;text-align:center;gap:6px
+    }
+    .shift-read .arrow span{font-size:28px;line-height:1}
+    .trend-map{display:grid;gap:10px;margin:8px 0 28px}
+    .trend-map .row{
+      display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:start;
+      background:rgba(255,255,255,.55);border:1px solid #d5e2df;border-radius:14px;padding:14px 16px
+    }
+    .trend-map .row b{color:var(--navy);font-size:14px;padding-top:2px}
+    .trend-map .row p{margin:0;color:#4f626c;font-size:14px;line-height:1.55}
+    @media (max-width:900px){
+      .shift-read{grid-template-columns:1fr}
+      .shift-read .arrow{flex-direction:row;min-height:auto;padding:4px 0}
+      .trend-map .row{grid-template-columns:1fr}
+    }
     .loop{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:center;margin:35px 0}
     .loop div{background:#fff;padding:15px 8px;border-radius:13px;text-align:center;border:1px solid #d9e5e2;font-size:12px;font-weight:750;position:relative}
     .loop div:not(:last-child):after{content:"→";position:absolute;right:-12px;color:var(--orange);z-index:2;font-size:18px}
@@ -405,7 +433,43 @@
       <div class="wrap">
         <div class="section-kicker"><span class="section-no">06</span>2026—2035</div>
         <h2>未来：从数据集成层走向可信智能控制面</h2>
-        <p class="lead">下列趋势不是“十项独立产品”，而是一条因果链：数据越分布，越需要元数据事件；机器消费越多，越需要显式语义；自动化权限越大，越需要策略、证明和可回滚性。</p>
+        <p class="lead">这不是一句口号，而是对 2026—2035 趋势的结构解读：Data Fabric 的重心将从「把数据搬通、查通」的集成交付层，上移为「观察—理解—决策—约束—可回滚执行」的控制面；智能提高吞吐，可信决定边界。</p>
+
+        <h3>命题解读：三个词分别指什么</h3>
+        <div class="shift-read" aria-label="从集成层到控制面">
+          <div class="pole">
+            <h4>数据集成层（起点能力）</h4>
+            <p>回答「数据如何到达消费者」：连接、转换、复制、虚拟化、编排与交付。它必要，但默认假设人仍是主要解释者与审批者。</p>
+            <ul>
+              <li>成功标准：管道可用、时延达标、表可查询</li>
+              <li>薄弱点：语义冲突、变更影响、用途强制靠人工</li>
+              <li>典型产物：ETL/CDC/API、湖仓节点、被动目录</li>
+            </ul>
+          </div>
+          <div class="arrow"><span>→</span>趋势驱动上移</div>
+          <div class="pole">
+            <h4>可信智能控制面（演进目标）</h4>
+            <p>回答「在分布与机器消费条件下，系统如何知道该做什么、被允许做什么、做错了如何收回」。</p>
+            <ul>
+              <li><strong>智能：</strong>元数据事件、语义图、推荐与 Agent 降低协调成本</li>
+              <li><strong>可信：</strong>策略、契约、证明、审计与回滚划定动作边界</li>
+              <li><strong>控制面：</strong>不强制物理集中，却统一观察与决策信号</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>趋势因果链（读后续卡片的顺序）：</strong>数据越分布 → 越需要<strong>元数据事件化</strong>与开放目录；机器（RAG/Agent）消费越多 → 越需要<strong>显式语义与产品契约</strong>；自动化权限越大 → 越需要<strong>策略、隐私证明与可回滚性</strong>；企业边界被突破 → 内部 Fabric 必须对接<strong>外部数据空间</strong>的信任机制。下列八项趋势是这条链上的工程表现，而不是彼此无关的产品清单。
+        </div>
+
+        <h3>趋势如何推动这一上移</h3>
+        <div class="trend-map">
+          <div class="row"><b>集成 → 可观察</b><p><em>元数据事件化</em>与<em>流批/开放目录融合</em>，把「管道跑没跑」升级为「资产、结构、质量、成本与权限此刻发生了什么」，控制面才有输入信号。</p></div>
+          <div class="row"><b>可观察 → 可理解</b><p><em>语义控制平面</em>与<em>数据产品/契约即代码</em>，把表名与字段变成版本化含义、用途与 SLO；否则智能只会加速误用。</p></div>
+          <div class="row"><b>可理解 → 可行动</b><p><em>Agent 可操作 Fabric</em>与<em>受治理 RAG</em>，把检索与建议推进到辅助编排乃至低风险执行；行动面必须挂在产品与策略上，而不是挂在临时 SQL。</p></div>
+          <div class="row"><b>可行动 → 可信</b><p><em>隐私增强/机密计算</em>与<em>接入外部 Data Space</em>，把「能做」收束为「在证明与合同约束下可做」；可信不是功能开关，而是跨路径强制与可追责。</p></div>
+        </div>
+
+        <h3>八项趋势卡片（按因果链阅读）</h3>
         <div class="grid-2">
           <div class="card"><span class="tag fact">高确定性</span><h3>元数据事件化</h3><p>Catalog 从定时扫描升级为事件驱动：schema、PII、质量、成本、查询和权限变化立即形成元数据事件，触发影响分析、SLO 告警和策略复核。OpenLineage、DataHub 等已验证了这种工程方向。<a href="#s8">[S8]</a></p></div>
           <div class="card"><span class="tag fact">高确定性</span><h3>语义控制平面</h3><p>术语表将扩展为版本化 ontology / knowledge graph，关联业务实体、指标、数据产品、模型、Agent 工具与政策。W3C DCAT 3、PROV-O、ODRL 等开放词汇为互操作提供零件，但跨企业语义仍需协商。<a href="#s12">[S12]</a><a href="#s13">[S13]</a></p></div>
@@ -416,10 +480,16 @@
           <div class="card"><span class="tag infer">中高确定性</span><h3>隐私增强与机密计算组合</h3><p>差分隐私、MPC、PSI、联邦学习和可信执行环境按场景组合。远程证明可回答“代码是否在批准的环境中运行”，却不能证明算法目标合法或输出不会泄露。NIST 已发布差分隐私评估指南与 RATS 架构术语。<a href="#s16">[S16]</a><a href="#s17">[S17]</a></p></div>
           <div class="card"><span class="tag infer">中等确定性</span><h3>内部 Fabric 接入外部 Data Space</h3><p>企业通过目录、可验证凭证、合同协商、ODRL 用途策略和连接器交换数据产品。欧盟 Data Act 已自 2025 年 9 月适用，推动数据处理与数据空间互操作；但数据离开受控环境后的用途义务仍需法律、审计和可信执行共同约束。<a href="#s18">[S18]</a></p></div>
         </div>
+
+        <h3>时间线：命题如何分阶段兑现</h3>
+        <p>三阶段不是平行口号，而是「集成层能力沉淀 → 控制面语义/策略成型 → 有条件自治」的递进；每一阶段都以前一阶段的证据为前提。</p>
         <div class="horizon">
-          <div class="year">2026—2027</div><div class="trend"><strong>工程底座：</strong>事件化元数据、血缘、数据契约、开放 Catalog、受治理 RAG 和 Agent 辅助成为平台基线。</div>
-          <div class="year">2028—2030</div><div class="trend"><strong>语义与策略控制：</strong>ontology 连接数据、模型、政策和动作；低风险建议可自动执行，高风险操作由仿真、审批和回滚护栏约束。</div>
-          <div class="year">2031—2035</div><div class="trend"><strong>条件性自治：</strong>自动映射、异常调查、查询/管道优化、边云放置更成熟；跨企业自主签约、通用全同态加密和完全无人治理仍是低确定性判断。</div>
+          <div class="year">2026—2027</div><div class="trend"><strong>工程底座（仍偏集成，但控制面输入成形）：</strong>事件化元数据、血缘、数据契约、开放 Catalog、受治理 RAG 和 Agent 辅助成为平台基线。价值在于把集成运行态变成可观察、可契约化的信号，而不是宣称自治。</div>
+          <div class="year">2028—2030</div><div class="trend"><strong>语义与策略控制（控制面主体能力）：</strong>ontology 连接数据、模型、政策和动作；低风险建议可自动执行，高风险操作由仿真、审批和回滚护栏约束。「智能」开始规模化，「可信」成为上线门槛。</div>
+          <div class="year">2031—2035</div><div class="trend"><strong>条件性自治（控制面有界外延）：</strong>自动映射、异常调查、查询/管道优化、边云放置更成熟；跨企业自主签约、通用全同态加密和完全无人治理仍是低确定性判断。自治级别由证据与风险预算决定，不由叙事决定。</div>
+        </div>
+        <div class="callout warn">
+          <strong>解读边界：</strong>「走向可信智能控制面」并不意味着集成层消失，也不意味着无人值守。集成层仍负责执行；控制面负责感知、语义、策略与回滚。若组织尚未具备事件化元数据与契约基线，直接采购 Agent/自治能力，只是把集成层的隐式错误自动化放大。
         </div>
         <h3>从企业内部走向可信数据空间</h3>
         <figure class="figure">
