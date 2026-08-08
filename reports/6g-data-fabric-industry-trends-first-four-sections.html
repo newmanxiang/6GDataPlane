@@ -308,7 +308,7 @@
               <tr><td><strong>ITU-R IMT-2030</strong></td><td>M.2160已生效；定义六类使用场景及泛在智能、通感、孪生等趋势</td><td>给出6G目标与能力边界</td><td>未定义「6G数据编织」网元或接口</td></tr>
               <tr><td><strong>3GPP Rel-20 / Rel-21</strong></td><td>Rel-20以研究为主；Rel-21为首个规范性6G Release，Stage 2计划2028-06冻结</td><td>2026–2028是架构方案收敛与标准输入窗口</td><td>Rel-20研究文本不是最终规范</td></tr>
               <tr><td><strong>3GPP SA2</strong></td><td>TR 23.801-01仍为Draft；KI#21正式名为“6G data framework in SA WG2”</td><td>研究系统级发现、采集、处理、存储、暴露等候选能力</td><td>不预判统一框架/网元，也不主导RAN内部协议</td></tr>
-              <tr><td><strong>3GPP RAN / SA5</strong></td><td>RAN研究无线场景、协议与测量；SA5已有PM/CM/FM/Trace、MDA、AI/ML和NDT管理积木</td><td>无线事实、管理数据、模型/孪生生命周期的主锚点</td><td>SA5管理服务不是毫秒级RAN数据总线</td></tr>
+              <tr><td><strong>3GPP RAN / SA5</strong></td><td>RAN研究无线场景、协议与测量；SA5已有PM/CM/FM/Trace、MDA、AI/ML和NDT管理积木，并在Rel-20 Draft TR 32.801-01研究6G管理侧Data Management Framework。<a href="#s26">[S26]</a></td><td>无线事实、管理数据、模型/孪生生命周期的主锚点；SA5与SA2分工协同</td><td>Draft TR不是规范性标准；SA5管理服务也不是毫秒级RAN数据总线</td></tr>
               <tr><td><strong>O-RAN</strong></td><td>WG2定义Non-RT RIC/A1/R1；WG3定义Near-RT RIC/E2；WG10定义O1/OAM</td><td>按时标提供RAN数据、策略、模型和动作通道</td><td>不是跨O1/O2/A1/E2/R1统一语义总线</td></tr>
               <tr><td><strong>TM Forum / GSMA / CAMARA</strong></td><td>AN等级、AI/数据治理、Open Gateway服务与Operate API认证推进</td><td>把受治理网络能力包装为可运营、可计量、可聚合的生态产品</td><td>不定义无线快环或内部数据处理实现</td></tr>
             </tbody>
@@ -323,19 +323,20 @@
           <div>6G专用Data Plane研究；DO/DA/DCP进行数据拓扑编排、近源操作与发布订阅分发。</div>
           <div>Data mesh / distributed data architecture、data prosumer、数据目录与AI原生使能；云与数据平台争夺目录/湖仓/AI工具入口。</div>
           <div class="axis">可确认产品锚点</div>
-          <div>NWDAF、EIAP/rApps、CCES、EFDL相关架构、Aduna/API生态。</div>
-          <div>AI Core/AgenticCore、iMaster NCE Network Digital Map、Open Gateway渠道等；不同产品线不可自动拼成统一平台。</div>
-          <div>NWDAF/自动化平台、Bell Labs UNEXT愿景；Microsoft/AWS/Google等提供云、AI、数据平台和API分发渠道。</div>
+          <div>NWDAF、EIAP/rApps、CCES、2025 Telco DataOps Platform及Aduna/API生态；EFDL应视为架构元素，不单列为成熟产品。<a href="#s21">[S21]</a></div>
+          <div>AUTINOps已有IOH跨无线/IP/传输/能源部署案例；AI Core/AgenticCore、Network Digital Map、Open Gateway是不同层次锚点，不可自动拼成统一6G平台。<a href="#s22">[S22]</a></div>
+          <div>Nokia 2025 Autonomous Network Fabric与Data Suite直接提供数据产品、目录、血缘、质量及多厂商适配；Microsoft/AWS/Google/Databricks/Snowflake构成数据与AI执行层竞合生态。<a href="#s23">[S23]</a><a href="#s24">[S24]</a></div>
           <div class="axis">潜在控制点</div>
           <div>运营商覆盖 + SMO/RIC应用生态 + Core/API + 数据集成平台。</div>
           <div>RAN—Core—IP—Cloud—AI算力—终端全栈协同与标准输入能力。</div>
           <div>开放标准话语 + 多厂商中立叙事；超大云/数据平台控制开发者、Catalog、Agent工具链。</div>
           <div class="axis">证据边界</div>
-          <div>尚无公开证据证明统一跨RAN/Core/OSS/BSS的商用Fabric已广泛部署。</div>
-          <div>DO/DA/DCP仍是候选研究架构，不是3GPP既定网元；Agentic主张需区分愿景与商用覆盖。</div>
-          <div>Data mesh/UNEXT属参考路线；云平台的企业数据优势不自动转化为通信快环与RAN语义优势。</div>
+          <div>尚无公开、运营商中立证据证明统一跨RAN/Core/OSS/BSS的Fabric已在多运营商、多厂商环境广泛部署；EIAP、NWDAF、DataOps是不同产品。</div>
+          <div>IOH指标来自厂商/客户联合案例，证明AUTINOps部署而非DO/DA/DCP商用；后者仍是候选研究架构，AgenticCore部署证据也应单独评估。</div>
+          <div>Nokia产品发布证据充分、广泛命名客户证据仍有限；Google Telecom Data Fabric截至截点为Private Preview，云数据优势不自动转化为RAN闭环控制权。<a href="#s25">[S25]</a></div>
         </div>
 
+        <div class="callout"><strong>证据分层：</strong>「已有运营商部署」不等于「已形成跨域统一Fabric」；「厂商已发布产品」不等于「已广泛商用」；「标准贡献被合并进Draft TR」不等于「形成规范性TS」。本报告把产品、参考架构、标准输入、原型和愿景分别判断，避免用同一成熟度描述。</div>
         <div class="callout warn"><strong>竞争本质：</strong>设备商争夺「网络数据如何生成、减量、关联和转化为动作」；云/数据平台争夺「数据存储、Catalog、模型与Agent工具链」；API聚合商争夺「开发者入口、跨运营商一致性与计费」。长期胜负不在新网元名称，而在跨域语义、QoD、可信执行和生态分发能否形成复利。</div>
       </div>
     </section>
@@ -452,6 +453,12 @@
           <li id="s18"><a href="https://www.ericsson.com/en/press-releases/2025/7/ericsson-announces-completion-of-aduna-transaction">Ericsson / Aduna transaction</a>：API聚合生态结构事实。</li>
           <li id="s19"><a href="https://www.huawei.com/en/news/2026/3/mwc-6g-agenticcore">Huawei Agentic Core Networks, MWC 2026</a>：6G-oriented Agentic Core厂商愿景。</li>
           <li id="s20"><a href="https://www.nokia.com/6g/6g-system-architecture-where-innovation-meets-evolution-for-a-more-sustainable-and-connected-world/">Nokia 6G System Architecture</a>：AI原生、数据框架与端到端生命周期观点。</li>
+          <li id="s21"><a href="https://www.ericsson.com/en/news/2025/6/evolved-ericsson-ossbss-portfolio-to-ignite-csp-business-and-operational-transformation">Ericsson OSS/BSS portfolio & Telco DataOps Platform</a>, 2025：已发布产品锚点；与AI-ready data mesh参考架构分开判断。</li>
+          <li id="s22"><a href="https://www.huawei.com/en/news/2026/6/dtw-excellence-award-autinops">Huawei / IOH AUTINOps deployment case</a>, 2026：跨域部署与Agent调用量为厂商/客户联合披露，非独立审计。</li>
+          <li id="s23"><a href="https://www.nokia.com/about-us/news/releases/2025/06/18/nokia-launches-autonomous-network-fabric-to-help-customers-accelerate-network-automation/">Nokia Autonomous Network Fabric</a>, 2025：数据产品、可观察性、AI与自动化产品化路线。</li>
+          <li id="s24"><a href="https://www.nokia.com/ai-and-analytics/data-suite/">Nokia Data Suite</a>：数据网格、目录、血缘、质量、TM Forum语义与多厂商适配。</li>
+          <li id="s25"><a href="https://cloud.google.com/telecom-data-fabric">Google Cloud Telecom Data Fabric</a>：截至研究截点标注Private Preview，不能与已发布产品同档比较。</li>
+          <li id="s26"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491">3GPP TR 32.801-01</a>：Rel-20 Draft Technical Report，研究6G OAM与管理侧数据框架等内容。</li>
         </ol>
         <div class="boundary"><strong>研究边界：</strong>本文综合了两份仓库内深度研究的第一性原理、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的官方资料。标题中的“Data Fabric × 6G”为战略分析框架，不是ITU、3GPP或O-RAN正式网元名称。</div>
       </div>
