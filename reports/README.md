@@ -8,6 +8,14 @@
 | `executive-summary.md` | 决策者 | 2-3 页 |
 | `one-pager.md` | 高层 | 1 页（≤ 500 字） |
 
+## 战略胶片
+
+| 文件 | 说明 |
+|---|---|
+| `6g-data-fabric-strategy-deck.pptx` | 由 HTML 报告生成的 24 页完整论证版 PPT（非预览版） |
+| `scripts/build_strategy_pptx.py` | 再生脚本：`python3 reports/scripts/build_strategy_pptx.py` |
+| `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
+
 ## 版本规则
 
 - 主报告以 `v1`、`v2`、`v3` 递增
