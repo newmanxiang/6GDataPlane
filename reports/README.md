@@ -12,7 +12,7 @@
 
 | 文件 | 说明 |
 |---|---|
-| `6g-data-fabric-strategy-deck.pptx` | 由 HTML 报告生成的 24 页完整论证版 PPT（非预览版） |
+| `6g-data-fabric-strategy-deck.pptx` | 由 HTML 报告生成的 34 页完整论证加深版 PPT（非预览版） |
 | `scripts/build_strategy_pptx.py` | 再生脚本：`python3 reports/scripts/build_strategy_pptx.py` |
 | `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
 
