@@ -866,8 +866,8 @@
           </div>
           <div class="card">
             <span class="tag fact">场景锚点</span>
-            <h4>Fault Agent 试点实践</h4>
-            <p>TM Forum 披露 Fault Agent 以知识图谱 + 大模型推进跨域/单域故障诊断与处置，并在重点区域试点。这是电信场景中「语义层服务 Agent」少数可公开引用的落地形态，也是数据引擎最短延长线。<a href="#s42">[S42]</a></p>
+            <h4>Fault Agent 场景实践</h4>
+            <p>GSMA 具名案例披露浙江移动与中兴的传输故障方案结合大/小模型和数字孪生，根因识别率超过90%、诊断约由30分钟降至5分钟内、工单减少20%；TM Forum另披露中国电信多省试点。指标为项目案例口径，非独立审计。<a href="#s53">[S53]</a><a href="#s42">[S42]</a></p>
           </div>
           <div class="card">
             <span class="tag study">标准锚点</span>
@@ -877,21 +877,23 @@
         </div>
 
         <div class="evidence-strip">
-          <div><b>开放与互操作</b>AIR Net OSS 系列获 TM Forum Ready for ODA；OpenAPI 认证与 Catalyst 参与提供开放接口证据。<a href="#s44">[S44]</a></div>
+          <div><b>5G 数据底座</b>ZXUN CUDR 是正式产品，统一 UDR/UDSF 及多代网络/IMS 数据；前代 vSDM 有 Banglalink 具名商用。它证明电信数据管理基础，不是通用 Fabric。<a href="#s51">[S51]</a><a href="#s52">[S52]</a></div>
+          <div><b>开放与互操作</b>TM Forum 官方目录将 AIR Net/U-Smart-Net 列为 Ready for ODA；证明架构对齐，不等于所有组件均完成互操作认证。<a href="#s54">[S54]</a></div>
           <div><b>Agent 框架</b>Co-Sight 已公开发布低代码、模块化、多 Agent 协同及第三方插件开放接口；Reasoner/Actor 分离与 MCP/A2A 互操作主张方向对齐「有界智能」。<a href="#s41">[S41]</a><a href="#s48">[S48]</a></div>
-          <div><b>生态入口</b>GSMA Open Gateway 中国落地中，中兴作为 Channel Partner 出现，可承接 API 商业化倒逼内部数据产品化。<a href="#s46">[S46]</a></div>
-          <div><b>边界提醒</b>上述证据证明「自智运维数据能力」与「标准入口」，不等于已拥有跨厂商 6G Data Fabric 完整产品。</div>
+          <div><b>生态与变现</b>GSMA 中国移动 QoD 案例确认采用 CAMARA 与中兴 NEF；截至2024-10披露25家企业客户、月调用超3400万次及收入。这是最强商业锚点。<a href="#s55">[S55]</a></div>
         </div>
+        <div class="callout warn"><strong>能力连续、产品不等同：</strong>CUDR/前代 vSDM → AIR Net Data Engine → Co-Sight/NDT → 6G统一数据框架研究构成可观察的演进链，但公开证据不能证明这些组件已整合为一个统一 SKU，也不能称为「6G Data Fabric 已商用」。</div>
 
         <h3>5.2 证据成熟度：把「有什么」与「证明了什么」分开</h3>
         <div class="table-scroll">
           <table>
             <thead><tr><th>证据层</th><th>中兴公开锚点</th><th>可以支持的结论</th><th>不能外推的结论</th><th>下一步补证</th></tr></thead>
             <tbody>
-              <tr><td><strong>E4 客户结果</strong></td><td>中国移动、阿里云与中兴联合 AaaS Open Gateway；QoD API 通过 63 项技术测试并披露商用部署。该结论来自联合方案/厂商材料。<a href="#s50">[S50]</a></td><td>中兴已具备网络能力 API 产品化、QoS 编排和生态协同触点</td><td>不证明内部数据产品、跨域语义与 Data Fabric 已统一</td><td>披露 API 调用、收入/转化、跨网一致率及上游数据契约</td></tr>
-              <tr><td><strong>E3 产品发布</strong></td><td>AIR Net 三引擎、Co-Sight Agent Factory、OSS Ready for ODA。<a href="#s47">[S47]</a><a href="#s48">[S48]</a><a href="#s44">[S44]</a></td><td>数据、模型、孪生、Agent 与开放接口已有产品载体</td><td>不证明各产品已形成统一控制语义或跨厂商数据面</td><td>发布组件边界、版本兼容矩阵和第三方互操作报告</td></tr>
-              <tr><td><strong>E2 试点/PoC</strong></td><td>TM Forum 访谈披露 Fault Agent 在重点区域试点；公开 Catalyst 展示 KG、LLM、NDT 与多 Agent 闭环的可量化方法。<a href="#s42">[S42]</a><a href="#s49">[S49]</a></td><td>语义知识、Agent 编排和孪生验证可在高价值运维场景组合</td><td>试点不能等同全网规模化，也不能自动迁移到 RAN 快环</td><td>形成跨域复用率、证据链覆盖、回滚和单位任务成本数据</td></tr>
-              <tr><td><strong>E1 标准席位</strong></td><td>中兴为 ETSI ZSM 029 Supporting Organization；工作项覆盖注册、发现、资产、认证、采集传输和编排。<a href="#s43">[S43]</a></td><td>具备把产品经验输入数据管理代理规范的正式入口</td><td>Supporting Organization 不等于已主导最终规范，也不证明 3GPP 会复用</td><td>用参考实现、联合运营商提案和互操作测试把席位变成条款</td></tr>
+              <tr><td><strong>E4 客户结果｜API</strong></td><td>GSMA 中国移动 QoD 案例确认采用 CAMARA 与中兴 NEF；截至2024-10有25家企业客户、月调用超3400万次，累计收入数千万元；支付宝场景披露时延下降57%、失败率下降90%。<a href="#s55">[S55]</a></td><td>网络能力 API 产品化、策略控制与高频商业运营已有强证据</td><td>平台与收入归多方协作，不能归因于中兴独占；不证明内部 Fabric 已统一</td><td>补跨网一致、上游数据契约、成本/利润与更多 API 的同级证据</td></tr>
+              <tr><td><strong>E4 客户结果｜故障</strong></td><td>GSMA 浙江移动案例披露大/小模型、数字孪生与中兴方案组合，根因识别率&gt;90%、诊断时间约30→&lt;5分钟、工单减少20%。<a href="#s53">[S53]</a></td><td>知识、模型、孪生和动作在具名生产场景具有可量化价值</td><td>单场景不能证明全网 L4、跨厂商 Agent 或完整 Data Fabric</td><td>补动作证据、回滚、跨域复用与独立财务审计</td></tr>
+              <tr><td><strong>E3 产品发布</strong></td><td>CUDR、AIR Net 三引擎、Co-Sight Agent Factory，以及 TM Forum Ready for ODA 目录状态。<a href="#s51">[S51]</a><a href="#s47">[S47]</a><a href="#s48">[S48]</a><a href="#s54">[S54]</a></td><td>统一数据管理、数据/模型/孪生/Agent 与开放架构均有产品载体</td><td>不证明这些产品已整合为同一控制语义或跨厂商数据面</td><td>发布组件边界、版本兼容矩阵、具名客户和第三方互操作报告</td></tr>
+              <tr><td><strong>E2 试点/验证</strong></td><td>TM Forum 披露中国电信多省 Fault Agent 试点；公开材料仍使用“piloted”，应与商用区分。<a href="#s42">[S42]</a></td><td>故障域语义与 Agent 方法可跨区域验证</td><td>试点不能等同规模商用，也不能自动迁移到 RAN 快环</td><td>形成持续使用、跨域复用、证据链覆盖和单位任务成本数据</td></tr>
+              <tr><td><strong>E1 标准席位</strong></td><td>中兴为 ETSI ZSM 029 Supporting Organization；其 SA5 Rel-20 6G 优先级输入把 Unified data framework 列为 OAM 方向。<a href="#s43">[S43]</a><a href="#s56">[S56]</a></td><td>具备把产品经验输入 ETSI 与 3GPP 数据管理讨论的正式入口</td><td>工作项/厂商提案不等于最终规范、主导权或提案已采纳</td><td>用参考实现、运营商联署、进入工作文本和互操作测试把席位变成条款</td></tr>
               <tr><td><strong>E0 战略假设</strong></td><td>RAN QoD、近源 Data Agent、跨 O1/E2/A1/R1 元数据事件及「可信供数控制面」</td><td>由 R1–R8 与 T1–T8 推导出的合理主攻方向</td><td>目前没有足够公开证据称其为中兴现有产品</td><td>必须经内部资产盘点、PoC 和客户付费意愿三重验证</td></tr>
             </tbody>
           </table>
@@ -1278,7 +1280,7 @@
           <div class="opp-body">
             <div>
               <h4>O6 试点</h4>
-              <p>海外已有运营商数据平台/编织等效实践，国内「显式 Data Fabric」首发位仍相对开放。应以独立可审计 ROI（复用率、MTTR、单位有效任务成本）绑定中国移动/电信等既有合作关系，避免供应商口径陷阱。</p>
+              <p>海外已有运营商数据平台/编织等效实践，国内「显式 Data Fabric」首发位仍相对开放。中兴参与的中国移动 QoD API 已有 GSMA 披露的客户、调用和收入证据，说明「标准能力 + 明确场景 + 运营计量」比先卖平台更可信。新试点应沿用这一方法，以独立可审计 ROI（复用率、MTTR、单位有效任务成本）绑定业务 Owner。<a href="#s55">[S55]</a></p>
             </div>
             <div>
               <h4>O4 承载</h4>
@@ -1765,8 +1767,14 @@
           <li id="s48"><a href="https://openlab.zte.com.cn/en/news/2025/6/ZTE-AI-Agent-Factory-Co-Sight-accelerates-the-incubation-and-innovation-of-AI-Agents">ZTE Openlab, Co-Sight AI Agent Factory</a>, 2025：低代码、模块化、多 Agent 协作、第三方插件和开放接口的产品发布事实。</li>
           <li id="s49"><a href="https://inform.tmforum.org/research-and-analysis/proofs-of-concept/how-multi-agent-ai-is-transforming-network-fault-repair">TM Forum, Multi-level multi-agent network fault healing Catalyst</a>, 2025：KG、LLM、数字孪生和多 Agent 闭环的 PoC 与项目指标；用于证明方法可行性，不等同中兴全产品商用指标。</li>
           <li id="s50"><a href="https://sdnfv.zte.com.cn/en/news/2025/3/ZTE-win-the-GSMA-GLOMO-Open-Gateway-Challenge-Award">China Mobile / Alibaba Cloud / ZTE AaaS Open Gateway</a>, 2025：联合方案披露 QoD API 通过 63 项技术测试并商用部署；属于厂商/合作方口径，不能外推完整 Data Fabric。</li>
+          <li id="s51"><a href="https://sdnfv.zte.com.cn/en/products/VNF/5G-core-network/ZXUN-CUDR">ZTE ZXUN CUDR product</a>：统一 3GPP UDR/UDSF 及 2G/3G/4G/5G/IMS 结构化与非结构化数据；是 5G 数据管理产品，不是通用 Data Fabric。</li>
+          <li id="s52"><a href="https://sdnfv.zte.com.cn/en/cases/Banglalink-Digital-Transformation-vSDM">Banglalink / ZTE vSDM deployment</a>：2017 年 6000 万用户 vSDM 商用案例，证明前代统一用户数据平台部署基础，不外推 6G 能力。</li>
+          <li id="s53"><a href="https://www.gsma.com/get-involved/gsma-foundry/gsma_study/faster-troubleshooting-for-transport-networks-zte/">GSMA, Faster Troubleshooting for Transport Networks</a>：浙江移动与中兴具名案例；根因识别、诊断时间和工单指标为项目案例口径。</li>
+          <li id="s54"><a href="https://www.tmforum.org/oda/directory/software-providers/directory/zte/products/zte_u_smart_net">TM Forum ODA Directory, ZTE AIR Net / U-Smart-Net</a>：Ready for ODA 官方目录状态；不等于全部功能或跨厂商互操作均已认证。</li>
+          <li id="s55"><a href="https://www.gsma.com/solutions-and-impact/gsma-open-gateway/wp-content/uploads/2025/07/Alibaba-Cloud-Case-Study.pdf">GSMA Open Gateway, Alibaba Cloud / China Mobile QoD Case Study</a>：具名客户数、月调用、收入及支付宝场景效果；中兴 NEF 是联合方案组件，收益不可归因于单一厂商。</li>
+          <li id="s56"><a href="https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5_Workshop_on_6G_Rel20/ZTE's%20view%20on%20SA5%20Rel-20%206G%20Priorities.pdf">ZTE’s view on SA5 Rel-20 6G Priorities</a>：厂商向 3GPP SA5 Workshop 的输入，把 Unified data framework 列为 6G OAM 优先方向；不是已采纳规范。</li>
         </ol>
-        <div class="boundary"><strong>研究边界：</strong>本文综合了仓库内深度研究、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的中兴公开资料与ETSI/TM Forum证据。标题中的“Data Fabric × 6G”及“中兴战略定位”为分析框架与研究建议，不是ITU、3GPP或O-RAN正式网元名称，也不代表中兴通讯正式技术路线或市场承诺。</div>
+        <div class="boundary"><strong>研究边界：</strong>本文综合了仓库内深度研究、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的中兴公开资料与ETSI/TM Forum/GSMA具名案例。标题中的“Data Fabric × 6G”及“中兴战略定位”为分析框架与研究建议，不是ITU、3GPP或O-RAN正式网元名称，也不代表中兴通讯正式技术路线或市场承诺。案例指标若无独立审计，均按项目披露口径使用。</div>
       </div>
     </section>
   </main>
