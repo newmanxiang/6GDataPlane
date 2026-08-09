@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="结合数据编织与6G数据架构研究，对需求目标、行业竞争、产业趋势及3年/5年判断进行战略研判。">
-  <title>6G 数据架构 × 数据编织：行业环境、竞争格局与趋势研判</title>
+  <meta name="description" content="结合数据编织与6G数据架构研究，对需求目标、行业竞争、产业趋势及中兴通讯定位、机会点与策略建议进行战略研判。">
+  <title>6G 数据架构 × 数据编织：行业趋势与中兴战略定位</title>
   <style>
     :root{
       --navy:#071f3d;--navy2:#0b3157;--ink:#13293d;--muted:#5d7183;--paper:#f4f7f8;
@@ -100,11 +100,22 @@
     .logic-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.logic-proof>div{border-top:3px solid var(--cyan);padding:10px;background:#fff}.logic-proof b{display:block;font-size:12px;color:var(--navy)}.logic-proof span{font-size:11.5px;color:var(--muted)}
     .source-list{columns:2;column-gap:34px;padding-left:22px}.source-list li{break-inside:avoid;margin:0 0 11px;font-size:12.5px;color:#586e7d}
     .boundary{font-size:12px;color:#6a7c89;background:#e7edef;padding:12px 15px;border-radius:12px;margin-top:18px}
+    .score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+    .score{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.score .label{font-size:12px;color:var(--muted)}.score .val{font-size:28px;font-weight:900;color:var(--navy);margin:6px 0}.score .note{font-size:12.5px;color:#536979}
+    .opp-chapter{margin:28px 0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 12px 30px rgba(7,31,61,.06)}
+    .opp-head{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:start;margin-bottom:16px}
+    .opp-no{font:italic 800 28px Georgia,serif;color:var(--orange)}.opp-head h3{margin:0 0 6px}.opp-head p{margin:0;color:var(--muted)}
+    .opp-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}.opp-meta span{font-size:11px;font-weight:800;padding:5px 9px;border-radius:999px;background:#edf3f6;color:#355468}
+    .opp-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}
+    .opp-body>div{background:#f3f7f9;border-radius:14px;padding:16px}.opp-body h4{font-size:13px;margin:0 0 8px}.opp-body p,.opp-body li{font-size:13px;color:#536979;margin:0}.opp-body ul{padding-left:17px;margin:6px 0 0}
+    .choice-banner{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin:24px 0}
+    .choice-banner>div{border-radius:18px;padding:22px}.choice-do{background:#0b3157;color:#fff}.choice-do h4{color:var(--lime)}.choice-do p,.choice-do li{color:#dceaf3}.choice-dont{background:#fff0e7;border:1px solid #f0c9b2}.choice-dont p,.choice-dont li{color:#6c4936}
+    .strategy-note{font-size:12px;color:#6a7c89;margin-top:10px}
     footer{background:#06172e;color:#97adbd;padding:30px 0;font-size:12px}
     @media(max-width:900px){
-      .nav-links{display:none}.hero-meta,.grid-4,.mini-stats{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon{grid-template-columns:1fr}
+      .nav-links{display:none}.hero-meta,.grid-4,.mini-stats,.score-grid{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon,.choice-banner,.opp-body{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
         content:"← 左右滑动查看完整内容 →";display:block;position:sticky;left:0;z-index:3;
@@ -114,7 +125,7 @@
       .figure{overflow-x:auto}.figure svg,.figure img{min-width:760px}
       .figure figcaption{position:sticky;left:0;max-width:calc(100vw - 64px)}
     }
-    @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats,.maturity-map,.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr}main section{padding:62px 0}.vendor-chapter,.trend-chapter{padding:18px}}
+    @media(max-width:540px){.hero-inner,.wrap{width:min(100% - 28px,1180px)}h1{font-size:43px}.hero-meta,.grid-4,.mini-stats,.score-grid,.maturity-map,.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr}main section{padding:62px 0}.vendor-chapter,.trend-chapter,.opp-chapter{padding:18px}}
     @media print{.nav,.progress{display:none}.hero{min-height:auto;break-after:page}main section{padding:36px 0}.card,.figure{box-shadow:none;break-inside:avoid}.wrap,.hero-inner{width:94%}a{color:inherit}}
   </style>
 </head>
@@ -128,6 +139,9 @@
         <a href="#industry">行业环境与竞争</a>
         <a href="#trends">产业趋势预判</a>
         <a href="#horizon">3年看透·5年看清</a>
+        <a href="#zte-position">中兴定位</a>
+        <a href="#zte-ops">机会点</a>
+        <a href="#zte-strategy">策略建议</a>
         <a href="#sources">证据来源</a>
       </div>
     </div>
@@ -135,14 +149,14 @@
 
   <header class="hero">
     <div class="hero-inner">
-      <div class="classification">产业战略研究 · 模板前四部分 · 非公司正式立场</div>
-      <div class="eyebrow">6G DATA ARCHITECTURE · DATA FABRIC · INDUSTRY OUTLOOK</div>
-      <h1>6G 数据架构 × 数据编织<br><span>行业环境、竞争格局与趋势研判</span></h1>
-      <p class="hero-sub">从「连接如何建立」转向「数据如何生产、理解、治理并驱动可信行动」：围绕6G数据架构的范式转变、数据编织能力全景、标准与厂商竞争，形成3年可验证、5年可定位的产业判断。</p>
+      <div class="classification">产业战略研究 · 中兴通讯视角 · 非公司正式立场</div>
+      <div class="eyebrow">6G DATA ARCHITECTURE · DATA FABRIC · ZTE STRATEGY</div>
+      <h1>6G 数据架构 × 数据编织<br><span>行业趋势与中兴战略定位</span></h1>
+      <p class="hero-sub">从「连接如何建立」转向「数据如何生产、理解、治理并驱动可信行动」：在行业趋势与竞争格局之上，进一步给出中兴通讯的定位判断、可参与机会点与可执行策略建议。</p>
       <div class="hero-meta">
-        <div><strong>对应模板</strong><span>需求目标 · 行业现状 · 趋势判断 · 3/5年总结</span></div>
-        <div><strong>核心标准锚点</strong><span>ITU IMT-2030 · 3GPP RAN/SA2/SA5 · O-RAN</span></div>
-        <div><strong>研究对象</strong><span>RAN · Core · SMO/RIC · Edge/Cloud · 生态暴露</span></div>
+        <div><strong>对应模板</strong><span>需求·现状·趋势·3/5年 · 定位·机会·策略</span></div>
+        <div><strong>核心标准锚点</strong><span>ITU · 3GPP SA2/SA5 · O-RAN · ETSI ZSM</span></div>
+        <div><strong>公司锚点</strong><span>AIR Net 数据引擎 · Fault Agent · ZSM 029</span></div>
         <div><strong>研究截点</strong><span>2026 年 8 月</span></div>
       </div>
     </div>
@@ -173,12 +187,18 @@
           </div>
         </div>
 
-        <h3>报告目标：形成四个可交付判断</h3>
+        <h3>报告目标：形成七个可交付判断</h3>
         <div class="mini-stats">
           <div class="stat"><b>1 张范式图</b><span>解释连接架构如何演进为数据—智能—行动架构。</span></div>
           <div class="stat"><b>1 套能力栈</b><span>统一数据编织与6G数据生命周期，不重复造体系。</span></div>
           <div class="stat"><b>1 个竞争矩阵</b><span>比较标准域与Ericsson/Huawei/Nokia等主张。</span></div>
           <div class="stat"><b>2 个时间窗</b><span>3年看标准收敛与工程底座，5年看控制点与生态格局。</span></div>
+        </div>
+        <div class="mini-stats">
+          <div class="stat"><b>1 个中兴定位</b><span>在「数据编织 × 6G数据架构」坐标系中明确我司强弱与主攻位。</span></div>
+          <div class="stat"><b>1 组机会选择</b><span>按可达性×契合度筛选主攻、中期押注与路标建议。</span></div>
+          <div class="stat"><b>1 张策略表</b><span>明确先做什么、后做什么、不做的风险与组织抓手。</span></div>
+          <div class="stat"><b>边界声明</b><span>公开证据与内部路标建议分层；不构成正式产品承诺。</span></div>
         </div>
 
         <figure class="figure">
@@ -828,6 +848,395 @@
       </div>
     </section>
 
+    <section id="zte-position">
+      <div class="wrap">
+        <div class="section-kicker"><i>05</i> ZTE position</div>
+        <h2>公司现状和定位分析：中兴通讯</h2>
+        <p class="lead">在前文「需求—竞争—趋势」坐标系中，中兴通讯的真实位置是：<strong>强于网络智能落地与电信全栈触点，弱于通用 IT 级 Data Fabric 产品包装与 6G 数据框架叙事话语权</strong>。因此，正确战略不是再造一个对标 IBM/Informatica/Nokia Data Suite 的通用编织平台，而是把 AIR Net 已验证的数据引擎，升级为主航道产品共用的横向数据能力组件。</p>
+
+        <div class="callout"><strong>定位一句话：</strong>中兴应争夺的是「RAN/跨域语义 + QoD + 近源执行 + 有界 Agent 供数」控制点，而不是独立「大一统数据面」品牌。这与第三章产业断言一致：统一控制语义与分布式执行，而不是统一所有存储、协议和时延。</div>
+
+        <h3>5.1 公开能力锚点：已有资产，不是从零开始</h3>
+        <div class="grid-3">
+          <div class="card">
+            <span class="tag fact">产品锚点</span>
+            <h4>AIR Net 三引擎</h4>
+            <p>公开材料将 AIR Net 定位为高水平自智网络方案：数据引擎、大模型引擎与数字孪生引擎协同，支撑 Copilot/Agent 与跨域闭环。数据引擎被描述为提供数据资产、AI Ready 治理与智能分析能力。<a href="#s40">[S40]</a><a href="#s41">[S41]</a></p>
+          </div>
+          <div class="card">
+            <span class="tag fact">场景锚点</span>
+            <h4>Fault Agent 生产实践</h4>
+            <p>TM Forum 披露 Fault Agent 以知识图谱 + 大模型推进跨域/单域故障诊断与处置，并在重点区域试点。这是电信场景中「语义层服务 Agent」少数可公开引用的落地形态，也是数据引擎最短延长线。<a href="#s42">[S42]</a></p>
+          </div>
+          <div class="card">
+            <span class="tag study">标准锚点</span>
+            <h4>ETSI ZSM 029</h4>
+            <p>ETSI GS ZSM 029《Data Management Agent for Autonomous Networks》由中国电信、中兴、CAICT、亚信等支持组织推动，2026-04 工作项采纳，覆盖数据注册/发现、资产管理、认证、采集传输与工作流编排——与 Data Fabric 控制语义高度重合。<a href="#s43">[S43]</a></p>
+          </div>
+        </div>
+
+        <div class="evidence-strip">
+          <div><b>开放与互操作</b>AIR Net OSS 系列获 TM Forum Ready for ODA；OpenAPI 认证与 Catalyst 参与提供开放接口证据。<a href="#s44">[S44]</a></div>
+          <div><b>Agent 框架</b>Co-Sight 开源框架强调 Reasoner/Actor 分离、图谱检索与 MCP/A2A 类互操作，方向对齐「有界智能」。<a href="#s41">[S41]</a></div>
+          <div><b>生态入口</b>GSMA Open Gateway 中国落地中，中兴作为 Channel Partner 出现，可承接 API 商业化倒逼内部数据产品化。<a href="#s46">[S46]</a></div>
+          <div><b>边界提醒</b>上述证据证明「自智运维数据能力」与「标准入口」，不等于已拥有跨厂商 6G Data Fabric 完整产品。</div>
+        </div>
+
+        <h3>5.2 相对竞争坐标：不站队 Mesh，也不复制 Data Plane 命名</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>竞争维度</th><th>Ericsson</th><th>Huawei</th><th>Nokia</th><th>对中兴的定位含义</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>公开叙事</strong></td>
+                <td>联邦数据管理 + EIAP/DataOps + API 生态</td>
+                <td>DO/DA/DCP 研究架构 + AUTINOps 商用桥梁</td>
+                <td>AN Fabric / Data Suite 产品化最清晰</td>
+                <td>中兴应讲「数据引擎外溢到 6G 数据能力组件」，避免陷入厂商网元命名战</td>
+              </tr>
+              <tr>
+                <td><strong>已验证部署</strong></td>
+                <td>EIAP/Mediation 等运营合同与大规模加工底座</td>
+                <td>AUTINOps/IOH 跨域 Agent 运维案例</td>
+                <td>域应用（异常检测/SON/节能）+ Fabric 产品包装</td>
+                <td>中兴可用 Fault Agent/节能/投诉等高价值场景做 ROI，但需补「数据产品契约与 QoD」叙事</td>
+              </tr>
+              <tr>
+                <td><strong>标准抓手</strong></td>
+                <td>O-RAN/ETSI/Hexa-X 参与度高</td>
+                <td>SA2/SA5 与全栈研究输入强</td>
+                <td>TM Forum 语义与自治产品对齐</td>
+                <td>ZSM 029 是中兴最干净的差异化入口；SA2 KI#21/SA5 DMFW 需把语义、接口、时效条目写进去</td>
+              </tr>
+              <tr>
+                <td><strong>主要短板</strong></td>
+                <td>独立网元叙事弱，平台组合复杂</td>
+                <td>研究架构与商用平面易被混读</td>
+                <td>跨厂商统一 Fabric 仍缺中立证明</td>
+                <td>中兴公开短板是：通用编织产品完整度不足、6G 数据框架话语权偏弱、RAN QoD/流式元数据缺少可引用 benchmark</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.3 能力自评：按前文需求与议程看缺口</h3>
+        <p>下表对照第一章提炼的数据管理层需求（R1–R8）与第三章趋势（T1–T8），给出基于公开证据的相对位置判断。分数为战略研判刻度（0–5），不是财务或审计结论。</p>
+        <div class="score-grid">
+          <div class="score"><div class="label">自智网络 / Agent 场景</div><div class="val">4</div><div class="note">AIR Net + Fault Agent 有公开试点与认证证据</div></div>
+          <div class="score"><div class="label">语义 / KG 生产化</div><div class="val">3.5</div><div class="note">故障域较强；缺跨 RAN/Core 标准化语义模型</div></div>
+          <div class="score"><div class="label">标准接口话语权</div><div class="val">3</div><div class="note">ZSM 029 在手；SA2/SA5 数据框架仍需加码</div></div>
+          <div class="score"><div class="label">通用 Data Fabric 产品</div><div class="val">1.5</div><div class="note">不宜与 IT 巨头/Nokia Data Suite 正面比拼完整度</div></div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>能力议题</th><th>当前位置</th><th>公开依据</th><th>与前文映射</th><th>含义</th></tr></thead>
+            <tbody>
+              <tr><td>数据产品化与契约</td><td>🟡 邻近</td><td>AIR Net 数据资产/治理叙事；ODA/OpenAPI</td><td>R1/R5 · T1</td><td>需从「资产目录」升级为带 Owner/SLO/退出机制的产品</td></tr>
+              <tr><td>元数据事件化</td><td>🟡 探索</td><td>数据引擎治理 Agent；尚无跨 O1/E2/A1 事件总线公开证据</td><td>R2 · T2</td><td>工程主线，应优先做变更→影响分析闸门</td></tr>
+              <tr><td>RAN/边缘子 Fabric</td><td>🟡 有载体</td><td>无线/MEC/站点算力触点强；缺轻量近源代理公开 PoC</td><td>R3/R4 · T3</td><td>优势×空白重叠区，适合时间盒 PoC</td></tr>
+              <tr><td>Agent 有界执行</td><td>🟢 相对亮点</td><td>Fault Agent、Co-Sight、Reasoner/Actor 分离</td><td>R7 · T4</td><td>最短延长线：把「用数 Agent」做成供数工具集</td></tr>
+              <tr><td>NDT 证据闸门</td><td>🟡 邻近</td><td>数字孪生引擎公开存在；缺「误差门槛→放行」强制路径证据</td><td>R6 · T5</td><td>优先与高风险变更/节能/故障闭环绑定</td></tr>
+              <tr><td>RAN QoD</td><td>🔴→🟡 关键缺口</td><td>公开竞争中华为 Data QoS、Nokia 有效性叙事更显式</td><td>R8 · T6</td><td>应列为中兴差异化必争标尺</td></tr>
+              <tr><td>API/数据空间分层商业</td><td>🟡 入口在手</td><td>Open Gateway Channel Partner；内部产品化仍需补齐</td><td>T7/T8</td><td>外部 API 成功取决于内部语义/QoD/计量</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.4 战略定位结论</h3>
+        <div class="grid-2">
+          <div class="card">
+            <span class="tag fact">应成为什么</span>
+            <h4>主航道共用的横向数据能力组件</h4>
+            <ul>
+              <li>服务无线、核心网、承载、SMO/OSS 与行业方案，而不是独立 IT 销售单元。</li>
+              <li>以「统一控制语义 + 分布式执行」承接 6G，不押注单一新网元名称。</li>
+              <li>把数据引擎从运维支撑，升级为数据产品、QoD、证据链与 Agent 供数底座。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="tag risk">不应成为什么</span>
+            <h4>通用 Data Fabric 平台挑战者</h4>
+            <ul>
+              <li>不与 IBM/Informatica/云厂商在企业目录/湖仓正面竞争。</li>
+              <li>不复制 Huawei DO/DA/DCP 命名，也不机械站队 Ericsson mesh 叙事。</li>
+              <li>不承诺编织进入亚毫秒快环控制路径；快环继续本地确定性执行。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="big-quote">中兴定位断言：<em>用 AIR Net 数据引擎抢占「电信语义—QoD—近源执行—有界供数」四位一体控制点</em>；以 ZSM 029 / SA2·SA5 把接口与语义写成标准事实，以场景闭环证明价值，而不是先宣称拥有完整 6G Data Fabric。</div>
+      </div>
+    </section>
+
+    <section id="zte-ops">
+      <div class="wrap">
+        <div class="section-kicker"><i>06</i> Opportunity selection</div>
+        <h2>公司可参与的机会点分析和选择建议</h2>
+        <p class="lead">机会按「场景 → 技术 → 价值」展开，并以<strong>可达性 × 契合度 × 与前文趋势的一致性</strong>排序。千万级预算级投入应集中在可直接推动、且卡在 2026–2028 标准窗口的事项；其余以时间盒 PoC 或路标建议参与。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>机会</th><th>一句话</th><th>承接</th><th>契合度</th><th>可达性</th><th>信心</th><th>建议</th></tr></thead>
+            <tbody>
+              <tr><td><strong>O2</strong></td><td>数据引擎 → 6G 数据能力组件外溢</td><td>R1/R2/R5/R7 · T1/T2/T4</td><td>★★★★</td><td>预研可直接推动</td><td>高</td><td><strong>首选主攻</strong></td></tr>
+              <tr><td><strong>O3</strong></td><td>ZSM 029 + SA2/SA5 标准双入口卡位</td><td>R1/R8 · T6/T8</td><td>★★★</td><td>标准可直接推动</td><td>中高</td><td><strong>首选主攻</strong></td></tr>
+              <tr><td><strong>O1</strong></td><td>RAN 近源流式元数据 / 子 Fabric PoC</td><td>R3/R4/R8 · T3/T6</td><td>★★★★</td><td>软件自主 / 硬件借力</td><td>中</td><td>中期押注</td></tr>
+              <tr><td><strong>O6</strong></td><td>国内运营商显式 Data Fabric / 数据产品试点</td><td>R1–R8 · T1/T7</td><td>★★★</td><td>牵线 + 横向接入</td><td>中</td><td>中期绑定</td></tr>
+              <tr><td><strong>O4</strong></td><td>承载 SLA 与数据策略语义映射</td><td>R3 · T3</td><td>★★★</td><td>建议纳入路标</td><td>中</td><td>路标建议</td></tr>
+              <tr><td><strong>O5</strong></td><td>终端/行业侧轻量数据代理</td><td>T7</td><td>★★</td><td>长期埋点</td><td>低</td><td>低成本观察</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <article class="opp-chapter">
+          <div class="opp-head">
+            <div class="opp-no">O2</div>
+            <div>
+              <h3>数据引擎外溢为 6G 数据能力组件</h3>
+              <p>把 Fault Agent 已验证的 KG + 大模型 + 跨域接入，抽象为可复用的语义服务、数据产品目录与 Agent 供数工具集。</p>
+            </div>
+            <span class="tag fact">首选 · 高信心</span>
+          </div>
+          <div class="opp-meta"><span>短期启动</span><span>复用存量资产</span><span>对齐 T1/T2/T4</span><span>6 个月内可出原型</span></div>
+          <div class="opp-body">
+            <div>
+              <h4>场景</h4>
+              <p>①网络域 AI/Agent 的可信数据底座；②SMO/Non-RT 统一目录与契约；③NDT/跨域故障/节能等闭环供数。先服务我司主航道产品，再对外形成可售组件。</p>
+            </div>
+            <div>
+              <h4>技术</h4>
+              <ul>
+                <li>LLM 辅助网络语义层：规范/MIB/YANG/运维语料 → 约束抽取 → 图谱装配。</li>
+                <li>数据产品最小集：移动性、故障、节能、QoE、模型特征五类契约。</li>
+                <li>供数工具化：目录、血缘、订阅、策略校验封装为 MCP/OpenAPI 工具。</li>
+              </ul>
+            </div>
+            <div>
+              <h4>价值与断言</h4>
+              <p><strong>断言：</strong>这是增量成本最低、技术连续性最好的主攻。若不做，数据引擎易固化在运维单场景，6G 竞标中「数据与智能层」将缺少可复用底座。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="opp-chapter">
+          <div class="opp-head">
+            <div class="opp-no">O3</div>
+            <div>
+              <h3>标准双入口：ZSM 029 + SA2/SA5</h3>
+              <p>把「编织—数据框架接口、元数据/语义映射、数据管理层时效与 QoD」写成可引用的标准事实，而不是只跟随厂商命名。</p>
+            </div>
+            <span class="tag fact">首选 · 中高信心</span>
+          </div>
+          <div class="opp-meta"><span>2027 前窗口刚性</span><span>ZSM 029 已在牌桌</span><span>对齐 T6/T8</span><span>杠杆最高</span></div>
+          <div class="opp-body">
+            <div>
+              <h4>场景</h4>
+              <p>ZSM 029 进入规范细化/实施指南；3GPP SA2 KI#21 与 SA5 DMFW 仍在 Draft。功能范围与数据引擎高度重合，是把产品能力映射为互操作语义的窗口。</p>
+            </div>
+            <div>
+              <h4>技术</h4>
+              <ul>
+                <li>ZSM 029：贡献数据管理代理参考实现（注册/发现/编排）。</li>
+                <li>SA2/SA5：主攻编织接口双栈、语义本体映射、秒级近实时时效与 QoD 属性。</li>
+                <li>不纠缠独立数据面网元是否必选，聚焦能力集合。</li>
+              </ul>
+            </div>
+            <div>
+              <h4>价值与断言</h4>
+              <p><strong>断言：</strong>标准是千万级预算下杠杆最高的投入。错过 2027 前后收敛窗口，后续只能适配他人接口；做对了，O2 组件可直接获得标准对齐规格。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="opp-chapter">
+          <div class="opp-head">
+            <div class="opp-no">O1</div>
+            <div>
+              <h3>RAN 近源流式元数据与子 Fabric PoC</h3>
+              <p>不做亚毫秒控制替换，做「站点侧轻量标注 + 秒级流上 QoD/标签 + 异步回传证据」。</p>
+            </div>
+            <span class="tag study">中期押注 · 中信心</span>
+          </div>
+          <div class="opp-meta"><span>12–18 月时间盒</span><span>优势×空白重叠</span><span>对齐 T3/T6</span><span>反哺 O2/O3</span></div>
+          <div class="opp-body">
+            <div>
+              <h4>场景</h4>
+              <p>RAN 遥测供数、Near-RT/Non-RT 分层、边缘 AI/dApp 按标签订阅。验收看标注开销、标签准确率、断链可用与跨域字节下降，而不是「又建一个湖」。</p>
+            </div>
+            <div>
+              <h4>技术</h4>
+              <ul>
+                <li>近源过滤/聚合/特征与质量信封。</li>
+                <li>全局目录/策略与本地执行解耦。</li>
+                <li>产出 RAN 流式元数据 benchmark，服务标准提案。</li>
+              </ul>
+            </div>
+            <div>
+              <h4>价值与断言</h4>
+              <p><strong>断言：</strong>这是中兴相对 IT 厂商与纯云平台最难被替代的战场。但付费需求未完全明朗，必须需求驱动 + 时间盒，不成即止损。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="opp-chapter">
+          <div class="opp-head">
+            <div class="opp-no">O6 / O4 / O5</div>
+            <div>
+              <h3>试点绑定、承载映射与终端埋点</h3>
+              <p>O6 争取国内运营商「显式数据产品/编织层」试点；O4 把数据策略映射到承载 SLA；O5 仅作长期观察性埋点。</p>
+            </div>
+            <span class="tag infer">配合项</span>
+          </div>
+          <div class="opp-body">
+            <div>
+              <h4>O6 试点</h4>
+              <p>海外已有运营商数据平台/编织等效实践，国内「显式 Data Fabric」首发位仍相对开放。应以独立可审计 ROI（复用率、MTTR、单位有效任务成本）绑定中国移动/电信等既有合作关系，避免供应商口径陷阱。</p>
+            </div>
+            <div>
+              <h4>O4 承载</h4>
+              <p>数据管理层不抢承载线路标，只定义「哪类数据产品需要什么管道 SLA」。这是端到端 QoD 的必要接口，投入以建议纳入公司 6G 路标为主。</p>
+            </div>
+            <div>
+              <h4>O5 终端</h4>
+              <p>全行业空白大、成熟度低。只保留轻量目录/代理概念验证，跟随 ISAC/行业数据信号加减仓，不在当前预算内铺开。</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="choice-banner">
+          <div class="choice-do">
+            <h4>选择建议：集中火力</h4>
+            <p>预算与组织注意力优先保证 <strong>O2 + O3</strong>；O1 做软件侧时间盒；O6 由专家组牵线、公司决策；O4/O5 写入路标观察。</p>
+            <ul>
+              <li>主航道绑定：无线/核网/SMO 共用组件，而不是新品牌孤岛。</li>
+              <li>先自用验证，再产品化包装。</li>
+              <li>标准条目与原型互相喂养，避免「只会写文稿」或「只会上演示」。</li>
+            </ul>
+          </div>
+          <div class="choice-dont">
+            <h4>明确不选 / 缓选</h4>
+            <ul>
+              <li>不自建通用企业级 Data Fabric 去打 IT 市场。</li>
+              <li>不押注某一厂商风格的独立数据面网元成为唯一胜负手。</li>
+              <li>不为 ZB 级原始感知数据建设中心化全量湖仓。</li>
+              <li>不在治理成熟前推广无边界 Agent 自动改网。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="big-quote">机会选择断言：<em>中兴在「数据编织 × 6G」交集上的最优解，是数据引擎外溢 + 标准卡位 + RAN 近源 QoD</em>；用场景闭环证明「可信供数」，而不是用平台功能清单证明「拥有 Fabric」。</div>
+      </div>
+    </section>
+
+    <section id="zte-strategy">
+      <div class="wrap">
+        <div class="section-kicker"><i>07</i> Strategy recommendations</div>
+        <h2>具体策略建议</h2>
+        <p class="lead">策略按启动次序排列：先完成叙事与标准卡位，再并行语义/供数原型，随后以时间盒推进 RAN 近源能力，并以组织与试点机制防止横向能力碎片化。类型标注：<strong>【D】</strong>可由战略/预研/标准条线直接推动；<strong>【R】</strong>需上升为公司级决策。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>序号</th><th>我司选择</th><th>具体策略</th><th>不做的风险</th><th>备注</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>【D】数据引擎战略叙事</td>
+                <td>形成「数据引擎 → 6G 数据能力组件」对内白皮书：对齐 R1–R8 需求、T1–T8 趋势、友商证据分层与中兴主攻位，面向决策层宣讲。</td>
+                <td>数据引擎停留在故障/运维单点，6G 竞标缺少横向数据叙事</td>
+                <td>P0 · 90 天内</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>【D】标准双入口卡位</td>
+                <td>ZSM 029 贡献参考实现；SA2 KI#21 / SA5 DMFW 提交语义映射、编织接口双栈、近实时时效与 QoD 属性提案（目标 ≥2 篇有效输入）。</td>
+                <td>接口与术语被友商单极定义，后续产品长期适配他人模型</td>
+                <td>P0 · 对齐 Rel-20/21 窗口</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>【D】网络语义层与数据产品最小集</td>
+                <td>以 Fault Agent KG 为种子，建设约束式语义抽取与五类高复用数据产品（故障、节能、移动性、QoE、模型特征），每项带 Owner/SLO/QoD/血缘。</td>
+                <td>只有平台能力、没有可运营产品；无法支撑 T1/T7</td>
+                <td>P0/P1 · 与策略 4 同组</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>【D】Agentic 供数接口</td>
+                <td>将目录检索、血缘追溯、订阅、策略校验封装为 MCP/OpenAPI 工具；运行时坚持身份—策略—可观察—证据（IPOE），Reasoner/Actor 分离。</td>
+                <td>Agent 生态只能「聊天取数」，不能安全进入生产闭环</td>
+                <td>P1 · 复用 Co-Sight 方向</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>【D+R】RAN 近源子 Fabric PoC</td>
+                <td>站点/边缘部署轻量数据代理：流内标注、质量信封、本地缓存与异步证据回流；明确不进入 &lt;10ms 快环同步依赖。</td>
+                <td>丢失相对云厂商的不可替代战场，也缺少 QoD 实证</td>
+                <td>P1 · 12–18 月时间盒</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>【R】跨线虚拟团队</td>
+                <td>设立「6G 数据能力」虚拟团队（数据引擎 + 无线 + 核心网 + SMO/OSS + 标准），统一对象模型、QoD 口径与北向契约，禁止各线重复造目录。</td>
+                <td>横向能力碎片化，客户侧看到多套互不相通的「平台」</td>
+                <td>组织前提</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>【D】NDT/高风险闭环证据链</td>
+                <td>把数字孪生引擎接入变更/Agent 动作强制路径：快照、模型版本、同步滞后、误差门槛、灰度与回滚成为放行条件。</td>
+                <td>孪生停留在可视化，无法支撑有界自治</td>
+                <td>P1/P2 · 对齐 T5</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>【R】运营商试点与路标</td>
+                <td>联合国内运营商推动「数据产品/编织层」显式试点，内置独立 ROI；同时把承载 SLA 映射、行业 API 内部产品化写入公司 6G 路标。</td>
+                <td>国内首发与路标位次被友商占据；Open Gateway 有入口无供给</td>
+                <td>P1 · 专家组牵线</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>实施节奏：先卡位，再加深，后铺开</h3>
+        <div class="timeline">
+          <div class="year">0–3 月</div><div class="event"><strong>看齐与卡位：</strong>完成对内战略叙事；冻结 O2/O3 范围；启动 ZSM 029 参考实现与首批 SA2/SA5 文稿；选定五类数据产品 Owner。</div>
+          <div class="year">3–9 月</div><div class="event"><strong>原型与证据：</strong>语义层/供数工具最小可用；Fault Agent 场景扩展到至少一类非故障闭环；输出 QoD 属性草案与评测集 v0。</div>
+          <div class="year">9–18 月</div><div class="event"><strong>近源与试点：</strong>RAN 子 Fabric 时间盒 PoC；争取 1 个国内运营商显式数据产品试点；NDT 证据闸门接入高风险动作。</div>
+          <div class="year">18–36 月</div><div class="event"><strong>产品化收敛：</strong>随 Rel-21 能力包收敛，把可互操作语义/接口沉淀进主航道版本；API 商业化只映射已产品化内部能力。</div>
+        </div>
+
+        <h3>策略优先级总览</h3>
+        <div class="grid-3">
+          <div class="card">
+            <span class="tag fact">现在就做</span>
+            <h4>O2 + O3 + 叙事/组织</h4>
+            <p>策略 1/2/3/4/6。决定未来三年话语权与组件复用效率。</p>
+          </div>
+          <div class="card">
+            <span class="tag study">时间盒推进</span>
+            <h4>O1 + NDT 证据链</h4>
+            <p>策略 5/7。用可证伪指标决定加码或止损，避免沉没成本。</p>
+          </div>
+          <div class="card">
+            <span class="tag infer">公司决策项</span>
+            <h4>试点与路标</h4>
+            <p>策略 8 及 O4/O5。专家组给方案与边界，资源与客户承诺升级决策。</p>
+          </div>
+        </div>
+
+        <div class="callout warn"><strong>执行纪律：</strong>全部策略遵循「需求驱动 + 证据分层 + 时间盒」。公开试点指标须可被第三方理解；标准成功不等于产品成功；产品演示不等于跨厂商互操作。若 12 个月内仍无法形成至少两类可复用数据产品与一篇有效标准输入，应复盘主攻是否过于分散。</div>
+
+        <div class="big-quote">策略总断言：<em>先把数据引擎做成主航道共用的「可信供数控制面」</em>——用标准写下语义与接口，用近源能力守住 RAN QoD，用有界 Agent 与 NDT 证据换取自治升级；其余一律后置。</div>
+        <p class="strategy-note">本节为战略研究建议，需与公司内部产品路标、标准提案计划与客户承诺校准后执行；不代表中兴通讯正式技术路线或市场承诺。</p>
+      </div>
+    </section>
+
     <section id="sources">
       <div class="wrap">
         <div class="section-kicker"><i>A</i> Evidence & sources</div>
@@ -873,14 +1282,21 @@
           <li id="s37"><a href="https://www.huawei.com/en/news/2026/3/mwc-ai-solution">Huawei AUTINOps launch</a>：Platform/Agent/Service三层、DTN、EDNS 2.0与统一语义数据底座。</li>
           <li id="s38"><a href="https://www.huawei.com/en/news/2026/6/dtw-excellence-award-autinops">Huawei / IOH AUTINOps deployment</a>：跨域部署和运营指标为厂商/客户联合披露。</li>
           <li id="s39"><a href="https://www.nokia.com/asset/f/214909/">Nokia, Autonomous Network Fabric: evolve to full autonomy</a>, 2025：Sense—Think—Act、AN Apps、API暴露、Marketplace与多云部署架构。</li>
+          <li id="s40"><a href="https://www.mobileworldlive.com/zte-unveils-air-net-high-level-autonomous-network-solution-at-mwc-barcelona-2025/">ZTE AIR Net at MWC Barcelona 2025</a>：大数据/大模型/数字孪生三引擎与高水平自智网络方案公开发布。</li>
+          <li id="s41"><a href="https://www.marketscreener.com/quote/stock/ZTE-CORPORATION-6495034/news/ZTE-unveils-AI-driven-autonomous-network-strategy-at-TM-Forum-s-DTW-Ignite-50351455/">ZTE at TM Forum DTW Ignite 2025</a>：AIR Net 三引擎协同、Co-Sight 开源及 MCP/A2A 互操作方向。</li>
+          <li id="s42"><a href="https://inform.tmforum.org/features-and-opinion/ztes-vision-advances-autonomous-network-innovation">TM Forum, ZTE’s vision advances Autonomous Network innovation</a>：Fault Agent（KG+大模型）跨域故障场景与试点披露。</li>
+          <li id="s43"><a href="https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=78246">ETSI DGS/ZSM-029 / GS ZSM 029</a>：Data Management Agent for Autonomous Networks；Supporting Organizations 含 ZTE；2026-04 工作项采纳。</li>
+          <li id="s44"><a href="https://iot-now.com/2025/07/03/152223-ztes-oss-series-products-of-air-net-solution-gain-tm-forums-ready-for-oda-certification/">ZTE AIR Net OSS Ready for ODA</a>：TM Forum ODA 认证与 OpenAPI/Catalyst 参与事实。</li>
+          <li id="s45"><a href="https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/mediares/zte/service/ZTE%20Autonomous%20Networks%20White%20Paper%202026%20(EN).pdf">ZTE Autonomous Networks White Paper 2026</a>：数据引擎（多模态数据湖、AI Ready 治理、智能分析）与三引擎架构描述。</li>
+          <li id="s46"><a href="https://www.gsma.com/newsroom/press-release/chinas-leading-mobile-operators-first-to-commercially-launch-new-fraud-reducing-password-service-after-receiving-gsma-open-gateway-certification/">GSMA Open Gateway in China</a>：公开材料中的生态/渠道伙伴事实，用于 API 商业化讨论，不证明内部 Fabric 完成度。</li>
         </ol>
-        <div class="boundary"><strong>研究边界：</strong>本文综合了两份仓库内深度研究的第一性原理、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的官方资料。标题中的“Data Fabric × 6G”为战略分析框架，不是ITU、3GPP或O-RAN正式网元名称。</div>
+        <div class="boundary"><strong>研究边界：</strong>本文综合了仓库内深度研究、Data Fabric能力、6G/RAN架构、标准及厂商材料，并补充截至2026年8月的中兴公开资料与ETSI/TM Forum证据。标题中的“Data Fabric × 6G”及“中兴战略定位”为分析框架与研究建议，不是ITU、3GPP或O-RAN正式网元名称，也不代表中兴通讯正式技术路线或市场承诺。</div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">《6G数据架构 × 数据编织：行业环境、竞争格局与趋势研判》 · 对应 template.md 前四部分 · 2026-08<br>战略研究参考，非公司正式立场；事实、研究主张和趋势推演应分级使用。</div>
+    <div class="wrap">《6G数据架构 × 数据编织：行业趋势与中兴战略定位》 · 对应 template.md 需求至策略建议 · 2026-08<br>战略研究参考，非中兴通讯正式立场；公开事实、研究主张、内部定位建议与趋势推演应分级使用。</div>
   </footer>
   <script>
     const progress=document.getElementById('progress');
