@@ -445,8 +445,8 @@ def build():
     )
     assets = Path("/workspace/reports/data-fabric-assets")
     vendors = [
-        ("Ericsson", "联邦数据管理 + EIAP/DataOps + API生态｜底座强、独立网元叙事弱",
-         assets / "ericsson-data-ingestion-architecture.png"),
+        ("Ericsson", "2021摄取架构→2026 AI-ready data mesh｜底座强、独立网元叙事弱",
+         assets / "ericsson-ai-ready-data-mesh-architecture.png"),
         ("Huawei", "DO/DA/DCP研究 + AUTINOps商用桥｜研究与商用平面易混读",
          assets / "huawei-6g-data-plane-architecture.jpg"),
         ("Nokia", "AN Fabric / Data Suite产品化最清晰｜跨厂商统一仍缺中立证明",
