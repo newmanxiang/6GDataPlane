@@ -14,6 +14,8 @@
 |---|---|
 | `6g-data-fabric-strategy-deck.pptx` | 由 HTML 报告生成的 24 页完整论证版 PPT（非预览版） |
 | `scripts/build_strategy_pptx.py` | 再生脚本：`python3 reports/scripts/build_strategy_pptx.py` |
+| `6g-data-fabric-sections-234-deck.pptx` | 2.3 / 3 / 4 章金字塔洞察胶片（16 页）：2.3 每子节一页并嵌入厂商架构图；第3章按价值链编排；第4章一页收束时间窗 |
+| `scripts/build_sections_234_pptx.py` | 再生脚本：`python3 reports/scripts/build_sections_234_pptx.py` |
 | `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
 
 ## 版本规则
