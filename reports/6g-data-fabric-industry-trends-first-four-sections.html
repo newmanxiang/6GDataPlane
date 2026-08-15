@@ -102,6 +102,10 @@
     .trend-spine>div{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:16px;padding:18px}
     .trend-spine>div:not(:last-child):after{content:"→";position:absolute;right:-18px;top:48%;z-index:2;color:var(--orange);font-size:22px;font-weight:900}
     .trend-spine .stage{display:block;font-size:10px;font-weight:900;letter-spacing:.08em;color:var(--teal)}.trend-spine h4{margin:4px 0 6px}.trend-spine p{margin:0;color:var(--muted);font-size:13px}
+    .derivation-list{display:grid;gap:10px;margin:20px 0}
+    .derivation-item{display:grid;grid-template-columns:150px 1.1fr 1fr 145px;align-items:stretch;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}
+    .derivation-item>div{padding:14px 15px}.derivation-item .premise{background:#e7f1f3;color:var(--navy)}.derivation-item .conflict{color:var(--muted)}.derivation-item .deduction{background:#f3f7f9;color:#355468}.derivation-item .result{background:var(--navy);color:#fff}
+    .derivation-item b{display:block;margin-bottom:3px;color:inherit;font-size:12px}.derivation-item p{margin:0;font-size:12.5px;line-height:1.55}.derivation-item .result b{color:var(--lime)}.derivation-item .result p{color:#dceaf3}
     .trend-crosscut{border:1px dashed var(--orange);background:#fff1e8;border-radius:14px;padding:14px 17px;margin:14px 0;color:#6c4936;font-size:13.5px}.trend-crosscut strong{color:var(--navy)}
     .trend-map{display:grid;grid-template-columns:145px 1fr 140px;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:18px 0}
     .trend-map>div{padding:11px 13px;border-bottom:1px solid var(--line)}.trend-map>div:nth-last-child(-n+3){border-bottom:0}
@@ -130,7 +134,7 @@
     @media(max-width:900px){
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats,.score-grid{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon,.choice-banner,.opp-body{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.horizon-principle{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.horizon-principle,.derivation-item{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
       .trend-spine>div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-23px}.trend-map{grid-template-columns:1fr}.trend-map>div{border-bottom:1px solid var(--line)!important}.trend-map>div:last-child{border-bottom:0!important}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
@@ -632,14 +636,46 @@
       <div class="wrap">
         <div class="section-kicker"><i>03</i> Industry trend judgement</div>
         <h2>产业趋势预判：从分布式网络事实到可度量价值</h2>
-        <p class="lead">第三章只保留一条价值主线：<strong>状态可知 → 数据适用 → 行动可信 → 价值可结算</strong>。T1–T7是这条主线上的必要能力，T8回答这些能力最终以什么标准载体落地；八条趋势不是八个平行产品，也不再另生“工程/标准/产品/竞争”四条平行主线。</p>
+        <p class="lead">第三章不先预设“主线”，而是从6G数据的物理、语义、控制与经济约束逐层推导：每解决一层矛盾，才获得进入下一层的必要条件；T1–T7对应推导出的能力，T8回答这些能力最终以什么标准载体落地。</p>
 
         <div class="callout">
-          <strong>推导方法：</strong>先从不可绕开的物理与经济约束出发——数据分散且高频、含义依赖网络状态、自动动作会放大错误、跨组织使用必须界定权利与责任——再推导必要能力、工程结果和反证条件。标准与厂商仅作<strong>外部校验</strong>，不替代第一性原理推理。
+          <strong>推导规则：</strong>每一步都按“不可变事实 → 若不解决会产生的矛盾 → 必须补齐的能力 → 可验证趋势”展开。标准与厂商仅作<strong>外部校验</strong>，不替代第一性原理推理；如果前一层能力未成立，后一层不能靠产品命名或平台功能越级成立。
         </div>
 
-        <h3>3.1 唯一主线与 T1–T8 对应关系</h3>
-        <div class="trend-spine" aria-label="第三章唯一趋势主线">
+        <h3>3.1 从不可变约束推导四个必要关口</h3>
+        <p>以下四步不是对趋势的事后分类，而是由四组前后相继的矛盾推导出来：先解决“事实能否被及时掌握”，才能讨论“数据能否被机器正确使用”；数据可用之后，才有资格扩大自动化权限；行动可控之后，跨组织供给才可能形成可结算价值。</p>
+
+        <div class="derivation-list" aria-label="趋势主线推导过程">
+          <div class="derivation-item">
+            <div class="premise"><b>约束一｜物理分布</b><p>RAN、Core、Edge、ISAC持续产生高频数据；全量集中受带宽、时延、能耗、隐私和断链约束。</p></div>
+            <div class="conflict"><b>若不解决</b><p>中心既看不到及时变化，又承受不可接受的搬运成本；本地执行与全局治理相互脱节。</p></div>
+            <div class="deduction"><b>因此必须</b><p>在源附近处理数据，同时把结构、配置、质量、权限和血缘变化同步为可理解状态。</p></div>
+            <div class="result"><b>必要关口｜状态可知</b><p>T2 元数据变化事件<br>T3 全局控制/近源执行</p></div>
+          </div>
+          <div class="derivation-item">
+            <div class="premise"><b>约束二｜语义依赖</b><p>无线数据的含义依赖对象、时空、配置、采样和测量误差；“能访问”不等于“适合当前任务”。</p></div>
+            <div class="conflict"><b>若不解决</b><p>模型和消费者只能重复解释、清洗与对齐；字段完整仍可能产生错误比较、训练偏差和闭环误判。</p></div>
+            <div class="deduction"><b>因此必须</b><p>把数据封装为带消费者、Owner、契约和生命周期的产品，并以面向用途的QoD证明适用边界。</p></div>
+            <div class="result"><b>必要关口｜数据适用</b><p>T1 可运营数据产品<br>T6 QoD质量信封</p></div>
+          </div>
+          <div class="derivation-item">
+            <div class="premise"><b>约束三｜动作外部性</b><p>AI/Agent输出会改变真实网络状态；局部错误可影响相邻域、业务SLA和其他自动化闭环。</p></div>
+            <div class="conflict"><b>若不解决</b><p>数据错误会直接升级为动作风险；仅有模型置信度无法回答谁授权、为何放行、失败如何接管。</p></div>
+            <div class="deduction"><b>因此必须</b><p>建立供数—决策—执行—回证责任链，并用NDT反事实预演、策略、灰度和回滚约束高风险动作。</p></div>
+            <div class="result"><b>必要关口｜行动可信</b><p>T4 Agent协同闭环<br>T5 NDT动作关口</p></div>
+          </div>
+          <div class="derivation-item">
+            <div class="premise"><b>约束四｜交易协同</b><p>行业应用需要跨运营商覆盖、一致行为、用途约束、责任界定、计量与清结算，而非单个孤立API。</p></div>
+            <div class="conflict"><b>若不解决</b><p>API数量增加但体验不一致、无人持续付费；内部成本、外部SLA、责任与收入无法闭环。</p></div>
+            <div class="deduction"><b>因此必须</b><p>先形成内部可信产品，再经标准服务、跨网分发和行业结果逐层传递价值并完成结算。</p></div>
+            <div class="result"><b>必要关口｜价值可结算</b><p>T7 四层商业链</p></div>
+          </div>
+        </div>
+
+        <div class="callout"><strong>递进关系：</strong>“状态可知”只证明数据被及时掌握，不证明它适合模型；“数据适用”只证明可被正确消费，不证明动作安全；“行动可信”只证明风险可控，不证明有人付费。正因为每一层都不能替代下一层，四个关口才形成顺序，而不是四个平行口号。</div>
+
+        <h4>由上述推导收敛出的价值推进链</h4>
+        <div class="trend-spine" aria-label="由约束推导出的价值推进链">
           <div><span class="stage">STAGE 1 · FACT</span><h4>状态可知</h4><p>在源附近完成必要处理，并让结构、配置、质量、权限和血缘变化及时可见。</p></div>
           <div><span class="stage">STAGE 2 · FITNESS</span><h4>数据适用</h4><p>把原始流封装为面向明确任务、带语义、QoD、契约和责任人的数据产品。</p></div>
           <div><span class="stage">STAGE 3 · ACTION</span><h4>行动可信</h4><p>让 Agent 的每次决策、工具调用和网络动作都有身份、策略、仿真与回滚证据。</p></div>
