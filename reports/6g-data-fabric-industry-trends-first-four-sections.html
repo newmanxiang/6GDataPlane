@@ -92,6 +92,12 @@
     .vendor-mark{width:84px;height:84px;border-radius:22px;background:var(--navy);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900}
     .vendor-head h3{margin:0 0 4px}.vendor-head p{margin:0;color:var(--muted)}.vendor-level{font-size:11px;font-weight:850;padding:6px 11px;border-radius:999px;background:#dff4ed;color:#08736e}
     .vendor-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.vendor-grid .figure{margin:0}.vendor-grid p{color:#4e6575}
+    .vendor-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 18px}
+    .vendor-compare .figure{margin:0}
+    .era-tag{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:850;letter-spacing:.06em;margin-bottom:8px}
+    .era-old{background:#eef2f5;color:#4a6070}.era-new{background:#dff4ed;color:#08736e}
+    .compare-note{margin:0 0 16px;color:#4e6575}
+    .vendor-analysis p{color:#4e6575}
     .evidence-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}.evidence-strip>div{background:#edf3f6;border-radius:12px;padding:11px;font-size:12px;color:#4f6676}.evidence-strip b{display:block;color:var(--navy);margin-bottom:3px}
     .vendor-findings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.vendor-findings>div{border-left:3px solid var(--teal);background:#f5f8fa;padding:13px 14px}.vendor-findings b{display:block;font-size:13px;color:var(--navy)}.vendor-findings span{font-size:12px;color:var(--muted)}
     .status-summary{background:linear-gradient(145deg,#071f3d,#0e4d59);color:#fff;border-radius:24px;padding:30px;margin-top:40px}.status-summary h3{color:var(--lime);margin-top:0}.status-summary p{color:#d7e7f0}.status-summary .grid-3 .card{box-shadow:none}.status-summary .grid-3 .card p{color:#526777}
@@ -115,7 +121,7 @@
     @media(max-width:900px){
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats,.score-grid{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon,.choice-banner,.opp-body{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.vendor-compare,.trend-body{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
         content:"← 左右滑动查看完整内容 →";display:block;position:sticky;left:0;z-index:3;
@@ -490,22 +496,54 @@
             <div class="vendor-level">产品 C1/C2 · 架构 A · 愿景 V</div>
           </div>
 
-          <div class="vendor-grid">
+          <div class="vendor-compare">
             <figure class="figure">
-              <img src="data-fabric-assets/ericsson-data-ingestion-architecture.png" alt="Ericsson电信数据摄取架构，包含EDCA、DRG、DDC和全局数据目录">
-              <figcaption><span><a href="data-fabric-assets/ericsson-data-ingestion-architecture.png" download>下载架构图</a> · <a href="https://doi.org/10.23919/etr.2021.9904675" target="_blank" rel="noopener">原始论文</a></span><br><strong>图4｜Ericsson Data Ingestion Architecture。</strong>EDCA汇集源数据，经DRG跨域转发，DDC与Global Data Catalog支持外部应用集群和联邦数据湖。图源：Ericsson Technology Review 2021，Figure 2；为研究引用仅裁切页面空白，版权归Ericsson。</figcaption>
+              <div class="era-tag era-old">2021 · 摄取架构</div>
+              <img src="data-fabric-assets/ericsson-data-ingestion-architecture.png" alt="Ericsson 2021电信数据摄取架构，包含EDCA、DRG、DDC和全局数据目录">
+              <figcaption><span><a href="data-fabric-assets/ericsson-data-ingestion-architecture.png" download>下载架构图</a> · <a href="https://doi.org/10.23919/etr.2021.9904675" target="_blank" rel="noopener">原始论文</a></span><br><strong>图4a｜2021 Data Ingestion Architecture。</strong>EDCA一次汇集源数据，DRG跨客户站点与外部应用集群中继，DDC与Global Data Catalog组成联邦数据湖。图源：Ericsson Technology Review 2021，Figure 2；为研究引用仅裁切页面空白，版权归Ericsson。</figcaption>
             </figure>
-            <div>
-              <h4>架构主线：数据摄取 → 联邦网格 → 智能平台</h4>
-              <p>2021架构先解决重复采集：源数据进入EDCA，应用在客户侧或外部应用集群消费；DRG承担跨边界数据中继，DDC与Global Data Catalog协同形成联邦数据湖。2026 AI-ready data mesh又把数据源、摄取、refinement &amp; governance、consumer support串成面向AI与多Agent的参考架构，强调计算靠近数据、数据按产品与授权复用。<a href="#s9">[S9]</a><a href="#s10">[S10]</a></p>
-              <p>6G愿景中的common data plane进一步提出网络数据的采集、传输、潜在存储与治理，并由模型编排器选择「把数据送到智能」还是「把智能送到数据」。这是一条从现有摄取/自动化产品向6G分布式数据基础设施延伸的连续路线，但common data plane不是3GPP标准。<a href="#s9">[S9]</a></p>
-              <p>成熟度上，各层并不一致：Swisscom等合同证明EIAP进入运营网络；Mediation/Telco DataOps拥有成熟采集加工底座，Grameenphone案例披露每日超过60亿条记录；但这些数字不证明AI-ready data mesh、EFDL或common data plane已按相同规模形成统一产品。<a href="#s35">[S35]</a><a href="#s36">[S36]</a></p>
-            </div>
+            <figure class="figure">
+              <div class="era-tag era-new">2026 · AI-ready data mesh</div>
+              <img src="data-fabric-assets/ericsson-ai-ready-data-mesh-architecture.png" alt="Ericsson 2026 AI-ready data mesh参考架构，自下而上为数据源、摄取、精炼与治理、数据编织消费支撑">
+              <figcaption><span><a href="data-fabric-assets/ericsson-ai-ready-data-mesh-architecture.png" download>下载架构图</a> · <a href="https://www.ericsson.com/en/reports-and-papers/white-papers/future-proof-data-management-for-ai-networks" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图4b｜2026 AI-ready data mesh 参考架构。</strong>底部仍是遥测/网络/客户/IT源与Data Collector；中部以data mesh island落地联邦；上部把Data fabric标为消费支撑层（虚拟化、本体/知识图谱、marketplace、策略）；右侧横切MLOps与生命周期。图源：Ericsson白皮书GFTL-26:000204Uen，2026-01，Reference architecture原图；版权归Ericsson。</figcaption>
+            </figure>
+          </div>
+
+          <figure class="figure">
+            <div class="era-tag era-new">2026 · North Star</div>
+            <img src="data-fabric-assets/ericsson-ai-ready-data-mesh-north-star.png" alt="Ericsson 2026数据管理North Star：灰柱为数据流，蓝条为横切的Integrated AI、治理与安全">
+            <figcaption><span><a href="data-fabric-assets/ericsson-ai-ready-data-mesh-north-star.png" download>下载架构图</a> · <a href="https://www.ericsson.com/en/reports-and-papers/white-papers/future-proof-data-management-for-ai-networks" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图4c｜2026 North Star。</strong>灰柱是数据自然流：管道效率 → 统一与联邦 → AI使能与准备 → 数据产品与变现；蓝条是横切的Integrated AI、Data governance和Data security。用来读图4b：2021解决的是灰柱前半段，2026把后半段和蓝条补齐。图源：同上白皮书North Star vision原图；版权归Ericsson。</figcaption>
+          </figure>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>对比维度</th><th>2021 摄取架构（图4a）</th><th>2026 AI-ready data mesh（图4b/4c）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>要解决的问题</strong></td><td>重复采集，数据锁进单一应用管道</td><td>域碎片与“data mess”；数据不能直接被Agent/AI消费</td></tr>
+                <tr><td><strong>主路径</strong></td><td>Sources → Collectors → EDCA → DRG → DDC/GDC</td><td>Sources → DC → Mesh islands → Refinement &amp; governance → Data fabric → Consumers</td></tr>
+                <tr><td><strong>联邦形态</strong></td><td>客户站点 + 外部应用集群组成联邦数据湖</td><td>多个data mesh island；计算靠近数据，湖仓作长期存储</td></tr>
+                <tr><td><strong>消费对象</strong></td><td>客户侧应用套件与外部AC用例应用</td><td>数据科学、NW assurance、AI/ML apps and agents、数字孪生、自治运营</td></tr>
+                <tr><td><strong>新增控制点</strong></td><td>EDCA目录、DRG中继、GDC元数据进出口</td><td>显式Data fabric层：虚拟化、本体/知识图谱、marketplace、策略定义与执行</td></tr>
+                <tr><td><strong>横切能力</strong></td><td>基本未展开（以采集与分发为主）</td><td>Integrated AI、治理、安全贯穿全流程；右侧叠加MLOps/CI/CD/生命周期</td></tr>
+                <tr><td><strong>证据边界</strong></td><td>论文架构；后续产品落到Mediation/Telco DataOps</td><td>2026参考架构，不是已规模化统一产品；不能用EIAP合同证明mesh已落地</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="vendor-analysis">
+            <h4>架构主线：2021解决采集一次，2026补齐AI-ready编织层</h4>
+            <p class="compare-note">两张图应对照阅读，而不是用2021图代表Ericsson当前主张。2026图把2021的摄取底座收成底层DC与mesh island，再向上叠治理、Data fabric和Agent消费。</p>
+            <p>2021架构先解决重复采集：源数据进入EDCA，应用在客户侧或外部应用集群消费；DRG承担跨边界数据中继，DDC与Global Data Catalog协同形成联邦数据湖。这一层今天仍能在图4b底部看到——遥测、网络事件、客户与IT源经Data Collector进入各island。<a href="#s30">[S30]</a></p>
+            <p>2026 AI-ready data mesh把主路径拉长为数据源、摄取、refinement &amp; governance、consumption support四段，并在消费支撑层直接标出Data fabric：数据访问与虚拟化、地理分布、本体/知识图谱、集成模式、安全与策略、onboarding、marketplace和AI工具。治理从“有目录”扩展到质量、安全、隐私、血缘、主数据和建模；消费端从应用套件变成AI/ML与多Agent、数字孪生和自治运营。图4c的North Star把这一跳跃说得更直白：灰柱后半段是AI准备与数据产品变现，蓝条要求Integrated AI、治理和安全横切全流程。<a href="#s10">[S10]</a></p>
+            <p>6G愿景中的common data plane进一步提出网络数据的采集、传输、潜在存储与治理，并由模型编排器选择「把数据送到智能」还是「把智能送到数据」。这是一条从现有摄取/自动化产品向6G分布式数据基础设施延伸的连续路线，但common data plane不是3GPP标准，2026 mesh也仍是参考架构。<a href="#s9">[S9]</a></p>
+            <p>成熟度上，各层并不一致：Swisscom等合同证明EIAP进入运营网络；Mediation/Telco DataOps拥有成熟采集加工底座，Grameenphone案例披露每日超过60亿条记录；但这些数字不证明AI-ready data mesh、EFDL或common data plane已按相同规模形成统一产品。<a href="#s35">[S35]</a><a href="#s36">[S36]</a></p>
           </div>
 
           <div class="evidence-strip">
             <div><b>商用锚点</b>NWDAF、EIAP/rApps、CCES与2025 Telco DataOps Platform分别覆盖分析、自动化、暴露和数据加工。</div>
-            <div><b>参考架构</b>AI-ready data mesh、EFDL和早期数据摄取架构描述跨域数据管理机制。</div>
+            <div><b>参考架构</b>2021摄取架构与2026 AI-ready data mesh对照：前者解决采集一次，后者补齐治理、Data fabric和Agent消费。</div>
             <div><b>6G愿景</b>Common Data Plane与intelligent fabric强调连接、算力、云、数据和AI协同。</div>
             <div><b>生态外延</b>Aduna将CAMARA网络API聚合到跨运营商销售渠道，但它是独立合资公司。</div>
           </div>
@@ -1726,7 +1764,7 @@
           <li id="s7"><a href="https://www.o-ran.org/technical-groups">O-RAN Technical Groups</a>：WG2/WG3/WG10等职责；另见<a href="https://www.o-ran.org/specifications">规范入口</a>。</li>
           <li id="s8"><a href="https://www.nokia.com/6g/unlocking-the-full-potential-of-ai-native-6g-through-standards/">Nokia, AI-native 6G through standards</a>：data prosumer、目录、抽象、产品及AI生命周期主张。</li>
           <li id="s9"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/co-creating-a-cyber-physical-world">Ericsson, Co-creating a cyber-physical world</a>：common data plane与数据/智能放置主张。</li>
-          <li id="s10"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/future-proof-data-management-for-ai-networks">Ericsson, From data mess to AI-ready data mesh</a>：AI网络数据管理参考架构。</li>
+          <li id="s10"><a href="https://www.ericsson.com/en/reports-and-papers/white-papers/future-proof-data-management-for-ai-networks">Ericsson, From data mess to AI-ready data mesh</a>，GFTL-26:000204Uen，2026-01：AI-ready data mesh参考架构与North Star；本地配图见图4b/4c。</li>
           <li id="s11"><a href="https://www.ericsson.com/en/ran/intelligent-ran-automation/intelligent-automation-platform">Ericsson Intelligent Automation Platform</a>：EIAP/rApp等公开产品能力。</li>
           <li id="s12"><a href="https://www.huawei.com/en/huaweitech/future-technologies/data-plane-design-ai-native-6g-networks">Huawei, Data Plane Design for AI-Native 6G Networks</a>：DO/DA/DCP候选研究架构。</li>
           <li id="s13"><a href="https://www.huawei.com/en/huaweitech/future-technologies/net4ai-supporting-ai-as-a-sevice-6g">Huawei, NET4AI</a>：6G AIaaS控制/计算与数据通信研究。</li>
@@ -1746,7 +1784,7 @@
           <li id="s27"><a href="https://openlineage.io/docs/">OpenLineage Documentation</a>：开放运行/血缘事件模型，支撑元数据事件化的工程方向。</li>
           <li id="s28"><a href="https://www.tmforum.org/catalysts/projects/C26.0.933/zerotrust-agents-for-autonomous-networks">TM Forum, Zero-Trust Agents for Autonomous Networks</a>：Identity、Policy、Observability、Evidence（IPOE）可信Agent模式。</li>
           <li id="s29"><a href="https://www.3gpp.org/technologies/digital-twin1">3GPP, Network Digital Twin management</a>：NDT管理能力、数据同步与生命周期边界。</li>
-          <li id="s30"><a href="https://doi.org/10.23919/etr.2021.9904675">Ericsson Technology Review, Data ingestion architecture for telecom applications</a>, 2021：EDCA、DRG、DDC、GDC及联邦数据湖。</li>
+          <li id="s30"><a href="https://doi.org/10.23919/etr.2021.9904675">Ericsson Technology Review, Data ingestion architecture for telecom applications</a>, 2021：EDCA、DRG、DDC、GDC及联邦数据湖；本地配图见图4a，需与2026图4b对照，不能单独代表当前主张。</li>
           <li id="s31"><a href="https://www.nokia.com/asset/f/214288/">Nokia, Data mesh and distributed data architecture for telco networks</a>：域湖仓、公共Data Fabric、AIOps与服务域蓝图。</li>
           <li id="s32"><a href="https://www.nokia.com/newsroom/nokia-ava-pddr-solution-deployed-by-kddi-to-boost-network-quality/">Nokia / KDDI AVA PDDR deployment</a>：面向20万4G/5G RAN的异常检测域应用证据。</li>
           <li id="s33"><a href="https://www.nokia.com/newsroom/nokia-and-stc-group-optimize-network-with-ai-powered-mantaray-cognitive-son-solution-in-saudi-arabia/">Nokia / stc MantaRay Cognitive SON</a>：商用RAN优化与自动动作案例。</li>
