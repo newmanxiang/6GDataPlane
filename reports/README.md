@@ -18,7 +18,8 @@
 | `scripts/build_sections_234_pptx.py` | 再生脚本：`python3 reports/scripts/build_sections_234_pptx.py` |
 | `6g-data-fabric-section-23-deck.pptx` | 2.3 六页独立胶片：提出分歧 → 划定边界 → 三家案例 → 归纳结论；不另设封面 |
 | `scripts/build_section_23_pptx.py` | 再生脚本：`python3 reports/scripts/build_section_23_pptx.py` |
-| `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
+| `6g-data-fabric-industry-trends-full-sections.html` | 完整 HTML 论证正文（保留主分支已改第二章，替换重构后的第三章） |
+| `6g-data-fabric-industry-trends-first-four-sections.html` | 同上正文的同步副本，便于既有链接继续打开 |
 
 ## 版本规则
 
