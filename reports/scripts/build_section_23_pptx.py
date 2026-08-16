@@ -251,13 +251,15 @@ def slide_p1(prs) -> None:
         add_text(s, 0.84, y + 0.26, 3.55, 0.24, [title], size=13, color=NAVY, bold=True)
         add_text(s, 0.50, y + 0.54, 3.87, 0.44, [body], size=10, color=SLATE, spacing=1.04)
 
-    hub = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(4.68), Inches(3.05), Inches(1.72), Inches(1.55))
+    collector = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(4.58), Inches(1.72), Inches(0.045), Inches(3.82))
+    rgb(collector, TEAL)
+    arr_in = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(4.58), Inches(3.58), Inches(0.24), Inches(0.22))
+    rgb(arr_in, TEAL)
+    hub = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(4.86), Inches(3.08), Inches(1.46), Inches(1.42))
     rgb(hub, NAVY)
-    add_text(s, 4.78, 3.28, 1.52, 1.10, ["控制权", "如何分配"], size=13, color=WHITE, bold=True, align=PP_ALIGN.CENTER, spacing=1.15)
-    arr_l = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(4.68), Inches(2.55), Inches(1.72), Inches(0.28))
-    rgb(arr_l, TEAL)
-    arr_r = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(4.68), Inches(4.78), Inches(1.72), Inches(0.28))
-    rgb(arr_r, TEAL)
+    add_text(s, 4.92, 3.28, 1.34, 1.04, ["控制权", "如何分配"], size=13, color=WHITE, bold=True, align=PP_ALIGN.CENTER, spacing=1.15)
+    arr_out = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(6.36), Inches(3.58), Inches(0.20), Inches(0.22))
+    rgb(arr_out, TEAL)
 
     routes = [
         (TEAL, "Ericsson  ·  存量联邦", "连接既有数据岛", "以复杂协调换迁移连续性。权威源与存量产品不可跳过，统一的是治理视图，不是全部运行时。"),
@@ -291,9 +293,9 @@ def slide_p2(prs) -> None:
     thesis(s, "标准更关注跨厂商必须一致的对象和接口，不替厂商选择内部拓扑，因此三条路线可以长期并存。")
 
     layers = [
-        (4.88, RGBColor(0x1F, 0x4E, 0x5F), "LAYER 3  ·  外部产品行为", "API  ·  SLA  ·  用途  ·  计量  ·  结算", "消费者看见的是可订购、可计量、可追责的服务，而不是内部网元名称。"),
+        (1.48, RGBColor(0x1F, 0x4E, 0x5F), "LAYER 3  ·  外部产品行为", "API  ·  SLA  ·  用途  ·  计量  ·  结算", "消费者看见的是可订购、可计量、可追责的服务，而不是内部网元名称。"),
         (3.18, TEAL, "LAYER 2  ·  跨域控制语义", "稳定ID  ·  最小元数据  ·  QoD  ·  授权  ·  动作证据", "跨域复用真正依赖的是对象能否对齐、质量能否声明、动作能否回证。"),
-        (1.48, NAVY, "LAYER 1  ·  网络权威事实", "RAN  ·  Core  ·  OAM  ·  O-RAN接口", "无线、会话和运维事实仍由网络域产生；标准先承认这些权威源，而不是另造一个总库。"),
+        (4.88, NAVY, "LAYER 1  ·  网络权威事实", "RAN  ·  Core  ·  OAM  ·  O-RAN接口", "无线、会话和运维事实仍由网络域产生；标准先承认这些权威源，而不是另造一个总库。"),
     ]
     for y, fill, kicker, title, body in layers:
         layer_box(s, 0.38, y, 7.20, 1.52, kicker, title, body, fill)
