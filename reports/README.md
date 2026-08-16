@@ -18,6 +18,10 @@
 | `scripts/build_sections_234_pptx.py` | 再生脚本：`python3 reports/scripts/build_sections_234_pptx.py` |
 | `6g-data-fabric-section-23-deck.pptx` | 2.3 六页独立胶片：提出分歧 → 划定边界 → 三家案例 → 归纳结论；不另设封面 |
 | `scripts/build_section_23_pptx.py` | 再生脚本：`python3 reports/scripts/build_section_23_pptx.py` |
+| `6g-data-fabric-section-3-deck.pptx` | 第三章六页独立胶片：趋势结构 → T2/T3 → T1/T6 → T4/T5 → T7双路径 → T8标准承载 |
+| `scripts/build_section_3_pptx.py` | 再生脚本：`python3 reports/scripts/build_section_3_pptx.py` |
+| `plan-section3.md` | 第三章胶片制作计划 |
+| `6g-data-fabric-industry-trends-full-sections.html` | 完整 HTML 论证正文 |
 | `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
 
 ## 版本规则
