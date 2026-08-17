@@ -102,19 +102,29 @@
     .trend-spine>div{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:16px;padding:18px}
     .trend-spine>div:not(:last-child):after{content:"→";position:absolute;right:-18px;top:48%;z-index:2;color:var(--orange);font-size:22px;font-weight:900}
     .trend-spine .stage{display:block;font-size:10px;font-weight:900;letter-spacing:.08em;color:var(--teal)}.trend-spine h4{margin:4px 0 6px}.trend-spine p{margin:0;color:var(--muted);font-size:13px}
-    .derivation-list{display:grid;gap:10px;margin:20px 0}
-    .derivation-item{display:grid;grid-template-columns:150px 1.1fr 1fr 145px;align-items:stretch;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}
-    .derivation-item>div{padding:14px 15px}.derivation-item .premise{background:#e7f1f3;color:var(--navy)}.derivation-item .conflict{color:var(--muted)}.derivation-item .deduction{background:#f3f7f9;color:#355468}.derivation-item .result{background:var(--navy);color:#fff}
-    .derivation-item b{display:block;margin-bottom:3px;color:inherit;font-size:12px}.derivation-item p{margin:0;font-size:12.5px;line-height:1.55}.derivation-item .result b{color:var(--lime)}.derivation-item .result p{color:#dceaf3}
+    .trend-cluster-grid>div:not(:last-child):after{display:none}
+    .trend-bridge{display:grid;grid-template-columns:1fr 46px 1.25fr 46px 1fr;gap:10px;align-items:stretch;margin:22px 0}
+    .bridge-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 8px 20px rgba(7,31,61,.05)}
+    .bridge-card.output{background:var(--navy);color:#fff}.bridge-card.output h4{color:var(--lime)}.bridge-card.output li{color:#dceaf3}
+    .bridge-kicker{display:block;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.09em;margin-bottom:5px}.bridge-card.output .bridge-kicker{color:var(--cyan)}
+    .bridge-card ul{margin:9px 0 0;padding-left:18px}.bridge-card li{margin:5px 0;color:var(--muted);font-size:12.5px}
+    .bridge-arrow{display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:24px;font-weight:900}
+    .bridge-criteria{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.bridge-criteria span{background:#edf3f6;border-radius:9px;padding:8px;color:#355468;font-size:11.5px}.bridge-criteria b{display:block;color:var(--navy)}
+    .dependency-board{background:linear-gradient(145deg,#071f3d,#0d4654);border-radius:22px;padding:22px;margin:18px 0;color:#fff}
+    .dependency-foundations,.dependency-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .dependency-node{background:#fff;border:1px solid rgba(94,182,228,.35);border-radius:15px;padding:16px;color:var(--ink)}.dependency-node h4{margin:4px 0 6px}.dependency-node p{margin:0;color:var(--muted);font-size:12.5px}
+    .dependency-code{display:block;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.08em}.dependency-link{text-align:center;color:var(--lime);font-size:12px;font-weight:850;padding:13px 0}
+    .dependency-path{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:17px;padding:15px}.dependency-path>p{margin:5px 0 12px;color:#dceaf3;font-size:12.5px}
+    .dependency-path .dependency-node{box-shadow:none}.dependency-action{border-color:var(--cyan);background:#edf7fb}.dependency-value{border-color:var(--lime);background:#f7fbe9}
+    .dependency-arrow{text-align:center;color:var(--orange);font-size:19px;font-weight:900;line-height:1;padding:7px}.dependency-crosscut{margin-top:14px;border:1px dashed var(--orange);border-radius:13px;padding:12px 15px;background:#fff1e8;color:#6c4936;font-size:12.5px}.dependency-crosscut strong{color:var(--navy)}
+    .trend-cluster-label{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;background:#e7f1f3;border-left:5px solid var(--teal);border-radius:0 14px 14px 0;padding:14px 17px;margin-top:10px}.trend-cluster-label .cluster-id{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--teal)}.trend-cluster-label h4{margin:0 0 3px}.trend-cluster-label p{margin:0;color:var(--muted);font-size:12.5px}
     .trend-crosscut{border:1px dashed var(--orange);background:#fff1e8;border-radius:14px;padding:14px 17px;margin:14px 0;color:#6c4936;font-size:13.5px}.trend-crosscut strong{color:var(--navy)}
-    .trend-map{display:grid;grid-template-columns:145px 1fr 140px;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:18px 0}
-    .trend-map>div{padding:11px 13px;border-bottom:1px solid var(--line)}.trend-map>div:nth-last-child(-n+3){border-bottom:0}
-    .trend-map .map-head,.trend-map .map-stage{font-weight:850;color:var(--navy);background:#e7f1f3}.trend-map .map-logic{color:var(--muted);font-size:13px}.trend-map .map-ids{font-weight:900;color:var(--teal)}
     .trend-definition{margin:15px 0 0;border-left:4px solid var(--cyan);background:#edf7fb;border-radius:0 12px 12px 0;padding:13px 15px;color:#3f5a6b;font-size:13.5px}.trend-definition strong{color:var(--navy)}
     .reason-list{margin:7px 0 0;padding-left:21px}.reason-list li{margin:7px 0!important}
     .trend-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0 0}
     .trend-flow>div{background:var(--navy);color:#dceaf3;border-radius:12px;padding:11px;text-align:center;font-size:12px}.trend-flow b{display:block;color:var(--lime);margin-bottom:3px}
     .business-chain{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 0}.business-chain>div{background:#f3f7f9;border:1px solid var(--line);border-radius:14px;padding:14px}.business-chain h4{font-size:14px}.business-chain p{margin:5px 0;color:var(--muted);font-size:12px}
+    .business-paths{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 0}.business-path{border:1px solid var(--line);border-radius:16px;padding:17px;background:#f3f7f9}.business-path:nth-child(2){background:#edf8f6;border-color:#b9d6d6}.business-path .path-id{display:block;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.08em}.business-path h4{margin:4px 0 7px}.business-path p,.business-path li{color:var(--muted);font-size:12.5px}.business-path ul{margin:7px 0 0;padding-left:18px}
     .evidence-note{border-top:1px dashed var(--line);margin-top:13px;padding-top:10px;color:var(--muted);font-size:12px}.evidence-note strong{color:var(--navy)}
     .horizon-principle{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}.horizon-principle>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.horizon-principle h4{margin-bottom:5px}.horizon-principle p{margin:0;color:var(--muted)}
     .source-list{columns:2;column-gap:34px;padding-left:22px}.source-list li{break-inside:avoid;margin:0 0 11px;font-size:12.5px;color:#586e7d}
@@ -134,8 +144,8 @@
     @media(max-width:900px){
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats,.score-grid{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon,.choice-banner,.opp-body{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.horizon-principle,.derivation-item{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
-      .trend-spine>div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-23px}.trend-map{grid-template-columns:1fr}.trend-map>div{border-bottom:1px solid var(--line)!important}.trend-map>div:last-child{border-bottom:0!important}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.business-paths,.horizon-principle{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .trend-spine>div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-23px}.trend-bridge{grid-template-columns:1fr}.bridge-arrow{transform:rotate(90deg)}.dependency-foundations,.dependency-paths{grid-template-columns:1fr}.trend-cluster-label{grid-template-columns:1fr}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
         content:"← 左右滑动查看完整内容 →";display:block;position:sticky;left:0;z-index:3;
@@ -708,94 +718,101 @@
     <section id="trends">
       <div class="wrap">
         <div class="section-kicker"><i>03</i> Industry trend judgement</div>
-        <h2>产业趋势预判：从分布式网络事实到可度量价值</h2>
-        <p class="lead">第三章不先预设“主线”，而是从6G数据的物理、语义、控制与经济约束逐层推导：每解决一层矛盾，才获得进入下一层的必要条件；T1–T7对应推导出的能力，T8回答这些能力最终以什么标准载体落地。</p>
+        <h2>产业趋势预判：从刚性需求到可验证趋势</h2>
+        <p class="lead">第二章已经回答6G为何需要R1–R8、Data Fabric机制如何适配以及产业当前做到哪里。第三章不再重复需求推导，而是进一步判断：哪些能力会成为高确定性趋势，哪些仍依赖工程成熟、标准收敛或真实付费验证。</p>
 
-        <div class="callout">
-          <strong>推导规则：</strong>每一步都按“不可变事实 → 若不解决会产生的矛盾 → 必须补齐的能力 → 可验证趋势”展开。标准与厂商仅作<strong>外部校验</strong>，不替代第一性原理推理；如果前一层能力未成立，后一层不能靠产品命名或平台功能越级成立。
+        <h3>3.1 从R1–R8到T1–T8：趋势筛选与依赖判断</h3>
+        <p>趋势不是把需求换一个名称。只有同时具备需求刚性、工程可行性、产业牵引和可验证信号的能力，才进入T1–T8；其中T1–T7描述能力与商业演进，T8单独回答这些能力可能被什么标准载体承接。</p>
+
+        <div class="trend-bridge" aria-label="从第二章结论到第三章趋势判断">
+          <div class="bridge-card">
+            <span class="bridge-kicker">INPUT · 第二章输入</span>
+            <h4>已确认的需求与现状</h4>
+            <ul>
+              <li>R1–R8通信级数据需求</li>
+              <li>L1–L6能力成熟度与缺口</li>
+              <li>标准、厂商方案与部署证据</li>
+            </ul>
+          </div>
+          <div class="bridge-arrow" aria-hidden="true">→</div>
+          <div class="bridge-card">
+            <span class="bridge-kicker">FILTER · 趋势筛选</span>
+            <h4>四项判断标准</h4>
+            <div class="bridge-criteria">
+              <span><b>需求刚性</b>问题是否会持续存在</span>
+              <span><b>工程成熟</b>是否能形成可部署能力</span>
+              <span><b>产业牵引</b>标准、投资和需求是否同向</span>
+              <span><b>可验证性</b>能否设置指标与反证条件</span>
+            </div>
+          </div>
+          <div class="bridge-arrow" aria-hidden="true">→</div>
+          <div class="bridge-card output">
+            <span class="bridge-kicker">OUTPUT · 第三章输出</span>
+            <h4>可跟踪的趋势组合</h4>
+            <ul>
+              <li>T1–T7：能力与商业趋势</li>
+              <li>T8：横切的标准承载判断</li>
+              <li>每项均给出确定性、领先信号与反证</li>
+            </ul>
+          </div>
         </div>
 
-        <h3>3.1 从不可变约束推导四个必要关口</h3>
-        <p>以下四步不是对趋势的事后分类，而是由四组前后相继的矛盾推导出来：先解决“事实能否被及时掌握”，才能讨论“数据能否被机器正确使用”；数据可用之后，才有资格扩大自动化权限；行动可控之后，跨组织供给才可能形成可结算价值。</p>
+        <div class="callout"><strong>判断口径：</strong>标准和厂商材料不再只是“案例罗列”，而用于校验趋势是否获得工程与产业牵引；产品名称不能替代部署指标，研究主张也不能直接升级为高确定性趋势。</div>
 
-        <div class="derivation-list" aria-label="趋势主线推导过程">
-          <div class="derivation-item">
-            <div class="premise"><b>约束一｜物理分布</b><p>RAN、Core、Edge、ISAC持续产生高频数据；全量集中受带宽、时延、能耗、隐私和断链约束。</p></div>
-            <div class="conflict"><b>若不解决</b><p>中心既看不到及时变化，又承受不可接受的搬运成本；本地执行与全局治理相互脱节。</p></div>
-            <div class="deduction"><b>因此必须</b><p>在源附近处理数据，同时把结构、配置、质量、权限和血缘变化同步为可理解状态。</p></div>
-            <div class="result"><b>必要关口｜状态可知</b><p>T2 元数据变化事件<br>T3 全局控制/近源执行</p></div>
+        <h4>产业演进不是四级串行，而是双基础并行、自治后置、商业化分叉</h4>
+        <div class="dependency-board" aria-label="T1至T8的依赖与商业路径">
+          <div class="dependency-foundations">
+            <div class="dependency-node">
+              <span class="dependency-code">并行基础 A · T2 / T3</span>
+              <h4>分布式供给基础</h4>
+              <p>让结构、配置、质量和权限变化及时可见，并在物理约束下实现全局规则与近源运行。</p>
+            </div>
+            <div class="dependency-node">
+              <span class="dependency-code">并行基础 B · T1 / T6</span>
+              <h4>数据运营基础</h4>
+              <p>把数据封装为可持续运营的产品，并用面向用途的QoD说明适用范围和降级边界。</p>
+            </div>
           </div>
-          <div class="derivation-item">
-            <div class="premise"><b>约束二｜语义依赖</b><p>无线数据的含义依赖对象、时空、配置、采样和测量误差；“能访问”不等于“适合当前任务”。</p></div>
-            <div class="conflict"><b>若不解决</b><p>模型和消费者只能重复解释、清洗与对齐；字段完整仍可能产生错误比较、训练偏差和闭环误判。</p></div>
-            <div class="deduction"><b>因此必须</b><p>把数据封装为带消费者、Owner、契约和生命周期的产品，并以面向用途的QoD证明适用边界。</p></div>
-            <div class="result"><b>必要关口｜数据适用</b><p>T1 可运营数据产品<br>T6 QoD质量信封</p></div>
+          <div class="dependency-link">两类基础相互约束、并行建设，而非先后验收</div>
+          <div class="dependency-paths">
+            <div class="dependency-path">
+              <span class="dependency-code">商业路径 A · 可先启动</span>
+              <p>稳定的数据产品、标准服务和跨网结算，可以在网络动作尚未自治前形成价值。</p>
+              <div class="dependency-node dependency-value">
+                <span class="dependency-code">T7-A</span>
+                <h4>数据/API与能力变现</h4>
+                <p>按调用、会话、覆盖或分析服务结算，重点验证一致行为、履约成本和持续付费。</p>
+              </div>
+            </div>
+            <div class="dependency-path">
+              <span class="dependency-code">商业路径 B · 条件升级</span>
+              <p>结果型服务除可信供给外，还要求决策与动作具备责任链和风险控制。</p>
+              <div class="dependency-node dependency-action">
+                <span class="dependency-code">T4 / T5</span>
+                <h4>可信自动化能力</h4>
+                <p>Agent协同证据链，加上NDT、策略、灰度、熔断与回滚等动作验证机制。</p>
+              </div>
+              <div class="dependency-arrow" aria-hidden="true">↓</div>
+              <div class="dependency-node dependency-value">
+                <span class="dependency-code">T7-B</span>
+                <h4>结果型自治服务</h4>
+                <p>按体验、交易、风控或运营结果定价，同时承担更高的效果与动作责任。</p>
+              </div>
+            </div>
           </div>
-          <div class="derivation-item">
-            <div class="premise"><b>约束三｜动作外部性</b><p>AI/Agent输出会改变真实网络状态；局部错误可影响相邻域、业务SLA和其他自动化闭环。</p></div>
-            <div class="conflict"><b>若不解决</b><p>数据错误会直接升级为动作风险；仅有模型置信度无法回答谁授权、为何放行、失败如何接管。</p></div>
-            <div class="deduction"><b>因此必须</b><p>建立供数—决策—执行—回证责任链，并用NDT反事实预演、策略、灰度和回滚约束高风险动作。</p></div>
-            <div class="result"><b>必要关口｜行动可信</b><p>T4 Agent协同闭环<br>T5 NDT动作关口</p></div>
-          </div>
-          <div class="derivation-item">
-            <div class="premise"><b>约束四｜交易协同</b><p>行业应用需要跨运营商覆盖、一致行为、用途约束、责任界定、计量与清结算，而非单个孤立API。</p></div>
-            <div class="conflict"><b>若不解决</b><p>API数量增加但体验不一致、无人持续付费；内部成本、外部SLA、责任与收入无法闭环。</p></div>
-            <div class="deduction"><b>因此必须</b><p>先形成内部可信产品，再经标准服务、跨网分发和行业结果逐层传递价值并完成结算。</p></div>
-            <div class="result"><b>必要关口｜价值可结算</b><p>T7 四层商业链</p></div>
-          </div>
+          <div class="dependency-crosscut"><strong>T8横切全部趋势：</strong>它判断T1–T7最终冻结为能力语义、信息模型与接口，还是进一步形成固定新网元；不构成第五条演进阶段。</div>
         </div>
 
-        <div class="callout"><strong>递进关系：</strong>“状态可知”只证明数据被及时掌握，不证明它适合模型；“数据适用”只证明可被正确消费，不证明动作安全；“行动可信”只证明风险可控，不证明有人付费。正因为每一层都不能替代下一层，四个关口才形成顺序，而不是四个平行口号。</div>
+        <div class="callout warn"><strong>依赖边界：</strong>基础能力不必全部成熟后才能试点自动化或商业服务，但它们决定可扩大到什么权限和规模。T7-A不以T4/T5为前提；只有承诺网络动作与业务结果的T7-B，才额外依赖可信自动化。依赖表示风险条件，不表示产业必须按同一步速串行演进。</div>
 
-        <h4>由上述推导收敛出的价值推进链</h4>
-        <div class="trend-spine" aria-label="由约束推导出的价值推进链">
-          <div><span class="stage">STAGE 1 · FACT</span><h4>状态可知</h4><p>在源附近完成必要处理，并让结构、配置、质量、权限和血缘变化及时可见。</p></div>
-          <div><span class="stage">STAGE 2 · FITNESS</span><h4>数据适用</h4><p>把原始流封装为面向明确任务、带语义、QoD、契约和责任人的数据产品。</p></div>
-          <div><span class="stage">STAGE 3 · ACTION</span><h4>行动可信</h4><p>让 Agent 的每次决策、工具调用和网络动作都有身份、策略、仿真与回滚证据。</p></div>
-          <div><span class="stage">STAGE 4 · VALUE</span><h4>价值可结算</h4><p>将内部可信供给映射为标准服务，经跨网分发、计量、责任与结果定价形成商业闭环。</p></div>
-        </div>
-
-        <div class="trend-map" role="table" aria-label="主线与八条趋势映射">
-          <div class="map-head">主线阶段</div><div class="map-head">必须解决的问题</div><div class="map-head">对应趋势</div>
-          <div class="map-stage">状态可知</div><div class="map-logic">变化如何及时被发现？数据如何在不全量搬运的前提下按时可用？</div><div class="map-ids">T2 · T3</div>
-          <div class="map-stage">数据适用</div><div class="map-logic">消费者拿到的究竟是什么？能否证明它适用于当前模型、任务与网络状态？</div><div class="map-ids">T1 · T6</div>
-          <div class="map-stage">行动可信</div><div class="map-logic">数据如何进入 Agent 决策？高风险动作凭什么被放行、失败后如何回退？</div><div class="map-ids">T4 · T5</div>
-          <div class="map-stage">价值可结算</div><div class="map-logic">内部能力如何变成跨运营商一致、可计量、可定责、有人付费的服务？</div><div class="map-ids">T7</div>
-        </div>
-        <div class="trend-crosscut"><strong>T8 是贯穿判断，不是第五条价值主线：</strong>它回答 T1–T7 最终被标准化为固定新网元，还是可由增强既有功能、边缘 Agent、SMO 服务或新组件组合实现。判断重点是能力、信息模型和接口能否互操作，而非产品名称。</div>
-        <div class="callout warn"><strong>依赖纪律：</strong>没有 T2/T3，系统不知道数据何时、为何变化；没有 T1/T6，模型与 Agent 不知道数据是否适用；没有 T4/T5，自动化不能安全扩大权限；前三层未建立，T7 只能得到更多 API，而不是稳定商业价值。为保持第五至第八章映射，正文保留 T1–T8 编号；因果阅读顺序是 T2/T3 → T1/T6 → T4/T5 → T7，T8 横切。</div>
+        <h3>3.2 八条趋势详解：按依赖组合展开</h3>
+        <p>下文保留T1–T8编号，便于与第四章时间窗及后续战略映射对照；呈现顺序则按“分布式供给基础—数据运营基础—可信自动化—商业路径—标准承载”组织。</p>
 
         <div class="trend-chapters">
-          <article class="trend-chapter" id="t1">
-            <div class="trend-title">
-              <div class="trend-no">T1</div>
-              <div><h3>网络数据将被封装为可运营的数据产品</h3><p>价值单位从「表、Topic、接口和PB」转为「持续满足明确消费者与任务的数据供给」。</p></div>
-              <span class="tag fact">高确定性</span>
-            </div>
-            <div class="trend-definition"><strong>先定义“可运营产品”：</strong>必须有明确消费者与任务、稳定标识和版本、Owner、Schema/语义、QoD、SLO、用途/权限、血缘、成本/计量、保留期及退出机制。只有目录条目、接口包装或 Marketplace 页面，仍不是数据产品。</div>
-            <div class="trend-body">
-              <div>
-                <h4>第一性原理推导</h4>
-                <ol class="reason-list">
-                  <li>6G数据源和消费者同时增加；若每个消费者都单独找数、解释、清洗和对接，集成成本会按「源 × 消费者」增长。</li>
-                  <li>要把点对点工程变成可复用供给，生产者与消费者之间必须出现稳定契约；契约的承载物就是数据产品。</li>
-                  <li>无线数据的含义依赖小区、频段、波束、配置与采样窗口，所以产品必须携带上下文和质量边界，不能只交付字段。</li>
-                  <li>持续运营要求有人对变更、SLO、成本与下线负责；没有Owner，就无法形成服务承诺和跨场景复用。</li>
-                </ol>
-              </div>
-              <div>
-                <h4>落地与约束</h4>
-                <ul>
-                  <li>优先在移动性、节能、故障、QoE和模型特征形成少量高复用产品。</li>
-                  <li>默认交付事件、聚合指标、特征或分析服务，而非全量原始流。</li>
-                  <li>用持续消费者、跨场景复用、契约合规和单位有效任务成本验收，不以目录数量验收。</li>
-                </ul>
-              </div>
-            </div>
-            <div class="logic-proof"><div><b>领先信号</b><span>产品契约进入版本基线，生产者和消费者共同签署SLO/QoD</span></div><div><b>验证指标</b><span>交付周期、复用消费者、契约违规、重复采集下降、单位任务成本</span></div><div><b>反证条件</b><span>每个场景仍重新采集清洗，产品长期无人消费，Owner与退出机制缺失</span></div></div>
-            <div class="evidence-note"><strong>外部校验：</strong>Nokia Data Suite、Ericsson AI-ready data mesh和Open Gateway的一致行为要求，说明产品化已进入供给侧与消费侧；它们是趋势信号，不是推导起点，也不证明完整跨域Fabric已普遍商用。<a href="#s10">[S10]</a><a href="#s24">[S24]</a></div>
-          </article>
-
+          <div class="trend-cluster-label">
+            <div class="cluster-id">基础能力 A · T2 / T3</div>
+            <div><h4>分布式供给基础</h4><p>先看变化能否及时传播、数据能否在不全量搬运和不依赖中心快环的情况下按时交付。</p></div>
+          </div>
           <article class="trend-chapter" id="t2">
             <div class="trend-title">
               <div class="trend-no">T2</div>
@@ -805,7 +822,7 @@
             <div class="trend-definition"><strong>元数据事件化：</strong>把Schema、对象关系、拓扑、配置、质量、权限、血缘、成本及模型关联的变化，表示为带事件时间、版本、来源、作用域和Correlation ID的可订阅事件。完整机制由<strong>基线快照 + 变化事件 + 周期对账</strong>组成；不是把所有业务数据改成事件，也不是让中央事件总线进入快环同步路径。</div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>静态目录只描述扫描时刻；网络配置、拓扑、权限和质量持续变化，目录更新周期必然落后于生产状态。</li>
                   <li>模型和Agent直接消费数据后，过期Schema、配置或权限不再只是报表错误，而可能转化为错误动作。</li>
@@ -834,7 +851,7 @@
             </div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>高频无线与感知数据全量远传受带宽、时延、能耗与隐私约束，近源筛选不是优化项，而是物理约束。</li>
                   <li>快环、MEC、专网与NTN必须在中心断连或抖动时继续工作，不能把远端目录/审批设为同步依赖。</li>
@@ -855,6 +872,75 @@
             <div class="evidence-note"><strong>外部校验：</strong>Ericsson动态放置、Nokia域自治加公共Fabric、Huawei近源算子虽命名不同，却共同指向“两级控制”。趋同的是部署约束，不是统一产品或网元。<a href="#s9">[S9]</a><a href="#s12">[S12]</a><a href="#s20">[S20]</a></div>
           </article>
 
+          <div class="trend-cluster-label">
+            <div class="cluster-id">基础能力 B · T1 / T6</div>
+            <div><h4>数据运营基础</h4><p>与分布式供给并行推进，解决数据由谁负责、服务什么任务，以及如何证明适用边界。</p></div>
+          </div>
+          <article class="trend-chapter" id="t1">
+            <div class="trend-title">
+              <div class="trend-no">T1</div>
+              <div><h3>网络数据将被封装为可运营的数据产品</h3><p>价值单位从「表、Topic、接口和PB」转为「持续满足明确消费者与任务的数据供给」。</p></div>
+              <span class="tag fact">高确定性</span>
+            </div>
+            <div class="trend-definition"><strong>先定义“可运营产品”：</strong>必须有明确消费者与任务、稳定标识和版本、Owner、Schema/语义、QoD、SLO、用途/权限、血缘、成本/计量、保留期及退出机制。只有目录条目、接口包装或 Marketplace 页面，仍不是数据产品。</div>
+            <div class="trend-body">
+              <div>
+                <h4>趋势成立逻辑</h4>
+                <ol class="reason-list">
+                  <li>6G数据源和消费者同时增加；若每个消费者都单独找数、解释、清洗和对接，集成成本会按「源 × 消费者」增长。</li>
+                  <li>要把点对点工程变成可复用供给，生产者与消费者之间必须出现稳定契约；契约的承载物就是数据产品。</li>
+                  <li>无线数据的含义依赖小区、频段、波束、配置与采样窗口，所以产品必须携带上下文和质量边界，不能只交付字段。</li>
+                  <li>持续运营要求有人对变更、SLO、成本与下线负责；没有Owner，就无法形成服务承诺和跨场景复用。</li>
+                </ol>
+              </div>
+              <div>
+                <h4>落地与约束</h4>
+                <ul>
+                  <li>优先在移动性、节能、故障、QoE和模型特征形成少量高复用产品。</li>
+                  <li>默认交付事件、聚合指标、特征或分析服务，而非全量原始流。</li>
+                  <li>用持续消费者、跨场景复用、契约合规和单位有效任务成本验收，不以目录数量验收。</li>
+                </ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>产品契约进入版本基线，生产者和消费者共同签署SLO/QoD</span></div><div><b>验证指标</b><span>交付周期、复用消费者、契约违规、重复采集下降、单位任务成本</span></div><div><b>反证条件</b><span>每个场景仍重新采集清洗，产品长期无人消费，Owner与退出机制缺失</span></div></div>
+            <div class="evidence-note"><strong>外部校验：</strong>Nokia Data Suite、Ericsson AI-ready data mesh和Open Gateway的一致行为要求，说明产品化已进入供给侧与消费侧；它们是趋势信号，不是推导起点，也不证明完整跨域Fabric已普遍商用。<a href="#s10">[S10]</a><a href="#s24">[S24]</a></div>
+          </article>
+
+          <article class="trend-chapter" id="t6">
+            <div class="trend-title">
+              <div class="trend-no">T6</div>
+              <div><h3>QoD将成为数据进入模型与闭环的准入标准</h3><p>竞争从「有多少数据、接多少接口」转向「这份数据是否适用于这个任务和网络状态」。</p></div>
+              <span class="tag study">中高确定性</span>
+            </div>
+            <div class="trend-definition"><strong>什么是QoD：</strong>QoD（Quality of Data）在本报告中指<strong>面向特定用途的数据适用性质量</strong>，不是覆盖所有数据的总分，也不是已冻结的统一3GPP指标。它用一组可测试的“质量信封”说明：数据在何种对象、时空、配置与采样条件下，可以被哪个模型或闭环安全使用。</div>
+            <div class="trend-body">
+              <div>
+                <h4>趋势成立逻辑</h4>
+                <ol class="reason-list">
+                  <li>同一KPI在不同小区、频段、波束、UE群、配置版本和采样窗口下不可直接比较；字段完整不等于语义可比。</li>
+                  <li>模型需要对目标分布有代表性的数据；样本量再大，也可能因覆盖偏差、标签漂移或训练—服务分布差异而失效。</li>
+                  <li>闭环风险取决于数据误差如何传播到决策，因此质量必须与用途、模型验收和动作风险绑定。</li>
+                  <li>不同数据族误差机制不同，不可能用一个全局分数同时评价测量、告警、位置、感知和训练特征。</li>
+                </ol>
+              </div>
+              <div>
+                <h4>质量信封至少包含</h4>
+                <ul>
+                  <li><strong>通用：</strong>准确、完整、一致、新鲜、唯一、可追溯。</li>
+                  <li><strong>电信：</strong>采样代表性、时空覆盖、同步误差、配置一致、测量置信、suspect/incomplete。</li>
+                  <li><strong>AI：</strong>标签来源、训练—服务偏差、特征漂移、适用对象与禁用边界。</li>
+                  <li><strong>契约：</strong>按用途设置阈值与降级策略，而非简单“合格/不合格”。</li>
+                </ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>QoD进入数据契约、模型卡、跨域接口和动作放行条件</span></div><div><b>验证指标</b><span>覆盖/代表性、同步误差、配置一致、漂移、误动作、降级触发</span></div><div><b>反证条件</b><span>仍只统计记录量、接口成功率、完整性，或用一个总分掩盖差异</span></div></div>
+            <div class="evidence-note"><strong>外部校验：</strong>Huawei的Data QoS输入、Nokia的数据有效性和Ericsson的质量/生命周期主张说明竞争正在上移；短期更可能先形成「数据族 × 场景」契约，再收敛公共属性。<a href="#s10">[S10]</a><a href="#s14">[S14]</a><a href="#s24">[S24]</a></div>
+          </article>
+
+          <div class="trend-cluster-label">
+            <div class="cluster-id">条件升级 · T4 / T5</div>
+            <div><h4>可信自动化能力</h4><p>数据开始驱动真实网络动作后，供数、决策、验证、执行和回证必须形成可审计责任链。</p></div>
+          </div>
           <article class="trend-chapter" id="t4">
             <div class="trend-title">
               <div class="trend-no">T4</div>
@@ -869,7 +955,7 @@
             </div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>Agent若要处理真实网络任务，必须持续获得当前对象、配置、质量与权限，而非一次性把文档放进向量库。</li>
                   <li>Agent还需要工具目录和执行接口；一旦能调用工具，数据错误就会转化为动作风险。</li>
@@ -894,7 +980,7 @@
           <article class="trend-chapter" id="t5">
             <div class="trend-title">
               <div class="trend-no">T5</div>
-              <div><h3>高风险网络动作将以NDT预演作为放行关口</h3><p>NDT不再只是规划和可视化工具，而是“动作前反事实验证”的证据来源；它不是绝对安全证明。</p></div>
+              <div><h3>NDT预演将成为高风险网络动作的重要放行证据</h3><p>NDT不再只是规划和可视化工具，而是“动作前反事实验证”的证据来源；它不是唯一关口或绝对安全证明。</p></div>
               <span class="tag study">中高确定性</span>
             </div>
             <div class="trend-definition"><strong>NDT与Data Fabric的关系：</strong>Data Fabric向网络数字孪生（NDT）提供带时间、配置、QoD与血缘的版本化状态快照；NDT对候选动作进行反事实预演并输出收益、冲突和副作用证据；策略引擎据此决定放行、灰度或拒绝，生产结果再回流校准。NDT是证据链中的消费者和生产者，不是Fabric的同义词。</div>
@@ -906,7 +992,7 @@
             </div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>网络动作具有外部性：局部参数调整可能影响相邻小区、业务SLA和其他Agent；现网试错成本高。</li>
                   <li>自动化权限越大，动作前验证价值越高；仅凭历史相关性或模型置信度不足以证明生产安全。</li>
@@ -915,7 +1001,7 @@
                 </ol>
               </div>
               <div>
-                <h4>成为关口的必要条件</h4>
+                <h4>形成有效放行证据的条件</h4>
                 <ul>
                   <li>按动作类别定义保真度、最大同步滞后、场景覆盖和可接受预测误差。</li>
                   <li>保存输入快照、孪生/模型版本、候选动作、预演结果、放行理由和生产结果。</li>
@@ -923,76 +1009,69 @@
                 </ul>
               </div>
             </div>
-            <div class="logic-proof"><div><b>领先信号</b><span>NDT进入变更审批和Agent动作强制路径，而非独立演示平台</span></div><div><b>验证指标</b><span>同步滞后、预测误差、覆盖、回放一致、灰度失败、回滚成功</span></div><div><b>反证条件</b><span>只有拓扑可视化，没有误差门槛、生产反馈或超限退回</span></div></div>
+            <div class="logic-proof"><div><b>领先信号</b><span>NDT进入变更审批和Agent动作验证路径，而非停留在独立演示平台</span></div><div><b>验证指标</b><span>同步滞后、预测误差、覆盖、回放一致、灰度失败、回滚成功</span></div><div><b>反证条件</b><span>只有拓扑可视化，没有误差门槛、生产反馈或超限退回</span></div></div>
             <div class="evidence-note"><strong>外部校验：</strong>SA5已有NDT管理积木并继续研究增强，产业平台也把孪生纳入闭环；这证明“可管理、可接入”正在形成，不等于孪生已经能证明任意动作安全。<a href="#s29">[S29]</a></div>
           </article>
 
-          <article class="trend-chapter" id="t6">
-            <div class="trend-title">
-              <div class="trend-no">T6</div>
-              <div><h3>QoD将成为数据进入模型与闭环的准入标准</h3><p>竞争从「有多少数据、接多少接口」转向「这份数据是否适用于这个任务和网络状态」。</p></div>
-              <span class="tag study">中高确定性</span>
-            </div>
-            <div class="trend-definition"><strong>什么是QoD：</strong>QoD（Quality of Data）在本报告中指<strong>面向特定用途的数据适用性质量</strong>，不是覆盖所有数据的总分，也不是已冻结的统一3GPP指标。它用一组可测试的“质量信封”说明：数据在何种对象、时空、配置与采样条件下，可以被哪个模型或闭环安全使用。</div>
-            <div class="trend-body">
-              <div>
-                <h4>第一性原理推导</h4>
-                <ol class="reason-list">
-                  <li>同一KPI在不同小区、频段、波束、UE群、配置版本和采样窗口下不可直接比较；字段完整不等于语义可比。</li>
-                  <li>模型需要对目标分布有代表性的数据；样本量再大，也可能因覆盖偏差、标签漂移或训练—服务分布差异而失效。</li>
-                  <li>闭环风险取决于数据误差如何传播到决策，因此质量必须与用途、模型验收和动作风险绑定。</li>
-                  <li>不同数据族误差机制不同，不可能用一个全局分数同时评价测量、告警、位置、感知和训练特征。</li>
-                </ol>
-              </div>
-              <div>
-                <h4>质量信封至少包含</h4>
-                <ul>
-                  <li><strong>通用：</strong>准确、完整、一致、新鲜、唯一、可追溯。</li>
-                  <li><strong>电信：</strong>采样代表性、时空覆盖、同步误差、配置一致、测量置信、suspect/incomplete。</li>
-                  <li><strong>AI：</strong>标签来源、训练—服务偏差、特征漂移、适用对象与禁用边界。</li>
-                  <li><strong>契约：</strong>按用途设置阈值与降级策略，而非简单“合格/不合格”。</li>
-                </ul>
-              </div>
-            </div>
-            <div class="logic-proof"><div><b>领先信号</b><span>QoD进入数据契约、模型卡、跨域接口和动作放行条件</span></div><div><b>验证指标</b><span>覆盖/代表性、同步误差、配置一致、漂移、误动作、降级触发</span></div><div><b>反证条件</b><span>仍只统计记录量、接口成功率、完整性，或用一个总分掩盖差异</span></div></div>
-            <div class="evidence-note"><strong>外部校验：</strong>Huawei的Data QoS输入、Nokia的数据有效性和Ericsson的质量/生命周期主张说明竞争正在上移；短期更可能先形成「数据族 × 场景」契约，再收敛公共属性。<a href="#s10">[S10]</a><a href="#s14">[S14]</a><a href="#s24">[S24]</a></div>
-          </article>
-
+          <div class="trend-cluster-label">
+            <div class="cluster-id">两条商业路径 · T7</div>
+            <div><h4>能力变现与结果变现分开验证</h4><p>数据/API服务可以先行；承诺业务结果的服务还需要可信自动化和更完整的责任、计量与回滚机制。</p></div>
+          </div>
           <article class="trend-chapter" id="t7">
             <div class="trend-title">
               <div class="trend-no">T7</div>
-              <div><h3>商业化将沿“内部可信供给—标准服务—跨网分发—结果结算”展开</h3><p>之所以称为商业链，不是因为多了API，而是每层都有不同生产者、购买者、成本、责任与结算对象。</p></div>
+              <div><h3>商业化将分化为“数据/API能力”与“结果型服务”两条路径</h3><p>两条路径共用可信数据供给，但后者额外依赖可审计、可约束、可回滚的网络行动。</p></div>
               <span class="tag study">中等确定性</span>
             </div>
-            <div class="business-chain">
-              <div><h4>① 内部可信生产</h4><p><strong>供给：</strong>带语义、QoD、用途和成本的数据/分析产品</p><p><strong>买方：</strong>网络产品线、运维、AI和API团队</p><p><strong>价值：</strong>复用、降本、缩短交付</p></div>
-              <div><h4>② 标准服务包装</h4><p><strong>供给：</strong>QoD、位置、身份、状态或分析服务</p><p><strong>买方：</strong>行业平台、应用与CPaaS</p><p><strong>价值：</strong>SLA、调用/会话收费</p></div>
-              <div><h4>③ 跨运营商分发</h4><p><strong>供给：</strong>一致目录、认证、覆盖、用量和清结算</p><p><strong>买方：</strong>需要全国/多国覆盖的开发者</p><p><strong>价值：</strong>渠道佣金、收入分成</p></div>
-              <div><h4>④ 行业结果结算</h4><p><strong>供给：</strong>交易成功、体验改善、风控或运营结果</p><p><strong>买方：</strong>金融、车联、工业、媒体等行业</p><p><strong>价值：</strong>按结果或业务量定价</p></div>
+            <div class="business-paths">
+              <div class="business-path">
+                <span class="path-id">PATH A · T7-A</span>
+                <h4>数据/API与能力服务</h4>
+                <p>不必等待网络动作自治，即可从内部产品映射为标准服务，并通过聚合渠道形成跨网供给。</p>
+                <ul>
+                  <li><strong>供给：</strong>QoD、位置、身份、状态、分析或网络能力</li>
+                  <li><strong>买方：</strong>行业平台、应用、开发者与CPaaS</li>
+                  <li><strong>计价：</strong>调用、会话、覆盖、用量或订阅</li>
+                </ul>
+              </div>
+              <div class="business-path">
+                <span class="path-id">PATH B · T7-B</span>
+                <h4>结果型自治服务</h4>
+                <p>在可信供给之上，由受控Agent和动作验证机制承诺体验、交易、风控或运营结果。</p>
+                <ul>
+                  <li><strong>额外条件：</strong>身份、策略、动作证据、灰度、回滚与责任界面</li>
+                  <li><strong>买方：</strong>金融、车联、工业、媒体等结果责任方</li>
+                  <li><strong>计价：</strong>业务量、效果增益、风险降低或结果分成</li>
+                </ul>
+              </div>
             </div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>外部服务的一致性上限由内部数据产品稳定性决定；内部语义、QoD、权限和血缘不稳，API只会把差异暴露给客户。</li>
                   <li>单运营商覆盖通常不足以支持规模行业应用，必须经聚合层统一发现、认证、行为、用量和清结算。</li>
-                  <li>标准API会降低接口稀缺性，价值会从“调用一次”上移到交易、会话、体验或业务结果。</li>
-                  <li>跨组织使用伴随用途、撤销、责任与收入分配；Data Space补的是交易信任，不是RAN快环。</li>
+                  <li>标准API本身即可形成调用或会话收入，不需要等待自动化成熟；但接口趋同后，单次调用的差异化和议价空间会下降。</li>
+                  <li>向结果定价升级意味着供应方承担动作与效果责任，因此必须额外证明决策依据、执行权限、失败回退和实际结果。</li>
                 </ol>
               </div>
               <div>
-                <h4>成立条件与边界</h4>
+                <h4>分开验收两条路径</h4>
                 <ul>
-                  <li>先产品化内部数据/分析能力，再映射CAMARA或行业API；不能用API数量倒推内部成熟度。</li>
-                  <li>指标覆盖付费客户、跨网行为一致、调用/会话、收入、履约成本、责任争议和续费。</li>
+                  <li><strong>路径A：</strong>验证跨网行为一致、活跃付费客户、调用/会话收入、履约成本和续费。</li>
+                  <li><strong>路径B：</strong>追加结果归因、动作证据、风险暴露、责任争议、回滚成本和效果分成。</li>
                   <li>原始感知数据出售不是默认模式；更可行的是最小必要、可撤销、可解释的分析或能力服务。</li>
                 </ul>
               </div>
             </div>
-            <div class="logic-proof"><div><b>领先信号</b><span>内部产品契约与外部SLA可追溯，Operate API、聚合渠道与用量结算联通</span></div><div><b>验证指标</b><span>跨网一致、活跃付费客户、履约成本、收入/分成、续费</span></div><div><b>反证条件</b><span>API数量增长但无跨网一致、持续消费者、责任边界和收入</span></div></div>
-            <div class="evidence-note"><strong>外部校验：</strong>CAMARA/Open Gateway、TM Forum Operate API、聚合渠道和中国移动QoD商用案例分别验证标准服务、运营、分发与付费环节；感知产品和结果定价能否规模化仍待市场检验。<a href="#s16">[S16]</a><a href="#s18">[S18]</a><a href="#s55">[S55]</a></div>
+            <div class="logic-proof"><div><b>领先信号</b><span>路径A出现持续付费与跨网结算；路径B把动作证据和效果责任写入合同</span></div><div><b>验证指标</b><span>跨网一致、活跃付费客户、履约成本、收入/分成、结果归因、续费</span></div><div><b>反证条件</b><span>API数量增长但无持续消费者和收入，或结果承诺无法归因、定责与回退</span></div></div>
+            <div class="evidence-note"><strong>外部校验：</strong>CAMARA/Open Gateway、TM Forum Operate API、聚合渠道和中国移动QoD商用案例已为路径A提供信号；路径B所需的结果归因、动作责任和规模付费仍缺充分公开证据。<a href="#s16">[S16]</a><a href="#s18">[S18]</a><a href="#s55">[S55]</a></div>
           </article>
 
+          <div class="trend-cluster-label">
+            <div class="cluster-id">横切判断 · T8</div>
+            <div><h4>标准承载方式</h4><p>观察哪些能力必须跨厂商互操作，以及它们会落入既有功能增强、可组合服务还是专用新网元。</p></div>
+          </div>
           <article class="trend-chapter" id="t8">
             <div class="trend-title">
               <div class="trend-no">T8</div>
@@ -1001,7 +1080,7 @@
             </div>
             <div class="trend-body">
               <div>
-                <h4>第一性原理推导</h4>
+                <h4>趋势成立逻辑</h4>
                 <ol class="reason-list">
                   <li>发现、采集、处理、存储、暴露和治理横跨不同域、时标与部署约束，不同用例不可能共享完全相同的在线流程。</li>
                   <li>标准需要优先冻结跨厂商必须一致的外部行为；内部拓扑越被写死，越难适配运营商存量与边缘资源差异。</li>
@@ -1023,8 +1102,8 @@
           </article>
         </div>
 
-        <div class="big-quote">产业断言：<em>6G Data Fabric不会以一个“大一统平台”胜出，而会沿「状态可知 → 数据适用 → 行动可信 → 价值可结算」进入网络。</em>它在架构上表现为统一控制语义与分布式执行，在标准上优先收敛可互操作的能力、信息模型、接口和证据。</div>
-        <div class="callout warn"><strong>趋势边界：</strong>事件化不等于全量流事件化；产品化不等于上架目录；协同闭环不等于Agent接管快环；NDT不等于安全证明；QoD不等于单一总分；商业链不等于API数量；能力集合也不等于标准已放弃新NF。越过这些边界，趋势判断就会退化为营销术语。</div>
+        <div class="big-quote">产业断言：<em>6G Data Fabric不会以一个“大一统平台”胜出，而会表现为「分布式供给与数据运营并行筑基、可信自动化有条件升级、两类商业路径分开验证」。</em>标准将横向影响全部能力，但更可能先收敛可互操作的语义、信息模型、接口和证据，而非统一产品名称。</div>
+        <div class="callout warn"><strong>趋势边界：</strong>事件化不等于全量流事件化；产品化不等于上架目录；协同闭环不等于Agent接管快环；NDT不等于唯一安全证明；QoD不等于单一总分；商业化不等于API数量，也不要求所有服务先实现自治；能力集合也不等于标准已放弃新NF。越过这些边界，趋势判断就会退化为营销术语。</div>
       </div>
     </section>
 
@@ -1039,11 +1118,11 @@
           <div><h4>未来3–5年：看清控制点</h4><p>不预测最终网元名称，而是看谁掌握语义/QoD、近源运行时、Agent/NDT证据链、跨网分发结算和互操作规则；这些控制点比“叫Mesh还是Data Plane”更稳定。</p></div>
         </div>
 
-        <div class="trend-spine" aria-label="三年与五年沿同一主线投射">
-          <div><span class="stage">T2 · T3</span><h4>状态与运行基线</h4><p>3年验证变化可知、近源可运行；5年看近源运行时和跨域状态模型由谁控制。</p></div>
-          <div><span class="stage">T1 · T6</span><h4>产品与适用基线</h4><p>3年验证少量产品可复用、QoD可测试；5年看语义、质量和产品定义权。</p></div>
-          <div><span class="stage">T4 · T5</span><h4>行动证据基线</h4><p>3年验证受控工具与孪生关口；5年看可信Agent运行时和动作放行规则。</p></div>
-          <div><span class="stage">T7 · T8</span><h4>商业与标准验证</h4><p>3年验证付费和接口输入；5年看渠道结算、能力包与多拓扑互操作。</p></div>
+        <div class="trend-spine trend-cluster-grid" aria-label="三年与五年按四组趋势投射">
+          <div><span class="stage">并行基础 A · T2 / T3</span><h4>分布式供给</h4><p>3年验证变化可知、近源可运行；5年看近源运行时和跨域状态模型由谁控制。</p></div>
+          <div><span class="stage">并行基础 B · T1 / T6</span><h4>数据运营</h4><p>3年验证少量产品可复用、QoD可测试；5年看语义、质量和产品定义权。</p></div>
+          <div><span class="stage">条件升级 · T4 / T5</span><h4>可信自动化</h4><p>3年验证受控工具与孪生证据；5年看可信Agent运行时和动作放行规则。</p></div>
+          <div><span class="stage">商业与标准 · T7 / T8</span><h4>双路径与横切承载</h4><p>3年分开验证能力付费与结果付费；5年看渠道结算、能力包与多拓扑互操作。</p></div>
         </div>
 
         <h3>4.1 T1–T8的3年验证与5年结果</h3>
@@ -1076,9 +1155,9 @@
                 <td>若只有聊天或RAG而没有工具责任链，就不能称为可操作协同；全面无人治理与跨域自由行动仍不可信。</td>
               </tr>
               <tr>
-                <td><strong>T5 NDT关口</strong><br><span class="tag study">中高</span></td>
+                <td><strong>T5 NDT证据</strong><br><span class="tag study">中高</span></td>
                 <td>至少一个高风险变更完成历史回放与影子运行；为保真度、同步滞后、误差和覆盖设门槛，超限自动退回建议/人工模式。</td>
-                <td>高风险动作形成“可信快照—孪生预演—策略—灰度—回滚—生产校准”强制路径；场景库、误差门槛和放行规则成为控制点。</td>
+                <td>高风险动作逐步形成“可信快照—孪生预演—策略—灰度—回滚—生产校准”验证路径；场景库、误差门槛和放行规则成为控制点。</td>
                 <td>若孪生仍只有可视化，就不能承担放行证据；NDT始终是证据源之一，不是绝对安全证明。</td>
               </tr>
               <tr>
@@ -1088,10 +1167,10 @@
                 <td>若仍只报完整性和接口成功率，适用性尚未被管理；短期难出现覆盖所有数据和任务的统一总分。</td>
               </tr>
               <tr>
-                <td><strong>T7 商业链</strong><br><span class="tag study">中</span></td>
-                <td>内部产品契约能映射到至少一个标准服务；跨网行为、用量和责任可计量；出现持续付费消费者或明确业务Owner，而非一次性展示。</td>
-                <td>内部生产、标准服务、跨网聚合和行业结果之间分工清晰；部分场景从调用定价走向会话、交易或结果定价。</td>
-                <td>若API增长而无消费者、收入和责任边界，商业链尚未成立；ISAC/数据空间的付费规模仍取决于需求、隐私和制度。</td>
+                <td><strong>T7 双商业路径</strong><br><span class="tag study">中</span></td>
+                <td>路径A出现持续付费的数据/API能力服务并验证跨网行为、用量与履约成本；路径B至少在一个场景明确结果归因、动作责任与回滚条件。</td>
+                <td>能力服务与结果型服务形成不同SLA、渠道和计价方式；部分成熟场景从调用/会话定价升级为交易、效果或结果分成。</td>
+                <td>若API增长但无持续消费者和收入，路径A不成立；若结果无法归因、定责和回退，路径B不能规模化。</td>
               </tr>
               <tr>
                 <td><strong>T8 能力集合</strong><br><span class="tag infer">低—中</span></td>
@@ -1109,9 +1188,9 @@
             <div class="yr">未来 1–3 年</div>
             <h3>先做“可证伪底座”，不宣布终局</h3>
             <ul>
-              <li>优先建立T2/T3的事件和两级运行底座，再用T1/T6证明数据可复用、可验收。</li>
+              <li>并行建立T2/T3的事件与两级运行底座，以及T1/T6的数据产品与QoD能力；用跨场景复用和任务验收检查二者是否真正协同。</li>
               <li>T4/T5从只读、建议、影子运行开始；没有身份、策略、误差门槛和回滚，不扩大自动权限。</li>
-              <li>T7只以真实付费、跨网一致和履约成本作为商业验证；T8以进入工作文本、参考实现和互操作测试作为标准验证。</li>
+              <li>T7-A以真实付费、跨网一致和履约成本验证，T7-B追加结果归因和动作责任；T8以进入工作文本、参考实现和互操作测试验证。</li>
               <li>厂商仍会强化平台命名，但决策只看跨场景复用、现网收益、工程开销和多厂商接口。</li>
             </ul>
           </div>
@@ -1121,7 +1200,7 @@
             <ul>
               <li>设备商的稳定优势在网络语义、QoD和近源执行；云/数据平台在模型、Catalog与开发工具；聚合商在分发与结算。</li>
               <li>运营商将要求对象、策略、证据可导出，运行时和后端可替换；单厂商端到端不等于开放。</li>
-              <li>低风险有界自治可能规模化，高风险动作仍需NDT、灰度、回滚与责任人。</li>
+              <li>低风险有界自治可能规模化，高风险动作仍需NDT等反事实验证、灰度、回滚与责任人。</li>
               <li>标准是否采用独立数据面并非唯一胜负手；能力能否组合、验证、替换和产生持续收入更重要。</li>
             </ul>
           </div>
