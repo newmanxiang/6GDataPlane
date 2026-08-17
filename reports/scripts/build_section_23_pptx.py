@@ -538,22 +538,22 @@ def slide_p4(prs, huawei: Path) -> None:
 
 def slide_p5(prs, nokia: Path) -> None:
     s = new_slide(prs)
-    header(s, "2.3.6  ·  NOKIA", "Nokia将联邦数据能力组织成自智软件链：优势在产品化入口，而非独立架构")
+    header(s, "2.3.6  ·  NOKIA", "Nokia以AN Fabric编织自智应用：共享数据与AI是内置能力，域控制器执行动作")
     thesis(
         s,
-        "Nokia与Ericsson共享“域内事实—联邦访问—治理语义—应用消费—域控制器动作”的相近骨架。Data Suite是数据供给与契约层，AN Fabric是智能消费层；Data Mesh主要支撑Sense，不是自智网络内核。真正的内核是状态—意图—策略—动作—结果—回滚闭环。",
+        "AN Fabric是自智网络的公共智能服务平台，内部包含共享数据管理、AIOps、安全与自治域服务；Data Suite和其他AN Apps通过API使用这些能力。ANF承载上层意图和应用编排，但具体实时资源动作仍由OSS、SMO、RIC、SON及域控制器执行。",
     )
 
     panel = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.38), Inches(1.30), Inches(7.72), Inches(4.88))
     lined(panel, OFF, LINE)
-    add_text(s, 0.52, 1.34, 4.55, 0.18, ["主视觉  ·  自绘五段链"], size=8.5, color=TEAL, bold=True)
+    add_text(s, 0.52, 1.34, 4.55, 0.18, ["主视觉  ·  官方定位还原"], size=8.5, color=TEAL, bold=True)
 
     stages = [
-        (NAVY, "1  域数据底座", "Domain lakehouse  ·  各域本地采集、加工与存储"),
-        (TEAL, "2  Common Fabric / Lakehouse", "适配、抽象和联邦访问，提供逻辑视图而非强制集中"),
-        (TEAL, "3  数据契约层 / Data Suite", "稳定ID、语义、QoD、Owner、版本和血缘，统一数据供给"),
-        (AMBER, "4  自智消费层 / AN Fabric", "Sense–Think及应用编排；不统一实时状态、策略冲突和动作权限"),
-        (NAVY, "5  动作闭环 + 商业外延", "域控制器执行、结果验证和回滚，再连接API、计量与Marketplace"),
+        (NAVY, "1  网络与OSS数据", "RAN、Core、Transport、Fixed及OSS持续产生状态与事件"),
+        (TEAL, "2  AN Fabric公共服务", "Data Management、AIOps、Security与Autonomous Domain Services"),
+        (TEAL, "3  AN Apps / Data Suite", "数据产品、业务/运营意图、分析和自动化工作流"),
+        (AMBER, "4  域控制与编排", "OSS、SMO、RIC、SON及域控制器保留状态与动作权限"),
+        (NAVY, "5  网元动作与回证", "执行、自愈、结果、回滚；证据返回应用和公共服务"),
     ]
     for i, (fill, title, body) in enumerate(stages):
         y = 1.54 + i * 0.86
@@ -566,7 +566,7 @@ def slide_p5(prs, nokia: Path) -> None:
             rgb(arr, GOLD)
 
     fit_picture(s, nokia, 5.20, 1.54, 2.72, 2.42)
-    chip(s, 5.26, 1.60, 2.20, 0.20, "官方图  仅证智能消费层", AMBER, NAVY, 7.5)
+    chip(s, 5.26, 1.60, 2.20, 0.20, "官方图  ANF为应用公共底座", AMBER, NAVY, 7.5)
     add_text(
         s,
         5.20,
@@ -574,9 +574,9 @@ def slide_p5(prs, nokia: Path) -> None:
         2.72,
         2.04,
         [
-            "官方AN Fabric图只证明智能消费层和Marketplace外延，不能证明Data Mesh成为自智统一层。",
-            "Data Suite、域数据底座和公共湖仓不在图中；数据契约层与控制闭环必须分开读取。",
-            "高风险动作仍经AN Apps回到域控制器；公共层偏Non-RT，不能替代RAN快环、动作授权和回滚。",
+            "官方白皮书：ANF包含Data Management、AIOps和Autonomous Domain Services，AN Apps经内部API使用这些服务。",
+            "Data Suite官网：属于AN应用栈并由AN Fabric驱动；因此不能画成ANF上游的独立数据平台。",
+            "官方图未画OSS、SMO、RIC、SON或网元路径；不能据此断言ANF直接承担全部资源控制。",
         ],
         size=9,
         color=SLATE,
@@ -589,10 +589,10 @@ def slide_p5(prs, nokia: Path) -> None:
         1.30,
         4.71,
         1.54,
-        "统一的是数据契约",
+        "ANF内含数据编织能力",
         [
-            "Data Suite可统一稳定ID、Schema、QoD、Owner、版本和血缘，使域数据被自智应用重复消费。",
-            "它不统一实时状态、策略冲突或动作权限；多厂商中立性仍需第三方互操作和双向迁移证明。",
+            "统一数据管理不是ANF外部前置层，而是其公共服务之一：网络数据被采集、治理、关联并发布为可复用数据产品。",
+            "Data Suite将目录、血缘、质量、语义和产品能力形成用户入口，支撑AI和自动化应用。",
         ],
         TEAL,
     )
@@ -602,10 +602,10 @@ def slide_p5(prs, nokia: Path) -> None:
         2.94,
         4.71,
         1.54,
-        "数据供给与控制闭环分层",
+        "AN Apps承载意图与用例",
         [
-            "域湖仓完成本地加工，经公共层和Data Suite形成可消费的数据契约，再进入Sense。",
-            "Think使用电信模型；Act经AN Apps调用OSS/RIC/SON。结果、回滚和责任证据必须返回控制闭环，而不是停在数据产品层。",
+            "AN Apps面向运营、网络安全和用户体验，使用ANF的数据、模型、知识和自治域服务。",
+            "它们解释业务/运营意图并编排分析与自动化工作流；Fabric Experience和Marketplace承接体验及商业入口。",
         ],
         NAVY,
     )
@@ -615,10 +615,10 @@ def slide_p5(prs, nokia: Path) -> None:
         4.58,
         4.71,
         1.60,
-        "产品化差异，而非架构异质",
+        "域控制器执行资源动作",
         [
-            "与Ericsson相近的联邦底座被组织成Data Suite、AN Fabric和AN Apps等分层SKU，进入现网更快。",
-            "若契约不共享、控制证据不贯通，各层就只是品牌组合；Data Mesh最多优化Sense侧供给，不能成为自智内核。",
+            "服务层给出目标、分析和动作请求，SMO、RIC、SON、OSS及域控制器完成具体控制并保留实时状态。",
+            "KDDI与stc案例证明域级恢复和SON动作，不证明完整ANF已经成为跨域统一资源控制面。",
         ],
         AMBER,
         fill=SOFT_AMBER,
@@ -626,9 +626,9 @@ def slide_p5(prs, nokia: Path) -> None:
     evidence_bar(
         s,
         [
-            ("域应用已证", "KDDI覆盖20万4G/5G RAN；stc披露超过1万次自动动作和性能改善；Indosat证明节能应用可扩展。它们证明域级闭环，不证明统一跨域Fabric。", TEAL),
-            ("规模信号", "匿名Tier-1：25万小区、27万报告/秒，仅支持摄取与关联潜力。因客户未具名，不能外推广泛跨域商用。", AMBER),
-            ("决定性验证", "同一数据产品契约能否跨Data Suite、AN Fabric和第三方Agent复用；后端能否双向替换；输入、动作、结果与回滚证据能否贯通域控制器。", CORAL),
+            ("官方架构已证", "ANF包含Data Management、AIOps与Autonomous Domain Services；AN Apps经API使用公共能力，Data Suite由ANF驱动。", TEAL),
+            ("域执行已证", "KDDI 20万RAN由Recovery System恢复；stc MantaRay SON执行>1万次动作。证明域控制，不证明完整ANF统一栈。", AMBER),
+            ("决定性验证", "具名部署中，Data Suite能否被第三方AN Apps复用，ANF意图能否经开放接口进入多厂商域控制器，并返回动作、结果与回滚证据。", CORAL),
         ],
     )
     footer(s, 5, "2.3.6", "[S23][S24][S31][S32][S33][S34][S39]")

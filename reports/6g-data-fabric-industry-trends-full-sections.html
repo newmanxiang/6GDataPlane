@@ -636,51 +636,51 @@
           <div class="vendor-head">
             <div class="vendor-mark">N</div>
             <div>
-              <h3>2.3.6 Nokia：联邦分层架构的产品化变体——以数据契约连接自智应用</h3>
-              <p>Nokia与Ericsson共享相近的“域内事实—联邦访问—治理语义—应用消费—域控制器动作”技术骨架。其差异主要在产品组织：把Data Suite、AN Fabric、AN Apps和Marketplace组合成更明确的可售软件链，而不是提出第三种数据架构。</p>
+              <h3>2.3.6 Nokia：以AN Fabric编织自智应用——共享数据与AI是内置能力，域控制器执行动作</h3>
+              <p>Nokia的差异不在于提出另一套网络核心数据架构，而在于以AN Fabric作为自智网络应用的公共底座。官方把AN Fabric定义为跨域统一智能层，内部包含共享数据管理、AIOps、安全和自治域服务；Data Suite与其他AN Apps使用这些公共能力，具体资源动作仍由OSS、SMO、RIC、SON和域控制器执行。</p>
             </div>
-            <div class="vendor-level">联邦分层变体 · 数据契约层 + 自智应用入口</div>
+            <div class="vendor-level">自智应用编织 · 公共数据/AI底座 · 域控制器执行</div>
           </div>
 
-          <div class="callout"><strong>架构判断：</strong>Nokia不是用Data Mesh统一自智网络，而是把联邦数据契约产品化，作为自智应用的数据供给层。Data Suite负责目录、语义、质量、血缘和数据产品契约，AN Fabric负责Sense—Think—Act智能消费与编排，域OSS/RIC/SON保留动作权。Data Mesh主要支撑Sense和跨域数据供给；自智网络真正的内核仍是“状态—意图—策略—动作—结果—回滚”的控制与证据闭环。<a href="#s23">[S23]</a><a href="#s24">[S24]</a></div>
+          <div class="callout"><strong>架构判断：</strong>AN Fabric既不是纯业务层，也不是替代Huawei/Ericsson核心数据架构的网络数据平面；它是自智网络的公共智能服务平台。其Data Management Services以Data Mesh和数据产品统一供给，AIOps与Autonomous Domain Services支撑意图、分析和自动化工作流，AN Apps通过内部API使用这些服务。Data Suite官方被列为AN应用栈的一部分，并由AN Fabric驱动，而不是位于AN Fabric上游的独立数据平台。<a href="#s23">[S23]</a><a href="#s24">[S24]</a><a href="#s39">[S39]</a></div>
 
           <div class="vendor-grid">
             <figure class="figure">
               <img src="data-fabric-assets/nokia-autonomous-network-fabric.png" alt="Nokia Autonomous Network Fabric架构，包含Sense Think Act、多云部署、AN Apps、API暴露和Marketplace">
-              <figcaption><span><a href="data-fabric-assets/nokia-autonomous-network-fabric.png" download>下载架构图</a> · <a href="https://www.nokia.com/asset/f/214909/" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图6｜Nokia Autonomous Network Fabric。</strong>底层多云Fabric承载Sense—Think—Act智能循环，通过Fabric Experience与API连接AN Apps，再向Network Monetization Platform和Marketplace暴露。图源：Nokia 2025，p.7；仅裁切说明文字与页脚，版权归Nokia。</figcaption>
+              <figcaption><span><a href="data-fabric-assets/nokia-autonomous-network-fabric.png" download>下载架构图</a> · <a href="https://www.nokia.com/asset/f/214909/" target="_blank" rel="noopener">原始白皮书</a></span><br><strong>图6｜Nokia Autonomous Network Fabric。</strong>多云AN Fabric作为公共底座，通过内部API支撑AN Apps、Fabric Experience与Marketplace。图中未画出OSS、SMO、RIC、SON或网元动作路径，因此只能证明应用与公共服务关系，不能证明AN Fabric直接承担全部资源控制。图源：Nokia 2025，p.7；版权归Nokia。</figcaption>
             </figure>
             <div>
               <h4>架构如何运转</h4>
-              <p><strong>数据流：</strong>Access、Core、Transport、Service和Business域在本地采集、加工与存储；common data fabric/lakehouse通过适配器、抽象和联邦访问向Data Suite供给产品，再进入AN Fabric的Sense层。数据默认留域，公共层提供逻辑视图而非强制集中。</p>
-              <p><strong>控制流：</strong>Sense建立观察与chain-of-custody，Think使用电信模型、知识引擎和Glass-Box推理，Act通过AN Apps调用既有OSS/RIC/SON与节能控制器；Fabric Experience和API承接应用，再向Monetization/Marketplace延伸。</p>
-              <p><strong>架构含义：</strong>公共层偏Non-RT与管理时标，动作仍回到域控制器。因此，AN Fabric是智能消费和编排层，不是替代RAN快环的数据平面；Data Suite是数据供给与契约层，而不是自智网络的统一控制内核。统一数据契约可以降低Sense侧复用成本，但不能替代意图分解、策略冲突、动作授权、结果验证和回滚。</p>
+              <p><strong>数据与AI服务：</strong>AN Fabric的Data Management Services从RAN、固定接入、传输、Core、OSS及其他数据源持续采集、治理和关联数据，以Data Mesh和数据产品方式供多个应用复用；AIOps提供统一库存、模型、知识与故障分析。Data Suite把其中的数据产品、目录、血缘、质量和语义能力产品化。</p>
+              <p><strong>意图与应用编排：</strong>AN Apps通过内部API使用AN Fabric的数据、AIOps和自治域服务，把业务或运营意图转成分析、保证与自动化工作流；Fabric Experience、API Exposure和Marketplace承担体验与商业入口。这里承载的是上层意图、跨域协同和应用编排，不等于所有资源控制都集中到AN Fabric。</p>
+              <p><strong>资源控制边界：</strong>Nokia对6G自智网络的公开设计明确区分服务运营层与资源控制层：具体实时动作由域控制器执行，域内保留实时状态、资源库存和自愈能力。MantaRay SMO/SON、non-RT RIC及KDDI Recovery System等案例证明的是域控制执行，不能反推AN Fabric已经成为跨域统一控制面。</p>
             </div>
           </div>
 
-          <h4>Data Mesh产品化的边界：统一数据契约，而不是统一自智控制内核</h4>
+          <h4>AN Fabric的真实边界：编织公共智能服务，不替代域级资源控制</h4>
           <div class="logic-chain">
-            <div>域数据底座<br><small>Domain lakehouse · 本地事实</small></div>
-            <div>公共数据层<br><small>适配 · 抽象 · 联邦访问</small></div>
-            <div>数据契约层<br><small>Data Suite · 语义 · QoD · 血缘</small></div>
-            <div>自智消费层<br><small>AN Fabric / Apps · Sense · Think</small></div>
-            <div>动作与商业外延<br><small>域控制器 · 证据 · API · Marketplace</small></div>
+            <div>网络与OSS数据<br><small>RAN · Core · Transport · Fixed</small></div>
+            <div>AN Fabric公共服务<br><small>Data Management · AIOps · Security</small></div>
+            <div>AN Apps / Data Suite<br><small>数据产品 · 意图 · 分析 · 工作流</small></div>
+            <div>域控制与编排<br><small>OSS · SMO · RIC · SON</small></div>
+            <div>网元动作与回证<br><small>执行 · 结果 · 自愈 · 回滚</small></div>
           </div>
           <div class="grid-3">
-            <div class="card"><h4>统一的是数据契约</h4><p>Data Suite可统一稳定ID、Schema、QoD、Owner、版本和血缘，使域数据可被自智应用重复消费；它不统一实时状态、策略冲突或动作权限。</p></div>
-            <div class="card"><h4>差异在产品化入口</h4><p>与Ericsson相似的联邦底座被组织成Data Suite、AN Fabric和AN Apps等分层SKU，不必等待6G新网元标准；这缩短商业路径，但不是新的数据拓扑。</p></div>
-            <div class="card"><h4>闭环内核在控制与证据</h4><p>目录、血缘、validity和Glass-Box AI只能支撑数据供给与解释。只有状态、意图、策略、动作、结果和回滚贯通域控制器，自智内核才成立。</p></div>
+            <div class="card"><h4>ANF内含数据编织能力</h4><p>统一数据管理并非AN Fabric外部前置层，而是其公共服务之一：数据被采集、治理、关联并发布为可复用产品，Data Suite负责将这些能力形成面向用户的产品入口。</p></div>
+            <div class="card"><h4>AN Apps承载意图与用例</h4><p>AN Apps面向运营、网络安全和用户体验使用公共数据与AI服务，处理业务/运营意图并编排自动化流程；这属于自智应用编织，而不是新的网络核心数据拓扑。</p></div>
+            <div class="card"><h4>域控制器执行资源动作</h4><p>服务层给出目标、分析和动作请求，SMO、RIC、SON、OSS及域控制器完成具体控制并保留实时状态。ANF协调跨域信息，不应被画成直接替代所有控制器。</p></div>
           </div>
 
           <div class="vendor-findings">
-            <div><b>竞争优势</b><span>联邦数据契约、自智消费和应用入口已有明确产品承载，能以软件SKU而非等待新网元的方式进入现网；优势来自产品化路径，不来自独有数据架构。</span></div>
-            <div><b>结构性代价</b><span>Data Suite、AN Fabric、AN Apps和域控制器之间可能只在品牌层组合；若契约不能共享、控制证据不能贯通，Data Mesh只会优化Sense侧供给。</span></div>
-            <div><b>决定性证据</b><span>同一数据产品契约是否跨Data Suite、AN Fabric和第三方Agent复用，第三方后端能否双向替换，输入快照、动作、结果与回滚证据是否贯通域控制器。</span></div>
+            <div><b>竞争优势</b><span>共享数据管理、AIOps、安全和自治域服务被组织成统一应用底座，AN Apps可以复用公共能力快速形成运营、体验和安全用例；优势在自智软件集成与商品化。</span></div>
+            <div><b>结构性代价</b><span>“统一智能层”同时覆盖数据、模型、应用和自动化，容易模糊ANF与域控制产品的责任边界；若内部API、第三方应用和控制证据不可导出，会形成多层软锁定。</span></div>
+            <div><b>决定性证据</b><span>同一具名部署中，Data Suite数据产品能否被Nokia与第三方AN Apps复用，ANF意图能否经开放接口下发到多厂商域控制器，并把动作、结果与回滚证据返回。</span></div>
           </div>
           <div class="evidence-strip">
-            <div><b>域应用已证</b>KDDI覆盖20万4G/5G RAN；stc披露&gt;1万自动动作和性能改善；Indosat证明节能应用可扩展。<a href="#s32">[S32]</a><a href="#s33">[S33]</a><a href="#s34">[S34]</a></div>
-            <div><b>数据规模信号</b>匿名Tier-1案例披露25万小区、27万报告/秒，支持Data Suite的摄取与关联潜力；因客户未具名，不能外推广泛跨域商用。<a href="#s24">[S24]</a></div>
-            <div><b>尚未证明</b>一个公共数据层—Data Suite—AN Fabric实例已跨RAN、Core、传输和多厂商生产部署，并共享同一数据契约、控制证据和版本体系。</div>
-            <div><b>产品化停止线</b>若客户只购买域App而不采用公共数据契约，或核心元数据、规则和后端不能导出替换，分层SKU只构成产品组合，不能上升为自智统一层。</div>
+            <div><b>官方架构已证</b>ANF包含Data Management、AIOps与Autonomous Domain Services；AN Apps经内部API使用公共能力，Data Suite由ANF驱动。<a href="#s23">[S23]</a><a href="#s24">[S24]</a><a href="#s39">[S39]</a></div>
+            <div><b>域执行已证</b>KDDI覆盖20万RAN，由Recovery System执行恢复；stc的MantaRay Cognitive SON执行&gt;1万次动作。两者证明域控制，不证明完整ANF统一栈。<a href="#s32">[S32]</a><a href="#s33">[S33]</a></div>
+            <div><b>数据规模信号</b>匿名Tier-1披露25万小区、27万报告/秒，只支持Data Suite摄取与关联潜力；客户未具名，且没有同步披露AN Apps和域控制贯通。<a href="#s24">[S24]</a></div>
+            <div><b>尚未证明</b>目前未见具名客户公开证明完整ANF已跨RAN、Core、传输和多厂商域统一部署Data Suite、AN Apps、意图编排与资源控制闭环。</div>
           </div>
         </article>
 
