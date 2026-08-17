@@ -469,13 +469,13 @@
           <figcaption><strong>图3｜面向6G的数据驱动分布式自治架构（DDAA）。</strong>图中网络控制、数据与智能单元通过接口协同，说明数据与智能已成为6G研究的一等对象。来源：<em>Electronics</em> 2026, 15(1), 102，CC BY 4.0；学术架构，不是3GPP规范。<a href="#s17">[S17]</a></figcaption>
         </figure>
 
-        <h3>2.3 竞争格局：三条架构路线，收敛于四类控制能力</h3>
-        <div class="big-quote"><em>6G数据能力尚未收敛为统一Data Fabric，而是形成三条不同路线；真正趋同的不是平台名称，而是跨域语义、QoD、近源执行和动作证据等控制能力，以及它们的外部接口。</em></div>
-        <p>因此，本节不再逐项对齐厂商功能清单，而是回答三个更能影响竞争判断的问题：<strong>控制权放在哪里、数据与动作如何流动、这种架构以什么代价换取什么优势</strong>。Ericsson、Huawei和Nokia分别代表存量联邦、网络原生拓扑和分层商品化三种起点；Data Fabric只作为检验控制能力是否闭合的证据框架，不作为预设终点。</p>
+        <h3>2.3 竞争格局：两类技术架构、三种产品位置，收敛于四类控制能力</h3>
+        <div class="big-quote"><em>6G数据能力尚未收敛为统一Data Fabric。技术层面主要形成“联邦分层”和“网络原生数据拓扑”两类架构；Ericsson与Nokia共享相近的联邦分层底座，差别主要在产品边界和控制入口，Huawei则代表结构上不同的近源执行主张。</em></div>
+        <p>因此，本节不再把三家厂商机械对应为三条技术路线，而是回答三个更能影响竞争判断的问题：<strong>控制权放在哪里、数据与动作如何流动、技术底座与产品包装分别带来什么优势和代价</strong>。Ericsson以联邦治理进入，Nokia在相近底座上把数据契约连接到自智应用，Huawei重构网络内数据处理拓扑；Data Fabric只作为检验控制能力是否闭合的证据框架，不作为预设终点。</p>
         <div class="callout"><strong>阅读规则：</strong>正文先给架构判断，再解释设计逻辑与竞争含义；规范、产品、案例和原型只承担证据链作用。<span class="tag fact">事实</span>表示规范、已发布产品或具名部署，<span class="tag study">架构</span>表示白皮书与预标准设计，<span class="tag infer">验证中</span>表示原型或6G愿景。名称相似不等于控制体系已经统一，公开资料未描述的能力仍记为未知。</div>
 
-        <h4>2.3.1 判断主线：竞争不是“谁先建成Fabric”，而是谁如何分配控制权</h4>
-        <p>三条路线的分歧来自同一组架构矛盾，而不是对“Fabric”概念理解不同。6G既要求网络事实留在近源故障域内，又要求跨域语义和策略一致；既要让AI复用高频数据，又不能把全量数据搬到中心；既要扩大自治权限，又必须让每次动作可解释、可回滚、可追责。</p>
+        <h4>2.3.1 判断主线：竞争不是“三家三路线”，而是两类架构如何分配控制权</h4>
+        <p>两类技术架构都来自同一组矛盾，而不是对“Fabric”概念理解不同。6G既要求网络事实留在近源故障域内，又要求跨域语义和策略一致；既要让AI复用高频数据，又不能把全量数据搬到中心；既要扩大自治权限，又必须让每次动作可解释、可回滚、可追责。产品命名和SKU边界会改变进入市场的方式，但不必然构成新的数据拓扑。</p>
         <div class="trend-spine">
           <div><span class="stage">约束 1 · 时标</span><h4>事实在近源</h4><p>无线状态、移动性和断链生存决定毫秒执行必须留在网元、边缘或域控制器。</p></div>
           <div><span class="stage">约束 2 · 复用</span><h4>语义要跨域</h4><p>模型和产品跨RAN、Core、OSS/BSS复用，要求稳定对象、上下文、QoD和版本。</p></div>
@@ -483,11 +483,11 @@
           <div><span class="stage">约束 4 · 风险</span><h4>动作必须回证</h4><p>Agent输出会改变真实网络，数据、模型、策略、动作与结果必须形成证据链。</p></div>
         </div>
         <div class="grid-3">
-          <div class="card"><span class="tag study">路线A · 存量联邦</span><h4>Ericsson：连接既有数据岛</h4><p>保留RAN、Core、Mediation、湖仓和自动化产品边界，以联邦发现、按需访问和渐进治理减少替换风险。优势是迁移连续；代价是跨产品语义、策略与版本协调。</p></div>
-          <div class="card"><span class="tag infer">路线B · 网络原生</span><h4>Huawei：重构数据拓扑</h4><p>把多源、多处理、多消费者关系建模为可编排网络拓扑，依靠近源算子和专用分发降低搬运与时延。优势是执行控制力；代价是新增可靠性、移动性与状态管理。</p></div>
-          <div class="card"><span class="tag fact">路线C · 分层商品化</span><h4>Nokia：组合数据与自治软件</h4><p>以域自治、公共数据层、Data Suite、AN Fabric和应用市场形成分层SKU。优势是能力可销售、可组合；代价是品牌层组合是否共享同一控制体系仍需证明。</p></div>
+          <div class="card"><span class="tag study">联邦分层 · 治理入口</span><h4>Ericsson：连接既有数据岛</h4><p>保留RAN、Core、Mediation、湖仓和自动化产品边界，以联邦发现、按需访问和渐进治理减少替换风险。优势是迁移连续；代价是跨产品语义、策略与版本协调。</p></div>
+          <div class="card"><span class="tag infer">网络原生 · 执行入口</span><h4>Huawei：重构数据拓扑</h4><p>把多源、多处理、多消费者关系建模为可编排网络拓扑，依靠近源算子和专用分发降低搬运与时延。优势是执行控制力；代价是新增可靠性、移动性与状态管理。</p></div>
+          <div class="card"><span class="tag fact">联邦分层 · 应用入口</span><h4>Nokia：产品化数据—自智软件链</h4><p>技术骨架与Ericsson同属域内事实、联邦访问、治理语义和应用消费；差别在于Data Suite、AN Fabric和AN Apps被组织成更明确的可售软件链，而非形成第三种数据架构。</p></div>
         </div>
-        <div class="callout warn"><strong>核心判断：</strong>三条路线不是成熟度阶梯。它们分别优先解决“如何低风险演进”“如何获得近源执行效率”“如何把能力快速产品化”，最终都绕不开跨域语义、用途化QoD、近源运行时和动作证据四个控制点。</div>
+        <div class="callout warn"><strong>核心判断：</strong>Ericsson与Nokia的主要差别是产品边界和控制入口，不是底层数据拓扑；Huawei才构成明显不同的网络原生执行架构。三种竞争位置都绕不开跨域语义、用途化QoD、近源运行时和动作证据四个控制点。</div>
 
         <h4>2.3.2 标准只划定竞争边界：先收敛外部行为，不冻结统一平台</h4>
         <p>ITU-R定义需求空间，3GPP RAN定义无线权威事实，SA2研究系统数据的发现、处理和暴露，SA5管理OAM、分析、AI/ML与NDT生命周期，O-RAN按时标开放数据、策略和动作，TMF/GSMA/CAMARA连接外部消费与运营。它们正在形成一条可组合链路，但没有共同要求一个名为Data Fabric的网元或平台。<a href="#s1">[S1]</a><a href="#s5">[S5]</a><a href="#s6">[S6]</a><a href="#s7">[S7]</a><a href="#s16">[S16]</a></p>
@@ -504,12 +504,12 @@
           <div class="card"><span class="tag infer">判断含义</span><h4>标准不会替厂商选架构</h4><p>Kafka、湖仓、完整知识图谱、独立Fabric或专用Data Plane仍是实现选择。竞争将从“组件是否存在”转向“接口能否互操作、后端能否替换、责任能否跨域传递”。</p></div>
         </div>
 
-        <h4>2.3.3 三条路线的本质差异：控制中心、执行位置与演进代价不同</h4>
+        <h4>2.3.3 两类技术架构、三种产品位置：区分技术异质性与商品化差异</h4>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>架构问题</th><th>Ericsson · 存量联邦</th><th>Huawei · 网络原生拓扑</th><th>Nokia · 分层商品化</th></tr></thead>
+            <thead><tr><th>架构问题</th><th>Ericsson · 联邦治理入口</th><th>Huawei · 网络原生执行</th><th>Nokia · 联邦应用入口</th></tr></thead>
             <tbody>
-              <tr><td><strong>从什么问题出发</strong></td><td>分散数据岛和既有产品如何少迁移、可复用</td><td>AI/ISAC多源—多处理—多消费者如何低时延流动</td><td>数据管理、自治应用和商业外延如何形成可售组合</td></tr>
+              <tr><td><strong>从什么问题出发</strong></td><td>分散数据岛和既有产品如何少迁移、可复用</td><td>AI/ISAC多源—多处理—多消费者如何低时延流动</td><td>如何在相近联邦底座上，把数据契约、自智应用和商业外延形成可售组合</td></tr>
               <tr><td><strong>控制中心在哪里</strong></td><td>目录、治理和策略逻辑联邦；产品控制仍分散</td><td>DO编排执行能力与数据拓扑，外部治理是否需要补充取决于标准覆盖</td><td>Data Suite管理数据产品，AN Fabric管理智能消费，域控制器保留动作权</td></tr>
               <tr><td><strong>执行发生在哪里</strong></td><td>EDCA/DMF、网络域和数据湖分层执行，按需跨域访问</td><td>DA/DPF/DSF在UE、RAN、边缘和Core近源执行，DCP异步分发</td><td>数据默认留域，公共层联邦访问；动作经AN Apps回到OSS/RIC/SON</td></tr>
               <tr><td><strong>换取的主要优势</strong></td><td>保护存量投资、降低迁移风险、允许多后端渐进演进</td><td>降低全量搬运，获得可编排近源处理和多消费者Fan-out</td><td>目录、语义、质量、AI和应用可分别产品化并快速进入现网</td></tr>
@@ -518,7 +518,7 @@
             </tbody>
           </table>
         </div>
-        <div class="callout"><strong>比较结论：</strong>Ericsson用复杂协调换迁移连续性，Huawei用新平面复杂度换近源执行控制，Nokia用分层SKU换产品化速度。后续厂商分析只解释这三种交换关系，不再重复逐项功能盘点。</div>
+        <div class="callout"><strong>比较结论：</strong>Ericsson与Nokia共享“域内事实—联邦访问—治理语义—应用消费—域控制器动作”的相近骨架；前者用复杂协调换迁移连续性，后者用分层SKU换产品化速度。Huawei用新平面复杂度换近源执行控制，才是结构上不同的技术主张。后续厂商分析同时区分技术架构与产品组织，不再把商品化差异误写成第三条架构路线。</div>
 
         <article class="vendor-chapter" id="vendor-ericsson">
           <div class="vendor-head">
@@ -620,7 +620,7 @@
           <p>若Rel-21把Data QoS、授权和生命周期一起纳入网络原生功能，外部控制层的范围会缩小；若标准只冻结交付行为，公共语义、血缘、产品契约和长期历史仍需要管理域或外部数据层。更现实的中间形态是：<strong>DA/DCP负责快路径和近源处理，管理层负责跨域语义与证据，两者通过版本化接口解耦</strong>。<a href="#s14">[S14]</a></p>
 
           <div class="vendor-findings">
-            <div><b>竞争优势</b><span>拓扑编排、近源算子和异步多消费者模型直接回应AI/ISAC负载，是三条路线中最强的网络执行控制主张。</span></div>
+            <div><b>竞争优势</b><span>拓扑编排、近源算子和异步多消费者模型直接回应AI/ISAC负载，是三家主张中最强、也最具结构异质性的网络执行控制方案。</span></div>
             <div><b>结构性代价</b><span>新增平面同时新增状态：顺序、持久化、跨站容灾、拥塞、移动性、租户隔离、算子升级和DO容灾都必须重新工程化。</span></div>
             <div><b>决定性证据</b><span>与开启同等持久化和副本的成熟消息系统公平比较，并通过跨站故障、移动性、断链回退、多租户SLA和第三方算子测试。</span></div>
           </div>
@@ -636,13 +636,13 @@
           <div class="vendor-head">
             <div class="vendor-mark">N</div>
             <div>
-              <h3>2.3.6 Nokia：分层商品化——用公共数据层连接自治应用与商业外延</h3>
-              <p>Nokia把域数据底座、Data Suite、AN Fabric、AN Apps和Marketplace拆成可组合软件层，试图在不重做网络执行面的前提下，快速建立数据—智能—应用的产品链。</p>
+              <h3>2.3.6 Nokia：联邦分层架构的产品化变体——以数据契约连接自智应用</h3>
+              <p>Nokia与Ericsson共享相近的“域内事实—联邦访问—治理语义—应用消费—域控制器动作”技术骨架。其差异主要在产品组织：把Data Suite、AN Fabric、AN Apps和Marketplace组合成更明确的可售软件链，而不是提出第三种数据架构。</p>
             </div>
-            <div class="vendor-level">路线C · 分层商品化 · 产品与域执行解耦</div>
+            <div class="vendor-level">联邦分层变体 · 数据契约层 + 自智应用入口</div>
           </div>
 
-          <div class="callout"><strong>路线判断：</strong>这是一条“先产品化能力、再验证统一控制”的路线。Data Suite负责目录、语义、质量、血缘和数据产品，AN Fabric负责Sense—Think—Act智能消费，域OSS/RIC/SON保留执行权。两者名称都含Fabric，但不在同一层；真正的竞争问题是它们能否共享契约并贯通到动作证据。<a href="#s23">[S23]</a><a href="#s24">[S24]</a></div>
+          <div class="callout"><strong>架构判断：</strong>Nokia不是用Data Mesh统一自智网络，而是把联邦数据契约产品化，作为自智应用的数据供给层。Data Suite负责目录、语义、质量、血缘和数据产品契约，AN Fabric负责Sense—Think—Act智能消费与编排，域OSS/RIC/SON保留动作权。Data Mesh主要支撑Sense和跨域数据供给；自智网络真正的内核仍是“状态—意图—策略—动作—结果—回滚”的控制与证据闭环。<a href="#s23">[S23]</a><a href="#s24">[S24]</a></div>
 
           <div class="vendor-grid">
             <figure class="figure">
@@ -653,39 +653,39 @@
               <h4>架构如何运转</h4>
               <p><strong>数据流：</strong>Access、Core、Transport、Service和Business域在本地采集、加工与存储；common data fabric/lakehouse通过适配器、抽象和联邦访问向Data Suite供给产品，再进入AN Fabric的Sense层。数据默认留域，公共层提供逻辑视图而非强制集中。</p>
               <p><strong>控制流：</strong>Sense建立观察与chain-of-custody，Think使用电信模型、知识引擎和Glass-Box推理，Act通过AN Apps调用既有OSS/RIC/SON与节能控制器；Fabric Experience和API承接应用，再向Monetization/Marketplace延伸。</p>
-              <p><strong>架构含义：</strong>公共层偏Non-RT与管理时标，动作仍回到域控制器。因此，AN Fabric是智能消费和编排层，不是替代RAN快环的数据平面；Data Suite才是与跨域数据治理最直接重合的产品。</p>
+              <p><strong>架构含义：</strong>公共层偏Non-RT与管理时标，动作仍回到域控制器。因此，AN Fabric是智能消费和编排层，不是替代RAN快环的数据平面；Data Suite是数据供给与契约层，而不是自智网络的统一控制内核。统一数据契约可以降低Sense侧复用成本，但不能替代意图分解、策略冲突、动作授权、结果验证和回滚。</p>
             </div>
           </div>
 
-          <h4>分层商品化的逻辑：让不同购买入口共享同一数据复利</h4>
+          <h4>Data Mesh产品化的边界：统一数据契约，而不是统一自智控制内核</h4>
           <div class="logic-chain">
             <div>域数据底座<br><small>Domain lakehouse · 本地事实</small></div>
             <div>公共数据层<br><small>适配 · 抽象 · 联邦访问</small></div>
-            <div>Data Suite<br><small>语义 · QoD · 血缘 · 产品</small></div>
-            <div>AN Fabric / Apps<br><small>Sense · Think · Act</small></div>
-            <div>商业外延<br><small>API · Marketplace · 计量</small></div>
+            <div>数据契约层<br><small>Data Suite · 语义 · QoD · 血缘</small></div>
+            <div>自智消费层<br><small>AN Fabric / Apps · Sense · Think</small></div>
+            <div>动作与商业外延<br><small>域控制器 · 证据 · API · Marketplace</small></div>
           </div>
           <div class="grid-3">
-            <div class="card"><h4>域自治降低进入阻力</h4><p>适配器和联邦访问比强制统一存储更容易进入异构网络；但“支持多厂商”只有经过第三方互操作和双向迁移，才构成中立性证据。</p></div>
-            <div class="card"><h4>分层SKU缩短商业路径</h4><p>Data Suite、AN Fabric和AN Apps可分别销售，不必等待6G新网元标准；同时也带来跨产品版本、契约与责任是否真正统一的问题。</p></div>
-            <div class="card"><h4>可解释自动化连接价值</h4><p>目录、血缘、validity和Glass-Box AI回应审计需求；只有证据继续贯穿到域控制器动作、回滚与结果，数据层才会形成复利。</p></div>
+            <div class="card"><h4>统一的是数据契约</h4><p>Data Suite可统一稳定ID、Schema、QoD、Owner、版本和血缘，使域数据可被自智应用重复消费；它不统一实时状态、策略冲突或动作权限。</p></div>
+            <div class="card"><h4>差异在产品化入口</h4><p>与Ericsson相似的联邦底座被组织成Data Suite、AN Fabric和AN Apps等分层SKU，不必等待6G新网元标准；这缩短商业路径，但不是新的数据拓扑。</p></div>
+            <div class="card"><h4>闭环内核在控制与证据</h4><p>目录、血缘、validity和Glass-Box AI只能支撑数据供给与解释。只有状态、意图、策略、动作、结果和回滚贯通域控制器，自智内核才成立。</p></div>
           </div>
 
           <div class="vendor-findings">
-            <div><b>竞争优势</b><span>目录、语义、质量、血缘、AI和应用入口已有明确产品承载，能以软件SKU而非等待新网元的方式进入现网并形成交叉销售。</span></div>
-            <div><b>结构性代价</b><span>Data Suite、AN Fabric、AN Apps和域控制器之间可能只是品牌组合；Nokia Schema、规则、应用与云后端还可能形成多层软锁定。</span></div>
-            <div><b>决定性证据</b><span>同一产品契约是否跨RAN/Core/传输复用，第三方后端和Agent是否可双向替换，输入快照与动作/回滚证据是否贯通域控制器。</span></div>
+            <div><b>竞争优势</b><span>联邦数据契约、自智消费和应用入口已有明确产品承载，能以软件SKU而非等待新网元的方式进入现网；优势来自产品化路径，不来自独有数据架构。</span></div>
+            <div><b>结构性代价</b><span>Data Suite、AN Fabric、AN Apps和域控制器之间可能只在品牌层组合；若契约不能共享、控制证据不能贯通，Data Mesh只会优化Sense侧供给。</span></div>
+            <div><b>决定性证据</b><span>同一数据产品契约是否跨Data Suite、AN Fabric和第三方Agent复用，第三方后端能否双向替换，输入快照、动作、结果与回滚证据是否贯通域控制器。</span></div>
           </div>
           <div class="evidence-strip">
             <div><b>域应用已证</b>KDDI覆盖20万4G/5G RAN；stc披露&gt;1万自动动作和性能改善；Indosat证明节能应用可扩展。<a href="#s32">[S32]</a><a href="#s33">[S33]</a><a href="#s34">[S34]</a></div>
             <div><b>数据规模信号</b>匿名Tier-1案例披露25万小区、27万报告/秒，支持Data Suite的摄取与关联潜力；因客户未具名，不能外推广泛跨域商用。<a href="#s24">[S24]</a></div>
-            <div><b>尚未证明</b>一个公共数据层—Data Suite—AN Fabric实例已跨RAN、Core、传输和多厂商生产部署，并共享同一元数据、策略和版本体系。</div>
-            <div><b>路线停止线</b>若客户只购买域App而不采用公共语义与产品层，或核心元数据、规则和后端不能导出替换，分层平台的复利与开放性都会受限。</div>
+            <div><b>尚未证明</b>一个公共数据层—Data Suite—AN Fabric实例已跨RAN、Core、传输和多厂商生产部署，并共享同一数据契约、控制证据和版本体系。</div>
+            <div><b>产品化停止线</b>若客户只购买域App而不采用公共数据契约，或核心元数据、规则和后端不能导出替换，分层SKU只构成产品组合，不能上升为自智统一层。</div>
           </div>
         </article>
 
         <h4>2.3.7 收敛点与竞合边界：四个控制点决定产业位置</h4>
-        <p>三条路线的内部拓扑不会短期统一，但它们要进入跨域AI与商业闭环，必须让四类控制能力彼此衔接。谁能定义这些能力的外部接口，同时允许执行层和后端替换，谁才更接近长期平台位置；谁只提供封闭组件或单点应用，谁就仍停留在项目层。</p>
+        <p>两类技术架构的内部拓扑不会短期统一，三家也选择了不同产品入口；但它们要进入跨域AI与商业闭环，都必须让四类控制能力彼此衔接。谁能定义这些能力的外部接口，同时允许执行层和后端替换，谁才更接近长期平台位置；谁只提供封闭组件或单点应用，谁就仍停留在项目层。</p>
         <div class="trend-spine">
           <div><span class="stage">CONTROL 1</span><h4>跨域语义与身份</h4><p>定义稳定ID、权威源、配置版本和对象映射，使同一小区、会话、模型与业务对象能跨接口关联。</p></div>
           <div><span class="stage">CONTROL 2</span><h4>QoD与产品契约</h4><p>定义数据对特定任务是否适用、谁负责、满足何种SLO、如何计量、何时降级或退出。</p></div>
@@ -697,7 +697,7 @@
           <div class="card"><span class="tag fact">云与湖仓</span><h4>更接近规模运行时</h4><p>Microsoft、AWS、Google、Databricks和Snowflake提供弹性计算、Catalog、流批、模型与Agent工具；适合作为可替换后端，不应进入RAN快环或越过网络授权直接动作。Google Telecom Data Fabric仍为Private Preview。<a href="#s25">[S25]</a></p></div>
           <div class="card"><span class="tag fact">聚合与渠道</span><h4>更接近分发和结算</h4><p>Aduna、CPaaS与Marketplace掌握跨运营商覆盖、认证、开发者入口、用量和收入分成；它们能倒逼上游统一SLA，却不能反向定义内部采集、QoD生成与动作实现。<a href="#s18">[S18]</a></p></div>
         </div>
-        <div class="callout"><strong>最终竞争判断：</strong>Ericsson争夺的是联邦目录与渐进治理的控制权，Huawei争夺的是数据拓扑与近源运行时的控制权，Nokia争夺的是语义产品与自治应用入口的控制权。真正的胜负手不是把所有数据收到一个平台，而是让跨域消费者遵循自己的语义、QoD和证据契约，同时证明运行时、后端与渠道仍可互操作、可替换。标准更可能冻结这些外部行为，而不是替市场选出唯一Data Fabric。</div>
+        <div class="callout"><strong>最终竞争判断：</strong>Ericsson与Nokia在联邦分层底座内竞争不同入口：前者争联邦目录与渐进治理，后者把数据契约产品化并连接自治应用；Huawei争夺数据拓扑与近源运行时。真正的胜负手不是把所有数据收到一个平台，也不是把Data Mesh写成自智内核，而是让跨域消费者遵循稳定语义、QoD和证据契约，同时让状态—意图—策略—动作—结果—回滚闭环可验证，并证明运行时、后端与渠道仍可互操作、可替换。</div>
 
         <div class="status-summary">
           <h3>2.4 行业现状小结：共同问题明确，Data Fabric只是可能解法之一</h3>
@@ -705,7 +705,7 @@
           <div class="grid-3">
             <div class="card"><h4>共同问题已经出现</h4><p>异构发现、近源处理、跨时标交付、语义/QoD、动作证据和外部运营均有真实需求，区别在实现责任与时标。</p></div>
             <div class="card"><h4>标准没有预设平台形态</h4><p>SA2/SA5仍在Rel-20研究；增强既有功能、新NF和混合能力包都可能，独立Fabric或专用Data Plane均非既定结论。</p></div>
-            <div class="card"><h4>三家是不同起点，不是成熟度序列</h4><p>Ericsson强调联邦与产品组合，Huawei强调网络原生拓扑，Nokia强调数据管理和自治软件商品化；三者可替代也可互补。</p></div>
+            <div class="card"><h4>两类架构、三种产品位置</h4><p>Ericsson与Nokia共享相近联邦分层骨架，分别强调治理入口和自智应用商品化；Huawei强调网络原生数据拓扑。不能把产品包装差异等同于技术架构差异。</p></div>
             <div class="card"><h4>证据必须按层拆开</h4><p>摄取、湖仓、流平台和域应用已有商用；统一语义、跨产品契约和高风险动作证据不能由单点案例外推。</p></div>
             <div class="card"><h4>Data Fabric有明确适用边界</h4><p>它适合跨域发现、治理和产品供给；近源毫秒执行、移动性和无线控制仍应由网络原生机制承担。</p></div>
             <div class="card"><h4>尚无端到端胜者</h4><p>没有中立证据证明任何一家已在多运营商、多厂商环境同时实现公共语义、通信QoD、开放后端和可信动作闭环。</p></div>

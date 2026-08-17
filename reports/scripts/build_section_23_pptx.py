@@ -233,10 +233,10 @@ def layer_box(slide, l, t, w, h, kicker, title, body, fill, title_color=WHITE, b
 
 def slide_p1(prs) -> None:
     s = new_slide(prs)
-    header(s, "2.3.1  ·  ARCHITECTURE CHOICE", "6G数据能力不会收敛为单一Fabric；三条路线围绕同一组控制能力竞争")
+    header(s, "2.3.1  ·  ARCHITECTURE CHOICE", "6G数据能力不会收敛为单一Fabric；两类技术架构承载三种竞争位置")
     thesis(
         s,
-        "三条路线来自同一组架构矛盾，不是对Fabric理解不同，更不是成熟度阶梯。Ericsson优先低风险演进，Huawei优先近源执行，Nokia优先产品化速度；真正要比较的是控制权放在哪里、以什么代价换什么优势。",
+        "产品命名和SKU边界不必然构成新的数据拓扑。Ericsson与Nokia共享相近的联邦分层骨架，分别从治理和自智应用进入；Huawei重构网络内数据处理拓扑。真正要比较的是技术底座、控制入口，以及以什么代价换什么优势。",
     )
 
     constraints = [
@@ -260,14 +260,14 @@ def slide_p1(prs) -> None:
     rgb(arr_in, TEAL)
     hub = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(4.86), Inches(3.00), Inches(1.46), Inches(1.48))
     rgb(hub, NAVY)
-    add_text(s, 4.92, 3.12, 1.34, 1.24, ["控制权", "如何分配", "决定路线"], size=12, color=WHITE, bold=True, align=PP_ALIGN.CENTER, spacing=1.12)
+    add_text(s, 4.92, 3.12, 1.34, 1.24, ["控制权", "如何分配", "决定位置"], size=12, color=WHITE, bold=True, align=PP_ALIGN.CENTER, spacing=1.12)
     arr_out = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(6.36), Inches(3.58), Inches(0.20), Inches(0.22))
     rgb(arr_out, TEAL)
 
     routes = [
-        (TEAL, "Ericsson  ·  存量联邦", "连接既有数据岛", "以复杂协调换迁移连续性。权威源与Mediation、NWDAF、湖仓不可跳过；统一的是发现、策略和消费体验，不是把全部运行时收进一个SKU。"),
-        (AMBER, "Huawei  ·  网络原生拓扑", "重构数据拓扑", "以新平面复杂度换近源控制。把多源、多处理、多汇做成可编排执行，而不是先建设企业Catalog；缺少通用目录不能直接判为路线不完整。"),
-        (NAVY, "Nokia  ·  分层商品化", "组合数据与自治软件", "以分层SKU换产品化速度。先让目录、AI和应用可分别销售并进入现网，再验证各层是否共享同一契约和控制体系。"),
+        (TEAL, "Ericsson  ·  联邦分层 / 治理入口", "连接既有数据岛", "以复杂协调换迁移连续性。权威源与Mediation、NWDAF、湖仓不可跳过；统一的是发现、策略和消费体验，不是把全部运行时收进一个SKU。"),
+        (AMBER, "Huawei  ·  网络原生 / 执行入口", "重构数据拓扑", "以新平面复杂度换近源控制。把多源、多处理、多汇做成可编排执行，而不是先建设企业Catalog；缺少通用目录不能直接判为路线不完整。"),
+        (NAVY, "Nokia  ·  联邦分层 / 应用入口", "产品化数据—自智软件链", "技术底座与Ericsson高度相似，差别在产品组织：把数据契约、智能消费和AN Apps包装成可售软件链，而不是形成第三种数据架构。"),
     ]
     for i, (accent, kicker, title, body) in enumerate(routes):
         y = 1.32 + i * 1.44
@@ -302,7 +302,7 @@ def slide_p2(prs) -> None:
     header(s, "2.3.2  ·  STANDARD BOUNDARY", "标准先冻结外部行为，不会先冻结统一平台")
     thesis(
         s,
-        "ITU-R、SA2/SA5、O-RAN和外部运营接口正在形成一条可组合链路，但并不共同要求一个名为Data Fabric的网元。标准冻结跨厂商必须一致的对象与接口，不替厂商选择内部拓扑，因此三条路线可以长期并存。",
+        "ITU-R、SA2/SA5、O-RAN和外部运营接口正在形成一条可组合链路，但并不共同要求一个名为Data Fabric的网元。标准冻结跨厂商必须一致的对象与接口，不替厂商选择内部拓扑，因此两类技术架构和不同产品入口可以长期并存。",
     )
 
     layers = [
@@ -318,7 +318,7 @@ def slide_p2(prs) -> None:
             TEAL,
             "LAYER 2  ·  跨域控制语义",
             "稳定ID  ·  最小元数据  ·  QoD  ·  授权  ·  动作证据",
-            ["跨域复用真正依赖对象能否对齐、质量能否声明、授权能否传递、动作能否回证。这是标准最可能先下手的控制层，也是三条路线最终都要交出的接口。"],
+            ["跨域复用真正依赖对象能否对齐、质量能否声明、授权能否传递、动作能否回证。这是标准最可能先下手的控制层，也是两类技术架构最终都要交出的接口。"],
         ),
         (
             4.68,
@@ -538,10 +538,10 @@ def slide_p4(prs, huawei: Path) -> None:
 
 def slide_p5(prs, nokia: Path) -> None:
     s = new_slide(prs)
-    header(s, "2.3.6  ·  NOKIA", "Nokia分层商品化：产品进入现网最快，统一控制与开放性仍待证明")
+    header(s, "2.3.6  ·  NOKIA", "Nokia将联邦数据能力组织成自智软件链：优势在产品化入口，而非独立架构")
     thesis(
         s,
-        "这是一条“先产品化能力、再验证统一控制”的路线。Data Suite是数据管理层，AN Fabric是智能消费层；动作仍回OSS/RIC/SON，数据默认留域。两套Fabric不是同一层。真正的竞争问题是它们能否共享契约并贯通到动作证据。",
+        "Nokia与Ericsson共享“域内事实—联邦访问—治理语义—应用消费—域控制器动作”的相近骨架。Data Suite是数据供给与契约层，AN Fabric是智能消费层；Data Mesh主要支撑Sense，不是自智网络内核。真正的内核是状态—意图—策略—动作—结果—回滚闭环。",
     )
 
     panel = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.38), Inches(1.30), Inches(7.72), Inches(4.88))
@@ -551,9 +551,9 @@ def slide_p5(prs, nokia: Path) -> None:
     stages = [
         (NAVY, "1  域数据底座", "Domain lakehouse  ·  各域本地采集、加工与存储"),
         (TEAL, "2  Common Fabric / Lakehouse", "适配、抽象和联邦访问，提供逻辑视图而非强制集中"),
-        (TEAL, "3  Data Suite", "目录、语义、QoD、血缘和数据产品，与治理最直接重合"),
-        (AMBER, "4  AN Fabric / AN Apps", "Sense–Think–Act 智能消费与编排，不是数据管理Fabric"),
-        (NAVY, "5  域控制器 + API / Marketplace", "高风险动作回OSS/RIC/SON，再向计量和渠道外延"),
+        (TEAL, "3  数据契约层 / Data Suite", "稳定ID、语义、QoD、Owner、版本和血缘，统一数据供给"),
+        (AMBER, "4  自智消费层 / AN Fabric", "Sense–Think及应用编排；不统一实时状态、策略冲突和动作权限"),
+        (NAVY, "5  动作闭环 + 商业外延", "域控制器执行、结果验证和回滚，再连接API、计量与Marketplace"),
     ]
     for i, (fill, title, body) in enumerate(stages):
         y = 1.54 + i * 0.86
@@ -574,9 +574,9 @@ def slide_p5(prs, nokia: Path) -> None:
         2.72,
         2.04,
         [
-            "官方AN Fabric图只证明Sense–Think–Act智能层和Marketplace外延。",
-            "Data Suite、域数据底座和公共湖仓不在这张图里，必须靠左侧自绘链路补齐，否则会把两套Fabric读成同一层。",
-            "高风险动作仍经AN Apps回到域控制器；公共层偏Non-RT，不能替代RAN快环。",
+            "官方AN Fabric图只证明智能消费层和Marketplace外延，不能证明Data Mesh成为自智统一层。",
+            "Data Suite、域数据底座和公共湖仓不在图中；数据契约层与控制闭环必须分开读取。",
+            "高风险动作仍经AN Apps回到域控制器；公共层偏Non-RT，不能替代RAN快环、动作授权和回滚。",
         ],
         size=9,
         color=SLATE,
@@ -589,10 +589,10 @@ def slide_p5(prs, nokia: Path) -> None:
         1.30,
         4.71,
         1.54,
-        "必须分层",
+        "统一的是数据契约",
         [
-            "Data Suite管目录、语义、质量、血缘和产品；AN Fabric管智能消费与编排。",
-            "数据默认留域，公共层只做适配、抽象和联邦访问。支持多厂商只有经过第三方互操作和双向迁移，才构成中立性证据。",
+            "Data Suite可统一稳定ID、Schema、QoD、Owner、版本和血缘，使域数据被自智应用重复消费。",
+            "它不统一实时状态、策略冲突或动作权限；多厂商中立性仍需第三方互操作和双向迁移证明。",
         ],
         TEAL,
     )
@@ -602,10 +602,10 @@ def slide_p5(prs, nokia: Path) -> None:
         2.94,
         4.71,
         1.54,
-        "数据与控制如何流动",
+        "数据供给与控制闭环分层",
         [
-            "域湖仓完成本地加工，经公共层进入Data Suite，再进入Sense，建立观察与chain-of-custody。",
-            "Think使用电信模型和Glass-Box推理；Act通过AN Apps调用既有OSS/RIC/SON，再向计量和Marketplace延伸。",
+            "域湖仓完成本地加工，经公共层和Data Suite形成可消费的数据契约，再进入Sense。",
+            "Think使用电信模型；Act经AN Apps调用OSS/RIC/SON。结果、回滚和责任证据必须返回控制闭环，而不是停在数据产品层。",
         ],
         NAVY,
     )
@@ -615,10 +615,10 @@ def slide_p5(prs, nokia: Path) -> None:
         4.58,
         4.71,
         1.60,
-        "竞争含义",
+        "产品化差异，而非架构异质",
         [
-            "优势是SKU可组合、进入现网快，不必等待6G新网元标准。",
-            "代价是各层可能只在品牌层组合，并形成语义、应用与云后端的软锁定。客户若只买域App，分层复利就落空。",
+            "与Ericsson相近的联邦底座被组织成Data Suite、AN Fabric和AN Apps等分层SKU，进入现网更快。",
+            "若契约不共享、控制证据不贯通，各层就只是品牌组合；Data Mesh最多优化Sense侧供给，不能成为自智内核。",
         ],
         AMBER,
         fill=SOFT_AMBER,
@@ -628,7 +628,7 @@ def slide_p5(prs, nokia: Path) -> None:
         [
             ("域应用已证", "KDDI覆盖20万4G/5G RAN；stc披露超过1万次自动动作和性能改善；Indosat证明节能应用可扩展。它们证明域级闭环，不证明统一跨域Fabric。", TEAL),
             ("规模信号", "匿名Tier-1：25万小区、27万报告/秒，仅支持摄取与关联潜力。因客户未具名，不能外推广泛跨域商用。", AMBER),
-            ("决定性验证", "Data Suite与AN Fabric是否共享同一契约，第三方后端/Agent能否双向替换，动作与回滚证据能否贯通域控制器。", CORAL),
+            ("决定性验证", "同一数据产品契约能否跨Data Suite、AN Fabric和第三方Agent复用；后端能否双向替换；输入、动作、结果与回滚证据能否贯通域控制器。", CORAL),
         ],
     )
     footer(s, 5, "2.3.6", "[S23][S24][S31][S32][S33][S34][S39]")
@@ -636,10 +636,10 @@ def slide_p5(prs, nokia: Path) -> None:
 
 def slide_p6(prs) -> None:
     s = new_slide(prs)
-    header(s, "2.3.3 + 2.3.7  ·  SYNTHESIS", "三条路线不构成成熟度序列；最终胜负由四类接口控制权决定")
+    header(s, "2.3.3 + 2.3.7  ·  SYNTHESIS", "两类技术架构、三种产品位置；最终胜负由四类接口控制权决定")
     thesis(
         s,
-        "Ericsson争联邦治理，Huawei争近源运行时，Nokia争语义产品与应用入口。谁能定义这些能力的外部接口，同时允许执行层和后端替换，谁才更接近长期平台位置；谁只提供封闭组件或单点应用，谁就仍停留在项目层。",
+        "Ericsson与Nokia在相近联邦分层底座内竞争不同入口：前者争治理，后者把数据契约连接到自智应用；Huawei争网络原生近源运行时。谁能定义外部接口，同时允许执行层和后端替换，谁才更接近长期平台位置。",
     )
 
     add_table(
@@ -649,8 +649,8 @@ def slide_p6(prs) -> None:
         12.55,
         2.68,
         [
-            ["比较项", "Ericsson  ·  存量联邦", "Huawei  ·  网络原生拓扑", "Nokia  ·  分层商品化"],
-            ["架构起点", "分散数据岛和既有产品如何少迁移、可复用", "AI/ISAC多源多处理多汇如何低时延流动", "数据管理、自治应用和商业外延如何形成可售组合"],
+            ["比较项", "Ericsson  ·  联邦治理入口", "Huawei  ·  网络原生执行", "Nokia  ·  联邦应用入口"],
+            ["架构起点", "分散数据岛和既有产品如何少迁移、可复用", "AI/ISAC多源多处理多汇如何低时延流动", "在相近联邦底座上把数据契约、自智应用和商业外延形成可售组合"],
             ["控制中心", "目录、治理和策略逻辑联邦；产品控制仍分散", "DO编排执行能力与数据拓扑", "Data Suite管数据产品，AN Fabric管智能消费"],
             ["执行位置", "域内产品、EDCA/DMF与数据湖按需访问", "DA/DPF/DSF在UE/RAN/边缘/Core近源执行", "数据留域；动作经AN Apps回OSS/RIC/SON"],
             ["换取优势", "保护存量、降低迁移风险、允许多后端", "降低全量搬运，获得可编排近源处理", "能力可分别产品化并快速进入现网"],
@@ -680,7 +680,7 @@ def slide_p6(prs) -> None:
         5.74,
         12.23,
         0.36,
-        ["Ericsson争夺联邦目录与渐进治理控制权。Huawei争夺数据拓扑与近源运行时控制权。Nokia争夺语义产品与自治应用入口控制权。三者可替代也可互补，但都不是一条通向统一Fabric的成熟度阶梯。"],
+        ["Ericsson与Nokia共享相近联邦分层骨架：前者争联邦目录与渐进治理，后者把数据契约产品化并连接自治应用；Huawei争数据拓扑与近源运行时。三者是两类技术架构和三种产品位置，不是成熟度阶梯。"],
         size=10.5,
         color=NAVY,
         bold=True,
@@ -692,7 +692,7 @@ def slide_p6(prs) -> None:
         6.12,
         12.23,
         0.40,
-        ["真正的平台地位不是把所有数据收到一个平台，而是让跨域消费者遵循自己的语义、QoD和证据契约，同时证明运行时、后端和渠道仍可互操作、可替换。标准更可能冻结这些外部行为，而不是替市场选出唯一Data Fabric。"],
+        ["真正的平台地位不是把所有数据收到一个平台，也不是把Data Mesh写成自智内核，而是让消费者遵循稳定语义、QoD和证据契约，同时让状态—意图—策略—动作—结果—回滚闭环可验证，并证明运行时、后端和渠道仍可替换。"],
         size=10.5,
         color=SLATE,
         spacing=1.03,
