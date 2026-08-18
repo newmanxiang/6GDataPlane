@@ -45,6 +45,7 @@ DEEP_GREEN = RGBColor(0x14, 0x5A, 0x3A)
 FONT = "WenQuanYi Micro Hei"
 TOTAL = 6
 EMU = 914400
+BASELINE_CJK = [654, 775, 770, 730, 720, 562]
 
 
 def _set_run_east_asia(run) -> None:
@@ -668,9 +669,24 @@ def verify(prs: Presentation) -> None:
     if n != TOTAL:
         raise SystemExit(f"expected {TOTAL} slides, got {n}")
     counts = count_cjk(prs)
-    print("cjk chars:", counts, "total", sum(counts))
+    total_ratio = sum(counts) / sum(BASELINE_CJK)
+    page_ratios = [current / baseline for current, baseline in zip(counts, BASELINE_CJK)]
+    print(
+        "cjk chars:",
+        counts,
+        "total",
+        sum(counts),
+        "growth",
+        f"{total_ratio - 1:.1%}",
+        "page_growth",
+        [f"{ratio - 1:.1%}" for ratio in page_ratios],
+    )
     if min(counts) < 280:
         raise SystemExit(f"slide too sparse: {counts}")
+    if not 1.28 <= total_ratio <= 1.38:
+        raise SystemExit(f"total text growth must stay near 30%: {total_ratio:.3f}")
+    if min(page_ratios) < 1.25:
+        raise SystemExit(f"every slide must add at least 25% text: {page_ratios}")
 
     overflow = []
     tables = []
@@ -720,6 +736,11 @@ def verify(prs: Presentation) -> None:
     missing = [item for item in required if item not in blob]
     if missing:
         raise SystemExit(f"missing required terms: {missing}")
+    ambiguous_qod = [
+        line for line in blob.splitlines() if "QoD" in line and "Quality on Demand" not in line
+    ]
+    if ambiguous_qod:
+        raise SystemExit(f"QoD must only mean Quality on Demand: {ambiguous_qod}")
     print("verify ok:", {"slides": n, "tables": tables})
 
 
