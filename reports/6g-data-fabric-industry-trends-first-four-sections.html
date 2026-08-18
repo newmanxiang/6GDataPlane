@@ -115,6 +115,7 @@
     .trend-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0 0}
     .trend-flow>div{background:var(--navy);color:#dceaf3;border-radius:12px;padding:11px;text-align:center;font-size:12px}.trend-flow b{display:block;color:var(--lime);margin-bottom:3px}
     .business-chain{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 0}.business-chain>div{background:#f3f7f9;border:1px solid var(--line);border-radius:14px;padding:14px}.business-chain h4{font-size:14px}.business-chain p{margin:5px 0;color:var(--muted);font-size:12px}
+    .business-paths{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 0}.business-path{border:1px solid var(--line);border-radius:16px;padding:17px;background:#f3f7f9}.business-path:nth-child(2){background:#edf8f6;border-color:#b9d6d6}.business-path .path-id{display:block;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.08em}.business-path h4{margin:4px 0 7px}.business-path p,.business-path li{color:var(--muted);font-size:12.5px}.business-path ul{margin:7px 0 0;padding-left:18px}
     .evidence-note{border-top:1px dashed var(--line);margin-top:13px;padding-top:10px;color:var(--muted);font-size:12px}.evidence-note strong{color:var(--navy)}
     .horizon-principle{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}.horizon-principle>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.horizon-principle h4{margin-bottom:5px}.horizon-principle p{margin:0;color:var(--muted)}
     .source-list{columns:2;column-gap:34px;padding-left:22px}.source-list li{break-inside:avoid;margin:0 0 11px;font-size:12.5px;color:#586e7d}
@@ -134,7 +135,7 @@
     @media(max-width:900px){
       .nav-links{display:none}.hero-meta,.grid-4,.mini-stats,.score-grid{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-2,.horizon,.choice-banner,.opp-body{grid-template-columns:1fr}
       .logic-chain{grid-template-columns:1fr}.logic-chain>div:after{display:none}.layer{grid-template-columns:52px 1fr}.layer .status{grid-column:2}
-      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.horizon-principle,.derivation-item{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
+      .landscape,.requirement,.fit-verdict,.vendor-grid,.trend-body,.trend-spine,.trend-flow,.business-chain,.business-paths,.horizon-principle,.derivation-item{grid-template-columns:1fr}.requirement .proof{grid-column:auto}.maturity-map{grid-template-columns:1fr 1fr}.vendor-head{grid-template-columns:80px 1fr}.vendor-level{grid-column:2;width:max-content}.evidence-strip,.vendor-findings,.logic-proof{grid-template-columns:1fr 1fr}.judgement,.opp-head{grid-template-columns:44px 1fr}.certainty{grid-column:2;width:max-content}.source-list{columns:1}
       .trend-spine>div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-23px}.trend-map{grid-template-columns:1fr}.trend-map>div{border-bottom:1px solid var(--line)!important}.trend-map>div:last-child{border-bottom:0!important}
       .figure,.table-scroll{position:relative}
       .figure:before,.table-scroll:before{
@@ -748,8 +749,8 @@
           <div class="derivation-item">
             <div class="premise"><b>约束四｜交易协同</b><p>行业应用需要跨运营商覆盖、一致行为、用途约束、责任界定、计量与清结算，而非单个孤立API。</p></div>
             <div class="conflict"><b>若不解决</b><p>API数量增加但体验不一致、无人持续付费；内部成本、外部SLA、责任与收入无法闭环。</p></div>
-            <div class="deduction"><b>因此必须</b><p>先形成内部可信产品，再经标准服务、跨网分发和行业结果逐层传递价值并完成结算。</p></div>
-            <div class="result"><b>必要关口｜价值可结算</b><p>T7 四层商业链</p></div>
+            <div class="deduction"><b>因此必须</b><p>按责任边界拆分交易：买方保留控制权时出售可组合能力；供应方承担决策、动作与效果责任时出售可归因结果。</p></div>
+            <div class="result"><b>必要关口｜价值可结算</b><p>T7 责任边界双路径</p></div>
           </div>
         </div>
 
@@ -760,7 +761,7 @@
           <div><span class="stage">STAGE 1 · FACT</span><h4>状态可知</h4><p>在源附近完成必要处理，并让结构、配置、质量、权限和血缘变化及时可见。</p></div>
           <div><span class="stage">STAGE 2 · FITNESS</span><h4>数据适用</h4><p>把原始流封装为面向明确任务、带语义、任务适用性、契约和责任人的数据产品。</p></div>
           <div><span class="stage">STAGE 3 · ACTION</span><h4>行动可信</h4><p>让 Agent 的每次决策、工具调用和网络动作都有身份、策略、仿真与回滚证据。</p></div>
-          <div><span class="stage">STAGE 4 · VALUE</span><h4>价值可结算</h4><p>将内部可信供给映射为标准服务，经跨网分发、计量、责任与结果定价形成商业闭环。</p></div>
+          <div><span class="stage">STAGE 4 · VALUE</span><h4>价值可结算</h4><p>能力服务按调用和SLA结算；结果服务按可归因效果结算，两者分别核算控制权、责任、风险与成本。</p></div>
         </div>
 
         <div class="trend-map" role="table" aria-label="主线与八条趋势映射">
@@ -771,7 +772,7 @@
           <div class="map-stage">价值可结算</div><div class="map-logic">内部能力如何变成跨运营商一致、可计量、可定责、有人付费的服务？</div><div class="map-ids">T7</div>
         </div>
         <div class="trend-crosscut"><strong>T8 是贯穿判断，不是第五条价值主线：</strong>它回答 T1–T7 最终被标准化为固定新网元，还是可由增强既有功能、边缘 Agent、SMO 服务或新组件组合实现。判断重点是能力、信息模型和接口能否互操作，而非产品名称。</div>
-        <div class="callout warn"><strong>依赖纪律：</strong>没有 T2/T3，系统不知道数据何时、为何变化；没有 T1/T6，模型与 Agent 不知道数据是否适用；没有 T4/T5，自动化不能安全扩大权限；前三层未建立，T7 只能得到更多 API，而不是稳定商业价值。为保持第五至第八章映射，正文保留 T1–T8 编号；因果阅读顺序是 T2/T3 → T1/T6 → T4/T5 → T7，T8 横切。</div>
+        <div class="callout warn"><strong>依赖纪律：</strong>没有T2/T3，系统不知道数据何时、为何变化；没有T1/T6，能力服务无法稳定履约。T7-A不以T4/T5为前提，可以先按API/SLA收费；只有供应方承诺网络动作和业务结果的T7-B，才额外依赖可信行动、归因和回滚。依赖表示风险条件，不要求产业严格串行；T8继续横切全部趋势。</div>
 
         <div class="trend-chapters">
           <article class="trend-chapter" id="t1">
@@ -969,36 +970,55 @@
           <article class="trend-chapter" id="t7">
             <div class="trend-title">
               <div class="trend-no">T7</div>
-              <div><h3>商业化将沿“内部可信供给—标准服务—跨网分发—结果结算”展开</h3><p>之所以称为商业链，不是因为多了API，而是每层都有不同生产者、购买者、成本、责任与结算对象。</p></div>
+              <div><h3>商业化将沿责任边界分化：能力服务出售可组合输入，结果服务承诺可归因输出</h3><p>分叉点不是数据形态，而是买方还是供应方承担决策、动作与结果责任；内部产品稳定性只是两条路径共同的交付前提。</p></div>
               <span class="tag study">中等确定性</span>
             </div>
-            <div class="business-chain">
-              <div><h4>① 内部可信生产</h4><p><strong>供给：</strong>带语义、任务适用性、用途和成本的数据/分析产品</p><p><strong>买方：</strong>网络产品线、运维、AI和API团队</p><p><strong>价值：</strong>复用、降本、缩短交付</p></div>
-              <div><h4>② 标准服务包装</h4><p><strong>供给：</strong>Quality on Demand（QoD）、位置、身份、状态或分析服务</p><p><strong>买方：</strong>行业平台、应用与CPaaS</p><p><strong>价值：</strong>SLA、调用/会话收费</p></div>
-              <div><h4>③ 跨运营商分发</h4><p><strong>供给：</strong>一致目录、认证、覆盖、用量和清结算</p><p><strong>买方：</strong>需要全国/多国覆盖的开发者</p><p><strong>价值：</strong>渠道佣金、收入分成</p></div>
-              <div><h4>④ 行业结果结算</h4><p><strong>供给：</strong>交易成功、体验改善、风控或运营结果</p><p><strong>买方：</strong>金融、车联、工业、媒体等行业</p><p><strong>价值：</strong>按结果或业务量定价</p></div>
-            </div>
-            <div class="trend-body">
-              <div>
-                <h4>第一性原理推导</h4>
-                <ol class="reason-list">
-                  <li>外部服务的一致性上限由内部数据产品稳定性决定；内部语义、任务适用性、权限和血缘不稳，API只会把差异暴露给客户。</li>
-                  <li>单运营商覆盖通常不足以支持规模行业应用，必须经聚合层统一发现、认证、行为、用量和清结算。</li>
-                  <li>标准API会降低接口稀缺性，价值会从“调用一次”上移到交易、会话、体验或业务结果。</li>
-                  <li>跨组织使用伴随用途、撤销、责任与收入分配；Data Space补的是交易信任，不是RAN快环。</li>
-                </ol>
-              </div>
-              <div>
-                <h4>成立条件与边界</h4>
+            <div class="business-paths">
+              <div class="business-path">
+                <span class="path-id">PATH A · T7-A · 中高确定性</span>
+                <h4>数据/API与能力服务</h4>
+                <p>买方保留业务决策和网络动作责任，供应方只承诺能力行为、可用性与SLA；因此无需等待高风险自动化成熟即可先行。</p>
                 <ul>
-                  <li>先产品化内部数据/分析能力，再映射CAMARA或行业API；不能用API数量倒推内部成熟度。</li>
-                  <li>指标覆盖付费客户、跨网行为一致、调用/会话、收入、履约成本、责任争议和续费。</li>
-                  <li>原始感知数据出售不是默认模式；更可行的是最小必要、可撤销、可解释的分析或能力服务。</li>
+                  <li><strong>交易对象：</strong>Quality on Demand（QoD）、位置、身份、状态、分析或网络能力</li>
+                  <li><strong>责任边界：</strong>供应方保证接口与能力履约，买方负责组合能力并形成业务结果</li>
+                  <li><strong>买方：</strong>行业平台、应用、开发者与CPaaS</li>
+                  <li><strong>计价与扩张：</strong>调用、会话、覆盖、用量或订阅；经聚合层获得跨网规模</li>
+                </ul>
+              </div>
+              <div class="business-path">
+                <span class="path-id">PATH B · T7-B · 低—中确定性</span>
+                <h4>结果型托管/自治服务</h4>
+                <p>供应方参与决策和动作，并对约定结果负责；客户购买的是效果和责任转移，而不是单项接口。</p>
+                <ul>
+                  <li><strong>交易对象：</strong>体验改善、成功率、节能、故障或风险降低</li>
+                  <li><strong>责任边界：</strong>供应方承担决策依据、动作权限、结果归因和失败回退责任</li>
+                  <li><strong>买方：</strong>金融、车联、工业、媒体等结果责任方</li>
+                  <li><strong>计价：</strong>业务量、效果增益、风险降低、托管费或结果分成</li>
                 </ul>
               </div>
             </div>
-            <div class="logic-proof"><div><b>领先信号</b><span>内部产品契约与外部SLA可追溯，Operate API、聚合渠道与用量结算联通</span></div><div><b>验证指标</b><span>跨网一致、活跃付费客户、履约成本、收入/分成、续费</span></div><div><b>反证条件</b><span>API数量增长但无跨网一致、持续消费者、责任边界和收入</span></div></div>
-            <div class="evidence-note"><strong>外部校验：</strong>CAMARA/Open Gateway、TM Forum Operate API、聚合渠道和中国移动Quality on Demand（QoD）商用案例分别验证标准服务、运营、分发与付费环节；感知产品和结果定价能否规模化仍待市场检验。<a href="#s16">[S16]</a><a href="#s18">[S18]</a><a href="#s55">[S55]</a></div>
+            <div class="trend-body">
+              <div>
+                <h4>为什么会分化</h4>
+                <ol class="reason-list">
+                  <li>网络数据和能力正在被模块化、标准化；有集成能力的买方希望自行组合这些输入，并保留决策与动作权，因此形成路径A。</li>
+                  <li>另一类客户缺少跨域集成和持续运营能力，更愿意购买体验、效率或风险改善，并把部分决策和行动责任转移给供应方，因此形成路径B。</li>
+                  <li>接口越标准化，路径A越容易跨网复制，但单项能力的稀缺性和议价空间也会下降，推动供应方向更高价值的结果服务延伸。</li>
+                  <li>结果承诺同时引入因果归因、动作授权、风险暴露和失败责任，难以像API一样完全标准化；责任约束又使路径B只能在边界清晰的场景渐进扩张。</li>
+                </ol>
+              </div>
+              <div>
+                <h4>共同基础与分路条件</h4>
+                <ul>
+                  <li><strong>共同前提：</strong>稳定产品、语义、任务适用性、权限、血缘和计量只决定服务能否履约，不解释为什么分化。</li>
+                  <li><strong>路径A扩张条件：</strong>跨运营商行为一致、覆盖聚合、开发者采用、用量计费、履约成本和清结算。</li>
+                  <li><strong>路径B扩张条件：</strong>T4/T5可信行动、结果基线与观测窗口、因果归因、动作证据、风险上限、回滚及责任合同。</li>
+                  <li><strong>长期共存：</strong>能自行集成的客户购买能力，希望转移运营责任的客户购买结果；两条路径不是简单的成熟度先后。</li>
+                </ul>
+              </div>
+            </div>
+            <div class="logic-proof"><div><b>领先信号</b><span>A：持续付费、跨网结算和开发者复用；B：合同写明结果基线、动作权限、效果责任与回滚</span></div><div><b>验证指标</b><span>A：跨网一致、客户、用量收入、履约成本、续费；B：归因置信、效果增益、误动作、风险暴露、争议和回滚成本</span></div><div><b>反证条件</b><span>A只有API数量无持续收入；B无法定义基线、归因、定责或回退；两条路径混算收入与风险</span></div></div>
+            <div class="evidence-note"><strong>外部校验：</strong>CAMARA/Open Gateway、聚合渠道和中国移动Quality on Demand（QoD）商用案例已证明路径A可以独立成立。stc、KDDI和Indosat证明域级自动化能产生效果，但没有公开结果定价、责任转移和规模分成合同，尚不足以证明路径B已经规模化。<a href="#s16">[S16]</a><a href="#s18">[S18]</a><a href="#s32">[S32]</a><a href="#s33">[S33]</a><a href="#s34">[S34]</a><a href="#s55">[S55]</a></div>
           </article>
 
           <article class="trend-chapter" id="t8">
@@ -1051,7 +1071,7 @@
           <div><span class="stage">T2 · T3</span><h4>状态与运行基线</h4><p>3年验证变化可知、近源可运行；5年看近源运行时和跨域状态模型由谁控制。</p></div>
           <div><span class="stage">T1 · T6</span><h4>产品与适用基线</h4><p>3年验证少量产品可复用、任务适用性可测试；5年看语义、质量和产品定义权。</p></div>
           <div><span class="stage">T4 · T5</span><h4>行动证据基线</h4><p>3年验证受控工具与孪生关口；5年看可信Agent运行时和动作放行规则。</p></div>
-          <div><span class="stage">T7 · T8</span><h4>商业与标准验证</h4><p>3年验证付费和接口输入；5年看渠道结算、能力包与多拓扑互操作。</p></div>
+          <div><span class="stage">T7 · T8</span><h4>商业与标准验证</h4><p>3年分别验证能力付费与结果归因；5年看渠道结算、责任合同、能力包与多拓扑互操作。</p></div>
         </div>
 
         <h3>4.1 T1–T8的3年验证与5年结果</h3>
@@ -1096,10 +1116,10 @@
                 <td>若仍只报完整性和接口成功率，适用性尚未被管理；短期难出现覆盖所有数据和任务的统一总分。</td>
               </tr>
               <tr>
-                <td><strong>T7 商业链</strong><br><span class="tag study">中</span></td>
-                <td>内部产品契约能映射到至少一个标准服务；跨网行为、用量和责任可计量；出现持续付费消费者或明确业务Owner，而非一次性展示。</td>
-                <td>内部生产、标准服务、跨网聚合和行业结果之间分工清晰；部分场景从调用定价走向会话、交易或结果定价。</td>
-                <td>若API增长而无消费者、收入和责任边界，商业链尚未成立；ISAC/数据空间的付费规模仍取决于需求、隐私和制度。</td>
+                <td><strong>T7 责任双路径</strong><br><span class="tag fact">A中高</span> / <span class="tag infer">B低—中</span></td>
+                <td>A：至少一个标准能力出现持续付费、跨网一致和可核算履约成本。B：至少一个场景在合同中明确结果基线、动作权限、归因、责任和回滚。</td>
+                <td>有集成能力的客户购买可组合输入，希望转移运营责任的客户购买可归因结果；A标准化扩张，B在责任清晰场景渐进发展。</td>
+                <td>A若只有API数量无持续收入则不成立；B若不能定义基线、归因、定责或回退则不能规模化；两条路径不得混算。</td>
               </tr>
               <tr>
                 <td><strong>T8 能力集合</strong><br><span class="tag infer">低—中</span></td>
@@ -1119,7 +1139,7 @@
             <ul>
               <li>优先建立T2/T3的事件和两级运行底座，再用T1/T6证明数据可复用、可验收。</li>
               <li>T4/T5从只读、建议、影子运行开始；没有身份、策略、误差门槛和回滚，不扩大自动权限。</li>
-              <li>T7只以真实付费、跨网一致和履约成本作为商业验证；T8以进入工作文本、参考实现和互操作测试作为标准验证。</li>
+              <li>T7-A验证真实付费、跨网一致和履约成本；T7-B追加结果基线、归因、责任与回滚。T8以工作文本、参考实现和互操作测试验证。</li>
               <li>厂商仍会强化平台命名，但决策只看跨场景复用、现网收益、工程开销和多厂商接口。</li>
             </ul>
           </div>
