@@ -21,6 +21,7 @@
 | `6g-data-fabric-section-3-deck.pptx` | 第三章六页独立胶片：趋势结构 → T2/T3 → T1/T6 → T4/T5 → T7双路径 → T8标准承载 |
 | `scripts/build_section_3_pptx.py` | 再生脚本：`python3 reports/scripts/build_section_3_pptx.py` |
 | `plan-section3.md` | 第三章胶片制作计划 |
+| `plan-sections5-7.md` | 第5–7章六页决策胶片制作计划：2页现状定位、1页模式、2页机会选择、1页公司策略表 |
 | `6g-data-fabric-industry-trends-full-sections.html` | 完整 HTML 论证正文 |
 | `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
 

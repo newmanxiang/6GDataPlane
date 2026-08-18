@@ -1163,683 +1163,172 @@
     <section id="zte-position">
       <div class="wrap">
         <div class="section-kicker"><i>05</i> ZTE position</div>
-        <h2>公司现状和定位分析：中兴通讯</h2>
-        <p class="lead">在前文「需求—竞争—趋势」坐标系中，中兴通讯的真实位置是：<strong>强于网络智能产品化与电信全栈触点，已有自智场景试点和开放接口基础；弱于通用 IT 级 Data Fabric 完整产品、跨域数据产品运营和 6G 数据框架公开话语权</strong>。因此，正确战略不是再造一个对标 IBM/Informatica/Nokia Data Suite 的通用编织平台，而是把 AIR Net 数据引擎及相邻资产，升级为主航道产品共用的横向数据控制能力。这里将「已发布产品、客户试点、标准席位、研究建议」分层，避免把可嫁接资产误写成已经完成的 6G Data Fabric。</p>
+        <h2>公司现状和定位分析：从三层资产到一项横向共用能力</h2>
+        <p class="lead">中兴不是只处在网络原生执行与自智应用之间，而是同时覆盖网络执行、数据智能和自有智能体应用三层。真正需要横向产品化的，是多条产品线与Agent反复建设的数据契约、分布式供数和动作证据能力；这项公共能力应嵌入主航道，不应扩张为独立IT Data Fabric平台。</p>
+        <div class="callout warn"><strong>公开版边界：</strong>本节只使用已公开产品、案例和标准事实，并以研究语言描述目标演进。内部代号、开发状态、版本时间、Owner和未公开消费者不进入本公开仓库；目标架构不等于现有产品承诺。</div>
 
-        <div class="callout"><strong>定位一句话：</strong>中兴应争夺的是「RAN/跨域语义 +任务适用性+ 近源执行 + 有界 Agent 供数」控制点，而不是独立「大一统数据面」品牌。这与第三章产业断言一致：统一控制语义与分布式执行，而不是统一所有存储、协议和时延。</div>
-
-        <h3>5.1 公开能力锚点：已有资产，不是从零开始</h3>
+        <h3>5.1 当前真实位置：三层资产已存在，共用契约尚未闭合</h3>
         <div class="grid-3">
           <div class="card">
-            <span class="tag fact">产品锚点</span>
-            <h4>AIR Net 三引擎</h4>
-            <p>公开材料将 AIR Net 定位为高水平自智网络方案：数据引擎、大模型引擎与数字孪生引擎协同，支撑 Copilot/Agent 与跨域闭环。数据引擎被描述为提供数据资产、AI Ready 治理与智能分析能力。<a href="#s40">[S40]</a><a href="#s41">[S41]</a></p>
+            <span class="tag fact">网络执行与权威数据</span>
+            <h4>RAN / Core / OSS/SMO / NEF / CUDR</h4>
+            <p>中兴掌握无线对象、配置、测量、会话、网管状态、网络API入口和域控制触点。ZXUN CUDR、NEF及主航道产品证明电信数据管理与能力暴露基础，但不能外推为跨域统一数据平台。<a href="#s51">[S51]</a><a href="#s52">[S52]</a><a href="#s55">[S55]</a></p>
           </div>
           <div class="card">
-            <span class="tag fact">场景锚点</span>
-            <h4>Fault Agent 场景实践</h4>
-            <p>GSMA 具名案例披露浙江移动与中兴的传输故障方案结合大/小模型和数字孪生，根因识别率超过90%、诊断约由30分钟降至5分钟内、工单减少20%；TM Forum另披露中国电信多省试点。指标为项目案例口径，非独立审计。<a href="#s53">[S53]</a><a href="#s42">[S42]</a></p>
+            <span class="tag fact">数据与智能基础</span>
+            <h4>AIR Net 数据 / 模型 / 孪生三引擎</h4>
+            <p>公开材料已给出数据资产、AI Ready治理、模型与数字孪生能力。建议把现有数据引擎沿“可信数据产品、语义治理、质量洞察、跨系统共享与分布式处理”方向演进，但公开证据尚不足以证明这些能力已形成跨产品统一版本。<a href="#s40">[S40]</a><a href="#s41">[S41]</a></p>
           </div>
           <div class="card">
-            <span class="tag study">标准锚点</span>
-            <h4>ETSI ZSM 029</h4>
-            <p>ETSI GS ZSM 029《Data Management Agent for Autonomous Networks》由中国电信、中兴、CAICT、亚信等支持组织推动，2026-04 工作项采纳，覆盖数据注册/发现、资产管理、认证、采集传输与工作流编排——与 Data Fabric 控制语义高度重合。<a href="#s43">[S43]</a></p>
+            <span class="tag fact">自有智能体应用</span>
+            <h4>Fault Agent / Co-Sight / Copilot</h4>
+            <p>中兴不仅为第三方Agent供数，也提供自有智能体和自智应用。Fault Agent已有具名试点与量化效果，Co-Sight公开多Agent和插件能力；尚未证明不同Agent共享同一数据产品、任务适用性、策略和动作证据体系。<a href="#s42">[S42]</a><a href="#s48">[S48]</a><a href="#s53">[S53]</a></p>
           </div>
         </div>
-
         <div class="evidence-strip">
-          <div><b>5G 数据底座</b>ZXUN CUDR 是正式产品，统一 UDR/UDSF 及多代网络/IMS 数据；前代 vSDM 有 Banglalink 具名商用。它证明电信数据管理基础，不是通用 Fabric。<a href="#s51">[S51]</a><a href="#s52">[S52]</a></div>
-          <div><b>开放与互操作</b>TM Forum 官方目录将 AIR Net/U-Smart-Net 列为 Ready for ODA；证明架构对齐，不等于所有组件均完成互操作认证。<a href="#s54">[S54]</a></div>
-          <div><b>Agent 框架</b>Co-Sight 已公开发布低代码、模块化、多 Agent 协同及第三方插件开放接口；Reasoner/Actor 分离与 MCP/A2A 互操作主张方向对齐「有界智能」。<a href="#s41">[S41]</a><a href="#s48">[S48]</a></div>
-          <div><b>生态与变现</b>GSMA 中国移动Quality on Demand（QoD）案例确认采用 CAMARA 与中兴 NEF；截至2024-10披露25家企业客户、月调用超3400万次及收入。这是最强商业锚点。<a href="#s55">[S55]</a></div>
-        </div>
-        <div class="callout warn"><strong>能力连续、产品不等同：</strong>CUDR/前代 vSDM → AIR Net Data Engine → Co-Sight/NDT → 6G统一数据框架研究构成可观察的演进链，但公开证据不能证明这些组件已整合为一个统一 SKU，也不能称为「6G Data Fabric 已商用」。</div>
-
-        <h3>5.2 证据成熟度：把「有什么」与「证明了什么」分开</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>证据层</th><th>中兴公开锚点</th><th>可以支持的结论</th><th>不能外推的结论</th><th>下一步补证</th></tr></thead>
-            <tbody>
-              <tr><td><strong>E4 客户结果｜API</strong></td><td>GSMA 中国移动Quality on Demand（QoD）案例确认采用 CAMARA 与中兴 NEF；截至2024-10有25家企业客户、月调用超3400万次，累计收入数千万元；支付宝场景披露时延下降57%、失败率下降90%。<a href="#s55">[S55]</a></td><td>网络能力 API 产品化、策略控制与高频商业运营已有强证据</td><td>平台与收入归多方协作，不能归因于中兴独占；不证明内部 Fabric 已统一</td><td>补跨网一致、上游数据契约、成本/利润与更多 API 的同级证据</td></tr>
-              <tr><td><strong>E4 客户结果｜故障</strong></td><td>GSMA 浙江移动案例披露大/小模型、数字孪生与中兴方案组合，根因识别率&gt;90%、诊断时间约30→&lt;5分钟、工单减少20%。<a href="#s53">[S53]</a></td><td>知识、模型、孪生和动作在具名生产场景具有可量化价值</td><td>单场景不能证明全网 L4、跨厂商 Agent 或完整 Data Fabric</td><td>补动作证据、回滚、跨域复用与独立财务审计</td></tr>
-              <tr><td><strong>E3 产品发布</strong></td><td>CUDR、AIR Net 三引擎、Co-Sight Agent Factory，以及 TM Forum Ready for ODA 目录状态。<a href="#s51">[S51]</a><a href="#s47">[S47]</a><a href="#s48">[S48]</a><a href="#s54">[S54]</a></td><td>统一数据管理、数据/模型/孪生/Agent 与开放架构均有产品载体</td><td>不证明这些产品已整合为同一控制语义或跨厂商数据面</td><td>发布组件边界、版本兼容矩阵、具名客户和第三方互操作报告</td></tr>
-              <tr><td><strong>E2 试点/验证</strong></td><td>TM Forum 披露中国电信多省 Fault Agent 试点；公开材料仍使用“piloted”，应与商用区分。<a href="#s42">[S42]</a></td><td>故障域语义与 Agent 方法可跨区域验证</td><td>试点不能等同规模商用，也不能自动迁移到 RAN 快环</td><td>形成持续使用、跨域复用、证据链覆盖和单位任务成本数据</td></tr>
-              <tr><td><strong>E1 标准席位</strong></td><td>中兴为 ETSI ZSM 029 Supporting Organization；其 SA5 Rel-20 6G 优先级输入把 Unified data framework 列为 OAM 方向。<a href="#s43">[S43]</a><a href="#s56">[S56]</a></td><td>具备把产品经验输入 ETSI 与 3GPP 数据管理讨论的正式入口</td><td>工作项/厂商提案不等于最终规范、主导权或提案已采纳</td><td>用参考实现、运营商联署、进入工作文本和互操作测试把席位变成条款</td></tr>
-              <tr><td><strong>E0 战略假设</strong></td><td>RAN数据适用性、近源 Data Agent、跨 O1/E2/A1/R1 元数据事件及「可信供数控制面」</td><td>由 R1–R8 与 T1–T8 推导出的合理主攻方向</td><td>目前没有足够公开证据称其为中兴现有产品</td><td>必须经内部资产盘点、PoC 和客户付费意愿三重验证</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="callout warn"><strong>证据纪律：</strong>后续路线图只把 E3/E4 视为可复用资产，把 E1/E2 视为放大器，把 E0 视为待验证假设。任何对外材料都不应把「AIR Net 有数据引擎」直接等价为「中兴已有完整 6G Data Fabric」。</div>
-
-        <h3>5.3 相对竞争坐标：不站队 Mesh，也不复制 Data Plane 命名</h3>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr><th>竞争维度</th><th>Ericsson</th><th>Huawei</th><th>Nokia</th><th>对中兴的定位含义</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>公开叙事</strong></td>
-                <td>联邦数据管理 + EIAP/DataOps + API 生态</td>
-                <td>DO/DA/DCP 研究架构 + AUTINOps 商用桥梁</td>
-                <td>AN Fabric / Data Suite 产品化最清晰</td>
-                <td>中兴应讲「数据引擎外溢到 6G 数据能力组件」，避免陷入厂商网元命名战</td>
-              </tr>
-              <tr>
-                <td><strong>已验证部署</strong></td>
-                <td>EIAP/Mediation 等运营合同与大规模加工底座</td>
-                <td>AUTINOps/IOH 跨域 Agent 运维案例</td>
-                <td>域应用（异常检测/SON/节能）+ Fabric 产品包装</td>
-                <td>中兴可用 Fault Agent/节能/投诉等高价值场景做 ROI，但需补「数据产品契约与任务适用性」叙事</td>
-              </tr>
-              <tr>
-                <td><strong>标准抓手</strong></td>
-                <td>O-RAN/ETSI/Hexa-X 参与度高</td>
-                <td>SA2/SA5 与全栈研究输入强</td>
-                <td>TM Forum 语义与自治产品对齐</td>
-                <td>ZSM 029 是中兴最干净的差异化入口；SA2 KI#21/SA5 DMFW 需把语义、接口、时效条目写进去</td>
-              </tr>
-              <tr>
-                <td><strong>主要短板</strong></td>
-                <td>独立网元叙事弱，平台组合复杂</td>
-                <td>研究架构与商用平面易被混读</td>
-                <td>跨厂商统一 Fabric 仍缺中立证明</td>
-                <td>中兴公开短板是：通用编织产品完整度不足、6G 数据框架话语权偏弱、RAN数据适用性/流式元数据缺少可引用 benchmark</td>
-              </tr>
-            </tbody>
-          </table>
+          <div><b>已证明</b>网络触点、AIR Net三引擎、自有Agent应用、开放API和标准入口均有公开锚点。</div>
+          <div><b>主要缺口</b>跨产品数据契约、任务适用性、变化事件、近源供数和动作证据尚未形成一套公开可复用基线。</div>
+          <div><b>不能外推</b>多个组件存在，不等于完整Fabric、公司级统一中枢、跨厂商控制面或规模结果服务已经成立。</div>
+          <div><b>定位含义</b>中兴的优势是同时拥有底层网络触点和上层Agent产品，机会在于把中间重复能力横向共用。</div>
         </div>
 
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>潜在控制点</th><th>设备商优势</th><th>云/数据平台优势</th><th>运营商诉求</th><th>中兴应占位</th></tr></thead>
-            <tbody>
-              <tr><td><strong>网络对象语义</strong></td><td>掌握网元、配置、测量和动作上下文</td><td>擅长目录、图谱和开发工具</td><td>跨厂商可解释、可替换</td><td><strong>主导：</strong>RAN/Core 对象映射、版本化语义包与开放适配</td></tr>
-              <tr><td><strong>任务适用性与数据契约</strong></td><td>理解采样、测量误差、配置与时标</td><td>擅长通用质量规则和 SLO 工具</td><td>模型/闭环可验收、责任可界定</td><td><strong>主导：</strong>通信级适用性信封；复用通用规则引擎</td></tr>
-              <tr><td><strong>近源执行</strong></td><td>拥有基站、边缘、网管运行触点</td><td>云端编排、算力与模型生态强</td><td>断链生存、成本可控、无锁定</td><td><strong>主导：</strong>轻量 Data Agent 与本地策略执行；开放云后端</td></tr>
-              <tr><td><strong>Agent/NDT 证据链</strong></td><td>能连接真实动作、孪生与故障域知识</td><td>Agent 工具链、模型与可观察性强</td><td>越权可拦截、动作可回放、失败可接管</td><td><strong>联合控制：</strong>中兴掌握网络动作证据，兼容第三方模型/Agent</td></tr>
-              <tr><td><strong>API 渠道与计量</strong></td><td>NEF、网管和网络能力入口</td><td>开发者、行业应用和市场渠道</td><td>跨网一致、收入可分配</td><td><strong>合作：</strong>做内部可信供给与 Operate 能力，不争夺所有渠道</td></tr>
-              <tr><td><strong>湖仓/通用 Catalog</strong></td><td>非核心优势</td><td>产品成熟、规模效应明显</td><td>开放格式、利旧、多云</td><td><strong>不自建全栈：</strong>采用/合作，避免重做通用底座</td></tr>
-            </tbody>
-          </table>
+        <h3>5.2 目标定位：向下连接网络执行，向上同时支撑自有Agent、生态Agent与开放API</h3>
+        <div class="logic-chain">
+          <div>网络事实与动作触点<br><small>RAN · Core · Transport · OSS/SMO</small></div>
+          <div>数据契约<br><small>语义 · 产品 · 任务适用性 · 变化事件</small></div>
+          <div>分布式供数<br><small>全局定义 · 近源处理 · 断链 · 回证</small></div>
+          <div>动作证据<br><small>身份 · 策略 · NDT · 灰度 · 回滚</small></div>
+          <div>产品与生态出口<br><small>自有Agent · 第三方Agent · CAMARA/API</small></div>
         </div>
-
-        <h3>5.4 能力自评：按前文需求与议程看缺口</h3>
-        <p>下表对照第一章提炼的数据管理层需求（R1–R8）与第三章趋势（T1–T8），给出基于公开证据的相对位置判断。分数为战略研判刻度（0–5），不是财务或审计结论。</p>
-        <div class="score-grid">
-          <div class="score"><div class="label">自智网络 / Agent 场景</div><div class="val">4</div><div class="note">AIR Net + Fault Agent 有公开试点与认证证据</div></div>
-          <div class="score"><div class="label">语义 / KG 生产化</div><div class="val">3.5</div><div class="note">故障域较强；缺跨 RAN/Core 标准化语义模型</div></div>
-          <div class="score"><div class="label">标准接口话语权</div><div class="val">3</div><div class="note">ZSM 029 在手；SA2/SA5 数据框架仍需加码</div></div>
-          <div class="score"><div class="label">通用 Data Fabric 产品</div><div class="val">1.5</div><div class="note">不宜与 IT 巨头/Nokia Data Suite 正面比拼完整度</div></div>
+        <div class="grid-3">
+          <div class="card"><h4>数据可信能力</h4><p>建立稳定对象、权威源、语义、产品契约、任务适用性、版本和变化事件，使无线、核心网、OSS与Agent围绕同一责任基线消费数据。</p></div>
+          <div class="card"><h4>运行与动作可信</h4><p>全局发布规则和版本，近源完成必要过滤、特征与受限执行；Agent/NDT链保存输入、策略、动作、结果、人工接管和回滚证据。</p></div>
+          <div class="card"><h4>产品化方式</h4><p>公共能力先由中兴自有Agent和主航道产品复用，再向第三方Agent及能力API开放；自有Agent既是消费者，也是结果型服务的灯塔产品。</p></div>
         </div>
-
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>能力议题</th><th>当前位置</th><th>公开依据</th><th>与前文映射</th><th>含义</th></tr></thead>
-            <tbody>
-              <tr><td>数据产品化与契约</td><td>🟡 邻近</td><td>AIR Net 数据资产/治理叙事；ODA/OpenAPI</td><td>R8 · T1/T7</td><td>需从「资产目录」升级为带 Owner/SLO/任务适用性/用途/退出机制的产品</td></tr>
-              <tr><td>元数据事件化</td><td>🟡 探索</td><td>数据引擎治理 Agent；尚无跨 O1/E2/A1 事件总线公开证据</td><td>R1/R5 · T2</td><td>工程主线，应优先做变更→影响分析与血缘闸门</td></tr>
-              <tr><td>RAN/边缘子 Fabric</td><td>🟡 有载体</td><td>无线/MEC/站点算力触点强；缺轻量近源代理公开 PoC</td><td>R2/R3 · T3</td><td>优势×空白重叠区，适合时间盒 PoC</td></tr>
-              <tr><td>Agent 有界执行</td><td>🟢 相对亮点</td><td>Fault Agent、Co-Sight、Reasoner/Actor 分离</td><td>R7 · T4</td><td>最短延长线：把「用数 Agent」做成供数工具集</td></tr>
-              <tr><td>NDT 证据闸门</td><td>🟡 邻近</td><td>数字孪生引擎公开存在；缺「误差门槛→放行」强制路径证据</td><td>R5/R7 · T5</td><td>优先与高风险变更/节能/故障闭环绑定</td></tr>
-              <tr><td>RAN数据适用性</td><td>🔴→🟡 关键缺口</td><td>公开竞争中华为 Data QoS、Nokia 有效性叙事更显式</td><td>R4 · T6</td><td>应列为中兴差异化必争标尺</td></tr>
-              <tr><td>用途、安全与主权强制</td><td>🟡 相邻能力</td><td>安全、权限与数据治理可嫁接；跨查询/API/导出/向量/训练的一致执行缺公开证据</td><td>R6 · T4/T7</td><td>需从「目录标签」升级为策略即代码与删除传播</td></tr>
-              <tr><td>API/数据空间分层商业</td><td>🟡 入口在手</td><td>Open Gateway Channel Partner；内部产品化仍需补齐</td><td>R8 · T7/T8</td><td>外部 API 成功取决于内部语义/任务适用性/计量</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>5.5 目标定位：四个必须掌握的控制点、三个开放边界</h3>
-        <figure class="figure">
-          <svg viewBox="0 0 1120 620" role="img" aria-labelledby="zte-target-title zte-target-desc">
-            <title id="zte-target-title">中兴可信供数控制面的目标定位</title>
-            <desc id="zte-target-desc">以语义与任务适用性、数据产品契约、近源数据代理、Agent和孪生证据链四个控制点连接无线、核心网、OSS和生态消费者，存储、模型和渠道保持开放。</desc>
-            <defs>
-              <linearGradient id="zteTargetG" x1="0" x2="1"><stop stop-color="#0f9f9a"/><stop offset="1" stop-color="#2667ff"/></linearGradient>
-            </defs>
-            <rect x="20" y="20" width="1080" height="580" rx="26" fill="#f7fafb" stroke="#d8e2e7"/>
-            <text x="55" y="66" fill="#071f3d" font-size="21" font-weight="850">工作定位：Telecom Trusted Data Control Fabric（研究命名，非正式产品名）</text>
-            <text x="55" y="94" fill="#5d7183" font-size="13">统一“理解、质量、契约与证据”，不统一所有存储、模型、协议与毫秒级执行</text>
-            <g font-family="sans-serif" text-anchor="middle">
-              <rect x="55" y="126" width="1010" height="76" rx="16" fill="#0b3157"/>
-              <text x="560" y="157" fill="#cae85e" font-size="15" font-weight="800">消费者 / 场景</text>
-              <text x="560" y="182" fill="#e6f0f6" font-size="13">无线优化 · 核心网分析 · OSS/自智 · NDT · 网络 Agent · CAMARA/行业 API</text>
-
-              <rect x="55" y="226" width="235" height="144" rx="18" fill="url(#zteTargetG)"/>
-              <text x="172" y="264" fill="#fff" font-size="15" font-weight="850">C1 语义与任务适用性</text>
-              <text x="172" y="294" fill="#e8fbf7" font-size="12">对象映射 · 适用性信封</text>
-              <text x="172" y="316" fill="#e8fbf7" font-size="12">配置/时空/采样上下文</text>
-              <text x="172" y="344" fill="#cae85e" font-size="11">中兴必须主导</text>
-
-              <rect x="313" y="226" width="235" height="144" rx="18" fill="#104d60"/>
-              <text x="430" y="264" fill="#fff" font-size="15" font-weight="850">C2 产品/契约/主权</text>
-              <text x="430" y="294" fill="#e6f0f6" font-size="12">Owner · SLO · 用途策略</text>
-              <text x="430" y="316" fill="#e6f0f6" font-size="12">驻留 · 保留 · 删除传播</text>
-              <text x="430" y="344" fill="#cae85e" font-size="11">中兴掌握电信模板</text>
-
-              <rect x="571" y="226" width="235" height="144" rx="18" fill="#173f50"/>
-              <text x="688" y="264" fill="#fff" font-size="15" font-weight="850">C3 近源 Data Agent</text>
-              <text x="688" y="294" fill="#e6f0f6" font-size="12">过滤 · 特征 · 缓存</text>
-              <text x="688" y="316" fill="#e6f0f6" font-size="12">本地策略 · 断链生存</text>
-              <text x="688" y="344" fill="#cae85e" font-size="11">中兴差异化主场</text>
-
-              <rect x="829" y="226" width="235" height="144" rx="18" fill="#354c7b"/>
-              <text x="946" y="264" fill="#fff" font-size="15" font-weight="850">C4 Agent/NDT 证据</text>
-              <text x="946" y="294" fill="#e6f0f6" font-size="12">身份 · 策略 · 仿真</text>
-              <text x="946" y="316" fill="#e6f0f6" font-size="12">动作 · 结果 · 回滚</text>
-              <text x="946" y="344" fill="#cae85e" font-size="11">中兴与生态联合</text>
-
-              <rect x="55" y="394" width="1010" height="70" rx="15" fill="#e4f2f2" stroke="#9bc9c8"/>
-              <text x="560" y="423" fill="#071f3d" font-size="14" font-weight="800">分布式执行载体</text>
-              <text x="560" y="447" fill="#455b6c" font-size="12">RAN/Edge 本地代理 · SMO/Non-RT 服务 · Core/NWDAF/DCCF · OSS 数据引擎 · 云侧数据服务</text>
-
-              <rect x="55" y="488" width="316" height="70" rx="15" fill="#fff0e7" stroke="#ffb58d"/>
-              <text x="213" y="516" fill="#8b4e28" font-size="13" font-weight="800">开放边界 A：湖仓 / Catalog</text>
-              <text x="213" y="539" fill="#6c4936" font-size="11">开放格式、可替换后端，不重建通用栈</text>
-              <rect x="402" y="488" width="316" height="70" rx="15" fill="#fff0e7" stroke="#ffb58d"/>
-              <text x="560" y="516" fill="#8b4e28" font-size="13" font-weight="800">开放边界 B：模型 / Agent</text>
-              <text x="560" y="539" fill="#6c4936" font-size="11">多模型、多 Agent；统一身份与证据</text>
-              <rect x="749" y="488" width="316" height="70" rx="15" fill="#fff0e7" stroke="#ffb58d"/>
-              <text x="907" y="516" fill="#8b4e28" font-size="13" font-weight="800">开放边界 C：API / 渠道</text>
-              <text x="907" y="539" fill="#6c4936" font-size="11">对接 CAMARA/聚合商，不垄断消费入口</text>
-            </g>
-          </svg>
-          <figcaption><strong>图｜中兴目标定位架构。</strong>四个控制点共同覆盖 R1–R8 与 T1–T8；底座、模型和渠道采用开放合作，减少与云/IT平台的正面重叠。该图是战略工作架构，不代表中兴现有产品或标准网元。</figcaption>
-        </figure>
-
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>控制点</th><th>2026 起点</th><th>目标状态</th><th>内部必须核验</th><th>成功指标</th></tr></thead>
-            <tbody>
-              <tr><td><strong>C1 语义与任务适用性</strong></td><td>Fault Agent KG、数据引擎；公开跨域语义范围有限</td><td>形成可版本化 RAN/Core/OSS 语义包与适用性信封</td><td>现有本体、YANG/MIB 资产、跨厂商映射率</td><td>核心对象覆盖、映射准确率、任务适用性契约覆盖</td></tr>
-              <tr><td><strong>C2 产品/契约/主权</strong></td><td>数据资产/开放 API/安全治理基础；跨路径策略一致性公开证据不足</td><td>高价值场景以产品复用，目的、驻留、保留和删除策略贯穿所有消费路径</td><td>重复采集成本、责任归属、现有策略引擎及各路径执行点</td><td>复用率、契约违规、跨路径策略一致率、删除传播时长</td></tr>
-              <tr><td><strong>C3 近源 Data Agent</strong></td><td>无线/边缘触点可嫁接；轻量代理待证</td><td>全局策略 + 本地执行；断链可运行、证据异步回流</td><td>站点资源预算、时延开销、升级/回退机制</td><td>P99、字节减量、断链可用、策略同步时延</td></tr>
-              <tr><td><strong>C4 Agent/NDT 证据链</strong></td><td>Co-Sight、Fault Agent、数字孪生引擎为相邻资产</td><td>高风险动作强制经过身份、策略、仿真、灰度和回滚</td><td>动作权限模型、孪生误差、人工接管责任</td><td>证据完整率、越权拦截、预测误差、回滚成功率</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>5.6 战略定位结论</h3>
-        <div class="grid-2">
-          <div class="card">
-            <span class="tag fact">应成为什么</span>
-            <h4>主航道共用的横向数据能力组件</h4>
+        <div class="choice-banner">
+          <div class="choice-do">
+            <h4>目标角色</h4>
+            <p><strong>电信数据与动作可信公共能力</strong>：把AIR Net数据引擎及相邻资产升级为主航道共用能力，连接网络原生执行、自有智能体应用和开放生态。</p>
             <ul>
-              <li>服务无线、核心网、承载、SMO/OSS 与行业方案，而不是独立 IT 销售单元。</li>
-              <li>以「统一控制语义 + 分布式执行」承接 6G，不押注单一新网元名称。</li>
-              <li>把数据引擎从运维支撑，升级为数据产品、任务适用性、证据链与 Agent 供数底座。</li>
+              <li>跨产品共用，不另立平台孤岛。</li>
+              <li>自有Agent与第三方Agent采用同一契约和证据接口。</li>
+              <li>以第二场景、第二后端和真实消费者证明复用。</li>
             </ul>
           </div>
-          <div class="card">
-            <span class="tag risk">不应成为什么</span>
-            <h4>通用 Data Fabric 平台挑战者</h4>
+          <div class="choice-dont">
+            <h4>明确边界</h4>
             <ul>
-              <li>不与 IBM/Informatica/云厂商在企业目录/湖仓正面竞争。</li>
-              <li>不复制 Huawei DO/DA/DCP 命名，也不机械站队 Ericsson mesh 叙事。</li>
-              <li>不承诺编织进入亚毫秒快环控制路径；快环继续本地确定性执行。</li>
+              <li>不对标通用企业湖仓、Catalog或全栈Data Fabric。</li>
+              <li>不替代域控制器，不进入毫秒快环同步单点。</li>
+              <li>不把内部目标架构写成已发布SKU或客户部署。</li>
+              <li>不绑定单一模型、Agent框架、后端或渠道。</li>
             </ul>
           </div>
         </div>
-
-        <div class="big-quote">中兴定位断言：<em>用 AIR Net 数据引擎抢占「电信语义—任务适用性—近源执行—有界供数」四位一体控制点</em>；以 ZSM 029 / SA2·SA5 把接口与语义写成标准事实，以场景闭环证明价值，而不是先宣称拥有完整 6G Data Fabric。</div>
+        <div class="big-quote">定位断言：<em>中兴应把AIR Net数据引擎及相邻资产升级为主航道共用的电信数据与动作可信能力，向下连接网络原生执行，向上同时支撑中兴自有智能体应用、第三方Agent和开放API。</em></div>
       </div>
     </section>
 
     <section id="zte-ops">
       <div class="wrap">
-        <div class="section-kicker"><i>06</i> Opportunity selection</div>
-        <h2>公司可参与的机会点分析和选择建议</h2>
-        <p class="lead">机会按「客户任务 → 最小可售/可复用能力 → 控制点 → 收益证据 → 进入与退出条件」展开。排序采用六维加权模型，避免只因技术新颖就立项：战略契合 25%、存量复用 20%、客户牵引 20%、标准窗口 15%、差异化 10%、执行可控 10%。评分是战略筛选工具，需用内部资产、客户管道和投入数据复核。</p>
+        <div class="section-kicker"><i>06</i> Model and opportunity selection</div>
+        <h2>模式分析与机会选择：一个共用内核、三项能力包、两条商业路径</h2>
+        <p class="lead">机会不是再建设一个平台品牌，而是解决底层网络触点和上层Agent应用之间仍按项目重复建设的语义、质量、供数和证据。模式上先用自有Agent验证公共能力，再通过能力服务扩大复用；只有在结果基线、动作权限和责任合同清晰时，才升级为结果型服务。</p>
 
+        <h3>6.1 模式分析（可选）：公共能力如何转化为自有应用价值与生态收入</h3>
+        <div class="logic-chain">
+          <div>网络资产<br><small>权威数据 · 近源资源 · 动作权限</small></div>
+          <div>可信公共能力<br><small>契约 · 供数 · 证据</small></div>
+          <div>自有Agent灯塔<br><small>Fault · 节能 · 优化 · 运维</small></div>
+          <div>开放生态<br><small>第三方Agent · API · 聚合渠道</small></div>
+          <div>使用结果回流<br><small>复用 · 收入 · 动作结果 · 规则校准</small></div>
+        </div>
+        <div class="business-paths">
+          <div class="business-path">
+            <span class="path-id">T7-A · 能力服务 · 主路径</span>
+            <h4>出售可组合输入</h4>
+            <p>买方保留决策与动作责任，中兴保证数据/API/网络能力的行为、SLA、用途和可撤销性。NEF、CAMARA/Open Gateway及Quality on Demand（QoD）已提供商业信号。</p>
+            <ul>
+              <li><strong>产品：</strong>数据产品、Agent工具、位置/身份/状态/分析和网络能力API。</li>
+              <li><strong>计价：</strong>调用、会话、订阅、覆盖或用量。</li>
+              <li><strong>验收：</strong>跨网一致、持续付费、履约成本、毛利和续费。</li>
+            </ul>
+          </div>
+          <div class="business-path">
+            <span class="path-id">T7-B · 结果服务 · 条件路径</span>
+            <h4>承诺可归因输出</h4>
+            <p>自有Agent参与决策和动作，中兴承担约定范围内的结果责任。技术效果不能直接外推商业成立，必须先冻结结果基线、作用域、动作权限、风险上限和回滚。</p>
+            <ul>
+              <li><strong>产品：</strong>故障、节能、优化、高风险变更等Agent托管服务。</li>
+              <li><strong>计价：</strong>托管费、业务量、效果增益或结果分成。</li>
+              <li><strong>验收：</strong>归因置信、净效果、误动作、争议、接管和回滚成本。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><strong>模式边界：</strong>自有Agent不是公共能力的附属演示，而是首批产品与消费者；第三方Agent和开放API扩大规模。T7-A与T7-B长期并存，收入、责任、风险和成本必须分账。</div>
+
+        <h3>6.2 核心机会：把跨产品重复建设收敛为三个能力包</h3>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>机会</th><th>一句话</th><th>承接</th><th>契合度</th><th>可达性</th><th>信心</th><th>建议</th></tr></thead>
+            <thead><tr><th>能力包</th><th>客户/产品任务</th><th>最小交付</th><th>中兴优势</th><th>验证门</th><th>停止线</th></tr></thead>
             <tbody>
-              <tr><td><strong>O2</strong></td><td>数据引擎 → 6G 数据能力组件外溢</td><td>R1/R2/R5/R7/R8 · T1/T2/T4</td><td>★★★★</td><td>预研可直接推动</td><td>高</td><td><strong>首选主攻</strong></td></tr>
-              <tr><td><strong>O3</strong></td><td>ZSM 029 + SA2/SA5 标准双入口卡位</td><td>R1/R4/R8 · T2/T6/T8</td><td>★★★</td><td>标准可直接推动</td><td>中高</td><td><strong>首选主攻</strong></td></tr>
-              <tr><td><strong>O1</strong></td><td>RAN 近源流式元数据 / 子 Fabric PoC</td><td>R2/R3/R4 · T3/T6</td><td>★★★★</td><td>软件自主 / 硬件借力</td><td>中</td><td>中期押注</td></tr>
-              <tr><td><strong>O7</strong></td><td>NDT + Agent 高风险动作证据闸门</td><td>R5/R7 · T4/T5</td><td>★★★★</td><td>复用相邻资产</td><td>中高</td><td>并行主攻</td></tr>
-              <tr><td><strong>O8</strong></td><td>跨路径数据主权与策略即代码</td><td>R6 · T4/T7</td><td>★★★</td><td>复用安全/治理资产</td><td>中</td><td>必备底座</td></tr>
-              <tr><td><strong>O6</strong></td><td>国内运营商显式 Data Fabric / 数据产品试点</td><td>R1–R8 · T1/T7</td><td>★★★</td><td>牵线 + 横向接入</td><td>中</td><td>中期绑定</td></tr>
-              <tr><td><strong>O4</strong></td><td>承载 SLA 与数据策略语义映射</td><td>R3/R4 · T3</td><td>★★★</td><td>建议纳入路标</td><td>中</td><td>路标建议</td></tr>
-              <tr><td><strong>O5</strong></td><td>终端/行业侧轻量数据代理</td><td>R6/R8 · T7</td><td>★★</td><td>长期埋点</td><td>低</td><td>低成本观察</td></tr>
+              <tr><td><strong>A 可信数据契约</strong></td><td>Agent和产品必须知道“拿到什么、由谁负责、是否适用于当前任务”</td><td>对象语义、数据产品、Owner/SLO、任务适用性、版本、变化事件和退出机制</td><td>网元、配置、测量和场景知识；AIR Net数据引擎与KG资产</td><td>同一契约被两条产品线、两类Agent或两种后端复用</td><td>第二场景仍需大规模重写，或产品长期无消费者</td></tr>
+              <tr><td><strong>B 分布式供数运行</strong></td><td>高频数据不能默认集中，断链时仍需运行并向全局回证</td><td>全局规则、近源过滤/特征、缓存、版本、资源预算、断链和异步证据</td><td>RAN/Edge触点、网管运行工程和域状态</td><td>P99、CPU/内存、字节减量、断链可用、同步与回退</td><td>收益覆盖不了站点开销，或必须成为快环远端单点</td></tr>
+              <tr><td><strong>C 动作证据机制</strong></td><td>Agent获得动作权限后，必须解释为何放行、谁负责、失败如何接管</td><td>身份、作用域、租约、策略、NDT、风险预算、灰度、结果、熔断和回滚</td><td>自有Agent、数字孪生和真实域控制器相邻资产</td><td>越权拦截、误差门槛、证据完整、灰度失败、人工接管和回滚成功</td><td>只有聊天/RAG或孪生可视化，动作无法回放、定责和退回</td></tr>
             </tbody>
           </table>
         </div>
+        <div class="callout warn"><strong>产品纪律：</strong>三个能力包共用对象模型、契约、身份、版本和证据Schema，不分别建设三套平台。中兴自有Agent必须成为真实消费者，第三方接口必须保持可替换。</div>
 
-        <h3>6.1 机会组合评分：主攻、期权与观察项分层</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>机会</th><th>战略契合 25%</th><th>存量复用 20%</th><th>客户牵引 20%</th><th>标准窗口 15%</th><th>差异化 10%</th><th>可控 10%</th><th>加权分 / 5</th><th>组合角色</th></tr></thead>
-            <tbody>
-              <tr><td><strong>O2 数据能力组件</strong></td><td>5</td><td>5</td><td>4</td><td>4</td><td>4</td><td>5</td><td><strong>4.55</strong></td><td>P0 主航道</td></tr>
-              <tr><td><strong>O3 标准卡位</strong></td><td>5</td><td>4</td><td>3</td><td>5</td><td>4</td><td>5</td><td><strong>4.30</strong></td><td>P0 放大器</td></tr>
-              <tr><td><strong>O7 证据闸门</strong></td><td>5</td><td>4</td><td>4</td><td>3</td><td>4</td><td>4</td><td><strong>4.10</strong></td><td>P1 差异化</td></tr>
-              <tr><td><strong>O1 RAN 近源</strong></td><td>5</td><td>4</td><td>3</td><td>4</td><td>5</td><td>3</td><td><strong>4.05</strong></td><td>P1 技术期权</td></tr>
-              <tr><td><strong>O6 运营商试点</strong></td><td>4</td><td>4</td><td>4</td><td>3</td><td>3</td><td>4</td><td><strong>3.75</strong></td><td>P1 商业验证</td></tr>
-              <tr><td><strong>O8 主权策略</strong></td><td>4</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td><strong>3.45</strong></td><td>P1 合规底座</td></tr>
-              <tr><td><strong>O4 承载映射</strong></td><td>4</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td><strong>3.35</strong></td><td>P2 路标接口</td></tr>
-              <tr><td><strong>O5 终端代理</strong></td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td><td>2</td><td><strong>2.45</strong></td><td>P3 观察期权</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="boundary"><strong>评分解释：</strong>分数表达当前相对优先级，不表达市场规模预测。O3 得分高但不是独立产品；它必须服务 O2/O1/O7/O8。O8 虽非最强差异化，却是所有跨域供数和外部暴露的合规前提。O6 是验证场而非先建平台的理由。O5 只有在终端/ISAC 客户需求、标准接口和端侧资源预算三项信号同时出现时才升级。</p>
-
-        <h3>6.2 主攻机会：从技术概念落到买方任务、交付包与止损线</h3>
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O2</div>
-            <div>
-              <h3>数据引擎外溢为 6G 数据能力组件</h3>
-              <p>把 Fault Agent 已公开试点的 KG + 大模型 + 跨域接入，以及 AIR Net 数据引擎相邻能力，抽象为可复用的语义服务、数据产品契约与 Agent 供数工具集。</p>
-            </div>
-            <span class="tag fact">首选 · 高信心</span>
-          </div>
-          <div class="opp-meta"><span>短期启动</span><span>复用存量资产</span><span>对齐 T1/T2/T4</span><span>6 个月内可出原型</span></div>
-          <div class="opp-body">
-            <div>
-              <h4>场景</h4>
-              <p>①网络域 AI/Agent 的可信数据底座；②SMO/Non-RT 统一目录与契约；③NDT/跨域故障/节能等闭环供数。先服务我司主航道产品，再对外形成可售组件。</p>
-            </div>
-            <div>
-              <h4>技术</h4>
-              <ul>
-                <li>LLM 辅助网络语义层：规范/MIB/YANG/运维语料 → 约束抽取 → 图谱装配。</li>
-                <li>数据产品最小集：移动性、故障、节能、QoE、模型特征五类契约。</li>
-                <li>供数工具化：目录、血缘、订阅、策略校验封装为 MCP/OpenAPI 工具。</li>
-              </ul>
-            </div>
-            <div>
-              <h4>价值与断言</h4>
-              <p><strong>断言：</strong>这是增量成本最低、技术连续性最好的主攻。若不做，数据引擎易固化在运维单场景，6G 竞标中「数据与智能层」将缺少可复用底座。</p>
-            </div>
-          </div>
-          <div class="opp-body">
-            <div><h4>首批内部客户 / 任务</h4><ul><li>无线优化：跨 O1/E2/网管对象对齐与适用性信封。</li><li>OSS/自智：故障、节能、投诉数据产品复用。</li><li>核心网/开放：NWDAF/NEF/API 上游可信供给。</li></ul></div>
-            <div><h4>最小交付包</h4><ul><li>语义 Registry + 五类数据产品模板。</li><li>目录/血缘/订阅/策略四类工具接口。</li><li>两种异构后端、两条产品线可移植验证。</li></ul></div>
-            <div><h4>准入 / 退出门槛</h4><p><strong>准入：</strong>至少两条产品线指定 Owner，并提供真实数据与消费者。<br><strong>退出：</strong>9 个月后仍不能跨第二场景复用，或每次接入仍需项目级定制，则降级为 OSS 内部能力。</p></div>
-          </div>
-          <div class="logic-proof"><div><b>价值指标</b><span>取数交付周期、重复采集下降、消费者复用、单位有效任务成本</span></div><div><b>技术指标</b><span>对象映射准确率、契约覆盖、血缘回放、跨后端可移植</span></div><div><b>商业验证</b><span>进入主航道版本清单；客户愿为场景结果而非平台席位付费</span></div></div>
-        </article>
-
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O3</div>
-            <div>
-              <h3>标准双入口：ZSM 029 + SA2/SA5</h3>
-              <p>把「编织—数据框架接口、元数据/语义映射、数据管理层时效与任务适用性」写成可引用的标准事实，而不是只跟随厂商命名。</p>
-            </div>
-            <span class="tag fact">首选 · 中高信心</span>
-          </div>
-          <div class="opp-meta"><span>Rel-20/21 窗口</span><span>ZSM 029 已在牌桌</span><span>对齐 T6/T8</span><span>杠杆最高</span></div>
-          <div class="opp-body">
-            <div>
-              <h4>场景</h4>
-              <p>ZSM 029 工作项已采纳、规范仍处早期起草；3GPP SA2 KI#21 与 SA5 DMFW 仍在 Draft。其功能范围与数据引擎高度重合，当前价值是用参考实现影响互操作语义，而不是预设最终文本或时间表。</p>
-            </div>
-            <div>
-              <h4>技术</h4>
-              <ul>
-                <li>ZSM 029：贡献数据管理代理参考实现（注册/发现/编排）。</li>
-                <li>SA2/SA5：主攻编织接口双栈、语义本体映射、秒级近实时时效与任务适用性属性。</li>
-                <li>不纠缠独立数据面网元是否必选，聚焦能力集合。</li>
-              </ul>
-            </div>
-            <div>
-              <h4>价值与断言</h4>
-              <p><strong>断言：</strong>标准是增量投入中杠杆最高的一类。错过 Rel-20/21 收敛窗口，后续只能适配他人接口；做对了，O2/O1/O7 组件可直接获得标准对齐规格。</p>
-            </div>
-          </div>
-          <div class="opp-body">
-            <div><h4>提案包，不是孤立文稿</h4><ul><li>语义/任务适用性信息模型。</li><li>Data Management Agent 服务与生命周期。</li><li>DCP 类总线 / DCCF-NWDAF 类增强的双栈映射。</li></ul></div>
-            <div><h4>联合机制</h4><p>每项提案绑定「运营商痛点 + 可运行参考实现 + 两家异构后端/域验证」。优先与 ZSM 029 共同支持组织及国内运营商联合，避免只有厂商自证。</p></div>
-            <div><h4>准入 / 退出门槛</h4><p><strong>准入：</strong>产品 Owner 承诺实现提案对象。<br><strong>退出：</strong>连续两个会议周期无法获得运营商联署或工作组讨论，则收缩议题，不继续铺开术语。</p></div>
-          </div>
-          <div class="logic-proof"><div><b>标准 KPI</b><span>有效提案、联合署名、进入基线文本、接口互操作测试项</span></div><div><b>产品 KPI</b><span>规范条目进入版本需求并有参考实现</span></div><div><b>反形式主义</b><span>不以提案篇数代替条款采纳和产品落地</span></div></div>
-        </article>
-
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O1</div>
-            <div>
-              <h3>RAN 近源流式元数据与子 Fabric PoC</h3>
-              <p>不做亚毫秒控制替换，做「站点侧轻量标注 + 秒级流上任务适用性/标签 + 异步回传证据」。</p>
-            </div>
-            <span class="tag study">中期押注 · 中信心</span>
-          </div>
-          <div class="opp-meta"><span>12–18 月时间盒</span><span>优势×空白重叠</span><span>对齐 T3/T6</span><span>反哺 O2/O3</span></div>
-          <div class="opp-body">
-            <div>
-              <h4>场景</h4>
-              <p>RAN 遥测供数、Near-RT/Non-RT 分层、边缘 AI/dApp 按标签订阅。验收看标注开销、标签准确率、断链可用与跨域字节下降，而不是「又建一个湖」。</p>
-            </div>
-            <div>
-              <h4>技术</h4>
-              <ul>
-                <li>近源过滤/聚合/特征与适用性信封。</li>
-                <li>全局目录/策略与本地执行解耦。</li>
-                <li>产出 RAN 流式元数据 benchmark，服务标准提案。</li>
-              </ul>
-            </div>
-            <div>
-              <h4>价值与断言</h4>
-              <p><strong>断言：</strong>这是中兴相对 IT 厂商与纯云平台最难被替代的战场。但付费需求未完全明朗，必须需求驱动 + 时间盒，不成即止损。</p>
-            </div>
-          </div>
-          <div class="opp-body">
-            <div><h4>首个 PoC 边界</h4><p>只选择一种高频 RAN 遥测 + 一种消费者；不进 &lt;10ms 同步路径，不承诺联邦查询替代本地状态，不建设中心化原始数据湖。</p></div>
-            <div><h4>工程验收</h4><ul><li>标注附加时延与 CPU/内存预算。</li><li>字节减量、新鲜度、断链可用和版本回退。</li><li>任务适用性对模型准确率/闭环误动作的改善。</li></ul></div>
-            <div><h4>准入 / 退出门槛</h4><p><strong>准入：</strong>无线产品线提供真实链路、资源预算和消费者。<br><strong>退出：</strong>减量与任务适用性收益不足以覆盖站点开销，或必须侵入快环，则停止产品化。</p></div>
-          </div>
-          <div class="logic-proof"><div><b>技术护城河</b><span>电信对象上下文 + 站点运行触点 + 可量化任务适用性</span></div><div><b>客户价值</b><span>少搬数据、模型更稳、断链可用、问题可定位</span></div><div><b>标准输出</b><span>适用性信封、近源代理能力与测试方法</span></div></div>
-        </article>
-
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O7</div>
-            <div>
-              <h3>NDT + Agent 高风险动作证据闸门</h3>
-              <p>将中兴数字孪生、Fault Agent/Co-Sight 与网络动作接口连接为「建议—仿真—灰度—执行—回滚—学习」强制证据链。</p>
-            </div>
-            <span class="tag fact">并行主攻 · 中高信心</span>
-          </div>
-          <div class="opp-meta"><span>复用三引擎</span><span>对齐 T4/T5</span><span>直接回答运营商风险</span><span>先慢环后近实时</span></div>
-          <div class="opp-body">
-            <div><h4>客户任务</h4><p>高风险变更、跨域故障恢复、节能参数调整、容量/策略变更。客户购买的不是「一个孪生」，而是降低错误变更、缩短审批和可证明回滚。</p></div>
-            <div><h4>最小产品</h4><ul><li>数据/模型/策略/动作快照。</li><li>孪生保真度、同步滞后和场景覆盖门槛。</li><li>身份、委托权限、风险预算、灰度与熔断。</li></ul></div>
-            <div><h4>价值与边界</h4><p>先在 Non-RT/OAM 与低风险动作形成建议或有界执行；孪生不是安全证明，超过误差门槛必须退回人工/建议模式。</p></div>
-          </div>
-          <div class="opp-body">
-            <div><h4>复用资产</h4><p>AIR Net 数据/模型/孪生三引擎、Co-Sight 多 Agent 与既有 OAM 动作接口是相邻资产；真正新增的是统一证据对象和强制门控。</p></div>
-            <div><h4>准入 / 退出门槛</h4><p><strong>准入：</strong>场景已有可回放历史和明确损失函数。<br><strong>退出：</strong>孪生误差长期不可标定、动作收益无法超过人工基线，则保留分析辅助，不自动执行。</p></div>
-            <div><h4>验收指标</h4><p>预测误差、同步滞后、误动作/越权拦截、审批周期、灰度失败率、回滚成功率、每次动作证据完整率。</p></div>
-          </div>
-        </article>
-
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O8</div>
-            <div>
-              <h3>跨路径数据主权与策略即代码</h3>
-              <p>把用途、同意、驻留、保留和删除从目录标签变成运行时策略，并贯穿查询、API、导出、特征/向量库与模型训练。</p>
-            </div>
-            <span class="tag study">必备底座 · 中信心</span>
-          </div>
-          <div class="opp-meta"><span>承接 R6</span><span>复用安全治理</span><span>对齐 T4/T7</span><span>先管理域后跨组织</span></div>
-          <div class="opp-body">
-            <div><h4>客户任务</h4><p>运营商需要在多域、多云和多 Agent 消费中持续执行目的限制与数据主权；外部 API 或模型删除不能只删除目录记录，必须传播到缓存、特征、向量索引和训练制品。</p></div>
-            <div><h4>最小产品</h4><ul><li>数据分类、用途、驻留、保留和删除策略 DSL。</li><li>查询/API/导出/训练四类执行点适配器。</li><li>策略决策、执行结果与例外审批证据。</li></ul></div>
-            <div><h4>价值与边界</h4><p>这是 O2/O6/Open Gateway 的准入条件，不单独包装「合规大平台」。模型只辅助解释政策，最终规则必须可测试、可审批、可回滚。</p></div>
-          </div>
-          <div class="opp-body">
-            <div><h4>复用 / 合作</h4><p>复用现有身份、权限、安全审计和数据治理；策略引擎、隐私计算可采用成熟组件，中兴掌握电信对象、执行点映射和跨路径证据。</p></div>
-            <div><h4>准入 / 退出门槛</h4><p><strong>准入：</strong>选择一类高敏数据和至少两条不同消费路径。<br><strong>退出：</strong>若策略无法脱离项目定制或执行开销超出场景预算，则收缩为管理域参考架构。</p></div>
-            <div><h4>验收指标</h4><p>跨路径策略一致率、拒绝/越权测试覆盖、删除传播时长、驻留违规、例外审批闭环、策略执行 P99。</p></div>
-          </div>
-        </article>
-
-        <h3>6.3 配合机会：满足触发条件才升级</h3>
-        <article class="opp-chapter">
-          <div class="opp-head">
-            <div class="opp-no">O6 / O4 / O5</div>
-            <div>
-              <h3>试点绑定、承载映射与终端埋点</h3>
-              <p>O6 争取国内运营商「显式数据产品/编织层」试点；O4 把数据策略映射到承载 SLA；O5 仅作长期观察性埋点。</p>
-            </div>
-            <span class="tag infer">配合项</span>
-          </div>
-          <div class="opp-body">
-            <div>
-              <h4>O6 试点</h4>
-              <p>海外已有运营商数据平台/编织等效实践，国内「显式 Data Fabric」首发位仍相对开放。中兴参与的中国移动Quality on Demand（QoD）API 已有 GSMA 披露的客户、调用和收入证据，说明「标准能力 + 明确场景 + 运营计量」比先卖平台更可信。新试点应沿用这一方法，以独立可审计 ROI（复用率、MTTR、单位有效任务成本）绑定业务 Owner。<a href="#s55">[S55]</a></p>
-            </div>
-            <div>
-              <h4>O4 承载</h4>
-              <p>数据管理层不抢承载线路标，只定义「哪类数据产品需要什么管道 SLA」。这是端到端任务适用性的必要接口，投入以建议纳入公司 6G 路标为主。</p>
-            </div>
-            <div>
-              <h4>O5 终端</h4>
-              <p>全行业空白大、成熟度低。只保留轻量目录/代理概念验证，跟随 ISAC/行业数据信号加减仓，不在当前预算内铺开。</p>
-            </div>
-          </div>
-        </article>
-
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>机会</th><th>当前动作</th><th>升级触发信号</th><th>保持/降级信号</th><th>禁止项</th></tr></thead>
-            <tbody>
-              <tr><td><strong>O6 运营商试点</strong></td><td>围绕故障、节能、QoE 或 API 选择一个明确业务问题；先定义基线、对照组和收益归属</td><td>客户指定业务 Owner、开放多厂商数据、接受结果计量并承诺联合标准/案例</td><td>只有「建平台」预算、无消费者与业务基线时，退回 O2 内部自用验证</td><td>不得以单一供应商演示替代跨厂商适配和 ROI 审计</td></tr>
-              <tr><td><strong>O4 承载 SLA 映射</strong></td><td>定义数据产品时效/可靠/主权属性到承载策略的最小语义，不自建承载编排</td><td>承载产品线出现明确接口 Owner，且至少一个 O1/O6 场景需要端到端保证</td><td>标准未收敛或客户不愿为差异 SLA 付费时，仅保留模型与接口草案</td><td>不得让管理层成为快环在线单点，不绑定单一承载协议</td></tr>
-              <tr><td><strong>O5 终端/行业代理</strong></td><td>跟踪 ISAC、AI 终端和隐私计算；复用 C1/C2 契约定义，不开发独立平台</td><td>出现明确终端数据产品、端侧资源预算、隐私责任和可付费行业客户</td><td>仅有数据量故事、无用途与同意机制时保持观察</td><td>不得默认采集原始感知/个人数据，不以「网+端」身份替代合规论证</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>6.4 资源组合与依赖关系：不是八支平行队伍</h3>
+        <h3>6.3 选择建议：共用能力和能力服务优先，结果服务按责任条件升级</h3>
         <div class="grid-3">
           <div class="card">
-            <span class="tag fact">共享核心 · 建议 55–65%</span>
-            <h4>O2 + O3</h4>
-            <p>语义、任务适用性、契约、工具接口和标准参考实现由同一核心团队负责；标准文稿必须来自可运行代码，核心代码必须对齐标准对象。</p>
+            <span class="tag fact">立即主攻</span>
+            <h4>共用能力内核 + T7-A</h4>
+            <p>先让A/B/C能力进入主航道和自有Agent，再将成熟能力映射到NEF、CAMARA、行业API及Agent工具。验证真实消费者、跨网履约、单位成本和持续收入。</p>
           </div>
           <div class="card">
-            <span class="tag study">差异验证 · 建议 25–35%</span>
-            <h4>O1 + O7 + O8</h4>
-            <p>分别验证「分布式近源执行」「高风险动作证据」与「跨路径主权强制」。三者共用 O2 的语义/契约，不另造目录与策略体系。</p>
+            <span class="tag study">时间盒验证</span>
+            <h4>近源供数 + 自有Agent灯塔</h4>
+            <p>选择一种高频无线数据和一类非故障Agent，验证资源开销、任务适用性、断链、动作证据与第二场景复用；失败则退回域能力。</p>
           </div>
           <div class="card">
-            <span class="tag infer">客户与期权 · 建议 10–15%</span>
-            <h4>O6 + O4 + O5</h4>
-            <p>O6 负责商业证伪；O4/O5 仅保留接口与观察资源。比例指新增研发/预研能力包的建议结构，需内部预算校准。</p>
+            <span class="tag infer">条件升级</span>
+            <h4>T7-B结果型Agent服务</h4>
+            <p>只有客户给出业务Owner、基线、动作权限、归因、风险上限、回滚与责任定价合同，才从能力服务升级为结果承诺。</p>
           </div>
         </div>
-        <div class="callout"><strong>依赖顺序：</strong>O2 是共用内核，O3 放大并约束 O2，O1/O7/O8 分别提供近源、动作和主权证据，O6 验证客户是否为结果付费；O4/O5 只能消费前述成果，不能反向拉出两套新平台。</div>
-
-        <div class="choice-banner">
-          <div class="choice-do">
-            <h4>选择建议：集中火力</h4>
-            <p>预算与组织注意力优先保证 <strong>O2 + O3</strong>，并行验证 O7/O8；O1 做软件侧时间盒；O6 由专家组牵线、公司决策；O4/O5 写入路标观察。</p>
-            <ul>
-              <li>主航道绑定：无线/核网/SMO 共用组件，而不是新品牌孤岛。</li>
-              <li>先自用验证，再产品化包装。</li>
-              <li>标准条目与原型互相喂养，避免「只会写文稿」或「只会上演示」。</li>
-            </ul>
-          </div>
-          <div class="choice-dont">
-            <h4>明确不选 / 缓选</h4>
-            <ul>
-              <li>不自建通用企业级 Data Fabric 去打 IT 市场。</li>
-              <li>不押注某一厂商风格的独立数据面网元成为唯一胜负手。</li>
-              <li>不为 ZB 级原始感知数据建设中心化全量湖仓。</li>
-              <li>不在治理成熟前推广无边界 Agent 自动改网。</li>
-            </ul>
-          </div>
+        <div class="logic-proof">
+          <div><b>共用能力门</b><span>跨第二产品/Agent复用；两种后端；有Owner、消费者和版本承诺</span></div>
+          <div><b>T7-A商业门</b><span>跨网一致、持续付费、履约成本、毛利和续费；API数量不是结果</span></div>
+          <div><b>T7-B责任门</b><span>基线、归因、授权、风险、责任、回滚缺一不可；无法定责则不承诺结果</span></div>
         </div>
-
-        <div class="big-quote">机会选择断言：<em>中兴在「数据编织 × 6G」交集上的最优解，是数据引擎外溢 + 标准卡位 + RAN 近源任务适用性+ 动作/主权双证据</em>；用跨场景复用、闭环收益、可回滚性和策略持续强制证明「可信供数」，而不是用平台功能清单证明「拥有 Fabric」。</div>
+        <div class="big-quote">机会选择断言：<em>先把跨产品重复能力做成主航道共用内核，用中兴自有Agent证明场景价值，优先规模化能力服务，再在责任可界定的场景承诺结果。</em></div>
       </div>
     </section>
 
     <section id="zte-strategy">
       <div class="wrap">
         <div class="section-kicker"><i>07</i> Strategy recommendations</div>
-        <h2>具体策略建议</h2>
-        <p class="lead">策略按启动次序排列：先完成叙事与标准卡位，再并行语义/供数原型，随后以时间盒推进 RAN 近源能力，并以组织与试点机制防止横向能力碎片化。类型标注：<strong>【D】</strong>可由战略/预研/标准条线直接推动；<strong>【R】</strong>需上升为公司级决策。</p>
+        <h2>具体策略建议：先共用、再外售、后承诺结果</h2>
+        <p class="lead">本章严格采用公司模板，按“我司选择—具体策略（带时间/触发条件）—不做的风险—备注”表达。时间采用阶段门与触发条件，不对缺少内部资源基线的月份作虚假承诺；详细AP、组织、风险台账和治理材料保留在第8章。</p>
 
+        <h3>7.1 公司级策略表</h3>
         <div class="table-scroll">
           <table>
-            <thead>
-              <tr><th>序号</th><th>我司选择</th><th>具体策略</th><th>不做的风险</th><th>备注</th></tr>
-            </thead>
+            <thead><tr><th>我司选择</th><th>具体策略（带时间 / 触发条件）</th><th>不做的风险</th><th>备注</th></tr></thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>【D】数据引擎战略叙事</td>
-                <td>形成「数据引擎 → 6G 数据能力组件」对内白皮书：对齐 R1–R8 需求、T1–T8 趋势、友商证据分层与中兴主攻位，面向决策层宣讲。</td>
-                <td>数据引擎停留在故障/运维单点，6G 竞标缺少横向数据叙事</td>
-                <td>P0 · 90 天内</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>【D】标准双入口卡位</td>
-                <td>ZSM 029 贡献参考实现；SA2 KI#21 / SA5 DMFW 提交语义映射、编织接口双栈、近实时时效与任务适用性属性提案（目标 ≥2 篇有效输入）。</td>
-                <td>接口与术语被友商单极定义，后续产品长期适配他人模型</td>
-                <td>P0 · 对齐 Rel-20/21 窗口</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>【D】网络语义层与数据产品最小集</td>
-                <td>以 Fault Agent KG 为种子，建设约束式语义抽取与五类高复用数据产品（故障、节能、移动性、QoE、模型特征），每项带 Owner/SLO/任务适用性/血缘。</td>
-                <td>只有平台能力、没有可运营产品；无法支撑 T1/T7</td>
-                <td>P0/P1 · 与策略 4 同组</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>【D】Agentic 供数接口</td>
-                <td>将目录检索、血缘追溯、订阅、策略校验封装为 MCP/OpenAPI 工具；运行时坚持身份—策略—可观察—证据（IPOE），Reasoner/Actor 分离。</td>
-                <td>Agent 生态只能「聊天取数」，不能安全进入生产闭环</td>
-                <td>P1 · 复用 Co-Sight 方向</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>【D+R】RAN 近源子 Fabric PoC</td>
-                <td>站点/边缘部署轻量数据代理：流内标注、适用性信封、本地缓存与异步证据回流；明确不进入 &lt;10ms 快环同步依赖。</td>
-                <td>丢失相对云厂商的不可替代战场，也缺少任务适用性实证</td>
-                <td>P1 · 12–18 月时间盒</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>【R】跨线虚拟团队</td>
-                <td>设立「6G 数据能力」虚拟团队（数据引擎 + 无线 + 核心网 + SMO/OSS + 标准），统一对象模型、任务适用性口径与北向契约，禁止各线重复造目录。</td>
-                <td>横向能力碎片化，客户侧看到多套互不相通的「平台」</td>
-                <td>组织前提</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>【D】NDT/高风险闭环证据链</td>
-                <td>把数字孪生引擎接入变更/Agent 动作强制路径：快照、模型版本、同步滞后、误差门槛、灰度与回滚成为放行条件。</td>
-                <td>孪生停留在可视化，无法支撑有界自治</td>
-                <td>P1/P2 · 对齐 T5</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>【R】运营商试点与路标</td>
-                <td>联合国内运营商推动「数据产品/编织层」显式试点，内置独立 ROI；同时把承载 SLA 映射、行业 API 内部产品化写入公司 6G 路标。</td>
-                <td>国内首发与路标位次被友商占据；Open Gateway 有入口无供给</td>
-                <td>P1 · 专家组牵线</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>【D+R】Build / Partner / Buy 边界</td>
-                <td>自研电信语义、任务适用性、近源运行时和动作证据；合作湖仓/Catalog/模型/隐私计算；采购通用扫描、连接器与可观察工具，统一开放适配层。</td>
-                <td>要么重复造通用底座，要么把关键电信控制点交给云/IT 厂商</td>
-                <td>P0 · 立项前置门</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>【R】阶段门与组合复盘</td>
-                <td>对 O1/O2/O7/O8 建 G0–G4 阶段门；每季按复用、客户价值、标准采纳、工程开销和证据完整度调整资源，允许停止。</td>
-                <td>PoC 长期化、资源平均分配、标准与产品脱节</td>
-                <td>P0 · 组合治理</td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>【D+R】数据主权策略即代码</td>
-                <td>建立用途、同意、驻留、保留、删除策略 DSL 与跨查询/API/导出/特征/向量/训练执行点；模型辅助解释，规则经人工审批后强制执行。</td>
-                <td>治理停留在目录标签；数据进入缓存、向量和模型后无法持续约束或删除</td>
-                <td>P1 · 承接 R6/O8</td>
-              </tr>
+              <tr><td><strong>横向共用，不另建大平台</strong></td><td><strong>当前阶段启动：</strong>把AIR Net数据引擎及相邻资产抽象为A/B/C三项公共能力，冻结统一对象、契约、身份、版本和证据基线；先进入至少两条主航道产品。</td><td>多条产品线和Agent重复建设目录、管道、语义和策略；客户看到多个互不相通的平台，边际成本无法下降。</td><td><strong>进入门：</strong>第二场景核心逻辑无需大规模重写；两种后端可替换。内部在研项目只能作为候选载体，不能直接写成公司级成熟平台。</td></tr>
+              <tr><td><strong>自有Agent作为首批产品与消费者</strong></td><td><strong>共用基线形成后并行推进：</strong>以Fault Agent加一类非故障Agent复用同一数据产品、任务适用性、工具和证据链，同时提供第三方Agent接口。</td><td>公共能力脱离真实应用；自有Agent继续按项目取数和治理；无法证明公共能力能改善交付周期、动作风险和场景复用。</td><td>自有Agent不是附属演示，而是灯塔产品。验收看第二Agent复用、交付周期、证据完整和结果回流。</td></tr>
+              <tr><td><strong>优先规模化T7-A能力服务</strong></td><td><strong>内部复用通过后启动外售：</strong>将成熟数据产品、Agent工具和网络能力映射到NEF、CAMARA、行业API与聚合渠道，按调用、会话、覆盖、用量或订阅运营。</td><td>Open Gateway只有渠道入口，没有稳定内部供给；API数量增长但跨网不一致、履约成本失控或没有持续收入。</td><td><strong>商业门：</strong>跨网一致、活跃付费、单位履约成本、毛利和续费。Quality on Demand（QoD）是已证入口，不等于全部能力均可商业化。</td></tr>
+              <tr><td><strong>条件式推进T7-B结果服务</strong></td><td><strong>结果责任条件具备后升级：</strong>选择一个自有Agent灯塔，冻结业务Owner、结果基线、观测窗口、动作权限、归因、风险上限和回滚，再尝试托管费或结果分成。</td><td>错失更高价值的托管与自治服务；自有Agent长期停留在效率工具，无法形成结果责任和持续商业模式。</td><td><strong>责任门：</strong>无业务Owner、无法排除外因、无法定责或回滚时，不承诺结果，退回能力服务或辅助模式。</td></tr>
+              <tr><td><strong>标准、代码、客户和阶段门绑定</strong></td><td><strong>标准窗口与每个版本门持续执行：</strong>ZSM 029、SA2/SA5、O-RAN、CAMARA主张必须对应代码、接口、测试和客户问题；按复用、工程、商业A、责任B四类阶段门决定加码、转向或停止。</td><td>标准与产品脱节，接口被友商定义；PoC长期化、资源平均分配，既没有主航道版本也没有商业验证。</td><td>第8章保留AP、Owner、测试、风险和治理细节；主叙事只保留公司选择与升级条件。</td></tr>
             </tbody>
           </table>
         </div>
-
-        <h3>7.1 Build / Partner / Buy：把钱花在不可替代处</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>能力</th><th>选择</th><th>原因</th><th>架构要求</th><th>供应/合作对象类型</th></tr></thead>
-            <tbody>
-              <tr><td><strong>电信对象语义与任务适用性</strong></td><td><strong>Build</strong></td><td>依赖网元、配置、测量和动作上下文，是设备商最核心知识资产</td><td>版本化语义包；跨厂商映射可插拔；适用性信封可测试</td><td>与运营商/标准组织共建定义，不外包控制权</td></tr>
-              <tr><td><strong>近源 Data Agent</strong></td><td><strong>Build</strong></td><td>需要站点/边缘资源、升级、断链和时标工程能力</td><td>轻量、沙箱、可远程回退；不成为快环单点</td><td>与无线/边缘产品线共研</td></tr>
-              <tr><td><strong>数据产品、主权策略与动作证据</strong></td><td><strong>Build</strong></td><td>决定主航道复用、责任、持续用途控制与有界自治，直接形成客户信任点</td><td>开放 schema/API；跨路径执行；证据可导出；避免私有黑盒</td><td>与客户、安全合规及标准组织共同定义验收</td></tr>
-              <tr><td><strong>湖仓、通用 Catalog、流批引擎</strong></td><td><strong>Partner / Adopt</strong></td><td>产业成熟、客户存量多，自研缺少规模优势</td><td>开放表格式、多云、多后端；核心元数据不被单厂商绑死</td><td>云、数据平台、开源社区</td></tr>
-              <tr><td><strong>通用连接器、扫描、可观察工具</strong></td><td><strong>Buy / Reuse</strong></td><td>差异低且维护面广，应缩短非核心开发</td><td>统一插件 SDK；安全扫描；替换成本可量化</td><td>成熟商用/开源组件</td></tr>
-              <tr><td><strong>大模型、Agent 工具生态、隐私计算</strong></td><td><strong>Partner + Selective Build</strong></td><td>模型与算法快速演进；中兴应掌握电信约束、评测和运行证据</td><td>多模型可替换；身份/策略/审计不随模型绑定</td><td>模型厂商、研究机构、运营商实验室</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>7.2 实施节奏：先卡位，再加深，后铺开</h3>
-        <div class="timeline">
-          <div class="year">0–3 月</div><div class="event"><strong>看齐与卡位：</strong>完成对内战略叙事；冻结 O2/O3 范围；启动 ZSM 029 参考实现与首批 SA2/SA5 文稿；选定五类数据产品 Owner。</div>
-          <div class="year">3–9 月</div><div class="event"><strong>原型与证据：</strong>语义层/供数工具最小可用；Fault Agent 场景扩展到至少一类非故障闭环；输出任务适用性属性与主权策略 DSL 草案及评测集 v0。</div>
-          <div class="year">9–18 月</div><div class="event"><strong>近源与试点：</strong>RAN 子 Fabric 时间盒 PoC；争取 1 个国内运营商显式数据产品试点；NDT 动作证据与跨路径策略强制进入工程基线。</div>
-          <div class="year">18–36 月</div><div class="event"><strong>产品化收敛：</strong>随 Rel-21 能力包收敛，把可互操作语义/接口沉淀进主航道版本；API 商业化只映射已产品化内部能力。</div>
-        </div>
-
-        <h3>7.3 阶段门：每一步都要能加码、转向或停止</h3>
-        <div class="maturity-map">
-          <div class="maturity-stage"><div class="mno">G0 · 资产核验</div><h4>证明不是从零，也不是想象</h4><p>形成代码/接口/数据/标准/客户五张清单；每项标 Owner、许可证、成熟度与复用限制。缺真实资产则不进入 G1。</p></div>
-          <div class="maturity-stage"><div class="mno">G1 · 双场景原型</div><h4>证明可复用</h4><p>同一语义/契约/工具至少服务两类场景、两种后端；若仍按项目重做，降级为域能力。</p></div>
-          <div class="maturity-stage"><div class="mno">G2 · 工程基线</div><h4>证明可运行</h4><p>完成性能、可靠、权限、证据、升级与回退测试；O1 额外满足站点资源预算。</p></div>
-          <div class="maturity-stage"><div class="mno">G3 · 客户验证</div><h4>证明有人使用并产生结果</h4><p>客户指定 Owner/消费者，建立对照基线；收益可归因、可审计，不以演示次数验收。</p></div>
-          <div class="maturity-stage"><div class="mno">G4 · 产品/标准收敛</div><h4>证明可规模复制</h4><p>进入至少两条主航道版本；规范条目、互操作和商业模型同步，不靠单一大项目维持。</p></div>
-        </div>
-
-        <h3>7.4 策略优先级总览</h3>
-        <div class="grid-3">
-          <div class="card">
-            <span class="tag fact">现在就做</span>
-            <h4>O2 + O3 + 叙事/组织</h4>
-            <p>策略 1/2/3/4/6。决定未来三年话语权与组件复用效率。</p>
-          </div>
-          <div class="card">
-            <span class="tag study">时间盒推进</span>
-            <h4>O1 + O7 + O8</h4>
-            <p>策略 5/7/11。分别验证近源开销、动作证据与主权策略，用可证伪指标决定加码或止损。</p>
-          </div>
-          <div class="card">
-            <span class="tag infer">公司决策项</span>
-            <h4>试点与路标</h4>
-            <p>策略 8 及 O4/O5。专家组给方案与边界，资源与客户承诺升级决策。</p>
-          </div>
-        </div>
-
-        <h3>7.5 统一度量：技术、产品、客户与标准四账合一</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>维度</th><th>北极星问题</th><th>领先指标</th><th>结果指标</th><th>红线</th></tr></thead>
-            <tbody>
-              <tr><td><strong>复用</strong></td><td>能力是否从项目代码变成公共组件？</td><td>已签契约数据产品、接入产品线、异构后端通过数</td><td>消费者复用率、交付周期、重复采集/清洗下降</td><td>第二场景仍重写 &gt;50% 核心逻辑</td></tr>
-              <tr><td><strong>任务适用性/语义</strong></td><td>数据是否真的更可用、更可解释？</td><td>核心对象覆盖、质量规则和配置上下文覆盖</td><td>映射准确率、模型漂移/误动作下降、契约违规</td><td>只统计记录数、接口成功率或单一完整性分</td></tr>
-              <tr><td><strong>运行工程</strong></td><td>分布式能力是否通信级可运行？</td><td>P99、CPU/内存、断链/升级/回退演练</td><td>SLO 达标、跨域字节下降、事故恢复</td><td>成为快环同步单点或无法回退</td></tr>
-              <tr><td><strong>可信自治</strong></td><td>Agent/NDT 能否安全扩大权限？</td><td>身份/策略/证据覆盖、仿真误差、灰度比例</td><td>越权拦截、误动作、回滚成功、人工接管</td><td>任何生产动作无 Owner、作用域、租约或证据</td></tr>
-              <tr><td><strong>主权与用途</strong></td><td>限制是否贯穿所有数据消费路径？</td><td>策略覆盖路径、拒绝测试、删除传播演练</td><td>跨路径一致率、删除时长、驻留/用途违规</td><td>只在目录挂标签，缓存/向量/训练制品不执行</td></tr>
-              <tr><td><strong>客户价值</strong></td><td>客户是否为结果而非平台名买单？</td><td>业务 Owner、对照组、活跃消费者、试点转版本</td><td>MTTR/能耗/QoE/API 收入、单位任务成本</td><td>只有参观/奖项，没有持续使用和预算 Owner</td></tr>
-              <tr><td><strong>标准</strong></td><td>席位是否转化为产品可用规则？</td><td>运营商联署、讨论采纳、参考实现与测试项</td><td>进入基线文本、互操作、版本需求</td><td>只追求文稿数量，产品无对应实现</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>7.6 风险台账：用前置信号而不是事后解释管理</h3>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>风险</th><th>最早信号</th><th>触发阈值（建议）</th><th>应对动作</th><th>责任角色</th></tr></thead>
-            <tbody>
-              <tr><td><strong>平台化过度</strong></td><td>功能清单膨胀、消费者和场景不增长</td><td>连续两个阶段门没有新增真实消费者</td><td>冻结通用功能；只保留能服务已选数据产品的能力</td><td>组合负责人</td></tr>
-              <tr><td><strong>产品线碎片化</strong></td><td>同一对象出现多套 ID、任务适用性和目录</td><td>任一新项目绕过公共 schema/契约</td><td>架构评审否决；公共对象由跨线委员会管理</td><td>首席架构师/各线 Owner</td></tr>
-              <tr><td><strong>标准—产品脱节</strong></td><td>提案没有代码，代码不映射规范</td><td>提案进入讨论后一个版本周期仍无实现</td><td>停止扩写；将提案 Owner 与组件 Owner 绑定</td><td>标准负责人 + 产品 Owner</td></tr>
-              <tr><td><strong>近源开销不可接受</strong></td><td>标注/策略挤占业务资源或放大尾时延</td><td>超过无线线预设资源/时延预算</td><td>减小代理、转异步/离线；必要时终止 O1</td><td>无线平台 Owner</td></tr>
-              <tr><td><strong>Agent 越权/不可解释</strong></td><td>动作缺身份、租约、证据或无法回放</td><td>任何高风险动作证据链不完整</td><td>强制退回建议模式；补齐策略与人工接管</td><td>安全/自智 Owner</td></tr>
-              <tr><td><strong>主权策略失效</strong></td><td>同一数据在查询、导出、向量或训练路径得到不同授权结果</td><td>任一高敏数据出现跨路径策略不一致或删除遗漏</td><td>停止新增消费路径；修复统一策略与删除传播后再开放</td><td>数据治理/安全 Owner</td></tr>
-              <tr><td><strong>客户 ROI 无法归因</strong></td><td>只报厂商口径总收益，无对照与成本</td><td>试点启动前未冻结基线和度量 Owner</td><td>不进入客户试点或不对外宣称规模收益</td><td>客户项目/财务价值 Owner</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout warn"><strong>执行纪律：</strong>全部策略遵循「需求驱动 + 证据分层 + 时间盒」。公开试点指标须可被第三方理解；标准成功不等于产品成功；产品演示不等于跨厂商互操作。若 12 个月内仍无法形成至少两类可复用数据产品与一篇有效标准输入，应复盘主攻是否过于分散。</div>
-
-        <div class="big-quote">策略总断言：<em>先把数据引擎做成主航道共用的「可信供数控制面」</em>——用标准写下语义与接口，用近源能力守住 RAN数据适用性，用动作证据与主权策略约束自治和跨组织流通；其余一律后置。</div>
-        <p class="strategy-note">本节为战略研究建议，需与公司内部产品路标、标准提案计划与客户承诺校准后执行；不代表中兴通讯正式技术路线或市场承诺。</p>
+        <div class="callout warn"><strong>执行纪律：</strong>共用能力、T7-A和T7-B分别核算复用、收入、责任与风险；不能用内部效率替代外部收入，不能用域级技术效果替代结果型合同，也不能用标准提案数量替代产品和客户采纳。</div>
+        <div class="big-quote">策略总断言：<em>中兴贯通网络执行、公共可信能力与自有智能体应用；用共用能力降低重复建设，用自有Agent证明场景价值，先规模化能力服务，再在责任可界定时升级结果服务。</em></div>
+        <p class="strategy-note">本节为基于公开材料的战略研究建议，不披露内部代号、进度、Owner或未公开消费者；需与公司内部产品路标、资源和客户承诺校准后执行。</p>
       </div>
     </section>
 
