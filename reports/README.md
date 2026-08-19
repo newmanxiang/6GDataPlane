@@ -24,6 +24,8 @@
 | `plan-sections5-7.md` | 第5–7章六页决策胶片制作计划：2页现状定位、1页模式、2页机会选择、1页公司策略表 |
 | `6g-data-fabric-sections-5-7-deck.pptx` | 第5–7章六页决策胶片：现状与缺口 → 目标定位 → 一横多纵模式 → 四类机会 → 优先/时间盒/扩展 → 公司策略表；文字写入形状卡片，不使用独立文本框 |
 | `scripts/build_sections_5_7_pptx.py` | 再生脚本：`python3 reports/scripts/build_sections_5_7_pptx.py` |
+| `6g-data-fabric-sections-5-9-deck.pptx` | 第5–8章五页内部策略胶片：5.1+5.2、5.3+5.4、第6章、第7章、第8章各一页；第9章仅作为HTML整体小结；文字写入形状卡片或表格单元格 |
+| `scripts/build_sections_5_9_pptx.py` | 五页胶片再生脚本：`python3 reports/scripts/build_sections_5_9_pptx.py` |
 | `6g-data-fabric-industry-trends-full-sections.html` | 完整 HTML 论证正文 |
 | `6g-data-fabric-industry-trends-first-four-sections.html` | 对应完整 HTML 论证正文 |
 
