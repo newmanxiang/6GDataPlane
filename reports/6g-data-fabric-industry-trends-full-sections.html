@@ -1226,196 +1226,221 @@
     <section id="zte-position">
       <div class="wrap">
         <div class="section-kicker"><i>05</i> Current position & target</div>
-        <h2>公司现状和定位：痛点与趋势共同驱动智能数据中枢演进</h2>
-        <p class="lead">定位不能只从6G愿景倒推，也不能只对现有组件做功能拼盘。无线数据的采集、存储、处理、消费和治理痛点给出近期必答题，数据产品化、元数据事件、两级部署、Agent协同与可信行动等趋势给出中长期约束；两者共同指向同一演进主线：以AIR Net数据引擎及无线大数据资产为基础，把智能数据中枢建设为6G无线产品横向共用的数据与智能底座。</p>
-        <div class="callout warn"><strong>内部策略口径：</strong>本章吸收《2026.7 智能数据中枢汇报 V5》的痛点、实践和产品规划。内部材料中的版本、指标和时间用于决策校准，不等于对外产品承诺；“智能数据中枢”是当前内部推进载体，不改变第1–4章对长期架构边界的判断。<a href="#s59">[S59]</a></div>
+        <h2>公司现状和定位：从局部数据能力升级为无线横向智能数据中枢</h2>
+        <p class="lead">第1–4章已经给出行业判断：6G数据能力将由项目式采集和接口交付，转向数据产品、数据质量、分布式处理和智能体消费。第5章不再比较是否建设数据中枢，而是回答这些趋势在中兴无线产品中表现为什么现实问题、现有资产处于什么位置，以及智能数据中枢应承担什么角色。</p>
+        <p>内部方案表明，中兴无线并不是缺少数据组件：湖仓、流批处理、NISM、数据治理、智能问数、NDS近实时处理和网元侧计算均已有实践、规划或预研。真正的问题是这些能力仍主要随具体应用、产品和版本演进，跨系统的数据责任、质量、语义和消费方式尚未完全收敛。智能数据中枢的任务因此不是再增加一个平台名称，而是把已经存在的能力组织成可复用、可演进的无线产品能力。<a href="#s59">[S59]</a></p>
+        <div class="callout warn"><strong>内部策略口径：</strong>本章使用《2026.7 智能数据中枢汇报 V5》的痛点、实践和三年规划。内部指标和里程碑用于分析现状与制定行动，不等同对外承诺；对于原规划未明确的年度目标，本文不自行补齐。</div>
 
-        <h3>5.1 + 5.2｜现状痛点 × 产业趋势：把“局部优化”升级为“共同底座”问题（P1）</h3>
-        <div class="grid-3">
-          <div class="card">
-            <span class="tag risk">生产与接入痛点</span>
-            <h4>数据生产方式跟不上智能应用变化</h4>
-            <ul>
-              <li>基站数据与模型难以灵活扩展新类型和新消费场景，缺少面向智能应用的语义描述。</li>
-              <li>订阅不够精准，网元—网管采集通道多达7类，同一数据难以“一次采集、多方消费”。</li>
-              <li>MR、RCA等UE级与小区级数据缺少一致的生产、拼接和责任规则。</li>
-            </ul>
-          </div>
-          <div class="card">
-            <span class="tag risk">存储与处理痛点</span>
-            <h4>数据孤岛和资源成本同时放大</h4>
-            <ul>
-              <li>配置、工参、FM、PM、画像、MR分散在PG、Redis、ES、AP/GBase及持久卷，接口和技术栈不统一。</li>
-              <li>内部材料显示UE级数据量约为小区级9倍、占数据存储约90%，重复存储和跨系统搬运难以持续。</li>
-              <li>流批处理端到端仍以小时计，秒、分钟、15分钟以上场景缺少统一分时机制。</li>
-            </ul>
-          </div>
-          <div class="card">
-            <span class="tag risk">消费与治理痛点</span>
-            <h4>项目式供数难以支撑Agent规模化</h4>
-            <ul>
-              <li>消费侧仍存在版本定制接入，多维数据拼接、跨域共享和动态编排不足。</li>
-              <li>缺少统一数据模型、Owner、质量观测和治理工具，数据是否可信仍依赖人工判断。</li>
-              <li>语义、本体、NL2SQL/API、血缘和权限尚未形成一套面向多Agent的公共基线。</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="trend-bridge">
-          <div class="bridge-card">
-            <span class="bridge-kicker">PAIN-DRIVEN</span>
-            <h4>近期经营与工程压力</h4>
-            <ul>
-              <li>重复采集、重复存储、重复治理</li>
-              <li>交付周期长，跨系统复用成本高</li>
-              <li>数据质量不可观测，Agent消费风险高</li>
-              <li>UE级数据增长放大资源成本</li>
-            </ul>
-          </div>
-          <div class="bridge-arrow">→</div>
-          <div class="bridge-card output">
-            <span class="bridge-kicker">COMMON RESPONSE</span>
-            <h4>必须沉淀为横向共用能力</h4>
-            <div class="bridge-criteria">
-              <span><b>统一理解</b>对象、指标、语义、本体</span>
-              <span><b>统一责任</b>Owner、契约、版本、退出</span>
-              <span><b>统一质量</b>规则、观测、诊断、治理</span>
-              <span><b>统一供数</b>NISM、流批、联邦、编排</span>
-              <span><b>分布执行</b>秒/分/时、近源、断链</span>
-              <span><b>可信行动</b>身份、策略、证据、回滚</span>
-            </div>
-          </div>
-          <div class="bridge-arrow">←</div>
-          <div class="bridge-card">
-            <span class="bridge-kicker">TREND-DRIVEN</span>
-            <h4>第3–4章的长期约束</h4>
-            <ul>
-              <li>T1/T2：数据产品与元数据事件</li>
-              <li>T3：全局定义、近源执行的两级部署</li>
-              <li>T4/T5：Agent协同与NDT证据关口</li>
-              <li>T6：数据质量成为模型与闭环准入</li>
-            </ul>
-          </div>
-        </div>
+        <h3>5.1 现状痛点：问题不在能力少，而在数据责任和运行体系分散</h3>
+        <p>当前无线数据体系由不同历史场景逐步形成：网元和网管围绕运维接口生产数据，NGI、NIA、NDS及其他应用分别建设存储、处理和消费路径，新的智能体又提出更灵活的数据准备、语义理解和质量要求。每一项局部建设都有现实价值，但当消费者和数据规模增加后，同一份数据会在不同系统中反复经历采集、存储、建模、解释、治理和接口适配。</p>
+        <p>这种重复并不只是资源成本问题。它意味着同一网络对象、指标和数据集可能由不同系统分别定义，质量异常缺少统一责任人，消费者难以判断当前数据是否满足自己的场景要求。Agent开始调用数据工具后，原本只影响报表的语义或质量差异，还可能继续传导到分析、建议和网络动作。</p>
 
         <div class="table-scroll">
           <table>
-            <thead><tr><th>问题域</th><th>内部痛点给出的近期任务</th><th>产业趋势给出的长期约束</th><th>对智能数据中枢的含义</th></tr></thead>
+            <thead><tr><th>数据环节</th><th>内部材料反映的现象</th><th>直接影响</th><th>暴露的结构性问题</th></tr></thead>
             <tbody>
-              <tr><td><strong>数据供给</strong></td><td>结束多通道、项目式采集与消费对接</td><td>数据产品必须有Owner、契约、版本、消费者和退出机制</td><td>建立可订阅、可复用、可运营的数据产品，而不是只建目录</td></tr>
-              <tr><td><strong>质量与语义</strong></td><td>补齐统一模型、质量观测、异常诊断和跨域对齐</td><td>质量、语义、血缘变化要能触发重验、影响分析与版本处置</td><td>把数据质量与语义做成运行期控制能力，进入Agent准入链</td></tr>
-              <tr><td><strong>处理与部署</strong></td><td>按秒、分钟、批处理分时；降低UE级数据搬运和存储成本</td><td>全局定义与近源执行并存，断链可运行、恢复可对账</td><td>湖仓、NDS、网元流计算和联邦查询形成分层运行体系</td></tr>
-              <tr><td><strong>智能消费</strong></td><td>NISM、动态编排、智能问数和本体语义服务多类Agent</td><td>Agent工具调用需要身份、策略、证据、灰度和回滚</td><td>数据中枢既供数也提供受控工具，但不替代域控制器</td></tr>
+              <tr><td><strong>生产与采集</strong></td><td>基站数据和模型难以灵活扩展新类型与新消费场景；订阅不够精准；网元—网管存在多类采集通道；同一数据难以一次采集、多方消费</td><td>每增加一个应用都可能新增采集和适配工作，生产者与消费者持续耦合</td><td>缺少围绕对象、数据产品和消费要求组织的数据生产机制</td></tr>
+              <tr><td><strong>存储与处理</strong></td><td>配置、工参、FM、PM、画像、MR分散于多类数据库和持久卷；UE级数据规模显著高于小区级；流批端到端时延仍存在小时级路径</td><td>重复存储、数据搬运和计算资源成本上升，不同时标场景难以复用同一处理体系</td><td>缺少域内标准化的数据节点，以及跨节点的分布式管理和服务机制</td></tr>
+              <tr><td><strong>治理与质量</strong></td><td>统一模型、Owner、质量观测、异常诊断和治理工具仍在建设；多维数据拼接与跨域对齐不足</td><td>数据是否可信仍依赖应用团队自行判断，质量问题难以追溯到生产、处理或交付环节</td><td>数据责任、质量规则和版本尚未形成跨系统公共基线</td></tr>
+              <tr><td><strong>消费与智能化</strong></td><td>消费接口存在版本定制；NISM、动态编排、NL2SQL/API和本体语义正在演进；不同Agent尚未共享完整的数据服务基线</td><td>应用和Agent重复找数、解释、清洗和对接，智能化能力难以跨场景复制</td><td>统一消费入口必须与统一语义、数据质量和生命周期共同建设</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="big-quote">驱动结论：<em>近期以降本、提质和复用解决真实痛点；中期以数据产品、分布式处理和Agent消费形成产品闭环；长期以数据质量、语义、近源执行和动作证据建立6G差异化控制点。</em></div>
 
-        <h3>5.3 + 5.4｜现实基础 × 目标定位：以智能数据中枢承载“一横多纵”（P2）</h3>
-        <div class="grid-3">
-          <div class="card">
-            <span class="tag fact">已有实践</span>
-            <h4>湖仓、流批和成本优化已形成基础</h4>
-            <p>CM/PM/工参/MR统一建模入湖，NGI湖仓外场成熟商用；Zeno、Saturn和统一调度已形成降本实践。内部材料披露部分迁移资源下降50%、后续再降30%的项目口径，说明底座并非从零起步，但指标仍需按产品和场景独立验收。<a href="#s59">[S59]</a></p>
-          </div>
-          <div class="card">
-            <span class="tag fact">在建能力</span>
-            <h4>NISM、治理Agent和语义层正在闭合消费链</h4>
-            <p>统一查询、目录、订阅、NL2SQL/API、质量观测、数据治理Agent和本体语义均有方案或实践。当前关键不是继续增加组件，而是统一对象、Owner、数据质量、接口、版本和消费者，使能力跨系统、跨Agent复用。</p>
-          </div>
-          <div class="card">
-            <span class="tag study">差异化预研</span>
-            <h4>分时处理、分布式中枢和近源计算指向6G</h4>
-            <p>NDS近实时、分布式湖仓、联邦查询、动态数据编排、6G新数据面通道及Saturn下沉共同指向“全局定义、分布执行”。这些能力需要时间盒验证资源预算、断链、版本一致和收益，不能直接写成已成熟平台。</p>
-          </div>
-        </div>
+        <div class="trend-definition"><strong>根因判断：</strong>现有数据体系主要按应用和组件边界组织，而未来需要按可复用数据能力组织。只有把对象、Owner、数据质量、语义、服务接口和生命周期从具体应用中抽离出来，湖仓、NISM、智能问数和Agent能力才可能形成跨产品复用。</div>
+        <p>因此，现阶段不能把问题概括为“湖仓不够统一”或“NISM能力不足”。湖仓解决的是一个数据节点内部的存储和计算问题，NISM解决的是数据访问和消费问题；如果底层责任、语义和质量仍然分散，单独增强任何一个组件都只能缓解局部症状。</p>
 
-        <div class="maturity-map">
-          <div class="maturity-stage"><span class="mno">M1 · 已有基线</span><h4>统一湖仓与流批</h4><p>统一入湖、Zeno/Saturn、跨域共部署和资源优化已有实践；重点转向版本化和复用。</p></div>
-          <div class="maturity-stage"><span class="mno">M2 · 首版闭环</span><h4>治理、质量与消费</h4><p>Owner、统一模型、数据质量、NISM、智能问数和编排进入首版共同基线。</p></div>
-          <div class="maturity-stage"><span class="mno">M3 · 在研增强</span><h4>分布式数据中枢</h4><p>联邦查询、服务分层、跨集群访问和动态Pipeline按真实消费者验证。</p></div>
-          <div class="maturity-stage"><span class="mno">M4 · 时间盒验证</span><h4>近源与网元计算</h4><p>NDS近实时、6G流批通道、Saturn下沉验证资源、时延、断链和回退。</p></div>
-          <div class="maturity-stage"><span class="mno">M5 · 条件扩展</span><h4>动作证据与开放</h4><p>自有Agent先消费；成熟后开放第三方Agent、标准接口和能力API。</p></div>
-        </div>
+        <h3>5.2 产业趋势的内部含义：局部优化将越来越难支撑6G和Agent化</h3>
+        <p>前四章的趋势不需要在本章重新证明，但需要转化为内部约束。数据产品化要求供给方对数据持续负责，数据质量要求数据进入模型和闭环前具备明确门槛，两级部署要求全局规则与近源处理同时存在，Agent协同则要求数据、模型、工具和结果之间可以追溯。这些变化共同把无线数据能力从后台支撑组件推向产品架构的一部分。</p>
 
-        <div class="logic-chain">
-          <div>网络事实与数据源<br><small>基站 · NDS · UME-NM · 外部数据</small></div>
-          <div>智能数据中枢底座<br><small>湖仓 · 流批 · 联邦 · 编排</small></div>
-          <div>可信数据控制<br><small>Owner · 语义 · 数据质量 · 版本</small></div>
-          <div>统一消费服务<br><small>NISM · NL2SQL/API · 工具</small></div>
-          <div>产品与Agent<br><small>RDE · NGI · IDA · iMind · 生态</small></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>前四章结论</th><th>对现状的压力</th><th>对智能数据中枢的要求</th><th>边界</th></tr></thead>
+            <tbody>
+              <tr><td><strong>T1/T2/T6：数据产品、变化事件与数据质量</strong></td><td>项目式供数和应用自建治理无法持续；同一对象和数据集需要公共责任、版本和质量规则</td><td>直接承担数据模型、Owner、数据产品、数据质量、语义、血缘和生命周期</td><td>数据质量不能简化成覆盖所有场景的单一总分</td></tr>
+              <tr><td><strong>T3：全局定义、近源执行</strong></td><td>UE级和高频数据不能默认集中搬迁；中心不可达时域内仍需运行</td><td>定义跨节点目录、路由、质量和消费规则，并与NDS、网元和域内数据节点协同</td><td>不把中心中枢变成网元和快环的同步依赖</td></tr>
+              <tr><td><strong>T4/T5：Agent协同与可信行动</strong></td><td>数据错误可能继续传导到Agent判断；输入版本和处理过程需要可追溯</td><td>向Agent提供受控数据工具、语义、质量和输入/结果证据</td><td>Agent推理、NDT验证、动作授权和回滚不全部归属数据中枢</td></tr>
+              <tr><td><strong>T7/T8：能力服务与标准接口</strong></td><td>数据能力需要可组合、可替换，并与标准信息模型和接口保持一致</td><td>接口和能力设计预留开放性，但以内部产品和Agent真实使用为先</td><td>不把远期生态和商业模式提前写成当前产品承诺</td></tr>
+            </tbody>
+          </table>
         </div>
+        <div class="callout"><strong>演进必要性：</strong>当前痛点本质上已经不是网管内部的效率问题，而是无线产品能否在6G数据规模和Agent消费条件下，持续提供一致、可信、可复用数据能力的问题。</div>
 
-        <div class="choice-banner">
-          <div class="choice-do">
-            <h4>目标定位</h4>
-            <p><strong>6G无线产品横向共用的智能数据中枢：</strong>以RAN网管与无线大数据资产为根，完全吸收现有数据引擎，统一可信数据产品、多维数据质量洞察与治理、跨系统共享、分布式处理和数据语义；向下连接网元与网络原生执行，向上支撑AIR Net自有Agent、其他产品应用和开放API。</p>
-            <ul>
-              <li>内部Owner锚定RAN网管，首个版本目标为2026 Q4；该时间是内部研发目标，不作外部承诺。</li>
-              <li>以第二消费者、第二系统和真实版本证明横向复用，不以组件数量或页面完成度验收。</li>
-            </ul>
-          </div>
-          <div class="choice-dont">
-            <h4>边界与非目标</h4>
-            <ul>
-              <li>不是覆盖公司所有数据、存储、模型和协议的“大中台”。</li>
-              <li>不替代无线、核心网和OSS域控制器，不进入毫秒快环远端同步单点。</li>
-              <li>不强制所有产品共享同一存储、运行时或Agent框架。</li>
-              <li>通用湖仓、模型生态和渠道保持开放；中兴掌握电信语义、数据质量、近源约束和动作证据。</li>
-            </ul>
-          </div>
+        <h3>5.3 现实基础：六条能力线已经形成，但成熟度和边界并不一致</h3>
+        <p>智能数据中枢不是从零建设。内部方案已经按数据治理、湖仓底座、分时处理、智能应用消费、智能分析和成本优化形成较完整的能力框架。判断现状时需要区分“已有实践”“正在建设”和“预研方向”，不能因为组件存在就推断跨产品统一版本已经成立。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>能力线</th><th>现有基础</th><th>当前成熟度判断</th><th>需要进一步闭合的内容</th></tr></thead>
+            <tbody>
+              <tr><td><strong>数据治理</strong></td><td>CM、PM、工参、MR等数据已有统一建模入湖实践；Owner、质量维度、可观测指标和治理Agent均已进入方案或计划</td><td>从单类数据治理向跨域治理演进</td><td>统一对象、Owner、质量规则、异常处置、版本和跨系统责任</td></tr>
+              <tr><td><strong>域内湖仓技术底座</strong></td><td>NGI等产品已有湖仓实践，Zeno、Saturn、Spark及跨域共部署具备项目基础</td><td>不同产品和部署节点的成熟度不一</td><td>统一模型、表格式、开发范式和可观测规则，而不是物理集中全部数据</td></tr>
+              <tr><td><strong>分时数据处理</strong></td><td>NDS近实时、LTE RCA、秒/分钟/非实时分层及网元流计算已有实践或预研</td><td>近实时能力在增强，网元侧处理仍需验证</td><td>明确网元、NDS和网管的时标、资源预算、模型驱动和回退关系</td></tr>
+              <tr><td><strong>面向智能应用消费</strong></td><td>NISM已规划统一查询、目录、订阅和智能问数；Pipeline编排已有场景实践</td><td>从单系统访问向服务分层和分布式消费演进</td><td>Lite NISM、跨节点路由、跨域数据融合和端到端编排</td></tr>
+              <tr><td><strong>智能化分析增强</strong></td><td>NL2SQL/API、统一语义层、本体建模及故障、网优等场景已有开发或方案</td><td>已具备场景基础，仍需扩大数据覆盖和跨域一致性</td><td>让智能问数支持分布式中枢、本体语义和可追溯的数据工具调用</td></tr>
+              <tr><td><strong>降成本与价值量化</strong></td><td>Zeno替代部分AP处理、Saturn性能优化和统一调度已有内部项目指标</td><td>已有明确工程收益信号，但需按产品和版本持续核验</td><td>把资源、性能和交付效率纳入产品版本验收，继续验证统一计算存储架构</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="big-quote">定位断言：<em>智能数据中枢不是新增孤立平台，而是把现有数据引擎升级为无线主航道和Agent共同消费的横向产品能力；其战略价值来自痛点闭环、跨产品复用和6G近源数据差异化三者同时成立。</em></div>
+        <p class="evidence-note"><strong>内部依据：</strong>上述判断来自智能数据中枢方案中的目标—场景—实践—下一步计划及三年规划。资源和性能数字按内部项目披露口径使用，不外推为所有产品的统一收益。<a href="#s59">[S59]</a></p>
+
+        <h3>5.4 目标定位：无线产品和智能体应用共用的可信数据与分布式运行底座</h3>
+        <p>结合前四章已经形成的行业断言、当前结构性痛点和已有能力基础，智能数据中枢应从现有数据引擎向无线横向产品能力演进。这里的“横向”不是把所有产品的数据收进一个物理平台，而是让多个域内数据节点和消费系统遵循相同的数据、质量、语义和服务规则。</p>
+        <p><strong>目标定位是：</strong>智能数据中枢是面向无线产品和智能体应用的可信数据供给、语义理解、统一消费与分布式数据运行底座。它以RAN网管和无线大数据资产为根，吸收现有数据引擎能力，连接网元、NDS、域内湖仓节点、产品应用和AIR Net智能体。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>责任层次</th><th>智能数据中枢承担什么</th><th>与谁协同</th><th>不扩张为什么</th></tr></thead>
+            <tbody>
+              <tr><td><strong>核心责任</strong></td><td>对象与模型、Owner、数据产品、数据质量、语义、本体、血缘、目录、查询、订阅、数据编排和生命周期</td><td>无线各产品线、数据生产者和消费应用</td><td>这些能力需要跨系统一致，是横向复用的基础</td></tr>
+              <tr><td><strong>分布式运行</strong></td><td>跨节点目录同步、数据路由、联邦查询、质量和语义一致性、服务分层</td><td>域内湖仓节点、NDS、网元侧处理组件</td><td>数据和计算保持就近部署，中枢不集中承载全部运行时</td></tr>
+              <tr><td><strong>智能消费支撑</strong></td><td>面向Agent提供受控查询、订阅、语义、质量、编排和输入/结果追溯</td><td>AIR Net Agent、故障、网优、体验及其他场景应用</td><td>中枢提供可信数据工具，但不拥有全部推理和场景结果责任</td></tr>
+              <tr><td><strong>相邻边界</strong></td><td>提供数据版本、质量和证据接口</td><td>Agent平台、NDT、域控制器、灰度与回滚机制</td><td>网络动作授权和高风险闭环仍由相应控制体系负责</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="big-quote">定位断言：<em>智能数据中枢不是新的集中式大平台，而是把现有数据引擎升级为无线多产品、多数据节点和智能体应用共同遵循的可信数据与分布式运行体系。</em></div>
       </div>
     </section>
 
     <section id="zte-ops">
       <div class="wrap">
         <div class="section-kicker"><i>06</i> Opportunity & architecture choice</div>
-        <h2>机会点与选择建议：用一个目标架构收敛“做什么、先做什么、做到哪一层”</h2>
-        <p class="lead">第6章不再把模式、机会包和组合选择拆成多页，而是把机会直接映射到目标架构：底层解决数据成本和分时运行，中层建立治理、质量、语义和服务控制，上层服务自有Agent与开放生态。选择顺序按“先闭合横向基线—再验证近源差异—最后开放外部能力”推进。</p>
+        <h2>机会点与选择建议：从共同规则走向分布式智能数据中枢</h2>
+        <p class="lead">第6章集中完成后续策略所需的推导：先用内部痛点、三年规划和无线差异化筛选机会，再明确“域内湖仓节点标准化”和“跨域分布式中枢”的关系，最后形成目标架构、机会优先级和年度演进。第7章只承接这些结论，不再重复推导。</p>
 
-        <h3>6.1 一页整合：目标架构、机会层与优先级</h3>
+        <h3>6.1 机会选择原则：优先解决前置依赖和跨产品共性问题</h3>
+        <p>智能数据中枢方案包含的能力很多，但不能把每项规划都提升为同一优先级。机会选择应同时满足以下条件：</p>
+        <ol class="reason-list">
+          <li><strong>解决真实痛点：</strong>能够减少重复采集、重复建模和项目式消费，或者显著改善数据质量、处理时延与资源成本。</li>
+          <li><strong>三年规划已有承载：</strong>能力已经出现在2026–2028规划、现有实践或明确预研中，不额外发明产品范围。</li>
+          <li><strong>形成跨系统复用：</strong>统一的是对象、质量、语义、服务和开发范式，而不是只为单一应用增加功能。</li>
+          <li><strong>体现无线差异化：</strong>能够利用网元、NDS、网管、无线对象和时标知识，而不是复制通用IT数据平台。</li>
+          <li><strong>具备清晰边界：</strong>知道哪些能力由中枢负责、哪些由域节点或Agent负责，并能设置进入门和停止线。</li>
+        </ol>
+        <div class="callout"><strong>依赖判断：</strong>数据治理、质量、语义和统一消费是分布式中枢与Data Agent的共同基础；分布式管理和Data Agent可以在基线形成后并行增强；网元侧处理和统一计算存储架构属于需要工程验证的差异化方向。</div>
+
+        <h3>6.2 四类可参与机会及其优先顺序</h3>
+
+        <h4>机会一：数据治理、数据质量、语义和统一消费——当前必须闭合的产品基线</h4>
+        <p>这组能力直接对应数据责任分散和Agent消费风险，也是2026“数据治理与消费”阶段的主体。没有统一对象、Owner、质量、语义和服务接口，分布式中枢只会把多个不一致的数据节点连接起来，Data Agent也只能在不同系统之间重复适配。</p>
+        <div class="trend-body">
+          <div>
+            <h4>需要形成的能力</h4>
+            <ul>
+              <li>统一数据模型、对象标识、Owner和规范发布机制；</li>
+              <li>有效性、一致性、准确性、及时性、完整性、唯一性等数据质量规则；</li>
+              <li>NISM统一查询、目录、订阅和服务分层；</li>
+              <li>统一语义层、本体模型和NL2SQL/API；</li>
+              <li>数据源、流批接入、清洗、计算和发布的Pipeline编排。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>成立边界</h4>
+            <ul>
+              <li>不以入湖数据量、目录数量和接口数量验收；</li>
+              <li>质量规则必须能触发观测、诊断和处置；</li>
+              <li>统一消费不能绕开模型、语义和权限基线；</li>
+              <li>首版范围服从现有产品规划和场景成熟度，不额外发明数据范围和消费者要求。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>机会二：域内湖仓节点标准化与跨域分布式中枢——不是集中与分布并列建设</h4>
+        <p>内部方案同时提出湖仓底座和分布式数据中枢。如果把前者理解为一个物理集中湖仓，两者确实冲突。合理关系是：各产品或部署域保留自己的数据节点，在节点内部统一模型、表格式、流批开发范式和可观测规则；跨节点则由分布式中枢提供目录同步、服务路由、联邦查询、数据质量和语义一致性。</p>
+        <div class="trend-definition"><strong>架构校准：</strong>“统一”的对象是模型、质量、语义、接口和开发范式；“分布”的对象是数据位置、计算资源、运行时和故障域。分布式中枢不要求搬迁全部数据，而是让数据在原位置仍可被发现、查询、治理和就近消费。</div>
+        <p>这一路径能够同时承接存量利旧、跨域共部署、60万—100万小区规模、跨集群访问和消费者近端服务等内部诉求。NISM/Lite NISM位于统一消费层，分布式中枢负责跨节点发现、路由和联邦，域内湖仓节点负责本地存储、计算和运行。</p>
+
+        <h4>机会三：Data Agent与智能化消费——把治理、语义和编排转化为可调用能力</h4>
+        <p>2027规划中的Data Agent不应被理解为数据中枢接管网络动作，而是让数据治理、质量分析、准备、编排和查询能力可以被AIR RAN及其他智能体受控调用。Data Agent的成立依赖前述数据基线，也反过来推动数据能力从人工运营转向运行期自动观测和处置。</p>
+        <div class="trend-body">
+          <div>
+            <h4>2027规划锚点</h4>
+            <ul>
+              <li>跨域治理和数据观测体系；</li>
+              <li>数据治理Agent与AIR RAN协同；</li>
+              <li>智能问数支持分布式数据中枢和本体语义；</li>
+              <li>Pipeline支持异厂商数据接入和更完整的数据编排。</li>
+            </ul>
+          </div>
+          <div>
+            <h4>责任边界</h4>
+            <ul>
+              <li>中枢负责数据工具、质量、语义和调用记录；</li>
+              <li>Agent负责场景推理、工具选择和任务执行；</li>
+              <li>域控制器负责具体网络动作授权；</li>
+              <li>不把治理Agent扩大为统一网络控制Agent。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>机会四：分时与近源处理——形成设备商差异化，但按规划做工程验证</h4>
+        <p>NDS近实时、LTE RCA、6G新数据通道和Saturn下沉说明中兴具备从网元到网管组织分时处理的资产基础。该能力能够减少高频数据搬运、改善分钟级分析并支持未来6G海量UE级数据，是相对通用数据平台更有差异化的方向。</p>
+        <p>但近源处理不能因为战略价值高就直接大范围承诺。2027规划明确的是NDS支持Saturn流计算和统一计算存储架构试点探索，因此本阶段应重点验证组件部署、资源占用、处理时延、模型驱动、跨层一致性和回退，不把网元侧预研写成已完成的分布式产品。</p>
+
+        <h3>6.3 目标架构：域内节点标准化，跨域能力联邦化，消费入口服务化</h3>
+        <p>四类机会共同指向一个分层但非集中式的架构。数据和计算保留在适合的域与时标，智能数据中枢统一跨域必须一致的控制信息和消费方式。架构中的每一层都有明确责任，避免湖仓、分布式中枢、NISM和Agent相互覆盖。</p>
+
         <div class="stack">
-          <div class="layer l6"><div class="id">L5</div><div class="body"><b>产品与智能体消费</b><span>RDE / NGI / IDA / iMind / Fault、网优、体验等Agent / 第三方应用</span></div><div class="status"><strong>选择：</strong>自有Agent作为首批真实消费者</div></div>
-          <div class="layer l5"><div class="id">L4</div><div class="body"><b>统一数据服务与语义</b><span>NISM统一查询/目录/订阅 · NL2SQL/API · 本体语义 · 数据工具</span></div><div class="status"><strong>P0：</strong>进入首版，闭合消费入口</div></div>
-          <div class="layer l4"><div class="id">L3</div><div class="body"><b>可信数据控制</b><span>核心对象 · Owner · 数据产品契约 · 数据质量 · 血缘 · 版本/事件 · 权限/用途</span></div><div class="status"><strong>P0：</strong>公司应掌握的控制点</div></div>
-          <div class="layer l3"><div class="id">L2</div><div class="body"><b>统一与分布式数据运行</b><span>湖仓 · Zeno/Saturn/Spark · 动态Pipeline · 联邦查询 · 跨集群共享 · 成本度量</span></div><div class="status"><strong>P0/P1：</strong>底座复用并增强</div></div>
-          <div class="layer l2"><div class="id">L1</div><div class="body"><b>近源数据生产与分时处理</b><span>基站/网元 · NDS · 秒/分钟/批 · 精准订阅 · 过滤/特征 · 断链/回证</span></div><div class="status"><strong>P1：</strong>时间盒验证6G差异化</div></div>
-          <div class="layer lx"><div class="id">X</div><div class="body"><b>动作证据横切能力</b><span>Agent身份、策略、数据/模型版本、NDT、灰度、执行结果、人工接管和回滚</span></div><div class="status"><strong>P1：</strong>随高价值闭环场景验证</div></div>
+          <div class="layer l6"><div class="id">L5</div><div class="body"><b>无线产品与智能体应用</b><span>RDE · NGI · IDA · iMind · AIR Net及故障/网优/体验等Agent</span></div><div class="status">负责场景逻辑、模型和结果</div></div>
+          <div class="layer l5"><div class="id">L4</div><div class="body"><b>统一消费与智能服务</b><span>NISM · Lite NISM · 查询/目录/订阅 · NL2SQL/API · 本体 · Pipeline</span></div><div class="status">统一访问与工具接口</div></div>
+          <div class="layer l4"><div class="id">L3</div><div class="body"><b>分布式中枢控制与服务层</b><span>跨节点目录 · 语义 · 数据质量 · 路由 · 联邦查询 · 生命周期 · 跨域共享</span></div><div class="status">统一规则，不集中全部数据</div></div>
+          <div class="layer l3"><div class="id">L2</div><div class="body"><b>域内数据节点</b><span>NGI/NIA/MDA及存量系统湖仓 · Zeno/Saturn/Spark · 统一模型/表格式/可观测</span></div><div class="status">物理分布、域内自治、存量利旧</div></div>
+          <div class="layer l2"><div class="id">L1</div><div class="body"><b>数据生产与分时处理</b><span>网元 · NDS · UME-NM · 外部数据 · 秒/分钟/非实时 · 过滤/特征/上报</span></div><div class="status">按时标与资源约束就近运行</div></div>
+          <div class="layer lx"><div class="id">X</div><div class="body"><b>横向治理与安全</b><span>Owner · 权限 · 用途 · 血缘 · 版本 · 数据质量 · 成本与审计</span></div><div class="status">贯穿生产、管理、消费和运营</div></div>
         </div>
 
         <div class="table-scroll">
           <table>
-            <thead><tr><th>机会选择</th><th>目标架构落点</th><th>最小闭环</th><th>选择理由</th><th>阶段门 / 停止线</th></tr></thead>
+            <thead><tr><th>架构维度</th><th>需要统一</th><th>保持分布</th><th>原因</th></tr></thead>
             <tbody>
-              <tr><td><strong>P0 主攻：可信数据产品基线</strong></td><td>L3 + L4</td><td>两类种子数据产品；统一对象、Owner、数据质量、语义、NISM服务；至少两个消费者</td><td>直接解决治理和复用痛点，也是所有Agent、分布式处理和开放接口的前置依赖</td><td>第二消费者仍需重做模型/接口，或无Owner、无质量门、无版本承诺则不算成立</td></tr>
-              <tr><td><strong>P0 主攻：湖仓与消费整合</strong></td><td>L2 + L4 + L5</td><td>复用Zeno/Saturn/湖仓；统一查询/订阅；一个自有Agent贯通生产—消费—反馈</td><td>已有代码和商用实践，最适合在2026 Q4形成首个可用版本</td><td>必须度量重复存储、交付周期、查询性能和资源成本；只搬迁组件不算产品升级</td></tr>
-              <tr><td><strong>P1 验证：分布式与近源处理</strong></td><td>L1 + L2</td><td>一种高频无线数据；秒/分钟/批分时；断链、对账、回退；联邦或就近消费</td><td>对应6G海量UE级数据和设备商网络触点，是相对通用IT平台的差异化来源</td><td>收益不覆盖网元/NDS开销、必须依赖中心或侵入快环时，退回域内能力</td></tr>
-              <tr><td><strong>P1/P2 条件扩展：动作证据与开放</strong></td><td>X + L5</td><td>一个有界Agent动作场景；身份/策略/证据/回滚；成熟后映射第三方Agent和API</td><td>把可信供数升级为可信行动，但依赖数据基线、域授权和结果责任先成立</td><td>无可回放证据、无人工接管或归因责任不清时，不扩大动作权限和结果承诺</td></tr>
+              <tr><td><strong>数据定义</strong></td><td>对象ID、模型、指标、语义、数据质量、Owner和版本</td><td>各产品可保留域字段和本地扩展</td><td>跨域必须可理解，域内仍需适配场景差异</td></tr>
+              <tr><td><strong>存储与计算</strong></td><td>表格式、接口、开发范式、可观测和调度原则</td><td>数据位置、计算资源、引擎实例和故障域</td><td>兼顾存量利旧、规模、成本和就近处理</td></tr>
+              <tr><td><strong>数据服务</strong></td><td>目录、查询、订阅、路由和联邦查询行为</td><td>NISM/Lite NISM可按消费者和数据节点分层部署</td><td>统一消费体验，同时避免所有请求回到中心</td></tr>
+              <tr><td><strong>智能应用</strong></td><td>受控数据工具、输入版本、质量和调用记录</td><td>模型、Agent框架、场景推理和网络动作</td><td>复用数据能力，但保持产品与控制责任清晰</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="choice-banner">
-          <div class="choice-do">
-            <h4>选择建议</h4>
-            <p>资源首先投向L3/L4的可信数据产品基线，并与L2已有湖仓、流批能力及L5自有Agent闭合首版；分布式/近源和动作证据各选一个真实场景做时间盒验证。公共能力必须进入无线主航道版本，而不是停留在独立方案或一次性项目。</p>
-          </div>
-          <div class="choice-dont">
-            <h4>不选择</h4>
-            <p>不新建覆盖所有域的统一大平台；不同时铺开所有数据类型、Agent和外部接口；不以“完成目录、接入数据量、API数量”替代跨场景复用、数据质量改善、资源下降和版本承诺。</p>
-          </div>
+        <h3>6.4 三年演进：2026形成共同基线，2027形成分布式与Data Agent，2028进入数据资产运营</h3>
+        <p>当前已经进入2026 Q3，因此三年规划不能只作为远期愿景。2026剩余阶段需要形成产品和架构基线，2027的分布式中枢、Data Agent和处理能力必须进入明确行动，2028则严格保留原规划已经写明的数据资产和自动化治理方向。</p>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>能力线</th><th>现在—2026 Q4：数据治理与消费</th><th>2027：Data Agent与分布式增强</th><th>2028：数据资产</th></tr></thead>
+            <tbody>
+              <tr><td><strong>数据治理</strong></td><td>推进CM、PM、FM、RM等数据规范和入湖；完善湖仓可观测指标与治理方案全景</td><td>跨域治理、组件灵活组装、数据观测体系、治理Agent与AIR RAN协同</td><td>数据质量呈现与运维；数据质量自动化解决方案</td></tr>
+              <tr><td><strong>域内湖仓节点</strong></td><td>支持跨域共部署，统一模型、表格式、开发和可观测原则</td><td>Lite NISM增强、组件灵活部署、跨域数据融合</td><td>AI和非AI数据融合查询</td></tr>
+              <tr><td><strong>分时数据处理</strong></td><td>NDS增强近实时处理、LTE RCA适配和模型驱动能力</td><td>NDS支持Saturn流计算</td><td>原规划未明确新增项，不自行补齐</td></tr>
+              <tr><td><strong>智能应用消费</strong></td><td>形成Pipeline数据编排方案全景</td><td>Pipeline流水线编排并支持异厂商数据接入</td><td>支持端到端数据编排</td></tr>
+              <tr><td><strong>智能分析</strong></td><td>增强智能问数能力</td><td>智能问数支持分布式数据中枢和本体语义</td><td>原规划未明确新增项，不自行补齐</td></tr>
+              <tr><td><strong>成本与架构</strong></td><td>逐步切换Zeno并持续优化Saturn和统一调度</td><td>统一计算存储架构试点探索</td><td>原规划未明确新增项，不自行补齐</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="big-quote">机会选择断言：<em>智能数据中枢的第一竞争力是可信、可复用的数据产品与统一消费；第二竞争力才是分布式和近源运行；可信行动与开放API只能建立在前两层已经可验收的基础上。</em></div>
+        <p class="evidence-note"><strong>规划边界：</strong>上表沿用内部三年规划的能力线和年度内容，并明确域内湖仓节点标准化与跨域分布式服务的关系；没有在原规划空白处增加新的年度承诺。<a href="#s59">[S59]</a></p>
+
+        <h3>6.5 机会选择结论：先完成共同基线，2027重点建设分布式中枢与Data Agent</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>优先级</th><th>机会</th><th>进入理由</th><th>阶段目标</th><th>边界 / 停止条件</th></tr></thead>
+            <tbody>
+              <tr><td><strong>P0</strong></td><td>数据治理、质量、语义和统一消费</td><td>解决当前共同痛点，是分布式中枢和Data Agent的前置基础</td><td>2026 Q4形成产品、模型、质量、NISM、问数和编排基线</td><td>不能形成明确Owner、版本和运行期处置时，不扩大范围</td></tr>
+              <tr><td><strong>P0/P1</strong></td><td>分布式数据中枢</td><td>承接跨域共享、存量利旧和规模扩展，避免物理集中</td><td>2027增强Lite NISM、灵活部署、跨域融合和联邦访问</td><td>不能跨节点发现、路由和查询，或必须集中搬迁全部数据时需调整架构</td></tr>
+              <tr><td><strong>P1</strong></td><td>Data Agent与智能化消费</td><td>把治理、质量、语义和编排转化为Agent可调用能力</td><td>2027形成治理Agent、分布式问数、本体语义和异厂商编排能力</td><td>不扩大为统一网络控制Agent，场景动作责任仍由产品和域控制器承担</td></tr>
+              <tr><td><strong>P1验证</strong></td><td>分时近源处理与统一计算存储架构</td><td>利用网元、NDS和无线时标知识形成设备商差异化</td><td>2027按规划开展NDS/Saturn和统一计算存储试点</td><td>资源、时延和工程复杂度不能证明收益时保持预研，不强行产品化</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="big-quote">机会选择断言：<em>智能数据中枢的主线不是把数据集中到一个湖仓，而是先统一跨节点必须一致的数据、质量、语义和消费规则，再用分布式中枢与Data Agent把这些能力扩展到跨域和智能化运行。</em></div>
       </div>
     </section>
 
     <section id="zte-strategy">
       <div class="wrap">
         <div class="section-kicker"><i>07</i> Strategy recommendations</div>
-        <h2>具体策略建议：把公司选择压缩为一张可执行表</h2>
-        <p class="lead">本章严格使用“我司选择—具体策略（包含具体动作和时间）—不做的风险”三列表达。时间沿用内部方案已有里程碑，并增加阶段门；所有指标需在立项时由Owner冻结基线，避免把方向性数字误作无条件承诺。</p>
+        <h2>具体策略建议：把第6章的机会选择转化为公司行动</h2>
+        <p class="lead">以下策略直接承接第6章结论，不再重复机会推导。策略重点是明确产品位置、年度动作和不行动的风险；涉及2027和2028的内容严格沿用智能数据中枢三年规划。</p>
 
         <h3>7.1 公司级策略表</h3>
         <div class="table-scroll">
@@ -1423,98 +1448,144 @@
             <thead><tr><th>我司选择</th><th>具体策略（包含具体动作和时间）</th><th>不做的风险</th></tr></thead>
             <tbody>
               <tr>
-                <td><strong>P0｜以智能数据中枢统一无线数据能力主线</strong></td>
-                <td><strong>现在—2026 Q4：</strong>由RAN网管牵引、无线大数据与数据引擎团队承担核心研发，把现有数据引擎、湖仓、NISM、治理与语义能力收敛到同一产品边界和版本基线；明确唯一产品Owner、架构Owner及两类种子数据产品，形成首个可用版本。每个能力必须映射到代码、接口、消费者和验收指标。</td>
-                <td>数据能力继续分散在NGI、NIA、NDS、网管和各Agent中，形成多个局部最优；重复采集、重复存储和项目式治理持续，智能数据中枢退化为新名称而非共同底座。</td>
+                <td><strong>将智能数据中枢确立为无线横向共用能力</strong></td>
+                <td><strong>现在—2026 Q3结束：</strong>明确智能数据中枢与现有数据引擎、域内湖仓节点、NISM、NDS和AIR Net的边界；由RAN网管牵引产品路线，无线大数据承担核心能力建设。统一对象、数据质量、语义、服务和版本原则，不要求物理集中全部数据。</td>
+                <td>数据能力继续分散在各产品和应用中；“数据中枢”只成为新的名称，无法形成跨系统共同版本和持续投入主线。</td>
               </tr>
               <tr>
-                <td><strong>P0｜先闭合数据质量、语义和统一消费</strong></td>
-                <td><strong>2026 Q4首版：</strong>以CM/PM与MR/告警等两类高价值数据为种子，落实对象ID、Owner、统一模型、有效性/一致性/准确性/及时性/完整性/唯一性规则、质量观测与诊断；通过NISM提供统一查询、订阅和目录，通过NL2SQL/API或本体语义服务至少一个自有Agent与一个产品应用。<strong>2027：</strong>扩展跨域治理Agent、数据观测和分布式消费。</td>
-                <td>Agent继续“先取数、再清洗、后解释”，结果可信度和交付周期不可控；统一湖仓只有物理汇聚，没有责任、质量和语义控制，无法支撑多Agent复用。</td>
+                <td><strong>2026 Q4完成数据治理与消费基线</strong></td>
+                <td>按当前计划推进数据规范与入湖、湖仓可观测、六维数据质量、NISM查询/目录/订阅、智能问数和Pipeline；持续推进Zeno、Saturn及调度优化。Q4版本验收关注Owner、模型、质量处置、统一服务和现有规划场景可用性，不额外发明数据范围要求。</td>
+                <td>2027分布式中枢和Data Agent将建立在不一致的数据、质量和语义之上，跨域适配与Agent数据准备继续项目化。</td>
               </tr>
               <tr>
-                <td><strong>P1｜时间盒验证分布式、近源和动作证据</strong></td>
-                <td><strong>2026 Q3–Q4完成方案穿刺，2027按门扩展：</strong>选一种高频UE级数据和一个无线Agent场景，验证NDS分钟级、网元秒级或Saturn下沉的分时处理，记录CPU/内存、P99、字节减量、断链、对账和回退；同步验证Agent身份、策略、数据/模型版本、NDT/灰度、人工接管与动作回证。收益不覆盖开销或侵入快环即停止。</td>
-                <td>不做会丢失设备商最具差异化的近源数据与执行优势；无边界铺开则会把远端平台和Agent引入快环，增加资源成本、故障耦合和动作责任风险。</td>
+                <td><strong>2027重点建设分布式中枢与Data Agent</strong></td>
+                <td>推进Lite NISM增强、组件灵活部署、跨域数据融合和联邦访问；建设跨域治理、数据观测、治理Agent与AIR RAN协同；让智能问数支持分布式中枢和本体语义，让Pipeline支持异厂商数据接入；推进NDS支持Saturn流计算。</td>
+                <td>域内节点仍然彼此孤立，数据需要集中搬迁或重复建设；智能体无法动态获得跨域、可信、语义一致的数据能力。</td>
               </tr>
               <tr>
-                <td><strong>P2｜成熟后开放第三方Agent、API与标准接口</strong></td>
-                <td><strong>首版复用门通过后启动：</strong>将稳定的数据产品、语义、质量和工具接口开放给第三方Agent，并映射NEF/CAMARA Quality on Demand（QoD）等能力API；把ZSM、3GPP SA2/SA5、O-RAN主张绑定参考实现、信息模型和互操作测试。能力服务与结果服务分别核算履约、授权、归因和回滚成本。</td>
-                <td>过早开放会放大不稳定契约和责任缺口，形成大量兼容债；长期不开放则可能形成封闭栈，失去标准话语权、生态入口和跨厂商部署机会。</td>
+                <td><strong>按规划推进2028数据资产和自动化运营</strong></td>
+                <td>在2026治理基线和2027分布式/Data Agent能力成立后，推进数据质量呈现与运维、数据质量自动化解决方案、AI与非AI数据融合查询和端到端Pipeline。原三年规划未明确的能力不提前承诺。</td>
+                <td>数据治理长期停留在建设项目和成本中心，无法形成持续的数据质量运营、数据资产管理和跨场景价值反馈。</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="callout warn"><strong>执行纪律：</strong>P0必须进入正式产品版本并服务真实消费者；P1必须有资源预算和停止线；P2必须以P0复用门通过为前提。不能把四条策略平均分配资源，也不能用内部方案完成、PoC成功或API数量替代客户/产品持续使用。</div>
-        <div class="big-quote">策略总断言：<em>以2026 Q4首版为近期抓手，先把数据质量、语义、统一消费和两类数据产品做实；再以2027分布式/近源验证扩大6G差异化；最后按成熟度开放Agent、API与标准接口。</em></div>
+        <div class="callout warn"><strong>执行纪律：</strong>2026解决共同基线，2027解决分布式和智能消费，2028解决持续运营；年度之间是依赖关系，不是平均分配资源。任何跨域或Agent能力都不能绕开对象、Owner、数据质量、语义和版本基线。</div>
+        <div class="big-quote">策略总断言：<em>以2026 Q4形成可用的数据治理与消费基线，以2027分布式中枢和Data Agent形成跨域智能运行能力，再在2028进入数据资产与自动化运营。</em></div>
       </div>
     </section>
 
     <section id="zte-ap">
       <div class="wrap">
-        <div class="section-kicker"><i>08</i> Priority action program</div>
-        <h2>最高优先级 AP：90天闭合“可信数据产品基线 + 首个Agent消费”</h2>
-        <p class="lead">第8章只为第7章最高优先级策略给出一个可行AP，不再罗列十余个平行项目。AP目标是在2026 Q4首版前，用两类种子数据产品和两个真实消费者证明智能数据中枢不是功能拼盘，而是可复用、可运营、可进入版本的产品能力。</p>
+        <div class="section-kicker"><i>08</i> Priority action programs</div>
+        <h2>关键 AP：从当前Q3收敛架构，跨过Q4版本门，进入2027重点建设</h2>
+        <p class="lead">AP直接服务第7章最高优先级策略，不再展开大段推导。当前阶段的任务是把架构和产品边界收敛到2026 Q4版本；2027则必须把分布式中枢、Data Agent、智能消费和分时处理转化为明确工作包。</p>
 
-        <h3>8.1 AP-P0｜智能数据中枢首版闭环</h3>
-        <div class="grid-4">
-          <div class="card"><span class="tag fact">W1 · 第0–30天</span><h4>冻结产品边界与责任</h4><p>指定RAN网管产品Owner、无线大数据技术Owner和跨线架构Owner；完成存量代码/接口/数据/消费者清单，明确首版包含湖仓复用、数据质量、语义、NISM和两类数据产品，不纳入全域大平台与无边界自动控制。</p></div>
-          <div class="card"><span class="tag fact">W2 · 第15–60天</span><h4>建立两类可信数据产品</h4><p>建议选择CM/PM与MR/告警等已有入湖和真实消费基础的数据族；为每类冻结对象ID、Owner、Schema、版本、用途、消费者、血缘、SLO和六维数据质量规则，建立质量观测、异常工单、修复与版本回退流程。</p></div>
-          <div class="card"><span class="tag fact">W3 · 第31–75天</span><h4>贯通统一消费与语义</h4><p>以NISM封装目录、查询和订阅，打通两种后端或两个数据中枢；完成指标/维度/接口语义映射，为一个自有Agent提供NL2SQL/API或结构化工具调用，并记录身份、输入版本、查询结果和异常反馈。</p></div>
-          <div class="card"><span class="tag fact">W4 · 第61–90天</span><h4>完成复用、成本与版本门</h4><p>由一个Agent与一个非Agent产品共同消费，验证第二消费者无需重建核心模型；对比接入工期、重复存储、查询性能、资源成本、质量缺陷发现与修复时间。门通过后纳入2026 Q4首版，否则缩小范围补齐基线。</p></div>
-        </div>
-
+        <h3>8.1 2026 Q3—2027 AP 总表</h3>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>验收域</th><th>90天必须交付</th><th>通过门</th><th>不通过如何处置</th></tr></thead>
+            <thead><tr><th>AP</th><th>时间</th><th>主要行动</th><th>关键交付物</th><th>验收与边界</th></tr></thead>
             <tbody>
-              <tr><td><strong>产品</strong></td><td>首版章程、能力边界、版本清单、Owner/RACI、两类种子数据产品</td><td>每项能力有代码、接口、消费者、指标和退出规则；产品Owner签字进入Q4版本</td><td>无Owner或无消费者的能力移出首版，不以“待定”占位</td></tr>
-              <tr><td><strong>数据质量</strong></td><td>六维规则、质量基线、监控看板、异常诊断与闭环工单</td><td>关键字段和数据链路有门槛；缺陷可发现、定位、修复、回归和回退</td><td>只展示分数、不能定位责任或触发处置时，退回治理基线重做</td></tr>
-              <tr><td><strong>复用</strong></td><td>一个自有Agent + 一个产品应用；两个后端/中枢；统一NISM接口</td><td>第二消费者复用核心对象、质量规则和服务接口，主要工作是域适配而非重建</td><td>若第二场景仍大量复制模型和管道，冻结扩面并消除分叉</td></tr>
-              <tr><td><strong>价值</strong></td><td>接入周期、重复数据量、资源成本、查询P95/P99、质量缺陷周期基线</td><td>至少两项核心指标相对现状可量化改善，且没有引入快环同步依赖</td><td>价值不可量化则不扩大资源；把改善项和副作用带入下一阶段评审</td></tr>
-              <tr><td><strong>可信消费</strong></td><td>Agent身份、数据/模型版本、工具调用、结果与异常反馈证据</td><td>输入可追溯、越权可拦截、异常可回放；高风险动作仍由域控制器授权</td><td>无证据时保持只读/建议模式，不扩大自动动作权限</td></tr>
+              <tr>
+                <td><strong>AP1 产品与架构收敛</strong></td>
+                <td>现在—2026 Q3结束</td>
+                <td>明确智能数据中枢、数据引擎、域内湖仓节点、分布式控制层、NISM/Lite NISM、NDS和Agent的职责；盘点现有代码、接口、数据和规划场景；冻结Q4版本范围</td>
+                <td>产品章程、目标架构、能力/代码映射、接口边界、版本清单和Owner/RACI</td>
+                <td>必须消除“物理集中湖仓”与“分布式中枢”并行建设的歧义；无明确Owner和版本归属的能力不纳入首版</td>
+              </tr>
+              <tr>
+                <td><strong>AP2 Q4治理与质量基线</strong></td>
+                <td>2026 Q3—Q4</td>
+                <td>按现有规划推进数据规范与入湖、Owner、六维数据质量、湖仓可观测、异常诊断和处置；完善跨系统对象、模型、版本和血缘关系</td>
+                <td>数据规范、质量规则与看板、异常处置流程、模型与版本基线、治理方案全景</td>
+                <td>质量必须可观测、可定位、可处置和可回归；不以数据量、规则数量或看板完成度替代运行效果</td>
+              </tr>
+              <tr>
+                <td><strong>AP3 Q4统一消费与成本优化</strong></td>
+                <td>2026 Q3—Q4</td>
+                <td>增强NISM查询、目录、订阅和服务分层；推进智能问数、统一语义和Pipeline；持续推进Zeno切换、Saturn优化和统一调度</td>
+                <td>Q4可用版本、统一数据服务接口、问数与编排能力、性能和资源评估结果</td>
+                <td>接入现有规划场景并按内部已有指标验收；不新增未经方案确认的消费者数量和收益承诺</td>
+              </tr>
+              <tr>
+                <td><strong>AP4 分布式中枢</strong></td>
+                <td>2027</td>
+                <td>增强Lite NISM和服务分层，支持组件灵活部署、跨域数据融合、跨节点目录与路由、联邦查询和就近消费</td>
+                <td>分布式部署方案、跨节点目录/路由、联邦查询、跨域融合和存量利旧验证</td>
+                <td>证明不搬迁全部数据也可统一发现、访问和治理；若所有访问仍依赖单一中心，需要重新调整分层</td>
+              </tr>
+              <tr>
+                <td><strong>AP5 Data Agent与智能消费</strong></td>
+                <td>2027</td>
+                <td>建设跨域治理和数据观测；推进治理Agent与AIR RAN协同；让智能问数支持分布式中枢和本体语义；让Pipeline支持异厂商数据接入</td>
+                <td>治理Agent、分布式问数、本体语义、异厂商Pipeline和调用追溯能力</td>
+                <td>Agent只调用受控数据工具，不替代网络控制；数据输入、质量和处理过程必须可追溯</td>
+              </tr>
+              <tr>
+                <td><strong>AP6 分时处理与架构试点</strong></td>
+                <td>2027</td>
+                <td>推进NDS支持Saturn流计算，验证网元—NDS—网管分时处理；开展统一计算存储架构试点探索</td>
+                <td>流计算部署与性能结果、分时职责、模型驱动方案、统一计算存储试点结论</td>
+                <td>以资源、时延、稳定性和工程复杂度形成可行性结论；原规划未承诺的产品化时间不提前给出</td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="grid-3">
-          <div class="card"><h4>治理节奏</h4><p>每周工作包评审、双周架构与Schema评审、第30/60/90天阶段门；产品Owner裁决范围，架构Owner裁决公共对象/接口，消费者Owner确认业务可用。</p></div>
-          <div class="card"><h4>关键依赖</h4><p>现有数据引擎和湖仓可复用代码、NISM接口、两类数据Owner、Agent场景Owner、测试环境及现状成本基线必须在第30天前可用。</p></div>
-          <div class="card"><h4>停止线</h4><p>没有第二消费者、数据质量无法进入准入、收益无法度量、公共层成为快环单点、或Q4版本无法承诺时，停止扩面并退回最小可信数据产品。</p></div>
+        <h3>8.2 AP 依赖和治理</h3>
+        <p>AP2和AP3共同形成2026 Q4版本基线，可以并行推进；AP4和AP5在此基础上于2027并行增强，AP6为分布式运行提供处理与资源侧验证。依赖表示架构和版本前提，不要求所有2026能力完全成熟后才开始2027预研。</p>
+        <div class="logic-chain">
+          <div>AP1<br><small>边界 · 架构 · Owner · Q4范围</small></div>
+          <div>AP2 + AP3<br><small>治理质量 + 统一消费与成本</small></div>
+          <div>AP4<br><small>分布式中枢与跨节点服务</small></div>
+          <div>AP5<br><small>Data Agent与智能消费</small></div>
+          <div>AP6<br><small>分时处理与架构试点</small></div>
         </div>
-        <div class="big-quote">AP 总断言：<em>90天不是完成全部智能数据中枢，而是证明“同一可信数据产品被第二消费者复用，并以统一质量、语义和服务接口进入Q4版本”；只有这条证据成立，后续分布式、近源和开放能力才值得加码。</em></div>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>治理角色</th><th>建议责任</th><th>必须裁决的问题</th></tr></thead>
+            <tbody>
+              <tr><td><strong>RAN网管产品Owner</strong></td><td>牵引智能数据中枢产品范围、版本和跨产品优先级</td><td>哪些能力进入Q4版本，哪些进入2027工作包，哪些保持预研</td></tr>
+              <tr><td><strong>无线大数据 / 数据引擎技术Owner</strong></td><td>负责数据模型、质量、服务、分布式控制和公共能力实现</td><td>域内节点与分布式层如何分工，已有代码如何复用和演进</td></tr>
+              <tr><td><strong>NDS、湖仓节点与应用团队</strong></td><td>分别负责近实时处理、本地数据运行和场景消费</td><td>本地能力、公共规则和消费接口之间的版本及责任边界</td></tr>
+              <tr><td><strong>AIR RAN及Agent场景Owner</strong></td><td>提出数据、质量、语义和工具需求，并验证智能消费</td><td>Agent可调用哪些数据工具，输入和结果如何追溯，动作责任在哪里终止</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="big-quote">AP 总断言：<em>2026剩余阶段先完成架构、治理和消费基线；2027的核心不是继续集中数据，而是让多个数据节点通过分布式中枢和Data Agent形成可发现、可治理、可编排、可智能消费的运行体系。</em></div>
       </div>
     </section>
 
     <section id="zte-summary">
       <div class="wrap">
         <div class="section-kicker"><i>09</i> Overall conclusion</div>
-        <h2>整体小结：从行业趋势收敛到智能数据中枢推进主线</h2>
-        <p class="lead">第1–4章回答行业为什么会走向数据产品、事件化治理、分布执行和可信行动；第5–8章回答中兴从哪里出发、选择什么架构、按什么顺序投入以及近期如何验证。两部分的连接点不是“建设一个更大的平台”，而是把无线数据与执行触点转化为可复用、可验证、可进入产品版本的共同能力。</p>
+        <h2>整体小结：以智能数据中枢承接6G无线数据能力演进</h2>
+        <p class="lead">第1–4章说明6G数据能力为什么会走向产品化、数据质量、分布式处理和智能体消费；第5–8章进一步说明，中兴无线应如何用智能数据中枢承接这些趋势，并把当前已有的数据引擎、湖仓、NISM、NDS和智能分析资产组织为连续的三年产品路线。</p>
 
-        <h3>9.1 一条主线、三个阶段、四个当前决策</h3>
-        <div class="logic-chain">
-          <div>痛点与趋势双驱动<br><small>成本 · 质量 · Agent · 6G海量数据</small></div>
-          <div>智能数据中枢首版<br><small>湖仓复用 · Owner · 数据质量 · NISM</small></div>
-          <div>跨产品与Agent复用<br><small>两类数据产品 · 两类消费者 · 版本门</small></div>
-          <div>分布式与近源增强<br><small>秒/分/时 · 联邦 · 断链 · 回证</small></div>
-          <div>可信行动与开放<br><small>证据 · 回滚 · Agent/API · 标准</small></div>
+        <h3>9.1 四项总体结论</h3>
+        <ol class="reason-list">
+          <li><strong>定位结论：</strong>智能数据中枢是无线产品和智能体应用共用的可信数据供给、语义理解、统一消费与分布式数据运行底座，不是公司级通用数据大平台。</li>
+          <li><strong>架构结论：</strong>域内数据节点统一模型、表格式、质量和开发范式，跨域由分布式中枢统一目录、路由、联邦查询、语义和治理；统一规则与物理分布并不矛盾。</li>
+          <li><strong>演进结论：</strong>2026形成数据治理与消费基线，2027重点推进分布式中枢、Data Agent和分时处理，2028按原规划进入数据资产和质量自动化运营。</li>
+          <li><strong>边界结论：</strong>中枢直接负责数据和智能消费能力，协同网元、NDS、Agent和域控制器；不把Agent推理、网络动作授权和结果责任全部纳入中枢。</li>
+        </ol>
+
+        <h3>9.2 当前需要形成的决策</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>决策事项</th><th>建议结论</th><th>对应时间</th></tr></thead>
+            <tbody>
+              <tr><td><strong>产品位置</strong></td><td>由RAN网管牵引，把现有数据引擎升级为无线横向智能数据中枢</td><td>2026 Q3结束前</td></tr>
+              <tr><td><strong>架构边界</strong></td><td>采用域内节点标准化 + 跨域分布式中枢，不建设单一物理集中湖仓</td><td>2026 Q3结束前</td></tr>
+              <tr><td><strong>Q4版本范围</strong></td><td>围绕治理、数据质量、NISM、智能问数、Pipeline和现有湖仓/计算优化收敛</td><td>2026 Q4</td></tr>
+              <tr><td><strong>2027重点投入</strong></td><td>分布式中枢、Data Agent、智能问数与本体、异厂商Pipeline、NDS/Saturn和架构试点</td><td>2027</td></tr>
+              <tr><td><strong>2028边界</strong></td><td>只承接原规划明确的数据质量运营、自动化治理、融合查询和端到端编排</td><td>2028</td></tr>
+            </tbody>
+          </table>
         </div>
-
-        <div class="grid-3">
-          <div class="card"><span class="tag fact">阶段一 · 2026 Q4</span><h4>把底座做成产品</h4><p>统一产品Owner、对象、数据质量、语义、NISM和版本；用两类数据产品、一个自有Agent与一个产品应用证明第二消费者复用。</p></div>
-          <div class="card"><span class="tag study">阶段二 · 2027</span><h4>把产品做成差异化</h4><p>扩展分布式中枢、动态编排、治理Agent、NDS近实时与近源处理；用资源、时延、断链和交付指标决定加码或停止。</p></div>
-          <div class="card"><span class="tag infer">阶段三 · 条件成熟后</span><h4>把差异化做成生态能力</h4><p>在数据基线和责任边界稳定后开放第三方Agent、能力API与标准接口；高风险动作始终保留证据、灰度、回滚和人工接管。</p></div>
-        </div>
-
-        <div class="judgements">
-          <div class="judgement"><div class="n">D1</div><div><h4>确认唯一产品Owner与首版边界</h4><p>智能数据中枢由RAN网管牵引，完全吸收现有数据引擎；首版不包含全公司大平台和无边界自动控制。</p></div><div class="certainty fact">立即裁决</div></div>
-          <div class="judgement"><div class="n">D2</div><div><h4>确认两类种子数据产品和真实消费者</h4><p>优先选择已有入湖、质量痛点明确且同时服务Agent与产品应用的数据族，冻结Owner、质量门和版本。</p></div><div class="certainty fact">立即裁决</div></div>
-          <div class="judgement"><div class="n">D3</div><div><h4>确认Q4版本门与90天AP</h4><p>用第二消费者复用、数据质量闭环、统一服务接口和可量化价值验收，不以功能清单完成度验收。</p></div><div class="certainty fact">立即裁决</div></div>
-          <div class="judgement"><div class="n">D4</div><div><h4>确认2027差异化验证资源</h4><p>只为一个高频无线数据与一个Agent场景配置近源、分布式和动作证据验证资源，并预先设置停止线。</p></div><div class="certainty study">阶段决策</div></div>
-        </div>
-
-        <div class="big-quote">最终结论：<em>以智能数据中枢为无线产品推进载体，以可信数据产品为近期主攻，以分布式近源处理为6G差异化，以动作证据和开放接口为条件扩展；先证明复用与版本，再扩大平台边界。</em></div>
+        <div class="callout warn"><strong>最终边界：</strong>三年路线的价值不在于功能数量，而在于能否把跨系统共同规则沉淀为产品版本，并在物理分布的数据节点之间保持一致的数据质量、语义和消费能力。原规划没有明确的年度内容，应继续作为待研究事项，而不是提前写成承诺。</div>
+        <div class="big-quote">最终结论：<em>中兴无线应以智能数据中枢为主航道承接6G数据能力演进：先统一规则和消费，再形成分布式与Data Agent能力，最后进入数据资产运营；统一的是数据能力，分布的是数据和计算。</em></div>
       </div>
     </section>
 
