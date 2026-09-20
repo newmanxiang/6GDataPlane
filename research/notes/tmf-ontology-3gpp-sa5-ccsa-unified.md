@@ -27,6 +27,7 @@ URL: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-ce
 #### 关键论断
 - 公开检索无 TMF GB1094 本体文档；须排除中国国标 GB 1094 电力变压器
 - Community 三件套未列 GB1094
+- 检索摘要出现「GB1089 DEM Ontology」，未打开官方页，unverified，不作替代解释
 
 ### [TR328 The Case for Ontologies: A Roadmap for TM Forum]（标准/会员，日期未知）
 归档: research/raw/2026-09-20-tmf-tr328/
@@ -58,6 +59,7 @@ URL: https://www.tmforum.org/resources/introductory-guide/tr292-tm-forum-intent-
 
 #### 关键数据点
 - TIO v3.6.0 GA，AN 项目，公开可下载；Team 2024-07-04，TMF Approved 2024-08-30
+- ICM TR290A/B v3.6.0 被 TS 28.312 引用且 Intent Toolkit 标 Available to all；后续 TR290 v3.8.0、TR292I v4.0.0（2026-03-27）及 TR292B/H v3.7.0（2025-11）已超出该基线（版本漂移）
 - ICM 锚定 RDF；Ericsson tio-shacl 统计 15 模块、87 class / 109 property（学术 [中]）
 - TR294A（2023-04-11）专门做与 TS 28.312 的模型连接
 
@@ -79,9 +81,10 @@ URL: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.
 归档: research/raw/2026-09-20-3gpp-sa5-6g-oam-study/
 
 #### 关键数据点
-- 类型 TR 不是 TS；编号 32.801-01
-- Rapporteur：中兴 Pengxiang Xie
+- 类型 TR 不是 TS；编号 32.801-01（旧 32.801 Performance management 已 WITHDRAWN；32.801-02 为 6G 计费研究）
+- 文档 rapporteur：中兴 Pengxiang Xie；WI FS_6G_OAM rapporteur：AT&T Bahar Sadeghi
 - TOC 含 7.2.1 Knowledge/semantic representation and management
+- Rel-20 工作区 §2.2.4 WT-4 计划调研 TMF 等外部本体/RDF/KG
 - WI 1100014，2025-12-03 至 2027-06-06
 
 #### 与其他来源的矛盾
@@ -92,7 +95,7 @@ URL: https://std.samr.gov.cn/hb/search/stdHBDetailed?id=5679B6F617894858E06397BE
 归档: research/raw/2026-09-20-ccsa-huawei-ontology-spec/
 
 #### 关键数据点
-- 华为是主要起草单位之一，不是唯一牵头；北邮/移动/电信/联通分册牵头
+- 华为是主要起草单位之一，不是唯一起草方；北邮/移动/电信/联通分册目录首位
 - 中兴参与 7007、7011、7023、7129
 - 7007 公开摘要含本体模型与 RDF；二手解读提 OWL
 
@@ -127,7 +130,7 @@ URL: https://inform.tmforum.org/research-and-analysis/reports/building-knowledge
 
 TMF 本体论当前是**双层**：已 GA 的意图本体 TIO（RDF，TR292/TR290）+ 仍在 MODA Confluence 的联邦本体计划（GB1093/TR328/TR329）。3GPP SA5 在意图层用 UML 与 TIO 做 informative 映射，在 6G OAM 研究中新开「知识/语义表示」KI，但没有 3GPP 本体。CCSA 2026 年落地的是运营管理知识图谱行标（含本体建模方法），华为/中兴均为起草方。统一分析的主结论：三套体系在「意图」上已有浅桥，在「网络运营本体/知识图谱」上并行且尚未互认；数据编织语义层应把 TIO 当意图契约、把 YD/T+M.3351 当运营知识建模、把 3GPP NRM/DMFW 当管理对象与数据框架，而不是幻想单一全球本体。
 
-对中兴：已有 rapporteur 位 + 行标起草位 + 数据中枢本体建模实践，缺口是 TMF GB1093/TIO 贡献可见度与三套模型的显式映射表。
+对中兴：已有 **TR 32.801-01 文档 rapporteur**（WI 由 AT&T 牵头）+ 行标起草位 + 数据中枢本体建模实践，缺口是 TMF GB1093/TIO 贡献可见度与三套模型的显式映射表。
 
 ## 二轮深挖追查清单
 - [ ] 会员获取 GB1093/TR328/TR329/TR326 正文

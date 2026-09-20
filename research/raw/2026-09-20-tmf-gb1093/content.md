@@ -2,7 +2,7 @@
 
 - 来源页：https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
 - 抓取日期：2026-09-20
-- 核实状态：title-only（会员 Confluence，公开资源目录无独立落地页）
+- 核实状态：title-only（会员 Confluence，公开资源目录无独立落地页；本条目来自搜索索引摘要，非全文抓取）
 
 ## 官方公开信息（已核实）
 

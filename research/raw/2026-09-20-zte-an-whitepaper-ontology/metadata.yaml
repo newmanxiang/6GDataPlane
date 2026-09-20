@@ -5,7 +5,7 @@ publisher: ZTE
 publication_date: 2022-2026
 fetched_at: 2026-09-20 02:50
 fetched_by: local-repo
-content_sha256: n/a
+content_sha256: 70076f87527c7b953c34a00ce847bdb462e2a20b831007c117c52a18270e744c  # local content.md archive, not original PDF
 tags: [zte, ontology, semantic-layer, an]
 access: mixed
 verification: confirmed

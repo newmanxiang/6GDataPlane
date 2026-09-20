@@ -9,13 +9,13 @@
 
 ## 1. 执行摘要
 
-TM Forum 真正已经 GA、且公开可下载的「本体」是 **Intent Ontology（TIO，TR292 v3.6.0，2024-08-30 批准）**，用 RDF 为自智网络意图管理提供词汇；SID（GB922 v25.0，2025-07）仍是 UML 信息模型，不是 OWL 本体。[高]
+TM Forum 真正已经 GA、且公开可下载的「本体」是 **Intent Ontology（TIO，TR292 v3.6.0，2024-08-30 批准）** 及其被 28.312 引用的 **ICM TR290A/B v3.6.0**（工具包标 Available to all），用 RDF 为自智网络意图管理提供词汇；SID（GB922 v25.0，2025-07）仍是 UML 信息模型，不是 OWL 本体。[高]
 
-用户点名的 **GB1093 / TR328 / TR329** 在 TM Forum Community 讨论中作为 Ontology tiger team 文档被列出，标题分别为联邦 TMF 本体（MODA-440）、本体路线图、本体计划治理（MOD-441）；公开 resources 目录无 PDF。**GB1094 未能核实**（须排除中国国标 GB 1094 电力变压器）。[中]/[低]
+用户点名的 **GB1093 / TR328 / TR329** 在 TM Forum Community 讨论中作为 Ontology tiger team 文档被列出，标题分别为联邦 TMF 本体（MODA-440）、本体路线图、本体计划治理（MOD-441）；公开 resources 目录无 PDF。**GB1094 未能核实**（须排除中国国标 GB 1094 电力变压器）。证据为 TMF Chief Architect 回帖的搜索索引摘要（单一来源）；Community hub 已于 2026-09-15 关闭。[低]
 
-3GPP SA5 在意图层用 **TS 28.312** UML 模型，Annex C 对 TMF ICM 做 **informative 三元素映射**，并引用 TR290A/B v3.6.0；6G 管理研究规范官方编号为 **TR 32.801-01**（不是 TS 32.801），含 DMFW 与「Knowledge/semantic representation」KI，**rapporteur 为中兴**。[高]
+3GPP SA5 在意图层用 **TS 28.312** UML 模型，Annex C 对 TMF ICM 做 **informative 三元素映射**，并引用 TR290A/B v3.6.0；6G 管理研究规范官方编号为 **TR 32.801-01**（不是 TS 32.801），含 DMFW 与「Knowledge/semantic representation」KI。**TR 32.801-01 文档 rapporteur 为中兴 Pengxiang Xie；WI FS_6G_OAM rapporteur 为 AT&T Bahar Sadeghi。** Rel-20 工作区讨论稿 §2.2.4 已把「survey … ontologies defined in other fora (e.g. TM Forum)」列为 WT-4。[高]
 
-所谓「华为 CCSA 本体规范」在公开目录中对应 **YD/T 7007 等 2026 年知识图谱系列**（知识建模含本体模型）。牵头单位是北邮/运营商，**华为与中兴同为起草方**，不存在华为独家 CCSA 本体标准。[高]
+所谓「华为 CCSA 本体规范」在公开目录中对应 **YD/T 7007 等 2026 年知识图谱系列**（知识建模含本体模型）。目录起草单位首位分别为北邮/中国移动/中国电信/北邮/中国联通，**华为与中兴同为起草单位**，不存在华为独家 CCSA 本体标准。[高]
 
 对 6G 数据面 × 数据编织：语义层应 **分层对接**——意图契约用 TIO↔28.312，运营知识用 YD/T + ITU-T M.3351，管理对象继续 NRM/SID，数据生命周期看 SA5 DMFW 与 SA2 WT#5（职责交叉见既有矛盾 11/31）。等待「一个全球电信本体」会错过 2026–2027 窗口。
 
@@ -27,21 +27,24 @@ TM Forum 真正已经 GA、且公开可下载的「本体」是 **Intent Ontolog
 |---|---|---|---|---|---|---|
 | GB1093 | The Federated TM Forum Ontology (MODA-440) | 未知 | TMF MODA | 会员 Confluence | title-only | `research/raw/2026-09-20-tmf-gb1093/` |
 | GB1094 | （无） | — | — | — | **not-found** | `…-tmf-gb1094/` |
+| GB1089 | 检索摘要称 DEM Ontology | — | — | — | **unverified**（未打开官方页，不作 GB1094 替代） | 见 GB1094 归档 |
 | TR328 | The Case for Ontologies: A Roadmap for TM Forum | 未知 | TMF Ontology tiger team | 会员 | title-only | `…-tmf-tr328/` |
-| TR329 | Ontology Programme Governance: Requirements and Feasibility (MOD-441) | 未知 | TMF MODA | 会员 | title-only | `…-tmf-tr329/` |
+| TR329 | Ontology Programme Governance: Requirements and Feasibility (MOD-441) | 未知（帖文称 draft） | TMF Ontology tiger team（MODA 归属为编号相邻推断） | 会员 | title-only | `…-tmf-tr329/` |
 | GB922 | Information Framework Models Suite | v25.0 · 2025-07-18 | TMF ISA | 会员（目录公开） | confirmed | `…-tmf-gb922-sid/` |
 | TR292 | TM Forum Intent Ontology (TIO) | v3.6.0 · 2024-08-30 Approved | TMF AN | 公开可下载 | confirmed | `…-tmf-intent-common-model/` |
-| TR290A/B | Intent Common Model Expression / Reporting | v3.6.0（被 28.312 引用） | TMF AN | 会员 | confirmed（经 28.312） | 同上 |
+| TR290A/B | Intent Common Model Expression / Reporting | v3.6.0（被 28.312 引用） | TMF AN | **公开**（Intent Toolkit 标 Available to all；v3.8.0 于 2026-03-27 改会员） | confirmed | 同上 |
 | TR294A | Model Connection to 3GPP TS 28.312 | v1.0.0 · 2023-04-11 | TMF AN | 目录公开 | confirmed | `…-tmf-tr326-tr292-tr294/` |
 | TR326 | Operationalizing Ontologies for AI-Native AN（Community 引 Confluence） | v2 Suite（标题） | TMF Components/Canvas | 会员 | title-only | 同上 |
 | TS 28.312 | Intent driven management services | V19.5.0 Rel-19 | 3GPP SA5 | 公开（ETSI） | confirmed | `…-3gpp-ts28312-intent/` |
 | 32.801-01 | Study on 6G Management and Orchestration | Draft Rel-20 · 建档 2026-01-12 | 3GPP SA5 / FS_6G_OAM | 元数据公开 | confirmed | `…-3gpp-sa5-6g-oam-study/` |
+| 32.801 | Performance management（旧编号） | — | 3GPP | — | **WITHDRAWN**；勿与 32.801-01 混用 | 同上 |
+| 32.801-02 | Study on Charging Aspects of 6G System | Rel-20 | 3GPP SA5 | 元数据公开 | confirmed（**不是** 6G OAM 研究） | 同上 |
 | TS 28.104 | Management Data Analytics | Rel-18/19 | 3GPP SA5 | 公开 | confirmed（**不是 DMFW**） | `…-3gpp-sa5-nrm-model-repertoire/` |
 | YD/T 7007 | 网络运营管理知识图谱 知识建模方法 | 2026-06-01 / 实施 09-01 | CCSA | 目录公开、正文付费 | confirmed | `…-ccsa-huawei-ontology-spec/` |
-| YD/T 7011 | 总体框架 | 同上 | CCSA（移动牵头） | 同上 | confirmed | 同上 |
-| YD/T 7023 | 知识融合方法 | 同上 | CCSA（电信牵头） | 同上 | confirmed | 同上 |
-| YD/T 7024 | 知识图谱构建 | 同上 | CCSA（北邮牵头） | 同上 | confirmed | 同上 |
-| YD/T 7129 | 5G 无线故障管理知识建模 | 2026-07-15 / 实施 11-01 | CCSA（联通牵头） | 同上 | confirmed | 同上 |
+| YD/T 7011 | 总体框架 | 同上 | CCSA（目录首位：中国移动） | 同上 | confirmed | 同上 |
+| YD/T 7023 | 知识融合方法 | 同上 | CCSA（目录首位：中国电信） | 同上 | confirmed | 同上 |
+| YD/T 7024 | 知识图谱构建 | 同上 | CCSA（目录首位：北邮） | 同上 | confirmed | 同上 |
+| YD/T 7129 | 5G 无线故障管理知识建模 | 2026-07-15 / 实施 11-01 | CCSA（目录首位：中国联通） | 同上 | confirmed | 同上 |
 | M.3351 | Knowledge management framework | 2024-08-13 | ITU-T SG2 | 公开 | confirmed | `…-itu-t-m3351/` |
 
 **Fable 先验校正**：GB1093/1094 并非已核实的「AN 成对指南」；公开并列的是 TR328 + TR329 + GB1093。仓库既有「TS 32.801」「DMFW = TS 28.104」不准确：官方类型为 **TR 32.801-01**，TS 28.104 为 MDA。
@@ -55,6 +58,8 @@ GB922 v25.0 提供 SID Excel 与 MODA UML 2.5.1/XMI。它解决 CSP 业务对象
 ### 3.2 已落地：意图本体 TIO
 
 TR292 公开摘要：意图管理功能实例构成意图控制环与生命周期，本模型为意图通用模型与扩展模型提供基础词汇。Toolkit 列出 TR292A–I、TR290、TR291、TR299、TMF921、IG1253、IG1358。Ericsson tio-shacl（arXiv:2604.27359）称 TIO v3.6.0 有 15 个规范性 RDF Turtle 模块。[中] 此统计非 TMF 官方，但与「RDF 本体」定性一致。
+
+**版本漂移**：TS 28.312 引用的是 ICM TR290A/B **v3.6.0**；Intent Toolkit 上 TR290 已到 v3.8.0（2026-03-27，会员）、TR292I Security Ontology v4.0.0（同日）、TR292B/H v3.7.0（2025-11）。跨 SDO 映射维护存在对齐风险，内部白皮书应以 28.312 引用的公开 v3.6.0 为基线。
 
 ### 3.3 在路上：联邦本体与知识编织
 
@@ -80,7 +85,17 @@ Annex C 映射：
 
 ### 4.2 研究中：DMFW 与知识/语义
 
-FS_6G_OAM（WI 1100014）2025-12 启动、目标 2027-06。规范 32.801-01 类型 TR，rapporteur Pengxiang Xie（ZTE）。公开 TOC：6.1.6/7.1 DMFW；**7.2.1 Knowledge/semantic representation and management**。SA5 Inbox 文件名出现 KSM1/2/3。正文解决方案未公开，不得虚构架构图。
+FS_6G_OAM（WI 1100014）2025-12 启动、目标 2027-06，**WI rapporteur 为 AT&T Bahar Sadeghi**。规范 32.801-01 类型 TR，**文档 rapporteur 为中兴 Pengxiang Xie**。公开 TOC：6.1.6/7.1 DMFW；**7.2.1 Knowledge/semantic representation and management**。SA5 Inbox 文件名出现 KSM1/2/3。正文解决方案未公开，不得虚构架构图。
+
+Rel-20 工作区讨论稿 `SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf` **§2.2.4 Semantic Network Management** 已单列：
+
+- WT-1 语义与知识术语
+- WT-2 用例与需求
+- WT-3 对 6G 管理架构及与数据管理的关系
+- **WT-4 Survey existing related frameworks (e.g. RDF) and solutions (e.g. knowledge graphs, ontologies) defined in other fora (e.g. TM Forum), and study how/if they can be leveraged**
+- WT-5 知识管理的权衡
+
+Ericsson 建议将工作区改名为 Knowledge Management，并把对 TMF/RDF/本体的 survey 保留为独立 WT。**中兴反馈：支持该工作区，WT 1/2/4 OK**；对 WT-3「增强管理架构」要求再讨论。因此「3GPP 与 TMF 的桥梁」不只 Annex C：6G OAM 研究已计划调研 TMF 本体可否借用，但尚未形成规范条款。[高]
 
 DMFW 能力清单来自 Rel-20 工作区讨论稿：收集控制与上报、处理、分析、注册、发现、访问控制、发布、分发、暴露、编目、销毁、质量、变更，并讨论非 3GPP（O-RAN）数据与用户同意。这与 SA2 WT#5 交叉，分析见既有矛盾 11/31，本文不重复裁决。
 
@@ -115,7 +130,7 @@ DMFW 能力清单来自 Rel-20 工作区讨论稿：收集控制与上报、处�
 3. **对象层**：网元/切片继续 NRM；不把 OWL 实例直接当配置接口。
 4. **数据层**：DMFW/WT#5 管生命周期与访问控制；编织引擎消费本体做发现与策略，而不是取代 3GPP 接口。
 
-与既有矛盾 11/31 的关系：本文增加的是「知识/语义表示」这一新 KI，可能成为 SA5 侧与 SA2 数据框架的又一重叠带，需在 rapporteur 贡献中主动画界。
+与既有矛盾 11/31 的关系：本文增加的是「知识/语义表示」及 §2.2.4 语义网管工作区，可能成为 SA5 与 SA2 数据框架的又一重叠带；中兴作为 **TR 笔杆**（非 WI 牵头）应在贡献中主动画界，避免被读成「中兴主导 6G OAM 研究项」。
 
 ## 8. 对中兴的启示（D/R）
 
@@ -124,8 +139,8 @@ DMFW 能力清单来自 Rel-20 工作区讨论稿：收集控制与上报、处�
 | 编号 | 类型 | 行动 | 窗口 |
 |---|---|---|---|
 | D1 | 直接 | 内部语义层术语对齐 YD/T 7007（网元/小区/告警/关系） | 6 个月 |
-| D2 | 直接 | 基于公开 TR292 + 28.312 Annex C 做意图对象映射说明（内部白皮书） | 6 个月 |
-| D3 | 直接 | 准备 SA5「知识架构 vs DMFW」边界贡献提纲（用 rapporteur 位） | 随 2026–2027 会次 |
+| D2 | 直接 | 基于公开 TR292 **与 TR290A/B v3.6.0** + 28.312 Annex C 做意图对象映射说明（内部白皮书）；三者均为公开版本 | 6 个月 |
+| D3 | 直接 | 以 **TR 32.801-01 文档 rapporteur**（非 WI 牵头）准备「知识架构 vs DMFW」及 §2.2.4 WT-4（调研 TMF 本体）的公司贡献提纲 | 随 2026–2027 会次 |
 | R1 | 上升 | 是否正式投入 TMF MODA/Ontology 以影响 GB1093 | 公司标准资源决策 |
 | R2 | 上升 | 是否把「网络语义层」从故障 KG 升为数智引擎标准组件 | 产品路标 |
 

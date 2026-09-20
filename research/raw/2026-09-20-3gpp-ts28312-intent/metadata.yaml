@@ -2,10 +2,10 @@ url: https://etsi.org/deliver/etsi_ts/128300_128399/128312/19.05.00_60/ts_128312
 title: "ETSI TS 128 312 V19.5.0 (3GPP TS 28.312 Rel-19): Intent driven management services for mobile networks"
 authors: ["3GPP SA5"]
 publisher: ETSI / 3GPP
-publication_date: 2025
+publication_date: 2026-04
 fetched_at: 2026-09-20 02:20
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: 284a932e5be577a465a0f7257c93a7f6a30c75c30cb118393a8212139439c192  # local content.md archive, not original PDF
 tags: [3gpp, sa5, ts28312, intent, tmforum-mapping]
 access: public
 verification: confirmed

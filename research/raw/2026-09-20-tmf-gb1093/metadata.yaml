@@ -1,14 +1,17 @@
 url: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
 title: "GB1093 The Federated TM Forum Ontology (MODA-440)"
-authors: ["TM Forum Master ODA (MODA) Project"]
+authors: ["David Milham (TM Forum Chief Architect, reply)", "thread by Ngoc Linh Nguyen (VNPT)"]
 publisher: TM Forum
 publication_date: unknown
 fetched_at: 2026-09-20 02:00
-fetched_by: web-search
-content_sha256: n/a
+fetched_by: search-snippet
+content_sha256: a5ea0691672faa27c9fac21a1725720de08ce7dcb6fa15940e6978476b98cfa8  # local content.md archive, not original PDF
 tags: [tmforum, ontology, moda, gb1093, federated-ontology]
 access: member-only
 verification: title-only
+authors_note: "David Milham (TM Forum Chief Architect) reply in a thread started by Ngoc Linh Nguyen (VNPT); ~2026-08/09 per search index"
 notes: >
-  Public resources catalog (tmforum.org/resources) has no GB1093 landing page as of 2026-09-20.
-  Title and MODA-440 work-item id confirmed only via TM Forum Community discussion quoting Confluence.
+  Public resources catalog has no GB1093 landing page as of 2026-09-20.
+  Title and MODA-440 confirmed only via TM Forum Community search snippet (not a full page fetch).
+  engage.tmforum.org community hub: read-only 2026-09-10, permanently closed 2026-09-15; no Wayback snapshot found.
+  Unique public evidence URL may already be dead; replacement source needed (TMF Confluence MODA-440 or resources page).

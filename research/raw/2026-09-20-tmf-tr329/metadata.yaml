@@ -1,11 +1,14 @@
 url: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
 title: "TR329 TM Forum Ontology Programme Governance: Requirements and Feasibility (MOD-441)"
-authors: ["TM Forum Master ODA / Ontology programme (unconfirmed)"]
+authors: ["David Milham (TM Forum Chief Architect, reply)", "thread by Ngoc Linh Nguyen (VNPT)"]
 publisher: TM Forum
 publication_date: unknown
 fetched_at: 2026-09-20 02:00
-fetched_by: web-search
-content_sha256: n/a
+fetched_by: search-snippet
+content_sha256: 9075782b756ac1217ea843dd3edab699ada64dba57ce26cec84c565bd299f70f  # local content.md archive, not original PDF
 tags: [tmforum, ontology, tr329, governance, moda]
 access: member-only
 verification: title-only
+notes: >
+  Post called this a draft TR329. MODA affiliation is inferred from MOD-441 numbering next to GB1093 MODA-440, not confirmed on a catalog page.
+  engage.tmforum.org community hub closed 2026-09-15; no Wayback snapshot.

@@ -9,7 +9,7 @@
 
 | 维度 | TM Forum | 3GPP SA5 | CCSA / 华为起草行标 | ETSI / ITU-T 参照 |
 |:--|:--|:--|:--|:--|
-| 概念/术语体系 | ✅ 区分 SID（信息框架）与 Ontology（TIO）；计划中的 Federated Ontology [1] [高]/[中] | 🟡 使用 Information model / NRM / Intent IOC；研究中出现 knowledge/semantic [2] [高] | ✅ 「本体模型 / 实例化模型 / 知识图谱」写入 YD/T 7007 目录与解读 [3] [中] | ✅ M.3351 定义 knowledge / knowledge graph / ontology modelling [4] [高] |
+| 概念/术语体系 | ✅ 区分 SID（信息框架）与 Ontology（TIO）；计划中的 Federated Ontology [1] [高]/[中] | 🟡 使用 Information model / NRM / Intent IOC；研究中出现 knowledge/semantic；Rel-20 工作区 §2.2.4 WT-4 计划调研 TMF 本体/RDF/KG [2] [高] | ✅ 「本体模型 / 实例化模型 / 知识图谱」写入 YD/T 7007 目录与解读 [3] [中] | ✅ M.3351 定义 knowledge / knowledge graph / ontology modelling [4] [高] |
 | 建模语言与形式化程度 | ✅ TIO = RDF；SID = UML 2.5.1/XMI；SHACL 非 TMF 官方、有 Ericsson 开源 [5] [高] | ✅ UML IOC + OpenAPI YAML（28.312）；NRM UML [6] [高] | 🟡 目录未强制语言；二手解读推荐 OWL/XML/JSON + RDF 三元组 [7] [中] | ✅ M.3351 点名 RDF 与 OWL [4] [高] |
 | 顶层概念/核心类 | ✅ TIO：意图管理功能/控制环/生命周期词汇；SID：ABE/域 [8] [高]；GB1093 联邦顶层类 **未见正文** [低] | ✅ Intent、IntentExpectation、ExpectationObject/Target/Context [6] [高]；知识架构核心类 **未见正文** [低] | 🟡 运营七类数据（配置/性能/告警/故障/规则/意图/运营）来自二手解读 [7] [中] | ✅ 故障 cause/phenomenon/resolution 作为本体建模示例 [4] [高] |
 | 意图表达 | ✅ ICM TR290A/B + TMF921 API + TR294A 连 3GPP [9] [高] | ✅ TS 28.312；Annex C 映射 ICM；F.3 部署场景 [6] [高] | 🟡 7007 将意图列为建模对象之一，无 TIO IRI 对齐证据 [3] [低] | 🟡 ETSI ENI/ZSM 有意图管理，非本矩阵精读范围 |
@@ -28,7 +28,7 @@
 ## 脚注
 
 [1]: GB1093/TR328/TR329 标题来自 TM Forum Community 对 Confluence 的引用 → [tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md) §1–2；归档 `research/raw/2026-09-20-tmf-gb1093/`
-[2]: Portal 32.801-01 类型 TR；TOC 7.1 DMFW / 7.2 Knowledge → 归档 `research/raw/2026-09-20-3gpp-sa5-6g-oam-study/`
+[2]: Portal 32.801-01 类型 TR；TOC 7.1 DMFW / 7.2 Knowledge；SA5 NWM v0.0.7 §2.2.4 WT-4 原文含 "ontologies defined in other fora (e.g. TM Forum)" — https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5%23161/SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf → 归档 `research/raw/2026-09-20-3gpp-sa5-6g-oam-study/`
 [3]: YD/T 7007/7011/7023/7024/7129 目录页 → 归档 `research/raw/2026-09-20-ccsa-huawei-ontology-spec/`
 [4]: ITU-T M.3351 / M.3351.2 → 归档 `research/raw/2026-09-20-itu-t-m3351/`
 [5]: TR292 资源页；tio-shacl arXiv:2604.27359 → `research/raw/2026-09-20-tmf-intent-common-model/`

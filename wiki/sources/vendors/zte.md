@@ -17,7 +17,7 @@ key_documents:
   - title: 自智网络白皮书（2022）
     url: https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/mediares/zte/files/pdf/white_book/20220517.pdf
     relevance: high
-  - title: TR 32.801-01（rapporteur 中兴）
+  - title: TR 32.801-01（文档 rapporteur 中兴；WI FS_6G_OAM 由 AT&T 牵头）
     url: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491
     relevance: high
 contact_topics: [6g-overview, 6g-data-plane, ai-native-air-interface, ran-architecture-evolution, tmf-ontology-3gpp-sa5-ccsa-unified]

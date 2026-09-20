@@ -5,10 +5,11 @@ publisher: unknown
 publication_date: unknown
 fetched_at: 2026-09-20 02:00
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: e9496e14640472d65a8004cc9ef7b66f888494eef36d3f1d6d3eabfe86e42c72  # local content.md archive, not original PDF
 tags: [tmforum, ontology, gb1094, not-found]
 access: unknown
 verification: not-found
 notes: >
   Exhaustive public search did not locate a TM Forum guidebook GB1094 related to ontology.
   Chinese national standard GB 1094 (power transformers) is a numbering collision and is out of scope.
+  Search snippets also mention "GB1089 DEM Ontology"; no official page was opened — treated as unverified, not a GB1094 substitute.

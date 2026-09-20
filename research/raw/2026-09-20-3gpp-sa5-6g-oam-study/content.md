@@ -21,9 +21,9 @@
 | Rapporteur | **Pengxiang Xie, ZTE Corporation** |
 | 关联 WI | UID 1100014 FS_6G_OAM |
 
-WI FS_6G_OAM：Feature 级，PCG approved，Rel-20，Start 2025-12-03，End 2027-06-06，Rapporteur Bahar Sadeghi (AT&T)，Latest WID SP-251653。备注 2026-06-04：进度 5%→20%；**32.801-01 added**。
+WI FS_6G_OAM：Feature 级，PCG approved，Rel-20，Start 2025-12-03，End 2027-06-06，**WI Rapporteur Bahar Sadeghi (AT&T)**，Latest WID SP-251653。备注 2026-06-04：进度 5%→20%；**32.801-01 added**。DynaReport 另见：旧「32.801 Performance management」已 WITHDRAWN；**32.801-02 = Study on Charging Aspects of 6G System**，勿与 32.801-01 混用。
 
-**结论：仓库既有卡片写 "TS 32.801" 不准确。官方类型是 TR，编号是 32.801-01。iTecSpec 页面标题误用 "TS 32.801-01"。本调研统一称 TR 32.801-01。**
+**结论：仓库既有卡片写 "TS 32.801" 不准确。官方类型是 TR，编号是 32.801-01。文档 rapporteur = 中兴；WI rapporteur = AT&T。iTecSpec 页面标题误用 "TS 32.801-01"。本调研统一称 TR 32.801-01。**
 
 ## 公开目录中的知识/数据相关章节（iTecSpec TOC）
 
@@ -39,13 +39,31 @@ WI FS_6G_OAM：Feature 级，PCG approved，Rel-20，Start 2025-12-03，End 2027
 
 ## Rel-20 工作区讨论稿（公开 PDF）
 
-SA5#161 `SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf` 将 Data Management 列为 WT：
+来源：https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5%23161/SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf
+
+### 2.2.9 Data Management
 
 - WT-1 新数据/分析需求（AI/ML、Sensing、6G IoT）
 - WT-2 统一数据管理机制（PM/CM/trace/alarms/UE data）：收集控制与上报、处理、分析、注册、发现、访问控制、发布、分发、暴露、编目、销毁、质量报告、变更管理
 - WT-3 数据质量与审慎
 - WT-4 非 3GPP 数据（如 O-RAN）
 - WT-5 用户同意机制复用
+
+### 2.2.4 Semantic Network Management
+
+Study semantic network management for 6G network and service management including:
+
+- WT-1 Study definitions of terminologies related to semantic and knowledge.
+- WT-2 Study use cases and potential requirements supporting semantic and knowledge in 3GPP management system.
+- WT-3 Study potential impact in management architecture for 6G, and the relationship with other management features including data management.
+- **WT-4 Survey existing related frameworks (e.g. RDF) and solutions (e.g. knowledge graphs, ontologies) defined in other fora (e.g. TM Forum), and study how/if they can be leveraged to support the identified use cases and requirements.**
+- WT-5 Study trade-offs or advantages/disadvantages of managing the knowledge and obtaining semantics for network management.
+
+公司反馈（摘录）：
+
+- **ZTE**：Q1 Yes, we support this work area. Q2: WT 1/2/4 are ok。对 WT-3「enhancing the management architecture」要求再讨论。
+- **Ericsson LM**：建议工作区改名为 Knowledge Management；将 TMF/RDF/本体 survey 保留为独立 WT-x。
+- Nokia Germany：认为 knowledge 属于 data management，应并入数据管理讨论。
 
 ## SA5 Inbox 草稿文件名（2026-05，仅标题级）
 

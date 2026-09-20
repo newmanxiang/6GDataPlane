@@ -126,6 +126,7 @@
 
 | 优先级 | 缺口 | 影响章节 | 建议补救 | 状态 |
 |---|---|---|---|---|
+| P0 | GB1093/TR328/TR329 唯一公开证据（Community 帖）随 hub 于 2026-09-15 关闭而失效，需 TMF Confluence MODA-440 / 正式 resources 页替代 | tmf-ontology 核实清单 | 会员 Confluence 或 resources 一旦挂出 | 等待中 |
 | P0 | GB1093 Federated TM Forum Ontology 正文（版本/类层次/与 SID·TIO 映射） | tmf-ontology 核实清单 | 会员 Confluence MODA-440 | 等待中 |
 | P0 | TR328 The Case for Ontologies 正文（路线图里程碑与范围） | tmf-ontology §2 | 会员资源目录一旦挂出即抓 | 等待中 |
 | P0 | TR329 Ontology Programme Governance 正文（角色/变更流程/可行性结论） | tmf-ontology §5 治理维 | 会员 MOD-441 | 等待中 |

@@ -52,7 +52,7 @@
 [12]: SA2 UPF 演进讨论（Rel-19 UPEAS）→ [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
 [13]: SA5 数据分析管理涉及数据面管理维度 → [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
 [14]: SA5 NWDAF 数据管理增强 → [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
-[15]: SA5 DMFW (Data Management Framework) TS 28.104 → [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
+[15]: SA5 数据治理：TS 28.104 为 MDA；6G DMFW 研究在 TR 32.801-01 → [tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)
 [16]: SA5 DMFW 中的数据虚拟化概念初步讨论 → [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
 [17]: CT 组协议实现涉及数据面优化 → [3gpp-rel-19-20-data-architecture-status](../../wiki/topics/3gpp-rel-19-20-data-architecture-status.md)
 [18]: CT 负责 GTP-U 协议维护与演进 → [gtp-u-limitations-6g-alternatives](../../wiki/topics/gtp-u-limitations-6g-alternatives.md)

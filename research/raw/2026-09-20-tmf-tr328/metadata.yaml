@@ -1,11 +1,14 @@
 url: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
 title: "TR328 The Case for Ontologies: A Roadmap for TM Forum"
-authors: ["TM Forum Ontology tiger team (unconfirmed membership)"]
+authors: ["David Milham (TM Forum Chief Architect, reply)", "thread by Ngoc Linh Nguyen (VNPT)"]
 publisher: TM Forum
 publication_date: unknown
 fetched_at: 2026-09-20 02:00
-fetched_by: web-search
-content_sha256: n/a
+fetched_by: search-snippet
+content_sha256: 0438891a534a256a23409d67707e87cf133080aae4082d2865b77dd7cd863794  # local content.md archive, not original PDF
 tags: [tmforum, ontology, tr328, roadmap]
 access: member-only
 verification: title-only
+notes: >
+  Title from TM Forum Community search snippet, not a full page fetch.
+  engage.tmforum.org community hub: read-only 2026-09-10, closed 2026-09-15; no Wayback snapshot.

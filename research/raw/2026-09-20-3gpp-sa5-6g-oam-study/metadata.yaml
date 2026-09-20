@@ -5,7 +5,7 @@ publisher: 3GPP
 publication_date: 2026-01-12
 fetched_at: 2026-09-20 02:30
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: f0b4c57d9837612fb4d71ff2a6f72be994508d51106cbef3f9e4c89e8d2fbb31  # local content.md archive, not original PDF
 tags: [3gpp, sa5, tr32801, 6g-oam, dmfw, knowledge-management]
 access: public-metadata
 verification: confirmed

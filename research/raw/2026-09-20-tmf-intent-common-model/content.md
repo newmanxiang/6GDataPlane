@@ -21,8 +21,9 @@
 | TR292G | Metrics and Observations | 3.6.0 | 2024-07-04 | 公开 |
 | TR292H | Mathematical Functions | 3.7.0 | 2025-11-21 | 会员 |
 | TR292I | Security Ontology | 4.0.0 | 2026-03-27 | 会员 |
-| TR290A | Intent Common Model – Intent Expression | 3.6.0（TS 28.312 引用） | 见 28.312 参考文献 | 会员 |
-| TR290B | Intent Common Model – Intent Reporting | 3.6.0 | 同上 | 会员 |
+| TR290A | Intent Common Model – Intent Expression | 3.6.0（TS 28.312 引用） | 见 28.312 参考文献 | **公开**（Toolkit Available to all） |
+| TR290B | Intent Common Model – Intent Reporting | 3.6.0 | 同上 | **公开** |
+| TR290 | Intent Common Model（后续整本） | 3.8.0 | 2026-03-27 | 会员 |
 | TR290V | Intent Common Model – Vocabulary Reference | 3.6.0 production | 旧版 3.0.0 于 2023-02 | 会员 |
 | TR291 | Intent Extension Models | 系列 | 持续 | 会员 |
 | TR294A | Model Connection to 3GPP TS 28.312 – Intent Extension Model | 1.0.0 | 2023-04-11 Team Approved | 公开目录页存在，下载需登录 |

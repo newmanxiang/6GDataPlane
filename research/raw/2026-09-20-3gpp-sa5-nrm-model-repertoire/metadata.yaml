@@ -5,7 +5,7 @@ publisher: 3GPP
 publication_date: 2024-2026
 fetched_at: 2026-09-20 02:30
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: 498a5d5c474e00b8d9c63327867037f97dcaba4a119b5cf0b7cf7631c92e16a3  # local content.md archive, not original PDF
 tags: [3gpp, sa5, nrm, mda, aiml-management]
 access: public
 verification: confirmed

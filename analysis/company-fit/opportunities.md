@@ -82,10 +82,10 @@
 
 ## O7. 网络语义层 / 本体标准卡位（2026-09-20 增补）
 
-- **机会**：TMF TIO 已公开、CCSA YD/T 知识建模已实施、3GPP SA5 TR 32.801-01 知识/语义 KI 由中兴任 rapporteur。三窗口重叠，数据中台可用「映射表 + 标准贡献提纲」卡住语义层话语，而不自建全球 OWL 底座。
+- **机会**：TMF TIO 已公开、CCSA YD/T 知识建模已实施、3GPP SA5 **TR 32.801-01 rapporteur 为中兴（WI FS_6G_OAM 由 AT&T 牵头）**，工作区草案已计划调研 TMF 本体。三窗口重叠，数据中台可用「映射表 + 标准贡献提纲」卡住语义层话语，而不自建全球 OWL 底座。
 - **为什么现在**：YD/T 7007 于 2026-09-01 实施；FS_6G_OAM 研究期至 2027-06；GB1093 仍在 Confluence，后发者仍可影响联邦本体。
 - **中兴切入点**：内部本体图对齐 YD/T 7007 术语；公开 TR292 与 28.312 Annex C 做意图对象映射 PoC；SA5 知识 KI 提交「知识架构 vs DMFW」边界贡献。
-- **证据链**：[tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)；M5 矩阵；Portal 32.801-01 rapporteur = ZTE
+- **证据链**：[tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)；M5 矩阵；Portal 32.801-01 文档 rapporteur = ZTE（WI rapporteur = AT&T）
 - **信心**：中 | **时间窗**：短期（6 月内对照表+贡献提纲）→ 中期（SA5 研究结论窗口）
 - **数据中台可达性**：直接抓（标准+预研）
 

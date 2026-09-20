@@ -5,7 +5,7 @@ publisher: Huawei
 publication_date: 2020-05
 fetched_at: 2026-09-20 02:45
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: 4650aa098c755c0c706ed382b309622c60cb03934d32cdf2fdf437001a75df33  # local content.md archive, not original PDF
 tags: [huawei, adn, knowledge-graph, ontology]
 access: public
 verification: confirmed

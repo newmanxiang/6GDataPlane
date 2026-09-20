@@ -5,7 +5,7 @@ publisher: ITU-T
 publication_date: 2024-08-13
 fetched_at: 2026-09-20 02:55
 fetched_by: web-search
-content_sha256: n/a
+content_sha256: 4d2f73d55ae821c51a89b58096e31279d7b0f2a4863e14b291780a171ef4d1f5  # local content.md archive, not original PDF
 tags: [itu-t, knowledge-management, ontology, rdf, owl]
 access: public
 verification: confirmed

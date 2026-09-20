@@ -65,6 +65,10 @@
 ### 明日要点
 - 按 Fable 评审意见迭代；不直接合并 master
 
+### Fable 一轮 PASS WITH FIXES（同日落地）
+- 必改：TR290A/B 公开性、GB1093 证据 [低]、WI vs TR rapporteur 拆分、§2.2.4 WT-4、CCSA 目录首位、M2 12×8、脚注 [15]、Community type=media、28.312 日期 2026-04
+- 建议：报告 §3.2 版本漂移、GB1089 unverified、32.801 WITHDRAWN / 32.801-02、excerpts/sha256、topic `status: reviewed`
+
 ---
 
 ## D16 · 2026-07-15（评审修正 + 面向大数据读者重配比：报告 v4）
