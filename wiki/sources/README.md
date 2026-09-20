@@ -5,7 +5,7 @@
 ## 类别
 
 ### A. 标准组织 `standards/`
-ITU-R / 3GPP / ETSI / IEEE / O-RAN / NGMN / TM Forum / 5G-IA / Hexa-X / Next G / IMT-2030 推进组
+ITU-R / 3GPP / ETSI / IEEE / O-RAN / NGMN / TM Forum / 5G-IA / Hexa-X / Next G / IMT-2030 推进组 / CCSA
 
 ### B. 厂商 `vendors/`
 华为 / 中兴 / 爱立信 / 诺基亚 / 三星 / NTT DoCoMo / 思科 / Intel / NVIDIA / Informatica / IBM / Microsoft / Denodo / Talend / Collibra
@@ -22,14 +22,14 @@ Gartner / Forrester / IDC / ABI / Omdia / Heavy Reading
 
 | 类别 | 已登记 | 目标 | 缺口 |
 |---|---|---|---|
-| 标准组织 | 11 | 11 | ✅ 已满 |
+| 标准组织 | 12 | 12 | ✅ 已满（含 CCSA，2026-09-20） |
 | 厂商 | 8 | 8 | ✅ 已满（D3 目标） |
 | 学术会议 | 10 | 10 | ✅ 已满 |
 | 分析机构 | 2 | 2 | ✅ 已满（D3 目标） |
 
 ### 已登记清单
 
-**标准组织** (11)：ITU-R WP 5D · 3GPP · ETSI · IEEE · O-RAN Alliance · NGMN · TM Forum · 5G-IA/SNS JU · Hexa-X/Hexa-X-II · Next G Alliance · IMT-2030 推进组
+**标准组织** (12)：ITU-R WP 5D · 3GPP · ETSI · IEEE · O-RAN Alliance · NGMN · TM Forum · 5G-IA/SNS JU · Hexa-X/Hexa-X-II · Next G Alliance · IMT-2030 推进组 · CCSA
 
 **厂商** (8)：华为 · 中兴 · 爱立信 · 诺基亚 · 三星 · NTT DoCoMo · Intel · 思科
 

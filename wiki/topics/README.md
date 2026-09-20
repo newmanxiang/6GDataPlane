@@ -9,7 +9,7 @@
 
 | 完成日期 | 主题 | confidence | 关联 concepts |
 |---|---|---|---|
-| - | - | - | - |
+| 2026-09-20 | [tmf-ontology-3gpp-sa5-ccsa-unified](tmf-ontology-3gpp-sa5-ccsa-unified.md) | medium | telecom-network-ontology, knowledge-graph-for-data |
 
 ## 主题命名建议
 

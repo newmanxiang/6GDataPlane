@@ -14,6 +14,9 @@ related:
   - data-orchestration
   - network-data-analytics
   - data-fabric-definition-and-capabilities
+  - telecom-network-ontology
+  - ontology
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 tags:
   - 知识图谱
   - 数据编织

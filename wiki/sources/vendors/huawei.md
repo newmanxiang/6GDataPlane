@@ -16,7 +16,16 @@ key_documents:
     relevance: high
   - title: "AI-RAN 白皮书"
     relevance: medium
-contact_topics: [6g-overview, 6g-data-plane, ai-native-air-interface, ran-architecture-evolution, data-fabric-for-ai-native-6g]
+  - title: 自动驾驶网络解决方案白皮书
+    url: https://carrier.huawei.com/~/media/cnbgv2/download/adn/autonomous-driving-network-overview-cn.pdf
+    relevance: high
+  - title: YD/T 7007-2026（华为为主要起草单位之一）
+    url: https://std.samr.gov.cn/hb/search/stdHBDetailed?id=5679B6F617894858E06397BE0A0AD0B8
+    relevance: high
+  - title: Huawei-IOAM IETF knowledge graphs 示例仓
+    url: https://github.com/Huawei-IOAM/ietf-knowledge-graphs
+    relevance: medium
+contact_topics: [6g-overview, 6g-data-plane, ai-native-air-interface, ran-architecture-evolution, data-fabric-for-ai-native-6g, tmf-ontology-3gpp-sa5-ccsa-unified]
 update_cadence: quarterly
 last_visited: null
 notes: |

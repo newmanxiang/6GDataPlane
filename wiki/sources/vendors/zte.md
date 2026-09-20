@@ -14,7 +14,13 @@ key_documents:
     relevance: high
   - title: "智算网络架构报告"
     relevance: medium
-contact_topics: [6g-overview, 6g-data-plane, ai-native-air-interface, ran-architecture-evolution]
+  - title: 自智网络白皮书（2022）
+    url: https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/mediares/zte/files/pdf/white_book/20220517.pdf
+    relevance: high
+  - title: TR 32.801-01（rapporteur 中兴）
+    url: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491
+    relevance: high
+contact_topics: [6g-overview, 6g-data-plane, ai-native-air-interface, ran-architecture-evolution, tmf-ontology-3gpp-sa5-ccsa-unified]
 update_cadence: semi-annual
 last_visited: null
 notes: |

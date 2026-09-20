@@ -28,6 +28,7 @@ related:
   - ai-native-data-plane-status
   - daas-interface-design
   - 3gpp-sa2-6g-data-framework-wt5
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 tags:
   - 3GPP
   - Rel-19

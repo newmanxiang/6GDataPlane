@@ -19,7 +19,19 @@ key_documents:
     relevance: high
   - title: TR 23.700-series (6G architecture studies)
     relevance: high
-contact_topics: [6g-overview, 6g-data-plane, user-plane-evolution, network-data-analytics, ai-native-air-interface, isac, non-terrestrial-network]
+  - title: TS 28.312 Intent driven management services
+    url: https://etsi.org/deliver/etsi_ts/128300_128399/128312/19.05.00_60/ts_128312v190500p.pdf
+    relevance: high
+  - title: TR 32.801-01 Study on 6G Management and Orchestration
+    url: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491
+    relevance: high
+  - title: TS 28.104 Management Data Analytics
+    relevance: medium
+  - title: TS 28.105 AI/ML management
+    relevance: medium
+  - title: TS 28.622 Generic NRM
+    relevance: medium
+contact_topics: [6g-overview, 6g-data-plane, user-plane-evolution, network-data-analytics, ai-native-air-interface, isac, non-terrestrial-network, tmf-ontology-3gpp-sa5-ccsa-unified]
 update_cadence: 每季度全会更新，每 1.5-2 年一个 Release
 last_visited: null
 notes: |

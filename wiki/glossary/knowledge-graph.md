@@ -8,6 +8,8 @@ related:
   - knowledge-graph-for-data
   - data-virtualization
   - network-data-analytics
+  - ontology
+  - telecom-network-ontology
 source: https://www.topquadrant.com/resources/knowledge-graphs-are-key-to-data-fabric/
 ---
 

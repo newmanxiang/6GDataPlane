@@ -12,19 +12,20 @@
 
 ## 矩阵
 
-| 标准组织 | 6G 总愿景 | 数据面架构 | AI 原生网络 | 通感一体 (ISAC) | 数据治理 | 数据编织/Fabric | 用户面协议 |
-|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **ITU-R** | ✅ [1] | 🟡 [2] | ✅ [3] | ✅ [4] | 🟡 [5] | - | - |
-| **3GPP SA2** | 🔬 [6] | 🔬 [7] | 🔬 [8] | 🟡 [9] | 🔬 [10] | 🔬 [11] | 🟡 [12] |
-| **3GPP SA5** | - | 🟡 [13] | 🔬 [14] | - | ✅ [15] | 🟡 [16] | - |
-| **3GPP CT** | - | 🟡 [17] | - | - | - | - | ✅ [18] |
-| **ETSI ISG ZSM** | - | 🟡 [19] | ✅ [20] | - | ✅ [21] | ✅ [22] | - |
-| **ETSI ISG PDL** | - | - | - | - | ✅ [23] | - | - |
-| **O-RAN Alliance** | 🟡 [24] | 🟡 [25] | ✅ [26] | - | 🟡 [27] | - | 🟡 [28] |
-| **NGMN** | ✅ [29] | 🟡 [30] | 🔬 [31] | 🟡 [32] | 🔬 [33] | - | - |
-| **TM Forum** | 🟡 [34] | - | 🟡 [35] | - | ✅ [36] | 🔬 [37] | - |
-| **5G-IA / SNS JU** | 🔬 [38] | 🔬 [39] | 🔬 [40] | 🔬 [41] | 🔬 [42] | 🔬 [43] | - |
-| **IEEE** | 🟡 [44] | 🔬 [45] | 🔬 [46] | 🔬 [47] | - | - | 🔬 [48] |
+| 标准组织 | 6G 总愿景 | 数据面架构 | AI 原生网络 | 通感一体 (ISAC) | 数据治理 | 数据编织/Fabric | 用户面协议 | 本体/信息模型 |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| **ITU-R** | ✅ [1] | 🟡 [2] | ✅ [3] | ✅ [4] | 🟡 [5] | - | - | - |
+| **3GPP SA2** | 🔬 [6] | 🔬 [7] | 🔬 [8] | 🟡 [9] | 🔬 [10] | 🔬 [11] | 🟡 [12] | - |
+| **3GPP SA5** | - | 🟡 [13] | 🔬 [14] | - | ✅ [15] | 🟡 [16] | - | ✅ [53] |
+| **3GPP CT** | - | 🟡 [17] | - | - | - | - | ✅ [18] | - |
+| **ETSI ISG ZSM** | - | 🟡 [19] | ✅ [20] | - | ✅ [21] | ✅ [22] | - | 🟡 [54] |
+| **ETSI ISG PDL** | - | - | - | - | ✅ [23] | - | - | - |
+| **O-RAN Alliance** | 🟡 [24] | 🟡 [25] | ✅ [26] | - | 🟡 [27] | - | 🟡 [28] | - |
+| **NGMN** | ✅ [29] | 🟡 [30] | 🔬 [31] | 🟡 [32] | 🔬 [33] | - | - | - |
+| **TM Forum** | 🟡 [34] | - | 🟡 [35] | - | ✅ [36] | 🔬 [37] | - | ✅ [55] |
+| **5G-IA / SNS JU** | 🔬 [38] | 🔬 [39] | 🔬 [40] | 🔬 [41] | 🔬 [42] | 🔬 [43] | - | - |
+| **IEEE** | 🟡 [44] | 🔬 [45] | 🔬 [46] | 🔬 [47] | - | - | 🔬 [48] | - |
+| **CCSA** | 🟡 [49] | - | 🟡 [50] | - | 🔬 [51] | - | - | ✅ [52] |
 
 ## 关键发现
 
@@ -33,6 +34,7 @@
 3. **AI 原生网络是最拥挤的赛道**：几乎所有组织都有相关工作项，但定义和范围差异大
 4. **通感一体 (ISAC) 的数据治理缺口**：ITU-R 和 3GPP 都在推进 ISAC 场景，但感知数据的治理框架几乎空白[^gov]
 5. **用户面协议标准化滞后**：GTP-U 替代方案的讨论分散在 3GPP CT、IETF（非本矩阵范围）和 O-RAN 之间
+6. **本体/信息模型列（2026-09-20）**：TMF TIO 与 CCSA YD/T 知识建模已有输出；SA5 意图模型已 GA，6G 知识表示仍为研究 KI。详见 M5。
 
 ## 脚注
 
@@ -84,6 +86,13 @@
 [46]: IEEE 发表的 AI-native 网络研究 → [ai-native-data-plane-status](../../wiki/topics/ai-native-data-plane-status.md)
 [47]: IEEE ISAC 技术标准研究 → [imt-2030-usage-scenarios-data-needs](../../wiki/topics/imt-2030-usage-scenarios-data-needs.md)
 [48]: IEEE Det-Net / TSN 确定性网络协议 → [gtp-u-limitations-6g-alternatives](../../wiki/topics/gtp-u-limitations-6g-alternatives.md)
+[49]: CCSA 自智网络系列（TC7/TC610）属国内 AN 愿景落地，非 IMT-2030 本身 → [tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)
+[50]: CCSA 智能化运营 / 大模型 L4 相关行标与测评（华为自述 TC610 15 项，🏢）→ 同上
+[51]: YD/T 知识图谱系列含知识融合与质量管理，属运营侧治理 → 同上
+[52]: YD/T 7007 知识建模（本体模型）已发布 → [ontology-standards-mapping](ontology-standards-mapping.md)
+[53]: TS 28.312 意图信息模型 + NRM；6G 知识 KI 在 TR 32.801-01 → [tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)
+[54]: ZSM/ENI 意图与知识表示讨论，非 OWL 规范 → [data-fabric-for-ai-native-6g](../../wiki/topics/data-fabric-for-ai-native-6g.md)
+[55]: TIO TR292 公开 GA；SID GB922 UML → [tmf-ontology-3gpp-sa5-ccsa-unified](../../wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md)
 
 [^zsm]: 参见 [data-fabric-for-ai-native-6g](../../wiki/topics/data-fabric-for-ai-native-6g.md) ETSI ZSM GS 029 详述
 [^wt5]: 参见 [3gpp-sa2-6g-data-framework-wt5](../../wiki/topics/3gpp-sa2-6g-data-framework-wt5.md) SA2/SA5 职责重叠讨论

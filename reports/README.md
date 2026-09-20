@@ -8,6 +8,12 @@
 | `executive-summary.md` | 决策者 | 2-3 页 |
 | `one-pager.md` | 高层 | 1 页（≤ 500 字） |
 
+## 专题分析章节
+
+| 文件 | 说明 |
+|---|---|
+| `tmf-ontology-unified-analysis-v1.md` | TMF 本体 × GB1093/1094/TR328/329 × 华为 CCSA 知识图谱行标 × 3GPP SA5 统一分析；供主报告引用，不替代 vN 主报告 |
+
 ## 战略胶片
 
 | 文件 | 说明 |

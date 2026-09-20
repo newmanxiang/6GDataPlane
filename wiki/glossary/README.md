@@ -17,3 +17,6 @@
 
 ### 交集
 - AI-Native Network、Intent-Based Networking、Closed-Loop Automation、Zero-Touch Network and Service Management (ZSM)
+
+### 本体 / 信息模型侧（2026-09-20 增补）
+- Ontology、SID、Intent Common Model、DMFW、CCSA、NRM

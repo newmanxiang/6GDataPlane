@@ -36,6 +36,7 @@ graph TD
     AM -->|驱动| KG
     KG -->|语义发现| DV
     DV -->|统一访问| DO
+    KG --> ONT[电信网络本体]
 
     %% 交集议题（C类）
     DP -.->|TM Forum 实证| DF_TEL[数据编织在电信场景]
@@ -67,7 +68,7 @@ graph TD
     classDef gap fill:#ffebee,stroke:#c62828;
     classDef topic fill:#e8f5e9,stroke:#388e3c;
     class DP,UPE,AIA,DTN,ISAC,NTN,RAN,NWDA dp;
-    class DF,AM,KG,DV,DO,PP,DMESH df;
+    class DF,AM,KG,DV,DO,PP,DMESH,ONT df;
     class DF_TEL,EDGE cross;
     class DF_AIN gap;
     class T_DFDC,T_DFVM,T_UPE,T_AINP topic;
@@ -94,6 +95,7 @@ graph TD
 - [x] `knowledge-graph-for-data` — 数据知识图谱 (draft)
 - [x] `data-virtualization` — 数据虚拟化 (draft)
 - [x] `data-orchestration` — 数据编排 (draft)
+- [x] `telecom-network-ontology` — 电信网络本体 (draft, 2026-09-20)
 
 ### C. 交集议题（W2 重点）
 - [x] `data-fabric-in-telecom` — 数据编织在电信场景 (draft)

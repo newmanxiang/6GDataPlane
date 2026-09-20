@@ -33,6 +33,40 @@
 
 ---
 
+## D17 · 2026-09-20（专项：TMF 本体 × 3GPP SA5 × CCSA 统一分析）
+
+### 计划
+- 核实 GB1093、GB1094、TR328、TR329、华为 CCSA 本体相关规范、3GPP SA5 语义载体
+- 按仓库四层产出 raw / notes / wiki / analysis / 独立报告章节
+- Fable 规划与评审，Grok 执行；合入走 PR 到 master
+
+### 完成
+- 文档识别：GB1093/TR328/TR329 标题级核实（会员 Confluence）；GB1094 not-found；TIO/SID/TS 28.312/TR 32.801-01/YD/T 系列/M.3351 目录或全文核实
+- 校正：6G OAM 研究为 TR 32.801-01（rapporteur 中兴），DMFW ≠ TS 28.104
+- 产出主题卡、概念/术语/源卡、M5 矩阵、矛盾 34–36、gaps 新节、O7、报告 v1
+
+### 未完成（滚到明日）
+- 会员墙正文（GB1093/TR328/TR329/TR326、YD/T 7007 条款、SA5 pCR）仍待补
+
+### 关键产出
+- wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md
+- wiki/concepts/telecom-network-ontology.md
+- analysis/matrices/ontology-standards-mapping.md
+- reports/tmf-ontology-unified-analysis-v1.md
+
+### 数据/关键发现
+- 唯一公开 GA 的 TMF 本体是 TIO（意图 RDF），不是 SID
+- 国内知识图谱行标已实施，华为并非独家起草
+- 中兴同时拥有 SA5 6G OAM 研究报告 rapporteur 与 YD/T 起草席位
+
+### 阻塞 / 风险
+- GB1093 等无公开 PDF，条款级分析无法完成
+
+### 明日要点
+- 按 Fable 评审意见迭代；不直接合并 master
+
+---
+
 ## D16 · 2026-07-15（评审修正 + 面向大数据读者重配比：报告 v4）
 
 ### 计划

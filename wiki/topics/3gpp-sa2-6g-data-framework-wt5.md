@@ -27,6 +27,7 @@ related:
   - ai-native-data-plane-status
   - cross-domain-data-governance-6g
   - data-fabric-for-ai-native-6g
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 tags: [3gpp, sa2, 6g, data-framework, wt5, dmfw, daas, standardization, FS_6G_ARC, KI21, TR-23.801]
 last_verified: 2026-06-25
 owner: agent

@@ -103,6 +103,7 @@
 | P1 | `etsi-zsm-data-fabric-mapping` | 标准 | pending | - | ETSI ZSM 与数据编织映射关系 |
 | P1 | `huawei-zte-6g-data-stories` | 标准 | pending | - | 华为/中兴 6G 数据方案与实践 |
 | P1 | `ericsson-nokia-cognitive-network-data` | 标准 | pending | - | 爱立信/诺基亚认知网络数据方案 |
+| P0 | `tmf-ontology-3gpp-sa5-ccsa-unified` | 标准 | done | D17 | TMF 本体 × GB1093/1094/TR328/329 × 华为 CCSA 本体 × 3GPP SA5 统一分析 |
 | P2 | `samsung-ntt-docomo-6g-data-vision` | 标准 | pending | - | 三星/NTT DOCOMO 6G 数据愿景 |
 
 ---

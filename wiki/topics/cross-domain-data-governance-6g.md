@@ -28,6 +28,7 @@ related:
   - active-metadata
   - ai-native-data-plane-status
   - 3gpp-rel-19-20-data-architecture-status
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 tags:
   - data-governance
   - cross-domain

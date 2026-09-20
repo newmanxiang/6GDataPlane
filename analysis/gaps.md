@@ -122,6 +122,21 @@
 | P2 | 跨标准组织（3GPP/ETSI/O-RAN/TM Forum）的数据管理术语统一进展 | trend-standardization-race | 跟踪联合研讨会和交叉引用文件 | 待解决 |
 | P2 | SRv6 MUP 双栈过渡方案（与 GTP-U 共存）的设计详情和 OPEX 估算 | trend-gtp-u-sunset | 跟踪 IETF MUP WG 和 3GPP CT | 待解决 |
 
+## TMF 本体统一分析新增缺口（2026-09-20）
+
+| 优先级 | 缺口 | 影响章节 | 建议补救 | 状态 |
+|---|---|---|---|---|
+| P0 | GB1093 Federated TM Forum Ontology 正文（版本/类层次/与 SID·TIO 映射） | tmf-ontology 核实清单 | 会员 Confluence MODA-440 | 等待中 |
+| P0 | TR328 The Case for Ontologies 正文（路线图里程碑与范围） | tmf-ontology §2 | 会员资源目录一旦挂出即抓 | 等待中 |
+| P0 | TR329 Ontology Programme Governance 正文（角色/变更流程/可行性结论） | tmf-ontology §5 治理维 | 会员 MOD-441 | 等待中 |
+| P0 | GB1094 是否存在 | 核实清单 | 继续跟踪 TMF resources；当前 not-found | 未能核实 |
+| P1 | TR326 Semantic Knowledge Fabric 套件正文 | 与数据编织接口维 | 会员 Components and Canvas | 等待中 |
+| P1 | YD/T 7007 正文：OWL 为强制还是推荐；七类数据建模条款 | CCSA 节 | 购买行标或内部标准库 | 等待中 |
+| P1 | SA5 KSM3 Knowledge architecture pCR 正文与公司来源 | 3GPP SA5 知识 KI | 3GPP 会员账号 | 等待中 |
+| P1 | SID→OWL 官方映射是否进入 GB1093 范围 | 矛盾 34 | 跟踪 MODA | 待解决 |
+| P2 | tio-shacl 与 TMF 官方测试套件是否同源 | TIO 形式化程度 | Ericsson 开源仓 vs TMF Git | 可补 |
+| P2 | 仓库既有「TS 32.801」「DMFW=TS 28.104」编号需在后续 curator 轮次统一 | 3gpp 源卡已更正，其他卡片未批量改 | wiki-curator | 待解决 |
+
 ## 处理流程
 
 1. 调研中发现缺口 → 立即登记到本文件

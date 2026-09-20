@@ -394,3 +394,33 @@
 - **本调研倾向**：倾向 B——技术原型存在但工程成熟度不足，6G 跨域场景的真正落地需 3-5 年
 - **何时能解决**：2028+ 首批 6G 网络部署时逐步验证
 - **关联章节**：wiki/topics/cross-domain-data-governance-6g.md §6
+
+---
+
+### 矛盾 34：电信语义层应走 UML 信息模型还是 OWL 本体
+
+- **主张 A**：CSP 数字化与 3GPP 管理接口应继续以 SID/NRM 等 UML 信息模型为系统之源，本体只是文档化或推理附加层 — 来源 GB922 Models Suite v25.0 仍为 UML/XMI（标准/2025-07）、TS 28.312 Intent IOC 为 UML+OpenAPI（标准/Rel-19）
+- **主张 B**：AI Native / L4 自智需要形式本体与联邦知识编织才能让 Agent 推理 — 来源 TR292 TIO RDF（标准/2024-08）、Community 引用的 GB1093/TR328/TR326 Semantic Knowledge Fabric（标准组织讨论/2026）、ITU-T M.3351 ontology modelling（标准/2024-08）
+- **现状**：两条线并行。TIO 已 GA 但只覆盖意图；SID 未本体化；GB1093 无公开正文
+- **本调研倾向**：分层并存——意图用 TIO/28.312 桥，运营知识用 YD/T+M.3351，资源对象继续 NRM/SID，用映射表而不是推翻 UML
+- **何时能解决**：GB1093 公开或 TMF 宣布 SID↔本体官方映射（2026–2027，不确定）
+- **关联章节**：wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md §1/§4
+
+### 矛盾 35：TMF 意图本体与 3GPP TS 28.312 意图模型是否已经对齐
+
+- **主张 A**：已对齐——TS 28.312 规范性引用 TR290A/B，Annex C 给映射，TR294A 为 3GPP 连接扩展模型，Annex F.3 定义 TMF API 与 3GPP MnS 转换场景 — 来源 ETSI TS 128 312 V19.5.0（标准/Rel-19）
+- **主张 B**：仅浅层 informative 映射（三对元素），编码（RDF vs YAML）与生命周期状态机并未合一，不能称为同一意图本体 — 来源 Annex C 正文；TIO 模块数量（学术 tio-shacl）远大于 28.312 generic IOC
+- **现状**：正式桥存在，互操作仍需转换器
+- **本调研倾向**：倾向 B 的工程含义，同时承认 A 的引用事实
+- **何时能解决**：若 3GPP 或 TMF 发布规范性（而不只是 informative）完整映射/测试套件
+- **关联章节**：wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md §4.2
+
+### 矛盾 36：华为 CCSA「本体规范」是否为华为定义权独占
+
+- **主张 A**：华为联合 CCSA 完成大量自智网络标准，ADN 知识图谱是其架构支柱 — 来源华为 ADN 白皮书（厂商/2020）、媒体转述 TC610 15 项（媒体/2025）
+- **主张 B**：YD/T 7007/7011/7023/7024/7129 的牵头单位分别是北邮、中国移动、中国电信、北邮、中国联通；华为与中兴同为起草单位 — 来源 SAMR/数字标准馆目录（标准/2026-06）
+- **现状**：华为叙事强于目录法律地位；中兴同等出现在多份起草名单，并另持 TR 32.801-01 rapporteur
+- **本调研倾向**：倾向 B 作为可执行事实；A 作为竞争宣传需标注 🏢
+- **何时能解决**：不需要「解决」，避免内部决策被宣传话术误导即可
+- **关联章节**：wiki/topics/tmf-ontology-3gpp-sa5-ccsa-unified.md §3/§7
+

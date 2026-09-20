@@ -8,6 +8,10 @@ related:
   - data-fabric-in-telecom
   - data-fabric-capabilities
   - network-data-analytics
+  - sid
+  - intent-common-model
+  - ontology
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 source: https://www.tmforum.org/open-digital-architecture/data-architecture/
 ---
 

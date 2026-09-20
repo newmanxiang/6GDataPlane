@@ -31,6 +31,7 @@ related:
   - active-metadata
   - digital-twin-network
   - daas-interface-design
+  - tmf-ontology-3gpp-sa5-ccsa-unified
 tags: [data-fabric, AI-native, 6G, cross-domain, data-management, telecom, knowledge-graph, digital-twin, ETSI-ZSM]
 last_verified: 2026-06-24
 owner: agent
