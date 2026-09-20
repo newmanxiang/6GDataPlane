@@ -148,7 +148,7 @@ DMFW 能力清单来自 Rel-20 工作区讨论稿：收集控制与上报、处�
 
 ## 9. 矛盾、缺口与未核实项
 
-矛盾 34–36 见 `analysis/contradictions.md`。P0 缺口：GB1093/TR328/TR329 正文、GB1094 存在性、YD/T 7007 OWL 条款、SA5 知识架构 pCR。完整表见 `analysis/gaps.md`「TMF 本体统一分析新增缺口」。
+矛盾 34–36 见 `analysis/contradictions.md`。缺口以 `analysis/gaps.md`「TMF 本体统一分析新增缺口」为准：P0 为 GB1093/TR328/TR329 正文与失效证据链、GB1094 存在性；P1 为 YD/T 7007 OWL 条款、SA5 知识架构 pCR。
 
 ## 10. 来源
 
@@ -160,7 +160,7 @@ DMFW 能力清单来自 Rel-20 工作区讨论稿：收集控制与上报、处�
 5. ETSI TS 128 312 V19.5.0 — https://etsi.org/deliver/etsi_ts/128300_128399/128312/19.05.00_60/ts_128312v190500p.pdf
 6. 3GPP Portal 32.801-01 — https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491 — 2026-01-12
 7. WI 1100014 FS_6G_OAM — https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.aspx?workitemId=1100014
-8. SA5#161 6G OAM 工作区讨论稿 — 3GPP FTP PDF
+8. SA5#161 6G OAM 工作区讨论稿 — https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5%23161/SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf
 9. YD/T 7007-2026 — https://std.samr.gov.cn/hb/search/stdHBDetailed?id=5679B6F617894858E06397BE0A0AD0B8 — 2026-06-01
 10. YD/T 7011/7023/7024/7129 目录页 — 国家数字标准馆 / SAMR
 11. ITU-T M.3351 — 2024-08-13；M.3351.2 — 2025-10

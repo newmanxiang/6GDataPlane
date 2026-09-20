@@ -19,7 +19,7 @@ sources:
   - title: 3GPP TS 28.312 V19.5.0
     url: https://etsi.org/deliver/etsi_ts/128300_128399/128312/19.05.00_60/ts_128312v190500p.pdf
     type: standard
-    date: 2026-04-01
+    date: 2026-04
     archived: research/raw/2026-09-20-3gpp-ts28312-intent/
   - title: 3GPP 32.801-01 Study on 6G Management and Orchestration
     url: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491
@@ -39,7 +39,7 @@ sources:
   - title: TM Forum Community on ontology tiger team (GB1093/TR328/TR329)
     url: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
     type: media
-    date: 2026-09-01
+    date: "2026-08/09 (search-index approx)"
     archived: research/raw/2026-09-20-tmf-gb1093/
 related:
   - telecom-network-ontology
@@ -115,9 +115,9 @@ Fable 先验「GB1093/1094 可能是 AN 成对框架」部分有误：成对出�
 - 2025-12：FS_6G_OAM 启动；2026-01-12 创建规范 32.801-01（类型 TR）[高]
 - 2026-05：SA5 Inbox 出现 KSM1/2/3（知识管理/场景/架构）草稿文件名 [中]
 - 2026-06：YD/T 7007/7011/7023/7024 发布，2026-09-01 实施 [高]
+- 2026-07：YD/T 7129 5G 无线故障知识建模发布 [高]
 - 2026-07：TMF Inform《Building knowledge planes…》将 knowledge plane 作为 L4 前提 [中]
 - 2026-09（约）：Community 回帖列出 GB1093/TR328/TR329；hub 随后关闭 [低]
-- 2026-07：YD/T 7129 5G 无线故障知识建模发布 [高]
 
 ## 3. 关键玩家
 
@@ -198,7 +198,7 @@ YD/T 7007 目录确立知识建模准则与表示方法；二手解读描述本�
 
 ## 数据缺口
 
-见 `analysis/gaps.md` 新增节。P0：GB1093/TR328/TR329 正文；YD/T 7007 OWL 条款；SA5 知识架构 pCR 正文。
+见 `analysis/gaps.md` 新增节（登记为准）。P0：GB1093/TR328/TR329 正文与失效证据链、GB1094 存在性。P1：YD/T 7007 OWL 条款、SA5 知识架构 pCR 正文。
 
 ## 来源
 

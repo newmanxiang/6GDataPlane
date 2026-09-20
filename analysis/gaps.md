@@ -136,7 +136,7 @@
 | P1 | SA5 KSM3 Knowledge architecture pCR 正文与公司来源 | 3GPP SA5 知识 KI | 3GPP 会员账号 | 等待中 |
 | P1 | SID→OWL 官方映射是否进入 GB1093 范围 | 矛盾 34 | 跟踪 MODA | 待解决 |
 | P2 | tio-shacl 与 TMF 官方测试套件是否同源 | TIO 形式化程度 | Ericsson 开源仓 vs TMF Git | 可补 |
-| P2 | 仓库既有「TS 32.801」「DMFW=TS 28.104」编号需在后续 curator 轮次统一 | 3gpp 源卡已更正，其他卡片未批量改 | wiki-curator | 待解决 |
+| P2 | 仓库既有「TS 32.801」「DMFW=TS 28.104」编号需在后续 curator 轮次统一 | 残留：`wiki/topics/cross-domain-data-governance-6g.md`、`analysis/trends/trend-cross-domain-governance.md`、`analysis/matrices/timeline-topics.md`；`deep-insight-report-vN.md` 不改 | wiki-curator | 待解决 |
 
 ## 处理流程
 

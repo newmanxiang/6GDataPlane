@@ -8,4 +8,7 @@ fetched_by: web-search
 content_sha256: 02dfe9eede67e9379fb81e6f023e563cc6cf53dc6c034538fce598763b218de5  # local content.md archive, not original PDF
 tags: [tmforum, tio, knowledge-fabric, knowledge-manager]
 access: mixed
-verification: confirmed
+verification: mixed
+notes: >
+  TR292/TR294A/TR311 resource pages confirmed. TR326 is title-only from the
+  Community post (hub closed 2026-09-15), not a catalog landing page.

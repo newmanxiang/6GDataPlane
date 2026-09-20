@@ -29,11 +29,18 @@ key_documents:
     relevance: high
   - title: GB1093 The Federated TM Forum Ontology (MODA-440)
     url: https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation
-    relevance: high
+    relevance: medium
+    verification: title-only
+    access: member-only
+    notes: Community hub closed 2026-09-15; unique public evidence URL may be dead
   - title: TR328 The Case for Ontologies
-    relevance: high
+    relevance: medium
+    verification: title-only
+    access: member-only
   - title: TR329 Ontology Programme Governance (MOD-441)
-    relevance: high
+    relevance: medium
+    verification: title-only
+    access: member-only
   - title: IG1253 Intent in Autonomous Networks
     url: https://www.tmforum.org/toolkits/intent/
     relevance: medium
@@ -43,4 +50,5 @@ last_visited: 2026-09-20
 notes: |
   TM Forum 通过 ODA 架构和 Catalyst 创新项目直接探索电信数据编织方案，
   是将 Data Fabric 理念落地到电信运营与 6G 网络管理的最前沿行业组织。
+  GB1093/TR328/TR329 为 title-only、member-only；engage.tmforum.org Community hub 于 2026-09-15 关闭，所列讨论 URL 可能已失效。
 ---

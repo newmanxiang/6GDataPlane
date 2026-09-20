@@ -42,7 +42,7 @@
 
 ### 完成
 - 文档识别：GB1093/TR328/TR329 标题级核实（会员 Confluence）；GB1094 not-found；TIO/SID/TS 28.312/TR 32.801-01/YD/T 系列/M.3351 目录或全文核实
-- 校正：6G OAM 研究为 TR 32.801-01（rapporteur 中兴），DMFW ≠ TS 28.104
+- 校正：6G OAM 研究为 TR 32.801-01（文档 rapporteur 中兴；WI FS_6G_OAM rapporteur AT&T），DMFW ≠ TS 28.104
 - 产出主题卡、概念/术语/源卡、M5 矩阵、矛盾 34–36、gaps 新节、O7、报告 v1
 
 ### 未完成（滚到明日）
@@ -68,6 +68,11 @@
 ### Fable 一轮 PASS WITH FIXES（同日落地）
 - 必改：TR290A/B 公开性、GB1093 证据 [低]、WI vs TR rapporteur 拆分、§2.2.4 WT-4、CCSA 目录首位、M2 12×8、脚注 [15]、Community type=media、28.312 日期 2026-04
 - 建议：报告 §3.2 版本漂移、GB1089 unverified、32.801 WITHDRAWN / 32.801-02、excerpts/sha256、topic `status: reviewed`
+
+### Fable 二轮 PASS WITH FIXES（同日落地）
+- M5 将 GB1093 三件套证据降至 [低]；SA5 格拆分文档 vs WI rapporteur；CCSA 改「目录首位」
+- 主题卡 frontmatter 去掉臆造日期；缺口 P0/P1 与 gaps.md 对齐
+- TMF 源卡为 GB1093/TR328/TR329 加 title-only / hub 关闭标注
 
 ---
 
