@@ -131,3 +131,31 @@
 | 2026-07-21 | web-search | Informatica CLAIRE GPT IBM watsonx data intelligence AI agents data management 2025 2026 | — | 5 | ai-augmentation-of-data-fabric | CLAIRE GPT agentic（2025-11）、Headless CLAIRE GA（2026-05）、IBM Agentic Data Intelligence + MCP Server（2026-04） |
 | 2026-07-21 | web-search | telecom operator LLM agent NWDAF autonomous network data management 2026 | — | 5 | ai-augmentation-of-data-fabric | Agentic-NWDAF（ICC 2026, MCP）、IntAgent（arXiv 2601.13114）、LLM Agentic AI 5G/6G survey（arXiv 2607.16066） |
 | 2026-07-21 | web-search | GenAI RAG data fabric active metadata Gartner AI-ready data 2025 survey | — | 5 | ai-augmentation-of-data-fabric | Gartner 63%/60% AI-ready 调查（2025-02）、80% GenAI apps on DM platforms（2025-06）、RAG 元数据富化 +9.2pp（Atlan 转述） |
+| 2026-09-20 | web-search | GB1093 TM Forum ontology | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 未命中 GB1093 资源页；命中 TR292 TIO、GB922 SID |
+| 2026-09-20 | web-search | GB1094 TM Forum ontology autonomous networks | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 未命中 GB1094 |
+| 2026-09-20 | web-search | TR328 TM Forum ontology | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 未命中 TR328 资源页；命中 TR292 系列 |
+| 2026-09-20 | web-search | TR329 TM Forum ontology | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 未命中 TR329 资源页 |
+| 2026-09-20 | web-search | 华为 CCSA 本体 自智网络 标准 立项 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | TC7 智能化运营管理立项；TC610 15 项数据通信自智标准（华为自述） |
+| 2026-09-20 | web-search | 3GPP SA5 TS 28.312 intent ontology TM Forum alignment | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | TS 28.312 Annex C；TR294A |
+| 2026-09-20 | web-search | site:tmforum.org GB1093 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | Community 帖给出 GB1093 Federated Ontology (MODA-440) |
+| 2026-09-20 | web-search | site:tmforum.org GB1094 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 无 GB1094 资源页 |
+| 2026-09-20 | web-search | site:tmforum.org TR328 OR "TR 328" | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 无 TR328 资源页；邻近 TR318–TR321 |
+| 2026-09-20 | web-search | site:tmforum.org TR329 OR "TR 329" | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | Community 帖给出 TR329 Ontology Programme Governance (MOD-441) |
+| 2026-09-20 | web-search | CCSA 通信网络知识图谱 本体 技术要求 华为 YD/T | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | YD/T 7007/7011/7023/7024-2026 |
+| 2026-09-20 | web-search | TM Forum knowledge graph ontology GB IG autonomous networks 2024 2025 2026 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | TIO；TR326 Operationalizing Ontologies |
+| 2026-09-20 | web-search | GB1094 TM Forum Ontology Federated MODA | — | 3 | tmf-ontology-3gpp-sa5-ccsa-unified | 无 GB1094 |
+| 2026-09-20 | web-search | TR326 Operationalizing Ontologies TM Forum TR328 Case for Ontologies | — | 4 | tmf-ontology-3gpp-sa5-ccsa-unified | Community 帖串联 TR326/328/329/GB1093 |
+| 2026-09-20 | web-search | 3GPP SA5 FS_6G_OAM study item TR TS 28.8 32.801 data management framework 2025 2026 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | WI 1100014；规范 32.801-01 类型 TR；rapporteur 中兴 |
+| 2026-09-20 | web-search | YD/T 7007 7011 7023 7024 网络运营管理知识图谱 系列标准 华为 中兴 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | 四册 + YD/T 7129 |
+| 2026-09-20 | web-search | Huawei autonomous driving network knowledge graph ontology white paper 网络知识图谱 本体 | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | ADN 白皮书；IETF KG 示例仓 |
+| 2026-09-20 | web-search | site:tmforum.org TR326 Operationalizing Ontologies Semantic Knowledge Fabric | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | TR326 title-only；TR311 Knowledge Manager |
+| 2026-09-20 | web-search | 3GPP TR 32.801 knowledge semantic representation ontology DMFW SA5 6G | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | TOC 7.2.1；KSM1/2/3 草稿文件名 |
+| 2026-09-20 | web-search | "GB1094" (ontology OR Ontology) ("TM Forum" OR TMF OR MODA) | — | 3 | tmf-ontology-3gpp-sa5-ccsa-unified | 国标 GB 1094 变压器噪声；TIO-SHACL 论文 |
+| 2026-09-20 | web-search | GB1089 TM Forum DEM Ontology | — | 4 | tmf-ontology-3gpp-sa5-ccsa-unified | 检索摘要称 GB1089 DEM Ontology（未打开官方页，不当作 GB1094） |
+| 2026-09-20 | web-search | ITU-T M.3351 knowledge modelling representation fusion telecom operations | — | 5 | tmf-ontology-3gpp-sa5-ccsa-unified | M.3351 / M.3351.2 全文 |
+| 2026-09-20 | web-fetch | https://www.tmforum.org/toolkits/intent/ | — | timeout | tmf-ontology-3gpp-sa5-ccsa-unified | 超时；改用搜索摘要 |
+| 2026-09-20 | web-fetch | https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation | — | 1 | tmf-ontology-3gpp-sa5-ccsa-unified | 登录墙，正文来自搜索 snippet |
+| 2026-09-20 | web-fetch | https://std.samr.gov.cn/hb/search/stdHBDetailed?id=5679B6F617894858E06397BE0A0AD0B8 | — | 1 | tmf-ontology-3gpp-sa5-ccsa-unified | YD/T 7007 目录全文 |
+| 2026-09-20 | web-fetch | https://itecspec.com/3gpp/32.801-01 | — | 1 | tmf-ontology-3gpp-sa5-ccsa-unified | TR 32.801-01 TOC |
+| 2026-09-20 | web-fetch | https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491 | — | 1 | tmf-ontology-3gpp-sa5-ccsa-unified | 类型 TR；rapporteur 中兴 |
+| 2026-09-20 | web-fetch | ETSI TS 128 312 V19.5.0 PDF | — | 1 | tmf-ontology-3gpp-sa5-ccsa-unified | Annex C 映射表全文 |

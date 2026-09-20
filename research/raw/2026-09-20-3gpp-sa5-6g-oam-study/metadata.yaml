@@ -1,0 +1,16 @@
+url: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=5491
+title: "32.801-01 Study on 6G Management and Orchestration"
+authors: ["3GPP SA5"]
+publisher: 3GPP
+publication_date: 2026-01-12
+fetched_at: 2026-09-20 02:30
+fetched_by: web-search
+content_sha256: n/a
+tags: [3gpp, sa5, tr32801, 6g-oam, dmfw, knowledge-management]
+access: public-metadata
+verification: confirmed
+related_urls:
+  - https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.aspx?workitemId=1100014
+  - https://www.3gpp.org/DynaReport/32801-01.htm
+  - https://itecspec.com/3gpp/32.801-01
+  - https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5%23161/SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf

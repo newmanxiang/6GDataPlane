@@ -1,0 +1,15 @@
+url: https://www.tmforum.org/toolkits/intent/
+title: TM Forum Intent Toolkit / Intent Ontology suite
+authors: ["TM Forum Autonomous Networks Project"]
+publisher: TM Forum
+publication_date: 2024-07-04
+fetched_at: 2026-09-20 02:10
+fetched_by: web-search
+content_sha256: n/a
+tags: [tmforum, tio, tr292, tr290, intent, rdf]
+access: mixed
+verification: confirmed
+related_urls:
+  - https://www.tmforum.org/resources/introductory-guide/tr292-tm-forum-intent-ontology-tio-v3-6-0/
+  - https://www.tmforum.org/resources/technical-report/tr294a-model-connection-to-3gpp-ts-28-312-intent-extension-model-v1-0-0/
+  - https://www.tmforum.org/playbook/intent-in-an/

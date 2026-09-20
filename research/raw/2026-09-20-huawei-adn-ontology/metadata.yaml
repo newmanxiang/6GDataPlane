@@ -1,0 +1,14 @@
+url: https://carrier.huawei.com/~/media/cnbgv2/download/adn/autonomous-driving-network-overview-cn.pdf
+title: 华为自动驾驶网络解决方案白皮书（知识/本体相关摘录）
+authors: ["Huawei"]
+publisher: Huawei
+publication_date: 2020-05
+fetched_at: 2026-09-20 02:45
+fetched_by: web-search
+content_sha256: n/a
+tags: [huawei, adn, knowledge-graph, ontology]
+access: public
+verification: confirmed
+related_urls:
+  - https://www.huawei.com/cn/news/2020/5/adn-solution-white-paper
+  - https://github.com/Huawei-IOAM/ietf-knowledge-graphs
