@@ -33,6 +33,42 @@
 
 ---
 
+## D17 · 2026-09-20（专题深调：TM Forum × CCSA × 3GPP SA5 本体标准统一分析）
+
+### 计划
+- 用户指令：深度调研 TM Forum 本体论，结合 GB1093/GB1094、TR328/TR329、华为参与的 CCSA 本体相关规范、3GPP SA5，做统一分析并合入主分支
+- 模型分工：Fable 制定计划与审核标准（ops/ontology-analysis-plan-and-review.md）→ Grok 执行检索/精读/撰写 → Fable 审核 → 不达标项指导 Grok 迭代
+
+### 完成
+- Fable 侦察基线：核实 GB1093 = *The Federated TM Forum Ontology*（MODA-440）、TR328 = *The Case for Ontologies: A Roadmap for TM Forum*、TR329 = *Ontology Programme Governance*（MOD-441）、TR326 v2 Semantic Knowledge Fabric；CCSA YD/T 7007/7011/7024/7019（2026-09-01 实施）与 6103-2024；3GPP SA5 FS_6G_OAM 语义网管 WT-1~5（WT-4 调研 RDF/KG/本体含 TM Forum）、TS 28.312 Annex C 映射
+- Grok 产出 7 项交付物（笔记 / 29 条检索日志 / 主题卡 / 统一分析 ~6000 字 / 2 张术语卡 / 缺口 10 行 + 矛盾 34–36 / topics README 索引）
+- Fable 审核一轮：URL 可达性逐条 curl 核验（SAMR/NDLS/3GPP portal/ETSI/ITU/arXiv 全部 200）；发现并要求修正 7 处事实/格式问题（FS_6G_OAM 结束日误写、rapporteur 表述、workshop 日期口径、两处猜测日期、TR291 子项标注、search-log 表格断行、双空格）→ Grok 二轮修订全部通过
+- Fable 联动更新：standards-topics 矩阵关键发现 #6、tm-forum/3gpp 源卡 key_documents、knowledge-graph/tm-forum 术语回链
+
+### 关键产出
+- analysis/ontology-standards-unified-analysis.md（主交付）
+- wiki/topics/ontology-standards-tmf-ccsa-3gpp.md
+- research/notes/ontology-standards-tmf-ccsa-3gpp.md
+- wiki/glossary/ontology.md、wiki/glossary/knowledge-plane.md
+- ops/ontology-analysis-plan-and-review.md（计划 + 审核记录）
+- analysis/gaps.md（+10）、analysis/contradictions.md（矛盾 34–36）、research/search-log.md（+29）
+
+### 数据/关键发现
+- TM Forum 唯一 GA 的 RDF 本体是 TIO（TR292 系列 v3.6.0，2024-07；15 个 Turtle 模块）；SID/MODA 仍是 UML/XMI（GB922 v25.0）；"基于 SID/eTOM 的 BSS/OSS 本体"是 AI Native ODA Roadmap v1.0（2026-06）优先事项而非已发布规范
+- **GB1094 标题与内容公开检索无法核实**（四组 query 均命中电力变压器国标），登记 P1 缺口，不猜测
+- 公开信息中华为为 CCSA 知识图谱/知识管理 YD/T 的**参与起草单位**，第一起草单位为北邮或中国移动；未找到华为牵头的"本体"专项行业标准
+- 3GPP SA5 与 TM Forum 之间目前只有意图层信息性映射（TS 28.312 Annex C、TR294A）；RDF 作为新 solution set 仍是研究问题（FS_6G_OAM 至 2027-06）
+- 对数据引擎：先做 YD/T 7007 兼容的运维本体样例 + TIO/SHACL 意图校验 PoC，不等"6G Data Fabric 标准"
+
+### 阻塞 / 风险
+- GB1093/TR328/TR329/TR326 全文在 TM Forum 会员/Confluence 墙内；YD/T 正文未购，条款级细节标 [中]
+
+### 明日要点
+- 若能获得 TM Forum 会员账号：补 GB1093 联邦机制条款、GB1094 编号确认、TR326 发布页
+- 跟踪 FS_6G_OAM TR 32.801-01 SNM 章节与 SA5#16x 会议 pCR（KSM 系列）
+
+---
+
 ## D16 · 2026-07-15（评审修正 + 面向大数据读者重配比：报告 v4）
 
 ### 计划

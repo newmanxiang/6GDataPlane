@@ -15,7 +15,15 @@ key_documents:
     relevance: high
   - title: "Catalyst C23.0.517 (Data Fabric for Telecom)"
     relevance: high
-contact_topics: [data-fabric-in-telecom, data-fabric-capabilities, data-orchestration, active-metadata]
+  - title: "TR292 TM Forum Intent Ontology (TIO) v3.6.0"
+    url: https://www.tmforum.org/resources/introductory-guide/tr292-tm-forum-intent-ontology-tio-v3-6-0/
+    relevance: high
+  - title: "GB1093 The Federated TM Forum Ontology / TR328 / TR329 / TR326（2026 本体 tiger team，会员/Confluence）"
+    relevance: high
+  - title: "AI Native ODA Roadmap v1.0（BSS/OSS 本体优先事项）"
+    url: https://inform.tmforum.org/features-and-opinion/ai-native-oda-the-path-to-open-digital-autonomy
+    relevance: medium
+contact_topics: [data-fabric-in-telecom, data-fabric-capabilities, data-orchestration, active-metadata, ontology-standards-tmf-ccsa-3gpp]
 update_cadence: Catalyst 项目每年两轮，ODA 持续更新
 last_visited: null
 notes: |

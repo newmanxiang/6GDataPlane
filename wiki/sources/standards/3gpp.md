@@ -19,7 +19,13 @@ key_documents:
     relevance: high
   - title: TR 23.700-series (6G architecture studies)
     relevance: high
-contact_topics: [6g-overview, 6g-data-plane, user-plane-evolution, network-data-analytics, ai-native-air-interface, isac, non-terrestrial-network]
+  - title: "TR 32.801-01 / FS_6G_OAM (SA5 6G 管理编排研究，含 Semantic Network Management)"
+    url: https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.aspx?workitemId=1100014
+    relevance: high
+  - title: "TS 28.312 (Intent driven MnS, Annex C ↔ TM Forum ICM 映射)"
+    url: https://www.3gpp.org/ftp/Specs/archive/28_series/28.312/
+    relevance: medium
+contact_topics: [6g-overview, 6g-data-plane, user-plane-evolution, network-data-analytics, ai-native-air-interface, isac, non-terrestrial-network, ontology-standards-tmf-ccsa-3gpp]
 update_cadence: 每季度全会更新，每 1.5-2 年一个 Release
 last_visited: null
 notes: |

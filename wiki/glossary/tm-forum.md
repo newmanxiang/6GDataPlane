@@ -8,6 +8,9 @@ related:
   - data-fabric-in-telecom
   - data-fabric-capabilities
   - network-data-analytics
+  - ontology
+  - knowledge-plane
+  - ontology-standards-tmf-ccsa-3gpp
 source: https://www.tmforum.org/open-digital-architecture/data-architecture/
 ---
 
@@ -26,3 +29,4 @@ TM Forum 成立于 1988 年，是由全球 850+ 成员组成的电信行业协�
 - [[data-fabric-in-telecom]] TM Forum 是推动电信数据编织标准化的核心组织
 - [[data-fabric-capabilities]] TM Forum ODA 数据架构定义了电信数据编织的能力框架
 - [[network-data-analytics]] TM Forum 标准与 3GPP NWDAF 在数据分析领域互补
+- [[ontology]] / [[knowledge-plane]] TM Forum 意图本体 TIO（TR292 系列）已 GA；联邦本体 GB1093、TR328/TR329 路线与治理、TR326 Semantic Knowledge Fabric 处于 2026 年 tiger team 阶段，详见 [[ontology-standards-tmf-ccsa-3gpp]]
