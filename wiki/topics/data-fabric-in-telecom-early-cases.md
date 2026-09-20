@@ -29,6 +29,7 @@ related:
   - 6g-data-plane
   - network-data-analytics
   - active-metadata
+  - tmf-an-ontology-project
 tags:
   - data-fabric
   - telecom

@@ -17,3 +17,4 @@
 
 ### 交集
 - AI-Native Network、Intent-Based Networking、Closed-Loop Automation、Zero-Touch Network and Service Management (ZSM)
+- [TIO](tio.md)、[SID](sid.md)、[AN Ontology](an-ontology.md)（2026-09-20 深调 tmf-an-ontology-project 补齐）

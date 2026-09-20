@@ -9,6 +9,7 @@
 
 | 完成日期 | 主题 | confidence | 关联 concepts |
 |---|---|---|---|
+| 2026-09-20 | [tmf-an-ontology-project](tmf-an-ontology-project.md) | medium | knowledge-graph-for-data, data-fabric-for-ai-native-6g, ai-augmentation-of-data-fabric |
 | - | - | - | - |
 
 ## 主题命名建议

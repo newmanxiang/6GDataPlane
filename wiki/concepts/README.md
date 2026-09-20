@@ -61,6 +61,12 @@ graph TD
     AIA -->|现状分析| T_AINP[topic: AI原生数据面]
     T_AINP -.-> NWDA
 
+    %% Topic 深调关系（D17 新增）
+    DF -.->|语义层缺口| T_TIO[topic: TMF AN 本体工程]
+    T_TIO -.-> KG
+    T_TIO -.-> DF_TEL
+    T_TIO -.-> DF_AIN
+
     classDef dp fill:#e1f5ff,stroke:#0288d1;
     classDef df fill:#fff3e0,stroke:#f57c00;
     classDef cross fill:#f3e5f5,stroke:#7b1fa2;
@@ -70,7 +76,7 @@ graph TD
     class DF,AM,KG,DV,DO,PP,DMESH df;
     class DF_TEL,EDGE cross;
     class DF_AIN gap;
-    class T_DFDC,T_DFVM,T_UPE,T_AINP topic;
+    class T_DFDC,T_DFVM,T_UPE,T_AINP,T_TIO topic;
 ```
 
 ## 概念清单

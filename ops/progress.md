@@ -2,6 +2,36 @@
 
 > 每天末 Agent 更新本文件。
 
+## D17 · 2026-09-20（深调：TM Forum 自智网络本体工程）
+
+### 计划
+- 对「tmf an-ontology-project」做 6g-deep-dive 级深调：官方 TIO/SID、OpenAN AN Ontology、可克隆 OWL 实现
+
+### 完成
+- 判定公开互联网无同名官方 GitHub 仓；对象定义为三层语义栈（TIO / SID / 域运维本体）
+- 精读并归档 5 组原料：TIO+TMF921、OpenAN/LFN、Catalyst sid-ontology/c-kg、亚信 AN-Ontology（clone SHA d8bf5f7，TTL 实计 89 类）、Orange NORIA-O
+- 核实 `github.com/project-openan` 截至当日无 ontology 仓；ZTE 为 OpenAN founding member
+- 产出 wiki 主卡 + 术语 TIO/SID/AN Ontology + 队列/缺口/矛盾更新
+
+### 关键产出
+- wiki/topics/tmf-an-ontology-project.md
+- research/notes/tmf-an-ontology-project.md
+- research/raw/2026-09-20-{asiainfo-an-ontology,openan-an-ontology,tmf-tio-tr292,agent-fabric-sid-kg,noria-o-sid-align}/
+- wiki/glossary/{tio,sid,an-ontology}.md
+
+### 数据/关键发现
+- TIO v3.6.0 GA，但机器可读 TTL 仍在成员 Confluence，IRI 不解析
+- SID/MODA 25.5 仍是 UML；OWL 化是 Catalyst/厂商竞赛
+- 亚信 AN-Ontology 是目前唯一可克隆的 AN 品牌 OWL，质量缺陷明显且无 SID 映射
+- OpenAN 把 AN Ontology 列为第三奠基项目，Phase 1 未交付
+
+### 阻塞 / 风险
+- 无 TMF 会员账号，TIO Turtle 与 TR292I 无法做 triple 级审计（已入 gaps P0）
+
+### 明日要点
+- 若拿到会员件或 sid-ontology 公开，补 mapping 实验
+
+
 ## 模板
 
 ```markdown

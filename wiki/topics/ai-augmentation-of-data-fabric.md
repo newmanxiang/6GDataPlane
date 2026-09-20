@@ -25,6 +25,7 @@ related:
   - data-fabric-for-ai-native-6g
   - ai-native-data-plane-status
   - cross-domain-data-governance-6g
+  - tmf-an-ontology-project
 tags: [data-fabric, AI, GenAI, agentic-AI, active-metadata, knowledge-graph, LLM, MCP, NWDAF]
 last_verified: 2026-07-21
 owner: agent

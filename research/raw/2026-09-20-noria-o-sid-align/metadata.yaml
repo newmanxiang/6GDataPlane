@@ -1,0 +1,13 @@
+url: https://github.com/Orange-OpenSource/noria-ontology
+title: NORIA-O — Ontology for Anomaly Detection and Incident Management in ICT Systems
+authors: [Lionel Tailhardat, Yoan Chabot, Raphael Troncy]
+publisher: Orange Open Source / EURECOM
+publication_date: 2024-02
+fetched_at: 2026-09-20 01:15
+fetched_by: web-fetch
+tags: [orange, noria, owl, sid, tmf638, itsm]
+ontology_iri: https://w3id.org/noria/ontology/
+paper: ESWC 2024 Resources track
+related:
+  - https://w3id.org/noria/
+  - https://orange-opensource.github.io/noria-ontology/NORIA-O/doc/index-en.html

@@ -14,6 +14,7 @@ related:
   - data-orchestration
   - network-data-analytics
   - data-fabric-definition-and-capabilities
+  - tmf-an-ontology-project
 tags:
   - 知识图谱
   - 数据编织

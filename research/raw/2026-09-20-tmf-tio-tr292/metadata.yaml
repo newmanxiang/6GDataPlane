@@ -1,0 +1,23 @@
+url: https://www.tmforum.org/resources/introductory-guide/tr292-tm-forum-intent-ontology-tio-v3-6-0/
+title: TR292 TM Forum Intent Ontology (TIO) v3.6.0
+authors: [TM Forum Autonomous Networks Project]
+publisher: TM Forum
+publication_date: 2024-08-30
+fetched_at: 2026-09-20 01:12
+fetched_by: web-search+web-fetch
+tags: [tmforum, tio, tr292, intent, ontology, autonomous-networks]
+related:
+  - https://www.tmforum.org/toolkits/intent/
+  - https://engage.tmforum.org/discussion/access-to-tio-models
+  - https://github.com/tmforum-apis/TMF921_Intent
+  - https://www.tmforum.org/resources/component/ig1421-ai-agent-mas-intent-based-ontology-operation-service-management-model-v1-0-0/
+  - https://www.tmforum.org/resources/model/master-oda-moda-html-model-v25-5/
+status: TM Forum Approved, Production, GA
+team_approved: 2024-07-04
+tmf_approved: 2024-08-30
+document_type: Technical Report
+ipr: RAND
+available_to: all (download still requires login)
+turtle_host: https://projects.tmforum.org/wiki/display/ANP/Turtle+Files+Collection+TIO+v3.6.0
+namespace_old: http://tio.models.tmforum.org/tio/v3.6.0/
+namespace_agreed: https://models.tmforum.org/tio/

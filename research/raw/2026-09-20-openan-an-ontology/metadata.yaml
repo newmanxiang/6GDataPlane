@@ -1,0 +1,21 @@
+url: https://lfnetworking.org/lf-networking-brings-a2a-t-to-live-network-through-openan-for-agent-driven-autonomous-networks/
+title: LF Networking Brings A2A-T to Live Network through OpenAN
+authors: [Linux Foundation Networking]
+publisher: LFN
+publication_date: 2026-06-25
+fetched_at: 2026-09-20 01:10
+fetched_by: web-fetch
+tags: [openan, lfn, a2a-t, an-ontology, tmforum, zte]
+related:
+  - https://openan.dev/
+  - https://github.com/project-openan
+  - https://www.telecomrevieweurope.com/articles/reports-and-coverage/openan-building-open-source-components-to-advance-an-l4-deployment/
+  - https://www.huawei.com/en/news/2026/6/openan-project
+  - https://lf-networking.atlassian.net/wiki/spaces/LN/pages/1065353223/OpenAN+-+LFN+Onboarding+as+Candidate+Project
+org_repos_as_of: 2026-09-20
+org_has_ontology_repo: false
+phase1_repos:
+  - https://github.com/project-openan/a2a-t-sdk-python
+  - https://github.com/project-openan/a2a-t-sdk-java
+  - https://github.com/project-openan/registry-center
+  - https://github.com/project-openan/orchestration-center

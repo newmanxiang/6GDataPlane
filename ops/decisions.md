@@ -46,6 +46,16 @@
 - **6g-deep-dive 工具调度规则**：见该技能 SKILL.md "MCP 工具优先级" 节
 - **复盘节点**：D5 评估两个引擎的实际命中率
 
+## 2026-09-20：将「tmf an-ontology-project」按三层语义栈深调，而非单仓审计
+- **背景**：公开互联网不存在名为 `an-ontology-project` 的 TM Forum 官方仓库；OpenAN、TIO、亚信仓、Catalyst 四条线名称相近。
+- **可选项**：
+  - A. 只审计亚信 `asiainfo/AN-Ontology`
+  - B. 把 TIO + SID OWL 化 + OpenAN AN Ontology + 厂商 OWL 样本作为同一子题
+- **选择**：B
+- **理由**：用户指令带 `tmf` 前缀，核心问题是 TMF AN 的机器可执行语义，而不是某一厂商仓的 README。亚信仓作为可克隆样本纳入 §4.4。
+- **可能的代价**：范围比单仓审计宽，TIO TTL 因会员墙无法做 triple 对照。
+- **复盘节点**：sid-ontology 或 OpenAN ontology 仓公开时。
+
 ## D0：语言策略
 - **背景**：用户母语中文，但权威源多为英文
 - **选择**：中文叙述，关键术语保留英文原文；glossary 中英对照

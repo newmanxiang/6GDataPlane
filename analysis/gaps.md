@@ -120,6 +120,12 @@
 | P1 | Mesh-on-Fabric 混合架构在电信网络的可行性验证——无已知原型 | trend-mesh-on-fabric-hybrid | 跟踪 DT/AWS/TM Forum 进展 | 待解决 |
 | P2 | ISAC 感知数据的数据编织集成方案——数据类型特殊（高维度、高频率、隐私敏感） | trend-cross-domain-governance | 跟踪 3GPP ISAC 研究和 ETSI ISG 讨论 | 待解决 |
 | P2 | 跨标准组织（3GPP/ETSI/O-RAN/TM Forum）的数据管理术语统一进展 | trend-standardization-race | 跟踪联合研讨会和交叉引用文件 | 待解决 |
+| P0 | TIO v3.6.0 Turtle 全文（ANP Confluence）未获取，无法做 triple 级审计 | tmf-an-ontology-project | 会员账号下载；跟踪 TIO 4 附录计划 | 等待中 |
+| P1 | Catalyst sid-ontology / c-kg 仓库与 MODA 25.5 覆盖率未知（DTW 后仍未公开） | tmf-an-ontology-project | 跟踪 project-openan 与 C26.0.910 | 待解决 |
+| P1 | OpenAN AN Ontology 章程范围（是否含 SID 翻译、是否接受厂商模块）未公开 | tmf-an-ontology-project | 2026-12 IHPP / LFN wiki | 待解决 |
+| P1 | TR292I Security Ontology 4.0.0 与 TR290 3.8.0 会员件正文 | tmf-an-ontology-project | 会员下载 | 等待中 |
+| P2 | 亚信 AN-Ontology 是否已用于商用 AN Agent；与 ODLM 的 join 未说明 | tmf-an-ontology-project | 跟踪亚信 AISWare Ontology 案例 | 待解决 |
+| P2 | 我司 Fault Agent KG schema 与 TIO/SID 的内部映射 | tmf-an-ontology-project | 需内部资料 | 待解决 |
 | P2 | SRv6 MUP 双栈过渡方案（与 GTP-U 共存）的设计详情和 OPEX 估算 | trend-gtp-u-sunset | 跟踪 IETF MUP WG 和 3GPP CT | 待解决 |
 
 ## 处理流程

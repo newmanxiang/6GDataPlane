@@ -394,3 +394,30 @@
 - **本调研倾向**：倾向 B——技术原型存在但工程成熟度不足，6G 跨域场景的真正落地需 3-5 年
 - **何时能解决**：2028+ 首批 6G 网络部署时逐步验证
 - **关联章节**：wiki/topics/cross-domain-data-governance-6g.md §6
+
+### 矛盾 33：TMF SID 官方形态 vs OWL 知识图谱叙事
+
+- **主张 A**：SID 的现行权威发布是 UML/XMI + Excel（GB922 / MODA 25.5），官方 GitHub 仅有 XMI zip — 来源 TM Forum SID 页、tmforum-rand/MODA (标准/2026-01)
+- **主张 B**：Catalyst C26.0.910 / Agent Fabric 将 SID 叙述为「MODA 25.5 导出的 OWL KG，SPARQL+MCP 可查询」— 来源 agent-fabric.github.io (Catalyst/2026-06)
+- **现状**：OWL 化是实现层竞赛，不是 TMF 官方格式变更；sid-ontology 仓截至 2026-09-20 仍未公开
+- **本调研倾向**：倾向 A 为权威形态，B 为产业实现承诺。在仓公开并给出覆盖率之前，不把「SID 已 OWL 化」写入高信心论断
+- **何时能解决**：sid-ontology 公开或 TMF 发布官方 OWL
+- **关联章节**：wiki/topics/tmf-an-ontology-project.md §4.2
+
+### 矛盾 34：OpenAN「三类组件含 AN Ontology」vs Phase 1 代码捐赠清单
+
+- **主张 A**：OpenAN 涵盖 A2A-T、Agent Framework、AN ontology 三类开源组件 — 来源 LFN 2026-06-25、Telecom Review Europe
+- **主张 B**：Phase 1 优先 A2A-T；已捐代码为 SDK / Registry / Orchestration；project-openan 无 ontology 仓 — 来源 LFN 同文后半、openan.dev、gh api 2026-09-20
+- **现状**：治理文件把本体列为奠基项目，代码时间线滞后至少一季度
+- **本调研倾向**：倾向 B 描述当前可依赖状态；A 是路线图。存在「协议开源、语义闭源」风险
+- **何时能解决**：2026-12 IHPP 或 2027 商用验证窗口
+- **关联章节**：wiki/topics/tmf-an-ontology-project.md §4.3
+
+### 矛盾 35：TIO 与「AN Ontology」是否同一件事
+
+- **主张 A**：TIO（TR292）即 AN 的本体 — 来源部分媒体/Toolkit 把 Intent Ontology 放在 AN 工具包中心
+- **主张 B**：TIO 只覆盖意图词汇；SID 覆盖信息对象；域运维 OWL（工单/5GC/资源）是第三层 — 来源 TR292 摘要、GB922、asiainfo/AN-Ontology、IG1251 K 参考点
+- **现状**：名称混用导致「有了 TIO 就有电信语义层」的高估
+- **本调研倾向**：倾向 B。TIO 必要但不充分
+- **何时能解决**：OpenAN ontology 章程若明确分层可一锤定音
+- **关联章节**：wiki/topics/tmf-an-ontology-project.md §1

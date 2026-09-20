@@ -101,6 +101,7 @@
 | P1 | `nwdaf-rel18-19-enhancements` | 标准 | pending | - | NWDAF Rel-18/19 新增分析用例与 ML 增强特性 |
 | P1 | `o-ran-ai-ml-data-architecture` | 标准 | pending | - | O-RAN AI/ML 数据架构设计 |
 | P1 | `etsi-zsm-data-fabric-mapping` | 标准 | pending | - | ETSI ZSM 与数据编织映射关系 |
+| P1 | `tmf-an-ontology-project` | 标准 | done | D17 | TM Forum 自智网络本体工程（TIO / SID OWL / OpenAN AN Ontology） |
 | P1 | `huawei-zte-6g-data-stories` | 标准 | pending | - | 华为/中兴 6G 数据方案与实践 |
 | P1 | `ericsson-nokia-cognitive-network-data` | 标准 | pending | - | 爱立信/诺基亚认知网络数据方案 |
 | P2 | `samsung-ntt-docomo-6g-data-vision` | 标准 | pending | - | 三星/NTT DOCOMO 6G 数据愿景 |

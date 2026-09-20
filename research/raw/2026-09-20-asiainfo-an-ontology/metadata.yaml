@@ -1,0 +1,40 @@
+url: https://github.com/asiainfo/AN-Ontology
+title: 自智网络本体 (Autonomous Network Ontology)
+authors: [AsiaInfo AI Research Institute]
+publisher: AsiaInfo Technologies
+publication_date: 2025-10-24
+fetched_at: 2026-09-20 01:05
+fetched_by: git-clone
+content_sha256: d8bf5f73146e6acf50e72efb4dcaf1cac6c4fdde
+tags: [tmforum, autonomous-networks, ontology, owl, 5gc, iot, resource]
+related_url: https://github.com/asiainfo/ODLM-Ontology
+license: CC-BY-4.0 (ontology/docs); Apache-2.0 claimed in module READMEs
+stars: 13
+forks: 2
+created_at: 2025-09-11
+namespace_root: http://asiainfo.com/an-ontology#
+modules:
+  - name: IoT Complaint Ticket Ontology
+    iri: http://www.asiainfo.com/ontology/iot-Complaint-ticket#
+    version: 1.0.0
+    date: 2025-01-08
+    classes: 30
+    object_properties: 18
+    datatype_properties: 16
+    individuals: 99
+  - name: 5G Core Network Ontology
+    iri: http://www.asiainfo.com/ontology/5gc#
+    version: 1.0.0
+    date: 2025-10-11
+    classes: 31
+    object_properties: 64
+    datatype_properties: 20
+    individuals: 26
+  - name: Resource Manage Ontology
+    iri: http://www.asiainfo.com/Ontology/Resource-Manage#
+    version: "1.0"
+    date: 2025-10-24
+    classes: 28
+    object_properties: 39
+    datatype_properties: 56
+    individuals: 0

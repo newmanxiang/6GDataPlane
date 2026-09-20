@@ -131,3 +131,16 @@
 | 2026-07-21 | web-search | Informatica CLAIRE GPT IBM watsonx data intelligence AI agents data management 2025 2026 | — | 5 | ai-augmentation-of-data-fabric | CLAIRE GPT agentic（2025-11）、Headless CLAIRE GA（2026-05）、IBM Agentic Data Intelligence + MCP Server（2026-04） |
 | 2026-07-21 | web-search | telecom operator LLM agent NWDAF autonomous network data management 2026 | — | 5 | ai-augmentation-of-data-fabric | Agentic-NWDAF（ICC 2026, MCP）、IntAgent（arXiv 2601.13114）、LLM Agentic AI 5G/6G survey（arXiv 2607.16066） |
 | 2026-07-21 | web-search | GenAI RAG data fabric active metadata Gartner AI-ready data 2025 survey | — | 5 | ai-augmentation-of-data-fabric | Gartner 63%/60% AI-ready 调查（2025-02）、80% GenAI apps on DM platforms（2025-06）、RAG 元数据富化 +9.2pp（Atlan 转述） |
+| 2026-09-20 | web-search | TM Forum AN ontology project GitHub autonomous network | — | 5 | tmf-an-ontology-project | TIO TR292、TMF921、Agent Fabric AN Ontology 承诺、NORIA-O |
+| 2026-09-20 | web-search | tmforum an-ontology-project site:github.com | — | 5 | tmf-an-ontology-project | 无同名官方仓；TMF921_Intent、intentRDFProject |
+| 2026-09-20 | web-search | "an-ontology-project" TM Forum OR tmforum github | — | 5 | tmf-an-ontology-project | 未命中同名仓；SID OWL 转换文献 |
+| 2026-09-20 | web-search | TM Forum Autonomous Networks ontology knowledge graph SID OWL MODA | — | 4 | tmf-an-ontology-project | MODA 25.5、Semantic Arts Frameworx、IG1251 |
+| 2026-09-20 | web-search | TM Forum SID ontology OWL RDF GitHub knowledge graph 2025 2026 | — | 5 | tmf-an-ontology-project | SID 仍 UML/XMI；tmforum-rand/MODA |
+| 2026-09-20 | web-search | TR292 Intent Ontology OWL RDF turtle download github TIO tmforum | — | 5 | tmf-an-ontology-project | Confluence Turtle；ns 迁移未完成 |
+| 2026-09-20 | web-search | OpenAN AN Ontology SID OWL knowledge graph project-openan | — | 5 | tmf-an-ontology-project | 三类组件含 AN ontology；asiainfo/AN-Ontology |
+| 2026-09-20 | web-fetch | https://agent-fabric.github.io/ | — | 1 | tmf-an-ontology-project | sid-ontology / c-kg 承诺 DTW 2026 |
+| 2026-09-20 | web-fetch | https://www.tmforum.org/toolkits/intent/ | — | 1 | tmf-an-ontology-project | TIO 模块版本表至 2026-03 |
+| 2026-09-20 | web-fetch | https://lfnetworking.org/lf-networking-brings-a2a-t-to-live-network-through-openan-for-agent-driven-autonomous-networks/ | — | 1 | tmf-an-ontology-project | ZTE founding；Phase 1 无 ontology |
+| 2026-09-20 | web-fetch | https://openan.dev/ | — | 1 | tmf-an-ontology-project | 2026.12 IHPP / 2027 商用验证 |
+| 2026-09-20 | gh | orgs/project-openan/repos | paginate | 14 | tmf-an-ontology-project | 无 ontology/sid/kg 仓 |
+| 2026-09-20 | git-clone | https://github.com/asiainfo/AN-Ontology | depth 1 | 1 | tmf-an-ontology-project | SHA d8bf5f7；89 classes 三模块 |

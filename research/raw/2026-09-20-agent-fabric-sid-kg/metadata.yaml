@@ -1,0 +1,16 @@
+url: https://agent-fabric.github.io/
+title: Agent Fabric · A2A-T Runtime · TM Forum Catalyst C26.0.910
+authors: [Huawei, Vodafone, MEF.DEV, Amdocs, RADCOM, Infosys, Infovista, Iquall Networks]
+publisher: TM Forum Catalyst
+publication_date: 2026-06
+fetched_at: 2026-09-20 01:08
+fetched_by: web-fetch
+tags: [catalyst, sid-ontology, knowledge-graph, mcp, owl, moda]
+related:
+  - https://www.tmforum.org/catalysts/projects/C26.0.910
+catalyst_urn: C26.0.910
+promised_repos:
+  - sid-ontology  # MODA 25.5 → OWL, SPARQL + MCP; Huawei demo
+  - c-kg          # AN use-case KG, decoupled OWL, MCP; Vodafone + Huawei
+public_as_of: 2026-09-20
+note: "Agent Fabric page said core repos go public around DTW 2026; project-openan still has neither repo."

@@ -8,6 +8,10 @@ related:
   - data-fabric-in-telecom
   - data-fabric-capabilities
   - network-data-analytics
+  - tmf-an-ontology-project
+  - tio
+  - sid
+  - an-ontology
 source: https://www.tmforum.org/open-digital-architecture/data-architecture/
 ---
 
@@ -20,9 +24,10 @@ source: https://www.tmforum.org/open-digital-architecture/data-architecture/
 **缩写**：TMF
 
 ## 定义
-TM Forum 成立于 1988 年，是由全球 850+ 成员组成的电信行业协会，成员涵盖运营商（AT&T、中国移动、Vodafone 等）、厂商（Ericsson、Nokia、Huawei 等）与 IT 企业。其核心贡献包括：ODA（开放数字架构）、Open API 标准、SID/eTOM 信息模型、以及 Catalyst 创新项目。在数据编织领域，TM Forum 通过 Modern Data Architecture 工作组和 Catalyst 项目 C23.0.517（DataFabric-based Intelligent Data Sharing）推动电信行业数据编织架构的标准化与实证验证。
+TM Forum 成立于 1988 年，是由全球 850+ 成员组成的电信行业协会，成员涵盖运营商（AT&T、中国移动、Vodafone 等）、厂商（Ericsson、Nokia、Huawei 等）与 IT 企业。其核心贡献包括：ODA（开放数字架构）、Open API 标准、SID/eTOM 信息模型、以及 Catalyst 创新项目。在数据编织领域，TM Forum 通过 Modern Data Architecture 工作组和 Catalyst 项目 C23.0.517（DataFabric-based Intelligent Data Sharing）推动电信行业数据编织架构的标准化与实证验证。自智网络侧另有意图本体 TIO（TR292）与规划中的 AN Ontology 开源工作流，见 [[tmf-an-ontology-project]]。
 
 ## 相关概念
 - [[data-fabric-in-telecom]] TM Forum 是推动电信数据编织标准化的核心组织
 - [[data-fabric-capabilities]] TM Forum ODA 数据架构定义了电信数据编织的能力框架
 - [[network-data-analytics]] TM Forum 标准与 3GPP NWDAF 在数据分析领域互补
+- [[tmf-an-ontology-project]] TIO / SID OWL / OpenAN AN Ontology 三层语义栈深调
