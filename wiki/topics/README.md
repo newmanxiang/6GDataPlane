@@ -9,7 +9,7 @@
 
 | 完成日期 | 主题 | confidence | 关联 concepts |
 |---|---|---|---|
-| - | - | - | - |
+| 2026-09-20 | [ontology-standards-tmf-ccsa-3gpp](./ontology-standards-tmf-ccsa-3gpp.md) | medium | ontology, knowledge-plane, knowledge-graph, tm-forum, 3gpp-sa2-6g-data-framework-wt5, data-fabric-for-ai-native-6g, cross-domain-data-governance-6g |
 
 ## 主题命名建议
 

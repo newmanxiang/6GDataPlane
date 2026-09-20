@@ -33,6 +33,7 @@
 3. **AI 原生网络是最拥挤的赛道**：几乎所有组织都有相关工作项，但定义和范围差异大
 4. **通感一体 (ISAC) 的数据治理缺口**：ITU-R 和 3GPP 都在推进 ISAC 场景，但感知数据的治理框架几乎空白[^gov]
 5. **用户面协议标准化滞后**：GTP-U 替代方案的讨论分散在 3GPP CT、IETF（非本矩阵范围）和 O-RAN 之间
+6. **本体/语义层（2026-09-20 补充）**：TM Forum 是唯一已 GA 交付 RDF 本体（TIO，TR292 系列）的组织，联邦本体 GB1093 / TR328 / TR329 尚在 tiger team；3GPP SA5 在 FS_6G_OAM 中把 RDF/知识图谱/本体列为 WT-4 调研项；CCSA（本矩阵未列行）以 YD/T 7007/7011/7024/7019 知识图谱/知识管理标准簇于 2026-09-01 实施。三方之间仅有意图层信息性映射（TS 28.312 Annex C / TR294A），无规范性本体互引 → [ontology-standards-unified-analysis](../ontology-standards-unified-analysis.md)
 
 ## 脚注
 

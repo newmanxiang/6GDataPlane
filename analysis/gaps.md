@@ -122,6 +122,21 @@
 | P2 | 跨标准组织（3GPP/ETSI/O-RAN/TM Forum）的数据管理术语统一进展 | trend-standardization-race | 跟踪联合研讨会和交叉引用文件 | 待解决 |
 | P2 | SRv6 MUP 双栈过渡方案（与 GTP-U 共存）的设计详情和 OPEX 估算 | trend-gtp-u-sunset | 跟踪 IETF MUP WG 和 3GPP CT | 待解决 |
 
+## ontology-standards 新增缺口（2026-09-20）
+
+| 优先级 | 缺口 | 影响章节 | 建议补救 | 状态 |
+|---|---|---|---|---|
+| P1 | **GB1094：标题与内容未能公开核实**（已尝试 query：`"GB1094" tmforum ontology`；`"GB1094" "TM Forum"`；`TM Forum ontology guidebook GB1093 GB1094 MODA tiger team`；`site:tmforum.org GB1094`）。检索结果为电力变压器国标或无关 GB10xx。禁止猜测标题。 | ontology-standards-unified-analysis §2.4；主题卡 §2 | 会员 Confluence / MODA 目录人工确认是否为内部编号 | 待解决 |
+| P1 | GB1093 *The Federated TM Forum Ontology*（MODA-440）、TR328 *The Case for Ontologies*、TR329 *Ontology Programme Governance*（MOD-441）仅社区讨论核实标题，**全文、版本号、Team Approved 日期均未获得**（Confluence/会员墙；engage.tmforum.org WebFetch 失败） | 统一分析 §2.3–2.5 | TMF 会员账号下载或请内部接口人导出 | 等待中 |
+| P1 | TR326 v2 Suite *Operationalizing Ontologies… Components and Canvas*（Semantic Knowledge Fabric）无独立打开的公开版本页；2026-06 发布日期未独立核实 | 统一分析 §2.6 | 会员资源目录检索 TR326；对照 Inform 2026-07-01 知识面报告 | 待解决 |
+| P1 | 公开信息中**华为为 CCSA 相关 YD/T 的参与起草单位而非明确牵头方**；未找到华为牵头、以"本体"命名的 CCSA 行业标准或可核在研项目号 | 统一分析 §3.6 | CCSA 会员立项系统；区分团体标准 T/CCSA 690-2025（孪生资产，非本体） | 待解决 |
+| P1 | **3GPP SA5 语义网管与 TM Forum 本体无规范性互引**：已核实仅 Annex C 信息性映射、TR294A 扩展、WT-4 survey 表述、ZSM 研讨开放协作。无 TS/TR 引用 GB1093 或 TIO OWL 全文 | 统一分析 §4.5、§7.1 | 跟踪 TR 32.801-01 与后续 liaison | 待解决 |
+| P1 | TR 32.801-01 草案正文（仅 Draft 状态 + Inbox pCR 文件名 KSM2/KSM3） | 统一分析 §4.2 | 3GPP 会员账号 | 等待中 |
+| P1 | YD/T 7007/7019/6103 **正式文本**未购得；本体模型/四类知识/六模块细节来自 antpedia 解读，不得标 [高] | 统一分析 §3 | 购买或内部标准库 | 待解决 |
+| P2 | TIO v3.6.0「15 个模块」官方枚举与 toolkit 列表、Ericsson 论文引用不完全一致 | 统一分析 §2.1 | 获取 TIO 发布说明/RN | 待解决 |
+| P2 | AI Native ODA Roadmap 文未出现任务所称文档号 TMF448 | 统一分析 §2.7 | 会员资源页核对编号 | 待解决 |
+| P2 | sid-ontology（MODA 25.5→OWL）仓计划 DTW 2026 公开，本轮未克隆核实类覆盖率 | 统一分析 §2.8 | 跟踪 GitHub 公开 | 待解决 |
+
 ## 处理流程
 
 1. 调研中发现缺口 → 立即登记到本文件
