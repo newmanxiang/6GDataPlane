@@ -394,3 +394,30 @@
 - **本调研倾向**：倾向 B——技术原型存在但工程成熟度不足，6G 跨域场景的真正落地需 3-5 年
 - **何时能解决**：2028+ 首批 6G 网络部署时逐步验证
 - **关联章节**：wiki/topics/cross-domain-data-governance-6g.md §6
+
+### 矛盾 34：联邦本体 vs 集中式 SID 单一模型
+
+- **主张 A**：TM Forum 需要**联邦本体**（名称：GB1093 *The Federated TM Forum Ontology*），在 SID/eTOM/TIO/外部知识之上做联邦而非单一超模型 — 来源 engage.tmforum.org 社区讨论列出 GB1093/MODA-440（社区/检索 2026-09-20，仅摘要可见）；ODA 本身即多框架并存（SID 资源页）
+- **主张 B**：把 SID 做成**单一可查询 OWL 知识图谱**即可支撑 agent（SPARQL/MCP）— 来源 Catalyst C26.0.910 sid-ontology，派生 MODA 25.5（厂商+开源站点/2026）
+- **现状**：A 的机制条款未公开；B 已有实现但不是 GB922 规范性交付。两者都可能被称为"TMF 本体"，听众会误以为已统一。
+- **本调研倾向**：不下结论。工作假设是联邦层（若 GB1093 属实）挂接多个领域本体，SID OWL 只是其中一块；在全文公开前不得把 Catalyst 实现写成联邦规范。
+- **何时能解决**：GB1093/TR328/TR329 公开或进入 GA
+- **关联章节**：analysis/ontology-standards-unified-analysis.md §2、§8；wiki/topics/ontology-standards-tmf-ccsa-3gpp.md
+
+### 矛盾 35：本体驱动 vs 数据/LLM 驱动的自智路线
+
+- **主张 A**：高阶自治必须先有形式化本体/知识面，否则 agent 无法可信互操作 — 来源 TIO GA + ODA Roadmap 原则 2.4/2.6（标准/2024-2026）；YD/T 7007 本体模型层（行业标准/2026）；Samsung SNM、Inform 知识面报告（2026-07-01）
+- **主张 B**：6G OAM 应先统一数据框架并用 Large Model + Agent 打通碎片化智能能力，知识管理是并列组件而非前置条件 — 来源 ZTE SA5 Rel-20 优先项 PDF（厂商/2025-06）；Nokia 反馈主张知识放进 data management（讨论文稿/2025）
+- **现状**：TMF 意图层已本体化，运维全量语义未本体化；SA5 同时开了 SNM 与 DMFW 两个工作域。产业上 LLM 试点快于 OWL 工程。
+- **本调研倾向**：分层不下结论——意图入场需要本体/SHACL 门禁（A）；海量遥测仍走数据管理与模型（B）。数据引擎应同时嵌入两层，避免押单一路线。
+- **何时能解决**：FS_6G_OAM 对 SNM 与 DMFW 关系写进 TR 32.801-01（至 2027-06）
+- **关联章节**：analysis/ontology-standards-unified-analysis.md §4、§7、§8
+
+### 矛盾 36：3GPP 语义网管应复用 TM Forum 本体 vs 自定义
+
+- **主张 A**：应调研并尽可能复用其他组织（明确举例 TM Forum）的 RDF、知识图谱与本体 — 来源 FS_6G_OAM 讨论文稿 2.2.4 WT-4（标准讨论/2025）；已有 Annex C 与 TR294A 作为意图层先例（标准/2023–Rel-19）
+- **主张 B**：3GPP 管理数据与 MnS 应坚持自身 NRM/OpenAPI solution set，知识若需要则作为数据管理扩展，不宜引入 RDF 新 solution set — 来源 Nokia 将知识并入 data management 的反馈；现行 TS 28.312 Stage-3 仍为 YAML/OpenAPI；Ericsson 将 RDF 表述为"e.g."式问题而非决议（workshop PDF/2025-06）
+- **现状**：意图结构已映射、意图词汇未在 3GPP 侧 OWL 化；WT-4 只是 survey。复用 TIO 不能自动覆盖 SID/CCSA 运维类。
+- **本调研倾向**：倾向"意图层复用 ICM/TIO 映射 + 网管对象层自建/转译（openapi-to-rdf）"的双轨，作为研究期工作假设，待 TR 32.801-01 结论。
+- **何时能解决**：FS_6G_OAM 研究结论（计划 2027-06）
+- **关联章节**：analysis/ontology-standards-unified-analysis.md §4.5、§8；wiki/topics/ontology-standards-tmf-ccsa-3gpp.md

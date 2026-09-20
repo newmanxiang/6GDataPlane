@@ -131,3 +131,32 @@
 | 2026-07-21 | web-search | Informatica CLAIRE GPT IBM watsonx data intelligence AI agents data management 2025 2026 | — | 5 | ai-augmentation-of-data-fabric | CLAIRE GPT agentic（2025-11）、Headless CLAIRE GA（2026-05）、IBM Agentic Data Intelligence + MCP Server（2026-04） |
 | 2026-07-21 | web-search | telecom operator LLM agent NWDAF autonomous network data management 2026 | — | 5 | ai-augmentation-of-data-fabric | Agentic-NWDAF（ICC 2026, MCP）、IntAgent（arXiv 2601.13114）、LLM Agentic AI 5G/6G survey（arXiv 2607.16066） |
 | 2026-07-21 | web-search | GenAI RAG data fabric active metadata Gartner AI-ready data 2025 survey | — | 5 | ai-augmentation-of-data-fabric | Gartner 63%/60% AI-ready 调查（2025-02）、80% GenAI apps on DM platforms（2025-06）、RAG 元数据富化 +9.2pp（Atlan 转述） |
+| 2026-09-20 | web-search | GB1093 "The Federated TM Forum Ontology" MODA-440 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 社区帖核实标题与 MODA-440；无公开资源页 |
+| 2026-09-20 | web-search | "GB1094" tmforum ontology | — | 3 | ontology-standards-tmf-ccsa-3gpp | 命中电力变压器 GB 1094；无 TMF 本体 |
+| 2026-09-20 | web-search | "GB1094" "TM Forum" | — | 5 | ontology-standards-tmf-ccsa-3gpp | 邻近 GB10xx，无 GB1094 本体 |
+| 2026-09-20 | web-search | TM Forum ontology guidebook GB1093 GB1094 MODA tiger team | — | 4 | ontology-standards-tmf-ccsa-3gpp | 仅 SID/TIO；GB1094 仍未出现 |
+| 2026-09-20 | web-search | site:tmforum.org GB1094 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 无匹配资产页 |
+| 2026-09-20 | web-search | TR328 "The Case for Ontologies: A Roadmap for TM Forum" | — | 5 | ontology-standards-tmf-ccsa-3gpp | 标题仅社区帖；全文不可得 |
+| 2026-09-20 | web-search | TR329 "TM Forum Ontology Programme Governance" MOD-441 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 标题+MOD-441 仅社区帖 |
+| 2026-09-20 | web-search | TR326 "Operationalizing Ontologies for AI-Native Autonomous Networks" Semantic Knowledge Fabric TM Forum 2026 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 社区帖标题+Inform 知识面报告 2026-07-01 |
+| 2026-09-20 | web-fetch | https://www.tmforum.org/toolkits/intent/ | — | 0 | ontology-standards-tmf-ccsa-3gpp | Cloudflare 拦截；改用搜索摘要 |
+| 2026-09-20 | web-fetch | https://engage.tmforum.org/discussion/a-practical-hypothesis-operational-centricity-as-a-complementary-decision-context-dimension-for-an-transformation | — | 0 | ontology-standards-tmf-ccsa-3gpp | 站点改写/防护，仅摘要可用 |
+| 2026-09-20 | web-search | TR290 v3.8.0 TR292I Security Ontology v4.0.0 TR293 Connector Model TR294A IG1253 IG1358 TM Forum | — | 5 | ontology-standards-tmf-ccsa-3gpp | toolkit 摘要确认 2026-03-27 更新 |
+| 2026-09-20 | web-search | AI Native ODA Roadmap v1.0 TMF448 SID eTOM BSS OSS ontology TM Forum 2026 | — | 4 | ontology-standards-tmf-ccsa-3gpp | Inform 2026-06-18；正文未见 TMF448 编号 |
+| 2026-09-20 | web-search | Catalyst C26.0.910 Agent Fabric A2A-T OpenAN knowledge graph SID ontology IG1453 | — | 5 | ontology-standards-tmf-ccsa-3gpp | SID OWL / MODA 25.5 |
+| 2026-09-20 | web-search | arXiv 2604.27359 tio-shacl Ericsson Research SHACL ontology | — | 5 | ontology-standards-tmf-ccsa-3gpp | 56/69 shapes；87 类 109 属性 72 函数 |
+| 2026-09-20 | web-search | EricssonResearch openapi-to-rdf 3GPP SA5 Rel-18 Rel-19 OpenAPI RDF SHACL GitHub | — | 5 | ontology-standards-tmf-ccsa-3gpp | MnS Rel-18/19 转 RDF/SHACL |
+| 2026-09-20 | web-search | YD/T 7007-2026 网络运营管理知识图谱 知识建模方法 华为 中国移动 | — | 5 | ontology-standards-tmf-ccsa-3gpp | SAMR：2026-06-01/09-01；北邮首位；华为参编 |
+| 2026-09-20 | web-search | YD/T 7011-2026 7019-2026 7024-2026 6103-2024 自智网络 知识图谱 知识面 发布 实施 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 7011/7019/7024 同日；6103 2024-10-24 |
+| 2026-09-20 | web-search | CCSA 华为 本体 通信网络本体 技术要求 | — | 5 | ontology-standards-tmf-ccsa-3gpp | 无华为牵头本体 YD/T；T/CCSA 690 非本体 |
+| 2026-09-20 | web-search | CCSA TC7 自智网络 本体 立项 华为 ADN 知识图谱 白皮书 | — | 5 | ontology-standards-tmf-ccsa-3gpp | TC7 有知识管理立项；无独立本体标准号 |
+| 2026-09-20 | web-search | 3GPP SA5 FS_6G_OAM Semantic Network Management WT-1 WT-2 WT-3 WT-4 WT-5 TR 32.801 | — | 5 | ontology-standards-tmf-ccsa-3gpp | WI 1100014；WT-4 含 RDF/TMF |
+| 2026-09-20 | web-search | 3GPP TS 28.312 Annex C TM Forum ICM IntentExpectation mapping TR 28.914 TR 28.881 IDMS | — | 5 | ontology-standards-tmf-ccsa-3gpp | Annex C 映射；Ph4 WI 1080006 |
+| 2026-09-20 | web-fetch | https://www.3gpp.org/ftp/Email_Discussions/SA5/OAM%20rapporteur%20calls/Rapporteur%20call%20%23161/SA5_NWM_Discussion_for_Rel-20_6G_OAM_Work_Areas-v0.0.7.pdf | — | 1 | ontology-standards-tmf-ccsa-3gpp | SNM WT 原文+各公司反馈 |
+| 2026-09-20 | web-fetch | https://etsi.org/deliver/etsi_ts/128300_128399/128312/19.05.00_60/ts_128312v190500p.pdf | — | 1 | ontology-standards-tmf-ccsa-3gpp | Annex C 字段映射表 |
+| 2026-09-20 | web-fetch | https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5_Workshop_on_6G_Rel20/Ericsson%20view%20on%20SA5%20Rel-20%206G%20Priorities.pdf | — | 1 | ontology-standards-tmf-ccsa-3gpp | 知识辅助管理；RDF? solution set |
+| 2026-09-20 | web-fetch | https://www.3gpp.org/ftp/Email_Discussions/SA5/SA5-level%20discussions/SA5_Workshop_on_6G_Rel20/Samsung%20view%20on%20SA5%20Rel-20%206G%20Priorities.pdf | — | 1 | ontology-standards-tmf-ccsa-3gpp | SNM 优先；引 M.3351 / IEEE KG |
+| 2026-09-20 | web-fetch | https://std.samr.gov.cn/hb/search/stdHBDetailed?id=5679B6F617894858E06397BE0A0AD0B8 | — | 1 | ontology-standards-tmf-ccsa-3gpp | 7007 起草单位/日期官方页 |
+| 2026-09-20 | web-fetch | https://arxiv.org/abs/2604.27359 | — | 1 | ontology-standards-tmf-ccsa-3gpp | tio-shacl 作者与提交日 2026-04-30 |
+| 2026-09-20 | web-search | ITU-T SG2 knowledge management framework IEEE knowledge graph standard 3GPP SA5 semantic | — | 5 | ontology-standards-tmf-ccsa-3gpp | M.3351；IEEE P2807-2022 |
+| 2026-09-20 | web-search | YD/T 7007 本体模型 实例化模型 RDF 配置 性能 告警 故障 意图 运营专项建模 | — | 5 | ontology-standards-tmf-ccsa-3gpp | antpedia 解读（非原文） |
